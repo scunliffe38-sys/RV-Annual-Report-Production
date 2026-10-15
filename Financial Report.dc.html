@@ -63,7 +63,7 @@
       <div style="font-weight:700;font-size:8.5pt;line-height:11pt;letter-spacing:0.02em;color:#005FA1"><span style="text-transform:uppercase">{{ c.name }}</span>{{ c.roleLabel }}</div>
       <div style="font-weight:500;font-size:6pt;line-height:9pt;letter-spacing:0.05em;text-transform:uppercase;color:#005FA1;margin:1pt 0 3pt">{{ c.appointed }}</div>
       <sc-for list="{{ c.paras }}" as="p" hint-placeholder-count="2">
-        <div style="font-weight:400;font-size:{{ c.fs }}pt;line-height:{{ c.lh }}pt;letter-spacing:-0.005em;color:#6D6E71;margin:0 0 3.5pt">{{ p }}</div>
+        <div style="font-weight:400;font-size:{{ c.fs }}pt;line-height:{{ c.lh }}pt;letter-spacing:0;color:#6D6E71;margin:0 0 3pt">{{ p }}</div>
       </sc-for>
     </div>
   </sc-for>
@@ -742,11 +742,11 @@ class Component extends DCLogic {
   // pages is the one that makes the taller page shortest. If the bios will not
   // fit, the type steps down before anything is cut.
   // One photo size and one type size for the whole board, so every card lines
-  // up (FY25: 98pt photos, bios about 7.5/10). The photo shrinks first, then
+  // up (FY25: 98pt photos, bios Gotham Book 7/9.6, 3pt between paragraphs). The photo shrinks first, then
   // the type, until the board - and any directors who ceased, set under the
   // last card - fits the spread.
   _layoutDirectors(dirs, intro, ceased) {
-    const XL = 56.69, XR = 651.97, FOOT = 773, PMAX = 98, PMIN = 72, GUTTER = 22, GMIN = 10, GMAX = 30;
+    const XL = 56.69, XR = 651.97, FOOT = 788, PMAX = 98, PMIN = 64, GUTTER = 18, GMIN = 6, GMAX = 30;
     const ip = this._probe(481.89, '-0.01em');
     ip.host.style.fontSize = '9pt'; ip.host.style.lineHeight = '12pt';
     let introH = 0;
@@ -754,17 +754,17 @@ class Component extends DCLogic {
     let ceasedH = 0;
     (ceased || []).forEach((c, k) => { ip.node.data = c.text || ''; ceasedH += ip.host.getBoundingClientRect().height * 0.75 + (k ? 5.669 : 0); });
     ip.host.remove();
-    const headTop = Math.max(200, 160.99 + introH + 18), TOP = headTop + 27;
+    const headTop = Math.max(185, 160.99 + introH + 18), TOP = headTop + 27;
     const AVAIL = FOOT - TOP, ceasedRoom = ceasedH ? ceasedH + 17 : 0;
     const out = { headTop, cards: [], ceasedTop: 0 };
     if (!dirs.length) return out;
-    const pr = this._probe(100, '-0.005em'), host = pr.host, node = pr.node;
+    const pr = this._probe(100, '0'), host = pr.host, node = pr.node;
     const measure = (t, w, pt, lead) => { host.style.width = w + 'pt'; host.style.fontSize = pt + 'pt'; host.style.lineHeight = lead + 'pt'; node.data = t; return host.getBoundingClientRect().height * 0.75; };
     let pick = null;
-    for (const s of [1, 0.96, 0.92, 0.88, 0.84, 0.8]) {
+    for (const s of [1, 0.97, 0.94, 0.91, 0.88, 0.85]) {
       for (let P = PMAX; P >= PMIN; P -= 2) {
         const tw = 481.89 - P - GUTTER;
-        const th = dirs.map(d => 24 + (d.paras || []).reduce((a, p) => a + measure(p, tw, 7.5 * s, 10 * s) + 3.5, 0));
+        const th = dirs.map(d => 24 + (d.paras || []).reduce((a, p) => a + measure(p, tw, 7 * s, 9.6 * s) + 3, 0));
         const hs = th.map(h => Math.max(P, h));
         const colH = (a, extra) => a.reduce((x, h) => x + h, 0) + GMIN * Math.max(0, a.length - 1) + extra;
         let best = null;
@@ -781,7 +781,7 @@ class Component extends DCLogic {
     host.remove();
     if (!pick) {
       console.warn('Directors: biographies do not fit at the smallest photo and type size.');
-      pick = { s: 0.8, P: PMIN, tw: 481.89 - PMIN - GUTTER, hs: dirs.map(() => PMIN), k: Math.ceil(dirs.length / 2) };
+      pick = { s: 0.85, P: PMIN, tw: 481.89 - PMIN - GUTTER, hs: dirs.map(() => PMIN), k: Math.ceil(dirs.length / 2) };
     }
     // One gap for both pages, so the cards keep a common rhythm.
     const cols = [[0, pick.k, XL, 0], [pick.k, dirs.length, XR, ceasedRoom]];
@@ -796,7 +796,7 @@ class Component extends DCLogic {
         out.cards.push({
           n: from + i + 1, x, y, p: pick.P, h, tx: x + pick.P + GUTTER, tw: pick.tw,
           name: d.name, roleLabel: d.role ? ' (' + d.role + ')' : '', appointed: d.appointed, paras: d.paras || [],
-          fs: Math.round(7.5 * pick.s * 100) / 100, lh: Math.round(10 * pick.s * 100) / 100,
+          fs: Math.round(7 * pick.s * 100) / 100, lh: Math.round(9.6 * pick.s * 100) / 100,
         });
         y += h + gap;
       });

@@ -19,6 +19,10 @@
   The check must use the same spacing the layout uses (including the gap after
   tables), so a spacing change can't reintroduce an overlap.
 
+- **Fonts are TrueType (`fonts/Gotham-*.ttf`) with fsType 0.** OTF (CFF) or
+  TTFs with restricted/no-subsetting flags make Chrome save Gotham as Type 3
+  (soft in Acrobat). Check File › Properties › Fonts shows "TrueType (CID)".
+
 ## How the project works (handoff)
 
 Browser tool (Chrome/Edge, no install). A producer picks a folder of the year's

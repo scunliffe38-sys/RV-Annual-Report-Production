@@ -39,7 +39,7 @@
       if (/chief executive/i.test(role)) role = "CEO";
       if (seen[name]) continue;
       seen[name] = 1;
-      var d = { id: slug(name), name: name, appointed: appointed, paras: rest.map(function (p) { return ws(p.text); }).filter(Boolean) };
+      var d = { id: slug(name), name: name, appointed: appointed, paras: joinRuns(rest.map(function (p) { return ws(p.text); }).filter(Boolean)) };
       if (role) d.role = role;
       out.push(d);
     }
@@ -253,6 +253,17 @@
       cols = src.map(function (c) { return r2(c * W / tot); });
     }
     return { k: "t", cols: cols, rows: rows, auto: true };
+  }
+  // A bio paragraph ending in ; or : (or with no closing stop) runs on into
+  // the next, as in FY25 (e.g. "...subsidiaries; Racing.com Media...").
+  function joinRuns(paras) {
+    var out = [];
+    paras.forEach(function (p) {
+      var prev = out[out.length - 1];
+      if (prev !== undefined && !/[.!?)\u201D"]$/.test(prev)) out[out.length - 1] = prev + " " + p;
+      else out.push(p);
+    });
+    return out;
   }
   function buildNotes(parsed, issues) {
     var blocks = parsed.blocks, tables = parsed.tables, out = [], start = blocks.findIndex(function (b) { return b.k === "noteTitle"; });
