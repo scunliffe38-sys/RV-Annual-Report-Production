@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u13de1" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>22. Contingent Liabilities</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Cool Gray">
+				<Properties>
+					<Leading type="unit">12.027</Leading>
+				</Properties>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent" LeftIndent="0" FirstLineIndent="0" BulletsAndNumberingListType="NoList">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Under the Deed of Contribution and Indemnity with the Victoria Racing Club, the consolidated entity has indemnified the Victoria Racing Club against any claims against the Victoria Racing Club arising from its previous operation of the thoroughbred racing industry in Victoria.</Content>
+				<Br />
+				<Content>Racing Victoria has guaranteed a loan facility of Cranbourne Pakenham Racing Club Inc. of $19.547 million (2024: $20.077 million). </Content>
+				<Br />
+				<Content>Racing Victoria holds capital commitment obligations to clubs in line with its formalised infrastructure plan. Whilst it appropriately provides for these projects following formal submission to the State Government VRIF program, there remain other projects where a commitment has been made to the club, however it is yet to reach the constructive obligation stage in the cycle. </Content>
+				<Br />
+				<Content>From time to time the consolidated entity may be subject to legal claims, however at signing date the awareness and quantum of any such claims remain unknown.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>23. Subsequent Events</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B1 Body Text" SpaceBefore="11.338582677165356" SpaceAfter="5.669291338582678" GridAlignment="None">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>On 21 August 2025, the thoroughbred, harness and greyhound racing codes executed the VRI Inter-Code Deed. This Deed primarily covers the code sharing arrangements for VRI funding received for the period 
+1 July 2025 through to 15 August 2034.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B1 Body Text" SpaceAfter="5.669291338582678">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>On 1 September 2025, 3UZ Pty Ltd executed an asset sale agreement with Sports Entertainment Group (SEN). SEN have consequently taken full responsibility for the radio broadcasting of live racing and racing related radio programming from this date. This is underpinned by new long term contractual commitments made by SEN to deliver a dedicated, showcase coverage of Victorian racing. Racing Victoria will no longer be required to make any further shareholder funding contributions towards these radio broadcasting operations.</Content>
+				<Br />
+				<Content>On 2 September 2025, 3UZ Pty Ltd was renamed VicRacing Audio Services Pty Ltd with this entity continuing to hold studio and land assets that were excluded from the above sale to SEN.</Content>
+				<Br />
+				<Content>Other than that noted above, there has not been any matter or circumstance occurring subsequent to the end of the period that has significantly affected or may affect the operations of the consolidated entity, the results of those operations or the state of affairs of the consolidated entity in future financial periods.</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book" ParagraphBreakType="NextColumn">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>24. Material Accounting Policies</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B1 Body Text">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The following significant accounting policies have been adopted in the preparation and presentation of the financial report:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(a)	Borrowings and Borrowing Costs
+</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Cool Gray" FontStyle="Book">
+				<Content>Borrowings are recorded initially at fair value, net of transaction costs. Subsequent to initial recognition, borrowings are measured at amortised cost with any difference between the initial recognised amount and the redemption value being recognised in profit and loss over the period of the borrowing using the effective interest rate method.</Content>
+				<Br />
+				<Content>	Other borrowing costs are recognised as an expense in the period in which they are incurred.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(b)	Cash and Cash Equivalents
+</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Cool Gray" FontStyle="Book">
+				<Content>Cash comprises cash on hand and demand deposits. Cash equivalents are short term, highly liquid investments that are readily convertible to known amounts of cash and are subject to an insignificant risk of changes in value.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(c)	Employee Benefits
+</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Grey" FontStyle="Book">
+				<Content>A liability is recognised for benefits accruing to employees in respect of wages and salaries, annual leave, long service leave, and sick leave when it is probable that settlement will be required, and they are capable of being measured reliably.</Content>
+				<Br />
+				<Content>	Liabilities recognised in respect of employee benefits expected to be settled within 12 months are measured at their nominal values, using the remuneration rate expected to apply at the time of settlement.</Content>
+				<Br />
+				<Content>	Liabilities recognised in respect of employee benefits which are not expected to be settled within 12 months are measured as the present value of the estimated future cash outflows to be made by the consolidated entity in respect of services provided by employees up to the reporting date.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(d)	Financial assets</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Cool Gray" FontStyle="Book">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Medium">
+				<Content>Classification and measurement of financial assets</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>All recognised financial assets that are within the scope of AASB 9 are required to be subsequently measured at amortised cost or fair value on the basis of the entity’s business model for managing the financial assets and the contractual cash flow characteristics of the financial assets. Specifically:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>debt investments that are held within a business model whose objective is to collect the contractual cash flows, and that have contractual cash flows that are solely payments of principal and interest on the principal amount outstanding, are subsequently measured at amortised cost;</Content>
+				<Br />
+				<Content>all other debt investments and equity investments are subsequently measured at fair value through profit and loss (FVTPL).</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Despite the foregoing, the consolidated entity may make the following irrevocable election/designation at initial recognition of a financial asset:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>the consolidated entity may irrevocably elect to present subsequent changes in fair value of an equity investment that is neither held for trading nor contingent consideration recognised by an acquirer in a business combination to which IFRS 3 applies in other comprehensive income; and</Content>
+				<Br />
+				<Content>the consolidated entity may irrevocably designate a debt investment that meets the amortised cost or fair value through other comprehensive income (FVTOCI) criteria as measured at FVTPL if doing so eliminates or significantly reduces an accounting mismatch.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Debt instruments that are subsequently measured at amortised cost or at FVTOCI are subject to impairment testing.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Bold">
+				<Content>Impairment of financial assets</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Br />
+				<Content>In relation to the impairment of financial assets, AASB 9 requires an expected credit loss (ECL) model as opposed to an incurred credit loss model under IAS 39. The ECL model requires the consolidated entity to account for expected credit losses and changes in those expected credit losses at each reporting date to reflect changes in credit risk since initial recognition of the financial assets. In other words, it is no longer necessary for a credit event to have occurred before credit losses are recognised.</Content>
+				<Br />
+				<Content>The consolidated entity reviewed its related party loan receivables for impairment under the General Approach to determine whether there has been a Significant Increase in Credit Risk (SICR) since initial recognition and whether loans are credit impaired. This determines whether the loans are in Stage 1, Stage 2, or Stage 3, which in turn determines both;</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>the amount of ECL to be recognised: 12-month ECL or Lifetime ECL; and</Content>
+				<Br />
+				<Content>the amount of interest income to be recognised in future reporting periods: Effective Interest Rate (EIR) based on gross carrying amount of the loan which excludes ECL or the net carrying amount (i.e. the amortised cost) which includes ECL.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Lifetime ECL are the ECL that result from all possible default events over the expected life of loans whereas 12-month ECL are a portion of Lifetime ECL that represent the ECL that result from default events that are possible within 12 months of the reporting date. </Content>
+				<Br />
+				<Content>The consolidated entity reviewed its related party loans and assessed that none of the loans have suffered SICR with no further credit losses recognised within 12 months of the reporting date.</Content>
+				<Br />
+				<Content>Loss allowances for trade receivables are measured at an amount equal to lifetime ECLs. When determining whether the credit risk of a financial asset has increased significantly since initial recognition and when estimating ECLs, the consolidated entity considers reasonable and supportable information that is relevant and available without undue cost or effort. This is determined by reference to past default experience. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(e)	Financial Instruments issued by the consolidated entity</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Debt and Equity Instruments</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Debt and equity instruments are classified as either liabilities or as equity in accordance with the substance of the contractual arrangement.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Interest</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Interest is classified as an expense consistent with the balance sheet classification of the related debt.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(f)	Goods and Services Tax</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Revenues, exp</Content>
+				<Content>enses and assets are recognised net of the amount of goods and services tax (GST), except:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent" LeftIndent="39.68503937007875">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>(i) <?ACE 7?>where the amount of GST incurred is not recoverable from the taxation authority, it is recognised as part of the cost of acquisition of an asset or as part of an item of expense; or</Content>
+				<Br />
+				<Content>(ii) for trade receivables and payables which are recognised inclusive of GST.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The net amount of GST recoverable from, or payable to, the taxation authority is included as part of receivables or payables.</Content>
+				<Br />
+				<Content>Cash flows are included in the statement of cash flows on a gross basis. The GST component of cash flows arising from investing and financing activities which is recoverable from or payable to the taxation authority is classified as operating cash flows.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(g)	Impairment of Other Tangible and Intangible Assets</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>At each reporting date, the consolidated entity reviews the carrying amounts of its tangible and intangible assets to determine whether there is any indication that those assets have suffered an impairment loss. If any such indication exists, the recoverable amount of the asset is estimated to determine the extent of the impairment loss (if any). Where the asset does not generate cash flows that are independent from other assets, the consolidated entity estimates the recoverable amount of the cash generating unit to which the asset belongs. </Content>
+				<Br />
+				<Content>Where a reasonable and consistent basis can be identified, corporate assets are also allocated to individual cash generating units, otherwise they are allocated the smallest group of cash generating units for which a reasonable and consistent allocation basis can be identified.</Content>
+				<Br />
+				<Content>Intangible assets with indefinite useful lives and intangible assets not yet available for use are tested for impairment annually and whenever there is an indication that the asset may be impaired.</Content>
+				<Br />
+				<Content>Recoverable amount is the higher of fair value less costs to sell and value in use. In assessing value in use, the estimated future cash flows are discounted to their present value using a post-tax discount rate that reflects current market assessments of the time value of money and the risks specific to the asset for which the estimates of future cash flows have not been adjusted. Notwithstanding this, value in use is depreciated replacement cost of an asset when the future economic benefits of the asset are not primarily dependent on the asset’s ability to generate net cash inflows and where the consolidated entity would, if deprived of the asset, replace its remaining future economic benefits. 
+If the recoverable amount of an asset (or cash-generating unit) is estimated to be less than it’s carrying amount, the carrying amount of the asset (cash-generating unit) is reduced to its recoverable amount. An impairment loss is recognised in profit or loss immediately, unless the relevant asset is carried at fair value, in which case the impairment loss is treated as a revaluation decrease.</Content>
+				<Br />
+				<Content>Where an impairment loss subsequently reverses, the carrying amount of the asset (cash-generating unit) is increased to the revised estimate of its recoverable amount, but only to the extent that the increased carrying amount does not exceed the carrying amount that would have been determined had no impairment loss been recognised for the asset (cash-generating unit) in prior periods. </Content>
+				<Br />
+				<Content>A reversal of an impairment loss is recognised in profit or loss immediately, unless the relevant asset is carried at fair value, in which case the reversal of the impairment loss is treated as a revaluation increase.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(h)	Intangible Assets</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Capitalised Software and Databases</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Capitalised software is recorded at cost less accumulated amortisation and impairment. Amortisation is charged on a straight-line basis over the estimated useful life of the software being three to five years.</Content>
+				<Br />
+				<Content>Configuration and customisation of a third-party’s cloud-based software, in a Software as a Service (SaaS) computing arrangement, are expensed in line with IFRS Interpretations Committee accounting guidelines released in April 2021.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Mastheads</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Mastheads recognised by the Group by nature have an indefinite useful life and are not amortised. Each period, the useful life of this asset is reviewed to determine whether events and circumstances continue to support an indefinite useful life assessment for the asset. Such assets are tested for impairment in accordance with the policy stated in note 24(g).</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Domain Names</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Domain Names recognised by the Group have an indefinite useful life and are not amortised. Each period, the useful life of this asset is reviewed to determine whether events and circumstances continue to support an indefinite useful life assessment for the asset. Such assets are tested for impairment in accordance with the policy stated in note 24(g).</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(i)	Leased Assets</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Grey">
+				<Content>At inception of a contract, the Group assesses whether a contract is, or contains, a lease. A contract is, or contains, a lease if the contract conveys the right to control the use of an identified asset for a period of time in exchange for consideration.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>As a Lessee</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Grey">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>At commencement or on modification of a contract that contains a lease component, the Group allocates the consideration in the contract to each lease component on the basis of its relative stand-alone prices. However, for the leases of property the Group has elected not to separate non-lease components and account for the lease and non-lease components as a single lease component. </Content>
+				<Br />
+				<Content>The Group recognises a right-of-use asset and a lease liability at the lease commencement date. The right-of-use asset is initially measured at cost, which comprises the initial amount of the lease liability adjusted for any lease payments made at or before the commencement date, plus any initial direct costs incurred and an estimate of costs to dismantle and remove the underlying asset or to restore the underlying asset or the site on which it is located, less any lease incentives received. </Content>
+				<Br />
+				<Content>The right-of-use asset is subsequently depreciated using the straight-line method from the commencement date to the end of the lease term, unless the lease transfers ownership of the underlying asset to the Group by the end of the lease term or the cost of the right-of-use asset reflects that the Group will exercise a purchase option. In that case the right-of-use asset will be depreciated over the useful life of the underlying asset, which is determined on the same basis as those of property and equipment. In addition, the right-of-use asset is periodically reduced by impairment losses, if any, and adjusted for certain remeasurements of the lease liability. The lease liability is initially measured at the present value of the lease payments that are not paid at the commencement date, discounted using the interest rate implicit in the lease or, if that rate cannot be readily determined, the Group’s incremental borrowing rate. Generally, the Group uses its incremental borrowing rate as the discount rate. </Content>
+				<Br />
+				<Content>The Group determines its incremental borrowing rate by obtaining interest rates from various external financing sources and makes certain adjustments to reflect the terms of the lease and type of the asset leased. Lease payments included in the measurement of the lease liability comprise the following: </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>fixed payments, including in-substance fixed payments; </Content>
+				<Br />
+				<Content>variable lease payments that depend on an index or a rate, initially measured using the index or rate a at the commencement date; </Content>
+				<Br />
+				<Content>amounts expected to be payable under a residual value guarantee; and </Content>
+				<Br />
+				<Content>the exercise price under a purchase option that the Group is reasonably certain to exercise, lease payments in an optional renewal period if the Group is reasonably certain to exercise an extension option, and penalties for early termination of a lease unless the Group is reasonably certain not to terminate early. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The lease liability is measured at amortised cost using the effective interest method. It is remeasured when there is a change in future lease payments arising from </Content>
+				<Content>a change in an index or rate, if there is a change in the Group’s estimate of the amount expected to be payable under a residual value guarantee, if the Group changes its assessment of whether it will exercise a purchase, extension or termination option or if there is a revised in-substance fixed lease payment.  </Content>
+				<Br />
+				<Content>When the lease liability is remeasured in this way, a corresponding adjustment is made to the carrying amount of the right-of-use asset, or is recorded in profit or loss if the carrying amount of the right-of-use asset has been reduced to zero.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(j)	Payables</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Trade payables and other accounts payable are recognised when the consolidated entity becomes obliged to make future payments resulting from the purchase of goods and services. Trade and other payables are stated at amortised cost.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(k)	Property, Plant &amp; Equipment</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Plant and equipment, buildings and infrastructure capital are stated at cost less accumulated depreciation and impairment. Cost includes expenditure that is directly attributable to the acquisition of the item. In the event that settlement of all or part of the purchase consideration is deferred, cost is determined by discounting the amounts payable in the future to their present value as at the date of acquisition.</Content>
+				<Br />
+				<Content>Depreciation is recognised on property, plant and equipment, including freehold buildings but excluding land. Depreciation is calculated on a straight-line basis to write-off the net cost or other revalued amount of each asset over its expected useful life to its residual value. Leasehold improvements are depreciated over the period of the lease or estimated useful life; whichever is the shorter, using the straight-line method. The estimated useful lives, residual values and depreciation method are reviewed at the end of each annual reporting period, with effect of any changes recognised on a prospective basis.</Content>
+				<Br />
+				<Content>The following estimated useful lives are used in the calculation of depreciation: </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent" LeftIndent="36.85039370078741">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>	Buildings and Improvements	10 to 40 years</Content>
+				<Br />
+				<Content>	Plant and Equipment		2 to 20 years</Content>
+				<Br />
+				<Content>	Infrastructure Capital		5 to 10 years</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>During the period the consolidated entity undertook the management of projects which are part of the capital infrastructure program. These projects are individually assessed for appropriateness of recognition as assets within the consolidated statement of financial position of the consolidated entity. The key elements for recognition of any capital expenditure as an asset are control and ensuring that future economic benefits will flow to the consolidated entity.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(l)	Provisions</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Provisions are recognised when the consolidated entity has a present obligation (legal or constructive) as a result of a past event, it is probable that the consolidated entity will be required to settle the obligation, and a reliable estimate can be made of the amount of the obligation, the future sacrifice for economic benefits is probable, and the amount of the provision can be measured reliably.</Content>
+				<Br />
+				<Content>The amount recognised as a provision is the best estimate of the consideration required to settle the present obligation at reporting date, taking into account the risks and uncertainties surrounding the obligation. Where a provision is measured using the cashflows estimated to settle the present obligation, its carrying amount is the present value of those cashflows.</Content>
+				<Br />
+				<Content>When some or all of the economic benefits required to settle a provision are expected to be recovered from a third party, the receivable is recognised as an asset if it is virtually certain that reimbursement will be received, and the amount of the receivable can be measured reliably.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Infrastructure</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Racing Victoria holds capital commitment obligations to clubs in line with its formalised infrastructure plan. These approved infrastructure projects are appropriately provided for following formal submission to the State Government’s VRIF program. The provision is reviewed annually by management having regard to the most recent infrastructure schedule and the status of each project within.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Accident Insurance Fund</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Prior to 1 September 1985 the Fund was an authorised insurer for the purposes of the Workers Compensation Act 1958. The provision for outstanding claims is disclosed at note 11. The provision is reviewed annually by management having regard for material events impacting the calculation of the provision.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(m)	Revenue</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The consolidated entity recognises revenue when it transfers control over a product or service to a customer. Revenue is measured at the fair value of the consideration received or receivable. Revenue is reduced for estimated customer returns, rebates and other similar allowances.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Wagering Revenue</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Thoroughbred racing industry revenue is recognised when receivable under the joint venture agreements with the Tabcorp group of companies.</Content>
+				<Br />
+				<Content>Race fields revenue is recognised when receivable under the policy applied to all licensed wagering service providers for the publication and use of Victorian thoroughbred race fields.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Rendering of Services
+</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book" AppliedLanguage="$ID/English: USA" Underline="false" UnderlineOffset="-9999" UnderlineWeight="-9999">
+				<Content>Revenue from a contract to provide services is recognised by reference to the stage of completion of the contract. The stage of the contract is determined as follows:</Content>
+				<Br />
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>installation fees are recognised by reference to the stage of completion of the installation, determined as the proportion of the total time expected to install that has elapsed at reporting date;</Content>
+				<Br />
+				<Content>servicing fees included in the price of products sold are recognised by reference to the proportion of the total cost of providing the servicing for the product sold, considering historical trends in the number of services actually provided on past goods sold; and</Content>
+				<Br />
+				<Content>revenue from time and material contracts is recognised at the contractual rates as labour hours are delivered and direct expenses incurred.</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" ParagraphBreakType="NextColumn">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Contributions of Assets</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Revenue arising from the contribution of assets is recognised when the consolidated entity gains control of the contribution or the right to receive the contribution.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Interest revenue</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Interest revenue is accrued on a time basis, by reference to the principal outstanding and effective interest rate applicable, which is the rate that exactly discounts estimated future cash receipts through the expected life of the financial asset to the assets carrying amount.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Government Grants</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Government grants are not recognised until there is reasonable assurance that the consolidated entity will comply with the conditions attaching to them and that the grants will be received.</Content>
+				<Br />
+				<Content>Government grants are recognised in profit or loss on a systematic basis over the periods in which the consolidated entity recognises as expenses the related costs for which the grants are intended to compensate. Specifically, Government grants whose primary condition is that the consolidated entity should purchase, construct or otherwise acquire non-current assets are recognised as deferred revenue in the consolidated statement of financial position and transferred to profit or loss on a systematic and rational basis over the useful lives of the related assets.</Content>
+				<Br />
+				<Content>Government grants that are receivable as compensation for expenses or losses already incurred or for the purpose of giving immediate financial support to the consolidated entity with no future related costs are recognised in profit or loss in the period in which they become receivable.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H5 Sub heading Gray Underline Italics" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>VOBIS Nominations</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>VOBIS nomination fees received are deferred into unearned revenue, to be recognised as revenue in future years based upon the performance obligation of VOBIS bonuses on offer to eligible horses dependant on age.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(n)	Income Tax</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The consolidated entity is exempt from Income Tax under section 50-45 of the Income Tax Assessment Act.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(o)	Investments in Associates</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>An associate is an entity over which the consolidated entity has significant influence. Significant influence is the power to participate in the financial and operating policy decisions of the investee but is not control or joint control over those policies.</Content>
+				<Br />
+				<Content>The results and assets and</Content>
+				<Content> liabilities of associates are incorporated in these consolidated financial statements using the equity method of accounting, except when the investment, or a portion thereof, is classified as held for sale, in which case it is accounted for in accordance with AASB 5. Under the equity method, an investment in an associate is initially recognised in the consolidated statement of financial position at cost and adjusted thereafter to recognise the Group’s share of the profit or loss and other comprehensive income of the associate.</Content>
+				<Br />
+				<Content>An investment in an associate is accounted for using the equity method from the date on which the investee becomes an associate. On acquisition of the investment in an associate, any excess of the cost of the investment over the Group’s share of the net fair value of the identifiable assets and liabilities of the investee is recognised as goodwill, which is included within the carrying amount of the investment. Any excess of the Group’s share of the net fair value of the identifiable assets and liabilities over the cost of the investment, after reassessment, is recognised immediately in profit or loss in the period in which the investment is acquired.</Content>
+				<Br />
+				<Content>The requirements of AASB 9 are applied to determine whether it is necessary to recognise any impairment loss with respect to the Group’s investment in an associate. When necessary, the entire carrying amount of the investment (including goodwill) is tested for impairment in accordance with AASB 136 ‘Impairment of Assets’ as a single asset by comparing its recoverable amount (higher of value in use and fair value less costs of disposal) with its carrying amount, any impairment loss recognised forms part of the carrying amount of the investment. Any reversal of that impairment loss is recognised in accordance with AASB 136 to the extent that the recoverable amount of the investment subsequently increases.</Content>
+				<Br />
+				<Content>The Group discontinues the use of the equity method from the date when the investment ceases to be an associate, or when the investment is classified as held for sale.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(p)	Subsidiaries</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The consolidated financial statements incorporate the assets and liabilities of all subsidiaries of Racing Victoria (‘’consolidated entity’’ or ‘’parent entity’’) as at 30 June 2025 and the results of all subsidiaries for the period then ended. Racing Victoria and its subsidiaries together are referred to in this financial report as the group or the consolidated entity.</Content>
+				<Br />
+				<Content>Subsidiaries are all entities (including special purpose entities) over which the consolidated entity has control. Control is achieved when the Company:</Content>
+				<Br />
+				<Content>•	has power over the investee;</Content>
+				<Br />
+				<Content>•	is exposed, or has rights, to variable returns from its involvement with the investee; and</Content>
+				<Br />
+				<Content>•	has the ability to use its power to affect its returns.</Content>
+				<Br />
+				<Content>The Company reassesses whether or not it controls an investee if facts and circumstances indicate that there are changes to one or more of the three elements of control listed above. When the Company has less than a majority of the voting rights of an investee, it has power over the investee when the voting rights are sufficient to give it the practical ability to direct the relevant activities of the investee unilaterally. The Company considers all relevant facts and circumstances in assessing whether or not the Company’s voting rights in an investee are sufficient to give it power, including:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>the size of the Company’s holding of voting rights relative to the size and dispersion of holdings of the other vote holders;</Content>
+				<Br />
+				<Content>potential voting rights held by the Company, other vote holders or other parties;</Content>
+				<Br />
+				<Content>rights arising from other contractual arrangements; and</Content>
+				<Br />
+				<Content>any additional facts and circumstances that indicate that the Company has, or does not have, the current ability to direct the relevant activities at the time that decisions need to be made, including voting patterns at previous shareholders’ meetings.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Consolidation of a subsidiary begins when the Company obtains control over the subsidiary and ceases when the Company loses control of the subsidiary. Specifically, income and expenses of a subsidiary acquired or disposed of during the year are included in the consolidated statement of profit or loss and other comprehensive income from the date the Company gains control until the date when the Company ceases to control the subsidiary.</Content>
+				<Br />
+				<Content>Surplus or deficit and each component of other comprehensive income are attributed to the owners of the Company.</Content>
+				<Br />
+				<Content>When necessary, adjustments are made to the financial statements of subsidiaries to bring their accounting policies into line with the Group’s accounting policies.</Content>
+				<Br />
+				<Content>All intragroup assets and liabilities, equity, income, expenses and cash flows relating to transactions between members of the Group are eliminated in full on consolidation. Investments in subsidiaries are recognised at cost.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(q)	Parent Entity Financial Information</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The financial information for the parent entity, Racing Victoria Limited, disclosed in note 19 has been prepared on the same basis as the consolidated financial statements.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(r)	Goodwill</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Goodwill arising on an acquisition of a business is carried at cost as established at the date of the acquisition of the business less accumulated impairment losses, if any.</Content>
+				<Br />
+				<Content>For the purposes of impairment testing, goodwill is allocated to each of the Group’s cash-generating units (or groups of cash-generating units) that is expected to benefit from the synergies of the combination.</Content>
+				<Br />
+				<Content>A cash-generating unit to which goodwill has been allocated is tested for impairment annually, or more frequently when there is an indication that the unit may be impaired. If the recoverable amount of the cash-generating unit is less than its carrying amount, the impairment loss is allocated first to reduce the carrying amount of any goodwill allocated to the unit and then to the other assets of the unit pro rata based on the carrying amount of each asset in the unit. Any impairment loss for goodwill is recognised directly in profit or loss. An impairment loss recognised for goodwill is not reversed in subsequent periods.</Content>
+				<Br />
+				<Content>On disposal of the relevant cash-generating unit, the attributable amount of goodwill is included in the determination of the profit or loss on disposal.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>(s)	New Accounting Standards and Interpretations</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The Group adopted the following standard and amendments which did not have any impact on the amounts recognised in current or prior periods.</Content>
+				<Br />
+				<Content>From 1 July 2023:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>AASB 17 Insurance Contracts, AASB 2021-2Amendments to Australian Accounting Standards – Disclosure of Accounting Policies and Definition of Accounting Estimates</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>From 1 July 2024:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>AASB 2023-1 Amendments to Australian Accounting Standards – Supplier Finance Arrangements </Content>
+				<Br />
+				<Content>AASB 2020-1 Amendments to Australian Accounting Standards – Classification of Liabilities as Current or Non-current </Content>
+				<Br />
+				<Content>AASB 2020-6 Amendments to Australian Accounting Standards – Classification of Liabilities as Current or Non-current - Deferral of Effective Date</Content>
+				<Br />
+				<Content>AASB 2022-6 Amendments to Australian Accounting Standards – Classification Non-current Liabilities with Covenants</Content>
+				<Br />
+				<Content>AASB 2022-5 Amendments to Australian Accounting Standards – Lease Liability in a Sale and Leaseback</Content>
+				<Br />
+				<Content>AASB 2022-10 Amendments to Australian Accounting Standards - Fair Value Measurement of Non-Financial assets of Not-for-Profit Public Sector Entities</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>25. Additional Consolidated Entity Information</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Header 3">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Cool Gray" FontStyle="Book" Tracking="-10" Capitalization="Normal" AppliedLanguage="$ID/English: UK">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>Racing Victoria Limited is a consolidated entity incorporated and operating in Australia. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Principal Registered Office and Principal Place of Business: 
+
+400 Epsom Road
+Flemington Victoria 3031
+Telephone: (03) 9258 4258
+</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Medium">
+				<Content>www.racingvictoria.com.au</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

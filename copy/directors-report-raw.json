@@ -1,0 +1,695 @@
+{
+ "intro": [
+  "The directors of Racing Victoria Limited (Racing Victoria or the ‘Company’) submit herewith the annual financial report of the company for the financial year ended 30 June 2025. In compliance with the provisions of the Corporations Act 2001 (Cth) (Corporations Act), the directors’ report follows.",
+  "The names of the directors of the Company during or since the end of the financial year are as follows."
+ ],
+ "directors": [
+  {
+   "id": "tim-eddy",
+   "name": "Tim Eddy",
+   "role": "Chair",
+   "appointed": "Appointed Director 9 December 2019 and Chair 21 June 2024",
+   "paras": [
+    "Mr Eddy had a successful 40-year career at Ernst & Young including the positions of Managing Partner Operations - Oceania, Global Vice Chair – EY Global Services and National Managing Partner – EY Transaction Advisory Services. He currently serves as a Director of Western Sydney Airport, Chair of The Red Fox Group, Rennie Advisory and BIO101 Financial Advisory.",
+    "Mr Eddy is a member of the Racing Victoria Audit, Risk & Welfare Sub Committee and the Racing Sub Committee.",
+    "Mr Eddy is Chair of the Racing Victoria & Country Racing Victoria Steering Committee and the Racing Victoria Members Consultative Committee.",
+    "Mr Eddy is a Director of Racing Australia and is also Chair of Equine Welfare Advisory Council."
+   ]
+  },
+  {
+   "id": "sharon-mccrohan",
+   "name": "Sharon McCrohan",
+   "role": "Deputy Chair",
+   "appointed": "Appointed Director 9 October 2017 and Deputy Chair 21 June 2024",
+   "paras": [
+    "Ms McCrohan has a career spanning almost 30 years as a journalist and adviser to Federal and Victorian Government leaders and cabinets, private sector boards, sporting bodies, charities and Government agencies. She is a Director of the Transport Accident Commission and also serves on the board of the Ovarian Cancer Research Foundation.",
+    "Ms McCrohan is a member of the Racing Sub Committee, the Racing Integrity & Equine Welfare Sub Committee and the Racing Victoria Members Consultative Committee."
+   ]
+  },
+  {
+   "id": "aaron-morrison",
+   "name": "Aaron Morrison",
+   "role": "Chief Executive Officer",
+   "appointed": "Appointed 20 August 2024",
+   "paras": [
+    "Prior to his appointment as CEO, Mr Morrison was the Chief Financial Officer / Chief Operating Officer of Racing Victoria since 2017.",
+    "Mr Morrison has had an extensive and successful career across the entertainment, hospitality and gaming sectors. Before joining Racing Victoria, Mr Morrison was Chief Executive Officer of the Sand Hill Road Group and held senior executive and advisory positions with Crown Resorts Ltd and SkyCity Entertainment Group.",
+    "Mr Morrison is a Director of Racing Victoria subsidiaries; Racing.com Media Pty Ltd, Director, Racing.com Pty Ltd, Director, RVL Media Pty Ltd, Director, Thoroughbred Racing Productions (Victoria) Pty Ltd, Director, VTRI Property Pty Ltd, Director VicRacing Audio Services Pty Ltd (formerly 3UZ Pty Ltd), Director, VicRacing Pty Ltd, Director, Sports Wagering Integrity Monitoring Ltd (SWIM)."
+   ]
+  },
+  {
+   "id": "kate-joel",
+   "name": "Kate Joel",
+   "role": "",
+   "appointed": "Appointed Director 9 October 2017",
+   "paras": [
+    "Ms Joel has been a business consultant for over 30 years and currently serves on the Board of the Florey Institute of Neuroscience & Mental Health, having served on the Florey Foundation since 2017. Previously, Ms Joel was CEO of Leonard Joel Auction House and was a member of the Melbourne and Olympic Parks Trust and the Board of Harness Racing Victoria. Prior to joining the Board, Kate served on the RV Integrity Council from 2014-2017. Kate grew up riding trackwork and her involvement in the racing industry spans over 55 yearsMs Joel is Chair of the Racing Integrity & Equine Welfare Sub Committee and a member of the Racing Victoria Audit, Risk & Welfare Sub Committee."
+   ]
+  },
+  {
+   "id": "ross-lanyon",
+   "name": "Ross Lanyon OAM",
+   "role": "",
+   "appointed": "Appointed Director 9 October 2017",
+   "paras": [
+    "Mr Lanyon is the Managing Director of ENG Media which operates in Regional Victoria. He has received an OAM for his services to thoroughbred racing and the Community of Mildura and was the Chair of Country Racing Victoria from 2011 to 2014.",
+    "Mr Lanyon is also Chair of the Mallee Health Foundation and he is a Director of Mildura District Hospital Fund Ltd and Clay Hero Pty Ltd.Mr Lanyon is a Director of Racing.com Media Pty Ltd and its subsidiaries.",
+    "Mr Lanyon is also a member of the Racing Victoria & Country Racing Victoria Steering Committee and the Racing Integrity & Equine Welfare Sub Committee. Ross Lanyon OAM Appointed Director 9 October 2017Mr Lanyon is the Managing Director of ENG Media which operates in Regional Victoria. He has received an OAM for his services to thoroughbred racing and the Community of Mildura and was the Chair of Country Racing Victoria from 2011 to 2014.",
+    "Mr Lanyon is also Chair of the Mallee Health Foundation and he is a Director of Mildura District Hospital Fund Ltd and Clay Hero Pty Ltd.Mr Lanyon is a Director of Racing.com Media Pty Ltd and its subsidiaries.",
+    "Mr Lanyon is also a member of the Racing Victoria & Country Racing Victoria Steering Committee and the Racing Integrity & Equine Welfare Sub Committee."
+   ]
+  },
+  {
+   "id": "paul-guerra",
+   "name": "Paul Guerra",
+   "role": "",
+   "appointed": "Appointed Director 1 March 2022",
+   "paras": [
+    "Mr Guerra has extensive business experience across a breadth of industries and is currently the CEO of the Melbourne Football Club. Prior to this he was the CEO of Victorian Chamber of Commerce and Industry, the CEO of the Royal Agricultural Society of Victoria, as well as senior Executive and CEO roles across Asia Pacific with UnitedHealth Group, Vodafone and Motorola.",
+    "Mr Guerra has significant Board experience, including previous Chairman roles with Queen Victoria Market and Myagi Ltd amongst others and is currently a Director of Victoria Police Blue Ribbon Foundation.Mr Guerra is a Director of Racing.com Media Pty Ltd and its subsidiaries."
+   ]
+  },
+  {
+   "id": "mark-player",
+   "name": "Mark Player",
+   "role": "",
+   "appointed": "Appointed Director 14 June 2024",
+   "paras": [
+    "Mr Player has been a highly respected member of the international thoroughbred racing and breeding industry for more than 25 years, working in senior positions at the Hong Kong Jockey Club and New Zealand Thoroughbred Marketing.Mr Player founded International Thoroughbred Solutions in 2011, an independent thoroughbred consultancy business and is the Executive Chairman of Macedon Lodge.Mr Player is Chair of the Racing Sub Committee.",
+    "Mr Player is also a member of the Racing Victoria & Country Racing Victoria Steering Committee."
+   ]
+  },
+  {
+   "id": "tim-rourke",
+   "name": "Tim Rourke",
+   "role": "",
+   "appointed": "Appointed Director 14 June 2024",
+   "paras": [
+    "Mr Rourke has extensive business experience and is the current Chief Executive Officer and director of CitiPower, Powercor, United Energy and related companies.",
+    "Mr Rourke also currently serves as a director of Energy Networks Australia.Prior to his current appointments, Mr Rourke has held various senior positions across the energy sector since 1995 and is also an active thoroughbred owner and breeder.Mr Rourke is Chair of the Racing Victoria Audit, Risk & Welfare Sub Committee.",
+    "Mr Rourke is also a member of the Racing Sub Committee."
+   ]
+  }
+ ],
+ "narrative": [
+  {
+   "kind": "subhead",
+   "text": "CURRENT DIRECTORS"
+  },
+  {
+   "kind": "subhead",
+   "text": "OFFICERS"
+  },
+  {
+   "kind": "officer",
+   "text": "Simonette Foletti Company Secretary - appointed 1 January 2024"
+  },
+  {
+   "kind": "subhead",
+   "text": "PRINCIPAL ACTIVITIES, STRATEGY AND OBJECTIVES"
+  },
+  {
+   "kind": "body",
+   "text": "The consolidated entity’s principal activities in the course of the financial period were related to the administration and promotion of thoroughbred racing in the State of Victoria."
+  },
+  {
+   "kind": "body",
+   "text": "Racing Victoria has a critical stewardship role to manage the Victorian thoroughbred racing industry (VTRI), with a focus on growing the sport and ensuring the ongoing sustainability of the industry as a whole, for the benefit of all industry stakeholders."
+  },
+  {
+   "kind": "body",
+   "text": "Racing Victoria’s key goals and objectives are to:"
+  },
+  {
+   "kind": "bullet",
+   "text": "Manage thoroughbred racing to maintain Victoria’s pre-eminence;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Maintain the highest standards of integrity and equine and participant safety and welfare;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Manage the racing calendar to maximise engagement;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Encourage sustainable participation;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Meet social obligations;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Optimise economic benefits;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Ensure efficient operation of the industry;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Focus on sustainable industry funding;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Advocate and promote the industry;"
+  },
+  {
+   "kind": "bullet",
+   "text": "Maintain independence."
+  },
+  {
+   "kind": "subhead",
+   "text": "DIVIDENDS"
+  },
+  {
+   "kind": "body",
+   "text": "Under the Company’s constitution no dividends may be declared or paid."
+  },
+  {
+   "kind": "subhead",
+   "text": "REVIEW OF OPERATIONS"
+  },
+  {
+   "kind": "body",
+   "text": "The net deficit (on a reported basis) of the consolidated entity for the financial year ended 30 June 2025 was $8.885 million compared to a net deficit of $11.834 million in the prior year."
+  },
+  {
+   "kind": "body",
+   "text": "The 2025 result included non business-as-usual (BAU) activity for future strategic benefits for the VTRI. Following adjustment, the normalised net deficit result of $2.532 million remains materially in line with both budget expectation and the prior year."
+  },
+  {
+   "kind": "table",
+   "id": "t1",
+   "rows": [
+    [
+     "Racing Victoria Group (RVG) Result",
+     "2025$ million",
+     "2024$ million"
+    ],
+    [
+     "RVG Reported Net Deficit",
+     "(8.885)",
+     "(11.834)"
+    ],
+    [
+     "Southside Racing transaction",
+     "-",
+     "7.054"
+    ],
+    [
+     "Restructure liability",
+     "1.723",
+     "0.300"
+    ],
+    [
+     "3UZ Pty Ltd net asset movement *",
+     "2.659",
+     "-"
+    ],
+    [
+     "On-course totalisator services transition",
+     "0.585",
+     "-"
+    ],
+    [
+     "Historical media indirect tax liability",
+     "1.386",
+     "0.950"
+    ],
+    [
+     "Other",
+     "-",
+     "0.500"
+    ],
+    [
+     "RVG Normalised Net Deficit",
+     "(2.532)",
+     "(3.030)"
+    ]
+   ]
+  },
+  {
+   "kind": "note",
+   "text": "* Key driver of the movement included an asset impairment realisation based on the actual sale price of assets sold by 3UZ Pty Ltd subsequent to year end. Further details on the sale are provided within the Note 23 of the financial statements."
+  },
+  {
+   "kind": "body",
+   "text": "Whilst macroeconomic challenges leading to softer wagering were forecast to negatively impact key revenue sources, priority was still given to maintaining returns to the industry through owners, participants, and clubs. A key initiative to enable maintenance of these returns was the business wide efficiency program that covered the 2024 and 2025 reporting periods."
+  },
+  {
+   "kind": "body",
+   "text": "To reflect on management efforts and assess the impact of the efficiency program, a high-level estimate of the gross year-on-year (YoY) reduction can be measured by utilising the reported operational expenditure, with these amounts adjusted to remove any non BAU activity and inflationary impacts where management has minimal scope to eliminate uplift (namely remuneration inflation and contracted indexation). At a gross level, a cumulative amount of $13.484 million in operational expenditure has been removed from the consolidated entity during this two-year period. Noting decisions made during 2025 will also deliver further efficiencies during 2026 on an annualised basis."
+  },
+  {
+   "kind": "table",
+   "id": "t2",
+   "rows": [
+    [
+     "RVG Operational Expenditure",
+     "2025$ million",
+     "2024$ million",
+     "2023$ million"
+    ],
+    [
+     "Operating",
+     "63.187",
+     "62.590",
+     "64.654"
+    ],
+    [
+     "Wagering services",
+     "4.978",
+     "8.314",
+     "10.305"
+    ],
+    [
+     "Media services",
+     "60.553",
+     "62.689",
+     "64.068"
+    ],
+    [
+     "Reported Operational Expenditure",
+     "128.718",
+     "133.593",
+     "139.027"
+    ],
+    [
+     "Adjustments:",
+     "",
+     "",
+     ""
+    ],
+    [
+     "Non BAU – Asian Racing Conference",
+     "-",
+     "-",
+     "(2.768)"
+    ],
+    [
+     "Non BAU – Restructure liability",
+     "(1.723)",
+     "(0.300)",
+     "-"
+    ],
+    [
+     "Non BAU – Historical media indirect tax liability",
+     "(1.386)",
+     "(0.950)",
+     "-"
+    ],
+    [
+     "Estimated remuneration and fixed cost inflation ^",
+     "(2.834)",
+     "(2.947)",
+     "-"
+    ],
+    [
+     "Revised Operational Expenditure",
+     "122.775",
+     "129.396",
+     "136.259"
+    ],
+    [
+     "Gross Year-on-Year Reduction Assessment",
+     "6.621",
+     "6.863",
+     ""
+    ]
+   ]
+  },
+  {
+   "kind": "note",
+   "text": "^ Primarily includes labour remuneration increase and contracted expenditure indexation."
+  },
+  {
+   "kind": "body",
+   "text": "Industry sustainability funds accumulated over recent years were also utilised to support the operating financial position and maintenance of important industry support through an expected period of operational uncertainty."
+  },
+  {
+   "kind": "minihead",
+   "text": "Revenue"
+  },
+  {
+   "kind": "body",
+   "text": "The total revenue from operations decreased by -1.9% to $526.501 million versus the prior year (2024: $536.755 million)."
+  },
+  {
+   "kind": "body",
+   "text": "Total wagering revenue for the full year decreased by $129.277 million (-35.5%) versus the prior year as the industry funding model transitioned away from the VICTAB Joint Venture (JV) which ceased on 15 August 2024. This largely reflects a re-classification of how we report the source of income post the end of the JV, and the commencement of the new State Government industry funding arrangements from July 2024. Further details on the transition are provided both below and within Note 1(iii) of the financial statements."
+  },
+  {
+   "kind": "body",
+   "text": "Total wagering turnover of $7.607 billion (2024: $7.927 billion) represented a -3.8% decline on prior year. Whilst there is acknowledgement around the intrinsic link between wagering and racing, market uncertainty regarding the Federal Government’s response to the findings of the Parliamentary Inquiry into Online Gambling Harm continues to influence wagering service providers (WSP) investment. At a macroeconomic level, the weakest YoY GDP growth recorded since the early 1990’s (+1.3%) impacted consumer spending and by extension, expenditure on discretionary goods and services such as wagering."
+  },
+  {
+   "kind": "body",
+   "text": "The year-on-year decline in turnover coincided with the increase in the Victorian Point of Consumption Tax (PoCT) from 10% to 15% on 1 July 2024, the cost of which is absorbed by WSPs. Along with an increase in other taxes, product fees and regulatory costs nationally and combined with tougher macro-economic conditions, WSPs have reacted in the form of less competitive odds pricing (higher overrounds), and decreased investment in customer marketing, promotions and generosities."
+  },
+  {
+   "kind": "body",
+   "text": "The industry funding framework shift, following the execution of a new $1.17 billion ($864 million indicative value) twenty-year Wagering and Betting Licence between Tabcorp Holdings Limited and the Victorian Government, resulted in a transition away from the previous JV to a new funding arrangement, driven by the industry generated PoCT and fixed distribution from the State Government. This source increased by $124.449 million versus the prior year."
+  },
+  {
+   "kind": "body",
+   "text": "From 1 July 2024, the State Government increased the PoCT levied on wagering by Victorian residents, with the rate of PoCT collected increasing from 10% to 15% of Net Wagering Revenue (NWR). The Victorian Racing Industry (VRI) distribution payment agreed to be paid to the VRI by the State Government increased from 3.5% to 7.5% of NWR effective from the same date. In line with the transition to the new VRI framework PoCT distributions to the consolidated entity increased by $67.278 million versus the prior year."
+  },
+  {
+   "kind": "body",
+   "text": "On 30 August 2024, the VRI together with the State Government executed the VRI Funding Deed. This ten-year agreement, which was backdated to commence on 16 August 2024, provides a transition of industry funding to the VRI."
+  },
+  {
+   "kind": "body",
+   "text": "The thoroughbred, harness and greyhound racing codes have agreed on an appropriate code sharing arrangement of the above VRI funding."
+  },
+  {
+   "kind": "body",
+   "text": "Victorian Racing Industry Funding (VRIF) grants were also received to fund infrastructure projects during the period and to support initiatives including major events, owners ticketing, equine welfare limb injury prevention and the VOBIS program."
+  },
+  {
+   "kind": "body",
+   "text": "Media revenue decreased by $1.324 million (-1.5%) to $85.372 million. The decline primarily related to a softening in the wagering advertising market and impacted revenue generated by Racing.com."
+  },
+  {
+   "kind": "body",
+   "text": "Funds under investment (excluding withdrawals) increased in value over the period due to continued strong interest income and growth in major financial markets. Total investment revenue, including realised gains/losses, unrealised gains/losses and investment income in the form of dividends and interest was positive for the year at +$6.359 million (2024: +$9.091 million)."
+  },
+  {
+   "kind": "minihead",
+   "text": "Expenditure"
+  },
+  {
+   "kind": "body",
+   "text": "Total expenditure for the full year decreased to $533.498 million (2024: $547.985 million)."
+  },
+  {
+   "kind": "diagram",
+   "title": "Racing Victoria Expenditure as a % of Revenue – FY25 vs FY24"
+  },
+  {
+   "kind": "body",
+   "text": "The Racing Victoria business model seeks to ensure that Racing Victoria has sufficient income to allow it to make regular, proactive investments to ensure the delivery of the best racing and to support the sustainability of its various participants and stakeholders. With the exception of the operational spend required to manage, govern, operate, market and promote Victorian thoroughbred racing, all of which runs at approximately 12% of revenue, most of RV expenditure is directed towards funding, supporting and growing the industry and its stakeholders and the number of participants. This is outlined as follows:"
+  },
+  {
+   "kind": "minihead",
+   "text": "Industry Expenditure"
+  },
+  {
+   "kind": "body",
+   "text": "Industry expenditure reflects targeted funding and investment provided to owners, participants and clubs and accounts for the majority of the consolidated entity expenditure (75% of revenue)."
+  },
+  {
+   "kind": "bullet",
+   "text": "Whilst total Prizemoney and VOBIS bonuses on offer remained in line with prior year at circa $316 million, Racing Victoria’s contribution towards this expenditure slightly decreased by $3.306 million (-1.2%) to $265.761 million, primarily due to an allocation of prizemoney now being directed towards the welfare of participants, combined with the variable nature of items such as bonus strike rates, field sizes, divided races and meeting abandonments. An increase in club and other partner contributions towards prizemoney enabled the ‘on offer’ amount to remain in line with prior year."
+  },
+  {
+   "kind": "bullet",
+   "text": "Club funding expenditure increased by $1.681 million (+1.9%) to $89.953 million. The annual increase is largely due a revision in the composition of some club funding arrangements. Club funding is undertaken in accordance with funding arrangements in place with each club, which have both fixed and performance-based components."
+  },
+  {
+   "kind": "bullet",
+   "text": "Infrastructure expenditure decreased by $5.681 million (-52.6%) to $5.126 million. This reflects the completion of major infrastructure projects."
+  },
+  {
+   "kind": "bullet",
+   "text": "Industry and participant support increased by $4.306 million (+13.9%) to $35.286 million. This spend reflects the continued commitment to support the industry through various initiatives and programs, most notably those supporting the welfare of our participants and thoroughbreds. Other forms of support include jockey ride fees, jockey insurance coverage, workforce development including the apprentice program and owner initiatives. The increase on prior year primarily relates to the spend tied to the additional 1% of prizemoney funding from 1 February 2024 being directed towards supporting participants, including commitments to support rising trainer Workcover premiums."
+  },
+  {
+   "kind": "minihead",
+   "text": "Operational Expenditure (incl. Operating, Media & Wagering Expenditure)"
+  },
+  {
+   "kind": "body",
+   "text": "Total operational expenditure decreased by $4.875 million (-3.6%) to $128.718 million."
+  },
+  {
+   "kind": "body",
+   "text": "The decline in operational expenditure extends further following the exclusion of some key non-BAU activity in the reporting year, primarily incurred to unlock future strategic benefit to the VTRI. Following adjustment, normalised operational expenditure for the reporting year reflects a decrease of $6.621 million (-5.1%) on the prior year, with the full benefit of some of these reductions to be realised on an annualised basis in future periods."
+  },
+  {
+   "kind": "body",
+   "text": "Operating expenditure includes the core costs of managing and administering the VTRI, including:"
+  },
+  {
+   "kind": "bullet",
+   "text": "racing operations (including race day services, vets and quarantine);"
+  },
+  {
+   "kind": "bullet",
+   "text": "integrity and stewarding;"
+  },
+  {
+   "kind": "bullet",
+   "text": "media and wagering;"
+  },
+  {
+   "kind": "bullet",
+   "text": "marketing, public relations and communications; and"
+  },
+  {
+   "kind": "bullet",
+   "text": "executive, strategy, administration, technology, legal, risk and compliance."
+  },
+  {
+   "kind": "body",
+   "text": "Highlighting operational expenditure separate from other expenditure activities allows for better external benchmarking and an assessment of the efficiency of the stewardship of Victorian thoroughbred racing operations. Management continues to pursue cost control and process efficiency improvements across all key activities."
+  },
+  {
+   "kind": "minihead",
+   "text": "Depreciation, Amortisation and Other Asset Expenditure"
+  },
+  {
+   "kind": "body",
+   "text": "Depreciation, amortisation and other asset expenditure decreased by $6.612 million (-43.3%) to $8.654 million. This expenditure decrease relates to the prior year loss on disposal associated with the below market value transfer of Pakenham stabling allotments and Cranbourne land to the Cranbourne Pakenham Racing Club as part of the agreed combination arrangements between Racing Victoria and the merged Club’s."
+  },
+  {
+   "kind": "minihead",
+   "text": "Investment Activities"
+  },
+  {
+   "kind": "body",
+   "text": "Racing Victoria holds and invests financial assets on behalf of the VTRI as part of an Industry Sustainability Fund (ISF). The purpose of the ISF is to ensure that the industry retains sufficient funds to protect the long-term sustainability of the industry, support the operating financial position and maintenance of important industry support during times of operational uncertainty, provide funds to support important industry-wide capital infrastructure investments and to assist with finance and investment that may not be otherwise available."
+  },
+  {
+   "kind": "body",
+   "text": "The ISF framework defines its assets as those investments which have a broader industry benefit with an investment or commercial return objective, interest bearing loans with related parties (at discount to market rates), and land earmarked for development with a commercial return."
+  },
+  {
+   "kind": "body",
+   "text": "The consolidated entity engages Evans and Partners to manage and invest accumulated surplus cash that sits outside operating cash requirements. A balanced investment mandate is maintained, with investments made across various asset classes including cash, interest rate securities, Australian and international equities, property, infrastructure and alternative investments. The investment mandate and asset allocations are reviewed on an annual basis together with the governing investment policy."
+  },
+  {
+   "kind": "body",
+   "text": "At 30 June 2025 these financial assets totalled $57.839 million (2024: $72.956 million)."
+  },
+  {
+   "kind": "body",
+   "text": "The movement from prior year can largely be attributed to drawdowns to manage the consolidated entity’s net deficit and negative operating cash flow through the reporting period."
+  },
+  {
+   "kind": "subhead",
+   "text": "CHANGES IN STATE OF AFFAIRS"
+  },
+  {
+   "kind": "body",
+   "text": "There was no significant change in the state of affairs of the consolidated entity during the financial year."
+  },
+  {
+   "kind": "subhead",
+   "text": "SUBSEQUENT EVENTS"
+  },
+  {
+   "kind": "body",
+   "text": "On 21 August 2025, the thoroughbred, harness and greyhound racing codes executed the VRI Inter-Code Deed. This Deed primarily covers the code sharing arrangements for VRI funding received for the period 1 July 2025 through to 15 August 2034."
+  },
+  {
+   "kind": "body",
+   "text": "On 1 September 2025, 3UZ Pty Ltd executed an asset sale and operating agreement with Sports Entertainment Group (SEN). SEN have consequently taken full operating and financial responsibility for the radio broadcasting of live racing and racing related radio programming from this date. This is underpinned by new long term contractual commitments made by SEN to deliver a dedicated, showcase coverage of Victorian racing. Racing Victoria will no longer be required to make any further shareholder funding contributions towards these radio broadcasting operations."
+  },
+  {
+   "kind": "body",
+   "text": "On 2 September 2025, 3UZ Pty Ltd was renamed VicRacing Audio Services Pty Ltd with this entity continuing to hold studio and land assets that were excluded from the above sale to SEN."
+  },
+  {
+   "kind": "body",
+   "text": "Other than that noted above, there has not been any matter or circumstance occurring subsequent to the end of the period that has significantly affected or may affect the operations of the consolidated entity, the results of those operations or the state of affairs of the consolidated entity in future financial periods."
+  },
+  {
+   "kind": "subhead",
+   "text": "FUTURE DEVELOPMENTS"
+  },
+  {
+   "kind": "body",
+   "text": "Disclosure of information regarding likely developments in the operations of the consolidated entity in future financial periods and the expected results of those operations is likely to result in unreasonable prejudice to the consolidated entity. Accordingly, this information has not been included in this report"
+  },
+  {
+   "kind": "subhead",
+   "text": "DIRECTORS’ MEETINGS"
+  },
+  {
+   "kind": "body",
+   "text": "The following table sets out the number of directors’ meetings (including monthly and special meetings of the board and meetings of the audit, risk & participant welfare committee) held during the financial period and the number of meetings attended by each director (while they were a director or committee member). During the financial year, 10 board meetings, 1 special board meetings, and 6 audit, risk & participant welfare (ARWSC) committee meetings were held."
+  },
+  {
+   "kind": "attendance",
+   "id": "t3",
+   "rows": [
+    [
+     "",
+     "BOARD OF DIRECTORS",
+     "ARWSC"
+    ],
+    [
+     "Directors",
+     "No. ofMonthlyMeetingsHeld",
+     "No. ofMonthly MeetingsAttended",
+     "No. ofSpecialMeetingsHeld",
+     "No. ofSpecial MeetingsAttended",
+     "No. ofMeetingsHeld",
+     "No. ofMeetingsAttended"
+    ],
+    [
+     "Tim Eddy",
+     "10",
+     "10",
+     "1",
+     "1",
+     "6",
+     "6"
+    ],
+    [
+     "Paul Guerra",
+     "10",
+     "10",
+     "1",
+     "1",
+     "",
+     ""
+    ],
+    [
+     "Kate Joel",
+     "10",
+     "10",
+     "1",
+     "-",
+     "6",
+     "6"
+    ],
+    [
+     "Ross Lanyon OAM",
+     "10",
+     "9",
+     "1",
+     "1",
+     "",
+     ""
+    ],
+    [
+     "Sharon McCrohan",
+     "10",
+     "10",
+     "1",
+     "-",
+     "",
+     ""
+    ],
+    [
+     "Tim Rourke",
+     "10",
+     "10",
+     "1",
+     "1",
+     "6",
+     "6"
+    ],
+    [
+     "Mark Player",
+     "10",
+     "10",
+     "1",
+     "1",
+     "",
+     ""
+    ],
+    [
+     "Aaron Morrison (CEO)",
+     "8",
+     "8",
+     "1",
+     "1",
+     "6",
+     "6"
+    ]
+   ]
+  },
+  {
+   "kind": "subhead",
+   "text": "INDEMNIFICATION OF OFFICERS AND AUDITORS"
+  },
+  {
+   "kind": "officer",
+   "text": "During the financial year, the consolidated entity paid a premium in respect of a contract insuring the directors of the consolidated entity, the company secretary and all executive officers of the consolidated entity and of any related body corporate against a liability incurred as such a director, secretary or executive officer to the extent permitted by the Corporations Act 2001. The contract of insurance prohibits disclosure of the nature of the liability and the amount of the premium."
+  },
+  {
+   "kind": "body",
+   "text": "The consolidated entity has executed deeds of indemnity in favour of each of the directors. Each of these deeds provides for the consolidated entity to indemnify each director to the maximum extent permitted by law against:"
+  },
+  {
+   "kind": "bullet",
+   "text": "all liabilities incurred by the director as an officer of the consolidated entity and each subsidiary; and"
+  },
+  {
+   "kind": "bullet",
+   "text": "all legal costs and expenses arising from proceedings or an investigation incurred by the director as an officer of the consolidated entity or of a subsidiary."
+  },
+  {
+   "kind": "body",
+   "text": "The deeds also give the directors a right of access to board papers within their term for a period of seven years after their retirement and require the consolidated entity to maintain insurance cover for the directors. A director’s right of access to board papers is subject to protection of the consolidated entity’s legal professional privilege rights and to the director keeping the board papers in confidence."
+  },
+  {
+   "kind": "body",
+   "text": "The consolidated entity has not otherwise, during or since the financial year, indemnified or agreed to indemnify any officer or auditor of the consolidated entity or of any related body corporate against a liability incurred by such an officer or auditor."
+  },
+  {
+   "kind": "subhead",
+   "text": "AUDITOR’S INDEPENDENCE DECLARATION"
+  },
+  {
+   "kind": "body",
+   "text": "The auditor’s independence declaration is included on page 10 of the financial report and forms part of this directors’ report."
+  },
+  {
+   "kind": "subhead",
+   "text": "ROUNDING OFF OF AMOUNTS"
+  },
+  {
+   "kind": "body",
+   "text": "The company is a company of the kind referred to in Corporations (Rounding in Financial/Directors’ Reports) Instrument 2016/191, dated 24 March 2016, and in accordance with that Corporations Instrument amounts in the directors’ report and the financial statements are rounded off to the nearest thousand dollars, unless otherwise indicated."
+  },
+  {
+   "kind": "body",
+   "text": "Signed in accordance with a resolution of the directors made pursuant to s.298(2) of the Corporations Act 2001."
+  },
+  {
+   "kind": "body",
+   "text": "On behalf of the directors"
+  }
+ ],
+ "signatories": [
+  {
+   "name": "TIM EDDY",
+   "title": "Chair",
+   "place": "Melbourne",
+   "date": "29 September 2025"
+  },
+  {
+   "name": "AARON MORRISON",
+   "title": "Chief Executive Officer",
+   "place": "Melbourne",
+   "date": "29 September 2025"
+  }
+ ]
+}

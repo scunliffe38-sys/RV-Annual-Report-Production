@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="06-07 CEO's Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:130.1pt;top:-149.3pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:985.3pt;top:-15.2pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:1047pt;top:-458.6pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <svg style="position:absolute;left:54.7pt;top:70pt;width:252.9pt;height:50pt" viewBox="0 0 252.9 50" role="img" aria-label="CEO&#8217;s Report"><text x="0" y="33.6" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">C</tspan><tspan fill="#14579F">E</tspan><tspan fill="#274F9E">O</tspan><tspan fill="#3B479C">&#8217;</tspan><tspan fill="#4E409A">s</tspan><tspan fill="#623898"> </tspan><tspan fill="#753097">R</tspan><tspan fill="#892895">e</tspan><tspan fill="#9C2093">p</tspan><tspan fill="#B01891">o</tspan><tspan fill="#C31090">r</tspan><tspan fill="#D7098E">t</tspan></text></svg>
+
+  <image-slot id="ceo-portrait" shape="circle" placeholder="CEO portrait" style="position:absolute;left:57pt;top:182.9pt;width:177.3pt;height:177.3pt"></image-slot>
+
+  <div style="position:absolute;left:56.7pt;top:372.5pt;width:178.7pt;text-align:center;font-size:10pt;line-height:12pt;color:#6D6E71"><span style="font-weight:700">{{ signatory }}</span><br /><span style="font-weight:400">{{ signatoryRole }}</span></div>
+
+  <div data-column="0" style="position:absolute;left:55.7pt;top:414pt;width:235.78pt;height:371pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track0 }};color:#6D6E71">
+    <sc-for list="{{ col0 }}" as="p" hint-placeholder-count="6">
+      <div style="margin:0 0 8.504pt">{{ p }}</div>
+    </sc-for>
+  </div>
+
+  <div data-column="1" style="position:absolute;left:302.84pt;top:184.9pt;width:235.78pt;height:600pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track1 }};color:#6D6E71">
+    <sc-for list="{{ col1 }}" as="p" hint-placeholder-count="9">
+      <div style="margin:0 0 8.504pt">{{ p }}</div>
+    </sc-for>
+  </div>
+
+  <div data-column="2" style="position:absolute;left:652pt;top:59.3pt;width:235.28pt;height:725.5pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track2 }};color:#6D6E71">
+    <sc-for list="{{ col2 }}" as="p" hint-placeholder-count="11">
+      <div style="margin:0 0 8.504pt">{{ p }}</div>
+    </sc-for>
+  </div>
+
+  <div data-column="3" style="position:absolute;left:898.64pt;top:59.3pt;width:235.28pt;height:620pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track3 }};color:#6D6E71">
+    <sc-for list="{{ col3 }}" as="p" hint-placeholder-count="9">
+      <div style="margin:0 0 8.504pt">{{ p }}</div>
+    </sc-for>
+  </div>
+
+  <image-slot id="ceo-signature" shape="rect" fit="contain" placeholder="Signature" style="position:absolute;left:895.8pt;top:{{ sigTop }};width:117.8pt;height:54.8pt"></image-slot>
+  <div style="position:absolute;left:898.9pt;top:{{ sigCaptionTop }};width:135pt;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ signatory }}</span><br /><span style="font-weight:400">{{ signatoryRole }}</span></div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:55.7pt;top:700pt;width:1078.2pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-3pt;top:821.7pt;width:1197.8pt;height:24.6pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:6,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:7,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Column geometry from the FY25 InDesign frames (pt). Column 0 starts below the
+// portrait and its caption, which the printed page wraps the text around.
+const COLS = [
+  { width: 235.78, y: 414.0, height: 371.0 },
+  { width: 235.78, y: 184.9, height: 600.0 },
+  { width: 235.28, y: 59.3, height: 725.5 },
+  { width: 235.28, y: 59.3, height: 620.0 },
+];
+const SPACE_AFTER = 8.504;
+// Spec tracking is -0.01em, but the browser's line breaker needs roughly 4% more
+// room per column than InDesign's paragraph composer. The loosest value that
+// fits wins, so fidelity degrades only as far as the copy demands.
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+const COL_OFFSET = [0, 0, 0, 0];
+const SIG_GAP = 16;      // gap between the end of the copy and the signature
+const SIG_HEIGHT = 54.8; // signature image height, from the IDML frame
+
+class Component extends DCLogic {
+  state = { copy: null, columns: [[], [], [], []], baseIdx: 0, leftover: [], sigTop: 701.6 };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    requestAnimationFrame(nudge);
+
+    // document.fonts.ready resolves before Gotham is requested, so ask for the
+    // face explicitly or every measurement uses fallback metrics.
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('ceo-report', () => import('./copy/ceo-report.js')) : import('./copy/ceo-report.js')),
+      document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([m]) => {
+        // The docx's own title line is not part of the printed copy.
+        const paras = m.copy.paragraphs
+          .map(p => (typeof p === 'string' ? { text: p } : p))
+          .filter(p => !/^2025 Annual Report\s*[\u2013-]/.test(p.text))
+          .map(p => p.text);
+
+        let fitted = null, baseIdx = 0;
+        for (baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+          fitted = this.flow(paras, baseIdx);
+          if (!fitted.leftover.length) break;
+        }
+        baseIdx = Math.min(baseIdx, TRACKING.length - 1);
+
+        if (fitted.leftover.length) {
+          console.warn('CEO\u2019s Report: ' + fitted.leftover.length +
+            ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+        } else {
+          console.warn('CEO\u2019s Report: fitted at base tracking ' + TRACKING[baseIdx] +
+            ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ')' +
+            (baseIdx === TRACKING.length - 1 ? ' \u2014 NO HEADROOM LEFT.' : '.'));
+        }
+
+        // The signature floats to the foot of the copy rather than sitting at a
+        // fixed height, so it tracks the volume of text above it.
+        let sigTop = COLS[COLS.length - 1].y + SIG_GAP;
+        for (let c = COLS.length - 1; c >= 0; c--) {
+          if (fitted.used[c] > 0) { sigTop = COLS[c].y + fitted.used[c] + SIG_GAP; break; }
+        }
+        const maxTop = 798.85 - SIG_HEIGHT - 34;
+        sigTop = Math.min(sigTop, maxTop);
+
+        this.setState({ copy: m.copy, columns: fitted.columns, baseIdx, leftover: fitted.leftover, sigTop });
+      })
+      .catch(e => console.error('copy/ceo-report.js failed to load', e));
+  }
+
+  trackFor(col, baseIdx) {
+    return TRACKING[Math.min(baseIdx + COL_OFFSET[col], TRACKING.length - 1)];
+  }
+
+  _probe(widthPt, track) {
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;font-weight:400;font-size:9pt;' +
+      'line-height:12pt;letter-spacing:' + track;
+    document.body.appendChild(host);
+    return host;
+  }
+
+  // Pour the paragraphs through the columns, breaking mid-paragraph where a
+  // column runs out — the continuous flow InDesign does.
+  flow(paragraphs, baseIdx) {
+    const columns = COLS.map(() => []);
+    const used = COLS.map(() => 0);
+    let queue = paragraphs.slice();
+
+    for (let c = 0; c < COLS.length; c++) {
+      const host = this._probe(COLS[c].width, this.trackFor(c, baseIdx));
+      const capPx = COLS[c].height / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const text = queue[0];
+        host.textContent = text;
+        const hPx = host.getBoundingClientRect().height + SPACE_AFTER / 0.75;
+
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(text);
+          queue.shift();
+          usedPx += hPx;
+          continue;
+        }
+
+        const availPx = capPx - usedPx;
+        const node = host.firstChild;
+        const len = node ? node.textContent.length : 0;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = 0, hi = len, best = 0;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        let offset = best;
+        if (offset > 0 && offset < len) {
+          const space = text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        if (offset > 0) {
+          columns[c].push(text.slice(0, offset).trimEnd());
+          const rest = text.slice(offset).trimStart();
+          // A paragraph whose text fits but whose trailing space does not leaves
+          // no remainder — drop it rather than carrying an empty block over.
+          if (rest) queue[0] = rest;
+          else queue.shift();
+          usedPx = capPx;
+        }
+        break;
+      }
+      used[c] = usedPx * 0.75;
+      host.remove();
+    }
+
+    return { columns, used, leftover: queue };
+  }
+
+  renderVals() {
+    const c = this.state.columns;
+    const n = this.state.leftover.length;
+
+    return {
+      signatory: 'Aaron Morrison',
+      signatoryRole: 'Chief Executive Officer',
+      footYear: 2025,
+      folioLeft: this.props.folioLeft ?? 6,
+      folioRight: this.props.folioRight ?? 7,
+      col0: c[0] || [], col1: c[1] || [], col2: c[2] || [], col3: c[3] || [],
+      track0: this.trackFor(0, this.state.baseIdx),
+      track1: this.trackFor(1, this.state.baseIdx),
+      track2: this.trackFor(2, this.state.baseIdx),
+      track3: this.trackFor(3, this.state.baseIdx),
+      sigTop: this.state.sigTop.toFixed(1) + 'pt',
+      sigCaptionTop: (this.state.sigTop + SIG_HEIGHT + 4).toFixed(1) + 'pt',
+      // Copy that will not fit is never dropped silently.
+      overflowLabel: n ? n + ' paragraph' + (n === 1 ? '' : 's') +
+        ' will not fit this spread \u2014 trim the copy or extend the layout' : '',
+      overflowText: this.state.leftover.join('  \u00b6  '),
+    };
+  }
+}
+</script>
+</body>
+</html>

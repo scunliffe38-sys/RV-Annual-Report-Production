@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u11943" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/[No paragraph style]" HyphenationZone="50.688637660445934" RuleAboveLineWeight="1.4080177127901647" RuleBelowLineWeight="1.4080177127901647" SplitColumnInsideGutter="8.448106276740988" ParagraphBorderTopLeftCornerRadius="16.896212553481977" ParagraphBorderTopRightCornerRadius="16.896212553481977" ParagraphBorderBottomLeftCornerRadius="16.896212553481977" ParagraphBorderBottomRightCornerRadius="16.896212553481977" ParagraphShadingTopLeftCornerRadius="16.896212553481977" ParagraphShadingTopRightCornerRadius="16.896212553481977" ParagraphShadingBottomLeftCornerRadius="16.896212553481977" ParagraphShadingBottomRightCornerRadius="16.896212553481977" ParagraphBorderTopLineWeight="1.4080177127901647" ParagraphBorderBottomLineWeight="1.4080177127901647" ParagraphBorderLeftLineWeight="1.4080177127901647" ParagraphBorderRightLineWeight="1.4080177127901647">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="16.896212553481977" StrokeWeight="1.4080177127901647" MiterLimit="5.632070851160659" RubyFontSize="-1.4080177127901647" KentenFontSize="-1.4080177127901647" />
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

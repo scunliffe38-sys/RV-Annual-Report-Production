@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u4cac" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>FY25 was a year of significant change for Racing.com Media (RDCM) following the decision to integrate the media business - which incorporates Racing.com (RDC), Best Bets, Winning Post, Racing Photos and Thoroughbred Racing Productions (TRP) - into the broader RV corporate governance structure from 1 January 2025. These changes were enacted to maximise return on investment, enhance alignment across the RV Group and expand opportunities to promote the VTRI to a wider mainstream audience.</Content>
+				<Br />
+				<Content>As a result of the strategic alignment, the previous management structure of the RDCM business was dissolved and replaced with a new streamlined structure headed up by former Entain executive Andy Hoad, who was appointed RV’s Executive General Manager (EGM) of Media, Content and Marketing in March 2025. The previous structure of the RDCM board was also dissolved, with governance responsibilities now resting with the RV Board.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceAfter="1.4173228346456694">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>RDCM has an obligation to the VTRI to ensure its allocated expenditure is maximised for efficient outcomes, and at the same time, generate sustainable revenue streams to support that expenditure and provide opportunities to promote the VTRI across multiple consumer segments.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-15">
+				<Content>Against the backdrop of another annual decline in wagering, RDCM generated revenues (associated with the combined media assets) in FY25 of $85.4 million (-1.5% year-on-year) and delivered an operating surplus (before club media rights payments, depreciation and abnormal items) of $24.8 million (+3.3% year-on-year). </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>Media</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>rights</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>payments</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>passed</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>through</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>to</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>race</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>clubs</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>in</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>FY25</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>were</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>$30.9</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>million,</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>down</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>$1.5</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>million</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>from</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20" KerningValue="-20">
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>FY24.</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large" SpaceBefore="21.25984251968504" SpaceAfter="0">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Medium" PointSize="14" Capitalization="AllCaps">
+				<Content>Significant Events in FY25</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large" SpaceBefore="0">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>New Broadcast Agreements</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBullets Body">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>•	RV agreed a long-term extension with Seven West Media (SWM) for RDC to remain the only 24/7 free-to-air sporting channel in Australia. The new deal will see an increase in the broadcast picture quality of both Channel 78 (metropolitan) and Channel 68 (regional) across Australia, while RDC will also garner more prominence on 7plus.</Content>
+				<Br />
+				<Content>•	A new agreement was also reached between RV and the Foxtel Group. This will see RDC continue to be showcased across Foxtel Group’s subscription platforms including Foxtel and Kayo Sports, with RDC the only racing channel currently available to Kayo Sports subscribers. The partnership will see the inclusion of RDC into the entire Foxtel business commercial distribution network (excluding licensed venues) for the first time, meaning the channel is added into services provided to businesses such as hotels, cafes, gyms, hospitals, aged care, mining and workforce accommodation.</Content>
+				<Br />
+				<Content>•	RDC extended its long-term agreement with Gravity Media for broadcast services (including master control room, playout, and studio facilities) in both Melbourne and Sydney.</Content>
+				<Br />
+				<Content>•	FY25 saw the first year of Channel Nine as the free-to-air partner of the Melbourne Cup Carnival (MCC) following a deal with the VRC and Tabcorp in February 2024. RDC also secured a licence from Tabcorp which enabled it to broadcast coverage of the MCC via its free-to-air channel and RDC digital platforms. The Melbourne Cup was watched by 1.9 million viewers on Nine’s free-to-air coverage - representing a 12% uplift on 2023 - and with the addition of a live broadcast on RDC, 9Now and other streaming platforms, more than 2.5 million Australians tuned in to watch the ‘race that stops a nation’. As in previous years, TRP played a key role in the production of MCC vision and its distribution off course.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBullets Body" SpaceAfter="0">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>•	In a significant event subsequent to FY25 and prior to publication, the Victorian Racing Industry (VRI) announced the sale of its industry-owned audio broadcast business and radio network RSN Racing &amp; Sports (RSN) to Sports Entertainment Group (SEG, operating as Sports Entertainment Network - SEN). As part of the new strategic partnership, which came into effect in September 2025, SEN assumed ownership (including management and operational delivery) of RSN, which continues to broadcast alongside SEN’s current racing audio broadcaster, 
+SEN Track.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Additional Racing Jurisdictions Join Racing.com</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBullets Body">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>•	At the end of FY25, RDC welcomed Western Australian thoroughbred racing 
+into the fold, securing its free-to-air media 
+rights until 2027. The acquisition of these 
+rights will continue to drive audience growth and commercial opportunities for the 
+channel, whilst complementing the existing coverage of racing in Victoria, South 
+Australia and Hong Kong across RDC 
+platforms.</Content>
+				<Br />
+				<Content>•	In partnership with SKY Racing and UK-based Racecourse Media Group, an agreement was reached to broadcast a selection of feature UK race meetings on RDC during FY25. This coverage was extended via a separate agreement with the VRC for Royal Ascot.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Digital Experience Platform </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>In FY25, RDCM delivered major milestones in the multi-year rebuild of the Digital Experience Platform, which underpins the digital presence of RV, RDC, CRV, MRC and Southside Racing (SSR).</Content>
+				<Br />
+				<Content>Key achievements included:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBullets Body">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>•	Launch of over 60 new websites including MRC, SSR, RV, CRV and Country Club websites.</Content>
+				<Br />
+				<Content>•	Work continued on the Beta release of the new Racing.com digital experience, with a full release scheduled for post–Spring Racing Carnival in FY26. The new release will have video content and personalisation at its core and new participant-focused functionality.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>The program is now moving beyond foundational delivery to experience optimisation, driving deeper consumer engagement with racing content and empowering clubs to enhance their digital offering through the Club Connect model, whilst ensuring high levels of platform performance.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Industry Support</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>RV would again like to acknowledge participants, stakeholders, clubs, wagering partners, and commercial partners for their continued support of RDC and its associated platforms. The spectrum of emotions witnessed in racing is like no other sport, and the willingness of participants to help bring that to life and engage audiences is greatly appreciated by all at RV.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

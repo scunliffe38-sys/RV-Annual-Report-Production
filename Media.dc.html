@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="24-25 Media" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:-363.96pt;top:352.92pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:855.15pt;top:172.5pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:1077.11pt;top:-317.9pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  </sc-if>
+
+  <image-slot id="md-image-studio" shape="circle" placeholder="Racing.com studio" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot>
+  <image-slot id="md-image-broadcast" shape="circle" placeholder="Broadcast / Melbourne Cup Carnival" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
+  <svg style="position:absolute;left:54.7pt;top:79.66pt;width:333.65pt;height:50.77pt" viewBox="0 0 333.65 50.77" role="img" aria-label="Media"><text x="0" y="29.6" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37">Media</text></svg>
+
+  <div data-column="md0" style="position:absolute;left:56.7pt;top:{{ c1Top }}pt;width:235.28pt;height:{{ c1Height }}pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ md0 }}" as="b" hint-placeholder-count="3">
+      <sc-if value="{{ b.isH1 }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:14pt;line-height:18pt;font-weight:500;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:13pt;line-height:18pt;font-weight:400;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:22.677pt;text-indent:-22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="md1" style="position:absolute;left:303.31pt;top:171.49pt;width:235.28pt;height:597.64pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ md1 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isH1 }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:14pt;line-height:18pt;font-weight:500;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:13pt;line-height:18pt;font-weight:400;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:22.677pt;text-indent:-22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="md2" style="position:absolute;left:651.72pt;top:171.49pt;width:235.28pt;height:610.87pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ md2 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isH1 }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:14pt;line-height:18pt;font-weight:500;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:13pt;line-height:18pt;font-weight:400;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:22.677pt;text-indent:-22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="md3" style="position:absolute;left:898.33pt;top:{{ c4Top }}pt;width:235.28pt;height:{{ c4Height }}pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ md3 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isH1 }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:14pt;line-height:18pt;font-weight:500;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:13pt;line-height:18pt;font-weight:400;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:22.677pt;text-indent:-22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:898.33pt;top:790pt;width:235.28pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:822.04pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:24,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:25,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;showDecoration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Frame geometry read from Spreads/Spread_u4f11.xml (pp. 24-25) via
+// idml/Spread_Media.xml, converted to page coordinates with x + 595.28,
+// y + 420.94 and composed through parent group transforms.
+//
+// Story u4cac runs through two two-column frames: p.24 (56.7, 171.49,
+// 481.89 x 597.64) and p.25 (651.72, 171.49, 481.89 x 610.87), both with a
+// 11.339 gutter and 235.276 column width.
+//
+// Bounding-box wrap objects clear the text off the photo circles:
+//   ua9d9  (-58.27, 145.89, 347.24 sq) + 28.35 bottom offset -> 521.48
+//   uc8dd  (898.26, 153.68, 419.24 x 172.63)                 -> 326.31
+//   u10c65 (900, 327.4, 225 x 9.92)                          -> 337.32
+// so p.24 column 1 starts at 521.48 and p.25 column 2 at 337.32. The two
+// photo circles themselves are set to TextWrapMode "None".
+//
+// u10c63 (27, 498.89, 270 x 35.43) also carries a wrap, but its band sits
+// inside the photo's own wrap zone and the printed spread fits paragraphs 1
+// and 2 (10 + 9 lines = 236.60pt) in this column, which only clears at the
+// photo bound, so it is the photo that governs here.
+const FLOWS = [
+  { x: 56.70, y: 521.48, width: 235.28, height: 247.65 },
+  { x: 303.31, y: 171.49, width: 235.28, height: 597.64 },
+  { x: 651.72, y: 171.49, width: 235.28, height: 610.87 },
+  { x: 898.33, y: 337.32, width: 235.28, height: 445.04 },
+];
+
+// Paragraph styles from Styles.xml.
+//   A4 V:Body           9/12, RV Cool Gray, track -10, before 5.669 after 2.835
+//   A4 V:Subhead Large  13/18, RV Blue, Book, before 14.173 after 2.835
+//   h1                  Subhead Large + Medium 14pt AllCaps (character override
+//                       on "Significant Events in FY25")
+//   A4 V:Bullets Body   9/12, 22.677 hanging indent, before 2.835 after 11.339,
+//                       5.669 between consecutive bullets (SameParaStyleSpacing)
+const SPEC = {
+  body:    { size: 9,  lead: 12, weight: '400', caps: false, before: 5.669, after: 2.835 },
+  subhead: { size: 13, lead: 18, weight: '400', caps: false, before: 14.173, after: 2.835 },
+  h1:      { size: 14, lead: 18, weight: '500', caps: true,  before: 14.173, after: 2.835 },
+  bullet:  { size: 9,  lead: 12, weight: '400', caps: false, before: 2.835, after: 11.339, same: 5.669 },
+};
+
+// Photos scale with the copy (t = 1 is the FY25 artwork); less copy grows them, more shrinks them.
+// ?trim=0.8 previews the layout with 80% of the copy.
+function trimItems(items) {
+  const keep = +(new URLSearchParams(location.search).get('trim'));
+  if (!(keep > 0 && keep < 1)) return items;
+  let left = Math.round(items.reduce((n, i) => n + i.text.split(/\s+/).length, 0) * keep);
+  for (let k = 0; k < items.length; k++) {
+    const w = items[k].text.split(/\s+/);
+    if (left <= 0) { items.length = k; break; }
+    if (w.length > left) { items[k] = Object.assign({}, items[k], { text: w.slice(0, left).join(' ') }); items.length = k + 1; break; }
+    left -= w.length;
+  }
+  return items;
+}
+const T_MIN = 0.7, T_MAX = 1.3;
+function geo(t) {
+  const D1 = 347.24 * t, D2 = 406.71 * t, c1 = 145.89 + D1 + 28.35, c4 = Math.max(171.49, D2 - 69.4);
+  return {
+    p1: { left: 288.97 - D1, top: 145.89, size: D1 },
+    p2: { left: 898.59, top: -90, size: D2 },
+    flows: [
+      { x: 56.70, y: c1, width: 235.28, height: 769.13 - c1 },
+      FLOWS[1], FLOWS[2],
+      { x: 898.33, y: c4, width: 235.28, height: 782.36 - c4 },
+    ],
+    c1, c4,
+  };
+}
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+
+const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
+
+class Component extends DCLogic {
+  state = { cols: [[], [], [], []], idx: 0, leftover: [], t: 1 };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    TICK(nudge);
+
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('media', () => import('./copy/media.js')) : import('./copy/media.js')),
+      document.fonts.load('400 9pt "Gotham"')
+        .then(() => document.fonts.load('500 14pt "Gotham"'))
+        .then(() => document.fonts.load('400 13pt "Gotham"'))
+        .then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([m]) => this._whenMeasurable().then(() => {
+        const items = m.copy.paragraphs.map(p => ({ text: p.text, kind: p.kind || 'body' }));
+        const a = this.fit(trimItems(items), 'Media');
+        this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, t: a.t });
+      }))
+      .catch(e => console.error('copy module failed to load', e));
+  }
+
+  _whenMeasurable(attempt) {
+    const n = attempt || 0;
+    const p = this._probe(200, '0');
+    p.host.style.fontSize = '9pt';
+    p.host.style.lineHeight = '12pt';
+    p.node.data = 'Measure';
+    const h = p.host.getBoundingClientRect().height;
+    p.host.remove();
+    if (h > 0) return Promise.resolve();
+    if (n >= 120) {
+      console.warn('layout never became measurable \u2014 columns may not break correctly.');
+      return Promise.resolve();
+    }
+    return new Promise(res => TICK(res)).then(() => this._whenMeasurable(n + 1));
+  }
+
+  fit(items, label, opts) {
+    const fits = t => !this.flow(items, geo(t).flows, 0, opts).leftover.length;
+    if (!fits(T_MIN)) return Object.assign(this.settle(items, geo(T_MIN).flows, label, opts), { t: T_MIN });
+    let t = T_MAX;
+    if (!fits(T_MAX)) { let lo = T_MIN, hi = T_MAX; for (let i = 0; i < 7; i++) { const m = (lo + hi) / 2; if (fits(m)) lo = m; else hi = m; } t = lo; }
+    console.warn(label + ': photos at ' + Math.round(t * 100) + '% of FY25 size.');
+    return Object.assign(this.flow(items, geo(t).flows, 0, opts), { baseIdx: 0, t });
+  }
+
+  settle(items, cols, label) {
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const attempt = this.flow(items, cols, baseIdx);
+      if (!attempt.leftover.length) {
+        console.warn(label + ': fitted at tracking ' + TRACKING[baseIdx] +
+          ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
+        return Object.assign(attempt, { baseIdx });
+      }
+    }
+    const last = this.flow(items, cols, TRACKING.length - 1);
+    console.warn(label + ': ' + last.leftover.length +
+      ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+    return Object.assign(last, { baseIdx: TRACKING.length - 1 });
+  }
+
+  _probe(widthPt, track) {
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;box-sizing:border-box;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;letter-spacing:' + track;
+    document.body.appendChild(host);
+    const node = document.createTextNode('');
+    host.appendChild(node);
+    return { host, node };
+  }
+
+  _style(host, item) {
+    const s = SPEC[item.kind] || SPEC.body;
+    host.style.fontWeight = s.weight;
+    host.style.fontSize = s.size + 'pt';
+    host.style.lineHeight = s.lead + 'pt';
+    host.style.textTransform = s.caps ? 'uppercase' : 'none';
+    host.style.paddingLeft = item.kind === 'bullet' ? '22.677pt' : '0';
+    host.style.textIndent = (item.kind === 'bullet' && !item.cont) ? '-22.677pt' : '0';
+  }
+
+  // InDesign adds the previous paragraph's SpaceAfter to the next one's
+  // SpaceBefore, except between two paragraphs of the same style, where
+  // SameParaStyleSpacing replaces both.
+  _gap(prev, item) {
+    if (!prev) return 0;
+    const a = SPEC[prev.kind] || SPEC.body;
+    const b = SPEC[item.kind] || SPEC.body;
+    if (item.cont) return 0;
+    if (prev.kind === item.kind && b.same != null) return b.same;
+    return a.after + b.before;
+  }
+
+  flow(items, cols, baseIdx) {
+    const columns = cols.map(() => []);
+    const track = TRACKING[baseIdx];
+    let queue = items.map(i => Object.assign({}, i));
+    let prev = null;
+
+    for (let c = 0; c < cols.length; c++) {
+      const probe = this._probe(cols[c].width, track);
+      const host = probe.host, node = probe.node;
+      const capPx = cols[c].height / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const item = queue[0];
+        this._style(host, item);
+        node.data = (item.kind === 'bullet' && !item.cont ? '\u2022\u2003\u2003' : '') + item.text;
+        // no space-before at the top of a column. The gap already carries the
+        // previous paragraph's SpaceAfter, so nothing trails the item itself.
+        const before = columns[c].length ? this._gap(prev, item) : 0;
+        const hPx = host.getBoundingClientRect().height + before / 0.75;
+
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(Object.assign({}, item, { gap: before }));
+          queue.shift();
+          prev = item;
+          usedPx += hPx;
+          continue;
+        }
+
+        const availPx = capPx - usedPx - before / 0.75;
+        const prefix = (item.kind === 'bullet' && !item.cont) ? 3 : 0;
+        const len = node.data.length;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = prefix, hi = len, best = prefix;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        let offset = best - prefix;
+        if (offset > 0 && offset < item.text.length) {
+          const space = item.text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        // headings and subheads never split across a column
+        if (offset > 0 && item.kind !== 'h1' && item.kind !== 'subhead') {
+          columns[c].push(Object.assign({}, item, { text: item.text.slice(0, offset).trimEnd(), gap: before }));
+          const rest = item.text.slice(offset).trimStart();
+          if (rest) queue[0] = Object.assign({}, item, { text: rest, cont: true });
+          else queue.shift();
+          prev = item;
+        }
+        break;
+      }
+      host.remove();
+    }
+
+    return { columns, leftover: queue };
+  }
+
+  renderVals() {
+    const n = this.state.leftover.length;
+    const g = geo(this.state.t);
+    return {
+      p1Left: g.p1.left, p1Top: g.p1.top, p1Size: g.p1.size,
+      p2Left: g.p2.left, p2Top: g.p2.top, p2Size: g.p2.size,
+      c1Top: g.c1, c1Height: g.flows[0].height, c4Top: g.c4, c4Height: g.flows[3].height,
+      footYear: 2025,
+      folioLeft: this.props.folioLeft ?? 24,
+      folioRight: this.props.folioRight ?? 25,
+      showDecoration: this.props.showDecoration ?? true,
+      track: TRACKING[this.state.idx],
+      md0: this._flags(this.state.cols[0]), md1: this._flags(this.state.cols[1]),
+      md2: this._flags(this.state.cols[2]), md3: this._flags(this.state.cols[3]),
+      overflowLabel: n ? n + ' paragraph' + (n === 1 ? '' : 's') +
+        ' will not fit this spread \u2014 trim the copy or extend the layout' : '',
+      overflowText: this.state.leftover.map(i => i.text).join('  \u00b6  '),
+    };
+  }
+
+  _flags(list) {
+    return (list || []).map(i => {
+      return {
+        text: (i.kind === 'bullet' && !i.cont ? '\u2022\u2003\u2003' : '') + i.text,
+        gapTop: (i.gap || 0) + 'pt',
+        isH1: i.kind === 'h1',
+        isSubhead: i.kind === 'subhead',
+        isBullet: i.kind === 'bullet' && !i.cont,
+        isBulletCont: i.kind === 'bullet' && !!i.cont,
+        isBody: i.kind !== 'h1' && i.kind !== 'subhead' && i.kind !== 'bullet',
+      };
+    });
+  }
+}
+
+</script>
+</body>
+</html>

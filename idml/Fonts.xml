@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Fonts xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<FontFamily Self="di3f" Name="Minion Pro">
+		<Font Self="di3fFontnMinion Pro Regular" FontFamily="Minion Pro" Name="Minion Pro Regular" PostScriptName="MinionPro-Regular" Status="Installed" FontStyleName="Regular" FontType="OpenTypeCFF" WritingScript="0" FullName="Minion Pro" FullNameNative="Minion Pro" FontStyleNameNative="Regular" PlatformName="$ID/" Version="Version 2.112;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.5900" TypekitID="$ID/" />
+		<Font Self="di3fFontnMinion Pro Bold" FontFamily="Minion Pro" Name="Minion Pro Bold" PostScriptName="MinionPro-Bold" Status="Installed" FontStyleName="Bold" FontType="OpenTypeCFF" WritingScript="0" FullName="Minion Pro Bold" FullNameNative="Minion Pro Bold" FontStyleNameNative="Bold" PlatformName="$ID/" Version="Version 2.115;PS 2.000;hotconv 1.0.78;makeotf.lib2.5.61930" TypekitID="TkD-6812-f461520486388283a460ff67c65e532c1e54def4" />
+		<Font Self="di3fFontnMinion Pro Italic" FontFamily="Minion Pro" Name="Minion Pro Italic" PostScriptName="MinionPro-It" Status="Substituted" FontStyleName="Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Minion Pro Italic" FullNameNative="Minion Pro Italic" FontStyleNameNative="Italic" PlatformName="$ID/" Version="Version 2.115;PS 2.000;hotconv 1.0.78;makeotf.lib2.5.61930" TypekitID="TkD-6814-7f26ce6a20a52873776fad57275c7d91f90d1c3e" />
+		<Font Self="di3fFontnMinion Pro Bold Cond" FontFamily="Minion Pro" Name="Minion Pro Bold Cond" PostScriptName="MinionPro-BoldCn" Status="Substituted" FontStyleName="Bold Cond" FontType="OpenTypeCFF" WritingScript="0" FullName="Minion Pro Bold Cond" FullNameNative="Minion Pro Bold Cond" FontStyleNameNative="Bold Cond" PlatformName="$ID/" Version="Version 2.115;PS 2.000;hotconv 1.0.78;makeotf.lib2.5.61930" TypekitID="TkD-17997-4054f1d2f099e500c40082784982ff126f2b90fd" />
+	</FontFamily>
+	<FontFamily Self="di9d" Name="Myriad Pro">
+		<Font Self="di9dFontnMyriad Pro Regular" FontFamily="Myriad Pro" Name="Myriad Pro Regular" PostScriptName="MyriadPro-Regular" Status="Installed" FontStyleName="Regular" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro" FullNameNative="Myriad Pro" FontStyleNameNative="Regular" PlatformName="$ID/" Version="Version 2.106;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.58329" TypekitID="$ID/" />
+		<Font Self="di9dFontnMyriad Pro Italic" FontFamily="Myriad Pro" Name="Myriad Pro Italic" PostScriptName="MyriadPro-It" Status="Installed" FontStyleName="Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Italic" FullNameNative="Myriad Pro Italic" FontStyleNameNative="Italic" PlatformName="$ID/" Version="Version 2.106;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.58329" TypekitID="$ID/" />
+		<Font Self="di9dFontnMyriad Pro Bold" FontFamily="Myriad Pro" Name="Myriad Pro Bold" PostScriptName="MyriadPro-Bold" Status="Installed" FontStyleName="Bold" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Bold" FullNameNative="Myriad Pro Bold" FontStyleNameNative="Bold" PlatformName="$ID/" Version="OTF 1.006;PS 001.000;Core 1.0.23;hotunix 1.28" TypekitID="$ID/" />
+		<Font Self="di9dFontnMyriad Pro Bold Italic" FontFamily="Myriad Pro" Name="Myriad Pro Bold Italic" PostScriptName="MyriadPro-BoldIt" Status="Installed" FontStyleName="Bold Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Bold Italic" FullNameNative="Myriad Pro Bold Italic" FontStyleNameNative="Bold Italic" PlatformName="$ID/" Version="Version 2.106;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.58329" TypekitID="$ID/" />
+		<Font Self="di9dFontnMyriad Pro Black Condensed" FontFamily="Myriad Pro" Name="Myriad Pro Black Condensed" PostScriptName="MyriadPro-BlackCond" Status="Substituted" FontStyleName="Black Condensed" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Black Condensed" FullNameNative="Myriad Pro Black Condensed" FontStyleNameNative="Black Condensed" PlatformName="$ID/" Version="Version 2.115;PS 2.000;hotconv 1.0.81;makeotf.lib2.5.63406" TypekitID="TkD-6807-991a5f05a2a1ee424b3141be28527bd9ecde575b" />
+		<Font Self="di9dFontnMyriad Pro Light" FontFamily="Myriad Pro" Name="Myriad Pro Light" PostScriptName="MyriadPro-Light" Status="Substituted" FontStyleName="Light" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Light" FullNameNative="Myriad Pro Light" FontStyleNameNative="Light" PlatformName="$ID/" Version="Version 2.115;PS 2.000;hotconv 1.0.81;makeotf.lib2.5.63406" TypekitID="TkD-6849-e3683f022495ec1f9a38cfbe41fabd04c15cca33" />
+		<Font Self="di9dFontnMyriad Pro Semibold" FontFamily="Myriad Pro" Name="Myriad Pro Semibold" PostScriptName="MyriadPro-Semibold" Status="Substituted" FontStyleName="Semibold" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Semibold" FullNameNative="Myriad Pro Semibold" FontStyleNameNative="Semibold" PlatformName="$ID/" Version="Version 2.106;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.58329" TypekitID="$ID/" />
+	</FontFamily>
+	<FontFamily Self="diaa" Name="Kozuka Mincho Pr6N">
+		<Font Self="diaaFontnKozuka Mincho Pr6N R" FontFamily="Kozuka Mincho Pr6N" Name="Kozuka Mincho Pr6N R" PostScriptName="KozMinPr6N-Regular" Status="Installed" FontStyleName="R" FontType="OpenTypeCID" WritingScript="1" FullName="KozMinPr6N-Regular" FullNameNative="小塚明朝 Pr6N R" FontStyleNameNative="R" PlatformName="$ID/" Version="Version 7.001;hotconv 1.0.107;makeotfexe 2.5.65593" TypekitID="$ID/" />
+	</FontFamily>
+	<FontFamily Self="di137" Name="Gotham">
+		<Font Self="di137FontnGotham Thin" FontFamily="Gotham" Name="Gotham Thin" PostScriptName="Gotham-Thin" Status="Installed" FontStyleName="Thin" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Thin" FullNameNative="Gotham Thin" FontStyleNameNative="Thin" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Thin Italic" FontFamily="Gotham" Name="Gotham Thin Italic" PostScriptName="Gotham-ThinItalic" Status="Installed" FontStyleName="Thin Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Thin Italic" FullNameNative="Gotham Thin Italic" FontStyleNameNative="Thin Italic" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Extra Light" FontFamily="Gotham" Name="Gotham Extra Light" PostScriptName="Gotham-ExtraLight" Status="Installed" FontStyleName="Extra Light" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Extra Light" FullNameNative="Gotham Extra Light" FontStyleNameNative="Extra Light" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Extra Light Italic" FontFamily="Gotham" Name="Gotham Extra Light Italic" PostScriptName="Gotham-ExtraLightItalic" Status="Installed" FontStyleName="Extra Light Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Extra Light Italic" FullNameNative="Gotham Extra Light Italic" FontStyleNameNative="Extra Light Italic" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Light" FontFamily="Gotham" Name="Gotham Light" PostScriptName="Gotham-Light" Status="Installed" FontStyleName="Light" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Light" FullNameNative="Gotham Light" FontStyleNameNative="Light" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Light Italic" FontFamily="Gotham" Name="Gotham Light Italic" PostScriptName="Gotham-LightItalic" Status="Installed" FontStyleName="Light Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Light Italic" FullNameNative="Gotham Light Italic" FontStyleNameNative="Light Italic" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Book" FontFamily="Gotham" Name="Gotham Book" PostScriptName="Gotham-Book" Status="Installed" FontStyleName="Book" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Book" FullNameNative="Gotham Book" FontStyleNameNative="Book" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Book Italic" FontFamily="Gotham" Name="Gotham Book Italic" PostScriptName="Gotham-BookItalic" Status="Installed" FontStyleName="Book Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Book Italic" FullNameNative="Gotham Book Italic" FontStyleNameNative="Book Italic" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Medium Italic" FontFamily="Gotham" Name="Gotham Medium Italic" PostScriptName="Gotham-MediumItalic" Status="Installed" FontStyleName="Medium Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Medium Italic" FullNameNative="Gotham Medium Italic" FontStyleNameNative="Medium Italic" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Bold" FontFamily="Gotham" Name="Gotham Bold" PostScriptName="Gotham-Bold" Status="Installed" FontStyleName="Bold" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Bold" FullNameNative="Gotham Bold" FontStyleNameNative="Bold" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Bold Italic" FontFamily="Gotham" Name="Gotham Bold Italic" PostScriptName="Gotham-BoldItalic" Status="Installed" FontStyleName="Bold Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Bold Italic" FullNameNative="Gotham Bold Italic" FontStyleNameNative="Bold Italic" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Black" FontFamily="Gotham" Name="Gotham Black" PostScriptName="Gotham-Black" Status="Installed" FontStyleName="Black" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Black" FullNameNative="Gotham Black" FontStyleNameNative="Black" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Black Italic" FontFamily="Gotham" Name="Gotham Black Italic" PostScriptName="Gotham-BlackItalic" Status="Installed" FontStyleName="Black Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Black Italic" FullNameNative="Gotham Black Italic" FontStyleNameNative="Black Italic" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Ultra" FontFamily="Gotham" Name="Gotham Ultra" PostScriptName="Gotham-Ultra" Status="Installed" FontStyleName="Ultra" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Ultra" FullNameNative="Gotham Ultra" FontStyleNameNative="Ultra" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Ultra Italic" FontFamily="Gotham" Name="Gotham Ultra Italic" PostScriptName="Gotham-UltraItalic" Status="Installed" FontStyleName="Ultra Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Ultra Italic" FullNameNative="Gotham Ultra Italic" FontStyleNameNative="Ultra Italic" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+		<Font Self="di137FontnGotham Medium" FontFamily="Gotham" Name="Gotham Medium" PostScriptName="Gotham-Medium" Status="Installed" FontStyleName="Medium" FontType="OpenTypeCFF" WritingScript="0" FullName="Gotham Medium" FullNameNative="Gotham Medium" FontStyleNameNative="Medium" PlatformName="$ID/" Version="Version 1.200" TypekitID="$ID/" />
+	</FontFamily>
+	<FontFamily Self="di2ac" Name="Ringo">
+		<Font Self="di2acFontnRingo Bold" FontFamily="Ringo" Name="Ringo Bold" PostScriptName="Ringo-Bold" Status="Installed" FontStyleName="Bold" FontType="OpenTypeCFF" WritingScript="0" FullName="Ringo Bold" FullNameNative="Ringo Bold" FontStyleNameNative="Bold" PlatformName="$ID/" Version="Version 2.003; http://www.typoland.com/" TypekitID="$ID/" />
+		<Font Self="di2acFontnRingo Black" FontFamily="Ringo" Name="Ringo Black" PostScriptName="Ringo-Black" Status="Installed" FontStyleName="Black" FontType="OpenTypeCFF" WritingScript="0" FullName="Ringo Black" FullNameNative="Ringo Black" FontStyleNameNative="Black" PlatformName="$ID/" Version="Version 2.003; http://www.typoland.com/" TypekitID="$ID/" />
+	</FontFamily>
+	<FontFamily Self="di26de" Name="Wingdings">
+		<Font Self="di26deFontnWingdings Regular" FontFamily="Wingdings" Name="Wingdings Regular" PostScriptName="Wingdings-Regular" Status="Installed" FontStyleName="Regular" FontType="OpenTypeTT" WritingScript="0" FullName="Wingdings" FullNameNative="Wingdings" FontStyleNameNative="Regular" PlatformName="$ID/" Version="Version 5.00x" TypekitID="$ID/" />
+	</FontFamily>
+	<FontFamily Self="di11dac" Name="$ID/Aptos">
+		<Font Self="di11dacFontnAptos Regular" FontFamily="Aptos" Name="$ID/Aptos Regular" PostScriptName="" Status="NotAvailable" FontStyleName="$ID/Regular" FontType="Unknown" WritingScript="0" FullName="" FullNameNative="" FontStyleNameNative="$ID/Aptos" PlatformName="$ID/Aptos" Version="" TypekitID="$ID/" />
+		<Font Self="di11dacFontnAptos Bold" FontFamily="Aptos" Name="$ID/Aptos Bold" PostScriptName="" Status="NotAvailable" FontStyleName="$ID/Bold" FontType="Unknown" WritingScript="0" FullName="" FullNameNative="" FontStyleNameNative="$ID/Aptos" PlatformName="$ID/Aptos" Version="" TypekitID="$ID/" />
+	</FontFamily>
+	<CompositeFont Self="CompositeFont/$ID/[No composite font]" Name="$ID/[No composite font]">
+		<CompositeFontEntry Self="ua9" Name="$ID/Kanji" FontStyle="$ID/R" RelativeSize="100" HorizontalScale="100" VerticalScale="100" Locked="true" ScaleOption="true" BaselineShift="0">
+			<Properties>
+				<AppliedFont type="string">Kozuka Mincho Pr6N</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uab" Name="$ID/Kana" FontStyle="$ID/R" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖゝゞァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺーヽヾ" Locked="true" ScaleOption="true" BaselineShift="0">
+			<Properties>
+				<AppliedFont type="string">Kozuka Mincho Pr6N</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uac" Name="$ID/Punctuation" FontStyle="$ID/R" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="—―‖‘’“”‥…′″∥、。〈〉《》「」『』【】〔〕〜・！（），．／：；？［］｛｝～" Locked="true" ScaleOption="true" BaselineShift="0">
+			<Properties>
+				<AppliedFont type="string">Kozuka Mincho Pr6N</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uad" Name="$ID/Symbols" FontStyle="$ID/R" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="¢£§¨¬°±´¶×÷ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяё‐†‡‰※℃Å←↑→↓⇒⇔∀∂∃∇∈∋−√∝∞∠∧∨∩∪∫∬∴∵∽≒≠≡≦≧≪≫⊂⊃⊆⊇⊥⌒■□▲△▼▽◆◇○◎●◯★☆♀♂♪♭♯〃〆〇〒〓゛゜＃＄％＆＊＋－０１２３４５６７８９＜＝＞＠ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ＼＾＿｀ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ｜￠￡￢￣￥" Locked="true" ScaleOption="true" BaselineShift="0">
+			<Properties>
+				<AppliedFont type="string">Kozuka Mincho Pr6N</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uae" Name="$ID/Alphabetic" FontStyle="$ID/Regular" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters=" !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¤¥¦©ª«­®¯²³µ·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿıŒœŠšŸŽžƒˆˇ˘˙˚˛˜˝–‚„•‹›⁄€™∆∏∑≈≤≥◊ﬀﬁﬂﬃﬄﬅﬆ" Locked="true" ScaleOption="false" BaselineShift="0">
+			<Properties>
+				<AppliedFont type="string">Minion Pro</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uaf" Name="$ID/Numbers" FontStyle="$ID/Regular" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="0123456789" Locked="true" ScaleOption="false" BaselineShift="0">
+			<Properties>
+				<AppliedFont type="string">Minion Pro</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+	</CompositeFont>
+</idPkg:Fonts>

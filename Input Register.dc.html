@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; background: #F6F6F6; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+<doc-page size="a4">
+
+  <div slot="footer" style="display:flex;justify-content:space-between;align-items:baseline;font-size:9pt;letter-spacing:0.06em;color:#005FA1;text-transform:uppercase;padding-top:6pt;border-top:0.5pt solid #C9D6E0">
+    <span style="font-weight:400">FY26 Annual Report &mdash; input register</span>
+    <span style="font-weight:700">Racing Victoria</span>
+  </div>
+
+  <div style="border-bottom:2pt solid #005FA1;padding-bottom:14pt;margin-bottom:22pt">
+    <div style="font-weight:400;font-size:30pt;line-height:33pt;letter-spacing:-0.01em;background:linear-gradient(90deg,#005FA1 0%,#EC008C 100%);-webkit-background-clip:text;background-clip:text;color:transparent">What I need to build the FY26 report</div>
+    <div style="font-weight:500;font-size:12pt;line-height:16pt;text-transform:uppercase;letter-spacing:0.04em;color:#005FA1;margin-top:10pt">Sections, inputs and required formats</div>
+  </div>
+
+  <p style="font-weight:400;font-size:12pt;line-height:18pt;color:#231F20;margin:0 0 14pt;text-wrap:pretty">Derived from the FY25 InDesign file: 84 pages, 43 spreads, 31 tables. Sections below are grouped as they run in the printed book. FY26 page numbers will shift, so page ranges are FY25's and indicative only.</p>
+
+  <p style="font-weight:400;font-size:12pt;line-height:18pt;color:#231F20;margin:0 0 26pt;text-wrap:pretty">One rule underpins everything: <span style="font-weight:700">send raw values, not presentation.</span> Every rounding, percentage, variance and total is calculated at build time. If a figure is calculated in the source file, send the inputs instead and I will do the arithmetic once, consistently, in one place.</p>
+
+  <h2 style="font-weight:700;font-size:15pt;line-height:20pt;color:#005FA1;margin:0 0 4pt">The workbook contract</h2>
+  <p style="font-weight:400;font-size:12pt;line-height:18pt;color:#231F20;margin:0 0 12pt;text-wrap:pretty">Applies to every spreadsheet input. The FY25 workbooks broke three of these, which is what caused the missing participation figures.</p>
+
+  <table style="width:100%;border-collapse:collapse;margin:0 0 26pt">
+    <tbody>
+      <tr style="background:#005FA1">
+        <td style="width:34%;color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top">Rule</td>
+        <td style="color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top;border-left:0.5pt solid #fff">Why</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">One metric per row, one period per column</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Adding FY27 becomes a new column, not a new layout</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Labels in column A, stable year to year</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Labels are the key I match on. Rewording one silently drops a row</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Unrounded values, no thousands separators, no units in the cell</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">&ldquo;$7.61bn&rdquo; is text. 7610000000 is a number I can round and total correctly</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">No merged cells, no blank spacer rows or columns</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Merges shift the column index and misread the whole sheet</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">No variance, total or percentage columns</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">All 32 KPI variances are calculated. Supplied ones can only disagree</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Empty cell for genuinely unavailable data</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Prints as N/A. A typed &ldquo;N/A&rdquo;, &ldquo;-&rdquo; or 0 each mean something different</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">.xlsx, one tab per table, tab names unchanged</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Renamed tabs are the most common reason a rebuild fails</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 style="font-weight:700;font-size:15pt;line-height:20pt;color:#005FA1;margin:0 0 12pt">Part 1 &mdash; Front and narrative (FY25 pp. 1&ndash;27)</h2>
+
+  <table style="width:100%;border-collapse:collapse;margin:0 0 24pt">
+    <tbody>
+      <tr style="background:#005FA1">
+        <td style="width:23%;color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top">Section</td>
+        <td style="width:40%;color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top;border-left:0.5pt solid #fff">Inputs</td>
+        <td style="color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top;border-left:0.5pt solid #fff">Format</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Cover, contents, back matter<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 1&ndash;3, 84</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Cover image. Club and Industry Body member lists. Registered office block</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Image per the photography rules below. Member lists as plain text or .docx &mdash; contents page is generated</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Chair&rsquo;s and CEO&rsquo;s Reports<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 4&ndash;7</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Final approved copy. Signatory name and title. Portrait of each</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">.docx, one file per report, headings as Word headings. Copy goes in verbatim &mdash; I will not edit it</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Key Performance Indicators<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">p. 8 &mdash; built</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">The two KPI workbooks, FY26 and FY25 columns. Both footnotes, rewritten for FY26</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Same two workbooks as FY25, same tab and label structure. Footnotes as plain text &mdash; they are not in the workbooks</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Industry Snapshot<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">p. 9</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Nine headline figures: total turnover, prizemoney and bonuses, attendance, owners, races run, horse safety record, equine welfare investment, operational expenditure reduction, Cup week viewers. Plus SRC economic benefit</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">One tab, two columns: label and raw value. Most already exist in the KPI workbooks &mdash; tell me which are sourced elsewhere and who owns them</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Racing &amp; Programming<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 10&ndash;11</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Narrative copy under the existing subheads. Any figures quoted in the text</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">.docx. Flag every figure in the copy that must reconcile to a KPI table so I can cross-check rather than trust both</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Racing Awards and Feature Race Winners<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 12&ndash;13</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Award name and recipient for every award. Feature race winners list. Twelve captioned photographs</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">One tab: award, recipient. Second tab: race, winner. Captions numbered to match image filenames</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Owners &amp; Breeders, Workforce Development, Integrity Services, Industry &amp; Community Support<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 14&ndash;19, 26&ndash;27</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Narrative copy per section. Any pull-out statistic and its caption. Section imagery</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">.docx per section. Pull-out stats as label and raw value, not pre-formatted &mdash; FY25 left three as placeholder text in the file</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Equine Welfare<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 20&ndash;21</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Welfare spend by category, FY26 and FY25. Narrative copy</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Send dollars per category, not percentages. The table prints percentages; I will derive them so they total exactly 100</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Wagering<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 22&ndash;23</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Turnover by year FY21&ndash;FY26. Free bet turnover by year. Turnover by quarter, FY26 and FY25. Top five turnover races with sponsor-correct names</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">One tab per series, year or quarter in column A, raw value in column B. Year-on-year percentages are calculated &mdash; the FY25 charts had 21 of them set as individual text frames</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Racing.com Media<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 24&ndash;25</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Narrative copy. Audience and broadcast figures. Two pull-out statistics</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">.docx plus one tab of label and raw value. Both FY25 pull-outs shipped as unreplaced placeholders</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 style="font-weight:700;font-size:15pt;line-height:20pt;color:#005FA1;margin:0 0 12pt">Part 2 &mdash; Directors&rsquo; Report and governance (FY25 pp. 28&ndash;41)</h2>
+
+  <table style="width:100%;border-collapse:collapse;margin:0 0 24pt">
+    <tbody>
+      <tr style="background:#005FA1">
+        <td style="width:23%;color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top">Section</td>
+        <td style="width:40%;color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top;border-left:0.5pt solid #fff">Inputs</td>
+        <td style="color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top;border-left:0.5pt solid #fff">Format</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Current Directors<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 28&ndash;29</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Per director: name, role, appointment date, biography. Portrait. Same for the CEO</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">One tab, one row per director, columns for each field. Bio as a single cell. Note the FY25 file styled some names in caps and some in title case</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Officers, principal activities, strategy<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 30&ndash;35</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Approved report text. Expenditure breakdown by category, FY26 and FY25, for the donut chart</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">.docx for the text. Expenditure as dollars per category &mdash; the FY25 donut carried 12 hand-set percentages that must reconcile to the financials</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Directors&rsquo; meetings<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 36&ndash;37</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Attendance counts per director: monthly held and attended, special held and attended, committee held and attended</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">One tab, one row per director, six count columns. Blank where a director did not serve on a committee</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Auditor&rsquo;s declaration and report, Directors&rsquo; Declaration<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 38&ndash;41</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Signed KPMG documents. Declaration text, signatories, place and date</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">PDF as issued. These are signed instruments &mdash; I place them, I do not retypeset them. Tell me if they must appear as supplied artwork</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 style="font-weight:700;font-size:15pt;line-height:20pt;color:#005FA1;margin:0 0 12pt">Part 3 &mdash; Financial statements and notes (FY25 pp. 42&ndash;84)</h2>
+
+  <p style="font-weight:400;font-size:12pt;line-height:18pt;color:#231F20;margin:0 0 14pt;text-wrap:pretty">The largest section and the one with the most rekeying: 25 tables across the four primary statements and notes 1&ndash;23, plus the Consolidated Entity Disclosure Statement. All are real InDesign tables, so I have exact cell specifications for each.</p>
+
+  <table style="width:100%;border-collapse:collapse;margin:0 0 24pt">
+    <tbody>
+      <tr style="background:#005FA1">
+        <td style="width:23%;color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top">Section</td>
+        <td style="width:40%;color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top;border-left:0.5pt solid #fff">Inputs</td>
+        <td style="color:#fff;font-weight:700;font-size:12pt;line-height:15pt;padding:7pt 9pt;vertical-align:top;border-left:0.5pt solid #fff">Format</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Four primary statements<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 42&ndash;47</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Surplus or deficit and OCI. Financial position. Cash flows. Changes in equity. Each with note references</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">One tab per statement. Columns: line item, note reference, FY26, FY25. Values in $&rsquo;000 as whole numbers</td>
+      </tr>
+      <tr style="background:#E6EFF6">
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Notes 1&ndash;23<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">pp. 46&ndash;83</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Every note table. Accounting policy text. All roman-numeral footnotes &mdash; FY25 ran to at least (xxii)</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">One tab per note, named by number. Note 2 has eight sub-tables, notes 5&ndash;8 are multi-column asset movement schedules &mdash; keep each as its own tab</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20">Consolidated Entity Disclosure Statement<br /><span style="font-weight:400;font-size:10pt;color:#6D6E71">p. 83</span></td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">Per entity: name, type, place incorporated, share capital held, tax residency</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 9pt;vertical-align:top;color:#231F20;border-left:0.5pt solid #C9D6E0">One tab, one row per entity</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 style="font-weight:700;font-size:15pt;line-height:20pt;color:#005FA1;margin:0 0 12pt">Photography and imagery</h2>
+  <table style="width:100%;border-collapse:collapse;margin:0 0 24pt">
+    <tbody>
+      <tr>
+        <td style="width:34%;font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">Resolution and colour</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">300 dpi at final print size, CMYK, TIFF or maximum-quality JPEG. Full-bleed images need 3 mm bleed on every trimmed edge</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">Naming</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">Section and sequence, matching the caption list: <span style="font-weight:500">welfare-01.tif</span>. Renaming after supply breaks the link</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">Captions and credits</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">One tab: filename, caption, credit, usage clearance. FY25 carried an unresolved note about an image that could not be used &mdash; clearances need to be settled before supply, not during layout</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">Delivery</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">OneDrive once your IT security team approves the connector. Until then everything except imagery can proceed</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 style="font-weight:700;font-size:15pt;line-height:20pt;color:#005FA1;margin:0 0 12pt">What I do not need</h2>
+  <p style="font-weight:400;font-size:12pt;line-height:18pt;color:#231F20;margin:0 0 24pt;text-wrap:pretty">Pre-rounded or pre-formatted numbers. Variance, total or percentage columns. Charts as images &mdash; send the series and I will draw them. Copy laid out in InDesign or PowerPoint. Screenshots of tables. Anything already in one of the workbooks, sent a second time by another route: two sources for one figure is how they diverge.</p>
+
+  <h2 style="font-weight:700;font-size:15pt;line-height:20pt;color:#005FA1;margin:0 0 12pt">Open items</h2>
+  <table style="width:100%;border-collapse:collapse">
+    <tbody>
+      <tr>
+        <td style="width:34%;font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">Financial statement source</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">Blocks Part 3. If Finance holds a workbook I extract it as I did the KPIs. If the numbers are typed into InDesign by hand, a data layer has to be built first &mdash; a materially larger job. Worth asking before I start</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">KPI participation columns</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">FY25 values had to be read off the printed page. Confirm the FY26 workbook keeps attendance and stable and jockey counts in the same columns and the extraction becomes automatic</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">Rounding convention</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">Two FY25 prizemoney totals were sums of rounded parts rather than rounded sums, and the FY24 figure beside them used the opposite convention. I need one rule to apply everywhere</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">Ringo font</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">Used by the chapter heading style on section dividers. No data page needs it, so it is not urgent</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500;font-size:12pt;line-height:16pt;padding:7pt 9pt 7pt 0;vertical-align:top;color:#231F20">Section navigation tabs</td>
+        <td style="font-weight:400;font-size:12pt;line-height:16pt;padding:7pt 0;vertical-align:top;color:#231F20">The FY25 file has a full thumb-tab system on a hidden layer, switched off before print. Confirm it stays off for FY26</td>
+      </tr>
+    </tbody>
+  </table>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    // doc-page decides flowing vs. paginated on its own connect, which happens
+    // before this component renders its content.
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    requestAnimationFrame(nudge);
+  }
+}
+</script>
+</body>
+</html>

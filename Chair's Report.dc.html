@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="04-05 Chair's Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:130.1pt;top:-149.3pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:985.28pt;top:-15.2pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:1046.98pt;top:-458.6pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <svg style="position:absolute;left:54.7pt;top:70pt;width:340.7pt;height:50pt" viewBox="0 0 340.7 50" role="img" aria-label="Chair&#8217;s Report"><text x="0" y="33.3" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">C</tspan><tspan fill="#12589F">h</tspan><tspan fill="#24509E">a</tspan><tspan fill="#36499C">i</tspan><tspan fill="#49429B">r</tspan><tspan fill="#5B3A99">&#8217;</tspan><tspan fill="#6D3397">s</tspan><tspan fill="#7F2C96"> </tspan><tspan fill="#912594">R</tspan><tspan fill="#A31D93">e</tspan><tspan fill="#B61691">p</tspan><tspan fill="#C80F8F">o</tspan><tspan fill="#DA078E">r</tspan><tspan fill="#EC008C">t</tspan></text></svg>
+
+  <image-slot id="chair-portrait" shape="circle" placeholder="Chair portrait" style="position:absolute;left:57pt;top:182.9pt;width:177.3pt;height:177.3pt"></image-slot>
+
+  <div style="position:absolute;left:56.2pt;top:372.5pt;width:179.7pt;text-align:center;font-size:10pt;line-height:12pt;color:#6D6E71"><span style="font-weight:700">{{ signatory }}</span><br /><span style="font-weight:400">{{ signatoryRole }}</span></div>
+
+  <div data-column="0" style="position:absolute;left:303.3pt;top:179.7pt;width:235.3pt;height:584.8pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track0 }};color:#6D6E71">
+    <sc-for list="{{ col0 }}" as="p" hint-placeholder-count="9">
+      <div style="margin:0 0 8.504pt">{{ p }}</div>
+    </sc-for>
+  </div>
+
+  <div data-column="1" style="position:absolute;left:651.98pt;top:179.7pt;width:234.94pt;height:584.8pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track1 }};color:#6D6E71">
+    <sc-for list="{{ col1 }}" as="p" hint-placeholder-count="9">
+      <div style="margin:0 0 8.504pt">{{ p }}</div>
+    </sc-for>
+  </div>
+
+  <div data-column="2" style="position:absolute;left:898.26pt;top:179.7pt;width:234.94pt;height:511pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track2 }};color:#6D6E71">
+    <sc-for list="{{ col2 }}" as="p" hint-placeholder-count="8">
+      <div style="margin:0 0 8.504pt">{{ p }}</div>
+    </sc-for>
+  </div>
+
+  <image-slot id="chair-signature" shape="rect" fit="contain" placeholder="Signature" style="position:absolute;left:898.58pt;top:692.9pt;width:55.5pt;height:49.1pt"></image-slot>
+  <div style="position:absolute;left:899.28pt;top:748pt;width:125.5pt;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ signatory }}</span><br /><span style="font-weight:400">{{ signatoryRole }}</span></div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:303.3pt;top:700pt;width:829.9pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-3pt;top:821.6pt;width:1197.8pt;height:24.6pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:5,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Column geometry from the FY25 InDesign frames (pt). The third column stops
+// short of the others to clear the signature block below it.
+const COLS = [
+  { width: 235.30, height: 584.8 },
+  { width: 234.94, height: 584.8 },
+  { width: 234.94, height: 511.0 },
+];
+// InDesign's paragraph composer fits roughly 4% more copy per column than the
+// browser's greedy line breaker, so spec tracking alone overruns the spread.
+// The FY25 designer solved the same problem by hand-tracking a paragraph to -20.
+// Here the first value that fits wins, so fidelity degrades only as far as the
+// copy demands.
+const TRACKING = ['-0.02em', '-0.022em', '-0.024em', '-0.026em', '-0.028em', '-0.03em'];
+// The FY25 designer hand-tracked individual paragraphs to hit specific column
+// breaks. Same idea, per column: the middle column runs one notch tighter so it
+// takes the two lines that otherwise start the third column, reproducing the
+// printed break points. Offsets are steps into TRACKING, not absolute values,
+// so they survive the escalation when copy grows.
+const COL_OFFSET = [0, 4, 0];
+// InDesign's 5.669 space-before + 2.835 space-after is carried entirely as
+// space-after, so the first line of every column sits on its frame top.
+const SPACE_AFTER = 8.504;
+
+class Component extends DCLogic {
+  state = { data: null, columns: [[], [], []], baseIdx: 0, leftover: [] };
+
+  // Tracking for one column: the fitted base, plus that column's own offset.
+  trackFor(col, baseIdx) {
+    return TRACKING[Math.min(baseIdx + COL_OFFSET[col], TRACKING.length - 1)];
+  }
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    requestAnimationFrame(nudge);
+
+    // document.fonts.ready resolves before Gotham is even requested, so ask for
+    // the face explicitly — otherwise measurement uses fallback metrics.
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('chair-report-data', () => import('./chair-report-data.js')) : import('./chair-report-data.js')),
+      document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([m]) => {
+        const data = m.chairReport;
+        let fitted = null, baseIdx = 0;
+        for (baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+          fitted = this.flow(data.paragraphs, baseIdx);
+          if (!fitted.leftover.length) break;
+        }
+        baseIdx = Math.min(baseIdx, TRACKING.length - 1);
+        if (fitted.leftover.length) {
+          console.warn('Chair\u2019s Report: ' + fitted.leftover.length +
+            ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+        } else {
+          console.warn('Chair\u2019s Report: fitted at base tracking ' + TRACKING[baseIdx] +
+            ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + '); columns set at ' +
+            [0, 1, 2].map(c => this.trackFor(c, baseIdx)).join(' / ') +
+            (baseIdx === TRACKING.length - 1 ? ' \u2014 NO HEADROOM LEFT: longer copy will overflow.' : '.'));
+        }
+        this.setState({ data, columns: fitted.columns, baseIdx, leftover: fitted.leftover });
+      })
+      .catch(e => console.error('chair-report-data.js failed to load', e));
+  }
+
+  _probe(widthPt, track) {
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;font-weight:400;font-size:9pt;' +
+      'line-height:12pt;letter-spacing:' + track;
+    document.body.appendChild(host);
+    return host;
+  }
+
+  // Pour the paragraphs through the three columns, breaking mid-paragraph where
+  // a column runs out — the same continuous flow InDesign does. Per-paragraph
+  // packing wastes up to a paragraph per column, and this copy has no slack.
+  flow(paragraphs, baseIdx) {
+    const columns = COLS.map(() => []);
+    let queue = paragraphs.slice();
+
+    for (let c = 0; c < COLS.length; c++) {
+      const host = this._probe(COLS[c].width, this.trackFor(c, baseIdx));
+      const capPx = COLS[c].height / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const text = queue[0];
+        host.textContent = text;
+        const hPx = host.getBoundingClientRect().height + SPACE_AFTER / 0.75;
+
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(text);
+          queue.shift();
+          usedPx += hPx;
+          continue;
+        }
+
+        // Binary-search the last character that still fits this column.
+        const availPx = capPx - usedPx;
+        const node = host.firstChild;
+        const len = node ? node.textContent.length : 0;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = 0, hi = len, best = 0;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        // Never break mid-word.
+        let offset = best;
+        if (offset > 0 && offset < len) {
+          const space = text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        if (offset > 0) {
+          columns[c].push(text.slice(0, offset).trimEnd());
+          const rest = text.slice(offset).trimStart();
+          // A paragraph whose text fits but whose trailing space does not leaves
+          // no remainder — drop it rather than carrying an empty block into the
+          // next column, which would push that column's first line down a line.
+          if (rest) queue[0] = rest;
+          else queue.shift();
+        }
+        break;
+      }
+      host.remove();
+    }
+
+    return { columns, leftover: queue };
+  }
+
+  renderVals() {
+    const d = this.state.data;
+    const meta = (d && d.meta) || {};
+    const [col0, col1, col2] = this.state.columns;
+
+    return {
+      signatory: meta.signatory || '',
+      signatoryRole: meta.signatoryRole || '',
+      footYear: meta.footYear || '',
+      folioLeft: this.props.folioLeft ?? meta.folioLeft ?? 4,
+      folioRight: this.props.folioRight ?? meta.folioRight ?? 5,
+      col0: col0 || [],
+      col1: col1 || [],
+      col2: col2 || [],
+      track0: this.trackFor(0, this.state.baseIdx),
+      track1: this.trackFor(1, this.state.baseIdx),
+      track2: this.trackFor(2, this.state.baseIdx),
+      // Copy that will not fit is NEVER dropped silently — it surfaces in a
+      // magenta bar across the foot of the spread, so an overrun is impossible
+      // to miss in the preview or in a PDF proof.
+      overflowLabel: this.state.leftover.length
+        ? this.state.leftover.length + ' paragraph' + (this.state.leftover.length === 1 ? '' : 's') +
+          ' will not fit this spread \u2014 trim the copy or extend the layout'
+        : '',
+      overflowText: this.state.leftover.join('  \u00b6  '),
+    };
+  }
+}
+</script>
+</body>
+</html>

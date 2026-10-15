@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ block.isSubhead }}" hint-placeholder-val="">
+  <div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;padding:{{ block.padTop }} 0 {{ block.padBottom }}">{{ block.text }}</div>
+</sc-if>
+
+<sc-if value="{{ block.isMinihead }}" hint-placeholder-val="">
+  <div style="font-weight:500;font-size:11pt;line-height:18pt;letter-spacing:-0.01em;color:#005FA1;padding:{{ block.padTop }} 0 {{ block.padBottom }}">{{ block.text }}</div>
+</sc-if>
+
+<sc-if value="{{ block.isBody }}" hint-placeholder-val="{{ true }}">
+  <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71;padding:{{ block.padTop }} 0 {{ block.padBottom }}">{{ block.text }}</div>
+</sc-if>
+
+<sc-if value="{{ block.isBullet }}" hint-placeholder-val="">
+  <div style="display:grid;grid-template-columns:22.677pt 1fr;margin:0;padding:{{ block.padTop }} 0 {{ block.padBottom }}">
+    <div style="font-weight:400;font-size:9pt;line-height:12pt;color:#6D6E71">&#8226;</div>
+    <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71">{{ block.text }}</div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ block.isBulletCont }}" hint-placeholder-val="">
+  <div style="display:grid;grid-template-columns:22.677pt 1fr;margin:0;padding:{{ block.padTop }} 0 {{ block.padBottom }}">
+    <div></div>
+    <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71">{{ block.text }}</div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ block.isNote }}" hint-placeholder-val="">
+  <div style="font-weight:400;font-size:7pt;line-height:9pt;letter-spacing:-0.005em;color:#6D6E71;padding:{{ block.padTop }} 0 {{ block.padBottom }}">{{ block.text }}</div>
+</sc-if>
+
+<sc-if value="{{ block.isTable }}" hint-placeholder-val="">
+  <div style="padding:{{ block.padTop }} 0 0">
+    <sc-for list="{{ block.tableRows }}" as="r" hint-placeholder-count="6">
+      <sc-if value="{{ r.isHead }}" hint-placeholder-val="">
+        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:27.73pt;background:#005FA1;color:#fff;padding:3pt 0;box-sizing:border-box">
+          <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
+          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="3">
+            <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;text-align:right;padding-right:6pt;white-space:pre-line">{{ c }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ r.isBand }}" hint-placeholder-val="">
+        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;background:#F0F5F9;color:#6D6E71;box-sizing:border-box">
+          <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
+          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="3">
+            <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;text-align:right;padding-right:6pt">{{ c }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ r.isPlain }}" hint-placeholder-val="">
+        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;color:#6D6E71;box-sizing:border-box">
+          <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
+          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="3">
+            <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;text-align:right;padding-right:6pt">{{ c }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ r.isTotal }}" hint-placeholder-val="">
+        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;color:#005FA1;border-top:0.5pt solid #005FA1;box-sizing:border-box">
+          <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
+          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="3">
+            <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;text-align:right;padding-right:6pt">{{ c }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </sc-for>
+  </div>
+</sc-if>
+
+<sc-if value="{{ block.isAttendance }}" hint-placeholder-val="">
+  <div style="padding:{{ block.padTop }} 0 0">
+    <div style="display:grid;grid-template-columns:{{ block.groupCols }};align-items:end;min-height:16pt;box-sizing:border-box">
+      <div></div>
+      <div style="font-weight:700;font-size:7.5pt;line-height:10pt;letter-spacing:0.04em;text-transform:uppercase;color:#005FA1;text-align:center;border-bottom:0.5pt solid #005FA1;padding-bottom:2pt">BOARD OF DIRECTORS</div>
+      <div style="font-weight:700;font-size:7.5pt;line-height:10pt;letter-spacing:0.04em;text-transform:uppercase;color:#005FA1;text-align:center;border-bottom:0.5pt solid #005FA1;padding-bottom:2pt;margin-left:4pt">ARWSC</div>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ block.headRow.gridCols }};align-items:end;min-height:34pt;background:#005FA1;color:#fff;padding:3pt 0;box-sizing:border-box;margin-top:2pt">
+      <div style="font-weight:700;font-size:7.5pt;line-height:9.5pt;padding-left:6pt">{{ block.headRow.label }}</div>
+      <sc-for list="{{ block.headRow.nums }}" as="c" hint-placeholder-count="6">
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt;text-align:center;padding:0 3pt">{{ c }}</div>
+      </sc-for>
+    </div>
+    <sc-for list="{{ block.bodyRows }}" as="r" hint-placeholder-count="8">
+      <sc-if value="{{ r.band }}" hint-placeholder-val="">
+        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;background:#F0F5F9;color:#6D6E71;box-sizing:border-box">
+          <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
+          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="6">
+            <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;text-align:center">{{ c }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ r.plain }}" hint-placeholder-val="">
+        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;color:#6D6E71;box-sizing:border-box">
+          <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
+          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="6">
+            <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;text-align:center">{{ c }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </sc-for>
+  </div>
+</sc-if>
+
+<sc-if value="{{ block.isDiagramImg }}" hint-placeholder-val="">
+  <div style="padding:{{ block.padTop }} 0 0">
+    <img src="{{ block.src }}" alt="Revenue streams and allocation of funds" style="display:block;width:{{ block.imgW }}pt;height:{{ block.imgH }}pt">
+  </div>
+</sc-if>
+
+<sc-if value="{{ block.isDiagram }}" hint-placeholder-val="">
+  <div style="padding:{{ block.padTop }} 0 0">
+    <div style="font-weight:500;font-size:9pt;line-height:12pt;color:#005FA1;margin:0 0 6pt">{{ block.diagram.title }}</div>
+    <div style="position:relative;width:378.31pt;height:285.9pt">
+
+      <div style="position:absolute;left:0;top:101.02pt;width:104.6pt;height:45.82pt;background:#6D6E71;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">{{ block.diagram.root.label }}</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">{{ block.diagram.root.value }}</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">{{ block.diagram.root.prior }}</div>
+      </div>
+
+      <div style="position:absolute;left:104.6pt;top:123.93pt;width:33.1pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:119.78pt;top:16.68pt;width:0;height:213.29pt;border-left:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:119.78pt;top:16.68pt;width:17.71pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:119.78pt;top:70.6pt;width:17.71pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:119.78pt;top:124.52pt;width:17.71pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:119.78pt;top:229.97pt;width:17.71pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+
+      <div style="position:absolute;left:137.49pt;top:0;width:104.6pt;height:33.36pt;background:#005FA1;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Media &amp; Wagering</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">12% (13%)</div>
+      </div>
+      <div style="position:absolute;left:137.49pt;top:53.92pt;width:104.6pt;height:33.36pt;background:#005FA1;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Operational</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">12% (11%)</div>
+      </div>
+      <div style="position:absolute;left:137.49pt;top:107.84pt;width:104.6pt;height:33.36pt;background:#0085CA;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Asset Costs</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">2% (3%)</div>
+      </div>
+      <div style="position:absolute;left:137.49pt;top:214.01pt;width:104.6pt;height:31.91pt;background:#009E7D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Industry</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">75% (75%)</div>
+      </div>
+
+      <div style="position:absolute;left:242.09pt;top:70.6pt;width:18.63pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:27.34pt;width:0;height:125.16pt;border-left:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:27.34pt;width:12.99pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:66.15pt;width:12.99pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:108.91pt;width:12.99pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:152.5pt;width:12.99pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+
+      <div style="position:absolute;left:242.09pt;top:229.97pt;width:18.63pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:191.83pt;width:0;height:78.48pt;border-left:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:191.83pt;width:12.99pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:231.17pt;width:12.99pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+      <div style="position:absolute;left:260.72pt;top:270.31pt;width:12.99pt;height:0;border-top:0.75pt solid #6D6E71"></div>
+
+      <div style="position:absolute;left:273.71pt;top:11.74pt;width:104.6pt;height:31.19pt;background:#005FA1;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Racing</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">3% (3%)</div>
+      </div>
+      <div style="position:absolute;left:273.71pt;top:50.55pt;width:104.6pt;height:31.19pt;background:#005FA1;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Integrity &amp; Vets</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">3% (3%)</div>
+      </div>
+      <div style="position:absolute;left:273.71pt;top:89.09pt;width:104.6pt;height:39.64pt;background:#005FA1;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Customer &amp; Marketing</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">1% (1%)</div>
+      </div>
+      <div style="position:absolute;left:273.71pt;top:136.9pt;width:104.6pt;height:31.19pt;background:#005FA1;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Admin &amp; Other</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">5% (4%)</div>
+      </div>
+      <div style="position:absolute;left:273.71pt;top:176.23pt;width:104.6pt;height:31.19pt;background:#009E7D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Prizemoney</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">50% (50%)</div>
+      </div>
+      <div style="position:absolute;left:273.71pt;top:215.57pt;width:104.6pt;height:31.19pt;background:#009E7D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Club &amp; Infrastructure</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">18% (19%)</div>
+      </div>
+      <div style="position:absolute;left:273.71pt;top:254.71pt;width:104.6pt;height:31.19pt;background:#009E7D;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 6pt;box-sizing:border-box">
+        <div style="font-weight:700;font-size:7pt;line-height:8.5pt">Support</div>
+        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt">7% (6%)</div>
+      </div>
+
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:660,&quot;height&quot;:420},&quot;block&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;}}"></script>
+</body>
+</html>

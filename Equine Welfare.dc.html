@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="20-21 Equine Welfare" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:-360.7pt;top:179.3pt;width:469.4pt;height:469.4pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:962.5pt;top:271.5pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:998.8pt;top:-462.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  </sc-if>
+
+  <image-slot id="ew-image-rehomer" shape="circle" placeholder="Jen Duffy — Rehomer launch" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot>
+  <image-slot id="ew-image-ott" shape="circle" placeholder="Off The Track" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
+
+  <svg style="position:absolute;left:53.7pt;top:80pt;width:286.5pt;height:50pt" viewBox="0 0 286.5 50" role="img" aria-label="Equine Welfare"><text x="0" y="29.6" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37">Equine Welfare</text></svg>
+
+  <div style="position:absolute;left:303.3pt;top:170.7pt;width:235.28pt;font-size:9pt;line-height:12pt;letter-spacing:-0.01em">
+    <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;background:#005FA1;color:#fff;font-weight:700;height:26pt;align-items:center">
+      <div>Category</div><div>FY25 Spend (%)</div><div>FY24 Spend (%)</div>
+    </div>
+    <sc-for list="{{ tableRows }}" as="r" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;height:27.2pt;align-items:center;color:#005FA1;background:{{ r.bg }}">
+        <div style="padding-left:3.7pt">{{ r.label }}</div><div style="padding-left:3.7pt">{{ r.fy25 }}</div><div style="padding-left:3.7pt">{{ r.fy24 }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div data-column="ew0" style="position:absolute;left:56.7pt;top:{{ c1Top }}pt;width:235.3pt;height:{{ c1Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ ew0 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ew1" style="position:absolute;left:303.3pt;top:345pt;width:235.3pt;height:436.3pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ ew1 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ew2" style="position:absolute;left:652pt;top:176.7pt;width:235.3pt;height:606.3pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <div style="float:right;width:{{ wrapW }}pt;height:606.3pt;shape-outside:circle({{ wrapR }}pt at {{ wrapCx }}pt 42.4pt);shape-margin:0"></div>
+    <sc-for list="{{ ew2 }}" as="b" hint-placeholder-count="8">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ew3" style="position:absolute;left:898.6pt;top:{{ c4Top }}pt;width:235.3pt;height:{{ c4Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ ew3 }}" as="b" hint-placeholder-count="4">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:56.7pt;top:400pt;width:481.9pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:20,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:21,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;showDecoration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Frame geometry read from Spreads/Spread_u2716.xml (pp. 20-21), converted to
+// page coordinates with x + 595.28, y + 420.94, and checked against PDF page 11
+// of the DPS (printed first baselines 479 / 355.4 / 184.7 / 522.2).
+//
+// Story u2740 flows u29a6 (p.20, 2 cols) -> u273d (p.21, 2 cols). Every column
+// is shortened by something:
+//
+//  col 1  starts at 471, below the Rehomer photo's bbox wrap (-18 / 133,
+//         bottom offset 28.35).
+//  col 2  starts at 345, below the welfare-spend table's wrap rectangle
+//         (303.3 / 169.2, 236.7 x 175.8). The table itself is drawn in the
+//         template from the values in the artwork.
+//  col 3  starts at 176.7 (wrap rectangle 632.8 / 77.5) and is cut on its
+//         right by the Off The Track photo: contour wrap r 230.9 about
+//         (1070.6, 219.1) -> (418.6, 42.4) in column coordinates.
+//  col 4  starts at 515, below three stacked wrap rectangles (the lowest is
+//         895 / 430, 239 x 85).
+//
+// InDesign fills the columns continuously here - the printed col 2 / col 3 and
+// col 3 / col 4 breaks both land mid-paragraph - so no keep-whole.
+const FLOWS = [
+  { x: 56.70, y: 471.0, width: 235.3, height: 310.3 },
+  { x: 303.30, y: 345.0, width: 235.3, height: 436.3 },
+  { x: 652.00, y: 176.7, width: 235.3, height: 606.3,
+    wrap: { side: 'right', width: 48, height: 606.3, r: 230.9, cx: 231.3, cy: 42.4 } },
+  { x: 898.60, y: 515.0, width: 235.3, height: 268.0 },
+];
+
+// Welfare spend table, story ud613: 9pt, header white bold on RV Blue, body
+// rows RV Blue type with alternating RV Blue 10% ground.
+const TABLE = [
+  { label: 'Post Racing, Safety Net & Visibility', fy25: '46.3%', fy24: '37.6%', bg: 'transparent' },
+  { label: 'Risk Reduced Racing (Injury Prevention)', fy25: '18.1%', fy24: '32.2%', bg: '#E6EFF6' },
+  { label: 'Equine Welfare & Veterinary Operations', fy25: '30.0%', fy24: '28.6%', bg: 'transparent' },
+  { label: 'Industry Education & Reputation', fy25: '5.6%', fy24: '1.6%', bg: '#E6EFF6' },
+];
+
+
+// Photos scale with the copy (t = 1 is the FY25 artwork); less copy grows them, more shrinks them.
+// ?trim=0.8 previews the layout with 80% of the copy.
+function trimItems(items) {
+  const keep = +(new URLSearchParams(location.search).get('trim'));
+  if (!(keep > 0 && keep < 1)) return items;
+  let left = Math.round(items.reduce((n, i) => n + i.text.split(/\s+/).length, 0) * keep);
+  for (let k = 0; k < items.length; k++) {
+    const w = items[k].text.split(/\s+/);
+    if (left <= 0) { items.length = k; break; }
+    if (w.length > left) { items[k] = Object.assign({}, items[k], { text: w.slice(0, left).join(' ') }); items.length = k + 1; break; }
+    left -= w.length;
+  }
+  return items;
+}
+const T_MIN = 0.7, T_MAX = 1.3;
+function geo(t) {
+  const D1 = 309.6 * t, r = 230.9 * Math.min(t, 1.15);
+  const W = Math.max(Math.ceil(r - 183.3), 1), c4 = 219.1 + r + 65, c1 = 133 + D1 + 28.35;
+  return {
+    p1: { left: 291.6 - D1, top: 133, size: D1 },
+    p2: { left: 1070.6 - r, top: 219.1 - r, size: 2 * r },
+    flows: [
+      { x: 56.70, y: c1, width: 235.3, height: 781.3 - c1 },
+      FLOWS[1],
+      { x: 652.00, y: 176.7, width: 235.3, height: 606.3, wrap: { side: 'right', width: W, height: 606.3, r, cx: 183.3 + W, cy: 42.4 } },
+      { x: 898.60, y: c4, width: 235.3, height: 783 - c4 },
+    ],
+    W, r, c4, c1,
+  };
+}
+
+const BODY_AFTER = 8.504;
+const SUBHEAD_AFTER = 4;
+const FOOT_CLEARANCE = 0;
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+
+// Hidden/background loads (print export, off-screen iframes) never fire
+// requestAnimationFrame, which would park the flow chain forever, so fall back
+// to a timer when the document is hidden.
+const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
+
+class Component extends DCLogic {
+  state = { cols: [[], [], [], []], idx: 0, leftover: [], t: 1 };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    TICK(nudge);
+
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('equine-welfare', () => import('./copy/equine-welfare.js')) : import('./copy/equine-welfare.js')),
+      document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
+        .then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([m]) => this._whenMeasurable().then(() => {
+        const items = m.copy.paragraphs
+          .filter(p => !/^2025 Annual Report\s*[\u2013-]/.test(p.text))
+          .map(p => ({ text: p.text, kind: p.kind || 'body' }));
+        const a = this.fit(trimItems(items), 'Equine Welfare');
+        this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, t: a.t });
+      }))
+      .catch(e => console.error('copy module failed to load', e));
+  }
+
+  _whenMeasurable(attempt) {
+    const n = attempt || 0;
+    const p = this._probe(200, '0');
+    p.host.style.fontSize = '9pt';
+    p.host.style.lineHeight = '12pt';
+    p.node.data = 'Measure';
+    const h = p.host.getBoundingClientRect().height;
+    p.host.remove();
+    if (h > 0) return Promise.resolve();
+    if (n >= 120) {
+      console.warn('layout never became measurable \u2014 columns may not break correctly.');
+      return Promise.resolve();
+    }
+    return new Promise(res => TICK(res)).then(() => this._whenMeasurable(n + 1));
+  }
+
+  fit(items, label, opts) {
+    const fits = t => !this.flow(items, geo(t).flows, 0, opts).leftover.length;
+    if (!fits(T_MIN)) return Object.assign(this.settle(items, geo(T_MIN).flows, label, opts), { t: T_MIN });
+    let t = T_MAX;
+    if (!fits(T_MAX)) { let lo = T_MIN, hi = T_MAX; for (let i = 0; i < 7; i++) { const m = (lo + hi) / 2; if (fits(m)) lo = m; else hi = m; } t = lo; }
+    console.warn(label + ': photos at ' + Math.round(t * 100) + '% of FY25 size.');
+    return Object.assign(this.flow(items, geo(t).flows, 0, opts), { baseIdx: 0, t });
+  }
+
+  settle(items, cols, label, opts) {
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const attempt = this.flow(items, cols, baseIdx, opts);
+      if (!attempt.leftover.length) {
+        console.warn(label + ': fitted at tracking ' + TRACKING[baseIdx] +
+          ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
+        return Object.assign(attempt, { baseIdx });
+      }
+    }
+    const last = this.flow(items, cols, TRACKING.length - 1, opts);
+    console.warn(label + ': ' + last.leftover.length +
+      ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+    return Object.assign(last, { baseIdx: TRACKING.length - 1 });
+  }
+
+  _probe(widthPt, track, wrap) {
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;box-sizing:border-box;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;letter-spacing:' + track;
+    document.body.appendChild(host);
+    let shim = null;
+    if (wrap) {
+      shim = document.createElement('div');
+      shim.style.cssText = 'float:' + (wrap.side || 'left') + ';width:' + wrap.width +
+        'pt;height:' + wrap.height + 'pt';
+      host.appendChild(shim);
+    }
+    const node = document.createTextNode('');
+    host.appendChild(node);
+    return { host, shim, node };
+  }
+
+  _textHeight(host, node) {
+    if (!node.data) return 0;
+    const range = document.createRange();
+    range.setStart(node, 0);
+    range.setEnd(node, node.data.length);
+    const rects = range.getClientRects();
+    if (!rects.length) return 0;
+    return rects[rects.length - 1].bottom - host.getBoundingClientRect().top;
+  }
+
+  _style(host, item) {
+    const sub = item.kind === 'subhead';
+    host.style.fontWeight = '400';
+    host.style.fontSize = sub ? '13pt' : '9pt';
+    host.style.lineHeight = sub ? '18pt' : '12pt';
+  }
+
+  _after(item) {
+    return item.kind === 'subhead' ? SUBHEAD_AFTER : BODY_AFTER;
+  }
+
+  flow(items, cols, baseIdx, opts) {
+    const keepWhole = !!(opts && opts.keepWhole);
+    const columns = cols.map(() => []);
+    const track = TRACKING[baseIdx];
+    let queue = items.map(i => Object.assign({}, i));
+
+    for (let c = 0; c < cols.length; c++) {
+      const wrap = cols[c].wrap;
+      const probe = this._probe(cols[c].width, track, wrap);
+      const host = probe.host, shim = probe.shim, node = probe.node;
+      const capPx = (cols[c].height - FOOT_CLEARANCE) / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const item = queue[0];
+        this._style(host, item);
+        node.data = item.text;
+        if (shim) {
+          shim.style.shapeOutside = 'circle(' + wrap.r + 'pt at ' + wrap.cx +
+            'pt ' + (wrap.cy - usedPx * 0.75) + 'pt)';
+        }
+        const hPx = (shim ? this._textHeight(host, node)
+                          : host.getBoundingClientRect().height) + this._after(item) / 0.75;
+
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(Object.assign({}, item));
+          queue.shift();
+          usedPx += hPx;
+          continue;
+        }
+
+        if (keepWhole && c < cols.length - 1) break;
+
+        const availPx = capPx - usedPx;
+        const len = node.data.length;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = 0, hi = len, best = 0;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        let offset = best;
+        if (offset > 0 && offset < item.text.length) {
+          const space = item.text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        if (offset > 0 && item.kind !== 'subhead') {
+          columns[c].push(Object.assign({}, item, { text: item.text.slice(0, offset).trimEnd() }));
+          const rest = item.text.slice(offset).trimStart();
+          if (rest) queue[0] = Object.assign({}, item, { text: rest, cont: true });
+          else queue.shift();
+        }
+        break;
+      }
+      host.remove();
+    }
+
+    return { columns, leftover: queue };
+  }
+
+  renderVals() {
+    const n = this.state.leftover.length;
+    const g = geo(this.state.t);
+    return {
+      p1Left: g.p1.left, p1Top: g.p1.top, p1Size: g.p1.size,
+      p2Left: g.p2.left, p2Top: g.p2.top, p2Size: g.p2.size,
+      c1Top: g.c1, c1Height: g.flows[0].height, c4Top: g.c4, c4Height: g.flows[3].height,
+      wrapW: g.W, wrapR: g.r, wrapCx: 183.3 + g.W,
+      footYear: 2025,
+      folioLeft: this.props.folioLeft ?? 20,
+      folioRight: this.props.folioRight ?? 21,
+      showDecoration: this.props.showDecoration ?? true,
+      tableRows: TABLE,
+      track: TRACKING[this.state.idx],
+      ew0: this._flags(this.state.cols[0]), ew1: this._flags(this.state.cols[1]),
+      ew2: this._flags(this.state.cols[2]), ew3: this._flags(this.state.cols[3]),
+      overflowLabel: n ? n + ' paragraph' + (n === 1 ? '' : 's') +
+        ' will not fit this spread \u2014 trim the copy or extend the layout' : '',
+      overflowText: this.state.leftover.map(i => i.text).join('  \u00b6  '),
+    };
+  }
+
+  _flags(list) {
+    return (list || []).map((i, n) => ({
+      text: i.text,
+      isSubhead: i.kind === 'subhead' && n > 0,
+      isSubheadTop: i.kind === 'subhead' && n === 0,
+      isBody: i.kind !== 'subhead',
+    }));
+  }
+}
+</script>
+</body>
+</html>

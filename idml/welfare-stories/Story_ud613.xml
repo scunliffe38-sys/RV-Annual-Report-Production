@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="ud613" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceAfter="0">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper">
+				<Table Self="ud613id629" HeaderRowCount="0" FooterRowCount="0" NumHeaderColumns="0" HeaderColumnsPosition="HeaderColumnsLeft" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" BodyRowCount="5" ColumnCount="3" AppliedTableStyle="TableStyle/$ID/[Basic Table]" TableDirection="LeftToRightDirection">
+					<Row Self="ud613id629Row0" Name="0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="25.999890136718747" />
+					<Row Self="ud613id629Row1" Name="1" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="27.19989013671875" />
+					<Row Self="ud613id629Row2" Name="2" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="27.19989013671875" />
+					<Row Self="ud613id629Row3" Name="3" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="27.19989013671875" />
+					<Row Self="ud613id629Row4" Name="4" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="27.19989013671875" />
+					<Column Self="ud613id629Column0" Name="0" ColumnType="BodyColumn" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleColumnWidth="121.88976377952757" />
+					<Column Self="ud613id629Column1" Name="1" ColumnType="BodyColumn" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleColumnWidth="56.69291338582676" />
+					<Column Self="ud613id629Column2" Name="2" ColumnType="BodyColumn" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleColumnWidth="56.69291338582676" />
+					<Cell Self="ud613id629i0" Name="0:0" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/RV Blue" FillTint="-1" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/RV Blue Dark" TopEdgeStrokeColor="Color/RV Blue Dark" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokeOverprint="false" TopEdgeStrokeOverprint="false" BottomEdgeStrokeOverprint="false" LeftEdgeStrokePriority="33" RightEdgeStrokePriority="42" TopEdgeStrokePriority="35" BottomEdgeStrokePriority="32" LeftEdgeStrokeGapTint="100" RightEdgeStrokeGapTint="100" TopEdgeStrokeGapTint="100" BottomEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper" RightEdgeStrokeGapColor="Color/Paper" TopEdgeStrokeGapColor="Color/Paper" BottomEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" FontStyle="Bold" PointSize="9">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>Category</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i1" Name="1:0" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" FillColor="Color/RV Blue" FillTint="-1" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Blue Dark" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" TopEdgeStrokeOverprint="false" BottomEdgeStrokeOverprint="false" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="39" BottomEdgeStrokePriority="32" LeftEdgeStrokeGapTint="100" RightEdgeStrokeGapTint="100" TopEdgeStrokeGapTint="100" BottomEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper" RightEdgeStrokeGapColor="Color/Paper" TopEdgeStrokeGapColor="Color/Paper" BottomEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" FontStyle="Bold" PointSize="9">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>FY25 Spend (%)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i2" Name="2:0" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" FillColor="Color/RV Blue" FillTint="-1" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Blue Dark" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" TopEdgeStrokeOverprint="false" BottomEdgeStrokeOverprint="false" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="37" BottomEdgeStrokePriority="32" LeftEdgeStrokeGapTint="100" RightEdgeStrokeGapTint="100" TopEdgeStrokeGapTint="100" BottomEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper" RightEdgeStrokeGapColor="Color/Paper" TopEdgeStrokeGapColor="Color/Paper" BottomEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" FontStyle="Bold" PointSize="9">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>FY24 Spend (%)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i3" Name="0:1" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/RV Blue" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" TopEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" TopEdgeStrokeOverprint="false" LeftEdgeStrokePriority="32" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32" TopEdgeStrokeGapTint="100" TopEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book">
+								<Content>Post Racing, Safety 
+Net &amp; Visibility</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i4" Name="1:1" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" FillColor="Swatch/None" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" TopEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" TopEdgeStrokeOverprint="false" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32" TopEdgeStrokeGapTint="100" TopEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue">
+								<Content>46.3%</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i5" Name="2:1" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" FillColor="Swatch/None" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" TopEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" TopEdgeStrokeOverprint="false" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32" TopEdgeStrokeGapTint="100" TopEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue">
+								<Content>37.6%</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i6" Name="0:2" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/RV Blue" FillTint="10" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/RV Blue" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" VerticalJustification="CenterAlign" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="32" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book">
+								<Content>Risk Reduced Racing 
+(Injury Prevention)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i7" Name="1:2" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" FillColor="Color/RV Blue" FillTint="10" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue">
+								<Content>18.1%</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i8" Name="2:2" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" FillColor="Color/RV Blue" FillTint="10" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue">
+								<Content>32.2%</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629i9" Name="0:3" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/RV Blue" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" VerticalJustification="CenterAlign" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="32" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book">
+								<Content>Equine Welfare &amp; Veterinary Operations</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629ia" Name="1:3" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" FillColor="Swatch/None" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue">
+								<Content>30.0%</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629ib" Name="2:3" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" FillColor="Swatch/None" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue">
+								<Content>28.6%</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629ic" Name="0:4" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/RV Blue" FillTint="10" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/RV Blue" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" VerticalJustification="CenterAlign" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="32" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book">
+								<Content>Industry Education &amp; Reputation</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629id" Name="1:4" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" FillColor="Color/RV Blue" FillTint="10" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue">
+								<Content>5.6%</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ud613id629ie" Name="2:4" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" FillColor="Color/RV Blue" FillTint="10" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Color/RV Blue" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="42" TopEdgeStrokePriority="32" BottomEdgeStrokePriority="32">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody" SpaceBefore="0" SpaceAfter="0">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue">
+								<Content>1.6%</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+				</Table>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./report-structure.js"></script>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="2-3 Contents" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:130.1pt;top:-148.9pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:985.3pt;top:-14.8pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:1047pt;top:-458.2pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  </sc-if>
+
+  <image-slot id="contents-hero" shape="circle" placeholder="Robbie Dolan, Melbourne Cup" style="position:absolute;left:453pt;top:-160.2pt;width:1034.2pt;height:1034.2pt"></image-slot>
+
+  <svg style="position:absolute;left:54.7pt;top:78.5pt;width:168.5pt;height:45pt" viewBox="0 0 168.5 45" role="img" aria-label="Contents"><text x="0" y="29.6" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37">Contents</text></svg>
+
+  <div data-column="contents" style="position:absolute;left:56.8pt;top:172pt;width:334.5pt;height:518pt;display:flex;flex-direction:column;justify-content:space-between">
+    <sc-for list="{{ entries }}" as="e" hint-placeholder-count="25">
+      <div style="display:flex;align-items:baseline;gap:12pt;margin:0">
+        <div style="flex:1 1 auto;font-size:10pt;line-height:13pt;font-weight:400;color:#6D6E71;letter-spacing:-0.01em">{{ e.title }}</div>
+        <div style="flex:0 0 auto;font-size:10pt;line-height:13pt;font-weight:500;color:#005FA1;letter-spacing:-0.01em">{{ e.page }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <image-slot id="contents-rv-logo" shape="rect" fit="contain" placeholder="RV logo (CMYK)" style="position:absolute;left:52.7pt;top:719.3pt;width:149.9pt;height:53.8pt"></image-slot>
+
+  <div style="position:absolute;left:56.7pt;top:784.4pt;width:229.6pt;font-size:7pt;line-height:10pt;font-weight:400;color:#6D6E71">Racing Victoria Limited ACN 096 917 930<br />Annual Report for the financial period ended 30 June 2025</div>
+
+  <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C,#005FA1)"></div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1190.55pt&quot;,&quot;height&quot;:&quot;841.89pt&quot;},&quot;showDecoration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Spread furniture&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    // The helmet script is normally parsed before the first render; if it is
+    // not, re-render as soon as it lands rather than shipping a second list.
+    if (window.RV_REPORT_STRUCTURE) return;
+    const tick = () => {
+      if (window.RV_REPORT_STRUCTURE) this.forceUpdate();
+      else this._t = requestAnimationFrame(tick);
+    };
+    this._t = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    if (this._t) cancelAnimationFrame(this._t);
+  }
+
+  renderVals() {
+    const spine = window.RV_REPORT_STRUCTURE;
+    if (spine) {
+      const warnings = spine.impositionWarnings();
+      if (warnings.length) console.warn("[Contents] imposition:", warnings);
+    }
+    return {
+      showDecoration: this.props.showDecoration ?? true,
+      entries: spine ? spine.contentsEntries() : [],
+    };
+  }
+}
+</script>
+</body>
+</html>

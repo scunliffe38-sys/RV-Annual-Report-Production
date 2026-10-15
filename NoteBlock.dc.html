@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ block.isHead }}" hint-placeholder-val="">
+  <div style="font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;padding:{{ block.pt }} 0 {{ block.pb }}">{{ block.t }}</div>
+</sc-if>
+
+<sc-if value="{{ block.isPara }}" hint-placeholder-val="{{ true }}">
+  <div style="font-size:{{ block.fs }};line-height:{{ block.lh }};font-weight:{{ block.fw }};font-style:{{ block.fst }};text-transform:{{ block.tt }};text-decoration:{{ block.td }};letter-spacing:{{ block.ls }};text-align:{{ block.ta }};color:{{ block.col }};margin-left:{{ block.ml }};text-indent:{{ block.ti }};padding:{{ block.pt }} 0 {{ block.pb }}">{{ block.t }}</div>
+</sc-if>
+
+<sc-if value="{{ block.isRuns }}" hint-placeholder-val="">
+  <div style="font-size:{{ block.fs }};line-height:{{ block.lh }};font-weight:{{ block.fw }};font-style:{{ block.fst }};letter-spacing:{{ block.ls }};text-align:{{ block.ta }};color:{{ block.col }};margin-left:{{ block.ml }};text-indent:{{ block.ti }};padding:{{ block.pt }} 0 {{ block.pb }}"><sc-for list="{{ block.runs }}" as="r" hint-placeholder-count="2"><span style="font-weight:{{ r.fw }};font-style:{{ r.fst }}">{{ r.t }}</span></sc-for></div>
+</sc-if>
+
+<sc-if value="{{ block.isBullet }}" hint-placeholder-val="">
+  <div style="display:grid;grid-template-columns:14.173pt 1fr;margin-left:{{ block.ml }};padding:{{ block.pt }} 0 {{ block.pb }};font-size:{{ block.fs }};line-height:{{ block.lh }};font-weight:{{ block.fw }};letter-spacing:{{ block.ls }};color:{{ block.col }}">
+    <div>{{ block.marker }}</div>
+    <div>{{ block.t }}</div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ block.isTable }}" hint-placeholder-val="">
+  <div style="padding:{{ block.pt }} 0 {{ block.pb }}">
+    <sc-for list="{{ block.rows }}" as="r" hint-placeholder-count="8">
+      <div style="display:grid;grid-template-columns:{{ r.cols }};min-height:{{ r.h }}">
+        <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="3">
+          <div style="grid-column:{{ c.gc }};display:flex;align-items:{{ c.va }};justify-content:{{ c.jc }};background:{{ c.bg }};border-top:{{ c.bt }};border-bottom:{{ c.bb }};padding:0 4.252pt 0 {{ c.pl }};box-sizing:border-box;min-width:0;overflow-wrap:anywhere;white-space:{{ c.ws }};font-size:{{ c.fs }};line-height:{{ c.lh }};font-weight:{{ c.fw }};font-style:{{ c.fst }};text-transform:{{ c.tt }};letter-spacing:{{ c.ls }};text-align:{{ c.ta }};color:{{ c.col }};font-variant-numeric:{{ c.fvn }}">{{ c.t }}</div>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:660,&quot;height&quot;:420},&quot;block&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;}}"></script>
+</body>
+</html>

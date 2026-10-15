@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u13b4f" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Footnotes" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Grey">
+				<Content>(xi)	Whilst VTRI prizemoney and bonuses on offer exceed $316 million, amounts reported exclude contributions from member clubs and other third parties, as well as amounts deducted and retained for equine, jockey and participant welfare contributions (which total 4% of prizemoney: 2% equine, 1% jockey, 1% participant). Noting participant contributions temporarily increased from 0.5% between 1 February 2024 and 31 July 2025.</Content>
+				<Br />
+				<Content>(xii)	Revised club funding arrangements from 1 August 2024 reflected a change in composition of some funding grants.</Content>
+				<Br />
+				<Content>(xiii)	Direct project management by racing clubs in reporting year.</Content>
+				<Br />
+				<Content>(xiv)	Participant welfare and workforce development. Participant welfare spend inclusive of commitment to support rising trainer Workcover premiums amongst other initiatives.</Content>
+				<Br />
+				<Content>(xv)	Investment in the welfare of thoroughbreds, including supporting a range of initiatives before, during and after racing.</Content>
+				<Br />
+				<Content>(xvi)	Owner initiatives. Reporting year inclusive of Australian Racing Museum support. </Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

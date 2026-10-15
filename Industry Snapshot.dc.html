@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+<doc-page size="a4">
+<section class="page" data-screen-label="Industry Snapshot" style="position:relative;width:595.276pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#C4E6FF;overflow:hidden">
+
+  <div style="position:absolute;left:403.5pt;top:-462.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:297.9pt;top:29.2pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <div style="position:absolute;left:53.4pt;top:72pt;width:476.4pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;background:linear-gradient(90deg,#005FA1 0%,#EC008C 100%);-webkit-background-clip:text;background-clip:text;color:transparent">{{ heading }}</div>
+
+  <img src="./icons/snapshot-turnover.svg" alt="" style="position:absolute;left:240.72pt;top:111.6pt;width:182.01pt;height:100.79pt" />
+  <div style="position:absolute;left:230.5pt;top:216pt;width:175pt;text-align:center">
+    <div style="font-weight:900;font-size:62pt;line-height:62pt;color:#005FA1">{{ totalTurnover }}</div>
+    <div style="font-weight:900;font-size:48pt;line-height:40pt;color:#005FA1">{{ totalTurnoverSuffix }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:17pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:6pt">Total turnover</div>
+  </div>
+
+  <img src="./icons/snapshot-srcBenefit.svg" alt="" style="position:absolute;left:37.26pt;top:135pt;width:198pt;height:113.77pt" />
+  <div style="position:absolute;left:31.7pt;top:256pt;width:200pt;text-align:center">
+    <div style="font-weight:500;font-size:46pt;line-height:48pt;color:#005FA1">{{ springCarnivalBenefit }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:17pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:8pt">2024 Spring Racing<br />Carnival Economic<br />Benefit to Victoria</div>
+  </div>
+
+  <img src="./icons/snapshot-attendance.svg" alt="" style="position:absolute;left:437.09pt;top:128.4pt;width:97.63pt;height:161.58pt" />
+  <div style="position:absolute;left:398.25pt;top:296pt;width:193.5pt;text-align:center">
+    <div style="font-weight:900;font-size:62pt;line-height:62pt;color:#005FA1">{{ totalAttendance }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:17pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:8pt">Total Attendance</div>
+  </div>
+
+  <img src="./icons/snapshot-owners.svg" alt="" style="position:absolute;left:219.51pt;top:356pt;width:175.21pt;height:113.88pt" />
+  <div style="position:absolute;left:214.55pt;top:476pt;width:200pt;text-align:center">
+    <div style="font-weight:900;font-size:48pt;line-height:50pt;color:#005FA1">{{ owners }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:17pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:6pt">Owners</div>
+  </div>
+
+  <img src="./icons/snapshot-viewers-blank.svg" alt="" style="position:absolute;left:67.04pt;top:374.3pt;width:113.37pt;height:93.74pt" />
+  <div style="position:absolute;left:76.8pt;top:400.7pt;width:93.8pt;height:47.9pt;text-align:center;font-weight:900;font-size:33pt;line-height:47.9pt;background:linear-gradient(160deg,#005FA1 0%,#EC008C 100%);-webkit-background-clip:text;background-clip:text;color:transparent">{{ cupWeekViewers }}</div>
+  <div style="position:absolute;left:22.6pt;top:474pt;width:201.1pt;text-align:center">
+    <div style="font-weight:900;font-size:14pt;line-height:15.5pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1">2024 Melbourne Cup<br />week total viewers<br />via 9Network</div>
+  </div>
+
+  <img src="./icons/snapshot-prizemoney.svg" alt="" style="position:absolute;left:295.68pt;top:562pt;width:42.57pt;height:36pt" />
+  <div style="position:absolute;left:233.7pt;top:604pt;width:160pt;text-align:center">
+    <div style="font-weight:900;font-size:28pt;line-height:30pt;color:#005FA1">{{ prizemoneyAndBonuses }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:15.5pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:6pt">Prizemoney and<br />Bonuses Paid</div>
+  </div>
+
+  <div style="position:absolute;left:102.6pt;top:533.5pt;width:41.2pt;height:0;border-top:1pt solid #005FA1"></div>
+  <div style="position:absolute;left:51.2pt;top:542pt;width:144pt;text-align:center">
+    <div style="font-weight:900;font-size:36pt;line-height:38pt;color:#005FA1">{{ racesRun }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:17pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:6pt">Races Run</div>
+  </div>
+  <div style="position:absolute;left:102.6pt;top:612pt;width:41.2pt;height:0;border-top:1pt solid #005FA1"></div>
+  <div style="position:absolute;left:51.2pt;top:620pt;width:144pt;text-align:center">
+    <div style="font-weight:900;font-size:36pt;line-height:38pt;color:#005FA1">{{ horseSafetyRecord }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:15.5pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:6pt">Horse Safety<br />Record</div>
+  </div>
+
+  <img src="./icons/snapshot-welfare.svg" alt="" style="position:absolute;left:441.41pt;top:394pt;width:106.32pt;height:88.24pt" />
+  <div style="position:absolute;left:408.6pt;top:489pt;width:184.1pt;text-align:center">
+    <div style="font-weight:900;font-size:32pt;line-height:34pt;color:#005FA1">{{ equineWelfareInvestment }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:15.5pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:6pt">Equine Welfare<br />Investment</div>
+  </div>
+  <div style="position:absolute;left:479.6pt;top:568pt;width:41.2pt;height:0;border-top:1pt solid #005FA1"></div>
+  <div style="position:absolute;left:408.6pt;top:576pt;width:184.1pt;text-align:center">
+    <div style="font-weight:900;font-size:32pt;line-height:34pt;color:#005FA1">{{ opexReduction }}</div>
+    <div style="font-weight:900;font-size:14pt;line-height:15.5pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:6pt">Reduction in gross<br />operational expenditure</div>
+  </div>
+
+  <div style="position:absolute;left:0;top:822pt;width:595.276pt;height:19.9pt;background:linear-gradient(90deg,#EC008C -100%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:367.94pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:522.71pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio }}</div>
+
+</section>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:794,&quot;height&quot;:1123},&quot;pageFolio&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:9,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+const DASH = '\u2014';
+
+class Component extends DCLogic {
+  state = { data: null };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    requestAnimationFrame(nudge);
+
+    // Three stats are derived from the KPI workbook data rather than restated
+    // here, so both files need kpi-data.js loaded to resolve them.
+    Promise.all([import('./snapshot-data.js'), import('./kpi-data.js')])
+      .then(([sm, km]) => this.setState({
+        data: sm.snapshot,
+        stats: sm.resolveSnapshot(km.kpi),
+      }))
+      .catch(e => console.error('snapshot data failed to load', e));
+  }
+
+  // Raw value -> printed string. All rounding happens here, nowhere else.
+  fmt(stat) {
+    if (!stat || stat.value === null || stat.value === undefined) return DASH;
+    const v = stat.value;
+    switch (stat.format) {
+      case 'money-bn2': return '$' + (v / 1e9).toFixed(2);
+      case 'money-m1': return '$' + (v / 1e6).toFixed(1) + 'm';
+      case 'money-m2': return '$' + (v / 1e6).toFixed(2) + 'm';
+      case 'count-m2': return (v / 1e6).toFixed(2) + 'm';
+      case 'count-m1': return (v / 1e6).toFixed(1) + 'm';
+      case 'count': return Math.round(v).toLocaleString('en-AU');
+      case 'pct2': return (v * 100).toFixed(2) + '%';
+      default: return String(v);
+    }
+  }
+
+  // Only money-bn2 splits its unit onto a second line, matching the printed page.
+  suffix(stat) {
+    if (!stat || stat.value === null || stat.value === undefined) return '';
+    return stat.format === 'money-bn2' ? 'BN' : '';
+  }
+
+  renderVals() {
+    const d = this.state.data;
+    const s = this.state.stats || (d && d.stats) || {};
+    const meta = (d && d.meta) || {};
+    const ids = ['totalTurnover', 'springCarnivalBenefit', 'totalAttendance', 'owners',
+                 'cupWeekViewers', 'prizemoneyAndBonuses', 'racesRun', 'horseSafetyRecord',
+                 'equineWelfareInvestment', 'opexReduction'];
+
+    const out = {
+      heading: meta.heading || '',
+      footYear: meta.footYear || '',
+      folio: this.props.pageFolio ?? meta.folio ?? 9,
+      totalTurnoverSuffix: this.suffix(s.totalTurnover),
+    };
+    ids.forEach(id => { out[id] = this.fmt(s[id]); });
+    return out;
+  }
+}
+</script>
+</body>
+</html>

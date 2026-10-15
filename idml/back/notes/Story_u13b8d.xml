@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u13b8d" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Footnotes" LeftIndent="19.84251968503937" FirstLineIndent="-19.84251968503937" SpaceAfter="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Properties>
+					<Leading type="unit">9</Leading>
+				</Properties>
+				<Content>(xxii)	Inclusive of external legal costs. Notable activity within the prior period included the NSW Supreme Court legal matter.</Content>
+				<Br />
+				<Content>(xxiii)	Reporting year inclusive of one-off staff costs due to organisational restructure activity and historical indirect tax liability.</Content>
+				<Br />
+				<Content>(xxiv)	Industry support package arrangements with the Cranbourne Pakenham Racing Club allowed for the transfer of Pakenham stabling allotments and Cranbourne land assets owned by Racing Victoria to the new Club for a consideration of $1 during the prior year in connection with the Club debt restructure and recapitalisation. </Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

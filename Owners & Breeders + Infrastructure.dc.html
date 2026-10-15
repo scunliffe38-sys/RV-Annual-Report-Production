@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="14-15 Owners &amp; Breeders / Infrastructure" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:605.1pt;top:181.8pt;width:819.2pt;height:819.2pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:933.1pt;top:392.8pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  </sc-if>
+
+  <image-slot id="obi-image-left" shape="circle" placeholder="VOBIS Owners Bonus — McGaw" style="position:absolute;left:-35pt;top:541.7pt;width:348.9pt;height:348.9pt"></image-slot>
+  <image-slot id="obi-image-right" shape="circle" placeholder="Pakenham lights" style="position:absolute;left:691.9pt;top:455pt;width:513.3pt;height:513.3pt"></image-slot>
+
+  <svg style="position:absolute;left:53.7pt;top:72pt;width:360.2pt;height:50pt" viewBox="0 0 360.2 50" role="img" aria-label="Owners &amp; Breeders"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">O</tspan><tspan fill="#0E5AA0">w</tspan><tspan fill="#1B549F">n</tspan><tspan fill="#294F9D">e</tspan><tspan fill="#36499C">r</tspan><tspan fill="#44449B">s</tspan><tspan fill="#513E9A"> </tspan><tspan fill="#5F3999">&amp;</tspan><tspan fill="#6D3397"> </tspan><tspan fill="#7A2E96">B</tspan><tspan fill="#882895">r</tspan><tspan fill="#952394">e</tspan><tspan fill="#A31D93">e</tspan><tspan fill="#B01891">d</tspan><tspan fill="#BE1390">e</tspan><tspan fill="#CC0D8F">r</tspan><tspan fill="#D9088E">s</tspan></text></svg>
+
+  <svg style="position:absolute;left:651.5pt;top:72pt;width:500.5pt;height:50pt" viewBox="0 0 500.5 50" role="img" aria-label="Infrastructure &amp; Projects"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">I</tspan><tspan fill="#095BA0">n</tspan><tspan fill="#12589F">f</tspan><tspan fill="#1B549F">r</tspan><tspan fill="#24509E">a</tspan><tspan fill="#2D4D9D">s</tspan><tspan fill="#36499C">t</tspan><tspan fill="#3F469B">r</tspan><tspan fill="#48429B">u</tspan><tspan fill="#513E9A">c</tspan><tspan fill="#5A3B99">t</tspan><tspan fill="#643798">u</tspan><tspan fill="#6D3397">r</tspan><tspan fill="#763097">e</tspan><tspan fill="#7F2C96"> </tspan><tspan fill="#882895">&amp;</tspan><tspan fill="#912594"> </tspan><tspan fill="#9A2193">P</tspan><tspan fill="#A31D93">r</tspan><tspan fill="#AC1A92">o</tspan><tspan fill="#B51691">j</tspan><tspan fill="#BE1390">e</tspan><tspan fill="#C70F8F">c</tspan><tspan fill="#D00B8E">t</tspan><tspan fill="#D9088E">s</tspan></text></svg>
+
+  <div data-column="ob0" style="position:absolute;left:56.7pt;top:161.7pt;width:235.3pt;height:360pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackOB }};color:#6D6E71">
+    <sc-for list="{{ ob0 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt;text-indent:-10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ob1" style="position:absolute;left:303.3pt;top:161.7pt;width:248.9pt;height:611.9pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackOB }};color:#6D6E71">
+    <div style="float:left;width:12pt;height:611.9pt;shape-outside:circle(175.5pt at -163.85pt 554.45pt);shape-margin:4pt"></div>
+    <sc-for list="{{ ob1 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt;text-indent:-10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ip0" style="position:absolute;left:651.8pt;top:161.7pt;width:212.2pt;height:292pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackIP }};color:#6D6E71">
+    <sc-for list="{{ ip0 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt;text-indent:-10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ip1" style="position:absolute;left:898.6pt;top:161.7pt;width:235.3pt;height:285pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackIP }};color:#6D6E71">
+    <sc-for list="{{ ip1 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt;text-indent:-10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:56.7pt;top:700pt;width:1077.3pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:821.7pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:14,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:15,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;showDecoration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Frame geometry read from Spreads/Spread_u11823.xml (pp. 14-15), converted to
+// page coordinates with x + 595.28, y + 420.6.
+//
+// Two independent stories: Owners & Breeders (u11875) flows through the two
+// left-page frames, Infrastructure & Projects (u118b7) through the two on the
+// right. Both fill sequentially, as InDesign does — the frames' unequal depths
+// are the design: OB col A stops at 521.7 to clear the McGaw circle below it.
+const FLOWS = {
+  ob: [
+    { x: 56.70, y: 161.7, width: 235.3, height: 360.0 },
+    // Frame is 739.7 deep, running past the sheet; capped at the text foot.
+    // The McGaw circle's top-right arc intrudes into this column: IDML wrap
+    // polygon u11931 (TextWrapSide RightSide, Contour) traces the circle with a
+    // ~1pt offset, so the exclusion is the circle itself at r 175.5, centre
+    // (-163.85, 556.15) in column-local pt. Max intrusion 11.7pt at y 550.
+    { x: 303.30, y: 161.7, width: 248.9, height: 611.9,
+      wrap: { width: 12, height: 611.9, r: 175.5, cx: -163.85, cy: 554.45 } },
+  ],
+  ip: [
+    // The Pakenham circle is dropped to y 455 so both frames can run deeper —
+    // col A to 453.7 (the arc is at 469.3 above it), col B to 446.7.
+    { x: 651.80, y: 161.7, width: 212.2, height: 292.0 },
+    { x: 898.60, y: 161.7, width: 235.3, height: 285.0 },
+  ],
+};
+
+// A4 V:Body — 5.669 before + 2.835 after. A4 V:Bullets Body — 2.835 + 11.339.
+// A4 V:Subhead Large — RV Blue, Gotham Book 13/18.
+const BODY_AFTER = 8.504;
+const BULLET_AFTER = 14.173;
+const SUBHEAD_AFTER = 4;
+const FOOT_CLEARANCE = 7;
+// A4 V:Body carries Tracking -10, so the ladder starts there.
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+
+// Hidden/background loads (print export, off-screen iframes) never fire
+// requestAnimationFrame, which would park the flow chain forever, so fall back
+// to a timer when the document is hidden.
+const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
+
+class Component extends DCLogic {
+  state = { ob: [[], []], ip: [[], []], obIdx: 0, ipIdx: 0, leftover: [] };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    TICK(nudge);
+
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('owners-breeders', () => import('./copy/owners-breeders.js')) : import('./copy/owners-breeders.js')),
+      (window.RVProduction ? window.RVProduction.load('infrastructure-projects', () => import('./copy/infrastructure-projects.js')) : import('./copy/infrastructure-projects.js')),
+      document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
+        .then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([ob, ip]) => this._whenMeasurable().then(() => {
+        const prep = m => m.copy.paragraphs
+          .filter(p => !/^2025 Annual Report\s*[\u2013-]/.test(p.text))
+          .map(p => ({ text: p.text, kind: p.kind || 'body' }));
+
+        const a = this.settle(prep(ob), FLOWS.ob, 'Owners & Breeders');
+        const b = this.settle(prep(ip), FLOWS.ip, 'Infrastructure & Projects', { keepWhole: true });
+        this.setState({
+          ob: a.columns, obIdx: a.baseIdx,
+          ip: b.columns, ipIdx: b.baseIdx,
+          leftover: a.leftover.concat(b.leftover),
+        });
+      }))
+      .catch(e => console.error('copy modules failed to load', e));
+  }
+
+  // A probe attached before the sheet has been laid out measures 0, which makes
+  // every paragraph look weightless and pours a whole story into its first
+  // frame. Wait for a known sample to report a real height before flowing.
+  _whenMeasurable(attempt) {
+    const n = attempt || 0;
+    const p = this._probe(200, '0');
+    p.host.style.fontSize = '9pt';
+    p.host.style.lineHeight = '12pt';
+    p.node.data = 'Measure';
+    const h = p.host.getBoundingClientRect().height;
+    p.host.remove();
+    if (h > 0) return Promise.resolve();
+    if (n >= 120) {
+      console.warn('layout never became measurable \u2014 columns may not break correctly.');
+      return Promise.resolve();
+    }
+    return new Promise(res => TICK(res)).then(() => this._whenMeasurable(n + 1));
+  }
+
+  // Loosen tracking a step at a time until the story fits its frames. Browsers
+  // set slightly wider than InDesign's paragraph composer, so the printed break
+  // points need a nudge of negative tracking to land.
+  settle(items, cols, label, opts) {
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const attempt = this.flow(items, cols, baseIdx, opts);
+      if (!attempt.leftover.length) {
+        console.warn(label + ': fitted at tracking ' + TRACKING[baseIdx] +
+          ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
+        return Object.assign(attempt, { baseIdx });
+      }
+    }
+    const last = this.flow(items, cols, TRACKING.length - 1, opts);
+    console.warn(label + ': ' + last.leftover.length +
+      ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+    return Object.assign(last, { baseIdx: TRACKING.length - 1 });
+  }
+
+  _probe(widthPt, track, wrap) {
+    const host = document.createElement('div');
+    // border-box matters: a bullet's 10pt padding must eat INTO the column
+    // width, as it does in the render, or bullets measure short and overflow.
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;box-sizing:border-box;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;letter-spacing:' + track;
+    document.body.appendChild(host);
+    let shim = null;
+    if (wrap) {
+      shim = document.createElement('div');
+      shim.style.cssText = 'float:left;width:' + wrap.width + 'pt;height:' + wrap.height + 'pt';
+      host.appendChild(shim);
+    }
+    const node = document.createTextNode('');
+    host.appendChild(node);
+    return { host, shim, node };
+  }
+
+  // Text height measured off the text node, not the host box: an absolutely
+  // positioned host is a BFC, so a wrap shim's float would inflate its height.
+  _textHeight(host, node) {
+    if (!node.data) return 0;
+    const range = document.createRange();
+    range.setStart(node, 0);
+    range.setEnd(node, node.data.length);
+    const rects = range.getClientRects();
+    if (!rects.length) return 0;
+    return rects[rects.length - 1].bottom - host.getBoundingClientRect().top;
+  }
+
+  _style(host, item) {
+    const sub = item.kind === 'subhead';
+    host.style.fontWeight = '400';
+    host.style.fontSize = sub ? '13pt' : '9pt';
+    host.style.lineHeight = sub ? '18pt' : '12pt';
+    host.style.paddingLeft = item.kind === 'bullet' ? '10pt' : '0';
+    host.style.textIndent = (item.kind === 'bullet' && !item.cont) ? '-10pt' : '0';
+  }
+
+  _after(item) {
+    if (item.kind === 'subhead') return SUBHEAD_AFTER;
+    return item.kind === 'bullet' ? BULLET_AFTER : BODY_AFTER;
+  }
+
+  // Pour the items through the columns, breaking mid-paragraph where a column
+  // runs out. A bullet broken across columns keeps its indent but drops the
+  // marker on the continuation.
+  flow(items, cols, baseIdx, opts) {
+    const keepWhole = !!(opts && opts.keepWhole);
+    const columns = cols.map(() => []);
+    const track = TRACKING[baseIdx];
+    let queue = items.map(i => Object.assign({}, i));
+
+    for (let c = 0; c < cols.length; c++) {
+      const wrap = cols[c].wrap;
+      const probe = this._probe(cols[c].width, track, wrap);
+      const host = probe.host, shim = probe.shim, node = probe.node;
+      // Hold the copy a little clear of the frame foot rather than setting
+      // flush to it.
+      const capPx = (cols[c].height - FOOT_CLEARANCE) / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const item = queue[0];
+        this._style(host, item);
+        node.data = (item.kind === 'bullet' && !item.cont ? '\u2022\u2003' : '') + item.text;
+        // Slide the exclusion up by the copy already set, so each item measures
+        // against the intrusion at its own depth in the column.
+        if (shim) {
+          shim.style.shapeOutside = 'circle(' + wrap.r + 'pt at ' + wrap.cx +
+            'pt ' + (wrap.cy - usedPx * 0.75) + 'pt)';
+        }
+        const hPx = (shim ? this._textHeight(host, node)
+                          : host.getBoundingClientRect().height) + this._after(item) / 0.75;
+
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(Object.assign({}, item));
+          queue.shift();
+          usedPx += hPx;
+          continue;
+        }
+
+        // keepWhole: a paragraph that doesn't fit moves to the next column
+        // entire rather than splitting across the gutter.
+        // ...except in the final column, where there is no next column to move
+        // to: setting as much as fits beats leaving the frame short.
+        if (keepWhole && c < cols.length - 1) break;
+
+        // Binary-search the last character that still fits this column.
+        const availPx = capPx - usedPx;
+        const prefix = (item.kind === 'bullet' && !item.cont) ? 2 : 0;
+        const len = node.data.length;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = prefix, hi = len, best = prefix;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        let offset = best - prefix;
+        if (offset > 0 && offset < item.text.length) {
+          const space = item.text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        // A subhead never breaks — it moves to the next column whole.
+        if (offset > 0 && item.kind !== 'subhead') {
+          columns[c].push(Object.assign({}, item, { text: item.text.slice(0, offset).trimEnd() }));
+          const rest = item.text.slice(offset).trimStart();
+          if (rest) queue[0] = Object.assign({}, item, { text: rest, cont: true });
+          else queue.shift();
+        }
+        break;
+      }
+      host.remove();
+    }
+
+    return { columns, leftover: queue };
+  }
+
+  renderVals() {
+    const n = this.state.leftover.length;
+    return {
+      footYear: 2025,
+      folioLeft: this.props.folioLeft ?? 14,
+      folioRight: this.props.folioRight ?? 15,
+      showDecoration: this.props.showDecoration ?? true,
+      trackOB: TRACKING[this.state.obIdx],
+      trackIP: TRACKING[this.state.ipIdx],
+      ob0: this._flags(this.state.ob[0]), ob1: this._flags(this.state.ob[1]),
+      ip0: this._flags(this.state.ip[0]), ip1: this._flags(this.state.ip[1]),
+      overflowLabel: n ? n + ' paragraph' + (n === 1 ? '' : 's') +
+        ' will not fit this spread \u2014 trim the copy or extend the layout' : '',
+      overflowText: this.state.leftover.map(i => i.text).join('  \u00b6  '),
+    };
+  }
+
+  // The template picks a block style per kind, so no style values travel
+  // through holes.
+  _flags(list) {
+    // A subhead opening a column sits 3.9pt higher, so its first baseline lands
+    // on the same line as a body column's first baseline.
+    return (list || []).map((i, n) => ({
+      text: (i.kind === 'bullet' && !i.cont ? '\u2022\u2003' : '') + i.text,
+      isSubhead: i.kind === 'subhead' && n > 0,
+      isSubheadTop: i.kind === 'subhead' && n === 0,
+      isBullet: i.kind === 'bullet' && !i.cont,
+      isBulletCont: i.kind === 'bullet' && !!i.cont,
+      isBody: i.kind !== 'subhead' && i.kind !== 'bullet',
+    }));
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="595.276pt" height="841.89pt">
+
+<section class="page" data-screen-label="84 Back cover &#8212; members" style="position:relative;width:595.276pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#000000;overflow:hidden">
+
+  <div style="position:absolute;left:-559.9pt;top:-1274.3pt;width:1716.4pt;height:1716.4pt;border-radius:50%;background:#005FA1"></div>
+
+  <image-slot id="back-rv-logo" shape="rect" fit="contain" placeholder="RV logo (CMYK, reversed white)" style="position:absolute;left:221.6pt;top:180pt;width:152.1pt;height:60.5pt"></image-slot>
+
+  <div style="position:absolute;left:127.5pt;top:286.9pt;width:340.2pt;text-align:center;color:#ffffff">
+    <div style="font-size:9pt;line-height:13pt;font-weight:700">Racing Victoria Limited</div>
+    <div style="font-size:9pt;line-height:13pt;font-weight:400">400 Epsom Road, Flemington, Victoria 3031</div>
+    <div style="font-size:9pt;line-height:13pt;font-weight:400">racingvictoria.com.au</div>
+  </div>
+
+  <div style="position:absolute;left:0;top:476.5pt;width:595.276pt;text-align:center;font-size:12pt;line-height:24.6pt;font-weight:500;color:#ffffff;letter-spacing:0.02em">Club Members</div>
+
+  <div style="position:absolute;left:56.7pt;top:508pt;width:481.9pt;display:grid;grid-template-columns:repeat(5,1fr);gap:10pt;align-items:center">
+    <sc-for list="{{ clubs }}" as="c" hint-placeholder-count="5">
+      <image-slot id="{{ c.id }}" shape="rect" fit="contain" placeholder="{{ c.name }}" style="height:58pt;color:#ffffff;font-size:7pt"></image-slot>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:0;top:576.9pt;width:595.276pt;text-align:center;font-size:12pt;line-height:18.7pt;font-weight:500;color:#ffffff;letter-spacing:0.02em">Industry Body Members</div>
+
+  <div style="position:absolute;left:56.7pt;top:606pt;width:481.9pt;display:grid;grid-template-columns:repeat(5,1fr);gap:14pt 10pt;align-items:center">
+    <sc-for list="{{ bodies }}" as="b" hint-placeholder-count="10">
+      <image-slot id="{{ b.id }}" shape="rect" fit="contain" placeholder="{{ b.name }}" style="height:52pt;color:#ffffff;font-size:7pt"></image-slot>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:-8.5pt;top:822pt;width:612.3pt;height:24.6pt;background:linear-gradient(90deg,#EC008C,#005FA1)"></div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;595.276pt&quot;,&quot;height&quot;:&quot;841.89pt&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const clubs = [
+      ["bm-crv", "Country Racing Victoria"],
+      ["bm-mrc", "Melbourne Racing Club"],
+      ["bm-mvrc", "Moonee Valley Racing Club"],
+      ["bm-vrc", "Victoria Racing Club"],
+      ["bm-cprc", "Cranbourne Pakenham Racing Club"],
+    ];
+    const bodies = [
+      ["bm-ajra", "Australian Jumping Racing Association"],
+      ["bm-asu", "Australian Services Union (Victorian Branch)"],
+      ["bm-ata", "Australian Trainers Association"],
+      ["bm-awu", "Australian Workers Union (Victoria)"],
+      ["bm-meaa", "Media, Entertainment & Arts Alliance"],
+      ["bm-tbv", "Thoroughbred Breeders Victoria"],
+      ["bm-troa", "Thoroughbred Racehorse Owners Association"],
+      ["bm-uwu", "United Workers Union"],
+      ["bm-vba", "Victorian Bookmakers Association"],
+      ["bm-vja", "Victorian Jockeys Association"],
+    ];
+    const pack = (rows) => rows.map(([id, name]) => ({ id, name }));
+    return { clubs: pack(clubs), bodies: pack(bodies) };
+  }
+}
+</script>
+</body>
+</html>

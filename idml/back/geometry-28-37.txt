@@ -1,0 +1,115 @@
+
+=== Spread_u13377.xml ===
+PAGE 28
+PAGE 29
+Oval      self=u13386 x=998.8 y=-462.46 w=581.79 h=581.79
+TextFrame self=u13387 x=52.69 y=99.94 w=315.81 h=50.77 story=u1338a
+TextFrame self=u1339e x=55.69 y=254.95 w=214.02 h=21.26 story=u133a1
+TextFrame self=u133b5 x=56.69 y=160.99 w=481.89 h=77.86 story=u133b8
+TextFrame self=u133cc x=651.97 y=254.95 w=300.47 h=21.26 story=u133cf
+TextFrame self=u133e3 x=167.37 y=407.91 w=383.05 h=110.49 story=u133e6
+TextFrame self=u133fa x=761.65 y=534.76 w=383.05 h=110.78 story=u133fd
+TextFrame self=u13411 x=761.65 y=663.08 w=383.05 h=109.76 story=u13414
+TextFrame self=u13428 x=761.65 y=281.66 w=386.88 h=110.49 story=u1342b
+TextFrame self=u1343f x=165.88 y=281.25 w=386.88 h=110.49 story=u13443
+TextFrame self=u13457 x=165.88 y=526.76 w=386.88 h=120.74 story=u1345a
+TextFrame self=u1346e x=761.5 y=407.91 w=387.03 h=111.43 story=u13471
+TextFrame self=u13485 x=165.88 y=662.34 w=389.71 h=110.49 story=u13488
+Oval      self=u1349d x=651.74 y=282.13 w=109.91 h=109.91 wrap=Contour img=Ross Lanyon.JPG
+Oval      self=u134a8 x=654.63 y=285.03 w=639.68 h=983.35
+Oval      self=u134ab x=56.69 y=281.83 w=109.91 h=109.91 img=Tim Eddy - Chairman_1.JPG
+Oval      self=u134b3 x=60.03 y=284.61 w=639.68 h=983.35
+Oval      self=u134b6 x=57.41 y=408.5 w=109.91 h=109.91 img=Sharon McCrohan - Deputy Chair.JPG
+Oval      self=u134be x=59.91 y=411.28 w=639.68 h=983.35
+Oval      self=u134c1 x=56.69 y=535.45 w=109.91 h=109.91 img=Aaron Morrison - CEO_1.JPG
+Oval      self=u134ce x=59.86 y=538.13 w=639.68 h=983.35
+Oval      self=u134d1 x=652.31 y=409.43 w=109.91 h=109.91 img=Paul Guerra - Board Member.JPG
+Oval      self=u134d9 x=655.21 y=412.1 w=639.68 h=983.35
+Oval      self=u134dd x=651.74 y=535.45 w=109.91 h=109.91 img=Mark Player - Board Member.JPG
+Oval      self=u134e6 x=655.15 y=538.93 w=638.57 h=982.55
+Oval      self=u134e9 x=651.74 y=663.77 w=109.91 h=109.91 img=Tim Rourke - Board Member.JPG
+Oval      self=u134f2 x=654.68 y=666.44 w=639.68 h=983.35
+Oval      self=u134f5 x=56.69 y=662.92 w=109.91 h=109.91 wrap=Contour img=Kate Joel.JPG
+Oval      self=u134ff x=59.65 y=665.7 w=639.68 h=983.35
+TextFrame self=u13501 x=651.97 y=33.65 w=481.89 h=10.87 story=u13504
+
+=== Spread_u1351e.xml ===
+PAGE 30
+PAGE 31
+Oval      self=u14430 x=862.23 y=63.56 w=824.3 h=824.3
+TextFrame self=u1352d x=-1238.74 y=300.47 w=481.89 h=376.93 story=u13530 cols=2
+TextFrame self=u13545 x=651.97 y=130.06 w=481.89 h=613.56 story=u13548
+TextFrame self=u1355c x=56.69 y=130.06 w=481.89 h=613.56 story=u13548
+Rectangle self=u14432 x=-8.5 y=822.05 w=1207.56 h=28.35 fill=Gradient/ua3c3
+TextFrame self=u13560 x=56.69 y=33.65 w=481.89 h=10.87 story=u13563
+TextFrame self=u13577 x=651.97 y=33.65 w=481.89 h=10.87 story=u1357b
+
+=== Spread_u13590.xml ===
+PAGE 32
+PAGE 33
+Oval      self=u1442f x=862.23 y=63.56 w=824.3 h=824.3
+Oval      self=u1442e x=998.8 y=-462.46 w=581.79 h=581.79
+TextFrame self=u1359f x=-1238.74 y=300.47 w=481.89 h=376.93 story=u135a2 cols=2
+TextFrame self=u135b7 x=56.69 y=130.06 w=481.89 h=623.95 story=u13548
+TextFrame self=u135bb x=651.97 y=130.06 w=481.89 h=655.13 story=u13548
+Polygon   self=u135c1 x=771.75 y=327.11 w=24.22 h=211.98
+Rectangle self=u135c2 x=789.46 y=310.14 w=104.6 h=33.36 fill=Color/RV Blue
+TextFrame self=u135c3 x=789.46 y=310.14 w=104.6 h=33.36 story=u135c6
+GraphicLine self=u135da x=756.57 y=434.21 w=37.41 h=0
+Rectangle self=u135dc x=925.68 y=399.23 w=104.6 h=39.64 fill=Color/RV Blue
+TextFrame self=u135dd x=925.68 y=401.78 w=104.6 h=35.15 story=u135e0
+Rectangle self=u135f5 x=925.68 y=447.04 w=104.6 h=31.19 fill=Color/RV Blue
+TextFrame self=u135f6 x=925.68 y=448.51 w=104.6 h=28.5 story=u135f9
+Rectangle self=u1360d x=651.97 y=411.16 w=104.6 h=45.82 fill=Color/RV Cool Gray
+Rectangle self=u1360e x=789.46 y=417.98 w=104.6 h=33.36 fill=Color/RV Secondary Blue
+Rectangle self=u1360f x=789.46 y=524.15 w=104.6 h=31.91 fill=Color/ASU logo
+TextFrame self=u13610 x=651.97 y=413.85 w=104.6 h=39.64 story=u13613
+TextFrame self=u13627 x=789.46 y=421.2 w=104.6 h=26.46 story=u1362a
+TextFrame self=u1363e x=789.46 y=524.15 w=104.6 h=30.47 story=u13641
+GraphicLine self=u13656 x=771.46 y=379.86 w=163.82 h=0
+GraphicLine self=u13657 x=913.07 y=417.48 w=22.21 h=0
+Polygon   self=u13658 x=912.69 y=339.11 w=24.22 h=125.08
+GraphicLine self=u1365a x=894.07 y=540.52 w=41.22 h=0
+Polygon   self=u1365b x=912.69 y=502.26 w=24.22 h=78.22
+Rectangle self=u1365c x=925.68 y=486.37 w=104.6 h=31.19 fill=Color/ASU logo
+TextFrame self=u1365d x=925.68 y=487.9 w=104.6 h=28.5 story=u13660
+Rectangle self=u13675 x=925.68 y=360.69 w=104.6 h=31.19 fill=Color/RV Blue
+TextFrame self=u13676 x=925.68 y=361.05 w=104.6 h=28.5 story=u13679
+Rectangle self=u1368d x=925.68 y=321.88 w=104.6 h=31.19 fill=Color/RV Blue
+TextFrame self=u1368e x=925.68 y=323.4 w=104.6 h=28.5 story=u13691
+Rectangle self=u136a5 x=925.68 y=525.71 w=104.6 h=31.19 fill=Color/ASU logo
+TextFrame self=u136a6 x=925.68 y=526.07 w=104.6 h=28.5 story=u136a9
+Rectangle self=u136bd x=925.68 y=564.85 w=104.6 h=31.19 fill=Color/ASU logo
+TextFrame self=u136be x=925.68 y=565.21 w=104.6 h=28.5 story=u136c1
+Rectangle self=u136d5 x=789.46 y=364.06 w=104.6 h=33.36 fill=Color/RV Blue
+TextFrame self=u136d6 x=789.46 y=365.4 w=104.6 h=30.47 story=u136d9
+Rectangle self=u14431 x=-8.5 y=822.05 w=1207.56 h=28.35 fill=Gradient/ua3c3
+TextFrame self=u136ed x=56.69 y=33.65 w=481.89 h=10.87 story=u136f0
+TextFrame self=u13704 x=651.97 y=33.65 w=481.89 h=10.87 story=u13707
+
+=== Spread_u1371c.xml ===
+PAGE 34
+PAGE 35
+Oval      self=u14435 x=998.8 y=-462.46 w=581.79 h=581.79
+Oval      self=u14433 x=862.23 y=63.56 w=824.3 h=824.3
+TextFrame self=u1372b x=-1238.74 y=300.47 w=481.89 h=376.93 story=u1372e cols=2
+TextFrame self=u13743 x=56.69 y=130.06 w=481.89 h=656.52 story=u13548
+TextFrame self=u13747 x=651.97 y=130.06 w=481.89 h=782.46 story=u13548
+Rectangle self=u14436 x=-8.5 y=822.05 w=1207.56 h=28.35 fill=Gradient/ua3c3
+TextFrame self=u1374b x=56.69 y=33.65 w=481.89 h=10.87 story=u1374e
+TextFrame self=u13762 x=651.97 y=33.65 w=481.89 h=10.87 story=u13766
+
+=== Spread_u1377b.xml ===
+PAGE 36
+PAGE 37
+Rectangle self=u14437 x=-8.5 y=822.05 w=1207.56 h=28.35 fill=Gradient/ua3c3
+TextFrame self=u1378a x=56.69 y=136.06 w=481.89 h=85.04 story=u1378d
+TextFrame self=u137a1 x=56.69 y=454.17 w=481.89 h=315.1 story=u137a4
+TextFrame self=u137b8 x=56.69 y=221.74 w=481.89 h=186.02 story=u137bb
+TextFrame self=u137cf x=651.97 y=136.06 w=462.99 h=189.55 story=u137a4
+TextFrame self=u137d3 x=651.97 y=386.22 w=161.57 h=55.56 story=u137d6
+TextFrame self=u137ea x=837.61 y=386.22 w=218.05 h=59.34 story=u137ee
+Rectangle self=u13802 x=837.61 y=332.61 w=104.44 h=48.63 img=Aaron Morrison Signature (002)_1.psd
+Rectangle self=u1380a x=651.97 y=336.34 w=55.54 h=49.1 img=Tim Eddy.pdf
+TextFrame self=u13814 x=651.97 y=33.65 w=481.89 h=10.87 story=u13817
+TextFrame self=u1382b x=56.69 y=33.65 w=481.89 h=10.87 story=u1382e

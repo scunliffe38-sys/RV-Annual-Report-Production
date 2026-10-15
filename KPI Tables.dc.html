@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+<doc-page size="a4">
+<section class="page" data-screen-label="KPI" style="position:relative;width:595.276pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:23.9pt;top:72pt;width:409.4pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;background:linear-gradient(90deg,#005FA1 0%,#EC008C 100%);-webkit-background-clip:text;background-clip:text;color:transparent">Key Performance Indicators</div>
+
+  <div style="position:absolute;left:23.9pt;top:168pt;width:300pt;font-weight:500;font-size:12pt;line-height:12pt;text-transform:uppercase;color:#005FA1">{{ periodCurrent }}<span style="font-weight:300">{{ periodDetail }}</span></div>
+
+  <div style="position:absolute;left:22.7pt;top:194.2pt;width:544.3pt">
+    <table style="width:544.3pt;border-collapse:collapse;table-layout:fixed">
+      <sc-for list="{{ blocks }}" as="block" hint-placeholder-count="3">
+        <tbody>
+          <tr style="height:16pt">
+            <td rowspan="2" style="width:25%;background:#005FA1;color:#fff;font-weight:700;font-size:8pt;line-height:9.6pt;padding:0 4pt;vertical-align:middle;text-align:left">{{ block.title }}</td>
+            <td colspan="2" style="width:16.6667%;background:#4C8FBD;color:#fff;font-weight:700;font-size:8pt;line-height:9.6pt;padding:0 4pt;vertical-align:middle;text-align:center">{{ block.g0 }}</td>
+            <td colspan="2" style="width:16.6667%;background:#4C8FBD;color:#fff;font-weight:700;font-size:8pt;line-height:9.6pt;padding:0 4pt;vertical-align:middle;text-align:center;border-left:0.5pt solid #fff">{{ block.g1 }}</td>
+            <td colspan="2" style="width:16.6667%;background:#4C8FBD;color:#fff;font-weight:700;font-size:8pt;line-height:9.6pt;padding:0 4pt;vertical-align:middle;text-align:center;border-left:0.5pt solid #fff">{{ block.g2 }}</td>
+            <td colspan="3" style="width:25%;background:#4C8FBD;color:#fff;font-weight:700;font-size:8pt;line-height:9.6pt;padding:0 4pt;vertical-align:middle;text-align:center;border-left:0.5pt solid #fff">{{ block.g3 }}</td>
+          </tr>
+          <tr style="height:33.6pt">
+            <sc-for list="{{ block.heads }}" as="head" hint-placeholder-count="9">
+              <td style="background:#4C8FBD;color:#fff;font-weight:700;font-size:8pt;line-height:9.2pt;padding:2pt 4pt;vertical-align:middle;text-align:center;border-top:0.5pt solid #fff;border-left:{{ head.bl }}">{{ head.text }}</td>
+            </sc-for>
+          </tr>
+          <sc-for list="{{ block.rows }}" as="row" hint-placeholder-count="6">
+            <tr style="height:14.4pt;background:{{ row.bg }}">
+              <td style="font-weight:400;font-size:8pt;line-height:9.6pt;padding:2.4pt 4pt;vertical-align:middle;color:#231F20">{{ row.label }}<sc-if value="{{ row.source }}" hint-placeholder-val=""><span style="font-size:5.5pt;line-height:6.6pt;letter-spacing:0.06em;text-transform:uppercase;color:#9AA3AA;padding-left:5pt">{{ row.source }}</span></sc-if></td>
+              <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="9">
+                <td style="font-weight:400;font-size:8pt;line-height:9.6pt;padding:2.4pt 4pt;vertical-align:middle;text-align:center;white-space:nowrap;color:{{ cell.color }};border-left:{{ cell.bl }}">{{ cell.text }}</td>
+              </sc-for>
+            </tr>
+          </sc-for>
+          <sc-if value="{{ block.spacer }}" hint-placeholder-val="">
+            <tr>
+              <td colspan="10" style="vertical-align:top;padding:{{ block.spacerPad }}">
+                <sc-for list="{{ block.notes }}" as="note" hint-placeholder-count="0">
+                  <div style="font-weight:400;font-size:7.5pt;line-height:10.027pt;letter-spacing:-0.02em;color:#231F20;padding-left:17pt;text-indent:-17pt;margin-bottom:0.9pt">{{ note }}</div>
+                </sc-for>
+              </td>
+            </tr>
+          </sc-if>
+        </tbody>
+      </sc-for>
+    </table>
+  </div>
+
+  <div style="position:absolute;left:23.6pt;top:616pt;width:544.3pt">
+    <table style="width:544.3pt;border-collapse:collapse;table-layout:fixed">
+      <tbody>
+        <tr style="height:14.6pt">
+          <td style="width:43.75%;background:#005FA1;color:#fff;font-weight:700;font-size:8pt;line-height:9.6pt;padding:2.5pt 4pt;vertical-align:middle">{{ participationTitle }}</td>
+          <sc-for list="{{ participationHeads }}" as="head" hint-placeholder-count="3">
+            <td style="width:18.75%;background:#4C8FBD;color:#fff;font-weight:700;font-size:8pt;line-height:9.6pt;padding:2.5pt 4pt;vertical-align:middle;text-align:center;border-left:{{ head.bl }}">{{ head.text }}</td>
+          </sc-for>
+        </tr>
+        <sc-for list="{{ participationRows }}" as="row" hint-placeholder-count="10">
+          <tr style="height:14.6pt;background:{{ row.bg }}">
+            <td style="font-weight:400;font-size:8pt;line-height:9.6pt;padding:2.4pt 4pt;vertical-align:middle;color:#231F20">{{ row.label }}<sc-if value="{{ row.source }}" hint-placeholder-val=""><span style="font-size:5.5pt;line-height:6.6pt;letter-spacing:0.06em;text-transform:uppercase;color:#9AA3AA;padding-left:5pt">{{ row.source }}</span></sc-if></td>
+            <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="3">
+              <td style="font-weight:400;font-size:8pt;line-height:9.6pt;padding:2.4pt 4pt;vertical-align:middle;text-align:center;white-space:nowrap;color:{{ cell.color }};border-left:{{ cell.bl }}">{{ cell.text }}</td>
+            </sc-for>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+
+  <sc-if value="{{ isVerso }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:0;top:822pt;width:595.276pt;height:19.9pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 200%)"></div>
+    <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio }}</div>
+    <div style="position:absolute;left:74.18pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  </sc-if>
+
+  <sc-if value="{{ isRecto }}" hint-placeholder-val="">
+    <div style="position:absolute;left:0;top:822pt;width:595.276pt;height:19.9pt;background:linear-gradient(90deg,#EC008C -100%,#005FA1 100%)"></div>
+    <div style="position:absolute;left:523.1pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1;text-align:right">{{ folio }}</div>
+    <div style="position:absolute;left:301.1pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap;text-align:right"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  </sc-if>
+
+</section>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:794,&quot;height&quot;:1123},&quot;showSourceNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Proofing&quot;},&quot;colourVariance&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Proofing&quot;},&quot;varianceDecimals&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:2,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Proofing&quot;},&quot;pageFolio&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:8,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;pageSide&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;verso&quot;,&quot;recto&quot;],&quot;default&quot;:&quot;verso&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+const RULE = '0.5pt solid #fff';
+const BAND = '#E6EFF6';
+const GROUND = 'transparent'; // 4% black spread ground shows through unfilled cells
+
+class Component extends DCLogic {
+  state = { kpi: null, err: null };
+
+  componentDidMount() {
+    // doc-page detects explicit pagination (direct .page children) on its own
+    // connect, which happens before this component renders the section — so
+    // nudge it to re-measure or the sheet stays in flowing mode.
+    const paginate = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    paginate();
+    requestAnimationFrame(paginate);
+
+    import('./kpi-data.js')
+      .then(m => this.setState({ kpi: m.kpi }))
+      .catch(e => this.setState({ err: String(e) }));
+  }
+
+  fmt(v, kind) {
+    if (v === null || v === undefined || !isFinite(v)) return 'N/A';
+    switch (kind) {
+      case 'int': return Math.round(v).toLocaleString('en-AU');
+      case 'dec1': return v.toFixed(1);
+      case 'dec2': return v.toFixed(2);
+      case 'pct1': return (v * 100).toFixed(1) + '%';
+      case 'money1': return '$' + v.toLocaleString('en-AU', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+      default: return String(v);
+    }
+  }
+
+  // Variance is always derived, never read from the workbook.
+  variance(cur, prior) {
+    if (cur === null || prior === null || cur === undefined || prior === undefined) return null;
+    if (prior === 0) return cur === 0 ? 0 : null;
+    return (cur - prior) / prior;
+  }
+
+  varText(v) {
+    if (v === null) return 'N/A';
+    return (v * 100).toFixed(this.props.varianceDecimals ?? 1) + '%';
+  }
+
+  varColor(v) {
+    if (!(this.props.colourVariance ?? false)) return '#231F20';
+    if (v === null || Math.abs(v) < 0.0005) return '#6D6E71';
+    return v < 0 ? '#EC008C' : '#005FA1';
+  }
+
+  renderVals() {
+    const k = this.state.kpi;
+    const folio = this.props.pageFolio ?? 8;
+    // Master u51f is the verso master: outside edge is the left. On a recto the
+    // folio/foot mirror to the right and the foot band shows the blue half of
+    // the spread-wide magenta->blue gradient.
+    const side = this.props.pageSide ?? 'verso';
+    const isVerso = side !== 'recto';
+    const isRecto = !isVerso;
+    if (!k) return {
+      periodCurrent: '', periodDetail: '', blocks: [],
+      participationTitle: '', participationHeads: [], participationRows: [],
+      folio, footYear: '', isVerso, isRecto,
+    };
+
+    // Running foot year follows the reporting period (FY25 -> 2025).
+    const fy = String(k.meta.current).match(/(\d{2,4})/);
+    const footYear = fy ? (fy[1].length === 4 ? fy[1] : String(2000 + +fy[1])) : '';
+
+    const showSrc = this.props.showSourceNotes ?? false;
+    const groups = k.groups;
+
+    // Column headers: each group prints current + variance; the total group also prints prior.
+    const heads = [];
+    groups.forEach(g => {
+      heads.push(k.meta.current);
+      if (g.showPrior) heads.push(k.meta.prior);
+      heads.push('Annual variance (%)');
+    });
+
+    const blocks = k.tables.map((t, ti) => {
+      const rows = t.rows.map((r, ri) => {
+        const cells = [];
+        groups.forEach(g => {
+          const pair = r.values[g.key] || [null, null];
+          cells.push({ text: this.fmt(pair[0], r.fmt), color: '#231F20' });
+          if (g.showPrior) cells.push({ text: this.fmt(pair[1], r.fmt), color: '#231F20' });
+          const v = this.variance(pair[0], pair[1]);
+          cells.push({ text: this.varText(v), color: this.varColor(v) });
+        });
+        cells.forEach((c, i) => { c.bl = i === 0 ? 'none' : RULE; });
+        return {
+          label: r.label,
+          source: showSrc ? r.source : '',
+          bg: ri % 2 === 1 ? BAND : GROUND,
+          cells,
+        };
+      });
+
+      // The printed page carries the prizemoney footnotes in the spacer row
+      // that follows the Prizemoney block.
+      const notes = ti === 1 ? k.footnotes : [];
+      return {
+        title: t.title,
+        g0: groups[0].label, g1: groups[1].label, g2: groups[2].label, g3: groups[3].label,
+        heads: heads.map((h, i) => ({ text: h, bl: i === 0 ? 'none' : RULE })),
+        rows,
+        spacer: ti < k.tables.length - 1,
+        spacerPad: ti === 1 ? '4pt 0 7pt' : '8pt 0',
+        notes,
+      };
+    });
+
+    const participationRows = k.participation.rows.map((r, ri) => {
+      const cur = r.values[0], prior = r.values[1];
+      const v = this.variance(cur, prior);
+      const cells = [
+        { text: this.fmt(cur, r.fmt), color: '#231F20', bl: 'none' },
+        { text: this.fmt(prior, r.fmt), color: '#231F20', bl: RULE },
+        { text: this.varText(v), color: this.varColor(v), bl: RULE },
+      ];
+      return { label: r.label, source: showSrc ? r.source : '', bg: ri % 2 === 1 ? BAND : GROUND, cells };
+    });
+
+    const m = String(k.meta.periodLabel).match(/^(\S+)([\s\S]*)$/);
+    return {
+      periodCurrent: m ? m[1] : k.meta.periodLabel,
+      periodDetail: m ? m[2] : '',
+      blocks,
+      participationTitle: k.participation.title,
+      participationHeads: [
+        { text: k.meta.current, bl: 'none' },
+        { text: k.meta.prior, bl: RULE },
+        { text: 'Annual variance (%)', bl: RULE },
+      ],
+      participationRows,
+      folio, footYear, isVerso, isRecto,
+    };
+  }
+}
+</script>
+</body>
+</html>

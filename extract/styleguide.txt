@@ -1,0 +1,281 @@
+BRAND STYLE GUIDE
+OCTOBER 2016
+
+-- 1 of 12 --
+
+CONTENTS
+03 	Introduction
+04 	Masterbrand
+05 	Masterbrand Variations
+08 	Minimum Size and Clear Space
+09 	Incorrect Usage
+10 	Colour Palette
+11 	Support Typography
+
+-- 2 of 12 --
+
+3
+INTRODUCTION
+The following guidelines have
+been developed to assist designers
+with the successful application of
+the Racing Victoria masterbrand.
+Maintaining consistency in all forms
+of communication is paramount to
+the success of the brand.
+
+-- 3 of 12 --
+
+4
+The Racing Victoria
+masterbrand has
+been created to form
+a distinctive visual
+representation and an
+integral component to our
+overall look and feel.
+The following guidelines
+will help to ensure
+the consistent and
+successful representation
+of the Racing Victoria
+masterbrand.
+MASTERBRAND
+
+-- 4 of 12 --
+
+5
+The Racing Victoria
+masterbrand has been
+created in both horizontal
+and vertical formats.
+It is suggested that the
+horizontal format should
+be used in all forms of
+communication unless
+space does not allow this.
+MASTERBRAND VARIATIONS
+Horizontal
+Brandmark
+Vertical
+Brandmark
+
+-- 5 of 12 --
+
+6
+The Racing Victoria
+horizontal masterbrand can
+be used in its positive and
+reversed state, in cmyk,
+greyscale or black and
+white depending on the
+application.
+The appropriate files for
+print and online use have
+been provided.
+Positive Mark
+Greyscale
+MASTERBRAND HORIZONTAL COLOUR VARIATIONS
+Positive Mark
+CMYK
+Positive Mark
+Black & White
+Reverse Mark
+
+-- 6 of 12 --
+
+7
+The Racing Victoria vertical
+masterbrand can be used
+in its positive and reversed
+state, in cmyk, greyscale or
+black and white depending
+on the application.
+The appropriate files for
+print and online use have
+been provided.
+Positive Mark
+Greyscale
+MASTERBRAND VERTICAL COLOUR VARIATIONS
+Positive Mark
+CMYK
+Positive Mark
+Black & White
+Reverse Mark
+
+-- 7 of 12 --
+
+8
+Clear space is designed to
+assist in maintaining the
+clarity and integrity of the
+Racing Victoria masterbrand.
+Clear space is the minimum
+surface area surrounding
+the masterbrand that must
+remain free of any other
+graphic element or text.
+Wherever possible, maintain
+more clear space around the
+symbol than the minimum
+specified.
+Minimum size specifications
+are provided to ensure the
+masterbrand is reproduced
+effectively at a small size. A
+width of 40mm (horizontal
+mark) and 18mm (vertical
+mark) has been determined
+as the minimum sizings
+at which the masterbrand
+reproduces effectively
+in general methods of
+production – i.e. print.
+MINIMUM SIZE AND
+CLEARSPACE
+Minimum Size
+Width = 40mm
+Minimum Size
+Width = 18mm
+Horizontal Clear Space 	Vertical Clear Space
+
+-- 8 of 12 --
+
+9
+The Racing Victoria
+masterbrand may not be
+redrawn or altered in any way,
+under any circumstances.
+The Racing Victoria
+masterbrand may only be
+reproduced in the ways shown
+throughout these guidelines.
+These examples show various
+ways in which the Racing
+Victoria masterbrand might
+be incorrectly reproduced.
+INCORRECT USAGE
+Do not compress, extend or
+distort the Racing Victoria
+masterbrand.
+Do not adjust the spacing
+between the Racing Victoria
+masterbrand letterforms.
+Do not reproduce the Racing
+Victoria masterbrand in
+alternative typefaces.
+Do not alter the colour of
+the Racing Victoria masterbrand.
+Do not place complex imagery
+behind the Racing Victoria
+masterbrand.
+Do not use effects such as drop
+shadows on the Racing Victoria
+masterbrand.
+Do not infringe upon the
+clearspace of the Racing Victoria
+masterbrand.
+Do not rotate the Racing
+Victoria masterbrand.
+RACING
+
+-- 9 of 12 --
+
+10
+Name 	Colour 	Pantone 	4-Colour 	RGB 	Hex
+GRADIENT 	NA 	BLUE
+C 100 	R 0 	#006da6
+M 30 	G 109
+Y 0 	B 166
+K 25
+MAGENTA
+C 0 	R 236 	#ec008c
+M 100 	G 0
+Y 0 	B 140
+K 0
+GREY 	PMS Cool 	C 0 	R 109 	#6d6e71
+Grey 9 	M 0 	G 110
+Y 0 	B 113
+K 70
+BLACK 	PMS Process 	C 0 	R 0 	#000000
+Black 	M 0 	G 0
+Y 0 	B 0
+K 100
+BLUE 	PMS Process 	C 100 	R 0 	#0085CA
+Blue 	M 13 	G 133
+Y 1 	B 202
+K 2
+PURPLE 	PMS 248 	C 42 	R 165 	#A51890
+M 100 	G 24
+Y 0 	B 144
+K 0
+The Racing Victoria
+masterbrand colour palette
+is a key element in creating
+consistent and recognisable
+communications.
+The primary colours used
+in the masterbrand are
+blue and magenta as well as
+grey. A gradient has been
+developed from the blue and
+magenta and is used within
+the primary masterbrand.
+As secondary colour palette
+has been developed also to
+provide flexibility within all
+forms of communication.
+When preparing artwork
+for online communications
+please use the RGB and hex
+colour values.
+COLOUR PALETTE
+PRIMARY
+SECONDARY
+
+-- 10 of 12 --
+
+11
+PRIMARY TYPEFACE
+Gotham Bold
+AaBbCc
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+1234567890
+Gotham Book
+AaBbCc
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+1234567890
+Gotham Light
+AaBbCc
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+1234567890
+Typography plays
+an important role in
+supporting the overall
+look and feel of the Racing
+Victoria masterbrand.
+The support typeface to
+be used for all marketing
+communications is
+‘Gotham’. It is available in a
+range of weights and can
+be found here:
+http://www.typography.
+com/fonts/gotham/styles/
+For PC machines and
+internal office use such as
+email signatures, as well as
+online communications,
+the typeface ‘Arial’ can
+be used.
+SUPPORT TYPOGRAPHY
+
+-- 11 of 12 --
+
+
+
+-- 12 of 12 --
+

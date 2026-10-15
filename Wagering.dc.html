@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.otf") format("opentype"); font-weight: 900; font-style: normal; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="22-23 Wagering" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:942.1pt;top:397.5pt;width:469.4pt;height:469.4pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:998.8pt;top:-462.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  </sc-if>
+
+  <image-slot id="wg-image-manikato" shape="circle" placeholder="Manikato Stakes" style="position:absolute;left:868.5pt;top:348.7pt;width:409.4pt;height:409.4pt"></image-slot>
+
+  <svg style="position:absolute;left:54.7pt;top:79.7pt;width:189.1pt;height:50pt" viewBox="0 0 189.1 50" role="img" aria-label="Wagering"><text x="0" y="29.6" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37">Wagering</text></svg>
+
+  <div data-column="wg0" style="position:absolute;left:56.7pt;top:171.5pt;width:235.3pt;height:245.9pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ wg0 }}" as="b" hint-placeholder-count="3">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val=""><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="wg1" style="position:absolute;left:308.3pt;top:171.5pt;width:235.3pt;height:71.5pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ wg1 }}" as="b" hint-placeholder-count="2">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ true }}"><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <svg style="position:absolute;left:50pt;top:425pt;width:245pt;height:160pt" viewBox="50 425 245 160" role="img" aria-label="Turnover in billions, FY20 to FY25">
+    <text x="58.6" y="444" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="9" font-weight="700">TURNOVER ($BILLIONS)</text>
+    <g fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="8" font-weight="700">
+      <text x="57.6" y="468.9">FY20</text><text x="57.6" y="489.6">FY21</text><text x="57.6" y="510.3">FY22</text>
+      <text x="57.6" y="531.2">FY23</text><text x="57.6" y="552.2">FY24</text><text x="57.6" y="572.9">FY25</text>
+    </g>
+    <g fill="#4C8FBD">
+      <rect x="82" y="457.3" width="146.2" height="15.4"></rect>
+      <rect x="82" y="478.7" width="179.2" height="15.4"></rect>
+      <rect x="82" y="500" width="188.7" height="15.4"></rect>
+      <rect x="82" y="521.3" width="181.9" height="15.4"></rect>
+      <rect x="82" y="542.4" width="165.5" height="15.4"></rect>
+      <rect x="82" y="563.6" width="161" height="15.4"></rect>
+    </g>
+    <g fill="#FFFFFF" font-family="Gotham, Arial, sans-serif" font-size="8" font-weight="900" text-anchor="end">
+      <text x="224.2" y="467.5">$7.10</text><text x="257.2" y="489.4">$8.70</text><text x="266.7" y="510.1">$9.16</text>
+      <text x="259.9" y="532">$8.82</text><text x="243.5" y="553.1">$7.93</text><text x="239" y="574.3">$7.61</text>
+    </g>
+    <g fill="none" stroke="#005FA1" stroke-width="0.5">
+      <polyline points="230.3,463.8 272.2,463.8 272.2,471"></polyline>
+      <polyline points="272.2,479.8 272.2,485 266.1,485"></polyline>
+      <polyline points="264,490.4 281.3,490.4 281.3,493.1"></polyline>
+      <polyline points="281.3,502 281.3,505.2 274.7,505.2"></polyline>
+      <polyline points="272.6,509.5 281.3,509.5 281.3,515.1"></polyline>
+      <polyline points="281.3,523.9 281.3,527.2 266.5,527.2"></polyline>
+      <polyline points="266.5,532.6 281.3,532.6 281.3,535.7"></polyline>
+      <polyline points="281.3,545 281.3,549.3 249.3,549.3"></polyline>
+      <polyline points="281.3,567.3 281.3,571.6 244.6,571.6"></polyline>
+    </g>
+    <g fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="7.04" font-weight="500">
+      <text x="259.9" y="477.3">+23%</text><text x="267.6" y="499.4">+5%</text><text x="267.6" y="521.8">-4%</text>
+      <text x="267.6" y="543">-10%</text><text x="267.6" y="565.2">-4%</text>
+    </g>
+    <g stroke="#005FA1" stroke-width="0.9" fill="none">
+      <line x1="82" y1="454.2" x2="82" y2="582.8"></line>
+      <line x1="82" y1="464.9" x2="87.2" y2="464.9"></line><line x1="82" y1="486.2" x2="87.2" y2="486.2"></line>
+      <line x1="82" y1="507.5" x2="87.2" y2="507.5"></line><line x1="82" y1="528.9" x2="87.2" y2="528.9"></line>
+      <line x1="82" y1="550.2" x2="87.2" y2="550.2"></line><line x1="82" y1="571.5" x2="87.2" y2="571.5"></line>
+    </g>
+  </svg>
+
+  <svg style="position:absolute;left:50pt;top:605pt;width:245pt;height:160pt" viewBox="50 605 245 160" role="img" aria-label="Free bet turnover in millions, FY20 to FY25">
+    <text x="58.8" y="624" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="9" font-weight="700">FREE BET TURNOVER ($MILLIONS)</text>
+    <g fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="8" font-weight="700">
+      <text x="57.8" y="648.6">FY20</text><text x="57.8" y="669.3">FY21</text><text x="57.8" y="690.1">FY22</text>
+      <text x="57.8" y="711.1">FY23</text><text x="57.8" y="733.1">FY24</text><text x="57.8" y="753.3">FY25</text>
+    </g>
+    <g fill="#4C8FBD">
+      <rect x="83.3" y="636.9" width="95.4" height="15.4"></rect>
+      <rect x="83.3" y="658.2" width="143.2" height="15.4"></rect>
+      <rect x="83.3" y="679.6" width="171.4" height="15.4"></rect>
+      <rect x="83.3" y="700.7" width="180.9" height="15.4"></rect>
+      <rect x="83.3" y="721.6" width="157.9" height="15.4"></rect>
+      <rect x="83.3" y="742.7" width="150.7" height="15.4"></rect>
+    </g>
+    <g fill="#FFFFFF" font-family="Gotham, Arial, sans-serif" font-size="8" font-weight="900" text-anchor="end">
+      <text x="174.7" y="646.5">$243.7</text><text x="222.5" y="669.1">$365.8</text><text x="250.7" y="689.8">$444.2</text>
+      <text x="260.2" y="710.9">$493.8</text><text x="237.2" y="731.8">$393.0</text><text x="230" y="752.9">$369.1</text>
+    </g>
+    <g fill="none" stroke="#005FA1" stroke-width="0.5">
+      <polyline points="173.5,645.6 236.7,645.6 236.7,648.6"></polyline>
+      <polyline points="236.7,657.5 236.7,663.1 228.2,663.1"></polyline>
+      <polyline points="228.2,668.7 263.7,668.7 263.7,671.7"></polyline>
+      <polyline points="263.7,681.7 263.7,687.3 257.5,687.3"></polyline>
+      <polyline points="255.5,692.9 275.6,692.9 275.6,694.7"></polyline>
+      <polyline points="276.6,704.7 276.6,708.2 270.4,708.2"></polyline>
+      <polyline points="266.5,714.1 276.6,714.1 276.6,717.8"></polyline>
+      <polyline points="276.6,726.8 276.6,730.2 243,730.2"></polyline>
+      <polyline points="243,735.6 276.6,735.6 276.6,738.4"></polyline>
+      <polyline points="276.6,748.3 276.6,751.7 235.3,751.7"></polyline>
+    </g>
+    <g fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="7.04" font-weight="500">
+      <text x="222.2" y="654.9">+50%</text><text x="249.1" y="679.1">+21%</text><text x="270" y="702.1">+11%</text>
+      <text x="268.3" y="724.5">-20%</text><text x="270" y="745.5">-6%</text>
+    </g>
+    <g stroke="#005FA1" stroke-width="0.9" fill="none">
+      <line x1="83.2" y1="632.4" x2="83.2" y2="762.5"></line>
+      <line x1="83.2" y1="645" x2="88.6" y2="645"></line><line x1="83.2" y1="666.4" x2="88.6" y2="666.4"></line>
+      <line x1="83.2" y1="687.3" x2="88.6" y2="687.3"></line><line x1="83.2" y1="708.4" x2="88.6" y2="708.4"></line>
+      <line x1="83.2" y1="729.8" x2="88.6" y2="729.8"></line><line x1="83.2" y1="750.9" x2="88.6" y2="750.9"></line>
+    </g>
+  </svg>
+
+  <svg style="position:absolute;left:300pt;top:240pt;width:245pt;height:185pt" viewBox="300 240 245 185" role="img" aria-label="Turnover by quarter, FY24 against FY25">
+    <text x="309.3" y="264" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="9" font-weight="700">TURNOVER ($BILLIONS)</text>
+    <text x="309.3" y="277" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="9" font-weight="400">By Quarter (YoY%)</text>
+    <g fill="#0085CA">
+      <rect x="320.7" y="332" width="15.3" height="51"></rect>
+      <rect x="375.7" y="306.5" width="15.3" height="76.5"></rect>
+      <rect x="429.7" y="332" width="15.3" height="51"></rect>
+      <rect x="486" y="337.7" width="15.3" height="45.4"></rect>
+    </g>
+    <g fill="#005FA1">
+      <rect x="340" y="337.7" width="15.3" height="45.4"></rect>
+      <rect x="394.4" y="309.3" width="15.3" height="73.7"></rect>
+      <rect x="448.7" y="332" width="15.3" height="51"></rect>
+      <rect x="504" y="337.7" width="15.3" height="45.4"></rect>
+    </g>
+    <g fill="#FFFFFF" font-family="Gotham, Arial, sans-serif" font-size="8" font-weight="900">
+      <text x="331.5" y="351.3" transform="rotate(-90 331.5 351.3)">$1.8</text>
+      <text x="350" y="357.3" transform="rotate(-90 350 357.3)">$1.6</text>
+      <text x="386" y="327.2" transform="rotate(-90 386 327.2)">$2.7</text>
+      <text x="406" y="330.5" transform="rotate(-90 406 330.5)">$2.6</text>
+      <text x="440" y="351.3" transform="rotate(-90 440 351.3)">$1.8</text>
+      <text x="460" y="351.3" transform="rotate(-90 460 351.3)">$1.8</text>
+      <text x="496" y="357.3" transform="rotate(-90 496 357.3)">$1.6</text>
+      <text x="514" y="357.3" transform="rotate(-90 514 357.3)">$1.6</text>
+    </g>
+    <g fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="7.04" font-weight="500">
+      <text x="326.2" y="318.1">-10.5%</text><text x="381.2" y="293.2">-3.9%</text>
+      <text x="435.2" y="318.1">-0.8%</text><text x="491.1" y="323.8">+0.6%</text>
+    </g>
+    <g stroke="#005FA1" stroke-width="0.9" fill="none">
+      <line x1="307.3" y1="382.9" x2="534.2" y2="382.9"></line>
+      <line x1="337.8" y1="382.8" x2="337.8" y2="389.4"></line><line x1="392.7" y1="382.8" x2="392.7" y2="389.4"></line>
+      <line x1="447.1" y1="382.8" x2="447.1" y2="389.4"></line><line x1="502.8" y1="382.8" x2="502.8" y2="389.4"></line>
+    </g>
+    <g fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="8" font-weight="700" text-anchor="middle">
+      <text x="338.3" y="397.7">Q1</text><text x="391.1" y="397.7">Q2</text><text x="445.1" y="397.7">Q3</text><text x="501.1" y="397.7">Q4</text>
+    </g>
+    <rect x="307.9" y="411" width="8.9" height="8.9" fill="#0085CA"></rect>
+    <text x="320.2" y="418.4" fill="#004370" font-family="Gotham, Arial, sans-serif" font-size="7" font-weight="700">FY24</text>
+    <rect x="349.1" y="411" width="8.9" height="8.9" fill="#005FA1"></rect>
+    <text x="361.4" y="418.4" fill="#004370" font-family="Gotham, Arial, sans-serif" font-size="7" font-weight="700">FY25</text>
+  </svg>
+
+  <div data-column="wg2" style="position:absolute;left:308.3pt;top:448pt;width:235.3pt;height:315.5pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ wg2 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ true }}"><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:656pt;top:175pt;width:222.7pt;font-size:8pt;line-height:12pt;letter-spacing:-0.01em">
+    <div style="display:flex;align-items:center;height:23.9pt;background:#005FA1;color:#fff;font-size:9pt;font-weight:700;text-transform:uppercase;padding-left:0">Top five turnover races IN FY25</div>
+    <sc-for list="{{ topFive }}" as="r" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:22.6pt 1fr;align-items:center;height:15.78pt;color:#005FA1;background:{{ r.bg }}">
+        <div>{{ r.n }}</div><div>{{ r.name }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div data-column="wg3" style="position:absolute;left:652pt;top:288pt;width:235.3pt;height:486pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <div style="float:right;width:34pt;height:486pt;shape-outside:circle(218.9pt at 220.2pt 265.4pt);shape-margin:0"></div>
+    <sc-for list="{{ wg3 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ true }}"><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="wg4" style="position:absolute;left:898.6pt;top:171.5pt;width:235.4pt;height:310.9pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ wg4 }}" as="b" hint-placeholder-count="3">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val=""><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:898.6pt;top:500pt;width:235.4pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:22,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:23,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;showDecoration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Frame geometry read from Spreads/Spread_udef1.xml (pp. 22-23), converted to
+// page coordinates with x + 595.28, y + 420.94, and checked against PDF page 12
+// of the DPS (printed first baselines 178.7 / 180 / 456 / 300 / 178.7).
+//
+// Story uec2f runs through five frames: p.22 column A, the short block above
+// the quarterly chart, the block below it, then p.23's centre column (which
+// starts under the Top Five panel) and the top-right column. The charts and the
+// Top Five table are separate objects, drawn in the template at their printed
+// coordinates.
+//
+// Column 4 is cut on its right by the Manikato Stakes photo: contour wrap with
+// a 14.17 offset, r 218.9 about (1073.2, 553.4) -> (421.2, 265.4) in column
+// coordinates.
+const FLOWS = [
+  { x: 56.70, y: 171.5, width: 235.3, height: 245.9 },
+  { x: 308.30, y: 171.5, width: 235.3, height: 71.5 },
+  { x: 308.30, y: 448.0, width: 235.3, height: 315.5 },
+  { x: 652.00, y: 288.0, width: 235.3, height: 486.0,
+    wrap: { side: 'right', width: 34, height: 486, r: 218.9, cx: 220.2, cy: 265.4 } },
+  { x: 898.60, y: 171.5, width: 235.4, height: 310.9 },
+];
+
+// A4 V:Body 8.504 after. A4 V:Bullets Body sets 5.7 between bullets here, with
+// the B3 22.68 indent. H2 Sub Heading Financials: 9pt bold caps, RV Blue, with
+// 9.5 before when it is not opening a column.
+const BODY_AFTER = 8.504;
+const BULLET_AFTER = 5.7;
+const H2_AFTER = 8.5;
+const H2_BEFORE = 9.5;
+const FOOT_CLEARANCE = 0;
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+
+// Hidden/background loads (print export, off-screen iframes) never fire
+// requestAnimationFrame, which would park the flow chain forever, so fall back
+// to a timer when the document is hidden.
+const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
+
+class Component extends DCLogic {
+  state = { cols: [[], [], [], [], []], idx: 0, leftover: [], topFive: [] };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    TICK(nudge);
+
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('wagering', () => import('./copy/wagering.js')) : import('./copy/wagering.js')),
+      document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
+        .then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([m]) => this._whenMeasurable().then(() => {
+        const items = m.copy.paragraphs.map(p => ({ text: p.text, kind: p.kind || 'body' }));
+        const a = this.settle(items, FLOWS, 'Wagering');
+        this.setState({
+          cols: a.columns, idx: a.baseIdx, leftover: a.leftover,
+          topFive: m.copy.topFive.map((name, i) => ({
+            n: String(i + 1), name, bg: i % 2 ? '#D9E7F1' : 'transparent',
+          })),
+        });
+      }))
+      .catch(e => console.error('copy module failed to load', e));
+  }
+
+  _whenMeasurable(attempt) {
+    const n = attempt || 0;
+    const p = this._probe(200, '0');
+    p.host.style.fontSize = '9pt';
+    p.host.style.lineHeight = '12pt';
+    p.node.data = 'Measure';
+    const h = p.host.getBoundingClientRect().height;
+    p.host.remove();
+    if (h > 0) return Promise.resolve();
+    if (n >= 120) {
+      console.warn('layout never became measurable \u2014 columns may not break correctly.');
+      return Promise.resolve();
+    }
+    return new Promise(res => TICK(res)).then(() => this._whenMeasurable(n + 1));
+  }
+
+  settle(items, cols, label, opts) {
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const attempt = this.flow(items, cols, baseIdx, opts);
+      if (!attempt.leftover.length) {
+        console.warn(label + ': fitted at tracking ' + TRACKING[baseIdx] +
+          ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
+        return Object.assign(attempt, { baseIdx });
+      }
+    }
+    const last = this.flow(items, cols, TRACKING.length - 1, opts);
+    console.warn(label + ': ' + last.leftover.length +
+      ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+    return Object.assign(last, { baseIdx: TRACKING.length - 1 });
+  }
+
+  _probe(widthPt, track, wrap) {
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;box-sizing:border-box;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;letter-spacing:' + track;
+    document.body.appendChild(host);
+    let shim = null;
+    if (wrap) {
+      shim = document.createElement('div');
+      shim.style.cssText = 'float:' + (wrap.side || 'left') + ';width:' + wrap.width +
+        'pt;height:' + wrap.height + 'pt';
+      host.appendChild(shim);
+    }
+    const node = document.createTextNode('');
+    host.appendChild(node);
+    return { host, shim, node };
+  }
+
+  _textHeight(host, node) {
+    if (!node.data) return 0;
+    const range = document.createRange();
+    range.setStart(node, 0);
+    range.setEnd(node, node.data.length);
+    const rects = range.getClientRects();
+    if (!rects.length) return 0;
+    return rects[rects.length - 1].bottom - host.getBoundingClientRect().top;
+  }
+
+  _style(host, item) {
+    host.style.fontWeight = item.kind === 'h2' ? '700' : '400';
+    host.style.fontSize = '9pt';
+    host.style.lineHeight = '12pt';
+    host.style.textTransform = item.kind === 'h2' ? 'uppercase' : 'none';
+    host.style.paddingLeft = item.kind === 'bullet' ? '22.68pt' : '0';
+    host.style.textIndent = (item.kind === 'bullet' && !item.cont) ? '-22.68pt' : '0';
+  }
+
+  _after(item) {
+    if (item.kind === 'h2') return H2_AFTER;
+    return item.kind === 'bullet' ? BULLET_AFTER : BODY_AFTER;
+  }
+
+  flow(items, cols, baseIdx, opts) {
+    const keepWhole = !!(opts && opts.keepWhole);
+    const columns = cols.map(() => []);
+    const track = TRACKING[baseIdx];
+    let queue = items.map(i => Object.assign({}, i));
+
+    for (let c = 0; c < cols.length; c++) {
+      const wrap = cols[c].wrap;
+      const probe = this._probe(cols[c].width, track, wrap);
+      const host = probe.host, shim = probe.shim, node = probe.node;
+      const capPx = (cols[c].height - FOOT_CLEARANCE) / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const item = queue[0];
+        this._style(host, item);
+        node.data = (item.kind === 'bullet' && !item.cont ? '\u2022\u2003\u2003' : '') + item.text;
+        if (shim) {
+          shim.style.shapeOutside = 'circle(' + wrap.r + 'pt at ' + wrap.cx +
+            'pt ' + (wrap.cy - usedPx * 0.75) + 'pt)';
+        }
+        const before = (columns[c].length && item.kind === 'h2' && !item.cont) ? H2_BEFORE : 0;
+        const hPx = (shim ? this._textHeight(host, node)
+                          : host.getBoundingClientRect().height) +
+                    (this._after(item) + before) / 0.75;
+
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(Object.assign({}, item, { gap: before }));
+          queue.shift();
+          usedPx += hPx;
+          continue;
+        }
+
+        if (keepWhole && c < cols.length - 1) break;
+
+        const availPx = capPx - usedPx;
+        const prefix = (item.kind === 'bullet' && !item.cont) ? 3 : 0;
+        const len = node.data.length;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = prefix, hi = len, best = prefix;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        let offset = best - prefix;
+        if (offset > 0 && offset < item.text.length) {
+          const space = item.text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        if (offset > 0 && item.kind !== 'h2') {
+          columns[c].push(Object.assign({}, item, { text: item.text.slice(0, offset).trimEnd(), gap: before }));
+          const rest = item.text.slice(offset).trimStart();
+          if (rest) queue[0] = Object.assign({}, item, { text: rest, cont: true });
+          else queue.shift();
+        }
+        break;
+      }
+      host.remove();
+    }
+
+    return { columns, leftover: queue };
+  }
+
+  renderVals() {
+    const n = this.state.leftover.length;
+    return {
+      footYear: 2025,
+      folioLeft: this.props.folioLeft ?? 22,
+      folioRight: this.props.folioRight ?? 23,
+      showDecoration: this.props.showDecoration ?? true,
+      track: TRACKING[this.state.idx],
+      topFive: this.state.topFive,
+      wg0: this._flags(this.state.cols[0]), wg1: this._flags(this.state.cols[1]),
+      wg2: this._flags(this.state.cols[2]), wg3: this._flags(this.state.cols[3]),
+      wg4: this._flags(this.state.cols[4]),
+      overflowLabel: n ? n + ' paragraph' + (n === 1 ? '' : 's') +
+        ' will not fit this spread \u2014 trim the copy or extend the layout' : '',
+      overflowText: this.state.leftover.map(i => i.text).join('  \u00b6  '),
+    };
+  }
+
+  _flags(list) {
+    return (list || []).map(i => ({
+      text: (i.kind === 'bullet' && !i.cont ? '\u2022\u2003\u2003' : '') + i.text,
+      gapTop: (i.gap || 0) + 'pt',
+      isH2: i.kind === 'h2',
+      isBullet: i.kind === 'bullet' && !i.cont,
+      isBulletCont: i.kind === 'bullet' && !!i.cont,
+      isBody: i.kind !== 'h2' && i.kind !== 'bullet',
+    }));
+  }
+}
+</script>
+</body>
+</html>
