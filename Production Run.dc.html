@@ -42,8 +42,10 @@
     </div>
     <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:{{ stateColor }}">{{ stateLabel }}</div>
     <button type="button" onClick="{{ print }}" disabled="{{ notReady }}" style="font-size:15px;font-weight:700;color:#fff;background:{{ printBg }};border:0;border-radius:8px;padding:12px 20px;cursor:pointer">Save as PDF</button>
+    <button type="button" onClick="{{ printSpreads }}" disabled="{{ notReady }}" style="font-size:13px;font-weight:700;color:{{ printBg }};background:#fff;border:2px solid {{ printBg }};border-radius:8px;padding:10px 14px;cursor:pointer">Spreads only (landscape)</button>
+    <button type="button" onClick="{{ printSingles }}" disabled="{{ notReady }}" style="font-size:13px;font-weight:700;color:{{ printBg }};background:#fff;border:2px solid {{ printBg }};border-radius:8px;padding:10px 14px;cursor:pointer">Single pages only (portrait)</button>
   </div>
-  <div style="max-width:1100px;margin:0 auto;padding:0 24px 12px;font-size:13px;color:#6D6E71">In the print dialog: Destination <strong style="color:#25272a">Save as PDF</strong> &#183; Margins <strong style="color:#25272a">None</strong> &#183; <strong style="color:#25272a">Background graphics</strong> on.</div>
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px 12px;font-size:13px;color:#6D6E71">Like the FY25 report, the cover is a single portrait page and everything else is a landscape spread. If the PDF comes out with every page the same size, save the two parts separately with the buttons above and join them. In the print dialog: Destination <strong style="color:#25272a">Save as PDF</strong> &#183; Margins <strong style="color:#25272a">None</strong> &#183; <strong style="color:#25272a">Background graphics</strong> on.</div>
 </div>
 
 <sc-if value="{{ noRun }}" hint-placeholder-val="">
@@ -87,6 +89,20 @@ class Component extends DCLogic {
     });
   }
 
+  // mode '' prints everything with each page at its own size (named @page rules);
+  // 'spreads' / 'singles' print only that kind, so the whole file has one size.
+  _print(mode) {
+    let css = '';
+    if (mode === 'spreads') css = '@page { size: 1190.55pt 841.89pt; margin: 0 } @media print { section.page[style*="595.276pt"] { display: none !important } }';
+    if (mode === 'singles') css = '@page { size: 595.276pt 841.89pt; margin: 0 } @media print { section.page[style*="1190.55pt"] { display: none !important } }';
+    const old = document.getElementById('rv-print-mode'); if (old) old.remove();
+    if (css) {
+      const s = document.createElement('style'); s.id = 'rv-print-mode'; s.textContent = css; document.head.appendChild(s);
+      window.addEventListener('afterprint', () => s.remove(), { once: true });
+    }
+    window.print();
+  }
+
   componentWillUnmount() { clearTimeout(this._t); }
 
   renderVals() {
@@ -103,7 +119,9 @@ class Component extends DCLogic {
       stateColor: ready ? "#005FA1" : "#A51890",
       notReady: !ready,
       printBg: ready ? "#005FA1" : "#b9bbbe",
-      print: () => window.print(),
+      print: () => this._print(''),
+      printSpreads: () => this._print('spreads'),
+      printSingles: () => this._print('singles'),
     };
   }
 }
