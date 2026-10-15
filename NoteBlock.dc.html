@@ -8,7 +8,7 @@
 <body>
 <x-dc>
 <sc-if value="{{ block.isHead }}" hint-placeholder-val="">
-  <div style="font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;padding:{{ block.pt }} 0 {{ block.pb }}">{{ block.t }}</div>
+  <div style="font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;text-wrap:balance;padding:{{ block.pt }} 0 {{ block.pb }}">{{ block.t }}</div>
 </sc-if>
 
 <sc-if value="{{ block.isPara }}" hint-placeholder-val="{{ true }}">
@@ -17,6 +17,13 @@
 
 <sc-if value="{{ block.isRuns }}" hint-placeholder-val="">
   <div style="font-size:{{ block.fs }};line-height:{{ block.lh }};font-weight:{{ block.fw }};font-style:{{ block.fst }};letter-spacing:{{ block.ls }};text-align:{{ block.ta }};color:{{ block.col }};margin-left:{{ block.ml }};text-indent:{{ block.ti }};padding:{{ block.pt }} 0 {{ block.pb }}"><sc-for list="{{ block.runs }}" as="r" hint-placeholder-count="2"><span style="font-weight:{{ r.fw }};font-style:{{ r.fst }}">{{ r.t }}</span></sc-for></div>
+</sc-if>
+
+<sc-if value="{{ block.isMarked }}" hint-placeholder-val="">
+  <div style="display:grid;grid-template-columns:{{ block.mcol }} 1fr;margin-left:{{ block.ml }};padding:{{ block.pt }} 0 {{ block.pb }};font-size:{{ block.fs }};line-height:{{ block.lh }};font-weight:{{ block.fw }};font-style:{{ block.fst }};letter-spacing:{{ block.ls }};color:{{ block.col }}">
+    <div>{{ block.marker }}</div>
+    <div>{{ block.t }}</div>
+  </div>
 </sc-if>
 
 <sc-if value="{{ block.isBullet }}" hint-placeholder-val="">

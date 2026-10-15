@@ -1,0 +1,16 @@
+<!doctype html><html><body style="margin:0;background:#888">
+<div id="out"></div>
+<script type="module">
+import * as pdfjs from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs';
+pdfjs.GlobalWorkerOptions.workerSrc='https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs';
+const docs={};
+window.show=async(file,pages,scale=1)=>{
+  docs[file]=docs[file]||await pdfjs.getDocument('../'+file).promise;
+  const out=document.getElementById('out');out.innerHTML='';
+  for(const n of pages){const p=await docs[file].getPage(n);const vp=p.getViewport({scale});
+    const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;c.style.display='block';c.style.marginBottom='6px';out.appendChild(c);
+    await p.render({canvasContext:c.getContext('2d'),viewport:vp,annotationMode:pdfjs.AnnotationMode.ENABLE}).promise;}
+  window.done=true;return 'ok';
+};
+window.ready=true;
+</script></body></html>

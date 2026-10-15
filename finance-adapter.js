@@ -12,7 +12,7 @@
  */
 (function (root) {
   "use strict";
-  var GREY = "#6D6E71", BAND = "#F0F5F9";
+  var GREY = "#6D6E71", BAND = "#E4ECF5";
 
   function T(c) { return c == null ? "" : (typeof c === "string" ? c : c.t || ""); }
   function B(c) { return !!(c && typeof c === "object" && c.b); }
@@ -59,14 +59,17 @@
     if (n !== 4 && n !== 3) grid = "310.9pt " + Array(n - 1).fill(r2(170.8 / (n - 1)) + "pt").join(" ");
     var pad = n === 3 ? 1 : 0;
     function nums(a) { var o = a.slice(1); for (var k = 0; k < pad; k++) o.unshift(""); return o; }
-    var rows = [{ kind: "head", label: head[0], nums: nums(head), gridCols: grid, isHead: true, isBand: false, isPlain: false, isTotal: false }];
+    var rows = [{ kind: "head", label: head[0], nums: nums(head), gridCols: grid, isHead: true, isRow: false }];
     src.rows.forEach(function (r, i) {
       var cells = r.map(T), last = i === src.rows.length - 1;
-      var total = last || (!first && B(r[0]));
-      var band = first && !total && i % 2 === 0;
+      // FY25: every row alternates tint from the first; bold rows in Word
+      // (and the closing total) set bold.
+      // FY25 also sets the reported, normalised and revised lines bold even
+      // where Word does not.
+      var bold = B(r[0]) || /^(RVG )?(Reported|Normalised|Revised)\b|^Total$/i.test(cells[0].trim()) || (last && !/Year-on-Year/i.test(cells[0]));
       while (cells.length < head.length) cells.push("");
-      rows.push({ kind: total ? "total" : band ? "band" : "plain", label: cells[0], nums: nums(cells), gridCols: grid,
-        isHead: false, isBand: band, isPlain: !total && !band, isTotal: total });
+      rows.push({ kind: bold ? "total" : "plain", label: cells[0], nums: nums(cells), gridCols: grid,
+        isHead: false, isRow: true, bold: bold, fw: bold ? "700" : "400", bg: i % 2 === 0 ? BAND : "transparent" });
     });
     return { kind: "table", id: id, gridCols: grid, tableRows: rows, text: "" };
   }
@@ -76,17 +79,19 @@
     var colW = r2((481.89 - 151.89) / (2 * G));
     var cols = [151.89].concat(Array(2 * G).fill(colW));
     var grid = cols.map(function (c) { return c + "pt"; }).join(" ");
-    // Column labels come from the document's own sub-header row (Held / Attended).
-    var sub = (t.rows[1] || []).map(T).slice(1, 1 + 2 * G);
-    var hn = []; for (var g = 0; g < 2 * G; g++) hn.push(sub[g] || (g % 2 ? "Attended" : "Held"));
+    // Column labels come from the document's own header rows ("Meetings" over
+    // "Held" / "Attended"); values are set as the document has them.
+    var r0 = [], r1 = (t.rows[1] || []).map(T).slice(1, 1 + 2 * G);
+    (t.rows[0] || []).slice(1).forEach(function (c) { for (var s = 0; s < ((c && c.span) || 1); s++) r0.push(T(c)); });
+    var hn = []; for (var g = 0; g < 2 * G; g++) hn.push([r0[g] || "", r1[g] || (g % 2 ? "Attended" : "Held")].filter(Boolean).join("\n"));
     var rows = t.rows.slice(2).map(function (r) {
       var c = r.map(T);
-      return [c[0]].concat(c.slice(1, 1 + 2 * G).map(function (x) { return x === "" ? "-" : x; }));
+      return [c[0]].concat(c.slice(1, 1 + 2 * G));
     });
     return {
       kind: "attendance",
       groups: [{ label: "", span: 1 }].concat(head.slice(1).map(function (l) { return { label: l, span: 2 }; })),
-      head: ["Directors"].concat(hn), cols: cols, gridCols: grid,
+      head: [T((t.rows[0] || [])[0]) || "Directors"].concat(hn), cols: cols, gridCols: grid,
       groupCols: [151.89].concat(Array(G).fill(r2(2 * colW))).map(function (c) { return c + "pt"; }).join(" "),
       headRow: { label: "Directors", nums: hn, gridCols: grid },
       rows: rows,
@@ -197,18 +202,70 @@
       while (used < cols.length) { cells.push({ t: "", s: "Table:Table Body", f: null, bg: null, tw: 0, bw: 0, n: 1 }); used++; }
       return { h: 0, min: rh[ri] || 0, c: cells };
     });
-    return { k: "t", cols: cols, rows: out, auto: true };
+    return fy25Table({ k: "t", cols: cols, rows: out, auto: true });
+  }
+
+  // Word lays the notes tables out on its own grid: a narrow column for the
+  // note marker ("2.", "(d)"), a label column, and empty spacer columns between
+  // the figures. FY25 sets the same tables as one label column and the figure
+  // columns, the marker run into the label, the note title as a subhead, and
+  // tighter rows. Text and figures are not changed.
+  var MARK = /^(\(?[a-z]{1,4}\)|\d{1,2}\.?|\([ivx]+\))$/i;
+  function fy25Table(tb) {
+    var n = tb.cols.length;
+    var grid = tb.rows.map(function (r) {
+      var slots = [];
+      r.c.forEach(function (c) { for (var s = 0; s < (c.n || 1); s++) slots.push(c); });
+      return slots;
+    });
+    var empty = tb.cols.map(function (_, j) {
+      return grid.every(function (sl) { var c = sl[j]; return !c || (c.n || 1) > 1 || !String(c.t || "").trim(); });
+    });
+    // Only drop a column no cell actually owns alone.
+    var drop = empty.map(function (e, j) { return e && grid.some(function (sl) { return sl[j] && (sl[j].n || 1) === 1; }); });
+    // Marker column: column 0 holds nothing but markers, column 1 the labels.
+    var markerCol = n > 2 && !drop[0] && grid.every(function (sl) { var c = sl[0]; return !c || (c.n || 1) > 1 || !String(c.t || "").trim() || MARK.test(String(c.t).trim()); });
+    if (markerCol) drop[0] = true;
+    var keep = []; for (var j = 0; j < n; j++) if (!drop[j]) keep.push(j);
+    if (keep.length < 2) return tb;
+    var rows = tb.rows.map(function (r, ri) {
+      var sl = grid[ri], cells = [], seen = [];
+      keep.forEach(function (j) {
+        var c = sl[j];
+        if (!c) return;
+        var k = seen.indexOf(c);
+        if (k > -1) { cells[k].n += 1; return; }
+        seen.push(c); cells.push(Object.assign({}, c, { n: 1 }));
+      });
+      var mk = markerCol && sl[0] && (sl[0].n || 1) === 1 ? String(sl[0].t || "").trim() : "";
+      if (mk && cells[0]) cells[0] = Object.assign({}, cells[0], { t: mk + " " + String(cells[0].t || "").trim(), s: sl[0].s === "Table:Table Body Bold" ? "Table:Table Body Bold" : cells[0].s });
+      var head = cells.some(function (c) { return /^Table:Table Header/.test(c.s); });
+      var title = !head && cells[0] && /^\d{1,2}\.\s/.test(cells[0].t || "") && cells.slice(1).every(function (c) { return !String(c.t || "").trim(); });
+      if (title) cells = cells.map(function (c) { return Object.assign({}, c, { s: "A4 V:Subhead Large", tw: 0, bw: 0 }); });
+      var min = head ? (cells[0].s === "Table:Table Header 2" ? 14.504 : 17.008) : title ? 21.738 : 15.704;
+      return { h: 0, min: min, c: cells };
+    });
+    var vals = keep.length - 1, W = 481.89, cols;
+    var labelled = rows.some(function (r) { var c = r.c[0]; return c && !/^Table:Table Header/.test(c.s) && /[A-Za-z]{3}/.test(c.t || "") && (c.n || 1) === 1 && r.c.slice(1).some(function (x) { return /\d/.test(x.t || ""); }); });
+    if (labelled && vals <= 3) cols = [r2(W - vals * 76.535)].concat(Array(vals).fill(76.535));
+    else {
+      var src = keep.map(function (j) { return tb.cols[j]; }), tot = src.reduce(function (a, c) { return a + c; }, 0);
+      cols = src.map(function (c) { return r2(c * W / tot); });
+    }
+    return { k: "t", cols: cols, rows: rows, auto: true };
   }
   function buildNotes(parsed, issues) {
     var blocks = parsed.blocks, tables = parsed.tables, out = [], start = blocks.findIndex(function (b) { return b.k === "noteTitle"; });
     if (start < 0) { issues.push({ level: "error", text: "No notes found in the document." }); return []; }
-    var last = 0, titles = {};
+    var last = 0, titles = {}, indent = false;
+    function heading(s) { return s.length < 90 && !/[.;:,]$/.test(s) && /^[A-Z0-9]/.test(s); }
     for (var i = start; i < blocks.length; i++) {
       var b = blocks[i], text = b.text ? b.text.replace(/\t+/g, " ").replace(/ +/g, " ").trim() : "";
       if (b.k === "noteTitle") {
         last = b.number ? +b.number : last + 1;
         titles[b.slug] = 1;
         out.push({ k: "p", s: "A4 V:Subhead Large", t: last + ". " + b.text });
+        indent = false;
       } else if (b.k === "table") {
         var t = tables[b.key], hc = t.headCells, drop = false;
         if (hc && t.note) {
@@ -217,12 +274,28 @@
         }
         if (/^front-/.test(b.key)) continue;
         out.push(noteTable(t, drop));
-      } else if (b.k === "subhead") out.push({ k: "p", s: "H3 Sub Heading LC Financials", t: text });
+      } else if (b.k === "subhead") { indent = false; out.push({ k: "p", s: "H3 Sub Heading LC Financials", t: text }); }
+      else if (b.k === "bullet" && b.marker) {
+        // A numbered paragraph that reads as a title, e.g. "(i) Establishment
+        // of Operations", is an italic sub-heading with the copy under it
+        // indented, as FY25 sets it; otherwise it is a numbered point.
+        if (heading(text)) { out.push({ k: "p", s: "H4 Sub Heading Italic", t: text, mk: b.marker }); indent = true; }
+        else {
+          // Numbered notes straight after a table are its footnotes (FY25
+          // sets them in the 6.5pt Footnotes style).
+          var pv = out[out.length - 1], foot = pv && (pv.k === "t" || pv.s === "Footnotes");
+          out.push({ k: "p", s: foot ? "Footnotes" : "B5 Bullet Body Indent Alpha", t: text, mk: b.marker });
+        }
+      }
       else if (b.k === "bullet") out.push({ k: "p", s: "B7 Bullet double Indent", t: text });
       else if (b.k === "body") {
-        if (b.bold && text.length < 90) out.push({ k: "p", s: "H3 Sub Heading LC Financials", t: text });
-        else if (b.italic && text.length < 100 && !/[.:]$/.test(text)) out.push({ k: "p", s: "H4 Sub Heading Italic", t: text });
-        else out.push({ k: "p", s: "A4 V:Body", t: text });
+        var mm = /^\(([a-z]{1,4})\)\s+(.+)$/.exec(text);
+        if (b.bold && text.length < 90) { indent = false; out.push({ k: "p", s: "H3 Sub Heading LC Financials", t: text }); }
+        else if (b.italic && text.length < 100 && !/[.:]$/.test(text)) {
+          if (mm) { out.push({ k: "p", s: "H4 Sub Heading Italic", t: mm[2], mk: "(" + mm[1] + ")" }); indent = true; }
+          else { indent = false; out.push({ k: "p", s: "H4 Sub Heading Italic", t: text }); }
+        }
+        else out.push({ k: "p", s: indent ? "B2 Body Indent" : "A4 V:Body", t: text });
       }
     }
     return out;
@@ -255,7 +328,7 @@
       if (b.k === "picture") { nar.push({ kind: "diagram", rid: b.rid, w: b.w, h: b.h }); continue; }
       if (b.k === "sectionHeading") nar.push({ kind: "subhead", text: text });
       else if (b.k === "subhead") nar.push({ kind: "minihead", text: text });
-      else if (b.k === "bullet") nar.push({ kind: "bullet", text: text });
+      else if (b.k === "bullet") nar.push({ kind: "bullet", text: text, tick: !!b.tick, level: b.level || 0, marker: b.marker || "" });
       else if (b.k === "table") {
         var t = tables[b.key];
         if (/^Directors/i.test((t.rows[0] && T(t.rows[0][0])) || "") && (t.head || []).length > 2 && (t.rows[1] && /held/i.test(T(t.rows[1][1])))) nar.push(attendance(t, pc));
@@ -265,14 +338,21 @@
       }
       else if (b.k === "body") {
         var prevB = nar[nar.length - 1];
-        if ((prevB && prevB.kind === "subhead" && /^OFFICERS/i.test(prevB.text)) || /\t/.test(b.text)) nar.push({ kind: "officer", text: text });
+        if ((prevB && prevB.kind === "subhead" && /^OFFICERS/i.test(prevB.text)) || /\t/.test(b.text)) {
+          // Name, tab, role: the name sets bold, as in the published report.
+          var parts = b.text.split(/\t+/), nm = parts.length > 1 ? ws(parts[0]) : "";
+          nar.push({ kind: "officer", text: text, name: nm, rest: nm ? ws(parts.slice(1).join(" ")) : text });
+        }
         else if (b.bold && text.length < 80) nar.push({ kind: "minihead", text: text });
         else if (b.italic && /^(\d+|\*)\s/.test(text)) nar.push({ kind: "note", text: text });
         else nar.push({ kind: "body", text: text });
       }
     }
-    // Directors who ceased sit before OFFICERS in the document.
-    copy.narrative = nar;
+    // Directors who ceased sit before OFFICERS in the document; they print on
+    // the directors' spread, under the last card.
+    var firstHead = nar.findIndex(function (x) { return x.kind === "subhead"; });
+    copy.ceased = firstHead > 0 ? nar.slice(0, firstHead) : [];
+    copy.narrative = firstHead > 0 ? nar.slice(firstHead) : nar;
 
     var sg = blocks.filter(function (b) { return b.k === "table"; }).map(function (b) { return tables[b.key]; })
       .filter(function (t) { return t.rows.length === 1 && /Melbourne|, \d{4}/.test(t.rows[0].map(T).join(" ")); })[0];

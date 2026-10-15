@@ -336,7 +336,7 @@
           if (!doc) throw new Error("no document body");
           if (inp.id === "finance") {
             var C = root.RVFinanceConverter;
-            var parsed = C.parse(doc, root.RV_FINANCE_NOTES);
+            var parsed = C.parse(doc, root.RV_FINANCE_NOTES, await zip.read("word/numbering.xml"));
             var v = C.validate(C.build(parsed, { source: f.name }), null, parsed.unknownStyles, parsed.missingNotes);
             v.errors.forEach(function (t) { rec.issues.push(issue("error", t)); });
             v.warnings.forEach(function (t) { rec.issues.push(issue("warning", t)); });

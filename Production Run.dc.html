@@ -20,6 +20,11 @@
   @page spread { size: 1190.55pt 841.89pt; margin: 0; }
   section.page[style*="595.276pt"] { page: single; }
   section.page[style*="1190.55pt"] { page: spread; }
+  /* The sheets sit in each section's doc-page shadow root, where Chrome does
+     not always carry a named page up from the slotted section, so name the
+     page on the host as well: the cover's doc-page prints portrait. */
+  doc-page[width="595.276pt"] { page: single; }
+  doc-page[width="1190.55pt"] { page: spread; }
   @media print {
     body { background: none; }
     [data-noprint] { display: none !important; }

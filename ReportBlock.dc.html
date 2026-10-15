@@ -16,20 +16,17 @@
 </sc-if>
 
 <sc-if value="{{ block.isBody }}" hint-placeholder-val="{{ true }}">
-  <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71;padding:{{ block.padTop }} 0 {{ block.padBottom }}">{{ block.text }}</div>
+  <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ block.ls }};color:#6D6E71;padding:{{ block.padTop }} 0 {{ block.padBottom }}">{{ block.text }}</div>
+</sc-if>
+
+<sc-if value="{{ block.isOfficer }}" hint-placeholder-val="">
+  <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ block.ls }};color:#6D6E71;padding:{{ block.padTop }} 0 {{ block.padBottom }}"><span style="font-weight:700">{{ block.name }}</span> {{ block.rest }}</div>
 </sc-if>
 
 <sc-if value="{{ block.isBullet }}" hint-placeholder-val="">
-  <div style="display:grid;grid-template-columns:22.677pt 1fr;margin:0;padding:{{ block.padTop }} 0 {{ block.padBottom }}">
-    <div style="font-weight:400;font-size:9pt;line-height:12pt;color:#6D6E71">&#8226;</div>
-    <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71">{{ block.text }}</div>
-  </div>
-</sc-if>
-
-<sc-if value="{{ block.isBulletCont }}" hint-placeholder-val="">
-  <div style="display:grid;grid-template-columns:22.677pt 1fr;margin:0;padding:{{ block.padTop }} 0 {{ block.padBottom }}">
-    <div></div>
-    <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71">{{ block.text }}</div>
+  <div style="display:grid;grid-template-columns:{{ block.bcol }} 1fr;margin:0 0 0 {{ block.bml }};padding:{{ block.padTop }} 0 {{ block.padBottom }}">
+    <div style="font-weight:400;font-size:9pt;line-height:12pt;color:#6D6E71">{{ block.mark }}</div>
+    <div style="font-weight:{{ block.bfw }};font-style:{{ block.bfs }};font-size:9pt;line-height:12pt;letter-spacing:{{ block.ls }};color:#6D6E71">{{ block.text }}</div>
   </div>
 </sc-if>
 
@@ -41,34 +38,18 @@
   <div style="padding:{{ block.padTop }} 0 0">
     <sc-for list="{{ block.tableRows }}" as="r" hint-placeholder-count="6">
       <sc-if value="{{ r.isHead }}" hint-placeholder-val="">
-        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:27.73pt;background:#005FA1;color:#fff;padding:3pt 0;box-sizing:border-box">
-          <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
+        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:end;min-height:27.73pt;background:#005FA1;color:#fff;padding:3pt 0;box-sizing:border-box">
+          <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;padding-left:4.252pt">{{ r.label }}</div>
           <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="3">
             <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;text-align:right;padding-right:6pt;white-space:pre-line">{{ c }}</div>
           </sc-for>
         </div>
       </sc-if>
-      <sc-if value="{{ r.isBand }}" hint-placeholder-val="">
-        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;background:#F0F5F9;color:#6D6E71;box-sizing:border-box">
-          <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
+      <sc-if value="{{ r.isRow }}" hint-placeholder-val="">
+        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;background:{{ r.bg }};color:#005FA1;box-sizing:border-box">
+          <div style="font-weight:{{ r.fw }};font-size:8pt;line-height:10.5pt;padding-left:4.252pt">{{ r.label }}<span style="font-size:5.5pt;vertical-align:4pt;padding-left:1pt">{{ r.sup }}</span></div>
           <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="3">
-            <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;text-align:right;padding-right:6pt">{{ c }}</div>
-          </sc-for>
-        </div>
-      </sc-if>
-      <sc-if value="{{ r.isPlain }}" hint-placeholder-val="">
-        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;color:#6D6E71;box-sizing:border-box">
-          <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
-          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="3">
-            <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;text-align:right;padding-right:6pt">{{ c }}</div>
-          </sc-for>
-        </div>
-      </sc-if>
-      <sc-if value="{{ r.isTotal }}" hint-placeholder-val="">
-        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;color:#005FA1;border-top:0.5pt solid #005FA1;box-sizing:border-box">
-          <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
-          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="3">
-            <div style="font-weight:700;font-size:8.5pt;line-height:10.5pt;text-align:right;padding-right:6pt">{{ c }}</div>
+            <div style="font-weight:{{ r.fw }};font-size:8pt;line-height:10.5pt;text-align:right;padding-right:6pt;font-variant-numeric:tabular-nums">{{ c }}</div>
           </sc-for>
         </div>
       </sc-if>
@@ -78,41 +59,29 @@
 
 <sc-if value="{{ block.isAttendance }}" hint-placeholder-val="">
   <div style="padding:{{ block.padTop }} 0 0">
-    <div style="display:grid;grid-template-columns:{{ block.groupCols }};align-items:end;min-height:16pt;box-sizing:border-box">
-      <div></div>
-      <div style="font-weight:700;font-size:7.5pt;line-height:10pt;letter-spacing:0.04em;text-transform:uppercase;color:#005FA1;text-align:center;border-bottom:0.5pt solid #005FA1;padding-bottom:2pt">BOARD OF DIRECTORS</div>
-      <div style="font-weight:700;font-size:7.5pt;line-height:10pt;letter-spacing:0.04em;text-transform:uppercase;color:#005FA1;text-align:center;border-bottom:0.5pt solid #005FA1;padding-bottom:2pt;margin-left:4pt">ARWSC</div>
+    <div style="display:grid;grid-template-columns:{{ block.gridCols }};align-items:end;min-height:16pt;box-sizing:border-box">
+      <sc-for list="{{ block.groupCells }}" as="g" hint-placeholder-count="5">
+        <div style="grid-column:{{ g.gc }};font-weight:700;font-size:8pt;line-height:10pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-align:center;border-bottom:{{ g.rule }};padding-bottom:3pt">{{ g.label }}</div>
+      </sc-for>
     </div>
-    <div style="display:grid;grid-template-columns:{{ block.headRow.gridCols }};align-items:end;min-height:34pt;background:#005FA1;color:#fff;padding:3pt 0;box-sizing:border-box;margin-top:2pt">
-      <div style="font-weight:700;font-size:7.5pt;line-height:9.5pt;padding-left:6pt">{{ block.headRow.label }}</div>
-      <sc-for list="{{ block.headRow.nums }}" as="c" hint-placeholder-count="6">
-        <div style="font-weight:400;font-size:6.5pt;line-height:8.5pt;text-align:center;padding:0 3pt">{{ c }}</div>
+    <div style="display:grid;grid-template-columns:{{ block.gridCols }};min-height:34pt;margin-top:2pt;box-sizing:border-box">
+      <sc-for list="{{ block.headCells }}" as="c" hint-placeholder-count="9">
+        <div style="display:flex;align-items:flex-end;justify-content:{{ c.jc }};background:{{ c.bg }};color:#fff;font-weight:700;font-size:7.5pt;line-height:9pt;text-align:{{ c.ta }};white-space:pre-line;padding:3pt {{ c.ph }} 3pt {{ c.pl }}">{{ c.t }}</div>
       </sc-for>
     </div>
     <sc-for list="{{ block.bodyRows }}" as="r" hint-placeholder-count="8">
-      <sc-if value="{{ r.band }}" hint-placeholder-val="">
-        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;background:#F0F5F9;color:#6D6E71;box-sizing:border-box">
-          <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
-          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="6">
-            <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;text-align:center">{{ c }}</div>
-          </sc-for>
-        </div>
-      </sc-if>
-      <sc-if value="{{ r.plain }}" hint-placeholder-val="">
-        <div style="display:grid;grid-template-columns:{{ r.gridCols }};align-items:center;min-height:15.01pt;color:#6D6E71;box-sizing:border-box">
-          <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;padding-left:6pt">{{ r.label }}</div>
-          <sc-for list="{{ r.nums }}" as="c" hint-placeholder-count="6">
-            <div style="font-weight:400;font-size:8.5pt;line-height:10.5pt;text-align:center">{{ c }}</div>
-          </sc-for>
-        </div>
-      </sc-if>
+      <div style="display:grid;grid-template-columns:{{ block.gridCols }};min-height:15.01pt;box-sizing:border-box">
+        <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="9">
+          <div style="display:flex;align-items:center;justify-content:{{ c.jc }};background:{{ c.bg }};color:#005FA1;font-weight:400;font-size:8pt;line-height:10.5pt;padding:0 0 0 {{ c.pl }}">{{ c.t }}</div>
+        </sc-for>
+      </div>
     </sc-for>
   </div>
 </sc-if>
 
 <sc-if value="{{ block.isDiagramImg }}" hint-placeholder-val="">
   <div style="padding:{{ block.padTop }} 0 0">
-    <img src="{{ block.src }}" alt="Revenue streams and allocation of funds" style="display:block;width:{{ block.imgW }}pt;height:{{ block.imgH }}pt">
+    <img src="{{ block.src }}" alt="Revenue streams and allocation of funds" style="display:block;width:{{ block.imgW }}pt;height:{{ block.imgH }}pt;mix-blend-mode:multiply">
   </div>
 </sc-if>
 

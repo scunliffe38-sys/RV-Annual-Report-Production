@@ -34,16 +34,26 @@
 
   <svg style="position:absolute;left:52.69pt;top:99.94pt;width:315.81pt;height:50pt" viewBox="0 0 315.81 50" role="img" aria-label="Directors&#8217; Report"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37" fill="#005FA1">Directors&#8217; Report</text></svg>
 
-  <div style="position:absolute;left:56.69pt;top:160.99pt;width:481.89pt;height:77.86pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71">
+  <div style="position:absolute;left:56.69pt;top:160.99pt;width:481.89pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71">
     <sc-for list="{{ intro }}" as="p" hint-placeholder-count="2">
       <div style="margin:0 0 11.339pt">{{ p }}</div>
     </sc-for>
   </div>
 
-  <div style="position:absolute;left:55.69pt;top:254.95pt;width:214.02pt;font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1">Current Directors</div>
+  <div style="position:absolute;left:55.69pt;top:{{ dirHeadTop }};width:300pt;font-weight:400;font-size:13pt;line-height:18pt;text-transform:uppercase;color:#005FA1">Current Directors</div>
   <sc-if value="{{ dirHasRight }}" hint-placeholder-val="{{ true }}">
-    <div style="position:absolute;left:651.97pt;top:254.95pt;width:300.47pt;font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1">Current Directors (continued)</div>
+    <div style="position:absolute;left:651.97pt;top:{{ dirHeadTop }};width:400pt;font-weight:400;font-size:13pt;line-height:18pt;text-transform:uppercase;color:#005FA1">Current Directors (continued)</div>
   </sc-if>
+  <div style="position:absolute;left:651.97pt;top:{{ ceasedTop }};width:481.89pt">
+    <sc-for list="{{ ceased }}" as="c" hint-placeholder-count="0">
+      <sc-if value="{{ c.isTxt }}" hint-placeholder-val="">
+        <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71;padding-top:{{ c.pt }}">{{ c.text }}</div>
+      </sc-if>
+      <sc-if value="{{ c.isOff }}" hint-placeholder-val="">
+        <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71;padding-top:{{ c.pt }}"><span style="font-weight:700">{{ c.name }}</span> {{ c.rest }}</div>
+      </sc-if>
+    </sc-for>
+  </div>
 
   <sc-for list="{{ dirCards }}" as="c" hint-placeholder-count="8">
     <image-slot id="dir-{{ c.n }}" shape="circle" placeholder="Director {{ c.n }}" style="position:absolute;left:{{ c.x }}pt;top:{{ c.y }}pt;width:{{ c.p }}pt;height:{{ c.p }}pt"></image-slot>
@@ -226,7 +236,7 @@
   <div style="position:absolute;left:651.97pt;top:133.33pt;width:481.89pt;height:199.01pt;overflow:hidden;color:#6D6E71">
     <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;padding:0 0 2.835pt">{{ decLead }}</div>
     <sc-for list="{{ decItems }}" as="it" hint-placeholder-count="6">
-      <div style="display:grid;grid-template-columns:22.677pt 1fr;margin-left:22.677pt;padding:0 0 2.835pt">
+      <div style="display:grid;grid-template-columns:22.677pt 1fr;margin-left:{{ it.ml }};padding:0 0 2.835pt">
         <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em">{{ it.marker }}</div>
         <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em">{{ it.text }}</div>
       </div>
@@ -258,7 +268,7 @@
   <div style="position:absolute;left:862.23pt;top:63.56pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
 
   <div style="position:absolute;left:649.97pt;top:66.15pt;width:495.23pt;height:138.49pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1">{{ stSurplus.heading }}</div>
-  <div style="position:absolute;left:651.97pt;top:206.64pt;width:481.89pt;font-weight:400;font-size:7.5pt;line-height:12.03pt;letter-spacing:0.1em;text-transform:uppercase;color:#005FA1">{{ stSurplus.dateline }}</div>
+  <div style="position:absolute;left:651.97pt;top:206.64pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stSurplus.dateline }}</div>
   <div style="position:absolute;left:651.97pt;top:237.79pt;width:481.89pt;height:550.24pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stSurplus }}" hint-size="100%,550pt"></dc-import>
   </div>
@@ -274,13 +284,13 @@
   <div style="position:absolute;left:130.05pt;top:-148.92pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
 
   <div style="position:absolute;left:55.69pt;top:65.78pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1">{{ stPosition.heading }}</div>
-  <div style="position:absolute;left:56.69pt;top:159.43pt;width:481.89pt;font-weight:400;font-size:7.5pt;line-height:12.03pt;letter-spacing:0.1em;text-transform:uppercase;color:#005FA1">{{ stPosition.dateline }}</div>
+  <div style="position:absolute;left:56.69pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stPosition.dateline }}</div>
   <div style="position:absolute;left:56.69pt;top:191.73pt;width:481.89pt;height:573.44pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stPosition }}" hint-size="100%,573pt"></dc-import>
   </div>
 
   <div style="position:absolute;left:650.3pt;top:65.78pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1">{{ stCashflows.heading }}</div>
-  <div style="position:absolute;left:651.8pt;top:159.43pt;width:481.89pt;font-weight:400;font-size:7.5pt;line-height:12.03pt;letter-spacing:0.1em;text-transform:uppercase;color:#005FA1">{{ stCashflows.dateline }}</div>
+  <div style="position:absolute;left:651.8pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stCashflows.dateline }}</div>
   <div style="position:absolute;left:651.8pt;top:191.73pt;width:481.89pt;height:620.39pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stCashflows }}" hint-size="100%,620pt"></dc-import>
   </div>
@@ -309,8 +319,8 @@
     </sc-for>
   </div>
 
-  <div style="position:absolute;left:55.69pt;top:65.78pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1">{{ stEquity.heading }}</div>
-  <div style="position:absolute;left:56.69pt;top:159.43pt;width:481.89pt;font-weight:400;font-size:7.5pt;line-height:12.03pt;letter-spacing:0.1em;text-transform:uppercase;color:#005FA1">{{ stEquity.dateline }}</div>
+  <div style="position:absolute;left:55.69pt;top:65.78pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;text-wrap:balance">{{ stEquity.heading }}</div>
+  <div style="position:absolute;left:56.69pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stEquity.dateline }}</div>
   <div style="position:absolute;left:56.69pt;top:192.24pt;width:481.89pt;height:296.71pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stEquity }}" hint-size="100%,296pt"></dc-import>
   </div>
@@ -397,6 +407,8 @@ const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0
 // Row metrics from the IDML tables.
 const T_HEAD_H = 27.73, T_ROW_H = 15.01;
 const DIAGRAM_H = 300;
+// Row tint used across the FY25 tables (light RV Blue on the 4% ground).
+const BAND_BG = '#E4ECF5';
 const UNBREAKABLE = { sig: 1, subhead: 1, minihead: 1, table: 1, attendance: 1, diagram: 1 };
 
 // ---- Notes to the Financial Statements, pp. 47-83 -------------------------
@@ -437,7 +449,7 @@ const TABLE_TEXT_GAP = 8.504;
 const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
 
 class Component extends DCLogic {
-  state = { sigTop: 144.06, sigFrame: 7, dirCards: [], frames: [[], [], [], [], [], [], [], [], [], []], baseIdx: 0, leftover: [], copy: null, statements: null, notes: null, noteLeftover: 0 };
+  state = { sigTop: 144.06, sigFrame: 7, dirLayout: { cards: [], headTop: 254.95, ceasedTop: 0 }, frames: [[], [], [], [], [], [], [], [], [], []], baseIdx: 0, leftover: [], copy: null, statements: null, notes: null, noteLeftover: 0 };
 
   componentDidMount() {
     const nudge = () => {
@@ -477,11 +489,11 @@ class Component extends DCLogic {
         try {
           const r = this.settle(this._markLists(m.copy.narrative).concat([{ kind: 'sig' }]), m.copy);
           const place = this._sigPlace(r);
-          this.setState(Object.assign({ copy: m.copy, dirCards: this._layoutDirectors(m.copy.directors || []), frames: r.frames.map(f => f.filter(i => i.kind !== 'sig')), baseIdx: r.baseIdx, leftover: r.leftover.filter(i => i.kind !== 'sig') }, place));
+          this.setState(Object.assign({ copy: m.copy, dirLayout: this._layoutDirectors(m.copy.directors || [], m.copy.intro, m.copy.ceased), frames: r.frames.map(f => f.filter(i => i.kind !== 'sig')), baseIdx: r.baseIdx, leftover: r.leftover.filter(i => i.kind !== 'sig') }, place));
         } catch (e) {
           console.error('Directors\u2019 Report: flow failed', e);
           // Show the copy unbroken rather than an empty document.
-          this.setState({ copy: m.copy, dirCards: this._layoutDirectors(m.copy.directors || []), frames: [this._markLists(m.copy.narrative), [], [], [], [], [], [], [], [], []] });
+          this.setState({ copy: m.copy, dirLayout: this._layoutDirectors(m.copy.directors || [], m.copy.intro, m.copy.ceased), frames: [this._markLists(m.copy.narrative), [], [], [], [], [], [], [], [], []] });
         }
       }));
   }
@@ -516,14 +528,51 @@ class Component extends DCLogic {
     return items.map((b, i) => {
       if (b.kind !== 'bullet') return b;
       const prev = items[i - 1], next = items[i + 1];
+      // FY25: ticked lists hang from the margin (tick, 17pt, italic text);
+      // bullets indent one step with the text 14pt after the bullet.
+      // Word's list level is not carried over: FY25 sets every list at one indent.
+      const tick = !!b.tick, lvl = 0;
+      const bml = tick ? 0 : 22.677 * (1 + lvl), bcol = tick ? 17.008 : 14.173;
       return Object.assign({}, b, {
         bFirst: !prev || prev.kind !== 'bullet',
         bLast: !next || next.kind !== 'bullet',
+        bml, bcol, bInd: bml + bcol,
       });
     });
   }
 
   settle(items, copy) {
+    // First choice: the copy and signatures inside pp. 30-37, tightening the
+    // tracking a step at a time. Only if no step manages that does the spill
+    // spread (pp. 38-39) come in.
+    // Paragraphs are kept whole (moved to the next column) wherever that
+    // still fits pp. 30-37; only failing that are they split between columns.
+    // Splits are allowed one column foot at a time, at the foot left emptiest
+    // by keeping paragraphs whole, until the copy fits. The tracking step
+    // needing fewest splits wins (ties go to the looser tracking).
+    const fits = a => !a.leftover.length && !a.frames[8].length && !a.frames[9].length;
+    let best = null;
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const split = FRAMES.map(() => false);
+      for (let n = 0; n < 8; n++) {
+        if (best && n >= best.n) break;
+        const attempt = this.flow(items, baseIdx, copy, split);
+        if (fits(attempt)) { best = { attempt, baseIdx, n }; break; }
+        let worst = -1, gap = -1;
+        for (let c = 0; c < 7; c++) {
+          if (split[c] || !attempt.frames[c].length) continue;
+          const g = FRAMES[c].height - attempt.used[c];
+          if (g > gap) { gap = g; worst = c; }
+        }
+        if (worst < 0) break;
+        split[worst] = true;
+      }
+      if (best && best.n === 0) break;
+    }
+    if (best) {
+      if (best.baseIdx || best.n) console.warn('Directors\u2019 Report: fitted pp. 30-37 at tracking ' + TRACKING[best.baseIdx] + ', ' + best.n + ' paragraph split(s).');
+      return Object.assign(best.attempt, { baseIdx: best.baseIdx });
+    }
     for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
       const attempt = this.flow(items, baseIdx, copy);
       if (!attempt.leftover.length) {
@@ -558,8 +607,10 @@ class Component extends DCLogic {
     // Bullets render as a 22.677pt marker column + text column (A4 V:Body
     // Single Indent). Probing at the same inset measures the text column
     // exactly, with no marker glyph and no hanging indent to keep in step.
-    host.style.paddingLeft = k === 'bullet' ? '22.677pt' : '0';
+    host.style.paddingLeft = k === 'bullet' ? (item.bInd || 36.85) + 'pt' : '0';
     host.style.textIndent = '0';
+    host.style.fontStyle = k === 'bullet' && item.tick ? 'italic' : 'normal';
+    if (k === 'bullet' && item.tick) host.style.fontWeight = '500';
   }
 
   _space(item) {
@@ -587,13 +638,13 @@ class Component extends DCLogic {
       return h;
     }
     // Group rule row + 2pt gap + header row + body rows.
-    if (item.kind === 'attendance') return 18 + 34 + item.bodyRows.length * T_ROW_H;
+    if (item.kind === 'attendance') return 18 + 34 + (item.rows || item.bodyRows).length * T_ROW_H;
     if (item.kind === 'sig') return 85;
-    if (item.kind === 'diagram') return item.src ? item.h * Math.min(1, 481.89 / item.w) : DIAGRAM_H;
+    if (item.kind === 'diagram') return item.src ? item.h * Math.min(1, 481.89 / item.w) * (item.scale || 1) : DIAGRAM_H;
     return null;
   }
 
-  flow(items, baseIdx, copy) {
+  flow(items, baseIdx, copy, keep) {
     const frames = FRAMES.map(() => []);
     const used = FRAMES.map(() => 0);
     let sigAt = null;
@@ -626,8 +677,17 @@ class Component extends DCLogic {
           usedPx += hPx;
           continue;
         }
+        // The diagram stays with the copy that introduces it: rather than jump
+        // a page it sets down to 70% of its width to fit the space left.
+        if (item.kind === 'diagram' && item.src && !item.scale && frames[c].length) {
+          const full = this._fixedHeight(item), room = (capPx - usedPx) * 0.75 - (this._space(item) - lead);
+          if (room >= full * 0.7) { queue[0] = Object.assign({}, item, { scale: Math.floor(room / full * 100) / 100 }); continue; }
+        }
         // Headings, tables and the diagram move to the next frame whole.
         if (UNBREAKABLE[item.kind]) break;
+        // Keep paragraphs whole: move to the next column if it holds them.
+        if (keep && !keep[c] && frames[c].length && c < FRAMES.length - 1 &&
+            hPx <= (FRAMES[c + 1].height - FOOT_CLEARANCE) / 0.75) break;
 
         const availPx = capPx - usedPx;
         const prefix = 0;
@@ -679,45 +739,68 @@ class Component extends DCLogic {
   // photo takes the card's height (up to 109.91pt), and the split between the
   // pages is the one that makes the taller page shortest. If the bios will not
   // fit, the type steps down before anything is cut.
-  _layoutDirectors(dirs) {
-    if (!dirs.length) return [];
-    const TOP = 281.83, AVAIL = 773 - TOP, GAP = 17, PMAX = 109.91, PMIN = 72, TXW = 361, XL = 56.69, XR = 651.97;
-    const pr = this._probe(TXW, '-0.005em'), host = pr.host, node = pr.node;
-    const measure = (t, pt, lead) => { host.style.fontSize = pt + 'pt'; host.style.lineHeight = lead + 'pt'; node.data = t; return host.getBoundingClientRect().height * 0.75; };
-    const colH = hs => hs.reduce((a, h) => a + h, 0) + GAP * Math.max(0, hs.length - 1);
+  // One photo size and one type size for the whole board, so every card lines
+  // up (FY25: 98pt photos, bios about 7.5/10). The photo shrinks first, then
+  // the type, until the board - and any directors who ceased, set under the
+  // last card - fits the spread.
+  _layoutDirectors(dirs, intro, ceased) {
+    const XL = 56.69, XR = 651.97, FOOT = 773, PMAX = 98, PMIN = 72, GUTTER = 22, GMIN = 10, GMAX = 30;
+    const ip = this._probe(481.89, '-0.01em');
+    ip.host.style.fontSize = '9pt'; ip.host.style.lineHeight = '12pt';
+    let introH = 0;
+    (intro || []).forEach((t, k) => { ip.node.data = t; introH += ip.host.getBoundingClientRect().height * 0.75 + (k ? 11.339 : 0); });
+    let ceasedH = 0;
+    (ceased || []).forEach((c, k) => { ip.node.data = c.text || ''; ceasedH += ip.host.getBoundingClientRect().height * 0.75 + (k ? 5.669 : 0); });
+    ip.host.remove();
+    const headTop = Math.max(200, 160.99 + introH + 18), TOP = headTop + 27;
+    const AVAIL = FOOT - TOP, ceasedRoom = ceasedH ? ceasedH + 17 : 0;
+    const out = { headTop, cards: [], ceasedTop: 0 };
+    if (!dirs.length) return out;
+    const pr = this._probe(100, '-0.005em'), host = pr.host, node = pr.node;
+    const measure = (t, w, pt, lead) => { host.style.width = w + 'pt'; host.style.fontSize = pt + 'pt'; host.style.lineHeight = lead + 'pt'; node.data = t; return host.getBoundingClientRect().height * 0.75; };
     let pick = null;
     for (const s of [1, 0.96, 0.92, 0.88, 0.84, 0.8]) {
-      const hs = dirs.map(d => Math.max(PMIN, 24 + (d.paras || []).reduce((a, p) => a + measure(p, 7 * s, 9 * s) + 3.5, 0)));
-      let best = null;
-      for (let k = 1; k <= dirs.length; k++) {
-        const m = Math.max(colH(hs.slice(0, k)), colH(hs.slice(k)));
-        if (!best || m < best.m) best = { k, m };
+      for (let P = PMAX; P >= PMIN; P -= 2) {
+        const tw = 481.89 - P - GUTTER;
+        const th = dirs.map(d => 24 + (d.paras || []).reduce((a, p) => a + measure(p, tw, 7.5 * s, 10 * s) + 3.5, 0));
+        const hs = th.map(h => Math.max(P, h));
+        const colH = (a, extra) => a.reduce((x, h) => x + h, 0) + GMIN * Math.max(0, a.length - 1) + extra;
+        let best = null;
+        for (let k = 1; k <= dirs.length; k++) {
+          const L = colH(hs.slice(0, k), 0), R = colH(hs.slice(k), k < dirs.length ? ceasedRoom : 0);
+          if (k === dirs.length && ceasedRoom) continue;
+          const m = Math.max(L, R);
+          if (m <= AVAIL && (!best || Math.abs(L - R) < best.d)) best = { k, d: Math.abs(L - R) };
+        }
+        if (best) { pick = { s, P, tw, hs, k: best.k }; break; }
       }
-      pick = { s, hs, k: best.k, m: best.m };
-      if (best.m <= AVAIL) break;
+      if (pick) break;
     }
     host.remove();
-    if (pick.m > AVAIL) console.warn('Directors: biographies do not fit at the smallest type size (' + Math.round(pick.m - AVAIL) + 'pt over).');
-    const cards = [];
-    [[0, pick.k, XL], [pick.k, dirs.length, XR]].forEach(([from, to, x]) => {
-      const hs = pick.hs.slice(from, to);
-      if (!hs.length) return;
-      let slack = Math.max(0, AVAIL - colH(hs));
-      hs.forEach((h, i) => { if (h < PMAX && slack > 0) { const add = Math.min(PMAX - h, slack / hs.length); hs[i] = h + add; } });
-      slack = Math.max(0, AVAIL - colH(hs));
-      const gap = hs.length > 1 ? Math.min(GAP + slack / (hs.length - 1), 34) : 0;
+    if (!pick) {
+      console.warn('Directors: biographies do not fit at the smallest photo and type size.');
+      pick = { s: 0.8, P: PMIN, tw: 481.89 - PMIN - GUTTER, hs: dirs.map(() => PMIN), k: Math.ceil(dirs.length / 2) };
+    }
+    // One gap for both pages, so the cards keep a common rhythm.
+    const cols = [[0, pick.k, XL, 0], [pick.k, dirs.length, XR, ceasedRoom]];
+    const gap = Math.min.apply(null, cols.map(([a, b, , ex]) => {
+      const hs = pick.hs.slice(a, b);
+      return hs.length > 1 ? Math.min(GMAX, (AVAIL - ex - hs.reduce((x, h) => x + h, 0)) / (hs.length - 1)) : GMAX;
+    }));
+    cols.forEach(([from, to, x]) => {
       let y = TOP;
-      hs.forEach((h, i) => {
-        const d = dirs[from + i], p = Math.min(PMAX, h);
-        cards.push({
-          n: from + i + 1, x: x, y: y, p: p, h: h, tx: x + p + 10.62, tw: 481.89 - p - 10.62,
+      pick.hs.slice(from, to).forEach((h, i) => {
+        const d = dirs[from + i];
+        out.cards.push({
+          n: from + i + 1, x, y, p: pick.P, h, tx: x + pick.P + GUTTER, tw: pick.tw,
           name: d.name, roleLabel: d.role ? ' (' + d.role + ')' : '', appointed: d.appointed, paras: d.paras || [],
-          fs: Math.round(7 * pick.s * 100) / 100, lh: Math.round(9 * pick.s * 100) / 100,
+          fs: Math.round(7.5 * pick.s * 100) / 100, lh: Math.round(10 * pick.s * 100) / 100,
         });
         y += h + gap;
       });
+      if (x === XR) out.ceasedTop = y - gap + 17;
     });
-    return cards;
+    return out;
   }
 
   // --- Notes ---------------------------------------------------------------
@@ -767,7 +850,7 @@ class Component extends DCLogic {
     host.style.paddingLeft = (bullet ? 36.85 : (st.left || 0)) + 'pt';
     // A continuation fragment starts a new box, so its first line is flush
     // with the rest of the paragraph, not at the style's first-line indent.
-    host.style.textIndent = ((bullet || b.cont) ? 0 : (st.first || 0)) + 'pt';
+    host.style.textIndent = ((bullet || b.cont || b.mk) ? 0 : (st.first || 0)) + 'pt';
   }
 
   // A paragraph is one text node, or one span per character run where the
@@ -908,8 +991,10 @@ class Component extends DCLogic {
           if (usedPx + (tall + before) / 0.75 <= capPx) {
             out[i].push(b); queue.shift(); usedPx += (tall + before) / 0.75; continue;
           }
-          // Only reached if FY26 data makes a table taller than its frame:
-          // split at a row boundary and repeat the header rows.
+          // A table that fits a frame on its own moves over whole, as in FY25.
+          if (out[i].length && tall <= frames[Math.min(i + 1, frames.length - 1)].h - 2) break;
+          // Only a table taller than a whole frame splits: at a row boundary,
+          // with the header rows repeated.
           const avail = (capPx - usedPx) * 0.75 - before;
           const heads = [];
           for (const r of b.rows) { if (r.c.some(c => c && NOTE_HEADER_PS[c.s])) heads.push(r); else break; }
@@ -1016,7 +1101,13 @@ class Component extends DCLogic {
         fst: /Italic/.test(r[1]) ? 'italic' : o.fst,
       }));
     }
-    if (bullet) { o.isBullet = 1; o.marker = b.cont ? '' : '\u2022'; o.ml = '22.677pt'; }
+    if (b.mk && !bullet) {
+      // Word's own list marker hangs in the indent: "(i)" then the text.
+      o.isMarked = 1; o.marker = b.cont ? '' : b.mk;
+      o.ml = Math.max(0, (st.left || 0) + Math.min(0, st.first || 0)) + 'pt';
+      o.mcol = (Math.min(0, st.first || 0) ? -st.first : 22.677) + 'pt';
+    }
+    else if (bullet) { o.isBullet = 1; o.marker = b.cont ? '' : '\u2022'; o.ml = '22.677pt'; }
     else if ((st.size || 9) >= 30) { o.isHead = 1; }
     else {
       o.ml = (st.left || 0) + 'pt';
@@ -1092,20 +1183,63 @@ class Component extends DCLogic {
     return { pages, leftover, clash, maxPg: Math.max.apply(null, Object.keys(pages).map(Number)) };
   }
 
+  // Directors' meetings: one section per committee, each with its own heading
+  // and rule, separated by a gutter - group labels, column labels and values
+  // all as the document sets them.
+  _attendance(i) {
+    const groups = (i.groups || []).filter(g => g.label !== '' || g.span > 1).filter((g, k) => k > 0 || g.label);
+    const nVals = groups.reduce((a, g) => a + g.span, 0), GUT = 5.669, NAME = 151.89;
+    const w = Math.round((481.89 - NAME - GUT * (groups.length - 1)) / nVals * 100) / 100;
+    const cols = [NAME + 'pt'];
+    const groupCells = [{ gc: '1', label: '', rule: '0' }];
+    const head = i.head || [], rows = i.rows || (i.bodyRows || []).map(r => [r.label].concat(r.nums));
+    const headCells = [{ t: head[0] || 'Directors', bg: '#005FA1', jc: 'flex-start', ta: 'left', pl: '4.252pt', ph: '2pt' }];
+    let col = 2, v = 1;
+    const bodyRows = rows.map((r, ri) => ({ cells: [{ t: r[0], jc: 'flex-start', pl: '4.252pt', bg: ri % 2 ? BAND_BG : 'transparent' }] }));
+    groups.forEach((g, gi) => {
+      if (gi) { cols.push(GUT + 'pt'); headCells.push({ t: '', bg: 'transparent', jc: 'center', ta: 'center', pl: '0', ph: '0' }); bodyRows.forEach(br => br.cells.push({ t: '', jc: 'center', pl: '0', bg: 'transparent' })); col++; }
+      groupCells.push({ gc: col + ' / span ' + g.span, label: (g.label || '').trim(), rule: '0.75pt solid #005FA1' });
+      for (let s = 0; s < g.span; s++, v++, col++) {
+        cols.push(w + 'pt');
+        headCells.push({ t: head[v] || '', bg: '#005FA1', jc: 'center', ta: 'center', pl: '2pt', ph: '2pt' });
+        bodyRows.forEach((br, ri) => br.cells.push({ t: rows[ri][v] == null ? '' : rows[ri][v], jc: 'center', pl: '0', bg: ri % 2 ? BAND_BG : 'transparent' }));
+      }
+    });
+    return { gridCols: cols.join(' '), groupCells, headCells, bodyRows };
+  }
+
   _blocks(list, copy) {
     return (list || []).map((i, idx) => {
       const b = Object.assign({}, i);
       b.isSubhead = i.kind === 'subhead';
       b.isMinihead = i.kind === 'minihead';
-      b.isBullet = i.kind === 'bullet' && !i.cont;
-      b.isBulletCont = i.kind === 'bullet' && !!i.cont;
+      b.ls = TRACKING[this.state.baseIdx || 0];
+      b.isBullet = i.kind === 'bullet';
+      if (b.isBullet) {
+        b.mark = i.cont ? '' : (i.tick ? '\u2713' : '\u2022');
+        b.bml = (i.bml ?? 22.677) + 'pt'; b.bcol = (i.bcol ?? 14.173) + 'pt';
+        b.bfw = i.tick ? '500' : '400'; b.bfs = i.tick ? 'italic' : 'normal';
+      }
+      if (i.kind === 'officer') {
+        const m = i.name ? null : /^(.+?)\s+(?=Company Secretary|Appointed|Chief|Director)/.exec(i.text || '');
+        b.name = i.name || (m ? m[1] : '');
+        b.rest = i.name ? i.rest : (m ? i.text.slice(m[0].length) : i.text);
+        b.isOfficer = true;
+      }
+      if (i.kind === 'table') b.tableRows = (i.tableRows || []).map((r, k) => r.isHead || r.isRow ? r : Object.assign({}, r, {
+        isRow: true, fw: r.isTotal ? '700' : '400', bg: r.isBand ? BAND_BG : 'transparent' })).map(r => {
+        // A footnote number typed after a label ("movement 1") sets superior.
+        const m = r.isRow && /^(.*\S)\s+(\d|\*|\^)$/.exec(r.label || '');
+        return m ? Object.assign({}, r, { label: m[1], sup: m[2] }) : r;
+      });
+      if (i.kind === 'attendance') Object.assign(b, this._attendance(i));
       b.isNote = i.kind === 'note';
       b.isTable = i.kind === 'table';
       b.isAttendance = i.kind === 'attendance';
       b.isDiagram = i.kind === 'diagram' && !i.src;
       b.isDiagramImg = i.kind === 'diagram' && !!i.src;
-      if (b.isDiagramImg) { b.imgW = Math.min(481.89, i.w); b.imgH = i.h * b.imgW / i.w; }
-      b.isBody = !i.kind || i.kind === 'body' || i.kind === 'officer';
+      if (b.isDiagramImg) { b.imgW = Math.min(481.89, i.w) * (i.scale || 1); b.imgH = i.h * b.imgW / i.w; }
+      b.isBody = !i.kind || i.kind === 'body';
       b.bulletText = (i.kind === 'bullet' && !i.cont ? '\u2022\u2003' : '') + (i.text || '');
       const top = idx === 0 ? 0 : this._topSpace(i);
       b.padTop = top + 'pt';
@@ -1113,6 +1247,48 @@ class Component extends DCLogic {
       if (b.isDiagram && copy) b.diagram = copy.diagram;
       return b;
     });
+  }
+
+  // The four statements in the FY25 house style: an RV Blue column-head bar,
+  // a lighter NOTE / $'000 bar, alternate rows tinted, bold rows in RV Blue,
+  // rules over and under the totals' figures and a double rule to close.
+  _styleStatement(tb) {
+    const rows = tb.rows || [];
+    const h2 = rows.find(r => r.head2);
+    const noteCol = h2 ? h2.cells.findIndex(c => /^note$/i.test((c.t || '').trim())) : -1;
+    const lastBody = rows.map(r => !!r.body).lastIndexOf(true);
+    let parity = 0;
+    const RULE = '0.75pt solid #005FA1';
+    const styled = rows.map((r, ri) => {
+      const cells = r.cells || [];
+      const align = k => k === 0 ? ['flex-start', 'left'] : k === noteCol ? ['center', 'center'] : ['flex-end', 'right'];
+      if (r.head1 || r.head2) {
+        return {
+          gridCols: r.gridCols, mh: r.head1 ? '28.35pt' : '19.84pt', bg: r.head1 ? '#005FA1' : '#8AB4DC',
+          ai: r.head1 ? 'flex-end' : 'center', pv: r.head1 ? '4pt' : '2pt', fs: r.head1 ? '8.5pt' : '8pt', lh: '10.5pt',
+          ls: '0.02em', tt: 'uppercase',
+          cells: cells.map((c, k) => ({ t: c.t, jc: align(k)[0], ta: align(k)[1], pl: '4.252pt', fw: '700', col: '#fff', bt: '0', bb: '0' })),
+        };
+      }
+      const blank = cells.every(c => !(c.t || '').trim());
+      const bold = !blank && cells.some(c => c.w === '700');
+      const band = !blank && parity++ % 2 === 1;
+      const total = !!r.lineAbove, closing = ri === lastBody && (r.lineBelow || total);
+      return {
+        gridCols: r.gridCols, mh: (blank ? Math.min(r.h || 9, 9) : (r.h || 19.84)) + 'pt', bg: band ? BAND_BG : 'transparent',
+        ai: 'center', pv: '2pt', fs: '9pt', lh: '11.5pt', ls: '-0.005em', tt: 'none',
+        cells: cells.map((c, k) => {
+          const fig = k > 0 && k !== noteCol;
+          return {
+            t: c.t, jc: align(k)[0], ta: align(k)[1], pl: '4.252pt', fw: bold && k !== noteCol ? '700' : '400',
+            col: bold && k !== noteCol ? '#005FA1' : '#6D6E71',
+            bt: fig && total ? RULE : '0',
+            bb: fig && closing ? '2.25pt double #005FA1' : fig && total ? RULE : '0',
+          };
+        }),
+      };
+    });
+    return Object.assign({}, tb, { rows: styled });
   }
 
   renderVals() {
@@ -1129,7 +1305,10 @@ class Component extends DCLogic {
       sigTop: this.state.sigTop + 'pt', sigTextTop: (this.state.sigTop + 49.88) + 'pt', sigCeoTop: (this.state.sigTop - 3.73) + 'pt',
       sigOn7: this.state.sigFrame === 7, sigOn8: this.state.sigFrame === 8, sigOn9: this.state.sigFrame === 9,
       hasExtra: this.state.sigFrame >= 8 || f[8].length > 0 || f[9].length > 0,
-      dirCards: this.state.dirCards, dirHasRight: this.state.dirCards.some(c => c.x > 600),
+      dirCards: this.state.dirLayout.cards, dirHasRight: this.state.dirLayout.cards.some(c => c.x > 600),
+      dirHeadTop: this.state.dirLayout.headTop + 'pt',
+      ceasedTop: this.state.dirLayout.ceasedTop + 'pt',
+      ceased: ((copy && copy.ceased) || []).map((c, k) => ({ text: c.text, name: c.name || '', rest: c.name ? c.rest : c.text, isOff: !!c.name, isTxt: !c.name, pt: k ? '5.669pt' : '0' })),
       footYear: (copy && copy.year) || this.props.footYear || 2025,
       intro: (copy && copy.intro) || [],
       sig0: sig[0] || {}, sig1: sig[1] || {},
@@ -1142,14 +1321,14 @@ class Component extends DCLogic {
     out.folioX0 = start + 10; out.folioX1 = start + 11;
     const st = this.state.statements || {};
     const empty = { heading: '', dateline: '', rows: [] };
-    out.stSurplus = st.surplus || empty;
-    out.stPosition = st.position || empty;
-    out.stCashflows = st.cashflows || empty;
-    out.stEquity = st.equity || empty;
+    out.stSurplus = this._styleStatement(st.surplus || empty);
+    out.stPosition = this._styleStatement(st.position || empty);
+    out.stCashflows = this._styleStatement(st.cashflows || empty);
+    out.stEquity = this._styleStatement(st.equity || empty);
     const dec = (copy && copy.declaration) || {};
     const kp = (copy && copy.kpmg) || {};
     out.decLead = dec.lead || '';
-    out.decItems = dec.items || [];
+    out.decItems = (dec.items || []).map(it => Object.assign({}, it, { ml: it.lvl2 ? '45.354pt' : '22.677pt' }));
     out.decClose = dec.close || '';
     const kimg = kp.images || [];
     [0, 1, 2].forEach(k => { out['kpmgImg' + k] = kimg[k] || ''; out['noKpmgImg' + k] = !kimg[k]; });

@@ -238,7 +238,49 @@
       .trim();
   }
 
-  function parse(documentXml, register) {
+  // Word list numbering: numId -> levels { fmt, text, start, tick }. The marker
+  // Word would print is rebuilt from the counters, so "(i)" or "(a)" in the
+  // report is the one in the document.
+  function readNumbering(xml) {
+    var out = {};
+    if (!xml) return out;
+    var abs = {};
+    (xml.match(/<w:abstractNum\b[\s\S]*?<\/w:abstractNum>/g) || []).forEach(function (a) {
+      var id = (/w:abstractNumId="(\d+)"/.exec(a) || [])[1], lv = {};
+      (a.match(/<w:lvl\b[\s\S]*?<\/w:lvl>/g) || []).forEach(function (l) {
+        var il = +(/w:ilvl="(\d+)"/.exec(l) || [, 0])[1];
+        var txt = (/<w:lvlText w:val="([^"]*)"/.exec(l) || [, ""])[1];
+        lv[il] = {
+          fmt: (/<w:numFmt w:val="(\w+)"/.exec(l) || [, "bullet"])[1],
+          text: txt,
+          start: +(/<w:start w:val="(\d+)"/.exec(l) || [, 1])[1],
+          // Wingdings 0xFC is the tick Word draws for a ticked list.
+          tick: txt.charCodeAt(0) === 0xf0fc || (txt === "\u00fc" && /Wingdings/.test(l)),
+        };
+      });
+      abs[id] = lv;
+    });
+    (xml.match(/<w:num w:numId="\d+"[\s\S]*?<\/w:num>/g) || []).forEach(function (n) {
+      var id = /w:numId="(\d+)"/.exec(n)[1], a = (/<w:abstractNumId w:val="(\d+)"/.exec(n) || [])[1];
+      if (abs[a]) out[id] = abs[a];
+    });
+    return out;
+  }
+  function roman(n) {
+    var r = "", v = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1], s = ["m", "cm", "d", "cd", "c", "xc", "l", "xl", "x", "ix", "v", "iv", "i"];
+    for (var i = 0; i < v.length; i++) while (n >= v[i]) { r += s[i]; n -= v[i]; }
+    return r;
+  }
+  function fmtNum(n, fmt) {
+    if (fmt === "lowerRoman") return roman(n);
+    if (fmt === "upperRoman") return roman(n).toUpperCase();
+    if (fmt === "lowerLetter") return String.fromCharCode(96 + ((n - 1) % 26) + 1);
+    if (fmt === "upperLetter") return String.fromCharCode(64 + ((n - 1) % 26) + 1);
+    return String(n);
+  }
+
+  function parse(documentXml, register, numberingXml) {
+    var NUMS = readNumbering(numberingXml), counters = {};
     var raw = register || root.RV_FINANCE_NOTES || [];
     // A register entry is either a title, or [title, ...alternative wordings]
     // for notes whose table in Word words the heading differently.
@@ -296,6 +338,28 @@
           kind = "body";
         }
         if (/<w:numPr>/.test(c.xml) && kind === "body") kind = "bullet";
+        // Advance Word's list counters for every numbered paragraph, empty or
+        // not, so markers stay in step with the document.
+        var numInfo = null;
+        var npm = /<w:numPr>([\s\S]*?)<\/w:numPr>/.exec(c.xml);
+        if (npm) {
+          var nid = (/<w:numId w:val="(\d+)"/.exec(npm[1]) || [])[1], nil = +(/<w:ilvl w:val="(\d+)"/.exec(npm[1]) || [, 0])[1];
+          var def = nid && NUMS[nid] && NUMS[nid][nil];
+          if (def) {
+            var ct = counters[nid] || (counters[nid] = []);
+            if (def.fmt !== "bullet" && def.fmt !== "none") {
+              ct[nil] = ct[nil] == null ? def.start : ct[nil] + 1;
+              for (var dl = nil + 1; dl < 9; dl++) ct[dl] = null;
+              numInfo = { marker: def.text.replace(/%(\d)/g, function (_, d) {
+                var L = +d - 1, ld = NUMS[nid][L] || def;
+                return fmtNum(ct[L] == null ? ld.start : ct[L], ld.fmt);
+              }), fmt: def.fmt, lvl: nil };
+            } else {
+              for (var dl2 = nil + 1; dl2 < 9; dl2++) ct[dl2] = null;
+              numInfo = { tick: def.tick, lvl: nil };
+            }
+          }
+        }
         if (!text) return;
 
         // Notes are matched in document order, looking only a short way
@@ -324,6 +388,8 @@
         if (kind === "bullet") {
           var lvl = c.xml.match(/<w:ilvl\s+w:val="(\d+)"\s*\/>/);
           if (lvl && +lvl[1] > 0) b.level = +lvl[1];
+          if (numInfo && numInfo.marker) { b.marker = numInfo.marker; b.numFmt = numInfo.fmt; }
+          if (numInfo && numInfo.tick) b.tick = true;
         }
         if (isBold(c.xml)) b.bold = true;
         if (isItalic(c.xml)) b.italic = true;
