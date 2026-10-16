@@ -219,7 +219,9 @@
       return slots;
     });
     var empty = tb.cols.map(function (_, j) {
-      return grid.every(function (sl) { var c = sl[j]; return !c || (c.n || 1) > 1 || !String(c.t || "").trim(); });
+      // A merged cell with text counts as content in its last column, so a
+      // label merged across a spacer column survives the spacer's removal.
+      return grid.every(function (sl) { var c = sl[j]; if (!c) return true; var txt = String(c.t || "").trim(); if ((c.n || 1) > 1) return !txt || sl[j + 1] === c; return !txt; });
     });
     // Only drop a column no cell actually owns alone.
     var drop = empty.map(function (e, j) { return e && grid.some(function (sl) { return sl[j] && (sl[j].n || 1) === 1; }); });
@@ -252,7 +254,7 @@
       var src = keep.map(function (j) { return tb.cols[j]; }), tot = src.reduce(function (a, c) { return a + c; }, 0);
       cols = src.map(function (c) { return r2(c * W / tot); });
     }
-    return { k: "t", cols: cols, rows: rows, auto: true };
+    return { k: "t", cols: cols, rows: promoteHeads(rows), auto: true };
   }
   // A bio paragraph ending in ; or : (or with no closing stop) runs on into
   // the next, as in FY25 (e.g. "...subsidiaries; Racing.com Media...").
@@ -264,6 +266,17 @@
       else out.push(p);
     });
     return out;
+  }
+  // Column labels Word sets as plain bold text above the $'000 row are the
+  // table's blue header bar in FY25.
+  function promoteHeads(rows) {
+    var hi = rows.findIndex(function (r) { return r.c.some(function (c) { return c && /^Table:Table Header/.test(c.s); }); });
+    if (hi < 1) return rows;
+    var pre = rows.slice(0, hi);
+    var ok = pre.every(function (r) { var tx = r.c.map(function (c) { return String((c && c.t) || ""); }).join(" "); return tx.trim() && !/\d/.test(tx); });
+    if (!ok) return rows;
+    pre.forEach(function (r) { r.min = Math.max(r.min || 0, 17.008); r.c = r.c.map(function (c) { return c ? Object.assign({}, c, { s: "Table:Table Header", bg: "#005FA1", tc: null }) : c; }); });
+    return rows;
   }
   function buildNotes(parsed, issues) {
     var blocks = parsed.blocks, tables = parsed.tables, out = [], start = blocks.findIndex(function (b) { return b.k === "noteTitle"; });
@@ -295,7 +308,10 @@
           // Numbered notes straight after a table are its footnotes (FY25
           // sets them in the 6.5pt Footnotes style).
           var pv = out[out.length - 1], foot = pv && (pv.k === "t" || pv.s === "Footnotes");
-          out.push({ k: "p", s: foot ? "Footnotes" : "B5 Bullet Body Indent Alpha", t: text, mk: b.marker });
+          // Points under a bullet ("In making grants ... to:" then (i), (ii)) sit
+          // one step in, marker under the bullet text (FY25).
+          var sub = !foot && pv && (pv.s === "B7 Bullet double Indent" || pv.s === "B5 Sub Point");
+          out.push({ k: "p", s: foot ? "Footnotes" : sub ? "B5 Sub Point" : "B5 Bullet Body Indent Alpha", t: text, mk: b.marker });
         }
       }
       else if (b.k === "bullet") out.push({ k: "p", s: "B7 Bullet double Indent", t: text });
@@ -306,11 +322,84 @@
           if (mm) { out.push({ k: "p", s: "H4 Sub Heading Italic", t: mm[2], mk: "(" + mm[1] + ")" }); indent = true; }
           else { indent = false; out.push({ k: "p", s: "H4 Sub Heading Italic", t: text }); }
         }
-        else out.push({ k: "p", s: indent ? "B2 Body Indent" : "A4 V:Body", t: text });
+        else {
+          // Word line breaks: a single break starts a new line with no space
+          // after the one before (an address); a blank line is a new paragraph.
+          var base = indent ? "B2 Body Indent" : "A4 V:Body", parts = text.split("\n");
+          for (var q = 0; q < parts.length; q++) {
+            var line = parts[q].replace(/ +/g, " ").trim();
+            if (!line) continue;
+            var more = q < parts.length - 1 && parts[q + 1].trim();
+            out.push({ k: "p", s: more ? base + " Tight" : base, t: line });
+          }
+        }
       }
+    }
+    return pageHeads(dedupeTitles(out));
+  }
+  // A "For the year ended" line inside the notes is the dateline of a shape on
+  // the next page, not copy. Before the entity table it marks the
+  // Consolidated Entity Disclosure Statement, which FY25 starts on its own
+  // page under its own display heading; elsewhere it is dropped.
+
+  // FY25 sets the entity table in 8pt under a four-line blue header bar and a
+  // light date bar, columns as published.
+  function cedsTable(t) {
+    var txt = function (r) { return r.c.map(function (c) { return String((c && c.t) || "").trim(); }); };
+    t.rows = t.rows.filter(function (r) { return txt(r).some(Boolean); });
+    var hi = t.rows.findIndex(function (r) { return txt(r)[0] === "Entity Name"; });
+    t.rows.forEach(function (r, ri) {
+      var dates = ri === hi + 1 && txt(r).some(function (s) { return /\d{4}$/.test(s); });
+      r.c = r.c.map(function (c) {
+        if (!c) return c;
+        if (ri === hi) return Object.assign({}, c, { s: "Table:Table Header", bg: "#005FA1", sz: 8.5 });
+        if (dates) return Object.assign({}, c, { s: "Table:Table Header 2", bg: "#99BFD9", sz: 8.5, t: String(c.t || "").toUpperCase() });
+        return ri > hi ? Object.assign({}, c, { sz: 8 }) : c;
+      });
+      if (ri === hi) r.min = 50;
+      else if (dates) r.min = 17.5;
+      else r.min = 16;
+    });
+    if (t.cols.length === 6) t.cols = [118.11, 78, 70.2, 72, 77.1, 66.48];
+    return t;
+  }
+  function pageHeads(out) {
+    var DL = /^(f ?o ?r ?t ?h ?e ?y ?e ?a ?r ?e ?n ?d ?e ?d\b|for the year ended\b)/i;
+    for (var i = out.length - 1; i >= 0; i--) {
+      var b = out[i];
+      if (b.k !== "p" || !DL.test(String(b.t || "").trim()) || String(b.t).length > 60) continue;
+      var nx = out[i + 1], ceds = nx && nx.k === "t" && JSON.stringify(nx.rows.slice(0, 4)).indexOf("Entity Name") > -1;
+      if (ceds) { out.splice(i, 1, { k: "pagehead", t: "Consolidated Entity Disclosure Statement" }); cedsTable(nx); }
+      else out.splice(i, 1);
     }
     return out;
   }
+
+  // A note heading straight before a table goes inside the table, under its
+  // header bars, as FY25 sets it ("7. Right of Use Assets" once, not twice).
+  // A title the table already repeats - in a row or as a header cell - is
+  // dropped in favour of the heading's wording.
+  function dedupeTitles(out) {
+    var key = function (s) { return String(s || "").toLowerCase().replace(/^\s*\d{1,2}\.\s*/, "").replace(/[^a-z0-9]+/g, ""); };
+    var HEAD = { "Table:Table Header": 1, "Table:Table Header 2": 1 };
+    for (var i = out.length - 1; i > 0; i--) {
+      var t = out[i], h = out[i - 1];
+      if (t.k !== "t" || !t.auto || h.k !== "p" || h.s !== "A4 V:Subhead Large" || !/^\d{1,2}\.\s/.test(h.t || "")) continue;
+      var rows = t.rows || [], nh = 0;
+      while (nh < rows.length && rows[nh].c.some(function (c) { return c && HEAD[c.s]; })) nh++;
+      if (!nh) continue;
+      var k = key(h.t);
+      rows.slice(0, nh).forEach(function (r) { r.c.forEach(function (c, ci) { if (c && key(c.t) === k) r.c[ci] = Object.assign({}, c, { t: "" }); }); });
+      var ti = rows.findIndex(function (r) { return r.c.length && r.c.every(function (c) { return c && c.s === "A4 V:Subhead Large"; }) && key(r.c[0].t) === k; });
+      if (ti > -1) rows.splice(ti, 1);
+      var n = rows[0].c.reduce(function (a, c) { return a + ((c && c.n) || 1); }, 0), cells = [];
+      for (var j = 0; j < n; j++) cells.push({ t: j ? "" : h.t, s: "A4 V:Subhead Large", f: null, bg: null, tw: 0, bw: 0, n: 1 });
+      rows.splice(nh, 0, { h: 0, min: 21.738, c: cells });
+      out.splice(i - 1, 1);
+    }
+    return out;
+  }
+
 
   /* ------------------------------------------------------------- build -- */
   function build(parsed, prev) {
