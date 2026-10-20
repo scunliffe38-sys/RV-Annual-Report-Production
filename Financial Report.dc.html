@@ -468,6 +468,14 @@ const NOTE_HEADER_PS = { 'Table:Table Header': 1, 'Table:Table Header 2': 1 };
 // the table's last row and the first line of the note never read as one block.
 // 8.504pt (3mm) is about two-thirds of a 12pt line.
 const TABLE_TEXT_GAP = 8.504;
+// A table that brings its own header bars part-way down a page stands clear
+// of what is above it (FY25 p.67, 18. Remuneration of Auditors).
+const BAND_GAP = 22.677;
+const hasBand = b => b && b.k === 't' && b.rows.length > 0 && b.rows[0].c.some(c => c && NOTE_HEADER_PS[c.s]);
+// A note title that opens a table under shared bars gets a line's space above it.
+const TITLE_GAP = 12;
+const titleFirst = b => b && b.k === 't' && b.rows.length > 0 && b.rows[0].c.length > 0 && b.rows[0].c.every(c => c && c.s === 'A4 V:Subhead Large');
+const tableGap = (b, prev) => prev && prev.k === 'p' && prev.s === 'A4 V:Subhead Large' ? 0 : hasBand(b) ? BAND_GAP : titleFirst(b) ? TITLE_GAP : 0;
 // Two-column footnotes (FY25 p.53): second column's marker at 898.9pt.
 const FOOT_COL_GAP = 11.9, FOOT_MCOL = 17.008;
 
@@ -880,8 +888,10 @@ class Component extends DCLogic {
       if (b.k !== 't' || !b.auto) return;
       b.rows.forEach(r => {
         let h = 0, ci = 0;
+        // A note title row is set across the full width (see _noteBlock).
+        const title = r.c.length > 1 && r.c.every(c => c && c.s === 'A4 V:Subhead Large');
         r.c.forEach(c => {
-          const n = c.n || 1, w = b.cols.slice(ci, ci + n).reduce((a, x) => a + x, 0);
+          const n = title ? b.cols.length : (c.n || 1), w = b.cols.slice(ci, ci + n).reduce((a, x) => a + x, 0);
           ci += n;
           if (!c.t) return;
           const st = styles[c.s] || styles['Table:Table Body'] || {};
@@ -1031,7 +1041,7 @@ class Component extends DCLogic {
     blocks.forEach((b, i) => {
       const st = styles[b.s] || {};
       if (b.k === 'pagehead') return;
-      if (b.k === 't') { total += b.rows.reduce((a, r) => a + r.h, 0); return; }
+      if (b.k === 't') { total += b.rows.reduce((a, r) => a + r.h, 0) + (i ? tableGap(b, blocks[i - 1]) : 0); return; }
       if (b.k === 'fcols') { total += b.h + (i ? TABLE_TEXT_GAP : 0); return; }
       this._noteProbeStyle(p.host, st, b);
       this._fillProbe(p.host, b);
@@ -1063,6 +1073,9 @@ class Component extends DCLogic {
   _pour(blocks, frames, styles, fill) {
     const out = frames.map(() => []);
     let queue = blocks.map(b => Object.assign({}, b));
+    const NT = /^\d{1,2}\.\s/;
+    const noteStart = b => (b.k === 'p' && b.s === 'A4 V:Subhead Large' && NT.test(b.t || '')) ||
+      (b.k === 't' && !b.cont && !b.shared && (() => { for (const r of b.rows) { if (r.c.some(c => c && NOTE_HEADER_PS[c.s])) continue; return r.c.length > 0 && r.c.every(c => c && c.s === 'A4 V:Subhead Large') && NT.test((r.c[0] && r.c[0].t) || ''); } return false; })());
     for (let i = 0; i < frames.length; i++) {
       const p = this._probe(frames[i].w, '0');
       const hardPx = (frames[i].h - 2) / 0.75;
@@ -1110,11 +1123,23 @@ class Component extends DCLogic {
 
         // FY25 keeps a note on one page where it can: a note that fits a page
         // but not the space left starts on the next page.
-        if (b.k === 'p' && b.s === 'A4 V:Subhead Large' && /^\d{1,2}\.\s/.test(b.t || '') && out[i].length && i < frames.length - 1) {
-          let e = 1; while (e < queue.length && !(queue[e].k === 'p' && queue[e].s === 'A4 V:Subhead Large' && /^\d{1,2}\.\s/.test(queue[e].t || ''))) e++;
+        // A note too long for any page starts on a fresh one unless at least
+        // half the page is left. Titles set inside a table (under its header
+        // bars) start a note too.
+        if (noteStart(b) && out[i].length && i < frames.length - 1) {
+          let e = 1; while (e < queue.length && !noteStart(queue[e])) e++;
           const noteH = this._composedHeight(queue.slice(0, e), frames[i].w, styles);
           const left = (capPx - usedPx) * 0.75 - (st.before || 0);
-          if (noteH > left && noteH <= frames[i + 1].h - 2) break;
+          if (noteH > left && (noteH <= frames[i + 1].h - 2 || left < frames[i].h * 0.5)) break;
+          // A short note goes over with the next one when they share column
+          // heads and the next will not fit after it (FY25 14 with 15).
+          if (noteH <= left && noteH < frames[i].h * 0.33 && usedPx * 0.75 > frames[i].h * 0.5 && e < queue.length) {
+            let e2 = e + 1; while (e2 < queue.length && !noteStart(queue[e2])) e2++;
+            const nextH = this._composedHeight(queue.slice(e, e2), frames[i].w, styles);
+            const heads = bs => { const t = bs.find(x => x.k === 't' && x.auto); if (!t) return ''; let n = 0; while (n < t.rows.length && t.rows[n].c.some(c => c && NOTE_HEADER_PS[c.s])) n++; return t.rows.slice(0, n).map(r => r.c.map(c => (c && c.t) || '').join('|')).join('/'); };
+            const hA = heads(queue.slice(0, e)), hB = heads(queue.slice(e, e2));
+            if (hA && hA === hB && noteH + nextH > left && noteH + nextH <= frames[i + 1].h - 2) break;
+          }
         }
 
         if (b.k === 't') {
@@ -1129,7 +1154,7 @@ class Component extends DCLogic {
           }
           // No SpaceBefore on any source table; the preceding paragraph's
           // space-after is the only gap.
-          const before = 0;
+          const before = out[i].length ? tableGap(b, prevB) : 0;
           const tall = b.rows.reduce((a, r) => a + r.h, 0);
           if (usedPx + (tall + before) / 0.75 <= capPx) {
             out[i].push(b); queue.shift(); usedPx += (tall + before) / 0.75; continue;
@@ -1174,7 +1199,7 @@ class Component extends DCLogic {
       }
       if (i < frames.length - 1) {
         const last = out[i][out[i].length - 1];
-        if (last && last.k === 'p' && (((styles[last.s] || {}).size) || 9) > 11) queue.unshift(out[i].pop());
+        if (last && last.k === 'p' && ((((styles[last.s] || {}).size) || 9) > 11 || /^H[345] /.test(last.s || ''))) queue.unshift(out[i].pop());
       }
       p.host.remove();
     }
@@ -1197,14 +1222,15 @@ class Component extends DCLogic {
       bb: c.bw > 0 ? c.bw + 'pt solid ' + NOTE_RULE : '0',
       pl: (NOTE_CELL_PAD_H + Math.max(0, (st.left || 0) + Math.min(0, st.first || 0))) + 'pt',
       va: head ? 'flex-end' : 'center',
-      jc: st.right ? 'flex-end' : 'flex-start',
+      jc: c.al === 'center' ? 'center' : st.right && c.al !== 'left' ? 'flex-end' : 'flex-start',
       fs: (c.sz || st.size || 9) + 'pt',
       lh: (st.lead || 12) + 'pt',
       fw: String(w),
       fst: (st.italic || /Italic/.test(c.f || '')) ? 'italic' : 'normal',
       tt: st.caps ? 'uppercase' : 'none',
+      td: 'none',
       ls: st.caps ? '0.04em' : '-0.01em',
-      ta: st.right ? 'right' : 'left',
+      ta: c.al === 'center' ? 'center' : st.right && c.al !== 'left' ? 'right' : 'left',
       col: c.tc || st.color || '#6D6E71',
       fvn: st.right ? 'tabular-nums' : 'normal',
     };
@@ -1244,17 +1270,31 @@ class Component extends DCLogic {
         const c0 = r.c[0] || {};
         const group = label && (/^\(?[a-z]{1,4}\)\s/i.test(txt[0]) || (/Bold/.test(c0.s || '') && /Italic/.test(c0.f || '')));
         const intro = label && txt[0].length > 45 && /:$/.test(txt[0]);
-        return { head, title, blank, total, label, group, intro, named: !!txt[0] };
+        const cur = label && /^(current|non[- ]?current)\s*:?$/i.test(txt[0]);
+        const plain = label && !group && !intro && !cur && !/:$/.test(txt[0]) && txt[0].length <= 60 && (c0.n || 1) === 1 &&
+          c0.s === 'Table:Table Body' && !/Bold|Italic/.test(c0.f || '');
+        return { head, title, blank, total, label, group, intro, cur, plain, figs, named: !!txt[0], dash: /^[-\u2013]\s/.test(txt[0]) };
       });
       const near = (i, d) => { for (let j = i + d; j >= 0 && j < info.length; j += d) if (!info[j].blank) return info[j]; return null; };
+      // FY25 note-table heads: "Current:" / "Non-Current:" and the label under
+      // one are bold RV Blue; a plain group label over figures ("Customer",
+      // "Management", "Assets") is RV Blue underlined; "- " lines sit a step in.
+      info.forEach((I, ri) => {
+        const pv = near(ri, -1), nx = near(ri, 1);
+        I.strong = I.cur || (I.label && pv && pv.cur && !I.group);
+        I.under = wide && I.plain && !I.strong && !!nx && nx.figs && !nx.total;
+        // A labelled total ("Total assets") is RV Blue, regular, label and figures (FY25 parent entity).
+        I.totalLabel = wide && I.figs && /^total\b/i.test(String((b.rows[ri].c[0] || {}).t || '').trim());
+      });
       const RULE = '0.709pt solid ' + NOTE_RULE, DOUBLE = '2pt double ' + NOTE_RULE;
       return {
         isTable: 1,
-        pt: '0pt',
+        pt: (!atTop ? tableGap(b, prev) : 0) + 'pt',
         pb: '0pt',
         rows: b.rows.map((r, ri) => {
           const I = info[ri], head = I.head;
-          let cells = r.c.filter(Boolean).map(c => this._noteCell(c, styles, head, r.h));
+          const rc = r.c.filter(Boolean);
+          let cells = rc.map(c => this._noteCell(c, styles, head, r.h));
           if (b.auto && !head) {
             const indent = wide && !I.title && !I.blank && !I.group && !I.intro;
             let band = false, bt = '0', bb = '0';
@@ -1268,10 +1308,15 @@ class Component extends DCLogic {
             }
             cells = cells.map((c, ci) => Object.assign({}, c, {
               bg: band ? BAND_BG : c.bg,
-              pl: ci === 0 && indent ? (parseFloat(c.pl) + 14.173) + 'pt' : c.pl,
+              pl: ci === 0 && indent ? (parseFloat(c.pl) + 14.173 + (I.dash ? 18.29 : 0)) + 'pt' : c.pl,
               bt: ci > 0 ? bt : '0',
               bb: ci > 0 ? bb : '0',
-            }));
+            }, ci > 0 && !(rc[ci] && rc[ci].al) && /^([\(\-\u2013]?[\d,.]+\)?%?|[-\u2013])$/.test(String(c.t || '').trim()) ? { jc: 'flex-end', ta: 'right' } : null,
+               I.totalLabel ? { fw: '400', fst: 'normal', col: '#005FA1' } : null,
+               ci === 0 && I.strong ? { fw: '700', fst: 'normal', col: '#005FA1' } : null,
+               ci === 0 && I.under ? { col: '#005FA1', td: 'underline' } : null));
+            // A note title runs the full width, over the figure columns (FY25 PP&E).
+            if (I.title && cells.length > 1) cells = [Object.assign({}, cells[0], { gc: '1 / -1', ws: 'normal' })];
           } else if (b.auto && head) {
             cells = cells.map(c => c.bg === '#99BFD9' ? Object.assign({}, c, { bg: '#8AB4DC' }) : c);
           }
@@ -1324,6 +1369,8 @@ class Component extends DCLogic {
     // FY25 sub-points under a bullet: marker at 36.85pt, text at 59.53pt, 8.5pt apart.
     // Lines broken inside one Word paragraph (an address) carry no space after.
     ['A4 V:Body', 'B2 Body Indent'].forEach(k => { if (styles && styles[k] && !styles[k + ' Tight']) styles[k + ' Tight'] = Object.assign({}, styles[k], { after: 0 }); });
+    // FY25 (i), (ii) points inside a lettered policy (GST): marker 17pt in from the copy, text 29.9pt in.
+    if (styles && !styles['B5 Sub Point Indent']) styles['B5 Sub Point Indent'] = Object.assign({}, styles['B5 Bullet Body Indent Alpha'] || {}, { left: 52.57, first: -12.88 });
     if (styles && !styles['B5 Sub Point']) styles['B5 Sub Point'] = Object.assign({}, styles['B5 Bullet Body Indent Alpha'] || {}, { left: 59.528, first: -22.677, after: 8.504 });
     // FY25 PDF: the bold run-in heads ("Basis of preparation", "Material
     // Accounting Policies") print in RV Blue; IDML leaves the swatch unset.
@@ -1353,6 +1400,13 @@ class Component extends DCLogic {
     if (leftover) console.warn('Notes: ' + leftover + ' block(s) overflow the published frames.');
     const pages = {};
     const hasHead = {}, hasDate = {}, clash = {}, pageHead = {};
+    // A display page's running head carries over to the pages its copy runs on to.
+    let runHead = null;
+    frames.forEach((f, i) => {
+      const ph = (slices[i] || []).find(b => b.k === 'pagehead');
+      if (ph) runHead = ph.t;
+      if (runHead && (slices[i] || []).length) pageHead[f.p] = runHead;
+    });
     frames.forEach((f, i) => {
       const ph = (slices[i] || []).find(b => b.k === 'pagehead');
       if (ph) pageHead[f.p] = ph.t;
@@ -1418,6 +1472,10 @@ class Component extends DCLogic {
         bodyRows.forEach((br, ri) => br.cells.push({ t: rows[ri][v] == null ? '' : rows[ri][v], jc: 'center', pl: '0', bg: ri % 2 ? BAND_BG : 'transparent' }));
       }
     });
+    // Adjacent cells of one fill overlap by a hair so no seam shows between
+    // them in a PDF viewer.
+    const seam = list => list.forEach((c, k) => { const nx = list[k + 1]; c.sh = nx && c.bg !== 'transparent' && nx.bg === c.bg ? '0.75pt 0 0 0 ' + c.bg : 'none'; });
+    seam(headCells); bodyRows.forEach(br => seam(br.cells));
     return { gridCols: cols.join(' '), groupCells, headCells, bodyRows };
   }
 
@@ -1465,12 +1523,12 @@ class Component extends DCLogic {
   // The four statements in the FY25 house style: an RV Blue column-head bar,
   // a lighter NOTE / $'000 bar, alternate rows tinted, bold rows in RV Blue,
   // rules over and under the totals' figures and a double rule to close.
-  _styleStatement(tb) {
+  _styleStatement(tb, roles) {
     const rows = tb.rows || [];
     const h2 = rows.find(r => r.head2);
     const noteCol = h2 ? h2.cells.findIndex(c => /^note$/i.test((c.t || '').trim())) : -1;
     const lastBody = rows.map(r => !!r.body).lastIndexOf(true);
-    let parity = 0;
+    let parity = 0, prevBB = false;
     const RULE = '0.75pt solid #005FA1';
     const styled = rows.map((r, ri) => {
       const cells = r.cells || [];
@@ -1487,6 +1545,33 @@ class Component extends DCLogic {
       const bold = !blank && cells.some(c => c.w === '700');
       const band = !blank && parity++ % 2 === 1;
       const total = !!r.lineAbove, closing = ri === lastBody && (r.lineBelow || total);
+      if (roles && !blank) {
+        // Statement of financial position as FY25 sets it, whatever Word's
+        // run formatting: group heads bold blue; lines one step in; every
+        // total bold italic blue with a rule over and under its figures
+        // (never two rules stacked); grand totals' figures bold; Net Assets
+        // and Total Equity close on a double rule.
+        const lab = (cells[0] && cells[0].t || '').trim();
+        const figs = cells.some((c, k) => k > 0 && k !== noteCol && /\d|^[-\u2013]$/.test((c.t || '').trim()));
+        const head = !!lab && !figs, tot = /^(total|net)\b/i.test(lab);
+        const grand = /^(total assets|total liabilities|net assets|total equity)$/i.test(lab), closer = /^(net assets|total equity)$/i.test(lab);
+        const bt = tot && !prevBB ? RULE : '0', bb = closer ? '2.25pt double #005FA1' : tot ? RULE : '0';
+        prevBB = bb !== '0';
+        return {
+          gridCols: r.gridCols, mh: (r.h || 19.84) + 'pt', bg: band ? BAND_BG : 'transparent',
+          ai: 'center', pv: '2pt', fs: '9pt', lh: '11.5pt', ls: '-0.005em', tt: 'none',
+          cells: cells.map((c, k) => {
+            const fig = k > 0 && k !== noteCol;
+            return {
+              t: c.t, jc: align(k)[0], ta: align(k)[1], pl: k === 0 && !head && !tot ? '18.425pt' : '4.252pt',
+              fw: k === 0 ? (head || tot ? '700' : '400') : fig && tot && grand ? '700' : '400',
+              fst: k === 0 && tot ? 'italic' : 'normal',
+              col: (k === 0 && (head || tot)) || (fig && tot) ? '#005FA1' : '#6D6E71',
+              bt: fig ? bt : '0', bb: fig ? bb : '0',
+            };
+          }),
+        };
+      }
       return {
         gridCols: r.gridCols, mh: (blank ? Math.min(r.h || 9, 9) : (r.h || 19.84)) + 'pt', bg: band ? BAND_BG : 'transparent',
         ai: 'center', pv: '2pt', fs: '9pt', lh: '11.5pt', ls: '-0.005em', tt: 'none',
@@ -1535,7 +1620,7 @@ class Component extends DCLogic {
     const st = this.state.statements || {};
     const empty = { heading: '', dateline: '', rows: [] };
     out.stSurplus = this._styleStatement(st.surplus || empty);
-    out.stPosition = this._styleStatement(st.position || empty);
+    out.stPosition = this._styleStatement(st.position || empty, true);
     out.stCashflows = this._styleStatement(st.cashflows || empty);
     out.stEquity = this._styleStatement(st.equity || empty);
     const dec = (copy && copy.declaration) || {};

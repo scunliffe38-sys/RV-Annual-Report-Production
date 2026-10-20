@@ -49,7 +49,7 @@
     <sc-for list="{{ block.rows }}" as="r" hint-placeholder-count="8">
       <div style="display:grid;grid-template-columns:{{ r.cols }};min-height:{{ r.h }}">
         <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="3">
-          <div style="grid-column:{{ c.gc }};display:flex;align-items:{{ c.va }};justify-content:{{ c.jc }};background:{{ c.bg }};border-top:{{ c.bt }};border-bottom:{{ c.bb }};padding:0 4.252pt 0 {{ c.pl }};box-sizing:border-box;min-width:0;overflow-wrap:anywhere;white-space:{{ c.ws }};font-size:{{ c.fs }};line-height:{{ c.lh }};font-weight:{{ c.fw }};font-style:{{ c.fst }};text-transform:{{ c.tt }};letter-spacing:{{ c.ls }};text-align:{{ c.ta }};color:{{ c.col }};font-variant-numeric:{{ c.fvn }}">{{ c.t }}</div>
+          <div style="grid-column:{{ c.gc }};display:flex;align-items:{{ c.va }};justify-content:{{ c.jc }};background:{{ c.bg }};border-top:{{ c.bt }};border-bottom:{{ c.bb }};padding:0 4.252pt 0 {{ c.pl }};box-sizing:border-box;min-width:0;overflow-wrap:anywhere;white-space:{{ c.ws }};font-size:{{ c.fs }};line-height:{{ c.lh }};font-weight:{{ c.fw }};font-style:{{ c.fst }};text-transform:{{ c.tt }};text-decoration:{{ c.td }};letter-spacing:{{ c.ls }};text-align:{{ c.ta }};color:{{ c.col }};font-variant-numeric:{{ c.fvn }}">{{ c.t }}</div>
         </sc-for>
       </div>
     </sc-for>

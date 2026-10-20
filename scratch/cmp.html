@@ -1,0 +1,18 @@
+<!doctype html><html><body style="margin:0;background:#888;font:12px monospace">
+<pre id="t" style="background:#fff;color:#000;margin:0;white-space:pre-wrap"></pre>
+<div id="o" style="display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start"></div>
+<script type="module">
+import * as pdfjs from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs';
+pdfjs.GlobalWorkerOptions.workerSrc='https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs';
+const q=new URLSearchParams(location.search);const url=q.get('f'),pages=q.get('p').split(',').map(Number),scale=+q.get('s')||0.5;
+const T=document.getElementById('t');
+const d=await pdfjs.getDocument(url).promise;T.textContent+=url+' pages '+d.numPages+'\n';
+for(const n of pages){const p=await d.getPage(n);const vp=p.getViewport({scale});
+ const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;
+ await p.render({canvasContext:c.getContext('2d'),viewport:vp,intent:'print'}).promise;
+ const i=new Image();i.src=c.toDataURL('image/jpeg',0.85);document.getElementById('o').appendChild(i);
+ const it=(await p.getTextContent()).items.filter(i=>i.str.trim());
+ const xs=it.map(i=>i.transform[4]),ys=it.map(i=>i.transform[5]);
+ T.textContent+=n+' view '+p.view.map(v=>v.toFixed(1))+' text x '+Math.min(...xs).toFixed(1)+'-'+Math.max(...xs).toFixed(1)+' y '+Math.min(...ys).toFixed(1)+'-'+Math.max(...ys).toFixed(1)+' | '+it.slice(0,3).map(i=>i.str.slice(0,28)+' sz'+i.transform[0].toFixed(1)+' @'+i.transform[4].toFixed(0)+','+i.transform[5].toFixed(0)).join(' | ')+'\n';}
+document.title='done';
+</script></body></html>

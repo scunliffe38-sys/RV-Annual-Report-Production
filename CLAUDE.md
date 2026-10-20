@@ -28,6 +28,15 @@
   (PP&E, intangibles) are not indented and get a 181.4pt label column. Bold
   run-in heads (H3) are RV Blue, centred one 12pt line above and below.
   Footnotes stay on their table's page, in two columns if needed.
+- **FY25 conventions applied over Word's formatting** (Test 8 comments):
+  balance sheet heads bold blue, lines indented, totals bold italic blue,
+  Net Assets/Total Equity double rule; in note tables "Current:"/"Non-Current:"
+  and the label under them bold blue, plain group labels over figures blue
+  underlined, "- " lines indented, labelled totals blue; note titles span
+  the full width; every figures note opens under the date/$'000 bars;
+  a note that fits a page starts on a fresh one, a long note starts fresh
+  unless half the page is left, a short note goes over with the next when
+  they share bars and the page is over half full; CEDS columns centred.
 - **Fonts are TrueType (`fonts/Gotham-*.ttf`) with fsType 0.** OTF (CFF) or
   TTFs with restricted/no-subsetting flags make Chrome save Gotham as Type 3
   (soft in Acrobat). Check File › Properties › Fonts shows "TrueType (CID)".
@@ -55,9 +64,14 @@ Serve the folder over http (`python -m http.server`) and open `index.html`;
   register used to flag differences. The board comes from "Current Directors";
   director cards spread over two pages for any count, and the Directors' Report
   adds an extra spread if the copy outgrows pp. 30-37. The expenditure diagram
-  is the picture in the Word doc. The signed auditor PDF is drawn page by page
-  (pdf.js from jsDelivr, needs internet): p.1 independence declaration, pp.2-3
-  audit report; p.4 (Directors' Declaration) is not placed.
+  is the picture in the Word doc. The signed auditor PDF is placed by `auditor-pages.js` the way FY25
+  placed it: KPMG body type scaled to 9.48pt, text block aligned to the FY25
+  positions, KPMG's footer/page numbers cropped (our 5pt grey footer on p.38),
+  white made transparent, drawn at 300 dpi with an invisible text layer. The
+  Console keeps the PDF in IndexedDB for the run; the FY26 preview reads
+  `data/fy26-auditor.pdf`. pdf.js from jsDelivr, needs internet. p.1
+  independence declaration, pp.2-3 audit report; p.4 (Directors' Declaration)
+  is not placed.
 - Preview without the console: `Financial Report FY26.dc.html` reads
   `data/fy26-payload.json` (rebuild it from `data/fy26-finance.docx` with the
   adapter after any change).

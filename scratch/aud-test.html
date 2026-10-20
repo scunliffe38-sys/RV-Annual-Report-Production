@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>@font-face{font-family:Gotham;src:url(../fonts/Gotham-Book.ttf)}body{margin:0;background:#888}</style>
+<script src="../auditor-pages.js"></script></head><body>
+<div id="o" style="display:flex;flex-direction:column;gap:10px;zoom:0.6"></div>
+<script>
+RVAuditor.pages({pdf:'../data/fy26-auditor.pdf'}).then(a=>{
+  const mk=()=>{const s=document.createElement('div');s.style.cssText='position:relative;width:1190.55pt;height:841.89pt;background:#F6F6F6;overflow:hidden';document.getElementById('o').appendChild(s);return s};
+  const s1=mk(),s2=mk();
+  a.pages.forEach((p,k)=>{const d=document.createElement('div');d.style.cssText=`position:absolute;left:${p.l};top:${p.t};width:${p.w};height:${p.h};overflow:hidden;outline:1px dashed red`;d.innerHTML=`<img src="${p.src}" style="position:absolute;left:0;top:0;width:100%;height:100%">`;(k<2?s1:s2).appendChild(d)});
+  const f=document.createElement('div');f.style.cssText='position:absolute;left:55.83pt;top:765.2pt;width:482.76pt;font:5pt/6.5pt Gotham;color:#6D6E71';f.textContent=a.footer;s1.appendChild(f);
+  document.title='done '+JSON.stringify(a.pages.map(p=>[p.t,p.h,p.text.length,p.overflow]));
+}).catch(e=>document.title='ERR '+e.message);
+</script></body></html>

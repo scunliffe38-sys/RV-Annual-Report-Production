@@ -66,13 +66,13 @@
     </div>
     <div style="display:grid;grid-template-columns:{{ block.gridCols }};min-height:34pt;margin-top:2pt;box-sizing:border-box">
       <sc-for list="{{ block.headCells }}" as="c" hint-placeholder-count="9">
-        <div style="display:flex;align-items:flex-end;justify-content:{{ c.jc }};background:{{ c.bg }};color:#fff;font-weight:700;font-size:7.5pt;line-height:9pt;text-align:{{ c.ta }};white-space:pre-line;padding:3pt {{ c.ph }} 3pt {{ c.pl }}">{{ c.t }}</div>
+        <div style="display:flex;align-items:flex-end;justify-content:{{ c.jc }};background:{{ c.bg }};box-shadow:{{ c.sh }};color:#fff;font-weight:700;font-size:7.5pt;line-height:9pt;text-align:{{ c.ta }};white-space:pre-line;padding:3pt {{ c.ph }} 3pt {{ c.pl }}">{{ c.t }}</div>
       </sc-for>
     </div>
     <sc-for list="{{ block.bodyRows }}" as="r" hint-placeholder-count="8">
       <div style="display:grid;grid-template-columns:{{ block.gridCols }};min-height:15.01pt;box-sizing:border-box">
         <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="9">
-          <div style="display:flex;align-items:center;justify-content:{{ c.jc }};background:{{ c.bg }};color:#005FA1;font-weight:400;font-size:8pt;line-height:10.5pt;padding:0 0 0 {{ c.pl }}">{{ c.t }}</div>
+          <div style="display:flex;align-items:center;justify-content:{{ c.jc }};background:{{ c.bg }};box-shadow:{{ c.sh }};color:#005FA1;font-weight:400;font-size:8pt;line-height:10.5pt;padding:0 0 0 {{ c.pl }}">{{ c.t }}</div>
         </sc-for>
       </div>
     </sc-for>

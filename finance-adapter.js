@@ -228,7 +228,13 @@
       return grid.every(function (sl) { var c = sl[j]; if (!c) return true; if (j > 0 && sl[j - 1] === c) return true; return !String(c.t || "").trim(); });
     });
     // Marker column: column 0 holds nothing but markers, column 1 the labels.
-    var markerCol = n > 2 && !drop[0] && grid.every(function (sl) { var c = sl[0]; return !c || (c.n || 1) > 1 || !String(c.t || "").trim() || MARK.test(String(c.t).trim()); });
+    // A column of merged names with no marker anywhere in it
+    // ("VicRacing Pty Ltd" across Word's narrow first column) is the label
+    // column, not a marker column.
+    var col0 = grid.map(function (sl) { return sl[0]; }).filter(Boolean);
+    var hasMark = col0.some(function (c) { return (c.n || 1) === 1 && MARK.test(String(c.t || "").trim()); });
+    var mergedNames = col0.some(function (c) { var tt = String(c.t || "").trim(); return (c.n || 1) > 1 && /[a-z]{3}/i.test(tt) && !/^\d{1,2}\.\s/.test(tt) && !/^Table:Table Header/.test(c.s || "") && tt.length <= 60 && !/[:.]$/.test(tt); });
+    var markerCol = n > 2 && !drop[0] && (hasMark || !mergedNames) && grid.every(function (sl) { var c = sl[0]; return !c || (c.n || 1) > 1 || !String(c.t || "").trim() || MARK.test(String(c.t).trim()); });
     if (markerCol) drop[0] = true;
     var keep = []; for (var j = 0; j < n; j++) if (!drop[j]) keep.push(j);
     if (keep.length < 2) return tb;
@@ -261,6 +267,8 @@
       var src = keep.map(function (j) { return tb.cols[j]; }), tot = src.reduce(function (a, c) { return a + c; }, 0);
       cols = src.map(function (c) { return r2(c * W / tot); });
     }
+    // FY25 column widths for the equity-accounted investments table.
+    if (keep.length === 7 && rows[0] && /^name of entity$/i.test(String((rows[0].c[0] || {}).t || "").trim())) cols = [121, 98.5, 72, 46.5, 46.5, 48.7, 48.69];
     // An empty closing row in Word (often carrying a stray rule) is not printed.
     while (rows.length > 1 && rows[rows.length - 1].c.every(function (c) { return !String((c && c.t) || "").trim(); }) && !rows[rows.length - 1].c.some(function (c) { return c && /^Table:Table Header/.test(c.s); })) rows.pop();
     return { k: "t", cols: cols, rows: promoteHeads(rows), auto: true };
@@ -282,9 +290,22 @@
     var hi = rows.findIndex(function (r) { return r.c.some(function (c) { return c && /^Table:Table Header/.test(c.s); }); });
     if (hi < 1) return rows;
     var pre = rows.slice(0, hi);
-    var ok = pre.every(function (r) { var tx = r.c.map(function (c) { return String((c && c.t) || ""); }).join(" "); return tx.trim() && !/\d/.test(tx); });
+    var ok = pre.every(function (r) { var tx = r.c.map(function (c) { return String((c && c.t) || ""); }).join(" "); return tx.trim() && !/\d/.test(tx.replace(/\b(19|20)\d{2}\b/g, "")); });
     if (!ok) return rows;
-    pre.forEach(function (r) { r.min = Math.max(r.min || 0, 17.008); r.c = r.c.map(function (c) { return c ? Object.assign({}, c, { s: "Table:Table Header", bg: "#005FA1", tc: null }) : c; }); });
+    // Heads over text columns (entity, activity, date) range left, as in FY25.
+    var body = rows.slice(hi + 1);
+    var textCol = function (k) { for (var q = 0; q < body.length; q++) { var c = body[q].c[k], tt = String((c && c.t) || "").trim(); if (tt) return !NUM.test(tt); } return false; };
+    pre.forEach(function (r) {
+      r.min = Math.max(r.min || 0, 17.008);
+      var col = 0;
+      r.c = r.c.map(function (c) {
+        if (!c) return c;
+        var o = Object.assign({}, c, { s: "Table:Table Header", bg: "#005FA1", tc: null });
+        if ((c.n || 1) === 1 && textCol(col)) o.al = "left";
+        col += c.n || 1;
+        return o;
+      });
+    });
     return rows;
   }
   function buildNotes(parsed, issues) {
@@ -312,7 +333,9 @@
         // A numbered paragraph that reads as a title, e.g. "(i) Establishment
         // of Operations", is an italic sub-heading with the copy under it
         // indented, as FY25 sets it; otherwise it is a numbered point.
-        if (heading(text)) { out.push({ k: "p", s: "H4 Sub Heading Italic", t: text, mk: b.marker }); indent = true; }
+        // Straight after a table it is a footnote however it reads (FY25 note 10).
+        var pv0 = out[out.length - 1];
+        if (heading(text) && !(pv0 && (pv0.k === "t" || pv0.s === "Footnotes") && /^\(?[ivx]+\)$/i.test(b.marker || ""))) { out.push({ k: "p", s: "H4 Sub Heading Italic", t: text, mk: b.marker }); indent = true; }
         else {
           // Numbered notes straight after a table are its footnotes (FY25
           // sets them in the 6.5pt Footnotes style).
@@ -320,7 +343,8 @@
           // Points under a bullet ("In making grants ... to:" then (i), (ii)) sit
           // one step in, marker under the bullet text (FY25).
           var sub = !foot && pv && (pv.s === "B7 Bullet double Indent" || pv.s === "B5 Sub Point");
-          out.push({ k: "p", s: foot ? "Footnotes" : sub ? "B5 Sub Point" : "B5 Bullet Body Indent Alpha", t: text, mk: b.marker });
+          // Inside a lettered policy, (i), (ii) points sit in from the copy (FY25 GST).
+          out.push({ k: "p", s: foot ? "Footnotes" : sub ? "B5 Sub Point" : indent ? "B5 Sub Point Indent" : "B5 Bullet Body Indent Alpha", t: text, mk: b.marker });
         }
       }
       else if (b.k === "bullet") {
@@ -359,7 +383,56 @@
         }
       }
     }
-    return pageHeads(dedupeTitles(out));
+    // A paragraph with no words or figures (a stray "." Word leaves under a
+    // table) is not copy.
+    out = out.filter(function (x) { return x.k !== "p" || /[A-Za-z0-9]/.test(String(x.t || "")); });
+    return pageHeads(dedupeTitles(bandHeads(fy25Subheads(out))));
+  }
+  var HEADS = { "Table:Table Header": 1, "Table:Table Header 2": 1 };
+  function headCount(t) { var n = 0; while (n < t.rows.length && t.rows[n].c.some(function (c) { return c && HEADS[c.s]; })) n++; return n; }
+  // FY25 opens every figures note under the date and $'000 bars. Where Word
+  // gives a note's table none (14 Retained Earnings, 16 Key Management
+  // Personnel), it takes the bars of the nearest three-column note table. A
+  // units row Word sets in the body ("$  $" under 17's dates) is the light bar.
+  function bandHeads(out) {
+    var three = function (b) { return b && b.k === "t" && b.auto && b.cols.length === 3; };
+    var bars = function (b) { var n = headCount(b); return n >= 2 && b.rows[n - 1].c.some(function (c) { return c && c.s === "Table:Table Header 2"; }) ? b.rows.slice(0, n) : null; };
+    var clone = function (rows) { return rows.map(function (r) { return { h: r.h, min: r.min, c: r.c.map(function (c) { return Object.assign({}, c); }) }; }); };
+    out.forEach(function (t, i) {
+      if (!three(t)) return;
+      var nh = headCount(t);
+      if (nh === 1) {
+        var ui = t.rows.findIndex(function (r, k) { return k >= nh && r.c.length === 3 && !String(r.c[0].t || "").trim() && r.c.slice(1).every(function (c) { return /^\$(\s?[\u2019']000)?$/.test(String(c.t || "").trim()); }); });
+        if (ui > 0 && t.rows.slice(nh, ui).every(function (r) { return r.c.every(function (c) { return c && c.s === "A4 V:Subhead Large"; }); })) {
+          var u = t.rows.splice(ui, 1)[0];
+          u.min = 14.504; u.c = u.c.map(function (c) { return Object.assign({}, c, { s: "Table:Table Header 2", bg: "#99BFD9", tc: null, f: null }); });
+          t.rows.splice(nh, 0, u);
+        }
+        return;
+      }
+      if (nh) return;
+      var h = out[i - 1];
+      if (!h || h.k !== "p" || h.s !== "A4 V:Subhead Large" || !/^\d{1,2}\.\s/.test(h.t || "")) return;
+      if (!t.rows.some(function (r) { return r.c.slice(1).some(function (c) { return /\d/.test(String((c && c.t) || "")); }); })) return;
+      var src = null;
+      for (var d = 1; !src && d < out.length; d++) { src = (three(out[i + d]) && bars(out[i + d])) || (three(out[i - d]) && bars(out[i - d])) || null; }
+      if (src) t.rows = clone(src).concat(t.rows);
+    });
+    return out;
+  }
+  // FY25 sets a grey italic sub-heading as the bold run-in head when the
+  // policy it sits in also has one ("Classification and measurement of
+  // financial assets" beside "Impairment of financial assets").
+  function fy25Subheads(out) {
+    var H4 = "H4 Sub Heading Italic", H5 = "H5 Sub heading Gray Underline Italics", H3 = "H3 Sub Heading LC Financials";
+    var end = function (b) { return b.k === "p" && (b.s === H4 || b.s === "A4 V:Subhead Large"); };
+    for (var i = 0; i < out.length; i++) {
+      if (!(out[i].k === "p" && out[i].s === H4)) continue;
+      var j = i + 1; while (j < out.length && !end(out[j])) j++;
+      var sec = out.slice(i + 1, j);
+      if (sec.some(function (b) { return b.s === H3; })) sec.forEach(function (b) { if (b.s === H5) b.s = H3; });
+    }
+    return out;
   }
   // A "For the year ended" line inside the notes is the dateline of a shape on
   // the next page, not copy. Before the entity table it marks the
@@ -374,8 +447,12 @@
     var hi = t.rows.findIndex(function (r) { return txt(r)[0] === "Entity Name"; });
     t.rows.forEach(function (r, ri) {
       var dates = ri === hi + 1 && txt(r).some(function (s) { return /\d{4}$/.test(s); });
+      // FY25 centres every column but the entity name, heads and values.
+      var ci = 0;
       r.c = r.c.map(function (c) {
         if (!c) return c;
+        var at = ci; ci += c.n || 1;
+        c = Object.assign({}, c, { al: at > 0 ? "center" : "left" });
         if (ri === hi) return Object.assign({}, c, { s: "Table:Table Header", bg: "#005FA1", sz: 8.5 });
         if (dates) return Object.assign({}, c, { s: "Table:Table Header 2", bg: "#99BFD9", sz: 8.5, t: String(c.t || "").toUpperCase() });
         return ri > hi ? Object.assign({}, c, { sz: 8 }) : c;
@@ -412,6 +489,9 @@
       var rows = t.rows || [], nh = 0;
       while (nh < rows.length && rows[nh].c.some(function (c) { return c && HEAD[c.s]; })) nh++;
       if (!nh) continue;
+      // Column heads that label the first column too ("Name of Entity") sit
+      // under the title, as FY25 sets note 8.
+      if (String((rows[0].c[0] && rows[0].c[0].t) || "").trim()) continue;
       var k = key(h.t);
       rows.slice(0, nh).forEach(function (r) { r.c.forEach(function (c, ci) { if (c && key(c.t) === k) r.c[ci] = Object.assign({}, c, { t: "" }); }); });
       var ti = rows.findIndex(function (r) { return r.c.length && r.c.every(function (c) { return c && c.s === "A4 V:Subhead Large"; }) && key(r.c[0].t) === k; });
