@@ -59,7 +59,8 @@
     kp = kp || {};
     if (kp.pdf === "idb") {
       var rec = await tx("readonly", function (s) { return s.get("auditor"); });
-      if (!rec || (kp.stamp && rec.stamp !== kp.stamp)) return null;
+      if (!rec) { root.RV_AUDITOR = "MISSING: the KPMG PDF is not stored in this browser; Produce again from the Console"; return null; }
+      if (kp.stamp && rec.stamp !== kp.stamp) console.warn("Auditor PDF: using the copy stored " + new Date(+rec.stamp.split("-")[0]).toLocaleString("en-AU") + " (" + rec.name + ").");
       return new Uint8Array(rec.bytes);
     }
     if (kp.pdf) {
@@ -177,13 +178,17 @@
 
   // Pages 1-3 placed for pp. 38, 39 and 40; null when there is no PDF.
   async function pages(kp) {
-    var bytes = await source(kp);
-    if (!bytes) return null;
+    root.RV_AUDITOR = "drawing";
+    var bytes;
+    try { bytes = await source(kp); } catch (e) { root.RV_AUDITOR = "FAILED: " + (e && e.message || e); throw e; }
+    if (!bytes) { if (root.RV_AUDITOR === "drawing") root.RV_AUDITOR = kp.pdf ? "MISSING" : "none"; return null; }
     if (document.fonts) await document.fonts.load('400 9pt "Gotham"').catch(function () {});
-    var doc = await open(bytes);
+    var doc;
+    try { doc = await open(bytes); } catch (e) { root.RV_AUDITOR = "FAILED: " + (e && e.message || e) + " (pdf.js needs internet)"; throw e; }
     var out = [];
     for (var k = 0; k < Math.min(3, doc.numPages); k++) out.push(await draw(await doc.getPage(k + 1), SLOTS[k]));
     out.forEach(function (p, k) { if (p.overflow > 0) console.warn("Auditor page " + (k + 1) + ": text runs " + p.overflow.toFixed(1) + "pt into KPMG\u2019s footer zone and is cropped."); });
+    root.RV_AUDITOR = "placed " + out.length;
     return { pages: out, footer: out[0] ? out[0].footer : "" };
   }
 
