@@ -37,6 +37,17 @@
   a note that fits a page starts on a fresh one, a long note starts fresh
   unless half the page is left, a short note goes over with the next when
   they share bars and the page is over half full; CEDS columns centred.
+- **Test 9/10 rules:** Directors' Report headings never sit at a column foot
+  with under ~4 lines below (spill spread takes overflow instead); signature
+  place/date 8pt below the title; cash-flow lines indented between head and
+  total, double rule under the last figures row; note double rules 2.25pt
+  (Chrome draws thinner doubles as one solid rule); italic subhead → copy gap
+  8.504pt; inside lettered policies run-in heads grey Medium and copy indented
+  22.68pt; a lettered part moves over when it won't fit and <30% of the page is
+  left; a note's last ≤3 lines may use the full frame; text under a table's
+  footnote (lead-in, bullets, follow-on) is set as footnote; untitled tables
+  opening on a label are flush left with a bold blue head; blank line before a
+  group label that follows a total.
 - **Fonts are TrueType (`fonts/Gotham-*.ttf`) with fsType 0.** OTF (CFF) or
   TTFs with restricted/no-subsetting flags make Chrome save Gotham as Type 3
   (soft in Acrobat). Check File › Properties › Fonts shows "TrueType (CID)".

@@ -591,11 +591,11 @@ class Component extends DCLogic {
     // by keeping paragraphs whole, until the copy fits. The tracking step
     // needing fewest splits wins (ties go to the looser tracking).
     const fits = a => !a.leftover.length && !a.frames[8].length && !a.frames[9].length;
-    // Headings: first try FY25's rule (no heading with only a few lines under
-    // it at a column foot); if the copy then outgrows pp. 30-37, fall back to
-    // only keeping a bare heading off the foot.
-    // Last resort before the spill spread: the tick list at the tighter bullet spacing.
-    for (const [strictHeads, compactTicks] of [[true, false], [false, false], [false, true]]) {
+    // Headings always follow FY25's rule: no heading with only a few lines
+    // under it at a column foot (Test 10, "Revenue" on p.32). If that cannot
+    // fit pp. 30-37 even with the tighter tick spacing, the spill spread takes
+    // the overflow rather than the rule giving way.
+    for (const [strictHeads, compactTicks] of [[true, false], [true, true]]) {
     this._compactTicks = compactTicks;
     let best = null;
     for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
@@ -622,14 +622,14 @@ class Component extends DCLogic {
     }
     this._compactTicks = true;
     for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
-      const attempt = this.flow(items, baseIdx, copy);
+      const attempt = this.flow(items, baseIdx, copy, null, true);
       if (!attempt.leftover.length) {
         console.warn('Directors\u2019 Report: fitted at tracking ' + TRACKING[baseIdx] +
           ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
         return Object.assign(attempt, { baseIdx });
       }
     }
-    const last = this.flow(items, TRACKING.length - 1, copy);
+    const last = this.flow(items, TRACKING.length - 1, copy, null, true);
     console.warn('Directors\u2019 Report: ' + last.leftover.length +
       ' block(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
     return Object.assign(last, { baseIdx: TRACKING.length - 1 });
@@ -1410,6 +1410,8 @@ class Component extends DCLogic {
     // Notes to a table line set as footnotes without a marker (FY25 p.64), and bullets under a footnote.
     styles['Footnotes Plain'] = Object.assign({}, FN, { left: 0, first: 0 });
     styles['Footnotes Bullet'] = Object.assign({}, FN, { left: (FN.left || 17.008) + 8.504, first: -8.504 });
+    // Lead-in and follow-on lines of a footnote: no marker, at the footnote's text indent.
+    styles['Footnotes Cont'] = Object.assign({}, FN, { left: FN.left || 17.008, first: 0 });
     const NT = /^\d{1,2}\.\s/;
     const isTitleRow = r => r.c.length > 0 && r.c.every(c => c && c.s === 'A4 V:Subhead Large');
     const isHeadRow = r => r.c.some(c => c && NOTE_HEADER_PS[c.s]);
@@ -1426,9 +1428,12 @@ class Component extends DCLogic {
         else if (b.s === 'A4 V:Body') b.s = 'A4 V:Body Indent';
       }
       // Bullets straight after a table footnote belong to it.
+      // A lead-in ending in a colon is not a bullet; the copy after the bullets is footnote text too (Test 10).
       if (b.k === 'p' && /^B7 /.test(b.s || '') && i && blocks[i - 1].k === 'p' && /^Footnotes/.test(blocks[i - 1].s || '')) {
-        b.s = 'Footnotes Bullet'; b.mk = '\u2022';
+        if (/:\s*$/.test(b.t || '') && blocks[i - 1].s !== 'Footnotes Bullet') b.s = 'Footnotes Cont';
+        else { b.s = 'Footnotes Bullet'; b.mk = '\u2022'; }
       }
+      else if (b.k === 'p' && b.s === 'A4 V:Body' && i && blocks[i - 1].k === 'p' && blocks[i - 1].s === 'Footnotes Bullet') b.s = 'Footnotes Cont';
       if (b.k === 't' && b.auto) {
         // Paragraphs after a table that explain one of its lead-in lines
         // ("Spectrum rental and channel support:") are its footnotes.
@@ -1617,7 +1622,9 @@ class Component extends DCLogic {
     const rows = tb.rows || [];
     const h2 = rows.find(r => r.head2);
     const noteCol = h2 ? h2.cells.findIndex(c => /^note$/i.test((c.t || '').trim())) : -1;
-    const lastBody = rows.map(r => !!r.body).lastIndexOf(true);
+    // The closing double rule goes under the last row with figures, not a
+    // trailing footnote-marker or blank row (Test 10, cash at end of year).
+    const lastBody = rows.map(r => !!r.body && (r.cells || []).some((c, k) => k > 0 && /\d/.test(c.t || ''))).lastIndexOf(true);
     let parity = 0, prevBB = false, inGrp = false;
     const RULE = '0.75pt solid #005FA1';
     const styled = rows.map((r, ri) => {
