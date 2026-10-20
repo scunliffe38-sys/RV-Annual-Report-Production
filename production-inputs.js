@@ -286,14 +286,18 @@
     return out;
   }
 
-  // Each page of the signed PDF as a picture (pdf.js, loaded on demand).
-  async function pdfImages(file) {
-    var base = "https://cdn.jsdelivr.net/npm/pdf-parse@2.4.5/dist/pdf-parse/web/";
-    var m = await import(base + "pdf-parse.es.js");
-    m.PDFParse.setWorker(base + "pdf.worker.min.mjs");
-    var parser = new m.PDFParse({ data: new Uint8Array(await file.arrayBuffer()) });
-    var r = await parser.getScreenshot({ scale: 1.4, imageDataUrl: true, imageBuffer: false });
-    return r.pages.map(function (p) { return p.dataUrl; });
+  // The PDF is kept in the browser (IndexedDB) for the report to draw at
+  // print resolution; here we only check how its pages will place.
+  async function pdfPlace(file) {
+    var A = root.RVAuditor;
+    var stamp = await A.store(file);
+    var info = await A.check(new Uint8Array(await file.arrayBuffer()));
+    var out = [];
+    info.placed.forEach(function (p) {
+      if (Math.abs(p.scale - 1.063) > 0.08) out.push(issue("warning", "Page for p. " + p.page + ": body type is " + p.body.toFixed(2) + "pt, so it is scaled to " + Math.round(p.scale * 100) + "% to set at FY25\u2019s 9.48pt. Check the page in the run."));
+      if (p.overflow > 0) out.push(issue("warning", "Page for p. " + p.page + ": the text runs " + p.overflow.toFixed(1) + "pt into KPMG\u2019s footer area and will be cropped."));
+    });
+    return { stamp: stamp, pages: info.pages, issues: out };
   }
 
   /* --------------------------------------------------------- process -- */
@@ -322,10 +326,12 @@
         var pdf = await pdfCheck(f, inp.pages);
         rec.issues = rec.issues.concat(pdf);
         try {
-          result.auditorImages = await pdfImages(f);
-          rec.issues.push(issue("info", "Pages 1\u20133 drawn for the independence declaration and the audit report" + (result.auditorImages.length > 3 ? "; page " + result.auditorImages.length + " is the signed Directors\u2019 Declaration, which the report sets from the Finance document." : ".")));
+          var placed = await pdfPlace(f);
+          result.auditorPdf = placed.stamp;
+          rec.issues = rec.issues.concat(placed.issues);
+          rec.issues.push(issue("info", "Pages 1\u20133 placed on pp. 38\u201340 as in FY25 (KPMG\u2019s footers cropped, 300 dpi, no white page)" + (placed.pages > 3 ? "; page " + placed.pages + " is the signed Directors\u2019 Declaration, which the report sets from the Finance document." : ".")));
         } catch (err) {
-          rec.issues.push(issue("warning", "The pages could not be drawn (" + (err && err.message ? err.message : err) + "). Drop them onto the slots on the report instead."));
+          rec.issues.push(issue("warning", "The pages could not be read (" + (err && err.message ? err.message : err) + "). Drop them onto the slots on the report instead."));
         }
         continue;
       }
@@ -392,9 +398,9 @@
       }
     }
 
-    if (result.auditorImages) {
+    if (result.auditorPdf) {
       var dr = result.payload["directors-report"] = result.payload["directors-report"] || {};
-      dr.kpmg = Object.assign({}, dr.kpmg, { images: result.auditorImages.slice(0, 3) });
+      dr.kpmg = Object.assign({}, dr.kpmg, { pdf: "idb", stamp: result.auditorPdf });
     }
 
     var keys = expected.map(function (i) { return { k: key(i.file), file: i.file }; });
