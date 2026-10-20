@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #fff; }
+  a { color: #005FA1; text-decoration: none; border-bottom: 1px solid rgba(0,95,161,.35); }
+  a:hover { color: #EC008C; border-bottom-color: rgba(236,0,140,.5); }
+</style>
+<script src="./report-structure.js?v=20261021"></script>
+<script src="./production-manifest.js?v=20261021"></script>
+<script src="./finance-notes.js?v=20261021"></script>
+<script src="./docx-finance.js?v=20261021"></script>
+<script src="./finance-adapter.js?v=20261021"></script>
+<script src="./auditor-pages.js?v=20261021"></script>
+<script src="./production-inputs.js?v=20261021"></script>
+<script src="./production-images.js?v=20261021"></script>
+</helmet>
+
+<div style="font-family:'Source Sans 3',Arial,sans-serif;color:#25272a;padding:0 28px 90px;max-width:1040px;margin:0 auto">
+
+  <div style="height:6px;background:linear-gradient(90deg,#EC008C,#005FA1);margin:0 -28px 30px"></div>
+
+  <div style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#005FA1;margin-bottom:12px">Racing Victoria &nbsp;·&nbsp; Annual Report production</div>
+  <h1 style="font-family:Montserrat,sans-serif;font-size:32px;line-height:1.12;font-weight:700;color:#111;margin:0 0 10px;letter-spacing:-.015em">Production console</h1>
+  <p style="font-size:17px;line-height:1.45;color:#6D6E71;margin:0 0 30px;max-width:64ch;text-wrap:pretty">Choose the folder holding this year&#8217;s input files. The console checks every file, shows which sections are ready, and produces a print-ready PDF of the sections you pick &#8212; one section, several, or the full report.</p>
+
+  <div style="display:flex;gap:28px;border-bottom:1px solid #d8d9db;margin:0 0 30px">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+      <button type="button" onClick="{{ t.pick }}" style="font-family:Montserrat,sans-serif;font-size:15px;font-weight:600;color:{{ t.fg }};background:none;border:0;border-bottom:2.5px solid {{ t.line }};margin-bottom:-1px;padding:0 0 11px;cursor:pointer;display:flex;gap:8px;align-items:baseline;white-space:nowrap;flex-shrink:0">{{ t.label }}<span style="font-size:12.5px;font-weight:500;color:#8b8c8f">{{ t.count }}</span></button>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ onInputs }}" hint-placeholder-val="{{ true }}">
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:14px;margin-bottom:34px">
+    <div style="border:1px solid #d8d9db;border-radius:10px;padding:18px 20px">
+      <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8b8c8f;margin-bottom:10px">1 &nbsp;Report year</div>
+      <div style="display:flex;gap:6px">
+        <sc-for list="{{ years }}" as="y" hint-placeholder-count="3">
+          <button type="button" onClick="{{ y.pick }}" style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:600;padding:9px 14px;border-radius:7px;cursor:pointer;border:1px solid {{ y.border }};background:{{ y.bg }};color:{{ y.fg }}">{{ y.label }}</button>
+        </sc-for>
+      </div>
+      <div style="font-size:13px;line-height:1.45;color:#6D6E71;margin-top:10px">File names must start with the year, e.g. &#8220;{{ exampleName }}&#8221;.</div>
+    </div>
+
+    <label style="display:block;border:1.5px dashed {{ dropBorder }};border-radius:10px;padding:18px 20px;cursor:pointer;background:#fafafa" style-hover="border-color:#005FA1">
+      <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#A51890;margin-bottom:8px">2 &nbsp;Input folder</div>
+      <div style="font-family:Montserrat,sans-serif;font-size:17px;font-weight:600;color:#111;margin-bottom:4px">{{ folderLabel }}</div>
+      <div style="font-size:14px;line-height:1.45;color:#6D6E71">{{ folderHint }}</div>
+      <input type="file" multiple="" ref="{{ folderRef }}" onChange="{{ onPickFolder }}" style="display:none" />
+    </label>
+  </div>
+
+  <div style="border:1px solid #d8d9db;border-radius:10px;margin-bottom:34px">
+    <button type="button" onClick="{{ toggleSourcing }}" style="width:100%;display:flex;align-items:baseline;justify-content:space-between;gap:16px;background:none;border:0;padding:16px 20px;cursor:pointer;text-align:left;font-family:inherit">
+      <span style="font-family:Montserrat,sans-serif;font-size:16px;font-weight:600;color:#111">Sections &amp; files to source for {{ year }}</span>
+      <span style="font-size:14px;color:#005FA1">{{ sourcingToggle }}</span>
+    </button>
+    <sc-if value="{{ sourcingOpen }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:0 20px 18px">
+        <p style="font-size:14.5px;line-height:1.5;color:#6D6E71;margin:0 0 14px;max-width:72ch">{{ sourcingIntro }}</p>
+        <div style="display:flex;gap:6px;margin-bottom:12px">
+          <button type="button" onClick="{{ selectAll }}" style="font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:600;color:#25272a;background:#fff;border:1px solid #c9cacc;border-radius:6px;padding:6px 11px;cursor:pointer" style-hover="border-color:#005FA1;color:#005FA1">Full report</button>
+          <button type="button" onClick="{{ selectReady }}" style="font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:600;color:#25272a;background:#fff;border:1px solid #c9cacc;border-radius:6px;padding:6px 11px;cursor:pointer" style-hover="border-color:#005FA1;color:#005FA1">Ready only</button>
+          <button type="button" onClick="{{ selectNone }}" style="font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:600;color:#25272a;background:#fff;border:1px solid #c9cacc;border-radius:6px;padding:6px 11px;cursor:pointer" style-hover="border-color:#005FA1;color:#005FA1">Clear</button>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:#6D6E71;margin-bottom:12px">
+          <span><strong style="color:#005FA1;font-weight:600">Template</strong> &#8212; RV template, in the FY26 Input Templates folder</span>
+          <span><strong style="color:#25272a;font-weight:600">Finance</strong> &#8212; supplied by Finance</span>
+        </div>
+        <div style="border-top:1.5px solid #25272a">
+          <sc-for list="{{ sourcingRows }}" as="g" hint-placeholder-count="14">
+            <label style="display:grid;grid-template-columns:22px minmax(0,.8fr) minmax(0,1.6fr) 64px;gap:14px;padding:9px 0;border-bottom:1px solid #eeeff0;align-items:baseline;cursor:pointer">
+              <input type="checkbox" checked="{{ g.checked }}" onChange="{{ g.toggle }}" style="width:16px;height:16px;margin:0;accent-color:#005FA1;cursor:pointer" />
+              <div style="font-size:14.5px;font-weight:600;color:#111">{{ g.title }}<span style="display:block;font-family:Montserrat,sans-serif;font-size:11px;font-weight:500;color:#8b8c8f;margin-top:2px">{{ g.pages }}</span></div>
+              <div style="min-width:0">
+                <sc-if value="{{ g.none }}" hint-placeholder-val="">
+                  <div style="font-size:14px;color:#8b8c8f">No input files &#8212; images are added on the Images &amp; signatures tab.</div>
+                </sc-if>
+                <sc-for list="{{ g.files }}" as="f" hint-placeholder-count="1">
+                  <div style="display:grid;grid-template-columns:78px minmax(0,1fr);gap:10px;align-items:baseline;padding:1px 0">
+                    <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:{{ f.color }}">{{ f.from }}</div>
+                    <div style="font-size:14px;line-height:1.45;color:#25272a;overflow-wrap:anywhere">{{ f.name }}<span style="color:#8b8c8f">{{ f.detail }}</span></div>
+                  </div>
+                </sc-for>
+                <sc-if value="{{ g.note }}" hint-placeholder-val="">
+                  <div style="font-size:13px;line-height:1.45;color:#6D6E71;margin-top:2px">{{ g.note }}</div>
+                </sc-if>
+                <sc-for list="{{ g.problems }}" as="p" hint-placeholder-count="0">
+                  <div style="font-size:13px;line-height:1.45;color:{{ p.color }};margin-top:2px">{{ p.text }}</div>
+                </sc-for>
+              </div>
+              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:{{ g.statusColor }};text-align:right">{{ g.status }}</div>
+            </label>
+          </sc-for>
+        </div>
+        <p style="font-size:13.5px;line-height:1.5;color:#6D6E71;margin:12px 0 0">Images and signatures are not part of this folder. Add them on the Images &amp; signatures tab once they arrive.</p>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ busy }}" hint-placeholder-val="">
+    <div style="font-size:16px;color:#6D6E71;padding:6px 0 28px">Reading {{ fileCount }} files&#8230;</div>
+  </sc-if>
+
+  <sc-if value="{{ hasResult }}" hint-placeholder-val="">
+
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:0 0 6px">
+      <h2 style="font-family:Montserrat,sans-serif;font-size:19px;font-weight:600;color:#111;margin:0">3 &nbsp;Input files</h2>
+      <div style="font-size:14px;color:#6D6E71">{{ inputSummary }}</div>
+    </div>
+    <p style="font-size:14px;line-height:1.5;color:#6D6E71;margin:0 0 12px">Update files in the folder and choose it again to re-check.</p>
+
+    <div style="border-top:1.5px solid #25272a;margin-bottom:10px">
+      <sc-for list="{{ inputRows }}" as="r" hint-placeholder-count="15">
+        <div style="display:grid;grid-template-columns:92px minmax(0,1fr) minmax(0,.9fr);gap:14px;padding:9px 0;border-bottom:1px solid #eeeff0;align-items:baseline">
+          <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:{{ r.color }}">{{ r.status }}</div>
+          <div style="min-width:0">
+            <div style="font-size:15px;color:#25272a;overflow-wrap:anywhere">{{ r.file }}</div>
+            <sc-for list="{{ r.issues }}" as="i" hint-placeholder-count="0">
+              <div style="font-size:13.5px;line-height:1.45;color:{{ i.color }};margin-top:3px">{{ i.text }}</div>
+            </sc-for>
+          </div>
+          <div style="font-size:13.5px;line-height:1.45;color:#8b8c8f">{{ r.usedBy }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ hasUnknown }}" hint-placeholder-val="">
+      <div style="margin:18px 0 0">
+        <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#A51890;margin-bottom:6px">Not recognised</div>
+        <sc-for list="{{ unknownRows }}" as="u" hint-placeholder-count="2">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;padding:7px 0;border-bottom:1px solid #eeeff0;font-size:14px;line-height:1.45">
+            <div style="color:#25272a;overflow-wrap:anywhere">{{ u.name }}</div>
+            <div style="color:#6D6E71">{{ u.hint }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <h2 style="font-family:Montserrat,sans-serif;font-size:19px;font-weight:600;color:#111;margin:40px 0 12px">4 &nbsp;Produce options</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:18px">
+      <sc-for list="{{ policies }}" as="o" hint-placeholder-count="2">
+        <button type="button" onClick="{{ o.pick }}" style="text-align:left;border:1.5px solid {{ o.border }};background:{{ o.bg }};border-radius:9px;padding:13px 15px;cursor:pointer;font-family:inherit">
+          <div style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:600;color:#111;margin-bottom:3px">{{ o.title }}</div>
+          <div style="font-size:13.5px;line-height:1.45;color:#6D6E71">{{ o.body }}</div>
+        </button>
+      </sc-for>
+    </div>
+
+    <div style="font-size:15px;line-height:1.55;color:#25272a;margin-bottom:6px">{{ runSummary }}</div>
+    <sc-for list="{{ runNotes }}" as="n" hint-placeholder-count="0">
+      <div style="font-size:14px;line-height:1.5;color:{{ n.color }}">{{ n.text }}</div>
+    </sc-for>
+
+    <p style="font-size:13.5px;line-height:1.5;color:#6D6E71;margin:18px 0 0;max-width:70ch">The print view opens in a new tab. Wait for &#8220;Ready&#8221;, click Save as PDF, and in the dialog choose <strong style="color:#25272a;font-weight:600">Save as PDF</strong>, Margins <strong style="color:#25272a;font-weight:600">None</strong>, and tick <strong style="color:#25272a;font-weight:600">Background graphics</strong>.</p>
+
+  </sc-if>
+  <div style="position:sticky;bottom:0;margin:30px -28px 0;padding:14px 28px;background:#fff;border-top:1px solid #d8d9db;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+    <div style="font-size:14.5px;line-height:1.45;color:#25272a;min-width:0">{{ barSummary }}
+      <sc-if value="{{ launched }}" hint-placeholder-val=""><a href="Production Run.dc.html?production=1" target="_blank" style="margin-left:10px;font-size:13.5px">Print view didn&#8217;t open? Open it here</a></sc-if>
+    </div>
+    <button type="button" onClick="{{ produce }}" disabled="{{ cannotProduce }}" style="font-family:Montserrat,sans-serif;font-size:15px;font-weight:600;color:#fff;background:{{ produceBg }};border:0;border-radius:8px;padding:13px 22px;cursor:pointer;flex-shrink:0" style-hover="background:#004370">{{ produceLabel }}</button>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ onImages }}" hint-placeholder-val="">
+    <p style="font-size:15px;line-height:1.55;color:#6D6E71;margin:0 0 20px;max-width:72ch;text-wrap:pretty">Images and signatures usually arrive last. Each file is supplied once and placed everywhere it appears in the report. Files stay in this browser on this computer and are used by every PDF produced here until removed.</p>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:14px;margin-bottom:14px">
+      <label style="display:block;border:1.5px dashed {{ imgDropBorder }};border-radius:10px;padding:18px 20px;cursor:pointer;background:#fafafa" style-hover="border-color:#005FA1">
+        <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#A51890;margin-bottom:8px">Images folder</div>
+        <div style="font-family:Montserrat,sans-serif;font-size:17px;font-weight:600;color:#111;margin-bottom:4px">{{ imgFolderLabel }}</div>
+        <div style="font-size:14px;line-height:1.45;color:#6D6E71">{{ imgFolderHint }}</div>
+        <input type="file" multiple="" ref="{{ folderRef }}" onChange="{{ onPickImageFolder }}" style="display:none" />
+      </label>
+      <div style="border:1px solid #d8d9db;border-radius:10px;padding:18px 20px">
+        <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8b8c8f;margin-bottom:8px">Supplied</div>
+        <div style="font-family:Montserrat,sans-serif;font-size:26px;font-weight:700;color:#111;line-height:1.1">{{ imgSupplied }}<span style="font-size:15px;font-weight:500;color:#8b8c8f"> of {{ imgTotal }}</span></div>
+        <div style="font-size:13.5px;line-height:1.45;color:{{ imgStatusColor }};margin-top:6px">{{ imgStatusNote }}</div>
+        <sc-if value="{{ imgAny }}" hint-placeholder-val="">
+          <button type="button" onClick="{{ clearImages }}" style="font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:600;color:#25272a;background:#fff;border:1px solid #c9cacc;border-radius:6px;padding:6px 11px;cursor:pointer;margin-top:10px" style-hover="border-color:#EC008C;color:#EC008C">Remove all</button>
+        </sc-if>
+      </div>
+    </div>
+
+    <sc-if value="{{ imgHasUnmatched }}" hint-placeholder-val="">
+      <div style="margin:18px 0 0">
+        <div style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#A51890;margin-bottom:4px">Not matched</div>
+        <div style="font-size:13.5px;line-height:1.45;color:#6D6E71;margin-bottom:6px">Rename these to one of the file names below and choose the folder again, or choose each one on the row it belongs to.</div>
+        <sc-for list="{{ imgUnmatched }}" as="u" hint-placeholder-count="2">
+          <div style="font-size:14px;line-height:1.45;color:#25272a;padding:6px 0;border-bottom:1px solid #eeeff0;overflow-wrap:anywhere">{{ u.name }}</div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-for list="{{ imgKinds }}" as="k" hint-placeholder-count="4">
+      <div style="margin-top:36px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:0 0 4px">
+          <h2 style="font-family:Montserrat,sans-serif;font-size:19px;font-weight:600;color:#111;margin:0">{{ k.title }}</h2>
+          <div style="font-size:14px;color:#6D6E71">{{ k.summary }}</div>
+        </div>
+        <p style="font-size:14px;line-height:1.5;color:#6D6E71;margin:0 0 12px">{{ k.note }}</p>
+        <div style="border-top:1.5px solid #25272a">
+          <sc-for list="{{ k.rows }}" as="r" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:56px minmax(0,1fr) 72px auto;gap:14px;padding:11px 0;border-bottom:1px solid #eeeff0;align-items:center">
+              <div style="width:56px;height:56px;border-radius:{{ r.radius }};background-color:{{ r.thumbBg }};background-image:{{ r.thumbCss }};background-size:{{ r.thumbFit }};background-position:center;background-repeat:no-repeat"></div>
+              <div style="min-width:0">
+                <div style="font-size:15px;font-weight:600;color:#111">{{ r.label }}<span style="font-weight:400;color:#8b8c8f">{{ r.role }}</span></div>
+                <div style="font-size:13px;line-height:1.45;color:#8b8c8f;overflow-wrap:anywhere">File name <span style="color:#25272a">{{ r.file }}</span>{{ r.hint }}</div>
+                <sc-for list="{{ r.uses }}" as="x" hint-placeholder-count="1">
+                  <div style="font-size:13px;line-height:1.45;color:#6D6E71">{{ x.text }}</div>
+                </sc-for>
+                <sc-if value="{{ r.fileLine }}" hint-placeholder-val="">
+                  <div style="font-size:13px;line-height:1.45;color:#25272a;overflow-wrap:anywhere;margin-top:2px">{{ r.fileLine }}</div>
+                </sc-if>
+                <sc-for list="{{ r.issues }}" as="i" hint-placeholder-count="0">
+                  <div style="font-size:13px;line-height:1.45;color:{{ i.color }}">{{ i.text }}</div>
+                </sc-for>
+              </div>
+              <div style="font-family:Montserrat,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:{{ r.statusColor }}">{{ r.status }}</div>
+              <div style="display:flex;gap:6px;justify-content:flex-end">
+                <label style="font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:600;color:#25272a;background:#fff;border:1px solid #c9cacc;border-radius:6px;padding:6px 11px;cursor:pointer;white-space:nowrap" style-hover="border-color:#005FA1;color:#005FA1">{{ r.pickLabel }}<input type="file" accept=".jpg,.jpeg,.png,.svg,.webp" onChange="{{ r.onPick }}" style="display:none" /></label>
+                <sc-if value="{{ r.supplied }}" hint-placeholder-val="">
+                  <button type="button" onClick="{{ r.remove }}" style="font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:600;color:#6D6E71;background:#fff;border:1px solid #c9cacc;border-radius:6px;padding:6px 11px;cursor:pointer" style-hover="border-color:#EC008C;color:#EC008C">Remove</button>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { year: "FY26", files: null, folder: "", busy: false, result: null, selected: {}, policy: "skip", budgets: {}, launched: false, tab: "inputs", imgRecs: {}, imgThumbs: {}, imgErrs: {}, imgFolder: "", imgUnmatched: [], imgBusy: false };
+
+  loadImages() {
+    if (!window.RVImages) return;
+    window.RVImages.all().then((recs) => {
+      Object.values(this._thumbs || {}).forEach((u) => URL.revokeObjectURL(u));
+      this._thumbs = {};
+      Object.keys(recs).forEach((k) => { this._thumbs[k] = URL.createObjectURL(recs[k].blob); });
+      this.setState({ imgRecs: recs, imgThumbs: this._thumbs });
+    }).catch((e) => this.setState({ imgStoreError: e.message }));
+  }
+
+  setImgErr(id, msg) { this.setState((p) => ({ imgErrs: Object.assign({}, p.imgErrs, { [id]: msg }) })); }
+
+  async pickImageFolder(list, name) {
+    const IM = window.RVImages;
+    const { matched, unmatched } = IM.match(list);
+    this.setState({ imgBusy: true, imgFolder: name });
+    const errs = {};
+    for (const [id, f] of matched) {
+      try { await IM.put(id, f); errs[id] = null; } catch (e) { errs[id] = f.name + ": " + e.message; }
+    }
+    this.setState((p) => ({ imgBusy: false, imgUnmatched: unmatched, imgMatched: matched.length, imgErrs: Object.assign({}, p.imgErrs, errs) }));
+    this.loadImages();
+  }
+
+  folderRef = (el) => {
+    if (el) { el.setAttribute("webkitdirectory", ""); el.setAttribute("directory", ""); }
+  };
+
+  componentWillUnmount() { Object.values(this._thumbs || {}).forEach((u) => URL.revokeObjectURL(u)); }
+
+  componentDidMount() {
+    this.loadImages();
+    const M = window.RV_PRODUCTION_MANIFEST;
+    if (!M) return;
+    const count = (list) => list.reduce((n, p) => n + String(typeof p === "string" ? p : p.text).split(/\s+/).filter(Boolean).length, 0);
+    const jobs = Object.values(M.narrative).map((cfg) => {
+      const path = cfg.payload === "chair-report-data" ? "./chair-report-data.js" : "./copy/" + cfg.payload + ".js";
+      return import(path).then((m) => {
+        const obj = m.copy || m.chairReport;
+        return [cfg.payload, obj && obj.paragraphs ? count(obj.paragraphs) : 0];
+      }).catch(() => [cfg.payload, 0]);
+    });
+    Promise.all(jobs).then((pairs) => this.setState({ budgets: Object.fromEntries(pairs) }));
+  }
+
+  async scan(files, year) {
+    if (!files || !files.length) return;
+    this.setState({ busy: true, launched: false });
+    const result = await window.RVInputs.process(files, window.RV_PRODUCTION_MANIFEST, year, this.state.budgets);
+    const selected = {};
+    this.sectionStates(result).forEach((s) => { selected[s.id] = s.status !== "blocked"; });
+    if (result.people && window.RVImages) { window.RVImages.setPeople(result.people, "finance"); this.loadImages(); }
+    this.setState({ busy: false, result, selected });
+  }
+
+  sectionStates(result) {
+    const M = window.RV_PRODUCTION_MANIFEST;
+    return M.sections.map((s) => {
+      const issues = [];
+      s.inputs.forEach((id) => {
+        const rec = result.inputs[id];
+        if (!rec) return;
+        rec.issues.filter((i) => i.level !== "info").forEach((i) => issues.push({ level: i.level, text: rec.file + ": " + i.text }));
+      });
+      const errors = issues.filter((i) => i.level === "error").length;
+      const warns = issues.length - errors;
+      return { id: s.id, issues, status: errors ? "blocked" : warns ? "check" : "ready" };
+    });
+  }
+
+  pagesFor(section) {
+    const spine = window.RV_REPORT_STRUCTURE;
+    if (!spine) return { label: "", count: 0 };
+    const all = spine.paginate().filter((p) => section.spine.indexOf(p.id) > -1);
+    if (!all.length) return { label: "", count: 0 };
+    const first = Math.min(...all.map((p) => p.first)), last = Math.max(...all.map((p) => p.last));
+    return { label: first === last ? "p. " + first : "pp. " + first + "\u2013" + last, count: last - first + 1 };
+  }
+
+  produce() {
+    const M = window.RV_PRODUCTION_MANIFEST;
+    const states = Object.fromEntries(this.sectionStates(this.state.result).map((s) => [s.id, s]));
+    const ids = M.sections.map((s) => s.id).filter((id) => (this.state.selected[id] !== false) && (this.state.policy === "anyway" || states[id].status !== "blocked"));
+    if (!ids.length) return;
+    const run = { created: new Date().toISOString(), year: this.state.year, folder: this.state.folder, policy: this.state.policy, sections: ids, payload: this.state.result.payload };
+    try { localStorage.setItem("rv-production-run", JSON.stringify(run)); } catch (e) { alert("Could not hand the run to the print view: " + e.message); return; }
+    window.open("Production Run.dc.html?production=1", "_blank");
+    this.setState({ launched: true });
+  }
+
+  renderVals() {
+    const M = window.RV_PRODUCTION_MANIFEST;
+    const { year, files, folder, busy, result, selected, policy, launched, tab, imgRecs, imgThumbs, imgErrs } = this.state;
+    const IM = window.RVImages;
+    const C = { error: "#EC008C", warning: "#A51890", info: "#8b8c8f" };
+    if (!M) return { years: [], hasResult: false };
+
+    const usedBy = {};
+    M.sections.forEach((s) => s.inputs.forEach((i) => { (usedBy[i] = usedBy[i] || []).push(s.title); }));
+
+    const inputRows = result ? M.inputs.map((inp) => {
+      const rec = result.inputs[inp.id];
+      const err = rec.issues.some((i) => i.level === "error");
+      const warn = rec.issues.some((i) => i.level === "warning");
+      return {
+        file: rec.file,
+        usedBy: (usedBy[inp.id] || []).join(", "),
+        status: !rec.found ? "Missing" : err ? "Problem" : warn ? "Check" : "OK",
+        color: !rec.found || err ? C.error : warn ? C.warning : "#005FA1",
+        issues: rec.found ? rec.issues.map((i) => ({ text: i.text, color: C[i.level] })) : [],
+      };
+    }) : [];
+    const ok = inputRows.filter((r) => r.status === "OK" || r.status === "Check").length;
+
+    const isSel = (id) => selected[id] !== undefined ? !!selected[id] : true;
+    const states = result ? Object.fromEntries(this.sectionStates(result).map((s) => [s.id, s])) : {};
+    const CONTENT = { live: ["FY26 inputs", "#005FA1"], partial: ["Partly FY26 inputs", "#A51890"], fixed: ["No inputs", "#8b8c8f"] };
+    let pages = 0, fy25 = [], blockedPicked = 0, count = 0;
+    const included = {};
+    const sectionRows = result ? M.sections.map((s) => {
+      const st = states[s.id];
+      const pg = this.pagesFor(s);
+      const content = s.id === "finance" ? ["FY25 content", "#EC008C"] : CONTENT[s.content];
+      const include = isSel(s.id) && (policy === "anyway" || st.status !== "blocked");
+      if (isSel(s.id) && st.status === "blocked" && policy === "skip") blockedPicked++;
+      if (include) { included[s.id] = true; count++; pages += pg.count; if (s.content !== "live" && s.note) fy25.push(s.title); }
+      return {
+        id: s.id, title: s.title, pages: pg.label, note: s.note || "",
+        checked: isSel(s.id),
+        toggle: () => this.setState((p) => ({ selected: Object.assign({}, p.selected, { [s.id]: !p.selected[s.id] }) })),
+        content: content[0].replace("FY26", year), contentColor: content[1],
+        status: st.status === "blocked" ? "Blocked" : st.status === "check" ? "Check" : "Ready",
+        statusColor: st.status === "blocked" ? C.error : st.status === "check" ? C.warning : "#005FA1",
+        problems: st.issues.slice(0, 4).map((i) => ({ text: i.text, color: C[i.level] })),
+      };
+    }) : [];
+
+    const runSummary0 = count ? count + " section" + (count > 1 ? "s" : "") + ", " + pages + " pages, as one PDF." : "Nothing selected to produce.";
+    const runNotes = [];
+    if (blockedPicked) runNotes.push({ text: blockedPicked + " selected section" + (blockedPicked > 1 ? "s are" : " is") + " blocked and will be left out.", color: C.error });
+    if (fy25.length) runNotes.push({ text: "Still partly or wholly FY25 content: " + fy25.join(", ") + ".", color: C.warning });
+    if (policy === "anyway" && result && M.sections.some((s) => isSel(s.id) && states[s.id].status === "blocked")) runNotes.push({ text: "Sections with problems will print as they are \u2014 missing inputs fall back to last year\u2019s content.", color: C.warning });
+
+    if (IM && count) {
+      const miss = IM.groups.filter((g) => !imgRecs[g.id] && g.uses.some((u) => included[u.section])).length;
+      if (miss) runNotes.push({ text: miss + " image" + (miss > 1 ? "s" : "") + " for these sections " + (miss > 1 ? "are" : "is") + " not supplied yet and will print as empty frames. Add them on the Images & signatures tab.", color: C.warning });
+    }
+
+    const titleOf = Object.fromEntries(M.sections.map((s) => [s.id, s.title]));
+    let imgSupplied = 0, imgLow = 0;
+    const imgKinds = IM ? IM.kinds.map((k) => {
+      const list = IM.groups.filter((g) => g.kind === k.id);
+      let have = 0;
+      const rows = list.map((g) => {
+        const rec = imgRecs[g.id];
+        const q = rec ? IM.quality(g, rec) : null;
+        if (rec) { have++; imgSupplied++; }
+        const ppi = q ? q.ppi : 0;
+        if (rec && ppi < 300) imgLow++;
+        const issues = [];
+        if (imgErrs[g.id]) issues.push({ text: imgErrs[g.id], color: C.error });
+        if (rec && ppi < 300) issues.push({ text: Math.round(ppi) + " ppi at " + titleOf[q.use.section] + " — " + q.use.where + (ppi < 200 ? ". Too low for print; ask for a larger file." : ". Usable, but a larger file would print sharper."), color: ppi < 200 ? C.error : C.warning });
+        const status = !rec ? "Missing" : ppi < 200 ? "Low res" : ppi < 300 ? "Check" : "Supplied";
+        const circle = g.uses[0].shape === "circle";
+        return {
+          label: g.label, role: g.role ? " · " + g.role : "",
+          file: g.file, hint: g.hint ? " · FY25: " + g.hint : "",
+          uses: g.uses.map((u) => ({ text: titleOf[u.section] + " — " + u.where })),
+          supplied: !!rec,
+          fileLine: rec ? rec.name + " · " + (rec.vector ? "vector (SVG)" : rec.width + " × " + rec.height + " px, " + (ppi === Infinity ? "" : Math.round(ppi) + " ppi at largest use")) : "",
+          issues, status,
+          statusColor: status === "Missing" ? "#8b8c8f" : status === "Low res" ? C.error : status === "Check" ? C.warning : "#005FA1",
+          thumbCss: imgThumbs[g.id] ? 'url("' + imgThumbs[g.id] + '")' : "none",
+          thumbFit: g.kind === "signature" || g.kind === "logo" ? "contain" : "cover",
+          radius: circle ? "50%" : "6px",
+          thumbBg: g.reversed || (g.kind === "signature" || g.kind === "logo" ? "#fff" : "#eef0f1"),
+          pickLabel: rec ? "Replace…" : "Choose file…",
+          onPick: (e) => {
+            const f = e.target.files && e.target.files[0];
+            e.target.value = "";
+            if (!f) return;
+            IM.put(g.id, f).then(() => { this.setImgErr(g.id, null); this.loadImages(); }).catch((err) => this.setImgErr(g.id, f.name + ": " + err.message));
+          },
+          remove: () => IM.remove(g.id).then(() => { this.setImgErr(g.id, null); this.loadImages(); }),
+        };
+      });
+      return { title: k.title, note: k.note, summary: have + " of " + list.length + " supplied", rows };
+    }) : [];
+    const imgTotal = IM ? IM.groups.length : 0;
+
+    const FROM = { Template: "#005FA1", Department: "#A51890", Finance: "#25272a" };
+    const inputById = Object.fromEntries(M.inputs.map((i) => [i.id, i]));
+    const sourcingRows = M.sections.filter((s) => s.id !== "contents" && s.id !== "back").map((s) => {
+      const title = s.id === "cover" ? "Cover, Contents, Back cover" : s.title;
+      const files = s.inputs.map((id) => {
+        const inp = inputById[id];
+        const extra = [inp.detail, s.sheets && s.sheets[id]].filter(Boolean).join("; ");
+        return { name: M.fileName(inp, year), detail: extra ? " (" + extra + ")" : "", from: inp.from === "Department" ? "" : inp.from, color: FROM[inp.from] };
+      });
+      const ids = s.id === "cover" ? ["cover", "contents", "back"] : [s.id];
+      const sts = result ? ids.map((i) => states[i].status) : [];
+      const worst = sts.indexOf("blocked") > -1 ? "blocked" : sts.indexOf("check") > -1 ? "check" : sts.length ? "ready" : "";
+      const sec = sectionRows.find((r) => r.id === s.id);
+      return {
+        title, files, none: !files.length, pages: ids.length > 1 ? "" : this.pagesFor(s).label,
+        checked: ids.every(isSel),
+        toggle: () => { const v = !ids.every(isSel); this.setState((p) => { const n = Object.assign({}, p.selected); M.sections.forEach((x) => { if (n[x.id] === undefined) n[x.id] = true; }); ids.forEach((i) => { n[i] = v; }); return { selected: n }; }); },
+        note: ids.length > 1 ? "" : (sec ? sec.note : s.note || ""),
+        problems: result ? ids.reduce((a, i) => a.concat(states[i].issues.slice(0, 4).map((x) => ({ text: x.text, color: C[x.level] }))), []) : [],
+        status: worst === "blocked" ? "Blocked" : worst === "check" ? "Check" : worst === "ready" ? "Ready" : "",
+        statusColor: worst === "blocked" ? C.error : worst === "check" ? C.warning : "#005FA1",
+      };
+    });
+    const sourcingOpen = this.state.sourcingOpen ?? true;
+
+    const setSel = (fn) => () => { const sel = {}; M.sections.forEach((s) => { sel[s.id] = fn(s); }); this.setState({ selected: sel }); };
+    const ready = !!result && !busy;
+
+    return {
+      tabs: [
+        { key: "inputs", label: "Report inputs", count: result ? ok + "/" + M.inputs.length : "" },
+        { key: "images", label: "Images & signatures", count: imgSupplied + "/" + imgTotal },
+      ].map((x) => ({ ...x, pick: () => this.setState({ tab: x.key }), fg: tab === x.key ? "#005FA1" : "#6D6E71", line: tab === x.key ? "#005FA1" : "transparent" })),
+      onInputs: tab !== "images",
+      onImages: tab === "images",
+      imgKinds, imgSupplied, imgTotal,
+      imgAny: imgSupplied > 0,
+      imgStatusNote: this.state.imgStoreError ? "This browser won’t store images: " + this.state.imgStoreError : imgLow ? imgLow + " below 300 ppi at their printed size" : imgSupplied === imgTotal ? "All images supplied" : (imgTotal - imgSupplied) + " still to come",
+      imgStatusColor: this.state.imgStoreError ? C.error : imgLow ? C.warning : "#6D6E71",
+      imgFolderLabel: this.state.imgBusy ? "Reading images…" : this.state.imgFolder || "Choose images folder…",
+      imgFolderHint: this.state.imgFolder && !this.state.imgBusy ? (this.state.imgMatched || 0) + " matched by file name. Click to choose again when more arrive." : "Files named as shown below are matched automatically. Anything else can be chosen on its row.",
+      imgDropBorder: this.state.imgFolder ? "#005FA1" : "#b9bbbe",
+      onPickImageFolder: (e) => {
+        const list = Array.from(e.target.files || []);
+        e.target.value = "";
+        if (!list.length) return;
+        this.pickImageFolder(list, (list[0].webkitRelativePath || "").split("/")[0] || "Selected folder");
+      },
+      clearImages: () => { if (window.confirm("Remove all " + imgSupplied + " images from this browser?")) IM.clear().then(() => this.setState({ imgErrs: {}, imgUnmatched: [] }, () => this.loadImages())); },
+      imgHasUnmatched: this.state.imgUnmatched.length > 0,
+      imgUnmatched: this.state.imgUnmatched.map((name) => ({ name })),
+      years: M.years.map((y) => ({
+        label: y,
+        pick: () => { this.setState({ year: y }); if (files) this.scan(files, y); },
+        bg: y === year ? "#005FA1" : "#fff", fg: y === year ? "#fff" : "#25272a", border: y === year ? "#005FA1" : "#c9cacc",
+      })),
+      exampleName: M.fileName(M.inputs[12], year),
+      year,
+      sourcingRows,
+      sourcingOpen,
+      sourcingToggle: sourcingOpen ? "Hide" : "Show",
+      toggleSourcing: () => this.setState({ sourcingOpen: !sourcingOpen }),
+      sourcingIntro: M.inputs.length + " files, all in one folder, named exactly as shown. The year at the start changes each year; a file used by more than one section is only needed once.",
+      folderRef: this.folderRef,
+      folderLabel: folder || "Choose folder\u2026",
+      folderHint: files ? files.length + " files found. Click to choose again after changing files." : "Pick the folder that holds this year\u2019s Word and Excel inputs.",
+      dropBorder: folder ? "#005FA1" : "#b9bbbe",
+      onPickFolder: (e) => {
+        const list = Array.from(e.target.files || []);
+        if (!list.length) return;
+        const name = (list[0].webkitRelativePath || "").split("/")[0] || "Selected folder";
+        this.setState({ files: list, folder: name });
+        this.scan(list, year);
+        e.target.value = "";
+      },
+      busy, fileCount: files ? files.length : 0,
+      hasResult: !!result && !busy,
+      inputSummary: result ? ok + " of " + M.inputs.length + " files usable" : "",
+      inputRows,
+      hasUnknown: !!(result && result.unknown.length),
+      unknownRows: result ? result.unknown : [],
+      sectionRows,
+      selectAll: setSel(() => true),
+      selectReady: setSel((s) => !!(states[s.id] && states[s.id].status === "ready")),
+      selectNone: setSel(() => false),
+      policies: [
+        { key: "skip", title: "Leave out sections with problems", body: "Only sections whose inputs pass every check are produced." },
+        { key: "anyway", title: "Produce them anyway", body: "Everything selected is produced. Use for proofs while inputs are still coming in." },
+      ].map((o) => ({ ...o, pick: () => this.setState({ policy: o.key }), border: policy === o.key ? "#005FA1" : "#d8d9db", bg: policy === o.key ? "#f2f7fb" : "#fff" })),
+      runSummary: count ? count + " section" + (count > 1 ? "s" : "") + ", " + pages + " pages, as one PDF." : "Nothing selected to produce.",
+      runNotes,
+      barSummary: !files ? "Choose the input folder to check files, then produce." : busy ? "Checking files\u2026" : runSummary0,
+      cannotProduce: !(count && ready),
+      produceBg: count && ready ? "#005FA1" : "#b9bbbe",
+      produceLabel: count === M.sections.length ? "Produce full report PDF" : "Produce PDF",
+      produce: () => this.produce(),
+      launched,
+    };
+  }
+}
+</script>
+</body>
+</html>

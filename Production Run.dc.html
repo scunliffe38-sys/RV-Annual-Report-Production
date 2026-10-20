@@ -38,11 +38,11 @@
     section.page { break-before: page; }
   }
 </style>
-<script src="./report-structure.js"></script>
-<script src="./production-bridge.js"></script>
+<script src="./report-structure.js?v=20261021"></script>
+<script src="./production-bridge.js?v=20261021"></script>
 <script src="./doc-page.js"></script>
 <script src="./image-slot.js"></script>
-<script src="./production-images.js"></script>
+<script src="./production-images.js?v=20261021"></script>
 </helmet>
 
 <div data-noprint="" style="position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #d8d9db;font-family:Arial,sans-serif">
@@ -127,7 +127,7 @@ class Component extends DCLogic {
       noRun: !run,
       heading: run ? "Annual Report " + run.year + (n >= 16 ? " \u2014 full report" : " \u2014 " + n + " section" + (n > 1 ? "s" : "")) : "Production run",
       subline: run ? "From folder \u201c" + (run.folder || "") + "\u201d \u00b7 prepared " + new Date(run.created).toLocaleString("en-AU") : "",
-      stateLabel: !run ? "" : ready ? "Ready" + (window.RV_FIN_BUILD ? " \u00b7 " + window.RV_FIN_BUILD : "") : "Laying out pages\u2026",
+      stateLabel: !run ? "" : ready ? "Ready" + (window.RV_FIN_BUILD ? " \u00b7 " + window.RV_FIN_BUILD : " \u00b7 OLD finance page") + (run && run.payload && run.payload.statements ? (run.payload.statements._build ? " \u00b7 data " + run.payload.statements._build : " \u00b7 OLD finance data, reload the Console and Produce again") : "") : "Laying out pages\u2026",
       stateColor: ready ? "#005FA1" : "#A51890",
       notReady: !ready,
       printBg: ready ? "#005FA1" : "#b9bbbe",

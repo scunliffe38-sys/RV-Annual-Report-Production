@@ -58,7 +58,7 @@ Browser tool (Chrome/Edge, no install). A producer picks a folder of the year's
 files in `Production Console.dc.html`, ticks sections and presses Produce. That
 opens `Production Run.dc.html`, which lays out the chosen sections; the producer
 waits for "Ready" and saves as PDF (Margins None, Background graphics on).
-Serve the folder over http (`python -m http.server`) and open `index.html`;
+Serve the folder with `python serve.py` (caching off; plain `python -m http.server` lets Chrome keep stale scripts) and open `index.html`;
 `file://` does not work because sections load content as modules.
 
 - `Production Console.dc.html` – UI. `production-manifest.js` lists the 16

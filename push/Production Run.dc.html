@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-MediumItalic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-BookItalic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: block; }
+  body { margin: 0; background: #e9eaeb; }
+  a { color: #005FA1; } a:hover { color: #EC008C; }
+  /* doc-page writes its own unnamed @page from whichever section syncs last
+     (Back Matter = A4 portrait), which shrank every spread onto A4. These
+     !important rules win regardless of order: spread is the default page,
+     named single pages for cover/back where Chrome honours them. */
+  @page { size: 1190.55pt 841.89pt !important; margin: 0 !important; }
+  @page single { size: 595.276pt 841.89pt !important; margin: 0 !important; }
+  @page spread { size: 1190.55pt 841.89pt !important; margin: 0 !important; }
+  section.page[style*="595.276pt"] { page: single; }
+  section.page[style*="1190.55pt"] { page: spread; }
+  /* The sheets sit in each section's doc-page shadow root, where Chrome does
+     not always carry a named page up from the slotted section, so name the
+     page on the host as well: the cover's doc-page prints portrait. */
+  doc-page[width="595.276pt"] { page: single; }
+  doc-page[width="1190.55pt"] { page: spread; }
+  @media print {
+    body { background: none; }
+    [data-noprint] { display: none !important; }
+    section.page { break-before: page; }
+  }
+</style>
+<script src="./report-structure.js?v=20261021"></script>
+<script src="./production-bridge.js?v=20261021"></script>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+<script src="./production-images.js?v=20261021"></script>
+</helmet>
+
+<div data-noprint="" style="position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #d8d9db;font-family:Arial,sans-serif">
+  <div style="height:5px;background:linear-gradient(90deg,#EC008C,#005FA1)"></div>
+  <div style="max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+    <div style="flex:1 1 360px;min-width:0">
+      <div style="font-size:18px;font-weight:700;color:#111">{{ heading }}</div>
+      <div style="font-size:13.5px;line-height:1.45;color:#6D6E71;margin-top:2px">{{ subline }}</div>
+    </div>
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:{{ stateColor }}">{{ stateLabel }}</div>
+    <button type="button" onClick="{{ print }}" disabled="{{ notReady }}" style="font-size:15px;font-weight:700;color:#fff;background:{{ printBg }};border:0;border-radius:8px;padding:12px 20px;cursor:pointer">Save as PDF</button>
+    <button type="button" onClick="{{ printSpreads }}" disabled="{{ notReady }}" style="font-size:13px;font-weight:700;color:{{ printBg }};background:#fff;border:2px solid {{ printBg }};border-radius:8px;padding:10px 14px;cursor:pointer">Spreads only (landscape)</button>
+    <button type="button" onClick="{{ printSingles }}" disabled="{{ notReady }}" style="font-size:13px;font-weight:700;color:{{ printBg }};background:#fff;border:2px solid {{ printBg }};border-radius:8px;padding:10px 14px;cursor:pointer">Single pages only (portrait)</button>
+  </div>
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px 12px;font-size:13px;color:#6D6E71">Like the FY25 report, the cover is a single portrait page and everything else is a landscape spread. If the PDF comes out with every page the same size, save the two parts separately with the buttons above and join them. In the print dialog: Destination <strong style="color:#25272a">Save as PDF</strong> &#183; Margins <strong style="color:#25272a">None</strong> &#183; <strong style="color:#25272a">Background graphics</strong> on.</div>
+</div>
+
+<sc-if value="{{ noRun }}" hint-placeholder-val="">
+  <div data-noprint="" style="max-width:640px;margin:60px auto;font-family:Arial,sans-serif;font-size:16px;line-height:1.5;color:#25272a;padding:0 24px">No production run found. Start one from the <a href="Production Console.dc.html">Production console</a>.</div>
+</sc-if>
+
+<sc-if value="{{ on.cover }}" hint-placeholder-val=""><dc-import name="Cover" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.contents }}" hint-placeholder-val=""><dc-import name="Contents" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.chair }}" hint-placeholder-val=""><dc-import name="Chair's Report" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.ceo }}" hint-placeholder-val=""><dc-import name="CEO's Report" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.kpi }}" hint-placeholder-val=""><dc-import name="KPI &amp; Industry Snapshot" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.racing }}" hint-placeholder-val=""><dc-import name="Racing &amp; Programming" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.awards }}" hint-placeholder-val=""><dc-import name="Racing Awards &amp; Feature Winners" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.owners }}" hint-placeholder-val=""><dc-import name="Owners &amp; Breeders + Infrastructure" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.workforce }}" hint-placeholder-val=""><dc-import name="Workforce Development" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.integrity }}" hint-placeholder-val=""><dc-import name="Integrity Services" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.welfare }}" hint-placeholder-val=""><dc-import name="Equine Welfare" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.wagering }}" hint-placeholder-val=""><dc-import name="Wagering" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.media }}" hint-placeholder-val=""><dc-import name="Media" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.industry }}" hint-placeholder-val=""><dc-import name="Industry &amp; Community Support" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.finance }}" hint-placeholder-val=""><dc-import name="Financial Report" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.back }}" hint-placeholder-val=""><dc-import name="Back Matter" hint-size="100%,841.89pt"></dc-import></sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { run: null, ready: false };
+
+  componentDidMount() {
+    let run = null;
+    try { run = JSON.parse(localStorage.getItem("rv-production-run") || "null"); } catch (e) {}
+    this.setState({ run });
+    if (!run) return;
+    if (window.RVImages) window.RVImages.apply();
+    const all = run.sections.length >= 16;
+    document.title = "RV Annual Report " + run.year + (all ? "" : " - " + run.sections.join(", "));
+    // Sections measure and flow their copy after fonts load; give them time to settle.
+    // A Finance document with notes takes much longer to lay out.
+    const settle = 2500 + run.sections.length * 400 + (run.sections.indexOf("finance") > -1 && run.payload && run.payload.notes ? 35000 : 0);
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+      this._t = setTimeout(() => this.setState({ ready: true }), settle);
+    });
+  }
+
+  // mode '' prints everything with each page at its own size (named @page rules);
+  // 'spreads' / 'singles' print only that kind, so the whole file has one size.
+  _print(mode) {
+    let css = '';
+    if (mode === 'spreads') css = '@page { size: 1190.55pt 841.89pt !important; margin: 0 !important } @page single { size: 1190.55pt 841.89pt !important } @page spread { size: 1190.55pt 841.89pt !important } @media print { section.page[style*="595.276pt"] { display: none !important } }';
+    if (mode === 'singles') css = '@page { size: 595.276pt 841.89pt !important; margin: 0 !important } @page single { size: 595.276pt 841.89pt !important } @page spread { size: 595.276pt 841.89pt !important } @media print { section.page[style*="1190.55pt"] { display: none !important } }';
+    const old = document.getElementById('rv-print-mode'); if (old) old.remove();
+    if (css) {
+      const s = document.createElement('style'); s.id = 'rv-print-mode'; s.textContent = css; document.head.appendChild(s);
+      window.addEventListener('afterprint', () => s.remove(), { once: true });
+    }
+    window.print();
+  }
+
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  renderVals() {
+    const { run, ready } = this.state;
+    const on = {};
+    (run ? run.sections : []).forEach((id) => { on[id] = true; });
+    const n = run ? run.sections.length : 0;
+    return {
+      on,
+      noRun: !run,
+      heading: run ? "Annual Report " + run.year + (n >= 16 ? " \u2014 full report" : " \u2014 " + n + " section" + (n > 1 ? "s" : "")) : "Production run",
+      subline: run ? "From folder \u201c" + (run.folder || "") + "\u201d \u00b7 prepared " + new Date(run.created).toLocaleString("en-AU") : "",
+      stateLabel: !run ? "" : ready ? "Ready" + (window.RV_FIN_BUILD ? " \u00b7 " + window.RV_FIN_BUILD : " \u00b7 OLD finance page") + (run && run.payload && run.payload.statements ? (run.payload.statements._build ? " \u00b7 data " + run.payload.statements._build : " \u00b7 OLD finance data, reload the Console and Produce again") : "") : "Laying out pages\u2026",
+      stateColor: ready ? "#005FA1" : "#A51890",
+      notReady: !ready,
+      printBg: ready ? "#005FA1" : "#b9bbbe",
+      print: () => this._print(''),
+      printSpreads: () => this._print('spreads'),
+      printSingles: () => this._print('singles'),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-MediumItalic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-BookItalic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+  /* Copy-fitting diagnostic: on screen for the editor, never on paper. */
+  @media print { .om-diag { display: none !important; } }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+<script src="./production-bridge.js"></script>
+<script src="./auditor-pages.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="28-29 Directors&#8217; Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:130.05pt;top:-148.93pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:-363.96pt;top:261.54pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:998.8pt;top:-462.46pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:862.23pt;top:63.56pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <svg style="position:absolute;left:52.69pt;top:99.94pt;width:315.81pt;height:50pt" viewBox="0 0 315.81 50" role="img" aria-label="Directors&#8217; Report"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37" fill="#005FA1">Directors&#8217; Report</text></svg>
+
+  <div style="position:absolute;left:56.69pt;top:160.99pt;width:481.89pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71">
+    <sc-for list="{{ intro }}" as="p" hint-placeholder-count="2">
+      <div style="margin:0 0 11.339pt">{{ p }}</div>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:55.69pt;top:{{ dirHeadTop }};width:300pt;font-weight:400;font-size:13pt;line-height:18pt;text-transform:uppercase;color:#005FA1">Current Directors</div>
+  <sc-if value="{{ dirHasRight }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:651.97pt;top:{{ dirHeadTop }};width:400pt;font-weight:400;font-size:13pt;line-height:18pt;text-transform:uppercase;color:#005FA1">Current Directors (continued)</div>
+  </sc-if>
+  <div style="position:absolute;left:651.97pt;top:{{ ceasedTop }};width:481.89pt">
+    <sc-for list="{{ ceased }}" as="c" hint-placeholder-count="0">
+      <sc-if value="{{ c.isTxt }}" hint-placeholder-val="">
+        <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71;padding-top:{{ c.pt }}">{{ c.text }}</div>
+      </sc-if>
+      <sc-if value="{{ c.isOff }}" hint-placeholder-val="">
+        <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71;padding-top:{{ c.pt }}"><span style="font-weight:700">{{ c.name }}</span> {{ c.rest }}</div>
+      </sc-if>
+    </sc-for>
+  </div>
+
+  <sc-for list="{{ dirCards }}" as="c" hint-placeholder-count="8">
+    <image-slot id="dir-{{ c.n }}" shape="circle" placeholder="Director {{ c.n }}" style="position:absolute;left:{{ c.x }}pt;top:{{ c.y }}pt;width:{{ c.p }}pt;height:{{ c.p }}pt"></image-slot>
+    <div style="position:absolute;left:{{ c.tx }}pt;top:{{ c.y }}pt;width:{{ c.tw }}pt;height:{{ c.h }}pt;overflow:hidden">
+      <div style="font-weight:700;font-size:8.5pt;line-height:11pt;letter-spacing:0.02em;color:#005FA1"><span style="text-transform:uppercase">{{ c.name }}</span>{{ c.roleLabel }}</div>
+      <div style="font-weight:500;font-size:6pt;line-height:9pt;letter-spacing:0.05em;text-transform:uppercase;color:#005FA1;margin:1pt 0 3pt">{{ c.appointed }}</div>
+      <sc-for list="{{ c.paras }}" as="p" hint-placeholder-count="2">
+        <div style="font-weight:400;font-size:{{ c.fs }}pt;line-height:{{ c.lh }}pt;letter-spacing:0;color:#6D6E71;margin:0 0 3pt">{{ p }}</div>
+      </sc-for>
+    </div>
+  </sc-for>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio0 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio1 }}</div>
+
+</section>
+
+<section class="page" data-screen-label="30-31 Directors&#8217; Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:130.05pt;top:-148.93pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:-363.96pt;top:261.54pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:998.8pt;top:-462.46pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:862.23pt;top:63.56pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <div data-column="f0" style="position:absolute;left:56.69pt;top:130.06pt;width:481.89pt;height:613.56pt;overflow:hidden">
+    <sc-for list="{{ f0 }}" as="b" hint-placeholder-count="9">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+  <div data-column="f1" style="position:absolute;left:651.97pt;top:130.06pt;width:481.89pt;height:613.56pt;overflow:hidden">
+    <sc-for list="{{ f1 }}" as="b" hint-placeholder-count="9">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio2 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio3 }}</div>
+
+</section>
+
+<section class="page" data-screen-label="32-33 Directors&#8217; Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:130.05pt;top:-148.93pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:-363.96pt;top:261.54pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:998.8pt;top:-462.46pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:862.23pt;top:63.56pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <div data-column="f2" style="position:absolute;left:56.69pt;top:130.06pt;width:481.89pt;height:623.95pt;overflow:hidden">
+    <sc-for list="{{ f2 }}" as="b" hint-placeholder-count="9">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+  <div data-column="f3" style="position:absolute;left:651.97pt;top:130.06pt;width:481.89pt;height:655.13pt;overflow:hidden">
+    <sc-for list="{{ f3 }}" as="b" hint-placeholder-count="9">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio4 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio5 }}</div>
+
+</section>
+
+<section class="page" data-screen-label="34-35 Directors&#8217; Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:130.05pt;top:-148.93pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:-363.96pt;top:261.54pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:998.8pt;top:-462.46pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:862.23pt;top:63.56pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <div data-column="f4" style="position:absolute;left:56.69pt;top:130.06pt;width:481.89pt;height:656.52pt;overflow:hidden">
+    <sc-for list="{{ f4 }}" as="b" hint-placeholder-count="9">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+  <div data-column="f5" style="position:absolute;left:651.97pt;top:130.06pt;width:481.89pt;height:643.54pt;overflow:hidden">
+    <sc-for list="{{ f5 }}" as="b" hint-placeholder-count="9">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio6 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio7 }}</div>
+
+</section>
+
+<section class="page" data-screen-label="36-37 Directors&#8217; Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:130.05pt;top:-148.93pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:-363.96pt;top:261.54pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:998.8pt;top:-462.46pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:862.23pt;top:63.56pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div data-column="f6" style="position:absolute;left:56.69pt;top:136.06pt;width:481.89pt;height:633.21pt;overflow:hidden">
+    <sc-for list="{{ f6 }}" as="b" hint-placeholder-count="9">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+  <div data-column="f7" style="position:absolute;left:651.97pt;top:136.06pt;width:481.89pt;height:633.21pt;overflow:hidden">
+    <sc-for list="{{ f7 }}" as="b" hint-placeholder-count="5">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ sigOn7 }}" hint-placeholder-val="{{ true }}">
+  <image-slot id="sig-chair-fin" shape="rect" fit="contain" placeholder="Chair signature" style="position:absolute;left:651.97pt;top:{{ sigTop }};width:55.54pt;height:49.1pt"></image-slot>
+  <div style="position:absolute;left:651.97pt;top:{{ sigTextTop }};width:161.57pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ sig0.name }}</span><br />{{ sig0.title }}<span style="display:block;margin-top:8pt">{{ sig0.place }}, {{ sig0.date }}</span></div>
+
+  <image-slot id="sig-ceo-fin" shape="rect" fit="contain" placeholder="CEO signature" style="position:absolute;left:837.61pt;top:{{ sigCeoTop }};width:104.44pt;height:48.63pt"></image-slot>
+  <div style="position:absolute;left:837.61pt;top:{{ sigTextTop }};width:218.05pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ sig1.name }}</span><br />{{ sig1.title }}<span style="display:block;margin-top:8pt">{{ sig1.place }}, {{ sig1.date }}</span></div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio8 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio9 }}</div>
+
+</section>
+
+<sc-if value="{{ hasExtra }}" hint-placeholder-val="">
+<section class="page" data-screen-label="38-39 Directors&#8217; Report (continued)" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div data-column="f8" style="position:absolute;left:56.69pt;top:136.06pt;width:481.89pt;height:633.21pt;overflow:hidden">
+    <sc-for list="{{ f8 }}" as="b" hint-placeholder-count="5">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+  <div data-column="f9" style="position:absolute;left:651.97pt;top:136.06pt;width:481.89pt;height:633.21pt;overflow:hidden">
+    <sc-for list="{{ f9 }}" as="b" hint-placeholder-count="5">
+      <dc-import name="ReportBlock" block="{{ b }}" hint-size="100%,44pt"></dc-import>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ sigOn8 }}" hint-placeholder-val="">
+  <image-slot id="sig-chair-fin" shape="rect" fit="contain" placeholder="Chair signature" style="position:absolute;left:56.69pt;top:{{ sigTop }};width:55.54pt;height:49.1pt"></image-slot>
+  <div style="position:absolute;left:56.69pt;top:{{ sigTextTop }};width:161.57pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ sig0.name }}</span><br />{{ sig0.title }}<span style="display:block;margin-top:8pt">{{ sig0.place }}, {{ sig0.date }}</span></div>
+  <image-slot id="sig-ceo-fin" shape="rect" fit="contain" placeholder="CEO signature" style="position:absolute;left:242.33pt;top:{{ sigCeoTop }};width:104.44pt;height:48.63pt"></image-slot>
+  <div style="position:absolute;left:242.33pt;top:{{ sigTextTop }};width:218.05pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ sig1.name }}</span><br />{{ sig1.title }}<span style="display:block;margin-top:8pt">{{ sig1.place }}, {{ sig1.date }}</span></div>
+  </sc-if>
+  <sc-if value="{{ sigOn9 }}" hint-placeholder-val="">
+  <image-slot id="sig-chair-fin" shape="rect" fit="contain" placeholder="Chair signature" style="position:absolute;left:651.97pt;top:{{ sigTop }};width:55.54pt;height:49.1pt"></image-slot>
+  <div style="position:absolute;left:651.97pt;top:{{ sigTextTop }};width:161.57pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ sig0.name }}</span><br />{{ sig0.title }}<span style="display:block;margin-top:8pt">{{ sig0.place }}, {{ sig0.date }}</span></div>
+  <image-slot id="sig-ceo-fin" shape="rect" fit="contain" placeholder="CEO signature" style="position:absolute;left:837.61pt;top:{{ sigCeoTop }};width:104.44pt;height:48.63pt"></image-slot>
+  <div style="position:absolute;left:837.61pt;top:{{ sigTextTop }};width:218.05pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ sig1.name }}</span><br />{{ sig1.title }}<span style="display:block;margin-top:8pt">{{ sig1.place }}, {{ sig1.date }}</span></div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioX0 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioX1 }}</div>
+
+</section>
+</sc-if>
+
+<section class="page" data-screen-label="38-39 Auditor&#8217;s Independence Declaration / Independent Auditor&#8217;s Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ hasKp0 }}" hint-placeholder-val=""><div style="position:absolute;left:{{ kp0.l }};top:{{ kp0.t }};width:{{ kp0.w }};height:{{ kp0.h }};overflow:hidden"><img src="{{ kp0.src }}" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%"><sc-for list="{{ kp0.text }}" as="w" hint-placeholder-count="0"><span style="position:absolute;left:{{ w.l }};top:{{ w.t }};font-family:Gotham;font-weight:400;font-size:{{ w.fs }};line-height:1;white-space:pre;color:rgba(246,246,246,0.01);transform:scaleX({{ w.sx }});transform-origin:0 0">{{ w.s }}</span></sc-for></div></sc-if><sc-if value="{{ kpmgImg0 }}" hint-placeholder-val=""><img src="{{ kpmgImg0 }}" alt="" style="position:absolute;left:10.3pt;top:56.69pt;width:528.28pt;height:620.79pt;object-fit:contain"></sc-if><sc-if value="{{ noKpmgImg0 }}" hint-placeholder-val="{{ true }}"><image-slot id="kpmg-independence-declaration" shape="rect" fit="contain" placeholder="KPMG Signed Independence Declaration &#8212; page 1" style="position:absolute;left:10.3pt;top:56.69pt;width:528.28pt;height:620.79pt"></image-slot></sc-if>
+  <div style="position:absolute;left:55.83pt;top:765.2pt;width:482.76pt;height:26.37pt;overflow:hidden;font-weight:400;font-size:5pt;line-height:6.5pt;letter-spacing:0.005em;color:#6D6E71">{{ kpmgFooter }}</div>
+
+  <sc-if value="{{ hasKp1 }}" hint-placeholder-val=""><div style="position:absolute;left:{{ kp1.l }};top:{{ kp1.t }};width:{{ kp1.w }};height:{{ kp1.h }};overflow:hidden"><img src="{{ kp1.src }}" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%"><sc-for list="{{ kp1.text }}" as="w" hint-placeholder-count="0"><span style="position:absolute;left:{{ w.l }};top:{{ w.t }};font-family:Gotham;font-weight:400;font-size:{{ w.fs }};line-height:1;white-space:pre;color:rgba(246,246,246,0.01);transform:scaleX({{ w.sx }});transform-origin:0 0">{{ w.s }}</span></sc-for></div></sc-if><sc-if value="{{ kpmgImg1 }}" hint-placeholder-val=""><img src="{{ kpmgImg1 }}" alt="" style="position:absolute;left:634.73pt;top:35.63pt;width:494.79pt;height:688.15pt;object-fit:contain"></sc-if><sc-if value="{{ noKpmgImg1 }}" hint-placeholder-val="{{ true }}"><image-slot id="kpmg-audit-report-1" shape="rect" fit="contain" placeholder="KPMG Signed Audit Report &#8212; page 1" style="position:absolute;left:634.73pt;top:35.63pt;width:494.79pt;height:688.15pt"></image-slot></sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio10 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio11 }}</div>
+
+</section>
+
+<section class="page" data-screen-label="40-41 Independent Auditor&#8217;s Report / Directors&#8217; Declaration" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ hasKp2 }}" hint-placeholder-val=""><div style="position:absolute;left:{{ kp2.l }};top:{{ kp2.t }};width:{{ kp2.w }};height:{{ kp2.h }};overflow:hidden"><img src="{{ kp2.src }}" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%"><sc-for list="{{ kp2.text }}" as="w" hint-placeholder-count="0"><span style="position:absolute;left:{{ w.l }};top:{{ w.t }};font-family:Gotham;font-weight:400;font-size:{{ w.fs }};line-height:1;white-space:pre;color:rgba(246,246,246,0.01);transform:scaleX({{ w.sx }});transform-origin:0 0">{{ w.s }}</span></sc-for></div></sc-if><sc-if value="{{ kpmgImg2 }}" hint-placeholder-val=""><img src="{{ kpmgImg2 }}" alt="" style="position:absolute;left:39.66pt;top:43.74pt;width:491.92pt;height:741.45pt;object-fit:contain"></sc-if><sc-if value="{{ noKpmgImg2 }}" hint-placeholder-val="{{ true }}"><image-slot id="kpmg-audit-report-2" shape="rect" fit="contain" placeholder="KPMG Signed Audit Report &#8212; page 2" style="position:absolute;left:39.66pt;top:43.74pt;width:491.92pt;height:741.45pt"></image-slot></sc-if>
+
+  <svg style="position:absolute;left:647.97pt;top:71.15pt;width:495.23pt;height:50pt" viewBox="0 0 495.23 50" role="img" aria-label="Directors&#8217; Declaration"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37" fill="#005FA1">Directors&#8217; Declaration</text></svg>
+
+  <div style="position:absolute;left:651.97pt;top:133.33pt;width:481.89pt;height:199.01pt;overflow:hidden;color:#6D6E71">
+    <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;padding:0 0 2.835pt">{{ decLead }}</div>
+    <sc-for list="{{ decItems }}" as="it" hint-placeholder-count="6">
+      <div style="display:grid;grid-template-columns:22.677pt 1fr;margin-left:{{ it.ml }};padding:0 0 2.835pt">
+        <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em">{{ it.marker }}</div>
+        <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em">{{ it.text }}</div>
+      </div>
+    </sc-for>
+    <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;padding:5.669pt 0 2.835pt">{{ decClose }}</div>
+  </div>
+
+  <image-slot id="sig-chair-fin" shape="rect" fit="contain" placeholder="Chair signature" style="position:absolute;left:651.97pt;top:332.34pt;width:55.54pt;height:49.1pt"></image-slot>
+  <div style="position:absolute;left:652.71pt;top:381.71pt;width:161.57pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ sig0.name }}</span><br />{{ sig0.title }}<span style="display:block;margin-top:8pt">{{ sig0.place }}, {{ sig0.date }}</span></div>
+
+  <image-slot id="sig-ceo-fin" shape="rect" fit="contain" placeholder="CEO signature" style="position:absolute;left:838.35pt;top:334.18pt;width:93.54pt;height:43.56pt"></image-slot>
+  <div style="position:absolute;left:838.35pt;top:381.71pt;width:218.05pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ sig1.name }}</span><br />{{ sig1.title }}<span style="display:block;margin-top:8pt">{{ sig1.place }}, {{ sig1.date }}</span></div>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio12 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio13 }}</div>
+
+</section>
+
+<section class="page" data-screen-label="42-43 Consolidated Statement of Surplus or Deficit" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <image-slot id="fin-divider-photo" shape="rect" mask="circle(794.3pt at -200.05pt 420.93pt)" placeholder="Financial statements divider photograph" style="position:absolute;left:0;top:0;width:595.28pt;height:841.89pt"></image-slot>
+
+  <div style="position:absolute;left:130.05pt;top:-148.92pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:998.8pt;top:-462.46pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:862.23pt;top:63.56pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <div style="position:absolute;left:649.97pt;top:58.38pt;width:495.23pt;height:138.49pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1">{{ stSurplus.heading }}</div>
+  <div style="position:absolute;left:651.97pt;top:206.64pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stSurplus.dateline }}</div>
+  <div style="position:absolute;left:651.97pt;top:237.79pt;width:481.89pt;height:550.24pt;overflow:hidden">
+    <dc-import name="StatementTable" table="{{ stSurplus }}" hint-size="100%,550pt"></dc-import>
+    <sc-for list="{{ stSurplus.footnotes }}" as="fn" hint-placeholder-count="0">
+      <div style="display:grid;grid-template-columns:17.008pt 1fr;margin-top:8.504pt;font-weight:400;font-size:6.5pt;line-height:10.027pt;color:#6D6E71"><div>{{ fn.mk }}</div><div>{{ fn.t }}</div></div>
+    </sc-for>
+    <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
+  </div>
+
+  <div style="position:absolute;left:-14.17pt;top:822.05pt;width:1213.23pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio15 }}</div>
+
+</section>
+
+<section class="page" data-screen-label="44-45 Financial Position / Cash Flows" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:130.05pt;top:-148.92pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+
+  <div style="position:absolute;left:55.69pt;top:58.38pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;text-wrap:balance">{{ stPosition.heading }}</div>
+  <div style="position:absolute;left:56.69pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stPosition.dateline }}</div>
+  <div style="position:absolute;left:56.69pt;top:191.73pt;width:481.89pt;height:600pt;overflow:hidden">
+    <dc-import name="StatementTable" table="{{ stPosition }}" hint-size="100%,573pt"></dc-import>
+    <sc-for list="{{ stPosition.footnotes }}" as="fn" hint-placeholder-count="0">
+      <div style="display:grid;grid-template-columns:17.008pt 1fr;margin-top:8.504pt;font-weight:400;font-size:6.5pt;line-height:10.027pt;color:#6D6E71"><div>{{ fn.mk }}</div><div>{{ fn.t }}</div></div>
+    </sc-for>
+    <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
+  </div>
+
+  <div style="position:absolute;left:650.3pt;top:58.38pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;text-wrap:balance">{{ stCashflows.heading }}</div>
+  <div style="position:absolute;left:651.8pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stCashflows.dateline }}</div>
+  <div style="position:absolute;left:651.8pt;top:191.73pt;width:481.89pt;height:620.39pt;overflow:hidden">
+    <dc-import name="StatementTable" table="{{ stCashflows }}" hint-size="100%,620pt"></dc-import>
+    <sc-for list="{{ stCashflows.footnotes }}" as="fn" hint-placeholder-count="0">
+      <div style="display:grid;grid-template-columns:17.008pt 1fr;margin-top:8.504pt;font-weight:400;font-size:6.5pt;line-height:10.027pt;color:#6D6E71"><div>{{ fn.mk }}</div><div>{{ fn.t }}</div></div>
+    </sc-for>
+    <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
+  </div>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio16 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio17 }}</div>
+
+</section>
+
+<section class="page" data-screen-label="46-47 Changes in Equity / Notes to the Financial Statements" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-for list="{{ nh0 }}" as="fr" hint-placeholder-count="2">
+    <div style="position:absolute;left:{{ fr.l }};top:{{ fr.t }};width:{{ fr.w }};height:{{ fr.h }};overflow:hidden">
+      <sc-for list="{{ fr.blocks }}" as="b" hint-placeholder-count="1">
+        <dc-import name="NoteBlock" block="{{ b }}" hint-size="100%,40pt"></dc-import>
+      </sc-for>
+    </div>
+  </sc-for>
+
+  <div style="position:absolute;left:651.97pt;top:193.43pt;width:481.89pt;height:549.25pt;overflow:hidden">
+    <sc-for list="{{ nf0 }}" as="b" hint-placeholder-count="8">
+      <dc-import name="NoteBlock" block="{{ b }}" hint-size="100%,24pt"></dc-import>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:55.69pt;top:58.38pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;text-wrap:balance">{{ stEquity.heading }}</div>
+  <div style="position:absolute;left:56.69pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stEquity.dateline }}</div>
+  <div style="position:absolute;left:56.69pt;top:192.24pt;width:481.89pt;height:296.71pt;overflow:hidden">
+    <dc-import name="StatementTable" table="{{ stEquity }}" hint-size="100%,296pt"></dc-import>
+    <sc-for list="{{ stEquity.footnotes }}" as="fn" hint-placeholder-count="0">
+      <div style="display:grid;grid-template-columns:17.008pt 1fr;margin-top:8.504pt;font-weight:400;font-size:6.5pt;line-height:10.027pt;color:#6D6E71"><div>{{ fn.mk }}</div><div>{{ fn.t }}</div></div>
+    </sc-for>
+    <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
+  </div>
+
+  <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio18 }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folio19 }}</div>
+
+</section>
+
+<sc-for list="{{ noteSpreads }}" as="sp" hint-placeholder-count="18">
+  <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+    <sc-for list="{{ sp.circles }}" as="ci" hint-placeholder-count="0">
+      <div style="position:absolute;left:{{ ci.l }};top:{{ ci.t }};width:{{ ci.d }};height:{{ ci.d }};border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    </sc-for>
+
+    <sc-for list="{{ sp.frames }}" as="fr" hint-placeholder-count="2">
+      <div style="position:absolute;left:{{ fr.l }};top:{{ fr.t }};width:{{ fr.w }};height:{{ fr.h }};overflow:hidden">
+        <sc-for list="{{ fr.blocks }}" as="b" hint-placeholder-count="8">
+          <dc-import name="NoteBlock" block="{{ b }}" hint-size="100%,24pt"></dc-import>
+        </sc-for>
+      </div>
+    </sc-for>
+
+    <div style="position:absolute;left:-8.5pt;top:822.05pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+    <sc-if value="{{ sp.showL }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.folioL }}</div>
+    <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+    </sc-if>
+    <sc-if value="{{ sp.showR }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+    <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.folioR }}</div>
+    </sc-if>
+
+  </section>
+</sc-for>
+
+<sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+  <div class="om-diag" style="position:fixed;left:0;bottom:0;width:100%;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box;z-index:50">
+    <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+    <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+  </div>
+</sc-if>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioStart&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:28,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;footYear&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:2025,&quot;min&quot;:2020,&quot;max&quot;:2040,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Directors' Report, pp. 28-37. Frame geometry read from the FY25 IDML
+// (Spreads u13377 / u1351e / u13590 / u1371c / u1377b), converted to
+// DPS page coordinates with x + 595.276, y + 420.945.
+//
+// pp. 28-29 are fixed: eight director cards at their published positions.
+// pp. 30-37 are a single story poured through eight frames, so FY26 copy of a
+// different length re-breaks by itself instead of needing the layout redrawn.
+const FRAMES = [
+  { width: 481.89, height: 613.56 },
+  { width: 481.89, height: 613.56 },
+  { width: 481.89, height: 623.95 },
+  { width: 481.89, height: 655.13 },
+  { width: 481.89, height: 656.52 },
+  // IDML frame runs to 912 (overset); capped at the text foot.
+  { width: 481.89, height: 643.54 },
+  { width: 481.89, height: 633.21 },
+  // Stops above the signature block.
+  { width: 481.89, height: 633.21 },
+  // Spill spread (pp. 38-39 of a long year): only used when the copy outgrows pp. 30-37.
+  { width: 481.89, height: 633.21 },
+  { width: 481.89, height: 633.21 },
+];
+
+// A4 V:Body — 5.669 before + 2.835 after. A4 V:Bullets Body — 2.835 + 11.339.
+// Blocks space themselves with padding, not margin, so nothing collapses and
+// these numbers are exactly what the frame will render.
+// A4 V:Subhead Small (and Large, which inherits it) — 14.173 before + 2.835
+// after. A4 V:Body — 5.669 + 2.835. A4 V:Bullets Body — 2.835 + 11.339 outside
+// the list, 5.669 between siblings.
+const SPACE = { body: 8.504, subhead: 17.008, minihead: 17.008, note: 8, officer: 8.504, table: 14, attendance: 14, diagram: 14 };
+const BULLET_TOP = 2.835, BULLET_BOTTOM = 11.339, BULLET_BETWEEN = 5.669;
+// FY25 ticked lists: 24pt pitch, first tick 27.5pt below the intro baseline.
+const TICK_TOP = 12.335, TICK_BOTTOM = 17.008, TICK_BETWEEN = 12;
+const FOOT_CLEARANCE = 7;
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+// Row metrics from the IDML tables.
+const T_HEAD_H = 27.73, T_ROW_H = 15.01;
+const DIAGRAM_H = 300;
+// Row tint used across the FY25 tables (light RV Blue on the 4% ground).
+const BAND_BG = '#E4ECF5';
+const UNBREAKABLE = { sig: 1, subhead: 1, minihead: 1, table: 1, attendance: 1, diagram: 1 };
+
+// ---- Notes to the Financial Statements, pp. 47-83 -------------------------
+// 39 stories poured into 55 page-anchored frames. All but three stories sit in
+// a single frame, so only u13ab7 (47-50), u13d8d (67-69) and u13de1 (71-82)
+// are flowed; every table fits its frame whole in the source, and the flow
+// falls back to splitting a table at a row boundary if FY26 data makes one
+// taller than the frame it lands in.
+const NOTE_CELL_PAD_V = 2.5, NOTE_CELL_PAD_H = 4.252;
+const NOTE_RULE = '#005FA1';
+// Dotted display rings, DPS coordinates, keyed by the left page of the spread.
+const NOTE_CIRCLES = {
+  54: [{ l: 998.8, t: -462.47, d: 581.79 }, { l: -363.96, t: 261.54, d: 581.79 }, { l: 862.24, t: 63.57, d: 824.3 }],
+  82: [{ l: 998.8, t: -462.47, d: 581.79 }, { l: 862.24, t: 63.57, d: 824.3 }, { l: 130.05, t: -148.93, d: 581.79 }],
+};
+const NOTE_LABELS = { 82: '82-83 Notes / Consolidated Entity Disclosure Statement' };
+// Master spread u7538 puts the section heading and dateline on every notes
+// page; only pp. 52, 54, 55, 82 and 83 override them on the page itself.
+const NOTE_RUNNING_HEAD = 'Notes to the financial statements';
+const NOTE_RUNNING_DATE = 'for the year ended 30 June 2025';
+// Placed so the heading baseline sits at 91.6pt on both pages, level with the statements (FY25).
+const NOTE_HEAD_BOX = { left: { x: 54.69, y: 58.87 }, right: { x: 650.3, y: 58.87 } };
+const NOTE_DATE_BOX = { left: { x: 56.69, y: 156.42 }, right: { x: 651.97, y: 156.42 } };
+// Folio row from the same master. Where a note's own frame runs into it the
+// published report drops the folio rather than the copy - p55 in FY25 - so on
+// any page whose notes copy reaches the row, the whole folio row (page number
+// and running footer) is left off that page.
+const NOTE_FOLIO_TOP = 798.87;
+// How far a table's footnotes may run past the frame foot (to above the foot band).
+const NOTE_FOOT_EXT = 30;
+// Header rows repeat when a table is forced to split across frames.
+const NOTE_HEADER_PS = { 'Table:Table Header': 1, 'Table:Table Header 2': 1 };
+// House rule: text that follows a table sits at least this far below it, so
+// the table's last row and the first line of the note never read as one block.
+// 8.504pt (3mm) is about two-thirds of a 12pt line.
+const TABLE_TEXT_GAP = 8.504;
+// A table that brings its own header bars part-way down a page stands clear
+// of what is above it (FY25 p.67, 18. Remuneration of Auditors).
+const BAND_GAP = 22.677;
+const hasBand = b => b && b.k === 't' && b.rows.length > 0 && b.rows[0].c.some(c => c && NOTE_HEADER_PS[c.s]);
+// A note title that opens a table under shared bars gets a line's space above it.
+const TITLE_GAP = 12;
+const titleFirst = b => b && b.k === 't' && b.rows.length > 0 && b.rows[0].c.length > 0 && b.rows[0].c.every(c => c && c.s === 'A4 V:Subhead Large');
+const tableGap = (b, prev) => prev && prev.k === 'p' && prev.s === 'A4 V:Subhead Large' ? 0 : hasBand(b) ? BAND_GAP : titleFirst(b) ? TITLE_GAP : 0;
+// Two-column footnotes (FY25 p.53): second column's marker at 898.9pt.
+const FOOT_COL_GAP = 11.9, FOOT_MCOL = 17.008;
+
+// Hidden/background loads (print export, off-screen iframes) never fire
+// requestAnimationFrame, which would park the flow chain forever, so fall back
+// to a timer when the document is hidden.
+const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
+
+class Component extends DCLogic {
+  state = { sigTop: 144.06, sigFrame: 7, dirLayout: { cards: [], headTop: 254.95, ceasedTop: 0 }, frames: [[], [], [], [], [], [], [], [], [], []], baseIdx: 0, leftover: [], copy: null, statements: null, notes: null, noteLeftover: 0 };
+
+  componentDidMount() {
+    // Shown on the Production Run bar so a run can be checked against the latest files.
+    window.RV_FIN_BUILD = 'page 21 Oct 2026';
+    (window.RVProduction ? window.RVProduction.load('directors-report', () => import('./copy/directors-report.js')) : import('./copy/directors-report.js'))
+      .then(m => window.RVAuditor ? window.RVAuditor.pages(((m.copy || {}).kpmg) || {}) : null)
+      .then(a => { if (a) this.setState({ auditor: a }); })
+      .catch(e => console.error('Auditor pages could not be drawn', e));
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    TICK(nudge);
+
+    (window.RVProduction ? window.RVProduction.load('statements', () => import('./copy/statements.js')) : import('./copy/statements.js'))
+      .then(m => this.setState({ statements: m.statements }))
+      .catch(e => console.error('copy/statements.js failed to load', e));
+
+    import('./copy/notes.js')
+      .then(m => {
+        const ov = window.RVProduction && window.RVProduction.get('notes');
+        return ov && ov.flow ? { styles: m.styles, frames: [], stories: ov.stories, flow: true, year: ov.year } : m;
+      })
+      .then(m => Promise.all(['400','500','700','italic 400','italic 700'].map(w => document.fonts.load(w + ' 9pt "Gotham"').catch(() => null)))
+        .then(() => document.fonts.ready).catch(() => null).then(() => m))
+      .then(m => this._whenMeasurable().then(() => {
+        const built = this._buildNotes(m);
+        this.setState({ notes: built.pages, noteLeftover: built.leftover, noteClash: built.clash, noteMax: built.maxPg, noteFlow: !!m.flow, noteYear: m.year }, () => {
+          nudge();
+          TICK(nudge);
+        });
+      }))
+      .catch(e => console.error('copy/notes.js failed to load', e));
+
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('directors-report', () => import('./copy/directors-report.js')) : import('./copy/directors-report.js')),
+      document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
+        .then(() => document.fonts.ready).catch(() => null),
+    ])
+      .catch(e => { console.error('copy/directors-report.js failed to load', e); throw e; })
+      .then(([m]) => this._whenMeasurable().then(() => {
+        try {
+          const r = this.settle(this._markLists(m.copy.narrative).concat([{ kind: 'sig' }]), m.copy);
+          const place = this._sigPlace(r);
+          this.setState(Object.assign({ copy: m.copy, dirLayout: this._layoutDirectors(m.copy.directors || [], m.copy.intro, m.copy.ceased), frames: r.frames.map(f => f.filter(i => i.kind !== 'sig')), baseIdx: r.baseIdx, leftover: r.leftover.filter(i => i.kind !== 'sig') }, place));
+        } catch (e) {
+          console.error('Directors\u2019 Report: flow failed', e);
+          // Show the copy unbroken rather than an empty document.
+          this.setState({ copy: m.copy, dirLayout: this._layoutDirectors(m.copy.directors || [], m.copy.intro, m.copy.ceased), frames: [this._markLists(m.copy.narrative), [], [], [], [], [], [], [], [], []] });
+        }
+      }));
+  }
+
+  // A probe attached before the sheet has been laid out measures 0, which makes
+  // every paragraph look weightless and pours the whole story into frame one.
+  //
+  // Retries are timer-driven, not requestAnimationFrame-driven: rAF is throttled
+  // to a crawl (or paused outright) in a backgrounded or offscreen iframe, which
+  // left this promise unsettled and the whole document blank. The deadline is
+  // wall-clock, so it always resolves.
+  _whenMeasurable(deadline) {
+    const until = deadline || (Date.now() + 3000);
+    const p = this._probe(200, '0');
+    p.host.style.fontSize = '9pt';
+    p.host.style.lineHeight = '12pt';
+    p.node.data = 'Measure';
+    const h = p.host.getBoundingClientRect().height;
+    p.host.remove();
+    if (h > 0) return Promise.resolve();
+    if (Date.now() >= until) {
+      console.warn('Directors\u2019 Report: layout never became measurable \u2014 frames may not break correctly.');
+      return Promise.resolve();
+    }
+    return new Promise(res => setTimeout(res, 32)).then(() => this._whenMeasurable(until));
+  }
+
+  // InDesign applies SameParaStyleSpacing between consecutive paragraphs of
+  // one style INSTEAD of SpaceAfter + SpaceBefore, so bullets inside a list sit
+  // tighter than the list's outer spacing.
+  _markLists(items) {
+    return items.map((b, i) => {
+      if (b.kind !== 'bullet') return b;
+      const prev = items[i - 1], next = items[i + 1];
+      // FY25: ticked lists hang from the margin (tick, 17pt, italic text);
+      // bullets indent one step with the text 14pt after the bullet.
+      // Word's list level is not carried over: FY25 sets every list at one indent.
+      const tick = !!b.tick, lvl = 0;
+      const bml = tick ? 5.669 : 22.677 * (1 + lvl), bcol = tick ? 17.008 : 14.173;
+      return Object.assign({}, b, {
+        bFirst: !prev || prev.kind !== 'bullet',
+        bLast: !next || next.kind !== 'bullet',
+        bml, bcol, bInd: bml + bcol,
+      });
+    });
+  }
+
+  settle(items, copy) {
+    // First choice: the copy and signatures inside pp. 30-37, tightening the
+    // tracking a step at a time. Only if no step manages that does the spill
+    // spread (pp. 38-39) come in.
+    // Paragraphs are kept whole (moved to the next column) wherever that
+    // still fits pp. 30-37; only failing that are they split between columns.
+    // Splits are allowed one column foot at a time, at the foot left emptiest
+    // by keeping paragraphs whole, until the copy fits. The tracking step
+    // needing fewest splits wins (ties go to the looser tracking).
+    const fits = a => !a.leftover.length && !a.frames[8].length && !a.frames[9].length;
+    // Headings always follow FY25's rule: no heading with only a few lines
+    // under it at a column foot (Test 10, "Revenue" on p.32). If that cannot
+    // fit pp. 30-37 even with the tighter tick spacing, the spill spread takes
+    // the overflow rather than the rule giving way.
+    for (const [strictHeads, compactTicks] of [[true, false], [true, true]]) {
+    this._compactTicks = compactTicks;
+    let best = null;
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const split = FRAMES.map(() => false);
+      for (let n = 0; n < 8; n++) {
+        if (best && n >= best.n) break;
+        const attempt = this.flow(items, baseIdx, copy, split, strictHeads);
+        if (fits(attempt)) { best = { attempt, baseIdx, n }; break; }
+        let worst = -1, gap = -1;
+        for (let c = 0; c < 7; c++) {
+          if (split[c] || !attempt.frames[c].length) continue;
+          const g = FRAMES[c].height - attempt.used[c];
+          if (g > gap) { gap = g; worst = c; }
+        }
+        if (worst < 0) break;
+        split[worst] = true;
+      }
+      if (best && best.n === 0) break;
+    }
+    if (best) {
+      if (best.baseIdx || best.n || !strictHeads) console.warn('Directors\u2019 Report: fitted pp. 30-37 at tracking ' + TRACKING[best.baseIdx] + ', ' + best.n + ' paragraph split(s)' + (strictHeads ? '' : ', short heading runs allowed at column feet') + (compactTicks ? ', tick list at bullet spacing' : '') + '.');
+      return Object.assign(best.attempt, { baseIdx: best.baseIdx });
+    }
+    }
+    this._compactTicks = true;
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const attempt = this.flow(items, baseIdx, copy, null, true);
+      if (!attempt.leftover.length) {
+        console.warn('Directors\u2019 Report: fitted at tracking ' + TRACKING[baseIdx] +
+          ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
+        return Object.assign(attempt, { baseIdx });
+      }
+    }
+    const last = this.flow(items, TRACKING.length - 1, copy, null, true);
+    console.warn('Directors\u2019 Report: ' + last.leftover.length +
+      ' block(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+    return Object.assign(last, { baseIdx: TRACKING.length - 1 });
+  }
+
+  _probe(widthPt, track) {
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;contain:layout style;box-sizing:border-box;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;letter-spacing:' + track;
+    document.body.appendChild(host);
+    const node = document.createTextNode('');
+    host.appendChild(node);
+    return { host, node };
+  }
+
+  _style(host, item) {
+    const k = item.kind;
+    host.style.fontWeight = '400';
+    // A4 V:Subhead Large 13/18; A4 V:Body Heading Bold 11/18 Medium; body 9/12.
+    host.style.fontSize = k === 'subhead' ? '13pt' : (k === 'minihead' ? '11pt' : (k === 'note' ? '7pt' : '9pt'));
+    host.style.lineHeight = (k === 'subhead' || k === 'minihead') ? '18pt' : (k === 'note' ? '9pt' : '12pt');
+    host.style.fontWeight = k === 'minihead' ? '500' : '400';
+    // Bullets render as a 22.677pt marker column + text column (A4 V:Body
+    // Single Indent). Probing at the same inset measures the text column
+    // exactly, with no marker glyph and no hanging indent to keep in step.
+    host.style.paddingLeft = k === 'bullet' ? (item.bInd || 36.85) + 'pt' : '0';
+    host.style.textIndent = '0';
+    host.style.fontStyle = k === 'bullet' && item.tick ? 'italic' : 'normal';
+    if (k === 'bullet' && item.tick) host.style.fontWeight = '500';
+  }
+
+  _space(item) {
+    if (item.kind !== 'bullet') return SPACE[item.kind] || SPACE.body;
+    if (item.tick && !this._compactTicks) return ((item.bFirst && !item.cont) ? TICK_TOP : 0) + (item.bLast ? TICK_BOTTOM : TICK_BETWEEN);
+    return ((item.bFirst && !item.cont) ? BULLET_TOP : 0) +
+           (item.bLast ? BULLET_BOTTOM : BULLET_BETWEEN);
+  }
+
+  // Space-before is suppressed at the top of a frame, as in InDesign.
+  _topSpace(item) {
+    const k = item.kind;
+    if (k === 'subhead' || k === 'minihead') return 14.173;
+    if (k === 'bullet') return (item.bFirst && !item.cont) ? (item.tick && !this._compactTicks ? TICK_TOP : BULLET_TOP) : 0;
+    if (k === 'table' || k === 'attendance' || k === 'diagram') return 14;
+    if (k === 'note') return 4;
+    return 5.669;
+  }
+
+  // Blocks with no text measure arithmetically off their row metrics.
+  _fixedHeight(item) {
+    if (item.kind === 'table') {
+      // A label too long for its column wraps; count the extra lines.
+      let h = T_HEAD_H;
+      item.tableRows.slice(1).forEach(r => { h += T_ROW_H + Math.max(0, Math.ceil(((r.label || '').length + 1) / 58) - 1) * 12; });
+      return h;
+    }
+    // Group rule row + 2pt gap + header row + body rows.
+    if (item.kind === 'attendance') return 18 + 34 + (item.rows || item.bodyRows).length * T_ROW_H;
+    if (item.kind === 'sig') return 85;
+    if (item.kind === 'diagram') return item.src ? item.h * Math.min(1, 481.89 / item.w) * (item.scale || 1) : DIAGRAM_H;
+    return null;
+  }
+
+  flow(items, baseIdx, copy, keep, strictHeads) {
+    const frames = FRAMES.map(() => []);
+    const used = FRAMES.map(() => 0);
+    let sigAt = null;
+    const track = TRACKING[baseIdx];
+    let queue = items.map(i => Object.assign({}, i));
+
+    for (let c = 0; c < FRAMES.length; c++) {
+      const probe = this._probe(FRAMES[c].width, track);
+      const host = probe.host, node = probe.node;
+      const capPx = (FRAMES[c].height - FOOT_CLEARANCE) / 0.75;
+      let usedPx = 0;
+      const hts = [];
+
+      while (queue.length) {
+        const item = queue[0];
+        const fixed = this._fixedHeight(item);
+        const lead = usedPx === 0 ? this._topSpace(item) : 0;
+        let hPx;
+        if (fixed !== null) {
+          hPx = (fixed + this._space(item) - lead) / 0.75;
+        } else {
+          this._style(host, item);
+          node.data = item.text;
+          hPx = host.getBoundingClientRect().height + (this._space(item) - lead) / 0.75;
+        }
+
+        if (usedPx + hPx <= capPx) {
+          if (item.kind === 'sig') sigAt = { c, y: usedPx * 0.75 };
+          frames[c].push(Object.assign({}, item));
+          hts.push(hPx);
+          queue.shift();
+          usedPx += hPx;
+          continue;
+        }
+        // The diagram stays with the copy that introduces it: rather than jump
+        // a page it sets down to 70% of its width to fit the space left.
+        if (item.kind === 'diagram' && item.src && !item.scale && frames[c].length) {
+          const full = this._fixedHeight(item), room = (capPx - usedPx) * 0.75 - (this._space(item) - lead);
+          if (room >= full * 0.7) { queue[0] = Object.assign({}, item, { scale: Math.floor(room / full * 100) / 100 }); continue; }
+        }
+        // Headings, tables and the diagram move to the next frame whole.
+        if (UNBREAKABLE[item.kind]) break;
+        // Keep paragraphs whole: move to the next column if it holds them.
+        if (keep && !keep[c] && frames[c].length && c < FRAMES.length - 1 &&
+            hPx <= (FRAMES[c + 1].height - FOOT_CLEARANCE) / 0.75) break;
+
+        const availPx = capPx - usedPx;
+        const prefix = 0;
+        const len = node.data.length;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = prefix, hi = len, best = prefix;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        let offset = best - prefix;
+        if (offset > 0 && offset < item.text.length) {
+          const space = item.text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        if (offset > 0) {
+          frames[c].push(Object.assign({}, item, { text: item.text.slice(0, offset).trimEnd() }));
+          hts.push(availPx);
+          const rest = item.text.slice(offset).trimStart();
+          if (rest) queue[0] = Object.assign({}, item, { text: rest, cont: true });
+          else queue.shift();
+        }
+        break;
+      }
+      // Keep with next: a heading must not sit at the foot of a frame alone or
+      // with only a few lines under it while its section carries on overleaf
+      // (FY25 starts such a section in the next column).
+      if (c < FRAMES.length - 1 && queue.length) {
+        const isHead = it => it.kind === 'subhead' || it.kind === 'minihead';
+        let h = frames[c].length - 1;
+        while (h >= 0 && !isHead(frames[c][h])) h--;
+        if (h > 0) {
+          const after = hts.slice(h + 1).reduce((a, b) => a + b, 0) * 0.75;
+          if ((strictHeads && after < 48 && !isHead(queue[0])) || h === frames[c].length - 1) {
+            const moved = frames[c].splice(h), mh = hts.splice(h);
+            usedPx -= mh.reduce((a, b) => a + b, 0);
+            // A paragraph split across the break is rejoined.
+            if (queue[0] && queue[0].cont && moved.length && moved[moved.length - 1].kind === queue[0].kind && moved[moved.length - 1].text) {
+              const tail = moved.pop();
+              queue[0] = Object.assign({}, queue[0], { text: tail.text + ' ' + queue[0].text, cont: tail.cont });
+            }
+            queue.unshift(...moved);
+          }
+        }
+      }
+      used[c] = usedPx * 0.75;
+      host.remove();
+    }
+    return { frames, leftover: queue, used, sigAt };
+  }
+
+  // Where the signature block landed: straight after the last of the copy.
+  _sigPlace(r) {
+    const c = r.sigAt ? r.sigAt.c : 9, y = r.sigAt ? r.sigAt.y : 0;
+    return c < 7 ? { sigFrame: 7, sigTop: 136.06 + 8 } : { sigFrame: c, sigTop: 136.06 + y + 8 };
+  }
+
+  // Director cards: the board is spread over the two pages of the spread, in
+  // order, however many there are. Cards are sized to their biography, the
+  // photo takes the card's height (up to 109.91pt), and the split between the
+  // pages is the one that makes the taller page shortest. If the bios will not
+  // fit, the type steps down before anything is cut.
+  // One photo size and one type size for the whole board, so every card lines
+  // up (FY25: 98pt photos, bios Gotham Book 7/9.6, 3pt between paragraphs). The photo shrinks first, then
+  // the type, until the board - and any directors who ceased, set under the
+  // last card - fits the spread.
+  _layoutDirectors(dirs, intro, ceased) {
+    const XL = 56.69, XR = 651.97, FOOT = 788, PMAX = 98, PMIN = 64, GUTTER = 18, GMIN = 6, GMAX = 30;
+    const ip = this._probe(481.89, '-0.01em');
+    ip.host.style.fontSize = '9pt'; ip.host.style.lineHeight = '12pt';
+    let introH = 0;
+    (intro || []).forEach((t, k) => { ip.node.data = t; introH += ip.host.getBoundingClientRect().height * 0.75 + (k ? 11.339 : 0); });
+    let ceasedH = 0;
+    (ceased || []).forEach((c, k) => { ip.node.data = c.text || ''; ceasedH += ip.host.getBoundingClientRect().height * 0.75 + (k ? 5.669 : 0); });
+    ip.host.remove();
+    const headTop = Math.max(185, 160.99 + introH + 18), TOP = headTop + 27;
+    const AVAIL = FOOT - TOP, ceasedRoom = ceasedH ? ceasedH + 17 : 0;
+    const out = { headTop, cards: [], ceasedTop: 0 };
+    if (!dirs.length) return out;
+    const pr = this._probe(100, '0'), host = pr.host, node = pr.node;
+    const measure = (t, w, pt, lead) => { host.style.width = w + 'pt'; host.style.fontSize = pt + 'pt'; host.style.lineHeight = lead + 'pt'; node.data = t; return host.getBoundingClientRect().height * 0.75; };
+    let pick = null;
+    for (const s of [1, 0.97, 0.94, 0.91, 0.88, 0.85]) {
+      for (let P = PMAX; P >= PMIN; P -= 2) {
+        const tw = 481.89 - P - GUTTER;
+        const th = dirs.map(d => 24 + (d.paras || []).reduce((a, p) => a + measure(p, tw, 7 * s, 9.6 * s) + 3, 0));
+        const hs = th.map(h => Math.max(P, h));
+        const colH = (a, extra) => a.reduce((x, h) => x + h, 0) + GMIN * Math.max(0, a.length - 1) + extra;
+        let best = null;
+        for (let k = 1; k <= dirs.length; k++) {
+          const L = colH(hs.slice(0, k), 0), R = colH(hs.slice(k), k < dirs.length ? ceasedRoom : 0);
+          if (k === dirs.length && ceasedRoom) continue;
+          const m = Math.max(L, R);
+          if (m <= AVAIL && (!best || Math.abs(L - R) < best.d)) best = { k, d: Math.abs(L - R) };
+        }
+        if (best) { pick = { s, P, tw, hs, k: best.k }; break; }
+      }
+      if (pick) break;
+    }
+    host.remove();
+    if (!pick) {
+      console.warn('Directors: biographies do not fit at the smallest photo and type size.');
+      pick = { s: 0.85, P: PMIN, tw: 481.89 - PMIN - GUTTER, hs: dirs.map(() => PMIN), k: Math.ceil(dirs.length / 2) };
+    }
+    // One gap for both pages, so the cards keep a common rhythm.
+    const cols = [[0, pick.k, XL, 0], [pick.k, dirs.length, XR, ceasedRoom]];
+    const gap = Math.min.apply(null, cols.map(([a, b, , ex]) => {
+      const hs = pick.hs.slice(a, b);
+      return hs.length > 1 ? Math.min(GMAX, (AVAIL - ex - hs.reduce((x, h) => x + h, 0)) / (hs.length - 1)) : GMAX;
+    }));
+    cols.forEach(([from, to, x]) => {
+      let y = TOP;
+      pick.hs.slice(from, to).forEach((h, i) => {
+        const d = dirs[from + i];
+        out.cards.push({
+          n: from + i + 1, x, y, p: pick.P, h, tx: x + pick.P + GUTTER, tw: pick.tw,
+          name: d.name, roleLabel: d.role ? ' (' + d.role + ')' : '', appointed: d.appointed, paras: d.paras || [],
+          fs: Math.round(7 * pick.s * 100) / 100, lh: Math.round(9.6 * pick.s * 100) / 100,
+        });
+        y += h + gap;
+      });
+      if (x === XR) out.ceasedTop = y - gap + 17;
+    });
+    return out;
+  }
+
+  // --- Notes ---------------------------------------------------------------
+  // Notes built from a Finance document pour through plain left/right frames
+  // from p.47, so a year with more or fewer notes just runs to more or fewer
+  // pages.
+  _flowFrames() {
+    const f = [{ p: 47, x: 651.97, y: 193.43, w: 481.89, h: 549.25, s: 'flow' }];
+    for (let p = 48; p <= 47 + 90; p++) f.push({ p, x: p % 2 ? 651.97 : 56.69, y: 192.39, w: 481.89, h: 592.81, s: 'flow' });
+    return f;
+  }
+
+  // Row heights for tables read from Word: the tallest wrapped cell sets the row.
+  _measureTables(blocks, styles) {
+    const pr = this._probe(100, '-0.01em'), host = pr.host;
+    blocks.forEach(b => {
+      if (b.k !== 't' || !b.auto) return;
+      b.rows.forEach(r => {
+        let h = 0, ci = 0;
+        // A note title row is set across the full width (see _noteBlock).
+        const title = r.c.length > 1 && r.c.every(c => c && c.s === 'A4 V:Subhead Large');
+        r.c.forEach(c => {
+          const n = title ? b.cols.length : (c.n || 1), w = b.cols.slice(ci, ci + n).reduce((a, x) => a + x, 0);
+          ci += n;
+          if (!c.t) return;
+          const st = styles[c.s] || styles['Table:Table Body'] || {};
+          const fs = c.sz || st.size || 9, lead = c.sz && st.size ? Math.round((st.lead || 12) * c.sz / st.size * 100) / 100 : (st.lead || 12);
+          host.style.width = Math.max(10, w - 2 * NOTE_CELL_PAD_H - Math.max(0, (st.left || 0) + Math.min(0, st.first || 0))) + 'pt';
+          host.style.fontSize = fs + 'pt';
+          host.style.lineHeight = lead + 'pt';
+          host.style.fontWeight = String(c.s === 'Table:Table Body Bold' ? 700 : (st.weight || 400));
+          host.style.textTransform = st.caps ? 'uppercase' : 'none';
+          host.textContent = c.t;
+          h = Math.max(h, host.getBoundingClientRect().height * 0.75);
+        });
+        r.h = Math.max(r.min || 0, h > 14 ? h + 3 : 14);
+      });
+    });
+    host.remove();
+  }
+
+  _noteProbeStyle(host, st, b) {
+    host.style.fontSize = (b.sz || st.size || 9) + 'pt';
+    host.style.lineHeight = (st.lead || 12) + 'pt';
+    host.style.fontWeight = String(b.b ? 700 : (st.weight || 400));
+    host.style.fontStyle = (b.i || st.italic) ? 'italic' : 'normal';
+    host.style.textTransform = st.caps ? 'uppercase' : 'none';
+    const bullet = /^B7 /.test(b.s || '');
+    host.style.letterSpacing = bullet ? '-0.01em' : '0';
+    host.style.paddingLeft = (bullet ? 36.85 : (st.left || 0)) + 'pt';
+    // A continuation fragment starts a new box, so its first line is flush
+    // with the rest of the paragraph, not at the style's first-line indent.
+    host.style.textIndent = ((bullet || b.cont || b.mk) ? 0 : (st.first || 0)) + 'pt';
+  }
+
+  // A paragraph is one text node, or one span per character run where the
+  // source mixes weights for a run-in heading. Measurement and page breaks
+  // work on the same node list, so a break inside a run stays in step.
+  _fillProbe(host, b) {
+    while (host.firstChild) host.removeChild(host.firstChild);
+    const nodes = [];
+    if (b.rs) {
+      for (const r of b.rs) {
+        const sp = document.createElement('span');
+        sp.style.fontWeight = /Bold/.test(r[1]) ? '700' : /Medium/.test(r[1]) ? '500' : /Light/.test(r[1]) ? '300' : '';
+        sp.style.fontStyle = /Italic/.test(r[1]) ? 'italic' : '';
+        const n = document.createTextNode(r[0]);
+        sp.appendChild(n); host.appendChild(sp); nodes.push(n);
+      }
+    } else {
+      const n = document.createTextNode(b.t);
+      host.appendChild(n); nodes.push(n);
+    }
+    return nodes;
+  }
+
+  _locate(nodes, off) {
+    for (const n of nodes) { if (off <= n.data.length) return [n, off]; off -= n.data.length; }
+    const last = nodes[nodes.length - 1];
+    return [last, last.data.length];
+  }
+
+  _splitAt(host, nodes, availPx) {
+    const orig = nodes.map(n => n.data);
+    const full = orig.join('');
+    const total = full.length;
+    const range = document.createRange();
+    const top = host.getBoundingClientRect().top;
+    let lo = 0, hi = total, best = 0;
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      const end = this._locate(nodes, mid);
+      range.setStart(nodes[0], 0); range.setEnd(end[0], end[1]);
+      const rects = range.getClientRects();
+      const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+      if (bottom <= availPx) { best = mid; lo = mid + 1; } else hi = mid - 1;
+    }
+    if (best <= 0 || best >= total) return 0;
+    let cut = full.lastIndexOf(' ', best);
+    // The range measurement ignores how the shorter fragment re-composes, so
+    // confirm the fragment really fits and give back a word at a time if not.
+    for (let guard = 0; guard < 40 && cut > 0; guard++) {
+      let rem = cut;
+      nodes.forEach((n, i) => { const take = Math.max(0, Math.min(orig[i].length, rem)); n.data = orig[i].slice(0, take); rem -= take; });
+      if (host.getBoundingClientRect().height <= availPx + 0.5) break;
+      const prev = full.lastIndexOf(' ', cut - 1);
+      cut = prev > 0 ? prev : 0;
+    }
+    nodes.forEach((n, i) => { n.data = orig[i]; });
+    return cut > 0 ? cut : 0;
+  }
+
+  _sliceBlock(b, from, to) {
+    const tail = to === null;
+    const o = Object.assign({}, b, {
+      t: tail ? b.t.slice(from).replace(/^\s+/, '') : b.t.slice(from, to).replace(/\s+$/, ''),
+    });
+    if (b.rs) {
+      const rs = []; let pos = 0;
+      for (const r of b.rs) {
+        const a = Math.max(from, pos), z = tail ? pos + r[0].length : Math.min(to, pos + r[0].length);
+        if (z > a) rs.push([r[0].slice(a - pos, z - pos), r[1]]);
+        pos += r[0].length;
+      }
+      if (rs.length) {
+        if (tail) rs[0] = [rs[0][0].replace(/^\s+/, ''), rs[0][1]];
+        else rs[rs.length - 1] = [rs[rs.length - 1][0].replace(/\s+$/, ''), rs[rs.length - 1][1]];
+      }
+      o.rs = rs;
+    }
+    if (tail) o.cont = 1;
+    return o;
+  }
+
+  // Total composed height of a story at a given measure.
+  // Space above and below a paragraph. FY25 centres the bold blue run-in
+  // heading (H3) between the copy around it: one 12pt line above and below.
+  _gapBefore(prev, b, styles) {
+    if (!prev) return 0;
+    const st = styles[b.s] || {};
+    if (/^H3 Sub Heading LC Financials/.test(b.s || '') && prev.k === 'p') return Math.max(0, 12 - ((styles[prev.s] || {}).after || 0));
+    return Math.max(st.before || 0, prev.k === 't' || prev.k === 'fcols' ? TABLE_TEXT_GAP : 0);
+  }
+  _gapAfter(b, next, styles) {
+    const st = styles[b.s] || {};
+    if (/^H3 Sub Heading LC Financials/.test(b.s || '') && next && next.k === 'p') return Math.max(0, 12 - ((styles[next.s] || {}).before || 0));
+    // An italic subhead stands as far above its copy whether the copy is
+    // indented (B2, no space before) or not: 8.504pt, as under "Historical
+    // Cost Convention" (Test 9).
+    if (/^H4 /.test(b.s || '') && next && next.k === 'p' && !/^H[345] /.test(next.s || '')) return Math.max(st.after || 0, 8.504 - ((styles[next.s] || {}).before || 0));
+    return st.after || 0;
+  }
+
+  // Footnotes under a table in two columns (FY25 p.53), measured as rendered.
+  _footColsHeight(items, width, styles) {
+    const st = styles.Footnotes || {};
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;font-family:"Gotham",Arial,sans-serif;box-sizing:border-box;width:' + width + 'pt;column-count:2;column-gap:' + FOOT_COL_GAP + 'pt;column-fill:balance';
+    items.forEach(x => {
+      const d = document.createElement('div');
+      d.style.cssText = 'display:grid;grid-template-columns:' + FOOT_MCOL + 'pt 1fr;break-inside:avoid;padding-bottom:' + (st.after || 0) + 'pt;font-size:' + (st.size || 6.5) + 'pt;line-height:' + (st.lead || 10.027) + 'pt';
+      const m = document.createElement('div'); m.textContent = x.mk || '';
+      const t = document.createElement('div'); t.textContent = x.t;
+      d.appendChild(m); d.appendChild(t); host.appendChild(d);
+    });
+    document.body.appendChild(host);
+    const h = host.getBoundingClientRect().height * 0.75;
+    host.remove();
+    return h;
+  }
+
+  _composedHeight(blocks, width, styles) {
+    const p = this._probe(width, '0');
+    let total = 0;
+    blocks.forEach((b, i) => {
+      const st = styles[b.s] || {};
+      if (b.k === 'pagehead') return;
+      if (b.k === 't') { total += b.rows.reduce((a, r) => a + r.h, 0) + (i ? tableGap(b, blocks[i - 1]) : 0); return; }
+      if (b.k === 'fcols') { total += b.h + (i ? TABLE_TEXT_GAP : 0); return; }
+      this._noteProbeStyle(p.host, st, b);
+      this._fillProbe(p.host, b);
+      const gap = i ? this._gapBefore(blocks[i - 1], b, styles) : 0;
+      total += p.host.getBoundingClientRect().height * 0.75 + gap + this._gapAfter(b, blocks[i + 1], styles);
+    });
+    p.host.remove();
+    return total;
+  }
+
+  // The published frames are drawn taller than the copy they carry - the FY25
+  // notes pages run about three-quarters full - so filling each frame to the
+  // top strands the tail of a story on empty pages. Pour every frame of a
+  // story to the same fill instead, and open the frames back up a step at a
+  // time if the copy no longer fits.
+  _noteFlow(blocks, frames, styles) {
+    const totalH = frames.reduce((a, f) => a + f.h, 0);
+    const need = this._composedHeight(blocks, frames[0].w, styles);
+    let fill = Math.min(1, Math.max(0.5, need / totalH));
+    for (let step = 0; step < 10; step++) {
+      const r = this._pour(blocks, frames, styles, fill);
+      if (!r.leftover.length) return r;
+      if (fill >= 1) return r;
+      fill = Math.min(1, fill + 0.05);
+    }
+    return this._pour(blocks, frames, styles, 1);
+  }
+
+  _pour(blocks, frames, styles, fill) {
+    const out = frames.map(() => []);
+    let queue = blocks.map(b => Object.assign({}, b));
+    const NT = /^\d{1,2}\.\s/;
+    const noteStart = b => (b.k === 'p' && b.s === 'A4 V:Subhead Large' && NT.test(b.t || '')) ||
+      (b.k === 't' && !b.cont && !b.shared && (() => { for (const r of b.rows) { if (r.c.some(c => c && NOTE_HEADER_PS[c.s])) continue; return r.c.length > 0 && r.c.every(c => c && c.s === 'A4 V:Subhead Large') && NT.test((r.c[0] && r.c[0].t) || ''); } return false; })());
+    for (let i = 0; i < frames.length; i++) {
+      const p = this._probe(frames[i].w, '0');
+      const hardPx = (frames[i].h - 2) / 0.75;
+      // The last frame always opens to its full height so nothing is lost.
+      const softPx = i === frames.length - 1 ? hardPx : (frames[i].h * fill - 2) / 0.75;
+      let usedPx = 0, guard = 0;
+      while (queue.length) {
+        if (++guard > 400) { console.warn('Notes: frame ' + i + ' stopped after 400 steps at', queue[0]); break; }
+        let b = queue[0];
+        // A display page (the Consolidated Entity Disclosure Statement) starts
+        // a fresh page and takes over its running head.
+        if (b.k === 'pagehead') {
+          if (out[i].length && i < frames.length - 1) break;
+          out[i].push(b); queue.shift(); continue;
+        }
+        const st = styles[b.s] || {};
+        const atTop = usedPx === 0;
+        const prevB = out[i][out[i].length - 1];
+        // An empty frame opens to its full height, so a block taller than the
+        // shared fill still lands somewhere instead of stranding the story.
+        // A table's footnotes may run down into the folio row to stay on the
+        // table's page; that page then drops its folio (FY25).
+        const tableFoot = /^Footnotes/.test(b.s || '') && prevB && (prevB.k === 't' || /^Footnotes/.test(prevB.s || ''));
+        const footExt = tableFoot ? NOTE_FOOT_EXT / 0.75 : 0;
+        // A table's footnotes stay on the table's page: they may use the whole
+        // frame, not just the shared fill.
+        const capPx = (out[i].length && !tableFoot ? softPx : hardPx) + footExt;
+
+        // Footnotes that will not fit under their table in one column go
+        // into two, as FY25 sets them, rather than run over the page.
+        if (tableFoot && prevB.k === 't') {
+          let e = 0; while (e < queue.length && queue[e].k === 'p' && queue[e].s === 'Footnotes') e++;
+          const run = queue.slice(0, e);
+          const one = this._composedHeight(run, frames[i].w, styles) + TABLE_TEXT_GAP;
+          if (usedPx + one / 0.75 > capPx) {
+            const two = this._footColsHeight(run, frames[i].w, styles);
+            if (usedPx + (two + TABLE_TEXT_GAP) / 0.75 <= capPx) {
+              out[i].push({ k: 'fcols', items: run, h: two });
+              queue.splice(0, e);
+              usedPx += (two + TABLE_TEXT_GAP) / 0.75;
+              continue;
+            }
+          }
+        }
+
+        // FY25 keeps a note on one page where it can: a note that fits a page
+        // but not the space left starts on the next page.
+        // A note too long for any page starts on a fresh one unless at least
+        // half the page is left. Titles set inside a table (under its header
+        // bars) start a note too.
+        // A lettered part of a note ("(d) Other related party disclosures")
+        // that will not fit in what is left of a page, when under 30% of the
+        // page is left, starts on the next page (Test 9, p.66).
+        const alphaHead = x => x && x.k === 'p' && /^H4 /.test(x.s || '') && /^\([a-z]\)$/.test(x.mk || '');
+        if (alphaHead(b) && out[i].length && i < frames.length - 1) {
+          let e = 1; while (e < queue.length && !alphaHead(queue[e]) && !noteStart(queue[e]) && queue[e].k !== 'pagehead') e++;
+          const secH = this._composedHeight(queue.slice(0, e), frames[i].w, styles);
+          const left = (capPx - usedPx) * 0.75;
+          if (secH > left && left < frames[i].h * 0.3) break;
+        }
+
+        if (noteStart(b) && out[i].length && i < frames.length - 1) {
+          let e = 1; while (e < queue.length && !noteStart(queue[e])) e++;
+          const noteH = this._composedHeight(queue.slice(0, e), frames[i].w, styles);
+          const left = (capPx - usedPx) * 0.75 - (st.before || 0);
+          if (noteH > left && (noteH <= frames[i + 1].h - 2 || left < frames[i].h * 0.5)) break;
+          // A short note goes over with the next one when they share column
+          // heads and the next will not fit after it (FY25 14 with 15).
+          if (noteH <= left && noteH < frames[i].h * 0.33 && usedPx * 0.75 > frames[i].h * 0.5 && e < queue.length) {
+            let e2 = e + 1; while (e2 < queue.length && !noteStart(queue[e2])) e2++;
+            const nextH = this._composedHeight(queue.slice(e, e2), frames[i].w, styles);
+            const heads = bs => { const t = bs.find(x => x.k === 't' && x.auto); if (!t) return ''; let n = 0; while (n < t.rows.length && t.rows[n].c.some(c => c && NOTE_HEADER_PS[c.s])) n++; return t.rows.slice(0, n).map(r => r.c.map(c => (c && c.t) || '').join('|')).join('/'); };
+            const hA = heads(queue.slice(0, e)), hB = heads(queue.slice(e, e2));
+            if (hA && hA === hB && noteH + nextH > left && noteH + nextH <= frames[i + 1].h - 2) break;
+          }
+        }
+
+        if (b.k === 't') {
+          // Notes on one page share the header bars at the top of the page:
+          // a later table with the same column heads drops its own (FY25).
+          const hn = t => { let n = 0; while (n < t.rows.length && t.rows[n].c.some(c => c && NOTE_HEADER_PS[c.s])) n++; return n; };
+          const sig = (t, n) => t.rows.slice(0, n).map(r => r.c.map(c => (c && c.t) || '').join('|')).join('/');
+          const nb = b.auto && !b.cont ? hn(b) : 0;
+          if (nb && nb < b.rows.length && out[i].some(x => x.k === 't' && x.auto && sig(x, hn(x)) === sig(b, nb))) {
+            b = queue[0] = Object.assign({}, b, { rows: b.rows.slice(nb), shared: 1, full: b });
+            if (usedPx + b.rows.reduce((a, r) => a + r.h, 0) / 0.75 > capPx) b = queue[0] = b.full;
+          }
+          // No SpaceBefore on any source table; the preceding paragraph's
+          // space-after is the only gap.
+          const before = out[i].length ? tableGap(b, prevB) : 0;
+          const tall = b.rows.reduce((a, r) => a + r.h, 0);
+          if (usedPx + (tall + before) / 0.75 <= capPx) {
+            out[i].push(b); queue.shift(); usedPx += (tall + before) / 0.75; continue;
+          }
+          // A table that fits a frame on its own moves over whole, as in FY25.
+          if (out[i].length && tall <= frames[Math.min(i + 1, frames.length - 1)].h - 2) break;
+          // Only a table taller than a whole frame splits: at a row boundary,
+          // with the header rows repeated.
+          const avail = (capPx - usedPx) * 0.75 - before;
+          const heads = [];
+          for (const r of b.rows) { if (r.c.some(c => c && NOTE_HEADER_PS[c.s])) heads.push(r); else break; }
+          let acc = heads.reduce((a, r) => a + r.h, 0), cut = heads.length;
+          while (cut < b.rows.length && acc + b.rows[cut].h <= avail) { acc += b.rows[cut].h; cut++; }
+          if (cut > heads.length + 1 && cut < b.rows.length) {
+            out[i].push(Object.assign({}, b, { rows: b.rows.slice(0, cut) }));
+            queue[0] = Object.assign({}, b, { rows: heads.concat(b.rows.slice(cut)), cont: 1 });
+          }
+          break;
+        }
+
+        this._noteProbeStyle(p.host, st, b);
+        const nodes = this._fillProbe(p.host, b);
+        const before = atTop ? 0 : this._gapBefore(prevB, b, styles);
+        const textPx = p.host.getBoundingClientRect().height;
+        const hPx = textPx + (before + this._gapAfter(b, queue[1], styles)) / 0.75;
+        if (usedPx + hPx <= capPx) { out[i].push(b); queue.shift(); usedPx += hPx; continue; }
+        // The last few lines of a note do not go over alone: they may use the
+        // frame's full depth rather than the shared fill (Test 9, p.80).
+        const nb = queue[1];
+        if (out[i].length && usedPx + hPx <= hardPx && (!nb || noteStart(nb) || nb.k === 'pagehead') && textPx <= 3 * ((st.lead || 12) / 0.75) + 1) {
+          out[i].push(b); queue.shift(); usedPx += hPx; continue;
+        }
+        // Headings move to the next frame whole.
+        if ((st.size || 9) > 11) break;
+        // FY25 runs a long paragraph on over the page rather than leave the
+        // foot of a page empty, keeping at least two lines on each side.
+        // Short paragraphs (three lines or fewer), and any paragraph when
+        // fewer than two lines are left, move to the next page whole.
+        const leadPx = (st.lead || 12) / 0.75, roomPx = capPx - usedPx - before / 0.75;
+        if (out[i].length && i < frames.length - 1 && hPx * 0.75 <= frames[i + 1].h - 2 &&
+            (textPx < 4 * leadPx - 1 || roomPx < 2 * leadPx)) break;
+        const at = this._splitAt(p.host, nodes, Math.min(roomPx, textPx - 2 * leadPx + 1));
+        if (at > 0) {
+          out[i].push(this._sliceBlock(b, 0, at));
+          queue[0] = this._sliceBlock(b, at, null);
+        }
+        break;
+      }
+      if (i < frames.length - 1) {
+        const last = out[i][out[i].length - 1];
+        if (last && last.k === 'p' && ((((styles[last.s] || {}).size) || 9) > 11 || /^H[345] /.test(last.s || ''))) queue.unshift(out[i].pop());
+      }
+      p.host.remove();
+    }
+    return { frames: out, leftover: queue };
+  }
+
+  // Source row heights already account for InDesign's cell insets, so the cell
+  // takes horizontal padding only and centres its line box in the row.
+  _noteCell(c, styles, head, rowH) {
+    const st = styles[c.s] || styles['Table:Table Body'] || {};
+    const w = /Bold/.test(c.f || '') ? 700 : c.f === 'Medium' ? 500 : c.f === 'Light' ? 300 : (st.weight || 400);
+    // A cell set smaller than its style (the 8pt disclosure statement) keeps the style's proportions.
+    const lead = c.sz && st.size ? Math.round((st.lead || 12) * c.sz / st.size * 100) / 100 : (st.lead || 12);
+    return {
+      // Column heads break between words only ("Equipment" never loses its "t").
+      ow: head ? 'normal' : 'anywhere',
+      // A source row only tall enough for one line was composed as one line;
+      // hold it there rather than let a metric difference wrap it.
+      ws: rowH < 2 * lead - 1 ? 'nowrap' : 'normal',
+      t: c.t,
+      gc: c.n > 1 ? 'span ' + c.n : 'auto',
+      bg: c.bg || 'transparent',
+      bt: c.tw > 0 ? c.tw + 'pt solid ' + NOTE_RULE : '0',
+      bb: c.bw > 0 ? c.bw + 'pt solid ' + NOTE_RULE : '0',
+      pl: (NOTE_CELL_PAD_H + Math.max(0, (st.left || 0) + Math.min(0, st.first || 0))) + 'pt',
+      va: head ? 'flex-end' : 'center',
+      jc: c.al === 'center' ? 'center' : st.right && c.al !== 'left' ? 'flex-end' : 'flex-start',
+      fs: (c.sz || st.size || 9) + 'pt',
+      lh: lead + 'pt',
+      fw: String(w),
+      fst: (st.italic || /Italic/.test(c.f || '')) ? 'italic' : 'normal',
+      tt: st.caps ? 'uppercase' : 'none',
+      td: 'none',
+      ls: st.caps ? '0.04em' : '-0.01em',
+      ta: c.al === 'center' ? 'center' : st.right && c.al !== 'left' ? 'right' : 'left',
+      col: c.tc || st.color || '#6D6E71',
+      fvn: st.right ? 'tabular-nums' : 'normal',
+    };
+  }
+
+  _noteBlock(b, atTop, styles, atFoot, prev, next) {
+    if (b.k === 'fcols') {
+      const st = styles.Footnotes || {};
+      return {
+        isFootCols: 1, pt: (atTop ? 0 : TABLE_TEXT_GAP) + 'pt', pb: '0pt',
+        fs: (st.size || 6.5) + 'pt', lh: (st.lead || 10.027) + 'pt', col: st.color || '#6D6E71',
+        gap: FOOT_COL_GAP + 'pt', mcol: FOOT_MCOL + 'pt', ipb: (st.after || 0) + 'pt',
+        items: b.items.map(x => ({ marker: x.mk || '', t: x.t })),
+      };
+    }
+    if (b.k === 't') {
+      const cols = b.cols.map(c => c + 'pt').join(' ');
+      // Tables built from the Word file follow the FY25 note tables (read off
+      // the FY25 PDF): data rows banded from the first under each group label;
+      // in the three-column tables everything under the note title is set one
+      // step in except the bold italic group heads and the opening sentence
+      // (PP&E-style wide tables are not indented); one 0.709pt rule over each
+      // total's figures; a single rule under a subtotal and a double rule
+      // under the total that closes a group, a run of subtotals or the table.
+      let k = 1;
+      const isTitle = r => r.c.length && r.c.every(c => c && c.s === 'A4 V:Subhead Large');
+      const wide = b.cols.length <= 4;
+      // A table with no note title that opens on a label ("Movements in
+      // investments in associates") is set flush left with that label as a
+      // bold blue head (FY25 p.60); other untitled tables indent as usual.
+      const firstBody = b.rows.find(r => !r.c.some(c => c && NOTE_HEADER_PS[c.s]) && r.c.some(c => c && String(c.t || '').trim()));
+      const flush = wide && !b.rows.some(isTitle) && !!firstBody && !firstBody.c.slice(1).some(c => c && /\d|^[-\u2013]$/.test(String(c.t || '').trim())) && !b.cont;
+      const NUMC = /\d/;
+      const info = b.rows.map(r => {
+        const head = r.c.some(c => c && NOTE_HEADER_PS[c.s]);
+        const txt = r.c.map(c => String((c && c.t) || '').trim());
+        const title = isTitle(r), blank = txt.every(t => !t);
+        const figs = txt.slice(1).some(t => NUMC.test(t) || /^[-\u2013]$/.test(t));
+        const ruled = r.c.slice(1).some(c => c && c.tw > 0);
+        const total = !head && !title && figs && (!txt[0] || ruled);
+        const label = !head && !title && !!txt[0] && !figs;
+        const c0 = r.c[0] || {};
+        const group = label && (/^\(?[a-z]{1,4}\)\s/i.test(txt[0]) || (/Bold/.test(c0.s || '') && /Italic/.test(c0.f || '')));
+        const intro = label && txt[0].length > 45 && /:$/.test(txt[0]);
+        const cur = label && /^(current|non[- ]?current)\s*:?$/i.test(txt[0]);
+        const plain = label && !group && !intro && !cur && !/:$/.test(txt[0]) && txt[0].length <= 60 && (c0.n || 1) === 1 &&
+          c0.s === 'Table:Table Body' && !/Bold|Italic/.test(c0.f || '');
+        return { head, title, blank, total, label, group, intro, cur, plain, figs, named: !!txt[0], dash: /^[-\u2013]\s/.test(txt[0]) };
+      });
+      const near = (i, d) => { for (let j = i + d; j >= 0 && j < info.length; j += d) if (!info[j].blank) return info[j]; return null; };
+      // FY25 note-table heads: "Current:" / "Non-Current:" and the label under
+      // one are bold RV Blue; a plain group label over figures ("Customer",
+      // "Management", "Assets") is RV Blue underlined; "- " lines sit a step in.
+      info.forEach((I, ri) => {
+        const pv = near(ri, -1), nx = near(ri, 1);
+        I.strong = I.cur || (I.label && pv && pv.cur && !I.group);
+        I.under = wide && I.plain && !I.strong && !!nx && nx.figs && !nx.total;
+        // A labelled total ("Total assets") is RV Blue, regular, label and figures (FY25 parent entity).
+        I.totalLabel = wide && I.figs && /^total\b/i.test(String((b.rows[ri].c[0] || {}).t || '').trim());
+      });
+      // 2.25pt = 3px, the least at which Chrome draws a double border as two
+      // lines (at 2pt it prints one solid 2pt rule). FY25: two 0.67pt lines.
+      const RULE = '0.709pt solid ' + NOTE_RULE, DOUBLE = '2.25pt double ' + NOTE_RULE;
+      return {
+        isTable: 1,
+        pt: (!atTop ? tableGap(b, prev) : 0) + 'pt',
+        pb: '0pt',
+        rows: b.rows.map((r, ri) => {
+          const I = info[ri], head = I.head;
+          const rc = r.c.filter(Boolean);
+          let cells = rc.map(c => this._noteCell(c, styles, head, r.h));
+          if (b.auto && !head) {
+            const indent = wide && !flush && !I.title && !I.blank && !I.group && !I.intro;
+            const fhead = flush && r === firstBody;
+            let band = false, bt = '0', bb = '0';
+            if (I.title) k = 1;
+            else if (I.blank || I.label) k = 0;
+            else { band = k % 2 === 0; k++; }
+            if (I.total) {
+              const nx = near(ri, 1), pv = near(ri, -1);
+              const closes = !I.named && (!nx || nx.group || nx.title || (pv && pv.total));
+              bt = RULE; bb = closes ? DOUBLE : RULE;
+            }
+            cells = cells.map((c, ci) => Object.assign({}, c, {
+              bg: band ? BAND_BG : c.bg,
+              pl: ci === 0 && indent ? (parseFloat(c.pl) + 14.173 + (I.dash ? 18.29 : 0)) + 'pt' : c.pl,
+              bt: ci > 0 ? bt : '0',
+              bb: ci > 0 ? bb : '0',
+            }, ci > 0 && !(rc[ci] && rc[ci].al) && /^([\(\-\u2013]?[\d,.]+\)?%?|[-\u2013])$/.test(String(c.t || '').trim()) ? { jc: 'flex-end', ta: 'right' } : null,
+               I.totalLabel ? { fw: '400', fst: 'normal', col: '#005FA1' } : null,
+               ci === 0 && I.strong ? { fw: '700', fst: 'normal', col: '#005FA1' } : null,
+               ci === 0 && I.under && !fhead ? { col: '#005FA1', td: 'underline' } : null,
+               ci === 0 && fhead ? { fw: '700', fst: 'normal', col: '#005FA1', td: 'none' } : null));
+            // A note title runs the full width, over the figure columns (FY25 PP&E).
+            if (I.title && cells.length > 1) cells = [Object.assign({}, cells[0], { gc: '1 / -1', ws: 'normal' })];
+          } else if (b.auto && head) {
+            cells = cells.map(c => c.bg === '#99BFD9' ? Object.assign({}, c, { bg: '#8AB4DC' }) : c);
+          }
+          return { h: r.h + 'pt', cols: cols, cells };
+        }),
+      };
+    }
+    const st = styles[b.s] || {};
+    const bullet = /^B7 /.test(b.s || '');
+    const o = {
+      t: b.t,
+      fs: (b.sz || st.size || 9) + 'pt',
+      lh: (st.lead || 12) + 'pt',
+      fw: String(b.b ? 700 : (st.weight || 400)),
+      fst: (b.i || st.italic) ? 'italic' : 'normal',
+      tt: st.caps ? 'uppercase' : 'none',
+      td: st.underline ? 'underline' : 'none',
+      ls: (st.size || 9) >= 30 ? '-0.01em' : (b.s === 'H2 Sub Heading' ? '0.15em' : (bullet ? '-0.01em' : '0')),
+      ta: st.right ? 'right' : 'left',
+      col: b.tc || st.color || '#6D6E71',
+      pt: (atTop ? 0 : this._gapBefore(prev, b, styles)) + 'pt',
+      pb: (atFoot ? 0 : this._gapAfter(b, next, styles)) + 'pt',
+      ml: '0pt', ti: '0pt', marker: '',
+    };
+    if (b.rs) {
+      o.runs = b.rs.map(r => ({
+        t: r[0],
+        fw: /Bold/.test(r[1]) ? '700' : /Medium/.test(r[1]) ? '500' : /Light/.test(r[1]) ? '300' : o.fw,
+        fst: /Italic/.test(r[1]) ? 'italic' : o.fst,
+      }));
+    }
+    if (b.mk && !bullet) {
+      // Word's own list marker hangs in the indent: "(i)" then the text.
+      o.isMarked = 1; o.marker = b.cont ? '' : b.mk;
+      o.ml = Math.max(0, (st.left || 0) + Math.min(0, st.first || 0)) + 'pt';
+      o.mcol = (Math.min(0, st.first || 0) ? -st.first : 22.677) + 'pt';
+    }
+    else if (bullet) { o.isBullet = 1; o.marker = b.cont ? '' : '\u2022'; o.ml = '22.677pt'; }
+    else if ((st.size || 9) >= 30) { o.isHead = 1; }
+    else {
+      o.ml = (st.left || 0) + 'pt';
+      o.ti = (b.cont ? 0 : (st.first || 0)) + 'pt';
+      if (b.rs) o.isRuns = 1; else o.isPara = 1;
+    }
+    return o;
+  }
+
+  // FY25 conventions over Word's paragraph styles (Test 9 comments).
+  _fy25Fixups(blocks, styles) {
+    if (blocks._fy25) return;
+    blocks._fy25 = 1;
+    const H3 = styles['H3 Sub Heading LC Financials'] || {}, BODY = styles['A4 V:Body'] || {}, FN = styles.Footnotes || {};
+    // Inside a lettered policy: run-in heads in Medium grey at the copy's indent, the copy indented (FY25 p.70).
+    styles['H3 Sub Heading LC Financials Indent'] = Object.assign({}, H3, { color: '#6D6E71', weight: 500, left: 22.677, first: 0 });
+    styles['A4 V:Body Indent'] = Object.assign({}, BODY, { left: 22.677, first: 0 });
+    // Notes to a table line set as footnotes without a marker (FY25 p.64), and bullets under a footnote.
+    styles['Footnotes Plain'] = Object.assign({}, FN, { left: 0, first: 0 });
+    styles['Footnotes Bullet'] = Object.assign({}, FN, { left: (FN.left || 17.008) + 8.504, first: -8.504 });
+    // Lead-in and follow-on lines of a footnote: no marker, at the footnote's text indent.
+    styles['Footnotes Cont'] = Object.assign({}, FN, { left: FN.left || 17.008, first: 0 });
+    const NT = /^\d{1,2}\.\s/;
+    const isTitleRow = r => r.c.length > 0 && r.c.every(c => c && c.s === 'A4 V:Subhead Large');
+    const isHeadRow = r => r.c.some(c => c && NOTE_HEADER_PS[c.s]);
+    const figs = r => r.c.slice(1).some(c => c && /\d|^[-\u2013]$/.test(String(c.t || '').trim()));
+    const lab = r => String((r.c[0] && r.c[0].t) || '').trim();
+    let alpha = false;
+    for (let i = 0; i < blocks.length; i++) {
+      const b = blocks[i];
+      if (b.k === 'pagehead' || (b.k === 'p' && b.s === 'A4 V:Subhead Large' && NT.test(b.t || '')) ||
+          (b.k === 't' && b.rows.some(r => isTitleRow(r) && NT.test(lab(r))))) alpha = false;
+      if (b.k === 'p' && /^H4 /.test(b.s || '') && /^\([a-z]\)$/.test(b.mk || '')) alpha = true;
+      if (b.k === 'p' && alpha) {
+        if (b.s === 'H3 Sub Heading LC Financials') b.s = 'H3 Sub Heading LC Financials Indent';
+        else if (b.s === 'A4 V:Body') b.s = 'A4 V:Body Indent';
+      }
+      // Bullets straight after a table footnote belong to it.
+      // A lead-in ending in a colon is not a bullet; the copy after the bullets is footnote text too (Test 10).
+      if (b.k === 'p' && /^B7 /.test(b.s || '') && i && blocks[i - 1].k === 'p' && /^Footnotes/.test(blocks[i - 1].s || '')) {
+        if (/:\s*$/.test(b.t || '') && blocks[i - 1].s !== 'Footnotes Bullet') b.s = 'Footnotes Cont';
+        else { b.s = 'Footnotes Bullet'; b.mk = '\u2022'; }
+      }
+      else if (b.k === 'p' && b.s === 'A4 V:Body' && i && blocks[i - 1].k === 'p' && blocks[i - 1].s === 'Footnotes Bullet') b.s = 'Footnotes Cont';
+      if (b.k === 't' && b.auto) {
+        // Paragraphs after a table that explain one of its lead-in lines
+        // ("Spectrum rental and channel support:") are its footnotes.
+        const leads = b.rows.filter(r => !isHeadRow(r) && /:$/.test(lab(r))).map(r => lab(r).toLowerCase());
+        for (let j = i + 1; leads.length && j < blocks.length && blocks[j].k === 'p' && blocks[j].s === 'A4 V:Body'; j++) {
+          const w = ((blocks[j].t || '').match(/^[A-Z][a-z]{4,}/) || [''])[0].toLowerCase();
+          if (!w || !leads.some(l => l.split(/[^a-z]+/).indexOf(w) > -1)) break;
+          blocks[j].s = 'Footnotes Plain';
+        }
+        // A line's space before a group label that follows a total (FY25 parent entity, KMP).
+        if (b.cols.length <= 4) {
+          const rows = [];
+          b.rows.forEach((r, k) => {
+            const pv = rows[rows.length - 1];
+            if (pv && !isHeadRow(r) && !isTitleRow(r) && lab(r) && !figs(r) && figs(pv) && (!lab(pv) || /^total\b/i.test(lab(pv))))
+              rows.push({ h: 0, min: 15, c: r.c.map(c => c ? Object.assign({}, c, { t: '', tw: 0, bw: 0, bg: null }) : c) });
+            rows.push(r);
+          });
+          b.rows = rows;
+        }
+      }
+    }
+  }
+
+  _buildNotes(mod) {
+    const styles = mod.styles, stories = mod.stories;
+    // FY25 sub-points under a bullet: marker at 36.85pt, text at 59.53pt, 8.5pt apart.
+    // Lines broken inside one Word paragraph (an address) carry no space after.
+    ['A4 V:Body', 'B2 Body Indent'].forEach(k => { if (styles && styles[k] && !styles[k + ' Tight']) styles[k + ' Tight'] = Object.assign({}, styles[k], { after: 0 }); });
+    // FY25 (i), (ii) points inside a lettered policy (GST): marker 17pt in from the copy, text 29.9pt in.
+    if (styles && !styles['B5 Sub Point Indent']) styles['B5 Sub Point Indent'] = Object.assign({}, styles['B5 Bullet Body Indent Alpha'] || {}, { left: 52.57, first: -12.88 });
+    if (styles && !styles['B5 Sub Point']) styles['B5 Sub Point'] = Object.assign({}, styles['B5 Bullet Body Indent Alpha'] || {}, { left: 59.528, first: -22.677, after: 8.504 });
+    // FY25 PDF: the bold run-in heads ("Basis of preparation", "Material
+    // Accounting Policies") print in RV Blue; IDML leaves the swatch unset.
+    if (styles && styles['H3 Sub Heading LC Financials']) styles['H3 Sub Heading LC Financials'] = Object.assign({}, styles['H3 Sub Heading LC Financials'], { color: '#005FA1' });
+    // FY25 critical-judgement points: bullet and title in Medium, the copy
+    // under it at the bullet text, 24pt between points.
+    if (styles && !styles['B7 Bullet Medium']) styles['B7 Bullet Medium'] = Object.assign({}, styles['B7 Bullet double Indent'] || {}, { weight: 500, before: 5.669, after: 0 });
+    if (styles && !styles['B9 Bullet Body']) styles['B9 Bullet Body'] = Object.assign({}, styles['A4 V:Body'] || {}, { left: 36.85, first: 0, before: 0, after: 5.669 });
+    if (mod.flow && styles) this._fy25Fixups(stories.flow, styles);
+    const frames = mod.flow ? this._flowFrames() : mod.frames;
+    const byStory = {};
+    frames.forEach((f, i) => { (byStory[f.s] || (byStory[f.s] = [])).push(i); });
+    const slices = {};
+    let leftover = 0;
+    if (mod.flow) {
+      this._measureTables(stories.flow, styles);
+      const r = this._pour(stories.flow, frames, styles, 0.95);
+      r.frames.forEach((fr, i) => { slices[i] = fr; });
+      leftover = r.leftover.length;
+    } else for (const sid in byStory) {
+      const idxs = byStory[sid];
+      const bs = stories[sid] || [];
+      if (idxs.length === 1) { slices[idxs[0]] = bs; continue; }
+      const r = this._noteFlow(bs, idxs.map(i => frames[i]), styles);
+      idxs.forEach((fi, k) => { slices[fi] = r.frames[k]; });
+      leftover += r.leftover.length;
+    }
+    if (leftover) console.warn('Notes: ' + leftover + ' block(s) overflow the published frames.');
+    const pages = {};
+    const hasHead = {}, hasDate = {}, clash = {}, pageHead = {};
+    // A display page's running head carries over to the pages its copy runs on to.
+    let runHead = null;
+    frames.forEach((f, i) => {
+      const ph = (slices[i] || []).find(b => b.k === 'pagehead');
+      if (ph) runHead = ph.t;
+      if (runHead && (slices[i] || []).length) pageHead[f.p] = runHead;
+    });
+    frames.forEach((f, i) => {
+      const ph = (slices[i] || []).find(b => b.k === 'pagehead');
+      if (ph) pageHead[f.p] = ph.t;
+      const bs = (slices[i] || []).filter(b => b.k !== 'pagehead');
+      if (!bs.length) return;
+      const st0 = styles[bs[0].s] || {};
+      if ((st0.size || 9) >= 30) hasHead[f.p] = 1;
+      if (bs[0].s === 'H2 Sub Heading') hasDate[f.p] = 1;
+      // Source frames are drawn to the sheet edge in places. Copy keeps its
+      // drawn height - clipping a statutory disclosure would be worse - and
+      // the folio steps aside instead, as the published report does.
+      const room = Math.max(0, NOTE_FOLIO_TOP - 2 - f.y);
+      let h = Math.min(f.h, room);
+      const need = this._composedHeight(bs, f.w, styles);
+      if (need > h) { h = Math.max(h, need); if (need > room) clash[f.p] = 1; }
+      (pages[f.p] || (pages[f.p] = [])).push({
+        l: f.x + 'pt', t: f.y + 'pt', w: f.w + 'pt', h: h + 'pt',
+        blocks: bs.map((b, k) => this._noteBlock(b, k === 0, styles, k === bs.length - 1, bs[k - 1], bs[k + 1])),
+      });
+    });
+    // Restore the master's running head and dateline on the pages that do not
+    // carry their own override.
+    for (let pg = 47; pg <= 47 + frames.length; pg++) {
+      if (!pages[pg]) continue;
+      const side = pg % 2 ? 'right' : 'left';
+      if (!hasHead[pg]) {
+        const box = NOTE_HEAD_BOX[side];
+        pages[pg].unshift({
+          l: box.x + 'pt', t: box.y + 'pt', w: '481.89pt', h: '93.05pt',
+          blocks: [this._noteBlock({ k: 'p', s: 'A4 V:Heading Large', t: pageHead[pg] || NOTE_RUNNING_HEAD }, true, styles, true)],
+        });
+      }
+      if (!hasDate[pg]) {
+        const box = NOTE_DATE_BOX[side];
+        pages[pg].unshift({
+          l: box.x + 'pt', t: box.y + 'pt', w: '481.89pt', h: '12.03pt',
+          blocks: [this._noteBlock({ k: 'p', s: 'H2 Sub Heading', t: mod.flow ? 'for the year ended 30 June ' + mod.year : NOTE_RUNNING_DATE }, true, styles, true)],
+        });
+      }
+    }
+    return { pages, leftover, clash, maxPg: Math.max.apply(null, Object.keys(pages).map(Number)) };
+  }
+
+  // Directors' meetings: one section per committee, each with its own heading
+  // and rule, separated by a gutter - group labels, column labels and values
+  // all as the document sets them.
+  _attendance(i) {
+    const groups = (i.groups || []).filter(g => g.label !== '' || g.span > 1).filter((g, k) => k > 0 || g.label);
+    const nVals = groups.reduce((a, g) => a + g.span, 0), GUT = 5.669, NAME = 151.89;
+    const w = Math.round((481.89 - NAME - GUT * (groups.length - 1)) / nVals * 100) / 100;
+    const cols = [NAME + 'pt'];
+    const groupCells = [{ gc: '1', label: '', rule: '0' }];
+    const head = i.head || [], rows = i.rows || (i.bodyRows || []).map(r => [r.label].concat(r.nums));
+    const headCells = [{ t: head[0] || 'Directors', bg: '#005FA1', jc: 'flex-start', ta: 'left', pl: '4.252pt', ph: '2pt' }];
+    let col = 2, v = 1;
+    const bodyRows = rows.map((r, ri) => ({ cells: [{ t: r[0], jc: 'flex-start', pl: '4.252pt', bg: ri % 2 ? BAND_BG : 'transparent' }] }));
+    groups.forEach((g, gi) => {
+      if (gi) { cols.push(GUT + 'pt'); headCells.push({ t: '', bg: 'transparent', jc: 'center', ta: 'center', pl: '0', ph: '0' }); bodyRows.forEach(br => br.cells.push({ t: '', jc: 'center', pl: '0', bg: 'transparent' })); col++; }
+      groupCells.push({ gc: col + ' / span ' + g.span, label: (g.label || '').trim(), rule: '0.75pt solid #005FA1' });
+      for (let s = 0; s < g.span; s++, v++, col++) {
+        cols.push(w + 'pt');
+        headCells.push({ t: head[v] || '', bg: '#005FA1', jc: 'center', ta: 'center', pl: '2pt', ph: '2pt' });
+        bodyRows.forEach((br, ri) => br.cells.push({ t: rows[ri][v] == null ? '' : rows[ri][v], jc: 'center', pl: '0', bg: ri % 2 ? BAND_BG : 'transparent' }));
+      }
+    });
+    // Adjacent cells of one fill overlap by a hair so no seam shows between
+    // them in a PDF viewer.
+    const seam = list => list.forEach((c, k) => { const nx = list[k + 1]; c.sh = nx && c.bg !== 'transparent' && nx.bg === c.bg ? '0.75pt 0 0 0 ' + c.bg : 'none'; });
+    seam(headCells); bodyRows.forEach(br => seam(br.cells));
+    return { gridCols: cols.join(' '), groupCells, headCells, bodyRows };
+  }
+
+  _blocks(list, copy) {
+    return (list || []).map((i, idx) => {
+      const b = Object.assign({}, i);
+      b.isSubhead = i.kind === 'subhead';
+      b.isMinihead = i.kind === 'minihead';
+      b.ls = TRACKING[this.state.baseIdx || 0];
+      b.isBullet = i.kind === 'bullet';
+      if (b.isBullet) {
+        b.mark = i.cont ? '' : (i.tick ? '\u2713' : '\u2022');
+        b.bml = (i.bml ?? 22.677) + 'pt'; b.bcol = (i.bcol ?? 14.173) + 'pt';
+        b.bfw = i.tick ? '500' : '400'; b.bfs = i.tick ? 'italic' : 'normal';
+      }
+      if (i.kind === 'officer') {
+        const m = i.name ? null : /^(.+?)\s+(?=Company Secretary|Appointed|Chief|Director)/.exec(i.text || '');
+        b.name = i.name || (m ? m[1] : '');
+        b.rest = i.name ? i.rest : (m ? i.text.slice(m[0].length) : i.text);
+        b.isOfficer = true;
+      }
+      if (i.kind === 'table') b.tableRows = (i.tableRows || []).map((r, k) => r.isHead || r.isRow ? r : Object.assign({}, r, {
+        isRow: true, fw: r.isTotal ? '700' : '400', bg: r.isBand ? BAND_BG : 'transparent' })).map(r => {
+        // A footnote number typed after a label ("movement 1") sets superior.
+        const m = r.isRow && /^(.*\S)\s+(\d|\*|\^)$/.exec(r.label || '');
+        return m ? Object.assign({}, r, { label: m[1], sup: m[2] }) : r;
+      });
+      if (i.kind === 'attendance') Object.assign(b, this._attendance(i));
+      b.isNote = i.kind === 'note';
+      b.isTable = i.kind === 'table';
+      b.isAttendance = i.kind === 'attendance';
+      b.isDiagram = i.kind === 'diagram' && !i.src;
+      b.isDiagramImg = i.kind === 'diagram' && !!i.src;
+      if (b.isDiagramImg) { b.imgW = Math.min(481.89, i.w) * (i.scale || 1); b.imgH = i.h * b.imgW / i.w; }
+      b.isBody = !i.kind || i.kind === 'body';
+      b.bulletText = (i.kind === 'bullet' && !i.cont ? '\u2022\u2003' : '') + (i.text || '');
+      const top = idx === 0 ? 0 : this._topSpace(i);
+      b.padTop = top + 'pt';
+      b.padBottom = (this._space(i) - this._topSpace(i)) + 'pt';
+      if (b.isDiagram && copy) b.diagram = copy.diagram;
+      return b;
+    });
+  }
+
+  // The four statements in the FY25 house style: an RV Blue column-head bar,
+  // a lighter NOTE / $'000 bar, alternate rows tinted, bold rows in RV Blue,
+  // rules over and under the totals' figures and a double rule to close.
+  _styleStatement(tb, roles, groups) {
+    const rows = tb.rows || [];
+    const h2 = rows.find(r => r.head2);
+    const noteCol = h2 ? h2.cells.findIndex(c => /^note$/i.test((c.t || '').trim())) : -1;
+    // The closing double rule goes under the last row with figures, not a
+    // trailing footnote-marker or blank row (Test 10, cash at end of year).
+    const lastBody = rows.map(r => !!r.body && (r.cells || []).some((c, k) => k > 0 && /\d/.test(c.t || ''))).lastIndexOf(true);
+    let parity = 0, prevBB = false, inGrp = false;
+    const RULE = '0.75pt solid #005FA1';
+    const styled = rows.map((r, ri) => {
+      const cells = r.cells || [];
+      const align = k => k === 0 ? ['flex-start', 'left'] : k === noteCol ? ['center', 'center'] : ['flex-end', 'right'];
+      if (r.head1 || r.head2) {
+        return {
+          gridCols: r.gridCols, mh: r.head1 ? '28.35pt' : '19.84pt', bg: r.head1 ? '#005FA1' : '#8AB4DC',
+          ai: r.head1 ? 'flex-end' : 'center', pv: r.head1 ? '4pt' : '2pt', fs: r.head1 ? '8.5pt' : '8pt', lh: '10.5pt',
+          ls: '0.02em', tt: 'uppercase',
+          cells: cells.map((c, k) => ({ t: c.t, jc: align(k)[0], ta: align(k)[1], pl: '4.252pt', fw: '700', fst: 'normal', col: '#fff', bt: '0', bb: '0' })),
+        };
+      }
+      const blank = cells.every(c => !(c.t || '').trim());
+      const bold = !blank && cells.some(c => c.w === '700');
+      const band = !blank && parity++ % 2 === 1;
+      const total = !!r.lineAbove, closing = ri === lastBody && (r.lineBelow || total);
+      // Cash flows (FY25): lines between a group head and its total sit one step in.
+      const figRow = cells.some((c, k) => k > 0 && k !== noteCol && /\d|^[-\u2013]$/.test((c.t || '').trim()));
+      let step = false;
+      if (groups && !blank) {
+        if (bold && !figRow) inGrp = true;
+        else if (total || bold) inGrp = false;
+        else step = inGrp;
+      }
+      if (roles && !blank) {
+        // Statement of financial position as FY25 sets it, whatever Word's
+        // run formatting: group heads bold blue; lines one step in; every
+        // total bold italic blue with a rule over and under its figures
+        // (never two rules stacked); grand totals' figures bold; Net Assets
+        // and Total Equity close on a double rule.
+        const lab = (cells[0] && cells[0].t || '').trim();
+        const figs = cells.some((c, k) => k > 0 && k !== noteCol && /\d|^[-\u2013]$/.test((c.t || '').trim()));
+        const head = !!lab && !figs, tot = /^(total|net)\b/i.test(lab);
+        const grand = /^(total assets|total liabilities|net assets|total equity)$/i.test(lab), closer = /^(net assets|total equity)$/i.test(lab);
+        const bt = tot && !prevBB ? RULE : '0', bb = closer ? '2.25pt double #005FA1' : tot ? RULE : '0';
+        prevBB = bb !== '0';
+        return {
+          gridCols: r.gridCols, mh: (r.h || 19.84) + 'pt', bg: band ? BAND_BG : 'transparent',
+          ai: 'center', pv: '2pt', fs: '9pt', lh: '11.5pt', ls: '-0.005em', tt: 'none',
+          cells: cells.map((c, k) => {
+            const fig = k > 0 && k !== noteCol;
+            return {
+              t: c.t, jc: align(k)[0], ta: align(k)[1], pl: k === 0 && !head && !tot ? '18.425pt' : '4.252pt',
+              fw: k === 0 ? (head || tot ? '700' : '400') : fig && tot && grand ? '700' : '400',
+              fst: k === 0 && tot ? 'italic' : 'normal',
+              col: (k === 0 && (head || tot)) || (fig && tot) ? '#005FA1' : '#6D6E71',
+              bt: fig ? bt : '0', bb: fig ? bb : '0',
+            };
+          }),
+        };
+      }
+      return {
+        gridCols: r.gridCols, mh: (blank ? Math.min(r.h || 9, 9) : (r.h || 19.84)) + 'pt', bg: band ? BAND_BG : 'transparent',
+        ai: 'center', pv: '2pt', fs: '9pt', lh: '11.5pt', ls: '-0.005em', tt: 'none',
+        cells: cells.map((c, k) => {
+          const fig = k > 0 && k !== noteCol;
+          return {
+            t: c.t, jc: align(k)[0], ta: align(k)[1], pl: k === 0 && step ? '18.425pt' : '4.252pt', fw: bold && k !== noteCol ? '700' : '400', fst: c.i ? 'italic' : 'normal',
+            col: bold && k !== noteCol ? '#005FA1' : '#6D6E71',
+            bt: fig && total ? RULE : '0',
+            bb: fig && closing ? '2.25pt double #005FA1' : fig && total ? RULE : '0',
+          };
+        }),
+      };
+    });
+    return Object.assign({}, tb, { rows: styled });
+  }
+
+  renderVals() {
+    const copy = this.state.copy;
+    const dirs = (copy && copy.directors) || [];
+    const sig = (copy && copy.signatories) || [];
+    const f = this.state.frames;
+    const n = this.state.leftover.length;
+    const clash = this.state.noteClash || {};
+    const start = this.props.folioStart ?? 28;
+    const parts = [];
+    if (n) parts.push(n + ' Directors\u2019 Report block' + (n === 1 ? '' : 's'));
+    const out = {
+      sigTop: this.state.sigTop + 'pt', sigTextTop: (this.state.sigTop + 49.88) + 'pt', sigCeoTop: (this.state.sigTop - 3.73) + 'pt',
+      sigOn7: this.state.sigFrame === 7, sigOn8: this.state.sigFrame === 8, sigOn9: this.state.sigFrame === 9,
+      hasExtra: this.state.sigFrame >= 8 || f[8].length > 0 || f[9].length > 0,
+      dirCards: this.state.dirLayout.cards, dirHasRight: this.state.dirLayout.cards.some(c => c.x > 600),
+      dirHeadTop: this.state.dirLayout.headTop + 'pt',
+      ceasedTop: this.state.dirLayout.ceasedTop + 'pt',
+      ceased: ((copy && copy.ceased) || []).map((c, k) => ({ text: c.text, name: c.name || '', rest: c.name ? c.rest : c.text, isOff: !!c.name, isTxt: !c.name, pt: k ? '5.669pt' : '0' })),
+      footYear: (copy && copy.year) || this.props.footYear || 2025,
+      intro: (copy && copy.intro) || [],
+      sig0: sig[0] || {}, sig1: sig[1] || {},
+      overflowLabel: parts.length ? parts.join(' and ') +
+        ' will not fit \u2014 trim the copy or extend the layout' : '',
+      overflowText: this.state.leftover.map(i => i.text || ('[' + i.kind + ']')).join('  \u00b6  '),
+    };
+    const extra = out.hasExtra ? 2 : 0;
+    for (let i = 0; i < 20; i++) out['folio' + i] = start + i + (i >= 10 ? extra : 0);
+    out.folioX0 = start + 10; out.folioX1 = start + 11;
+    const st = this.state.statements || {};
+    const empty = { heading: '', dateline: '', rows: [] };
+    out.stSurplus = this._styleStatement(st.surplus || empty);
+    out.stPosition = this._styleStatement(st.position || empty, true);
+    out.stCashflows = this._styleStatement(st.cashflows || empty, false, true);
+    out.stEquity = this._styleStatement(st.equity || empty);
+    const dec = (copy && copy.declaration) || {};
+    const kp = (copy && copy.kpmg) || {};
+    out.decLead = dec.lead || '';
+    out.decItems = (dec.items || []).map(it => Object.assign({}, it, { ml: it.lvl2 ? '45.354pt' : '22.677pt' }));
+    out.decClose = dec.close || '';
+    const kimg = kp.images || [];
+    const aud = this.state.auditor;
+    const apg = (aud && aud.pages) || [];
+    [0, 1, 2].forEach(k => {
+      out['kp' + k] = apg[k] || { text: [] }; out['hasKp' + k] = !!apg[k];
+      out['kpmgImg' + k] = apg[k] ? '' : (kimg[k] || ''); out['noKpmgImg' + k] = !apg[k] && !kimg[k];
+    });
+    out.kpmgFooter = (aud && aud.footer) || kp.footer || '';
+    out.kpmgHead38 = kp.head38 || '';
+    out.kpmgHead39 = kp.head39 || '';
+
+    const notes = this.state.notes || {};
+    const shift = start - 28 + extra;
+    // Page 47 sits on the hand-built 46-47 spread: its running head and
+    // dateline come through as frames, the story itself as blocks.
+    const p47 = notes[47] || [];
+    const body47 = p47.find(f => parseFloat(f.t) > 180);
+    out.nh0 = p47.filter(f => f !== body47);
+    out.nf0 = (body47 && body47.blocks) || [];
+    const spreads = [];
+    for (let pg = 48; pg <= (this.state.noteMax || 82); pg += 2) {
+      spreads.push({
+        label: (!this.state.noteFlow && NOTE_LABELS[pg]) || (pg + '-' + (pg + 1) + ' Notes to the Financial Statements'),
+        folioL: pg + shift, folioR: pg + 1 + shift,
+        showL: !clash[pg], showR: !clash[pg + 1],
+        circles: (this.state.noteFlow ? [] : NOTE_CIRCLES[pg] || []).map(c => ({ l: c.l + 'pt', t: c.t + 'pt', d: c.d + 'pt' })),
+        frames: (notes[pg] || []).concat(notes[pg + 1] || []),
+      });
+    }
+    out.noteSpreads = spreads;
+    // Statement foot line (FY25): the page range follows the notes as laid out.
+    const notePgs = Object.keys(notes).map(Number).filter(p => (notes[p] || []).some(fr => fr.blocks && fr.blocks.length));
+    const lastNote = notePgs.length ? Math.max(...notePgs) : 82;
+    out.notesRef = 'Notes to the financial statements are included on pages ' + (47 + shift) + ' to ' + (lastNote + shift) + '.';
+
+    for (let i = 0; i < 10; i++) {
+      const d = dirs[i];
+      out['d' + i] = d ? Object.assign({}, d, { roleLabel: d.role ? ' (' + d.role + ')' : '' }) : { paras: [], roleLabel: '' };
+      out['f' + i] = this._blocks(f[i], copy);
+    }
+    return out;
+  }
+}
+</script>
+</body>
+</html>

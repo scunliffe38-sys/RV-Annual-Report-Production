@@ -501,7 +501,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     // Shown on the Production Run bar so a run can be checked against the latest files.
-    window.RV_FIN_BUILD = 'Finance build 21 Oct 2026 \u00b7 Test 13 fixes';
+    window.RV_FIN_BUILD = 'page 21 Oct 2026';
     (window.RVProduction ? window.RVProduction.load('directors-report', () => import('./copy/directors-report.js')) : import('./copy/directors-report.js'))
       .then(m => window.RVAuditor ? window.RVAuditor.pages(((m.copy || {}).kpmg) || {}) : null)
       .then(a => { if (a) this.setState({ auditor: a }); })

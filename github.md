@@ -5,6 +5,7 @@ branch: main
 date: 2026-10-21T00:00:00Z
 
 ### Updated in this project
+- serve.py (no-cache server) added; Console/Run scripts versioned; Run bar reports page and data builds.
 - Test 13: footnotes under a statement in Word now carry through (cash flow "(i) Funds transferred…"); finance-adapter.js and data/fy26-payload.json updated.
 - Statement of financial position: notes-range line no longer clipped.
 - Build stamp shown on the Production Run bar when ready.

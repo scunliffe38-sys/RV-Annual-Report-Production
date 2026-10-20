@@ -601,6 +601,8 @@
         }
         if (fn.length) st[name].footnotes = fn;
       });
+      // Lets the Production Run bar confirm which adapter built this run.
+      st._build = "21 Oct 2026";
     } else issues.push({ level: "error", text: "Fewer than four financial statements found." });
 
     var notes = { flow: true, year: Y, stories: { flow: buildNotes(parsed, issues) } };
