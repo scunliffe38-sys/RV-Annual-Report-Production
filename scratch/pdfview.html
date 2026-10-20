@@ -1,0 +1,19 @@
+<!doctype html><html><body style="margin:0;background:#888;overflow:hidden;height:100vh">
+<canvas id="c"></canvas>
+<script type="module">
+import * as pdfjs from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs';
+pdfjs.GlobalWorkerOptions.workerSrc='https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs';
+const docs={};
+window.show=async(file,n,scale=1.5,clip)=>{
+  docs[file]=docs[file]||await pdfjs.getDocument('../uploads/'+file).promise;
+  const p=await docs[file].getPage(n);const vp=p.getViewport({scale});
+  const c=document.getElementById('c');c.width=vp.width;c.height=vp.height;
+  await p.render({canvasContext:c.getContext('2d'),viewport:vp,annotationMode:pdfjs.AnnotationMode.ENABLE}).promise;
+  const an=await p.getAnnotations();const ctx=c.getContext('2d');ctx.strokeStyle='red';ctx.lineWidth=3;ctx.fillStyle='red';ctx.font='bold 22px sans-serif';let k=1;
+  for(const a of an){if(a.subtype!=='Text')continue;const [x,y]=vp.convertToViewportPoint(a.rect[0],a.rect[3]);ctx.strokeRect(x,y,24,24);ctx.fillText(k++,x+28,y+20);}
+  const z=clip?clip[2]:1;c.style.width=(innerWidth*z)+'px';c.style.display='block';
+  c.style.transform=clip?`translate(${-clip[0]*innerWidth*z}px,${-clip[1]*innerWidth*z*vp.height/vp.width}px)`:'';
+  window.done=n;return [vp.width,vp.height];
+};
+window.ready=true;
+</script></body></html>

@@ -33,6 +33,17 @@
   </div>
 </sc-if>
 
+<sc-if value="{{ block.isFootCols }}" hint-placeholder-val="">
+  <div style="padding:{{ block.pt }} 0 {{ block.pb }};column-count:2;column-gap:{{ block.gap }};column-fill:balance;font-size:{{ block.fs }};line-height:{{ block.lh }};color:{{ block.col }}">
+    <sc-for list="{{ block.items }}" as="it" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:{{ block.mcol }} 1fr;break-inside:avoid;padding-bottom:{{ block.ipb }}">
+        <div>{{ it.marker }}</div>
+        <div>{{ it.t }}</div>
+      </div>
+    </sc-for>
+  </div>
+</sc-if>
+
 <sc-if value="{{ block.isTable }}" hint-placeholder-val="">
   <div style="padding:{{ block.pt }} 0 {{ block.pb }}">
     <sc-for list="{{ block.rows }}" as="r" hint-placeholder-count="8">

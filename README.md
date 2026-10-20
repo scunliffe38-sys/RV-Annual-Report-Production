@@ -32,3 +32,13 @@ Rules:
 - To replace a font, keep the same file name in `fonts/`. The sections need no changes.
 - The current files hold about 340 characters and have no hinting. ≤, ½, → and ′ are missing and print in a fallback font. A full desktop set from the Hoefler&Co licence would fill those gaps.
 - After changing fonts, hard refresh (Ctrl+F5) before saving the PDF.
+
+## Finance section styling
+The notes and statements follow the FY25 report (measured off the FY25 PDF):
+- Bold and italic as the Word file sets them; bold in RV Blue. Group heads such as "(h) Operating Expenditure" are bold italic.
+- One 0.709pt rule over a total's figures. A single rule under a subtotal; a double rule under the total that closes a group or the table.
+- Three-column note tables indent rows under the title by 14.17pt, except group heads and the opening sentence. Wide tables (property, plant and equipment; intangibles) are not indented and use a 181.4pt label column.
+- Empty closing rows in Word are not printed.
+- Footnotes stay on their table's page, in two columns if needed.
+- Long paragraphs run on over a page, keeping at least two lines on each side; paragraphs of three lines or fewer move whole.
+- After changing `finance-adapter.js`, rebuild `data/fy26-payload.json` from `data/fy26-finance.docx`.

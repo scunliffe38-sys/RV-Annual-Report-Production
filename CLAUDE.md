@@ -19,6 +19,15 @@
   The check must use the same spacing the layout uses (including the gap after
   tables), so a spacing change can't reintroduce an overlap.
 
+- **Finance note tables follow the FY25 PDF** (measured off
+  `RV ANNUAL REPORT 2025_FINAL_DPS.pdf`): bold and italic as Word sets them,
+  bold in RV Blue; 0.709pt rule over a total's figures; single rule under a
+  subtotal, double under the total closing a group, a run of subtotals or the
+  table; three-column tables indent everything under the title 14.17pt except
+  bold-italic/lettered group heads and the opening sentence; wide tables
+  (PP&E, intangibles) are not indented and get a 181.4pt label column. Bold
+  run-in heads (H3) are RV Blue, centred one 12pt line above and below.
+  Footnotes stay on their table's page, in two columns if needed.
 - **Fonts are TrueType (`fonts/Gotham-*.ttf`) with fsType 0.** OTF (CFF) or
   TTFs with restricted/no-subsetting flags make Chrome save Gotham as Type 3
   (soft in Acrobat). Check File › Properties › Fonts shows "TrueType (CID)".

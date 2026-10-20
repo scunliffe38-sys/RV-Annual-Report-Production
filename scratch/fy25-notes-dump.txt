@@ -1,0 +1,619 @@
+## u13ab7
+p <A4 V:Subhead Large> 1. Summary of Material Accounting Policies
+p <A4 V:Body> The material accounting policies adopted in the preparation of these consolidated financial statements are set
+p <H3 Sub Heading LC Financials> Basis of preparation
+p <H4 Sub Heading Italic> Compliance with Australian Accounting Standards – Simplified Disclosures
+p <A4 V:Body> These consolidated financial statements are general purpose financial statements for distribution to the membe
+p <H4 Sub Heading Italic> Historical cost convention
+p <A4 V:Body> These financial statements have been prepared under the historical cost convention, as modified by the revalua
+p <H4 Sub Heading Italic> (i) Establishment of Operations
+p <B2 Body Indent> The consolidated entity was incorporated on 17 December 2001 for the purpose of administering the Victorian th
+p <H4 Sub Heading Italic> (ii) Current Membership
+p <B2 Body Indent> The current membership of Racing Victoria now comprises of: Club members: Country Racing Victoria, Melbourne R
+p <H4 Sub Heading Italic> (iii) Victorian Thoroughbred Racing Industry Revenue and Grants
+p <B2 Body Indent> On 16 August 2012, the Victorian Racing Industry (VRI) entered into joint venture arrangements with the Tabcor
+p <B7 Bullet double Indent> From 1 July 2024, the State Government increased the Point of Consumption Tax (PoCT) levied on wagering by Vic
+p <B2 Body Indent> The thoroughbred, harness and greyhound racing codes have agreed on an appropriate code sharing arrangement of
+p <B7 Bullet double Indent> The consolidated entity will from time to time make grants to members and participants in the Victorian thorou
+p <B7 Bullet double Indent> In making grants, the consolidated entity will seek to:
+p <B7 Bullet double Indent> (i) adequately support the objectives of the Victorian thoroughbred racing industry; (ii) provide incentives f
+p <B7 Bullet double Indent> The clubs further acknowledge that, consistent with the constitution of the consolidated entity, no portion or
+p <H4 Sub Heading Italic> (iv) Retained Profits
+p <B2 Body Indent> Under the terms of the Members Agreement net profit and the ongoing retained profits of the consolidated entit
+p <H3 Sub Heading LC Financials> Material Accounting Policies
+p <B1 Body Text> The following material accounting policies have been adopted in the preparation and presentation of the financ
+p <H4 Sub Heading Italic> (a) AASB 15 Revenue from Contracts with Customers
+p <B2 Body Indent> VOBIS nomination fees received are deferred into unearned revenue, to be recognised as revenue in future years
+p <H4 Sub Heading Italic> (b) Critical Accounting Judgements and Key Sources of Estimation Uncertainty
+p <B2 Body Indent> RS[":In the application o","Book Italic:Critical judgements ",":Judgements made by m","Medium:•\t<?ACE 7?>Impairmen","Book:\nAs described in not","Medium:•\t<?ACE 7?>Provision","Book:\nAs described in not","Medium:•\t<?ACE 7?>Useful li","Book:\nAs described in not","Medium:•\t<?ACE 7?>Contingen","Book:\nThe consolidated en"] In the application of the consolidated entity’s accounting policies, which are described above, management is 
+p <H3 Sub Heading LC Financials> #6D6E71 All other material accounting policies adopted in the preparation and presentation of the financial report are
+## u13afb
+TABLE cols=[328.819,76.535,76.535]
+   h15.304 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h25.023 [A4 V:Subhead Large] 2. Surplus / (Deficit) from Operations | [Body Digits]  | [Header 3] 
+   h15.704 [Body] Revenue from operations consisted of the following items: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Bold] (a) Wagering Revenue | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] VicTAB joint venture distributions (i) | [Body Digits] 11,310 | [Body Digits] 119,713
+   h15.704 [Body] Race fields fees | [Body Digits b0.709] 223,824 | [Body Digits b0.709] 244,698
+   h15.704 [Body Bold bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b2] 235,134 | [Body Digits bg#F0F5F9 t0.709 b2] 364,411
+   h15.969 [Body Bold]  | [Body Digits t2]  | [Body Digits t2] 
+   h15.704 [Body Bold] (b) Government Funding and Distributions | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] PoCT distribution (ii) | [Body Digits bg#F0F5F9] 127,361 | [Body Digits bg#F0F5F9] 60,083
+   h15.704 [Body] Fixed industry distributions (iii) | [Body Digits] 55,716 | [Body Digits] -
+   h15.704 [Body bg#F0F5F9] Racecourse infrastructure program funding | [Body Digits bg#F0F5F9] 1,699 | [Body Digits bg#F0F5F9] 1,333
+   h15.704 [Body] Other Government funding (iv) | [Body Digits b0.709] 1,911 | [Body Digits b0.709] 822
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b2] 186,687 | [Body Digits bg#F0F5F9 t0.709 b2] 62,238
+   h15.704 [Body Bold]  | [Body Digits t2]  | [Body Digits t2] 
+   h15.704 [Body Bold] (c) Media Revenue | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Media rights revenue | [Body Digits bg#F0F5F9] 42,513 | [Body Digits bg#F0F5F9] 42,791
+   h15.704 [Body] Channel sponsorship and advertising revenue | [Body Digits] 25,057 | [Body Digits] 24,178
+   h15.704 [Body bg#F0F5F9] Media assets revenue (v) | [Body Digits bg#F0F5F9] 8,987 | [Body Digits bg#F0F5F9] 9,482
+   h15.704 [Body] Other media revenue (vi) | [Body Digits b0.709] 8,815 | [Body Digits b0.709] 10,245
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b2] 85,372 | [Body Digits bg#F0F5F9 t0.709 b2] 86,696
+p <Footnotes> (i) Joint venture arrangements between the VRI and Tabcorp ceased on 15 August 2024 with the conclusion of the
+## u145a3
+p <A4 V:Heading Large> Notes to the financial statements
+## u13b21
+TABLE cols=[328.82,76.535,76.535]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h21.738 [A4 V:Subhead Large] 2. Surplus / (Deficit) from Operations (continued) | [A4 V:Subhead Large]  | [A4 V:Subhead Large] 
+   h15.704 [Body Bold] (d) Other Revenue | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Racing revenue | [Body Digits] 3,393 | [Body Digits] 2,847
+   h15.704 [Body] VOBIS nomination revenue (vii) | [Body Digits] 3,835 | [Body Digits] 3,859
+   h15.704 [Body] Customer revenue | [Body Digits] 1,295 | [Body Digits] 1,088
+   h15.704 [Body] Industry service recoveries | [Body Digits] 1,273 | [Body Digits] 1,193
+   h15.704 [Body] Racecourse infrastructure contributions (viii) | [Body Digits] 124 | [Body Digits] 1,357
+   h15.704 [Body bg#F0F5F9] Rent income (ix) | [Body Digits bg#F0F5F9] 1,006 | [Body Digits] 1,020
+   h15.704 [Body] Other revenue | [Body Digits b0.709] 2,023 | [Body Digits b0.709] 2,955
+   h15.704 [Body Indent/Bold]  | [Body Digits t0.709 b0.709] 12,949 | [Body Digits t0.709 b0.709] 14,319
+   h15.704 [Body]  | [Body Digits t0.709]  | [Body Digits/Bold t0.709] 
+   h15.704 [Body] Investment income (x) | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Distribution income | [Body Digits] 1,382 | [Body Digits] 876
+   h15.704 [Body] Interest income | [Body Digits] 3,025 | [Body Digits] 4,521
+   h15.704 [Body] Dividend income | [Body Digits b0.709] 729 | [Body Digits b0.709] 934
+   h15.704 [Body Indent/Bold]  | [Body Digits t0.709 b0.709] 5,136 | [Body Digits t0.709 b0.709] 6,331
+   h15.704 [Body]  | [Body Digits/Bold t0.709]  | [Body Digits/Bold t0.709] 
+   h15.704 [Body] Other gains and losses (x) | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Gain on disposal of investments | [Body Digits] 215 | [Body Digits] 461
+   h15.704 [Body] Net gain arising on financial assets designated as FVTPL | [Body Digits b0.709] 1,008 | [Body Digits b0.709] 2,299
+   h15.704 [Body/Bold]  | [Body Digits t0.709 b0.709 #005FA1] 1,223 | [Body Digits t0.709 b0.709 #005FA1] 2,760
+   h15.704 [Body/Bold]  | [Body Digits t0.709 b2] 19,308 | [Body Digits t0.709 b2] 23,410
+p <Footnotes> (vii) Refer note 1(a) for VOBIS nomination revenue recognition methodology. (viii) Club contributions towards 
+p <Footnotes> (x) Evans and Partners are engaged to manage accumulated surplus funds that sit outside operating cash require
+## u13b38
+TABLE cols=[328.465,77.598,75.828]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h23.215 [A4 V:Subhead Large] 2. Surplus / (Deficit) from Operations (continued) | [Header 3]  | [Header 3] 
+   h17.008 [Body n3] Surplus/(deficit) has been arrived at after charging the following expenses: | [null] | [null]
+   h15.704 [Body Bold] (e) Industry Expenditure | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Prizemoney | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Prizemoney (xi) | [Body Digits bg#F0F5F9] 255,695 | [Body Digits bg#F0F5F9] 259,541
+   h15.704 [Body] VOBIS bonuses and vouchers | [Body Digits b0.709] 10,066 | [Body Digits b0.709] 9,526
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b0.709] 265,761 | [Body Digits bg#F0F5F9 t0.709 b0.709] 269,067
+   h6.52 [Body/Bold]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Club funding | [Body Digits bg#F0F5F9]  | [Body Digits bg#F0F5F9] 
+   h15.704 [Body] Fixed funding (xii) | [Body Digits] 32,465 | [Body Digits] 21,541
+   h15.704 [Body] Track and infrastructure funding (xii) | [Body Digits bg#F0F5F9] 16,785 | [Body Digits bg#F0F5F9] 18,998
+   h15.704 [Body] Wagering funding (xii) | [Body Digits] 9,817 | [Body Digits] 15,338
+   h15.704 [Body] Media rights funding | [Body Digits bg#F0F5F9 b0.709] 30,886 | [Body Digits bg#F0F5F9 b0.709] 32,395
+   h15.704 [Body]  | [Body Digits t0.709 b0.709 #005FA1] 89,953 | [Body Digits t0.709 b0.709 #005FA1] 88,272
+   h5.472 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body] Infrastructure expenditure | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Infrastructure operations expense | [Body Digits bg#F0F5F9] 689 | [Body Digits bg#F0F5F9] 1,596
+   h15.704 [Body] Infrastructure capital vested with clubs (xiii) | [Body Digits b0.709] 4,437 | [Body Digits b0.709] 9,211
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b0.709] 5,126 | [Body Digits bg#F0F5F9 t0.709 b0.709] 10,807
+   h5.216 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Industry and participant support | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Jockey ride fees | [Body Digits bg#F0F5F9] 15,497 | [Body Digits bg#F0F5F9] 14,631
+   h15.704 [Body] Jockey WorkCover expense | [Body Digits] 5,191 | [Body Digits] 4,771
+   h15.704 [Body bg#F0F5F9] Jockey welfare expense | [Body Digits bg#F0F5F9] 3,364 | [Body Digits bg#F0F5F9] 3,190
+   h15.704 [Body] Participant support (xiv) | [Body Digits] 3,533 | [Body Digits] 2,690
+   h15.704 [Body bg#F0F5F9] Equine welfare expense (xv) | [Body Digits bg#F0F5F9] 5,580 | [Body Digits bg#F0F5F9] 4,438
+   h15.704 [Body] Other industry support (xvi) | [Body Digits b0.709] 2,121 | [Body Digits b0.709] 1,260
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b0.709] 35,286 | [Body Digits bg#F0F5F9 t0.709 b0.709] 30,980
+   h15.704 [Body]  | [Body Digits t0.709 b2] 396,126 | [Body Digits t0.709 b2] 399,126
+## u13b4f
+p <Footnotes> (xi) Whilst VTRI prizemoney and bonuses on offer exceed $316 million, amounts reported exclude contributions f
+## u145bd
+p <A4 V:Heading Large> Notes to the financial statements
+## u145f3
+p <H2 Sub Heading> for the year ended 30 June 2025
+## u13b76
+TABLE cols=[327.685,77.598,76.607]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h21.738 [A4 V:Subhead Large] 2. Surplus / (Deficit) from Operations (continued) | [Header 3]  | [Header 3] 
+   h7.2 [Body]  | [Body Digits]  | [Body Digits] 
+   h17.769 [Body Bold] (f) Wagering Services Expenditure | [Body Digits]  | [Body Digits] 
+   h17.121 [Body] Wagering operations expense (xvii) | [Body Digits] 4,456 | [Body Digits] 5,759
+   h15.704 [Body] Joint venture contributions (xviii) | [Body Digits] 221 | [Body Digits] 2,203
+   h15.704 [Body] Bookmakers’ development fund | [Body Digits b0.709] 301 | [Body Digits b0.709] 352
+   h15.704 [Body]  | [Body Digits t0.709 b2] 4,978 | [Body Digits t0.709 b2] 8,314
+   h15.391 [Body]  | [Body Digits t2]  | [Body Digits t2] 
+   h18.644 [Body Bold bg#F0F5F9] (g) Media Services Expenditure | [Body Digits bg#F0F5F9]  | [Body Digits bg#F0F5F9] 
+   h18.544 [Body] Services and administration expense | [Body Digits] 7,915 | [Body Digits] 8,432
+   h15.704 [Body bg#F0F5F9] Media operations expense | [Body Digits bg#F0F5F9] 13,070 | [Body Digits bg#F0F5F9] 13,890
+   h15.704 [Body] Supply and distribution expense (xix) | [Body Digits] 25,331 | [Body Digits] 25,551
+   h15.704 [Body bg#F0F5F9] Media asset expense (xx) | [Body Digits bg#F0F5F9] 7,146 | [Body Digits bg#F0F5F9] 7,336
+   h15.704 [Body] Other expense (xxi) | [Body Digits b0.709] 7,091 | [Body Digits b0.709] 7,480
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b2] 60,553 | [Body Digits bg#F0F5F9 t0.709 b2] 62,689
+p <Footnotes> (xvii) Inclusive of wagering development fund and Herald Sun form guide partnership expenses. (xviii) Prior ye
+p <Footnotes> (xxi) Inclusive of arrangements with both Racing SA and the HKJC.
+## u145d4
+p <A4 V:Heading Large> Notes to the financial statements
+## u1460a
+p <H2 Sub Heading> for the year ended 30 June 2025
+## u13bbc
+TABLE cols=[327.685,77.598,76.606]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+## u13ba5
+TABLE cols=[327.685,77.598,76.606]
+   h26.524 [A4 V:Subhead Large] 2. Surplus / (Deficit) from Operations (continued) | [Body Digits]  | [Body Digits] 
+   h15.73 [Body Bold] (h) Operational Expenditure | [Body Digits]  | [Body Digits] 
+   h18.538 [Body] Customer | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Marketing and events expense | [Body Digits bg#F0F5F9] 3,992 | [Body Digits bg#F0F5F9] 4,103
+   h15.704 [Body] Industry communications expense | [Body Digits b0.709] 1,570 | [Body Digits b0.709] 1,510
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b0.709] 5,562 | [Body Digits bg#F0F5F9 t0.709 b0.709] 5,613
+TABLE cols=[327.685,77.598,76.606]
+   h15.704 [Body] Racing | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Raceday services expense | [Body Digits bg#F0F5F9] 13,426 | [Body Digits bg#F0F5F9] 12,515
+   h15.704 [Body] Racing operations expense | [Body Digits b0.709] 4,190 | [Body Digits b0.709] 4,274
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b0.709] 17,616 | [Body Digits bg#F0F5F9 t0.709 b0.709] 16,789
+   h7.554 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h14.287 [Body] Integrity and Veterinary | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Integrity expense | [Body Digits bg#F0F5F9] 9,943 | [Body Digits bg#F0F5F9] 10,211
+   h15.704 [Body] Veterinary expense | [Body Digits] 2,902 | [Body Digits] 2,898
+   h15.704 [Body bg#F0F5F9] Swabbing expense | [Body Digits bg#F0F5F9 b0.709] 2,282 | [Body Digits bg#F0F5F9 b0.709] 2,496
+   h15.704 [Body]  | [Body Digits t0.709 b0.709] 15,127 | [Body Digits t0.709 b0.709] 15,605
+   h7.554 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h11.452 [Body] Administration and Other | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Services and administration expense | [Body Digits] 10,324 | [Body Digits] 10,384
+   h15.704 [Body] Legal, risk and compliance expense (xxii) | [Body Digits] 2,955 | [Body Digits] 5,678
+   h15.704 [Body] Information technology expense | [Body Digits] 6,158 | [Body Digits] 6,002
+   h15.704 [Body] Occupancy expense | [Body Digits] 2,578 | [Body Digits] 1,346
+   h15.704 [Body] Fleet costs | [Body Digits] 679 | [Body Digits] 608
+   h15.704 [Body] Doubtful debts | [Body Digits] - | [Body Digits] 72
+   h15.704 [Body] Other expense (xxiii) | [Body Digits b0.709] 2,188 | [Body Digits b0.709] 493
+   h15.704 [Body]  | [Body Digits t0.709 b0.709] 24,882 | [Body Digits t0.709 b0.709] 24,583
+   h15.704 [Body]  | [Body Digits t0.709 b2] 63,187 | [Body Digits t0.709 b2] 62,590
+   h8.2 [Body]  | [Body Digits t2]  | [Body Digits t2] 
+   h14.287 [Body Bold] (i) Depreciation, Amortisation and Other Asset Expenditure | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Depreciation - property, plant and equipment | [Body Digits bg#F0F5F9] 4,500 | [Body Digits bg#F0F5F9] 4,048
+   h15.704 [Body] Depreciation - right of use assets | [Body Digits] 1,696 | [Body Digits] 1,682
+   h15.704 [Body bg#F0F5F9] Amortisation - intangible assets | [Body Digits bg#F0F5F9] 2,423 | [Body Digits bg#F0F5F9] 2,969
+   h15.704 [Body] Asset write down | [Body Digits] - | [Body Digits] 151
+   h15.704 [Body bg#F0F5F9] Loss on disposal (xxiv) | [Body Digits bg#F0F5F9 b0.709] 35 | [Body Digits bg#F0F5F9 b0.709] 6,416
+   h15.704 [Body]  | [Body Digits t0.709 b2] 8,654 | [Body Digits t0.709 b2] 15,266
+## u13bd3
+
+## u13b8d
+p <Footnotes> (xxii) Inclusive of external legal costs. Notable activity within the prior period included the NSW Supreme Co
+## u13bf9
+TABLE cols=[327.685,77.598,76.606]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h23.939 [A4 V:Subhead Large] 2. Surplus / (Deficit) from Operations (continued) | [Header 3]  | [Header 3] 
+   h17.738 [Body] Expenses from ordinary activities include: | [Body Digits]  | [Body Digits] 
+   h17.738 [Body bg#F0F5F9] Employee benefits expense | [Body Digits bg#F0F5F9] 45,766 | [Body Digits bg#F0F5F9] 46,977
+   h17.738 [Body] Defined benefit superannuation plan expense | [Body Digits b0.709] - | [Body Digits b0.709] 97
+   h29.509 [Header 3]  | [Header 3 t0.709]  | [Header 3 t0.709] 
+   h25.501 [A4 V:Subhead Large n2] 3. Current Trade and Other Receivables | [null] | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Trade and sundry receivables (i) | [Body Digits bg#F0F5F9] 19,522 | [Body Digits bg#F0F5F9] 13,597
+   h15.704 [Body] Industry funding receivables (ii) | [Body Digits] 21,307 | [Body Digits] 19,961
+   h15.704 [Body bg#F0F5F9] Wagering receivables (iii) | [Body Digits bg#F0F5F9] 19,156 | [Body Digits bg#F0F5F9] 19,236
+   h15.704 [Body] Allowance for doubtful debts (iv) | [Body Digits b0.709] (415) | [Body Digits b0.709] (415)
+   h15.704 [Body]  | [Body Digits t0.709 b2 #005FA1] 59,570 | [Body Digits t0.709 b2 #005FA1] 52,379
+   h15.704 [Body]  | [Body Digits t2]  | [Body Digits t2] 
+   h112.451 [Footnotes n3] (i) Most trade receivables arise from transactions with trainers and racing clubs with credit periods provided at 60 and 30 days respectively. (ii) Amounts to be received through the State Government for the thoroughbred share of the VRI PoCT distribution payment are paid 60 days in arrears. (iii) Most wagering receivables arise from transactions with WSPs for race fields fees and media rights, with credit periods provided at 15 and 30 days respectively. (iv) A provision has been made for estimated non-recoverable amounts from these receivables, determined by reference to past default experience. Loss allowances for receivables are measured at an amount equal to lifetime Expected Credit Losses (ECLs). When determining whether the credit risk of a financial asset has increased significantly since initial recognition and when estimating ECLs, the consolidated entity considers reasonable and supportable information that is relevant and available without undue cost or effort. This is determined by reference to past default experience. | [null] | [null]
+   h15.704 [Body]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Allowance for doubtful debts at the beginning of the period | [Body Digits bg#F0F5F9] 415 | [Body Digits bg#F0F5F9] 343
+   h15.704 [Body] - Bad debts written off | [Body Digits] (64) | [Body Digits] (52)
+   h15.704 [Body bg#F0F5F9] - Doubtful debts movement taken to surplus or deficit | [Body Digits bg#F0F5F9 b0.709] 64 | [Body Digits bg#F0F5F9 b0.709] 124
+   h15.704 [Body] Allowance for doubtful debts at the end of the period | [Body Digits t0.709 b0.709 #005FA1] 415 | [Body Digits t0.709 b0.709 #005FA1] 415
+## u13c10
+TABLE cols=[327.685,77.598,76.606]
+   h17.008 [Body Digits bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h15.704 [Body Digits bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h26.804 [A4 V:Subhead Large] 4. Other Financial Assets | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Bold] Current: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Bold] Financial assets designated as FVTPL | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Indent] Australian shares | [Body Digits] 8,883 | [Body Digits] 15,666
+   h15.704 [Body Indent] International shares | [Body Digits] 21,836 | [Body Digits] 20,722
+   h17.829 [Body Indent bg#F0F5F9] Interest bearing securities | [Body Digits bg#F0F5F9 b0.709] 24,290 | [Body Digits bg#F0F5F9 b0.709] 27,899
+   h17.953 [Body Indent]  | [Body Digits t0.709 b0.709] 55,009 | [Body Digits t0.709 b0.709] 64,287
+   h15.704 [Body Bold]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body Bold] Financial assets measured at amortised cost | [Body Digits]  | [Body Digits] 
+   h16.781 [Body Indent bg#F0F5F9] Cash investments | [Body Digits bg#F0F5F9] 2,830 | [Body Digits bg#F0F5F9] 8,673
+   h17.953 [Body Indent] Cash deposits – jockey apprentices | [Body Digits] 2,290 | [Body Digits] 2,252
+   h18.622 [Body Indent bg#F0F5F9] Cash deposits – participant welfare fund | [Body Digits bg#F0F5F9] 816 | [Body Digits bg#F0F5F9] 776
+   h17.283 [Body Indent] Loans to related party – Ballarat Turf Club (i) | [Body Digits] - | [Body Digits] 332
+   h17.008 [Body Indent bg#F0F5F9] Loans to related party – Wangaratta Turf Club (i) | [Body Digits bg#F0F5F9] - | [Body Digits bg#F0F5F9] 110
+   h16.177 [Body Indent] Loans to related party – Cranbourne Pakenham Racing Club (ii) (iii) | [Body Digits b0.709] 4,221 | [Body Digits b0.709] 4,204
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b0.709] 10,157 | [Body Digits bg#F0F5F9 t0.709 b0.709] 16,347
+   h19.143 [Body]  | [Body Digits t0.709 b2] 65,166 | [Body Digits t0.709 b2] 80,634
+   h15.704 [Body]  | [Body Digits t2]  | [Body Digits t2] 
+   h15.704 [Body Bold] Non-Current: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Bold] Financial assets measured at amortised cost | [Body Digits]  | [Body Digits] 
+   h16.196 [Body Indent bg#F0F5F9] Loans to related party – Victoria Racing Club (iii) | [Body Digits bg#F0F5F9] 7,578 | [Body Digits bg#F0F5F9] 6,973
+   h16.063 [Body Indent] Loans to related party – Cranbourne Pakenham Racing Club (iii) | [Body Digits] 2,894 | [Body Digits] 3,115
+   h16.063 [Body Indent bg#F0F5F9] Loans to related party – Ballarat Turf Club (i) | [Body Digits bg#F0F5F9] - | [Body Digits bg#F0F5F9] 2,503
+   h17.008 [Body Indent] Loans to related party – Wangaratta Turf Club (i) | [Body Digits] - | [Body Digits] 235
+   h17.953 [Body Indent bg#F0F5F9] Loans to related party – Sports Wagering Integrity Monitoring Ltd (iv) | [Body Digits bg#F0F5F9 b0.709] 853 | [Body Digits bg#F0F5F9 b0.709] 826
+   h17.48 [Body]  | [Body Digits t0.709 b2] 11,325 | [Body Digits t0.709 b2] 13,652
+p <Footnotes> (i) Racing Victoria loans to the Ballarat Turf Club and Wangaratta Turf Club were novated to Country Racing Vi
+## u13c38
+TABLE cols=[181.417,50.079,49.134,51.969,58.583,43.228,48.614]
+   h35.704 [Header bg#005FA1]  | [Header bg#005FA1] Buildings | [Header bg#005FA1] Freehold Land | [Header bg#005FA1] Infra-structure Capital | [Header bg#005FA1] Plant & Equipment | [Header bg#005FA1] Media Assets | [Header bg#005FA1] Total
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h29.007 [A4 V:Subhead Large n3] 5. Property, Plant and Equipment | [null] | [null] | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h18.538 [Body Bold] Gross carrying amount (at cost) | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Balance at the beginning of the period | [Body Digits bg#F0F5F9] 11,785 | [Body Digits bg#F0F5F9] 30,159 | [Body Digits bg#F0F5F9] 1,181 | [Body Digits bg#F0F5F9] 9,998 | [Body Digits bg#F0F5F9] 30,788 | [Body Digits bg#F0F5F9] 83,911
+   h15.704 [Body] Additions (i) | [Body Digits] 431 | [Body Digits] - | [Body Digits] - | [Body Digits] 646 | [Body Digits] 3,379 | [Body Digits] 4,456
+   h15.704 [Body bg#F0F5F9] Assets transferred | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] (3,155) | [Body Digits bg#F0F5F9 b0.709] (3,155)
+   h15.704 [Body] Balance at the end of the period | [Body Digits t0.709 b0.709] 12,216 | [Body Digits t0.709 b0.709] 30,159 | [Body Digits t0.709 b0.709] 1,181 | [Body Digits t0.709 b0.709] 10,644 | [Body Digits t0.709 b0.709] 31,012 | [Body Digits t0.709 b0.709] 85,212
+   h14.173 [Body Indent]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body Bold] Accumulated Depreciation | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Balance at the beginning of the period | [Body Digits bg#F0F5F9] (5,178) | [Body Digits bg#F0F5F9] - | [Body Digits bg#F0F5F9] (1,013) | [Body Digits bg#F0F5F9] (5,900) | [Body Digits bg#F0F5F9] (17,297) | [Body Digits bg#F0F5F9] (29,388)
+   h15.704 [Body] Depreciation expense | [Body Digits b0.709] (378) | [Body Digits b0.709] - | [Body Digits b0.709] (40) | [Body Digits b0.709] (1,391) | [Body Digits b0.709] (2,691) | [Body Digits b0.709] (4,500)
+   h15.704 [Body bg#F0F5F9] Balance at the end of the period | [Body Digits bg#F0F5F9 t0.709 b0.709] (5,556) | [Body Digits bg#F0F5F9 t0.709 b0.709] - | [Body Digits bg#F0F5F9 t0.709 b0.709] (1,053) | [Body Digits bg#F0F5F9 t0.709 b0.709] (7,291) | [Body Digits bg#F0F5F9 t0.709 b0.709] (19,988) | [Body Digits bg#F0F5F9 t0.709 b0.709 sz8.5] (33,888)
+   h14.173 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body #005FA1] Net Book Value | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] As at the beginning of the period | [Body Digits bg#F0F5F9 b0.709] 6,607 | [Body Digits bg#F0F5F9 b0.709] 30,159 | [Body Digits bg#F0F5F9 b0.709] 168 | [Body Digits bg#F0F5F9 b0.709] 4,098 | [Body Digits bg#F0F5F9 b0.709] 13,491 | [Body Digits bg#F0F5F9 b0.709] 54,523
+   h15.704 [Body] As at the end of the period | [Body Digits t0.709 b2] 6,660 | [Body Digits t0.709 b2] 30,159 | [Body Digits t0.709 b2] 128 | [Body Digits t0.709 b2] 3,353 | [Body Digits t0.709 b2] 11,024 | [Body Digits t0.709 b2] 51,324
+p <B1 Body Text> (i) Inclusive of media infrastructure and broadcast truck enhancements.
+## u13c4f
+TABLE cols=[180,56.693,56.693,49.134,43.465,50.079,45.354]
+   h45.904 [Header bg#005FA1]  | [Header bg#005FA1] Computer Software & Databases | [Header bg#005FA1] Mastheads | [Header bg#005FA1] Goodwill | [Header bg#005FA1] Racing.com Domain Name | [Header bg#005FA1] Media Software | [Header bg#005FA1] Total
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h29.646 [A4 V:Subhead Large] 6. Intangible Assets | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h18.538 [Body Bold] Gross carrying amount (at cost) | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Balance at the beginning of the period | [Body Digits bg#F0F5F9] 20,429 | [Body Digits bg#F0F5F9] 1,351 | [Body Digits bg#F0F5F9] 5,076 | [Body Digits bg#F0F5F9] 947 | [Body Digits bg#F0F5F9] 2,472 | [Body Digits bg#F0F5F9] 30,275
+   h15.704 [Body] Additions (i) | [Body Digits] 780 | [Body Digits] - | [Body Digits] - | [Body Digits] - | [Body Digits] 4,563 | [Body Digits] 5,343
+   h15.704 [Body bg#F0F5F9] Assets transferred | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] 3,155 | [Body Digits bg#F0F5F9 b0.709] 3,155
+   h15.704 [Body] Balance at the end of the period | [Body Digits t0.709 b0.709] 21,209 | [Body Digits t0.709 b0.709] 1,351 | [Body Digits t0.709 b0.709] 5,076 | [Body Digits t0.709 b0.709] 947 | [Body Digits t0.709 b0.709] 10,190 | [Body Digits t0.709 b0.709] 38,773
+   h14.173 [Body Indent]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h17.228 [Body Bold] Accumulated Amortisation | [Body Digits]  | [$ID/NormalParagraphStyle]  | [Body Digits]  | [$ID/NormalParagraphStyle]  | [$ID/NormalParagraphStyle]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Balance at the beginning of the period | [Body Digits bg#F0F5F9] (11,560) | [Body Digits bg#F0F5F9] - | [Body Digits bg#F0F5F9] - | [Body Digits bg#F0F5F9] - | [Body Digits bg#F0F5F9] (2,047) | [Body Digits bg#F0F5F9 sz8] (13,607)
+   h15.704 [Body] Amortisation expense | [Body Digits b0.709] (1,590) | [Body Digits b0.709] - | [Body Digits b0.709] - | [Body Digits b0.709] - | [Body Digits b0.709] (833) | [Body Digits b0.709] (2,423)
+   h15.704 [Body bg#F0F5F9] Balance at the end of the period | [Body Digits bg#F0F5F9 t0.709 b0.709] (13,150) | [Body Digits bg#F0F5F9 t0.709 b0.709] - | [Body Digits bg#F0F5F9 t0.709 b0.709] - | [Body Digits bg#F0F5F9 t0.709 b0.709] - | [Body Digits bg#F0F5F9 t0.709 b0.709] (2,880) | [Body Digits bg#F0F5F9 t0.709 b0.709 sz8.5] (16,030)
+   h14.173 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body Bold] Net Book Value | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] As at the beginning of the period | [Body Digits b0.709] 8,869 | [Body Digits b0.709] 1,351 | [Body Digits b0.709] 5,076 | [Body Digits b0.709] 947 | [Body Digits b0.709] 425 | [Body Digits b0.709] 16,668
+   h15.704 [Body] As at the end of the period | [Body Digits t0.709 b2] 8,059 | [Body Digits t0.709 b2] 1,351 | [Body Digits t0.709 b2] 5,076 | [Body Digits t0.709 b2] 947 | [Body Digits t0.709 b2] 7,310 | [Body Digits t0.709 b2] 22,743
+p <Footnotes> (i) Inclusive of consolidated entity digital assets and internal software projects supporting Racing Victoria 
+## u13c75
+TABLE cols=[216.378,103.937,89.764,71.811]
+   h28.346 [Header bg#005FA1]  | [Header bg#005FA1] Premises | [Header bg#005FA1] Production Equipment | [Header bg#005FA1] Total
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h31.085 [A4 V:Subhead Large] 7. Right of Use Assets | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h18.538 [Body Bold] Gross carrying amount (at cost) | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Balance at the beginning of the period | [Body Digits bg#F0F5F9] 1,616 | [Body Digits bg#F0F5F9] 5,256 | [Body Digits bg#F0F5F9] 6,872
+   h15.704 [Body] Additions | [Body Digits] - | [Body Digits] 1,736 | [Body Digits] 1,736
+   h15.704 [Body bg#F0F5F9] Derecognition of right of use assets | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] (2,016) | [Body Digits bg#F0F5F9 b0.709] (2,016)
+   h15.704 [Body] Balance at the end of the period | [Body Digits t0.709 b0.709] 1,616 | [Body Digits t0.709 b0.709] 4,976 | [Body Digits t0.709 b0.709] 6,592
+   h14.173 [Body Indent]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body Bold] Accumulated Depreciation | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Balance at the beginning of the period | [Body Digits bg#F0F5F9] (1,048) | [Body Digits bg#F0F5F9] (3,681) | [Body Digits bg#F0F5F9] (4,729)
+   h15.704 [Body] Depreciation expense | [Body Digits] (401) | [Body Digits] (1,295) | [Body Digits] (1,696)
+   h15.704 [Body bg#F0F5F9] Derecognition of right of use assets | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] 2,016 | [Body Digits bg#F0F5F9 b0.709] 2,016
+   h15.704 [Body] Balance at the end of the period | [Body Digits t0.709 b0.709] (1,449) | [Body Digits t0.709 b0.709] (2,960) | [Body Digits t0.709 b0.709] (4,409)
+   h14.173 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body Bold] Net Book Value | [Body Digits]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] As at the beginning of the period | [Body Digits bg#F0F5F9 b0.709] 568 | [Body Digits bg#F0F5F9 b0.709] 1,575 | [Body Digits bg#F0F5F9 b0.709] 2,143
+   h15.704 [Body] As at the end of the period | [Body Digits t0.709 b2] 167 | [Body Digits t0.709 b2] 2,016 | [Body Digits t0.709 b2] 2,183
+## u13c8d
+p <A4 V:Subhead Large> 8. Investments accounted for using the Equity Method
+TABLE cols=[108.425,97.087,80.787,53.26,44.539,48.898,48.898]
+   h17.008 [Header bg#005FA1] Name of Entity | [Header bg#005FA1] Principal Activity | [Header bg#005FA1] Balance Date | [Header bg#005FA1 n2] Ownership Interest | [null] | [Header bg#005FA1 n2] Carrying Amount | [null]
+   h15.704 [Body bg#005FA1]  | [Body Digits bg#005FA1]  | [Body Digits bg#005FA1]  | [Header 2 bg#005FA1 sz8.5] 2025 | [Header 2 bg#005FA1 sz8.5] 2024 | [Header 2 bg#005FA1 sz8.5] 2025 | [Header 2 bg#005FA1 sz8.5] 2024
+   h15.704 [Body bg#99BFD9]  | [Body Digits bg#99BFD9]  | [Body Digits bg#99BFD9]  | [Body Digits bg#99BFD9]  | [Body Digits bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h21.141 [Body #6D6E71] Racing Australia Ltd (i) | [Body Digits #6D6E71] Racing Information | [Body Digits #6D6E71] 30/06/2025 | [Body Digits #6D6E71] 35% | [Body Digits #6D6E71] 35% | [Body Digits #6D6E71] 14,824 | [Body Digits #6D6E71] 14,053
+   h20.026 [Body #6D6E71] 3UZ Pty Ltd (ii)(iii) | [Body Digits #6D6E71] Racing Audio | [Body Digits #6D6E71] 30/06/2025 | [Body Digits #6D6E71] 73% | [Body Digits #6D6E71] 73% | [Body Digits #6D6E71] 3,040 | [Body Digits #6D6E71] 5,699
+TABLE cols=[328.465,77.598,75.827]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h18.538 [Body Bold] Movements in investments in associates | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] At the beginning of the financial period | [Body Digits bg#F0F5F9] 19,752 | [Body Digits bg#F0F5F9] 20,356
+   h15.704 [Body] Share of net loss | [Body Digits b0.709] (1,888) | [Body Digits b0.709] (604)
+   h15.704 [Body] At the end of the financial period | [Body Digits t0.709 b2] 17,864 | [Body Digits t0.709 b2] 19,752
+p <Footnotes> (i) Significant influence is derived over Racing Australia Ltd through the Board’s appointment of a nominee di
+p <Footnotes> • For a special resolution, this means a resolution of directors passed by a majority that together holds more
+p <Footnotes> Therefore, whilst significant influence over the acquired entity exists, the Racing Victoria Group does not ha
+## u13cb3
+TABLE cols=[327.685,77.598,76.606]
+   h17.008 [Body Digits bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h15.704 [Body Digits bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h28.078 [A4 V:Subhead Large] 9. Current Trade and Other Payables | [Body Digits]  | [Body Digits] 
+   h17.008 [Body Indent] Trade and sundry payables | [Body Digits] 27,203 | [Body Digits] 28,696
+   h17.008 [Body Indent] Prizemoney payable | [Body Digits] 3,577 | [Body Digits] 4,402
+   h17.008 [Body Indent] Media rights payable | [Body Digits] 4,720 | [Body Digits] 6,570
+   h17.008 [Body Indent] GST payable | [Body Digits b0.709] 353 | [Body Digits b0.709] 1,772
+   h17.48 [Body Indent]  | [Body Digits t0.709 b2] 35,853 | [Body Digits t0.709 b2] 41,440
+   h15.704 [Body Bold]  | [Body Digits t2]  | [Body Digits t2] 
+   h24.492 [A4 V:Subhead Large] 10. Unearned Revenue | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Bold] Current: | [Body Digits]  | [Body Digits] 
+   h17.801 [Body Indent bg#F0F5F9] Government receipts (i) | [Body Digits bg#F0F5F9] 5,299 | [Body Digits bg#F0F5F9] 1,467
+   h18.898 [Body Indent] VOBIS receipts (ii) | [Body Digits] 3,803 | [Body Digits] 3,835
+   h16.063 [Body Indent bg#F0F5F9] Other | [Body Digits bg#F0F5F9 b0.709] 751 | [Body Digits bg#F0F5F9 b0.709] 285
+   h17.008 [Body]  | [Body Digits t0.709 b2] 9,853 | [Body Digits t0.709 b2] 5,587
+   h15.704 [Body]  | [Body Digits t2]  | [Body Digits t2] 
+   h15.704 [Body Bold] Non-Current: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Indent bg#F0F5F9] VOBIS receipts (ii) | [Body Digits bg#F0F5F9 b0.709] 3,011 | [Body Digits bg#F0F5F9 b0.709] 3,098
+   h15.704 [Body]  | [Body Digits t0.709 b2] 3,011 | [Body Digits t0.709 b2] 3,098
+p <Footnotes> (i) Fixed industry funding and VRIF projects (ii) Refer note 1(a) for VOBIS nomination revenue recognition met
+## u13cca
+TABLE cols=[327.827,77.598,76.465]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h27.586 [A4 V:Subhead Large] 11. Provisions | [Body Digits]  | [Body Digits] 
+   h19.227 [Body Bold] Current: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Indent] Employee benefits | [Body Digits] 12,101 | [Body Digits] 11,284
+   h15.704 [Body Indent bg#F0F5F9] Club commitments (i) | [Body Digits bg#F0F5F9] 3,828 | [Body Digits bg#F0F5F9] 5,169
+   h15.704 [Body Indent] Other (ii) | [Body Digits b0.709] 2,273 | [Body Digits b0.709] 3,522
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b2] 18,202 | [Body Digits bg#F0F5F9 t0.709 b2] 19,975
+   h15.704 [Body]  | [Body Digits t2]  | [Body Digits t2] 
+   h15.704 [Body Bold] Non Current: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Indent bg#F0F5F9] Employee benefits | [Body Digits bg#F0F5F9] 539 | [Body Digits bg#F0F5F9] 934
+   h15.704 [Body Indent] Accident claims (iii) | [Body Digits b0.709] 224 | [Body Digits b0.709] 254
+   h15.704 [Body Bold bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b2] 763 | [Body Digits bg#F0F5F9 t0.709 b2] 1,188
+   h56.812 [Body n3] (i) RV funding share of club commitment obligations in line with formalised capital infrastructure plan and major events program. (ii) Provisions covering various miscellaneous items, including legal and regulatory matters that remain ongoing. (iii) Provision relates to pre-1 September 1985 accident claims covered by the Workers Compensation Act 1958. Refer Note 24(l). | [null] | [null]
+   h20.126 [Footnotes]  | [Body Digits]  | [Body Digits] 
+   h35.321 [A4 V:Subhead Large] 12. Other Financial Liabilities | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Indent bg#F0F5F9] Jockey apprentice payables | [Body Digits bg#F0F5F9] 2,290 | [Body Digits bg#F0F5F9] 2,251
+   h15.704 [Body Indent] Participant welfare fund | [Body Digits b0.709] 816 | [Body Digits b0.709] 776
+   h15.704 [Body Bold bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b2] 3,106 | [Body Digits bg#F0F5F9 t0.709 b2] 3,027
+   h23.443 [Footnotes n3]  | [null] | [null]
+   h24.52 [A4 V:Subhead Large] 13. Issued Capital | [Body Digits]  | [Body Digits] 
+   h36.587 [Body Indent n3] The entity is a company limited by guarantee. Every member undertakes to and must contribute an amount not exceeding $10 in the event of the winding up of the entity. | [null] | [null]
+## u13cf0
+TABLE cols=[327.685,77.598,76.606]
+   h17.228 [$ID/NormalParagraphStyle bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h21.944 [A4 V:Subhead Large] 14. Retained Earnings | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Indent bg#F0F5F9] Balance at beginning of financial period | [Body Digits bg#F0F5F9] 185,437 | [Body Digits bg#F0F5F9] 197,498
+   h15.704 [Body Indent] Net deficit | [Body Digits] (8,885) | [Body Digits] (11,834)
+   h15.704 [Body Indent bg#F0F5F9] Actuarial losses | [Body Digits bg#F0F5F9 b0.709] - | [Body Digits bg#F0F5F9 b0.709] (227)
+   h15.704 [Body Indent #005FA1] Balance at end of financial period | [Body Digits t0.709 b2] 176,552 | [Body Digits t0.709 b2] 185,437
+   h14.173 [A4 V:Subhead Large]  | [Body Digits t2]  | [Body Digits t2] 
+   h25.124 [A4 V:Subhead Large] 15. Commitments for Expenditure | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Spectrum rental and channel support: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Indent bg#F0F5F9] Not later than 1 year | [Body Digits bg#F0F5F9] 10,784 | [Body Digits bg#F0F5F9] 12,330
+   h15.704 [Body Indent] Later than 1 year but not later than 5 years | [Body Digits b0.709] 17,183 | [Body Digits b0.709] -
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b0.709] 27,967 | [Body Digits bg#F0F5F9 t0.709 b0.709] 12,330
+   h10.348 [Footnotes n3]  | [null] | [null]
+## u13d39
+p <Footnotes> Spectrum rental relates to the supply of a dedicated horse racing channel and related content for the VTRI on 
+## u13d07
+p <A4 V:Subhead Large> 16. Superannuation Commitments
+p <B1 Body Text> The employees of the consolidated entity have the option of joining the Victorian Racing Industry Superannuati
+## u13d1e
+TABLE cols=[331.654,74.646,75.591]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h8.724 [Body]  | [Body Digits]  | [$ID/NormalParagraphStyle] 
+   h27.731 [Body/Book Italic n3] Amounts recognised in income in respect of the defined benefit plan is as follows: | [null] | [null]
+   h18.678 [Body bg#F0F5F9] Current service cost | [Body Digits bg#F0F5F9] - | [Body Digits bg#F0F5F9] 108
+   h15.704 [Body] Net Interest | [Body Digits b0.709] - | [Body Digits b0.709] (11)
+   h15.704 [Body bg#F0F5F9 #005FA1] Total including employee benefit expense | [Body Digits bg#F0F5F9 t0.709 b0.709 #005FA1] - | [Body Digits bg#F0F5F9 t0.709 b0.709 #005FA1] 97
+   h27.731 [Body] Actuarial losses during the period and recognised in the statement of changes in equity | [Body Digits t0.709 b0.709] - | [Body Digits t0.709 b0.709] (227)
+   h27.731 [Body bg#F0F5F9 #6D6E71] Cumulative actuarial gains recognised in the statement of changes in equity | [Body Digits bg#F0F5F9 t0.709 b0.709 #6D6E71] - | [Body Digits bg#F0F5F9 t0.709 b0.709 #6D6E71] 3,082
+   h14.173 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+## u13d5f
+TABLE cols=[327.982,77.484,76.423]
+   h20.684 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h17.508 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+p <B1 Body Text> 17. Key Management Personnel Remuneration
+p <B1 Body Text> The aggregate compensation of key management personnel (which includes the CEO and all members of the Executiv
+TABLE cols=[327.402,77.598,76.535]
+   h15.704 [Body] Management | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Short-term employee benefits | [Body Digits] 3,160 | [Body Digits] 3,839
+   h15.704 [Body bg#F0F5F9] Other long-term benefits | [Body Digits bg#F0F5F9] 217 | [Body Digits bg#F0F5F9] 81
+   h15.704 [Body] Termination benefits | [Body Digits b0.709] 216 | [Body Digits b0.709] 938
+   h15.704 [Body bg#F0F5F9]  | [Body Digits bg#F0F5F9 t0.709 b0.709] 3,593 | [Body Digits bg#F0F5F9 t0.709 b0.709] 4,858
+   h14.173 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body] Non executive directors | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Short-term employee benefits | [Body Digits] 912 | [Body Digits] 805
+   h15.704 [Body bg#F0F5F9] Other long-term benefits | [Body Digits bg#F0F5F9 b0.709] 24 | [Body Digits bg#F0F5F9 b0.709] 15
+   h15.704 [Body]  | [Body Digits t0.709 b0.709] 936 | [Body Digits t0.709 b0.709] 820
+## u13d76
+TABLE cols=[327.402,77.598,76.89]
+   h17.228 [$ID/NormalParagraphStyle bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h17.228 [$ID/NormalParagraphStyle bg#99BFD9]  | [Header 2 bg#99BFD9] $ | [Header 2 bg#99BFD9] $
+   h29.303 [A4 V:Subhead Large] 18. Remuneration of Auditors | [Header 3]  | [Header 3] 
+   h7.2 [Body]  | [Body Digits]  | [Body Digits] 
+   h15.704 [Body] Audit of the financial report | [Body Digits b0.709] 132,945 | [Body Digits b0.709] 126,600
+   h15.704 [Body Bold]  | [Body Digits t0.709 b0.709] 132,945 | [Body Digits t0.709 b0.709] 126,600
+p <B1 Body Text> The auditor of Racing Victoria Limited is KPMG.
+## u13d8d
+TABLE cols=[326.929,77.598,77.598]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h28.277 [A4 V:Subhead Large] 19. Parent Entity Financial Information | [Body Digits]  | [Body Digits] 
+   h18.538 [Body Bold] Assets | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Current assets | [Body Digits bg#F0F5F9] 130,793 | [Body Digits bg#F0F5F9] 135,768
+   h15.704 [Body] Non-current assets | [Body Digits b0.709] 134,224 | [Body Digits b0.709] 122,626
+   h15.704 [Body bg#F0F5F9] Total assets | [Body Digits bg#F0F5F9 t0.709 b0.709] 265,017 | [Body Digits bg#F0F5F9 t0.709 b0.709] 258,394
+   h30.494 [Body Bold] Liabilities | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body bg#F0F5F9] Current liabilities | [Body Digits bg#F0F5F9] 50,006 | [Body Digits bg#F0F5F9] 50,003
+   h15.704 [Body] Non-current liabilities | [Body Digits b0.709] 3,629 | [Body Digits b0.709] 4,066
+   h15.704 [Body bg#F0F5F9] Total liabilities | [Body Digits bg#F0F5F9 t0.709 b0.709] 53,635 | [Body Digits bg#F0F5F9 t0.709 b0.709] 54,069
+   h14.173 [Body Bold]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body Bold] Shareholders’ equity | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Retained earnings | [Body Digits bg#F0F5F9 b0.75] 211,382 | [Body Digits bg#F0F5F9 b0.75] 204,325
+   h15.704 [Body Bold/Book] Total equity | [Body Digits t0.75 b0.709 #005FA1] 211,382 | [Body Digits t0.75 b0.709 #005FA1] 204,325
+   h15.704 [Body]  | [Body Digits t0.709]  | [Body Digits t0.709] 
+   h15.704 [Body bg#F0F5F9] Surplus for the period | [Body Digits bg#F0F5F9 b0.75 #6D6E71] 7,056 | [Body Digits bg#F0F5F9 b0.75 #6D6E71] 2,995
+   h15.704 [Body] Total comprehensive income for the period | [Body Digits t0.75 b0.709 #005FA1] 7,056 | [Body Digits t0.75 b0.709 #005FA1] 2,767
+p <B1 Body Text> All contingent liabilities of the parent company are consistent with those listed in note 22 of the consolidat
+p <A4 V:Subhead Large> 20. Related Party Disclosures
+p <A4 V:Body Single Indent> RS["Book:(a)\tEquity interests",":\n",":\nDetails of interest","Book:(b)\tKey management p",":\n\n",":Details of key manag","Book:(c)\tTransactions wit",":\n",":\nDuring the financia"] (a)	Equity interests in associates
+
+Details of interests in associates are disclosed in note 8 to the financia
+p <A4 V:Body Single Indent> During the financial period the consolidated entity entered into transactions with the following entities that
+TABLE cols=[289.134,85.039,85.039]
+   h17.008 [Header bg#005FA1]  | [Header bg#005FA1] Revenue | [Header bg#005FA1] Expenditure
+   h14.504 [Header 2 bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h15.704 [Body] VicRacing Pty Ltd | [Body Digits] 195,940 | [Body Digits] 12,149
+   h15.704 [Body] Racing Products Pty Ltd | [Body Digits] 90 | [Body Digits] -
+   h15.704 [Body] Australian Racing Museum Ltd | [Body Digits] 108 | [Body Digits] 650
+   h15.704 [Body] Racing Australia Ltd | [Body Digits] 158 | [Body Digits] 3,100
+   h15.704 [Body] Racing Analytical Services Ltd | [Body Digits] 543 | [Body Digits] 2,432
+   h15.704 [Body] 3UZ Pty Ltd (RSN) | [Body Digits] 399 | [Body Digits] 1,643
+   h15.704 [Body] Sports Wagering Integrity Monitoring Ltd | [Body Digits b0.709] 25 | [Body Digits b0.709] -
+   h15.704 [Body]  | [Body Digits t0.709 b0.709] 197,263 | [Body Digits t0.709 b0.709] 19,974
+p <B5 Bullet Body Indent Alpha> (d) Other related party disclosures
+p <B2 Body Indent> RS[":Transactions with me","Bold: ",":During the financial",":Ownership of racehor","Bold: "] Transactions with member related entities During the financial period the consolidated entity entered into tra
+p <B2 Body Indent> Key management personnel, including certain directors, participate in the thoroughbred racing industry via mea
+## u13dca
+TABLE cols=[327.402,77.598,76.89]
+   h17.228 [$ID/NormalParagraphStyle bg#005FA1]  | [Header bg#005FA1] 30 JUNE 2025 | [Header bg#005FA1] 30 JUNE 2024
+   h15.704 [Body Digits bg#99BFD9]  | [Header 2 bg#99BFD9] $’000 | [Header 2 bg#99BFD9] $’000
+   h21.738 [A4 V:Subhead Large] 21. Notes to the Statement of Cash Flows | [Header 3]  | [Header 3] 
+   h7.2 [Body]  | [Body Digits/Bold]  | [Body Digits] 
+   h15.704 [Body Bold] (a) Reconciliation of cash | [Body Digits]  | [Body Digits] 
+   h67.754 [B1 Body Text/Book n3] For the purpose of the statement of cash flows, cash and cash equivalents includes cash on hand and in banks, net of outstanding bank overdrafts. Cash and cash equivalents at the end of the financial period as shown in the statement of cash flows is reconciled to the related items in the statement of financial position as follows: | [null] | [null]
+   h15.704 [Body bg#F0F5F9] Cash at bank | [Body Digits bg#F0F5F9 t0.709 b2.126] 13,812 | [Body Digits bg#F0F5F9 t0.709 b2.126] 17,806
+   h14.173 [Body]  | [Body Digits t2.126]  | [Body Digits t2.126] 
+   h24.208 [Body/Bold n2 #005FA1] (b) Reconciliation of net profit to net cash (used in) operating activities | [null] | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] Deficit from ordinary activities | [Body Digits bg#F0F5F9] (8,885) | [Body Digits bg#F0F5F9] (11,834)
+   h15.704 [Body] Share of associate losses | [Body Digits] 1,888 | [Body Digits] 604
+   h15.704 [Body bg#F0F5F9] Depreciation and amortisation of non-current assets | [Body Digits bg#F0F5F9] 8,619 | [Body Digits bg#F0F5F9] 8,699
+   h15.704 [Body] Loss on disposal of assets | [Body Digits] - | [Body Digits] 7,527
+   h15.704 [Body bg#F0F5F9] Actuarial movement loss | [Body Digits bg#F0F5F9] - | [Body Digits bg#F0F5F9] 97
+   h15.704 [Body] Managed investment gain | [Body Digits] (7,781) | [Body Digits] (9,772)
+   h15.704 [Body bg#F0F5F9] Loan discount unwind | [Body Digits bg#F0F5F9] (867) | [Body Digits bg#F0F5F9] (1,740)
+   h15.704 [Body] Changes in net assets and liabilities: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body bg#F0F5F9] (Increase)/decrease in: | [Body Digits bg#F0F5F9]  | [Body Digits bg#F0F5F9] 
+   h15.704 [Body Indent] Receivables | [Body Digits] (7,192) | [Body Digits] (9,652)
+   h15.704 [Body Indent bg#F0F5F9] Prepayments | [Body Digits bg#F0F5F9] (1,158) | [Body Digits bg#F0F5F9] 17
+   h15.704 [Body] Increase/(decrease) in: | [Body Digits]  | [Body Digits] 
+   h15.704 [Body Indent bg#F0F5F9] Payables | [Body Digits bg#F0F5F9] (5,158) | [Body Digits bg#F0F5F9] (1,941)
+   h15.704 [Body Indent] Unearned revenue | [Body Digits] 4,179 | [Body Digits] (282)
+   h15.704 [Body Indent bg#F0F5F9] Provisions | [Body Digits bg#F0F5F9 b0.709] (2,198) | [Body Digits bg#F0F5F9 b0.709] 2,281
+   h15.704 [Body] Net cash used in operating activities | [Body Digits t0.709 b2.126] (18,553) | [Body Digits t0.709 b2.126] (15,996)
+## u13de1
+p <A4 V:Subhead Large> 22. Contingent Liabilities
+p <B7 Bullet double Indent> Under the Deed of Contribution and Indemnity with the Victoria Racing Club, the consolidated entity has indemn
+p <A4 V:Subhead Large> 23. Subsequent Events
+p <B1 Body Text> On 21 August 2025, the thoroughbred, harness and greyhound racing codes executed the VRI Inter-Code Deed. This
+p <B1 Body Text> On 1 September 2025, 3UZ Pty Ltd executed an asset sale agreement with Sports Entertainment Group (SEN). SEN h
+p <A4 V:Subhead Large> 24. Material Accounting Policies
+p <B1 Body Text> The following significant accounting policies have been adopted in the preparation and presentation of the fin
+p <H4 Sub Heading Italic> RS[":(a)\tBorrowings and B","Book:Borrowings are recor",":(b)\tCash and Cash Eq","Book:Cash comprises cash ",":(c)\tEmployee Benefit","Book:A liability is recog",":(d)\tFinancial assets"] (a)	Borrowings and Borrowing Costs
+Borrowings are recorded initially at fair value, net of transaction costs. 
+p <B2 Body Indent> RS["Medium:Classification and m","Book:All recognised finan"] Classification and measurement of financial assetsAll recognised financial assets that are within the scope of
+p <B7 Bullet double Indent> debt investments that are held within a business model whose objective is to collect the contractual cash flow
+p <B2 Body Indent> Despite the foregoing, the consolidated entity may make the following irrevocable election/designation at init
+p <B7 Bullet double Indent> the consolidated entity may irrevocably elect to present subsequent changes in fair value of an equity investm
+p <B2 Body Indent> RS[":Debt instruments tha","Bold:Impairment of financ",":In relation to the i"] Debt instruments that are subsequently measured at amortised cost or at FVTOCI are subject to impairment testi
+p <B7 Bullet double Indent> the amount of ECL to be recognised: 12-month ECL or Lifetime ECL; and the amount of interest income to be reco
+p <B2 Body Indent> Lifetime ECL are the ECL that result from all possible default events over the expected life of loans whereas 
+p <H4 Sub Heading Italic> (e) Financial Instruments issued by the consolidated entity
+p <H5 Sub heading Gray Underline Italics> Debt and Equity Instruments
+p <B2 Body Indent> Debt and equity instruments are classified as either liabilities or as equity in accordance with the substance
+p <H5 Sub heading Gray Underline Italics> Interest
+p <B2 Body Indent> Interest is classified as an expense consistent with the balance sheet classification of the related debt.
+p <H4 Sub Heading Italic> (f) Goods and Services Tax
+p <B2 Body Indent> Revenues, expenses and assets are recognised net of the amount of goods and services tax (GST), except:
+p <B2 Body Indent> (i) where the amount of GST incurred is not recoverable from the taxation authority, it is recognised as part 
+p <B2 Body Indent> The net amount of GST recoverable from, or payable to, the taxation authority is included as part of receivabl
+p <H4 Sub Heading Italic> (g) Impairment of Other Tangible and Intangible Assets
+p <B2 Body Indent> At each reporting date, the consolidated entity reviews the carrying amounts of its tangible and intangible as
+p <H4 Sub Heading Italic> (h) Intangible Assets
+p <H5 Sub heading Gray Underline Italics> Capitalised Software and Databases
+p <B2 Body Indent> Capitalised software is recorded at cost less accumulated amortisation and impairment. Amortisation is charged
+p <H5 Sub heading Gray Underline Italics> Mastheads
+p <B2 Body Indent> Mastheads recognised by the Group by nature have an indefinite useful life and are not amortised. Each period,
+p <H5 Sub heading Gray Underline Italics> Domain Names
+p <B2 Body Indent> Domain Names recognised by the Group have an indefinite useful life and are not amortised. Each period, the us
+p <H4 Sub Heading Italic> (i) Leased Assets
+p <B2 Body Indent> At inception of a contract, the Group assesses whether a contract is, or contains, a lease. A contract is, or 
+p <H5 Sub heading Gray Underline Italics> As a Lessee
+p <B2 Body Indent> At commencement or on modification of a contract that contains a lease component, the Group allocates the cons
+p <B7 Bullet double Indent> fixed payments, including in-substance fixed payments; variable lease payments that depend on an index or a ra
+p <B2 Body Indent> The lease liability is measured at amortised cost using the effective interest method. It is remeasured when t
+p <H4 Sub Heading Italic> (j) Payables
+p <B2 Body Indent> Trade payables and other accounts payable are recognised when the consolidated entity becomes obliged to make 
+p <H4 Sub Heading Italic> (k) Property, Plant & Equipment
+p <B2 Body Indent> Plant and equipment, buildings and infrastructure capital are stated at cost less accumulated depreciation and
+p <B2 Body Indent> Buildings and Improvements 10 to 40 years Plant and Equipment 2 to 20 years Infrastructure Capital 5 to 10 yea
+p <B2 Body Indent> During the period the consolidated entity undertook the management of projects which are part of the capital i
+p <H4 Sub Heading Italic> (l) Provisions
+p <B2 Body Indent> Provisions are recognised when the consolidated entity has a present obligation (legal or constructive) as a r
+p <H5 Sub heading Gray Underline Italics> Infrastructure
+p <B2 Body Indent> Racing Victoria holds capital commitment obligations to clubs in line with its formalised infrastructure plan.
+p <H5 Sub heading Gray Underline Italics> Accident Insurance Fund
+p <B2 Body Indent> Prior to 1 September 1985 the Fund was an authorised insurer for the purposes of the Workers Compensation Act 
+p <H4 Sub Heading Italic> (m) Revenue
+p <B2 Body Indent> The consolidated entity recognises revenue when it transfers control over a product or service to a customer. 
+p <H5 Sub heading Gray Underline Italics> Wagering Revenue
+p <B2 Body Indent> Thoroughbred racing industry revenue is recognised when receivable under the joint venture agreements with the
+p <H5 Sub heading Gray Underline Italics> RS[":Rendering of Service","Book:Revenue from a contr"] Rendering of Services
+Revenue from a contract to provide services is recognised by reference to the stage of c
+p <B7 Bullet double Indent> installation fees are recognised by reference to the stage of completion of the installation, determined as th
+p <H5 Sub heading Gray Underline Italics> Contributions of Assets
+p <B2 Body Indent> Revenue arising from the contribution of assets is recognised when the consolidated entity gains control of th
+p <H5 Sub heading Gray Underline Italics> Interest revenue
+p <B2 Body Indent> Interest revenue is accrued on a time basis, by reference to the principal outstanding and effective interest 
+p <H5 Sub heading Gray Underline Italics> Government Grants
+p <B2 Body Indent> Government grants are not recognised until there is reasonable assurance that the consolidated entity will com
+p <H5 Sub heading Gray Underline Italics> VOBIS Nominations
+p <B2 Body Indent> VOBIS nomination fees received are deferred into unearned revenue, to be recognised as revenue in future years
+p <H4 Sub Heading Italic> (n) Income Tax
+p <B2 Body Indent> The consolidated entity is exempt from Income Tax under section 50-45 of the Income Tax Assessment Act.
+p <H4 Sub Heading Italic> (o) Investments in Associates
+p <B2 Body Indent> An associate is an entity over which the consolidated entity has significant influence. Significant influence 
+p <H4 Sub Heading Italic> (p) Subsidiaries
+p <B2 Body Indent> The consolidated financial statements incorporate the assets and liabilities of all subsidiaries of Racing Vic
+p <B7 Bullet double Indent> the size of the Company’s holding of voting rights relative to the size and dispersion of holdings of the othe
+p <B2 Body Indent> Consolidation of a subsidiary begins when the Company obtains control over the subsidiary and ceases when the 
+p <H4 Sub Heading Italic> (q) Parent Entity Financial Information
+p <B2 Body Indent> The financial information for the parent entity, Racing Victoria Limited, disclosed in note 19 has been prepar
+p <H4 Sub Heading Italic> (r) Goodwill
+p <B2 Body Indent> Goodwill arising on an acquisition of a business is carried at cost as established at the date of the acquisit
+p <H4 Sub Heading Italic> (s) New Accounting Standards and Interpretations
+p <B2 Body Indent> The Group adopted the following standard and amendments which did not have any impact on the amounts recognise
+p <B7 Bullet double Indent> AASB 17 Insurance Contracts, AASB 2021-2Amendments to Australian Accounting Standards – Disclosure of Accounti
+p <B2 Body Indent> From 1 July 2024:
+p <B7 Bullet double Indent> AASB 2023-1 Amendments to Australian Accounting Standards – Supplier Finance Arrangements AASB 2020-1 Amendmen
+p <A4 V:Subhead Large> 25. Additional Consolidated Entity Information
+p <Table:Table Header 3> Racing Victoria Limited is a consolidated entity incorporated and operating in Australia.
+p <A4 V:Body> RS["Book:Principal Registered","Medium:www.racingvictoria.c"] Principal Registered Office and Principal Place of Business: 
+
+400 Epsom Road
+Flemington Victoria 3031
+Telepho
+## u13e96
+p <A4 V:Heading Large> Notes to the financial statements
+## u13ead
+p <H2 Sub Heading> for the year ended 30 June 2025
+## u13e7e
+
+## u13ec8
+p <A4 V:Heading Large> Consolidated Entity Disclosure Statement
+## u13edf
+p <H2 Sub Heading> for the year ended 30 June 2025
+## u13ef6
+TABLE cols=[117.638,77.953,70.866,71.81,76.535,67.087]
+   h58.11 [$ID/NormalParagraphStyle/Medium bg#005FA1 #FFFFFF sz9] Entity Name | [$ID/NormalParagraphStyle/Medium bg#005FA1 #FFFFFF sz9] Body Corporate, Partnership, or Trust | [$ID/NormalParagraphStyle/Medium bg#005FA1 #FFFFFF sz9] Place Incorporated / Formed | [$ID/NormalParagraphStyle/Medium bg#005FA1 n2 #FFFFFF sz9] Share Capital % Held Directly or Indirectly by the Company in the Body Corporate | [null] | [$ID/NormalParagraphStyle/Medium bg#005FA1 #FFFFFF sz9] Australian or Foreign Tax Resident
+   h17.48 [$ID/NormalParagraphStyle/Book bg#99BFD9]  | [$ID/NormalParagraphStyle/Light bg#99BFD9]  | [$ID/NormalParagraphStyle/Light bg#99BFD9]  | [Header bg#99BFD9] 30 JUNE 2025 | [Header bg#99BFD9] 30 JUNE 2024 | [$ID/NormalParagraphStyle/Light bg#99BFD9] 
+   h18.016 [$ID/NormalParagraphStyle/Book #005FA1 sz8] Racing Victoria Ltd | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Body Corporate | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Australia | [$ID/NormalParagraphStyle/Book #005FA1 sz8] n/a | [$ID/NormalParagraphStyle/Book #005FA1 sz8] n/a | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Australian
+   h15.591 [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Racing.com Media Pty Ltd | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Body Corporate | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Australia | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Australian
+   h16.063 [$ID/NormalParagraphStyle/Book #005FA1 sz8] RVL Media Pty Ltd | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Body Corporate | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Australia | [$ID/NormalParagraphStyle/Book #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Australian
+   h17.008 [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Racing.com Pty Ltd | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Body Corporate | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Australia | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Australian
+   h24.262 [$ID/NormalParagraphStyle/Book #005FA1 sz8] Thoroughbred Racing Productions Pty Ltd | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Body Corporate | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Australia | [$ID/NormalParagraphStyle/Book #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book #005FA1 sz8] Australian
+   h15.423 [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] VTRI Property Pty Ltd | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Body Corporate | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Australia | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] 100% | [$ID/NormalParagraphStyle/Book bg#F0F5F9 #005FA1 sz8] Australian
+## u13f0e
+p <A4 V:Body> Racing.com Media Pty Ltd (changed name from Victorian Thoroughbred Racing IMB Pty Ltd effective 23 February 20
+p <Table:Table Body Bold> Basis of Preparation
+p <A4 V:Body> The Consolidated Entity Disclosure Statement has been prepared in accordance with the Corporations Act 2001 an
+p <H4 Sub Heading Italic> Determination of Tax Residency
+p <A4 V:Body> Section 295 (3A) of the Corporations Act 2001 defines tax residency as having the meaning in the Income Tax As
+p <H4 Sub Heading Italic> Australian Tax Residency
+p <A4 V:Body> The consolidated entity has applied current legislation and judicial precedent, including having regard to the

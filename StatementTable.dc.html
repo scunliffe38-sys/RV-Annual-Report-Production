@@ -11,7 +11,7 @@
   <sc-for list="{{ table.rows }}" as="r" hint-placeholder-count="12">
     <div style="display:grid;grid-template-columns:{{ r.gridCols }};min-height:{{ r.mh }};background:{{ r.bg }};box-sizing:border-box">
       <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="4">
-        <div style="display:flex;align-items:{{ r.ai }};justify-content:{{ c.jc }};text-align:{{ c.ta }};padding:{{ r.pv }} 4.252pt {{ r.pv }} {{ c.pl }};font-size:{{ r.fs }};line-height:{{ r.lh }};font-weight:{{ c.fw }};letter-spacing:{{ r.ls }};text-transform:{{ r.tt }};color:{{ c.col }};border-top:{{ c.bt }};border-bottom:{{ c.bb }};font-variant-numeric:tabular-nums;white-space:pre-line;box-sizing:border-box;min-width:0">{{ c.t }}</div>
+        <div style="display:flex;align-items:{{ r.ai }};justify-content:{{ c.jc }};text-align:{{ c.ta }};padding:{{ r.pv }} 4.252pt {{ r.pv }} {{ c.pl }};font-size:{{ r.fs }};line-height:{{ r.lh }};font-weight:{{ c.fw }};font-style:{{ c.fst }};letter-spacing:{{ r.ls }};text-transform:{{ r.tt }};color:{{ c.col }};border-top:{{ c.bt }};border-bottom:{{ c.bb }};font-variant-numeric:tabular-nums;white-space:pre-line;box-sizing:border-box;min-width:0">{{ c.t }}</div>
       </sc-for>
     </div>
   </sc-for>

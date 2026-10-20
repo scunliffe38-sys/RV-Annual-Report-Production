@@ -16,6 +16,7 @@
 
   function T(c) { return c == null ? "" : (typeof c === "string" ? c : c.t || ""); }
   function B(c) { return !!(c && typeof c === "object" && c.b); }
+  function I(c) { return !!(c && typeof c === "object" && c.it); }
   function slug(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
   function ws(s) { return s.replace(/\s+/g, " ").trim(); }
   function r2(n) { return Math.round(n * 100) / 100; }
@@ -152,13 +153,13 @@
     var blankH = (ptpl.filter(function (r) { return r.body && r.cells.every(function (c) { return !c.t; }); })[0] || {}).h || 9;
     var parity = 0;
     body.forEach(function (r, bi) {
-      var cs = cellsOf(r), tx = cs.map(T), bd = cs.map(B);
+      var cs = cellsOf(r), tx = cs.map(T), bd = cs.map(B), itl = cs.map(I);
       var label = tx[0].trim(), vals = tx.slice(1).filter(function (x, k) { return k > 0 && x.trim() !== ""; });
       var blank = tx.every(function (x) { return x.trim() === ""; });
       var isHeading = !!label && bd[0] && vals.length === 0 && !tx.slice(1).some(function (x) { return x.trim(); });
       var isTotal = (!!label && bd[0] && vals.length > 0) || (!label && vals.length > 0);
       var row = mk(tpl, tx, null);
-      row.cells.forEach(function (c, i) { c.w = (i === 0 ? bd[0] : (i > 1 && (bd[i] || isTotal && !label))) ? "700" : "400"; });
+      row.cells.forEach(function (c, i) { c.w = (i === 0 ? bd[0] : (i > 1 && (bd[i] || isTotal && !label))) ? "700" : "400"; c.i = !!(i === 0 ? itl[0] : itl[0] && itl[i]); });
       row.lineAbove = isTotal && !/^Balance at 1 /i.test(label);
       row.lineBelow = bi === body.length - 1 && isTotal;
       row.h = blank ? blankH : isHeading ? r2(baseH * 1.18) : label.length > 62 ? r2(baseH * 1.4) : baseH;
@@ -197,7 +198,9 @@
         else if (o.b) st = ci > 0 && (o.al === "r" || NUM.test(o.t)) ? "Table:Table Body Bold" : "Table:Table Body Bold";
         else if (o.al === "r" || NUM.test(o.t.trim())) st = "Table:Table Body Digits";
         else st = "Table:Table Body";
-        return { t: o.t, s: st, f: null, bg: o.sh && /^#[D-F][0-9A-F]{5}$/.test(o.sh) ? o.sh : null, tw: o.bt ? 0.5 : 0, bw: o.bb ? 0.5 : 0, n: span };
+        // Italic and bold as Word sets them (FY25 sets the group heads bold italic).
+        var f = o.it ? (o.b ? "Bold Italic" : "Book Italic") : null;
+        return { t: o.t, s: st, f: f, bg: o.sh && /^#[D-F][0-9A-F]{5}$/.test(o.sh) ? o.sh : null, tw: o.bt ? 0.5 : 0, bw: o.bb ? 0.5 : 0, n: span };
       });
       while (used < cols.length) { cells.push({ t: "", s: "Table:Table Body", f: null, bg: null, tw: 0, bw: 0, n: 1 }); used++; }
       return { h: 0, min: rh[ri] || 0, c: cells };
@@ -218,13 +221,12 @@
       r.c.forEach(function (c) { for (var s = 0; s < (c.n || 1); s++) slots.push(c); });
       return slots;
     });
-    var empty = tb.cols.map(function (_, j) {
-      // A merged cell with text counts as content in its last column, so a
-      // label merged across a spacer column survives the spacer's removal.
-      return grid.every(function (sl) { var c = sl[j]; if (!c) return true; var txt = String(c.t || "").trim(); if ((c.n || 1) > 1) return !txt || sl[j + 1] === c; return !txt; });
+    // A column is kept only where some cell with text starts in it. A merged
+    // cell keeps its first column, so a label or figure merged across Word's
+    // spacer columns collapses onto one column, as FY25 sets them.
+    var drop = tb.cols.map(function (_, j) {
+      return grid.every(function (sl) { var c = sl[j]; if (!c) return true; if (j > 0 && sl[j - 1] === c) return true; return !String(c.t || "").trim(); });
     });
-    // Only drop a column no cell actually owns alone.
-    var drop = empty.map(function (e, j) { return e && grid.some(function (sl) { return sl[j] && (sl[j].n || 1) === 1; }); });
     // Marker column: column 0 holds nothing but markers, column 1 the labels.
     var markerCol = n > 2 && !drop[0] && grid.every(function (sl) { var c = sl[0]; return !c || (c.n || 1) > 1 || !String(c.t || "").trim() || MARK.test(String(c.t).trim()); });
     if (markerCol) drop[0] = true;
@@ -250,10 +252,17 @@
     var vals = keep.length - 1, W = 481.89, cols;
     var labelled = rows.some(function (r) { var c = r.c[0]; return c && !/^Table:Table Header/.test(c.s) && /[A-Za-z]{3}/.test(c.t || "") && (c.n || 1) === 1 && r.c.slice(1).some(function (x) { return /\d/.test(x.t || ""); }); });
     if (labelled && vals <= 3) cols = [r2(W - vals * 76.535)].concat(Array(vals).fill(76.535));
-    else {
+    else if (labelled) {
+      // FY25 wide tables (PP&E, intangibles): 181.4pt label column, figures
+      // share the rest in Word's proportions.
+      var fs = keep.slice(1).map(function (j) { return tb.cols[j]; }), ft = fs.reduce(function (a, c) { return a + c; }, 0);
+      cols = [181.417].concat(fs.map(function (c) { return r2(c * (W - 181.417) / ft); }));
+    } else {
       var src = keep.map(function (j) { return tb.cols[j]; }), tot = src.reduce(function (a, c) { return a + c; }, 0);
       cols = src.map(function (c) { return r2(c * W / tot); });
     }
+    // An empty closing row in Word (often carrying a stray rule) is not printed.
+    while (rows.length > 1 && rows[rows.length - 1].c.every(function (c) { return !String((c && c.t) || "").trim(); }) && !rows[rows.length - 1].c.some(function (c) { return c && /^Table:Table Header/.test(c.s); })) rows.pop();
     return { k: "t", cols: cols, rows: promoteHeads(rows), auto: true };
   }
   // A bio paragraph ending in ; or : (or with no closing stop) runs on into
@@ -281,7 +290,7 @@
   function buildNotes(parsed, issues) {
     var blocks = parsed.blocks, tables = parsed.tables, out = [], start = blocks.findIndex(function (b) { return b.k === "noteTitle"; });
     if (start < 0) { issues.push({ level: "error", text: "No notes found in the document." }); return []; }
-    var last = 0, titles = {}, indent = false;
+    var last = 0, titles = {}, indent = false, pointBody = false;
     function heading(s) { return s.length < 90 && !/[.;:,]$/.test(s) && /^[A-Z0-9]/.test(s); }
     for (var i = start; i < blocks.length; i++) {
       var b = blocks[i], text = b.text ? b.text.replace(/\t+/g, " ").replace(/ +/g, " ").trim() : "";
@@ -314,14 +323,29 @@
           out.push({ k: "p", s: foot ? "Footnotes" : sub ? "B5 Sub Point" : "B5 Bullet Body Indent Alpha", t: text, mk: b.marker });
         }
       }
-      else if (b.k === "bullet") out.push({ k: "p", s: "B7 Bullet double Indent", t: text });
+      else if (b.k === "bullet") {
+        // Inside a lettered policy, a bullet that is a title ("Impairment of
+        // Indefinite Life Intangible Assets") heads the paragraph after it:
+        // FY25 sets the title in Medium and the copy under it at the bullet
+        // text indent.
+        var nb = blocks[i + 1];
+        if (indent && heading(text) && !/\d/.test(text) && nb && nb.k === "body" && !nb.bold && !nb.italic) { out.push({ k: "p", s: "B7 Bullet Medium", t: text }); pointBody = true; }
+        else out.push({ k: "p", s: "B7 Bullet double Indent", t: text });
+      }
       else if (b.k === "body") {
         var mm = /^\(([a-z]{1,4})\)\s+(.+)$/.exec(text);
         if (b.bold && text.length < 90) { indent = false; out.push({ k: "p", s: "H3 Sub Heading LC Financials", t: text }); }
+        // A bold sentence ("All other material accounting policies ...") is
+        // body copy set bold, flush left (FY25).
+        else if (b.bold) { indent = false; out.push({ k: "p", s: "A4 V:Body", t: text, b: 1 }); }
         else if (b.italic && text.length < 100 && !/[.:]$/.test(text)) {
           if (mm) { out.push({ k: "p", s: "H4 Sub Heading Italic", t: mm[2], mk: "(" + mm[1] + ")" }); indent = true; }
+          // An italic heading inside a lettered policy is FY25's grey italic
+          // underlined sub-heading, at the policy's indent.
+          else if (indent) out.push({ k: "p", s: "H5 Sub heading Gray Underline Italics", t: text });
           else { indent = false; out.push({ k: "p", s: "H4 Sub Heading Italic", t: text }); }
         }
+        else if (pointBody) { pointBody = false; out.push({ k: "p", s: "B9 Bullet Body", t: text.replace(/\s*\n\s*/g, " ") }); }
         else {
           // Word line breaks: a single break starts a new line with no space
           // after the one before (an address); a blank line is a new paragraph.

@@ -467,6 +467,8 @@ const NOTE_HEADER_PS = { 'Table:Table Header': 1, 'Table:Table Header 2': 1 };
 // the table's last row and the first line of the note never read as one block.
 // 8.504pt (3mm) is about two-thirds of a 12pt line.
 const TABLE_TEXT_GAP = 8.504;
+// Two-column footnotes (FY25 p.53): second column's marker at 898.9pt.
+const FOOT_COL_GAP = 11.9, FOOT_MCOL = 17.008;
 
 // Hidden/background loads (print export, off-screen iframes) never fire
 // requestAnimationFrame, which would park the flow chain forever, so fall back
@@ -898,7 +900,7 @@ class Component extends DCLogic {
     host.style.fontWeight = String(b.b ? 700 : (st.weight || 400));
     host.style.fontStyle = (b.i || st.italic) ? 'italic' : 'normal';
     host.style.textTransform = st.caps ? 'uppercase' : 'none';
-    const bullet = b.s === 'B7 Bullet double Indent';
+    const bullet = /^B7 /.test(b.s || '');
     host.style.letterSpacing = bullet ? '-0.01em' : '0';
     host.style.paddingLeft = (bullet ? 36.85 : (st.left || 0)) + 'pt';
     // A continuation fragment starts a new box, so its first line is flush
@@ -986,6 +988,38 @@ class Component extends DCLogic {
   }
 
   // Total composed height of a story at a given measure.
+  // Space above and below a paragraph. FY25 centres the bold blue run-in
+  // heading (H3) between the copy around it: one 12pt line above and below.
+  _gapBefore(prev, b, styles) {
+    if (!prev) return 0;
+    const st = styles[b.s] || {};
+    if (b.s === 'H3 Sub Heading LC Financials' && prev.k === 'p') return Math.max(0, 12 - ((styles[prev.s] || {}).after || 0));
+    return Math.max(st.before || 0, prev.k === 't' || prev.k === 'fcols' ? TABLE_TEXT_GAP : 0);
+  }
+  _gapAfter(b, next, styles) {
+    const st = styles[b.s] || {};
+    if (b.s === 'H3 Sub Heading LC Financials' && next && next.k === 'p') return Math.max(0, 12 - ((styles[next.s] || {}).before || 0));
+    return st.after || 0;
+  }
+
+  // Footnotes under a table in two columns (FY25 p.53), measured as rendered.
+  _footColsHeight(items, width, styles) {
+    const st = styles.Footnotes || {};
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;font-family:"Gotham",Arial,sans-serif;box-sizing:border-box;width:' + width + 'pt;column-count:2;column-gap:' + FOOT_COL_GAP + 'pt;column-fill:balance';
+    items.forEach(x => {
+      const d = document.createElement('div');
+      d.style.cssText = 'display:grid;grid-template-columns:' + FOOT_MCOL + 'pt 1fr;break-inside:avoid;padding-bottom:' + (st.after || 0) + 'pt;font-size:' + (st.size || 6.5) + 'pt;line-height:' + (st.lead || 10.027) + 'pt';
+      const m = document.createElement('div'); m.textContent = x.mk || '';
+      const t = document.createElement('div'); t.textContent = x.t;
+      d.appendChild(m); d.appendChild(t); host.appendChild(d);
+    });
+    document.body.appendChild(host);
+    const h = host.getBoundingClientRect().height * 0.75;
+    host.remove();
+    return h;
+  }
+
   _composedHeight(blocks, width, styles) {
     const p = this._probe(width, '0');
     let total = 0;
@@ -993,10 +1027,11 @@ class Component extends DCLogic {
       const st = styles[b.s] || {};
       if (b.k === 'pagehead') return;
       if (b.k === 't') { total += b.rows.reduce((a, r) => a + r.h, 0); return; }
+      if (b.k === 'fcols') { total += b.h + (i ? TABLE_TEXT_GAP : 0); return; }
       this._noteProbeStyle(p.host, st, b);
       this._fillProbe(p.host, b);
-      const gap = i ? Math.max(st.before || 0, blocks[i - 1].k === 't' ? TABLE_TEXT_GAP : 0) : 0;
-      total += p.host.getBoundingClientRect().height * 0.75 + gap + (st.after || 0);
+      const gap = i ? this._gapBefore(blocks[i - 1], b, styles) : 0;
+      total += p.host.getBoundingClientRect().height * 0.75 + gap + this._gapAfter(b, blocks[i + 1], styles);
     });
     p.host.remove();
     return total;
@@ -1028,8 +1063,9 @@ class Component extends DCLogic {
       const hardPx = (frames[i].h - 2) / 0.75;
       // The last frame always opens to its full height so nothing is lost.
       const softPx = i === frames.length - 1 ? hardPx : (frames[i].h * fill - 2) / 0.75;
-      let usedPx = 0;
+      let usedPx = 0, guard = 0;
       while (queue.length) {
+        if (++guard > 400) { console.warn('Notes: frame ' + i + ' stopped after 400 steps at', queue[0]); break; }
         let b = queue[0];
         // A display page (the Consolidated Entity Disclosure Statement) starts
         // a fresh page and takes over its running head.
@@ -1044,8 +1080,28 @@ class Component extends DCLogic {
         // shared fill still lands somewhere instead of stranding the story.
         // A table's footnotes may run down into the folio row to stay on the
         // table's page; that page then drops its folio (FY25).
-        const footExt = b.s === 'Footnotes' && prevB && (prevB.k === 't' || prevB.s === 'Footnotes') ? NOTE_FOOT_EXT / 0.75 : 0;
-        const capPx = (out[i].length ? softPx : hardPx) + footExt;
+        const tableFoot = b.s === 'Footnotes' && prevB && (prevB.k === 't' || prevB.s === 'Footnotes');
+        const footExt = tableFoot ? NOTE_FOOT_EXT / 0.75 : 0;
+        // A table's footnotes stay on the table's page: they may use the whole
+        // frame, not just the shared fill.
+        const capPx = (out[i].length && !tableFoot ? softPx : hardPx) + footExt;
+
+        // Footnotes that will not fit under their table in one column go
+        // into two, as FY25 sets them, rather than run over the page.
+        if (tableFoot && prevB.k === 't') {
+          let e = 0; while (e < queue.length && queue[e].k === 'p' && queue[e].s === 'Footnotes') e++;
+          const run = queue.slice(0, e);
+          const one = this._composedHeight(run, frames[i].w, styles) + TABLE_TEXT_GAP;
+          if (usedPx + one / 0.75 > capPx) {
+            const two = this._footColsHeight(run, frames[i].w, styles);
+            if (usedPx + (two + TABLE_TEXT_GAP) / 0.75 <= capPx) {
+              out[i].push({ k: 'fcols', items: run, h: two });
+              queue.splice(0, e);
+              usedPx += (two + TABLE_TEXT_GAP) / 0.75;
+              continue;
+            }
+          }
+        }
 
         // FY25 keeps a note on one page where it can: a note that fits a page
         // but not the space left starts on the next page.
@@ -1091,16 +1147,20 @@ class Component extends DCLogic {
 
         this._noteProbeStyle(p.host, st, b);
         const nodes = this._fillProbe(p.host, b);
-        const afterTable = out[i].length && out[i][out[i].length - 1].k === 't';
-        const before = atTop ? 0 : Math.max(st.before || 0, afterTable ? TABLE_TEXT_GAP : 0);
-        const hPx = p.host.getBoundingClientRect().height + (before + (st.after || 0)) / 0.75;
+        const before = atTop ? 0 : this._gapBefore(prevB, b, styles);
+        const textPx = p.host.getBoundingClientRect().height;
+        const hPx = textPx + (before + this._gapAfter(b, queue[1], styles)) / 0.75;
         if (usedPx + hPx <= capPx) { out[i].push(b); queue.shift(); usedPx += hPx; continue; }
         // Headings move to the next frame whole.
         if ((st.size || 9) > 11) break;
-        // Paragraphs and points are not split across pages: one that fits the
-        // next page moves there whole.
-        if (out[i].length && i < frames.length - 1 && hPx * 0.75 <= frames[i + 1].h - 2) break;
-        const at = this._splitAt(p.host, nodes, capPx - usedPx - before / 0.75);
+        // FY25 runs a long paragraph on over the page rather than leave the
+        // foot of a page empty, keeping at least two lines on each side.
+        // Short paragraphs (three lines or fewer), and any paragraph when
+        // fewer than two lines are left, move to the next page whole.
+        const leadPx = (st.lead || 12) / 0.75, roomPx = capPx - usedPx - before / 0.75;
+        if (out[i].length && i < frames.length - 1 && hPx * 0.75 <= frames[i + 1].h - 2 &&
+            (textPx < 4 * leadPx - 1 || roomPx < 2 * leadPx)) break;
+        const at = this._splitAt(p.host, nodes, Math.min(roomPx, textPx - 2 * leadPx + 1));
         if (at > 0) {
           out[i].push(this._sliceBlock(b, 0, at));
           queue[0] = this._sliceBlock(b, at, null);
@@ -1120,7 +1180,7 @@ class Component extends DCLogic {
   // takes horizontal padding only and centres its line box in the row.
   _noteCell(c, styles, head, rowH) {
     const st = styles[c.s] || styles['Table:Table Body'] || {};
-    const w = c.f === 'Bold' ? 700 : c.f === 'Medium' ? 500 : c.f === 'Light' ? 300 : (st.weight || 400);
+    const w = /Bold/.test(c.f || '') ? 700 : c.f === 'Medium' ? 500 : c.f === 'Light' ? 300 : (st.weight || 400);
     return {
       // A source row only tall enough for one line was composed as one line;
       // hold it there rather than let a metric difference wrap it.
@@ -1136,7 +1196,7 @@ class Component extends DCLogic {
       fs: (c.sz || st.size || 9) + 'pt',
       lh: (st.lead || 12) + 'pt',
       fw: String(w),
-      fst: (st.italic || c.f === 'Book Italic') ? 'italic' : 'normal',
+      fst: (st.italic || /Italic/.test(c.f || '')) ? 'italic' : 'normal',
       tt: st.caps ? 'uppercase' : 'none',
       ls: st.caps ? '0.04em' : '-0.01em',
       ta: st.right ? 'right' : 'left',
@@ -1145,37 +1205,68 @@ class Component extends DCLogic {
     };
   }
 
-  _noteBlock(b, atTop, styles, atFoot, prev) {
+  _noteBlock(b, atTop, styles, atFoot, prev, next) {
+    if (b.k === 'fcols') {
+      const st = styles.Footnotes || {};
+      return {
+        isFootCols: 1, pt: (atTop ? 0 : TABLE_TEXT_GAP) + 'pt', pb: '0pt',
+        fs: (st.size || 6.5) + 'pt', lh: (st.lead || 10.027) + 'pt', col: st.color || '#6D6E71',
+        gap: FOOT_COL_GAP + 'pt', mcol: FOOT_MCOL + 'pt', ipb: (st.after || 0) + 'pt',
+        items: b.items.map(x => ({ marker: x.mk || '', t: x.t })),
+      };
+    }
     if (b.k === 't') {
       const cols = b.cols.map(c => c + 'pt').join(' ');
-      // Tables built from the Word file follow the FY25 note tables: data rows
-      // banded from the first under each group label (labels, blanks and the
-      // title row stay on the ground), labels under a group indented one step,
-      // a rule over each subtotal and a double rule under it.
-      let k = 1, grouped = false;
+      // Tables built from the Word file follow the FY25 note tables (read off
+      // the FY25 PDF): data rows banded from the first under each group label;
+      // in the three-column tables everything under the note title is set one
+      // step in except the bold italic group heads and the opening sentence
+      // (PP&E-style wide tables are not indented); one 0.709pt rule over each
+      // total's figures; a single rule under a subtotal and a double rule
+      // under the total that closes a group, a run of subtotals or the table.
+      let k = 1;
       const isTitle = r => r.c.length && r.c.every(c => c && c.s === 'A4 V:Subhead Large');
+      const wide = b.cols.length <= 4;
+      const NUMC = /\d/;
+      const info = b.rows.map(r => {
+        const head = r.c.some(c => c && NOTE_HEADER_PS[c.s]);
+        const txt = r.c.map(c => String((c && c.t) || '').trim());
+        const title = isTitle(r), blank = txt.every(t => !t);
+        const figs = txt.slice(1).some(t => NUMC.test(t) || /^[-\u2013]$/.test(t));
+        const ruled = r.c.slice(1).some(c => c && c.tw > 0);
+        const total = !head && !title && figs && (!txt[0] || ruled);
+        const label = !head && !title && !!txt[0] && !figs;
+        const c0 = r.c[0] || {};
+        const group = label && (/^\(?[a-z]{1,4}\)\s/i.test(txt[0]) || (/Bold/.test(c0.s || '') && /Italic/.test(c0.f || '')));
+        const intro = label && txt[0].length > 45 && /:$/.test(txt[0]);
+        return { head, title, blank, total, label, group, intro, named: !!txt[0] };
+      });
+      const near = (i, d) => { for (let j = i + d; j >= 0 && j < info.length; j += d) if (!info[j].blank) return info[j]; return null; };
+      const RULE = '0.709pt solid ' + NOTE_RULE, DOUBLE = '2pt double ' + NOTE_RULE;
       return {
         isTable: 1,
         pt: '0pt',
         pb: '0pt',
-        rows: b.rows.map(r => {
-          const head = r.c.some(c => c && NOTE_HEADER_PS[c.s]);
+        rows: b.rows.map((r, ri) => {
+          const I = info[ri], head = I.head;
           let cells = r.c.filter(Boolean).map(c => this._noteCell(c, styles, head, r.h));
           if (b.auto && !head) {
-            const txt = r.c.map(c => String((c && c.t) || '').trim());
-            const blank = txt.every(t => !t), label = !!txt[0] && txt.slice(1).every(t => !t);
-            if (isTitle(r)) { k = 1; grouped = false; }
-            else if (blank) { k = 0; }
-            else if (label) { k = 0; grouped = /^\(?[a-z0-9]{1,4}\)\s/i.test(txt[0]) || (r.c[0] && /Bold/.test(r.c[0].s)); }
-            else {
-              const band = k % 2 === 0; k++;
-              cells = cells.map((c, ci) => Object.assign({}, c, {
-                bg: band ? BAND_BG : c.bg,
-                pl: ci === 0 && grouped ? (parseFloat(c.pl) + 14.173) + 'pt' : c.pl,
-                bt: c.bt !== '0' ? '0.75pt solid ' + NOTE_RULE : '0',
-                bb: c.bb !== '0' ? '2pt double ' + NOTE_RULE : '0',
-              }));
+            const indent = wide && !I.title && !I.blank && !I.group && !I.intro;
+            let band = false, bt = '0', bb = '0';
+            if (I.title) k = 1;
+            else if (I.blank || I.label) k = 0;
+            else { band = k % 2 === 0; k++; }
+            if (I.total) {
+              const nx = near(ri, 1), pv = near(ri, -1);
+              const closes = !I.named && (!nx || nx.group || nx.title || (pv && pv.total));
+              bt = RULE; bb = closes ? DOUBLE : RULE;
             }
+            cells = cells.map((c, ci) => Object.assign({}, c, {
+              bg: band ? BAND_BG : c.bg,
+              pl: ci === 0 && indent ? (parseFloat(c.pl) + 14.173) + 'pt' : c.pl,
+              bt: ci > 0 ? bt : '0',
+              bb: ci > 0 ? bb : '0',
+            }));
           } else if (b.auto && head) {
             cells = cells.map(c => c.bg === '#99BFD9' ? Object.assign({}, c, { bg: '#8AB4DC' }) : c);
           }
@@ -1184,7 +1275,7 @@ class Component extends DCLogic {
       };
     }
     const st = styles[b.s] || {};
-    const bullet = b.s === 'B7 Bullet double Indent';
+    const bullet = /^B7 /.test(b.s || '');
     const o = {
       t: b.t,
       fs: (b.sz || st.size || 9) + 'pt',
@@ -1196,8 +1287,8 @@ class Component extends DCLogic {
       ls: (st.size || 9) >= 30 ? '-0.01em' : (b.s === 'H2 Sub Heading' ? '0.15em' : (bullet ? '-0.01em' : '0')),
       ta: st.right ? 'right' : 'left',
       col: b.tc || st.color || '#6D6E71',
-      pt: (atTop ? 0 : Math.max(st.before || 0, prev && prev.k === 't' ? TABLE_TEXT_GAP : 0)) + 'pt',
-      pb: (atFoot ? 0 : (st.after || 0)) + 'pt',
+      pt: (atTop ? 0 : this._gapBefore(prev, b, styles)) + 'pt',
+      pb: (atFoot ? 0 : this._gapAfter(b, next, styles)) + 'pt',
       ml: '0pt', ti: '0pt', marker: '',
     };
     if (b.rs) {
@@ -1229,6 +1320,13 @@ class Component extends DCLogic {
     // Lines broken inside one Word paragraph (an address) carry no space after.
     ['A4 V:Body', 'B2 Body Indent'].forEach(k => { if (styles && styles[k] && !styles[k + ' Tight']) styles[k + ' Tight'] = Object.assign({}, styles[k], { after: 0 }); });
     if (styles && !styles['B5 Sub Point']) styles['B5 Sub Point'] = Object.assign({}, styles['B5 Bullet Body Indent Alpha'] || {}, { left: 59.528, first: -22.677, after: 8.504 });
+    // FY25 PDF: the bold run-in heads ("Basis of preparation", "Material
+    // Accounting Policies") print in RV Blue; IDML leaves the swatch unset.
+    if (styles && styles['H3 Sub Heading LC Financials']) styles['H3 Sub Heading LC Financials'] = Object.assign({}, styles['H3 Sub Heading LC Financials'], { color: '#005FA1' });
+    // FY25 critical-judgement points: bullet and title in Medium, the copy
+    // under it at the bullet text, 24pt between points.
+    if (styles && !styles['B7 Bullet Medium']) styles['B7 Bullet Medium'] = Object.assign({}, styles['B7 Bullet double Indent'] || {}, { weight: 500, before: 5.669, after: 0 });
+    if (styles && !styles['B9 Bullet Body']) styles['B9 Bullet Body'] = Object.assign({}, styles['A4 V:Body'] || {}, { left: 36.85, first: 0, before: 0, after: 5.669 });
     const frames = mod.flow ? this._flowFrames() : mod.frames;
     const byStory = {};
     frames.forEach((f, i) => { (byStory[f.s] || (byStory[f.s] = [])).push(i); });
@@ -1267,7 +1365,7 @@ class Component extends DCLogic {
       if (need > h) { h = Math.max(h, need); if (need > room) clash[f.p] = 1; }
       (pages[f.p] || (pages[f.p] = [])).push({
         l: f.x + 'pt', t: f.y + 'pt', w: f.w + 'pt', h: h + 'pt',
-        blocks: bs.map((b, k) => this._noteBlock(b, k === 0, styles, k === bs.length - 1, bs[k - 1])),
+        blocks: bs.map((b, k) => this._noteBlock(b, k === 0, styles, k === bs.length - 1, bs[k - 1], bs[k + 1])),
       });
     });
     // Restore the master's running head and dateline on the pages that do not
@@ -1377,7 +1475,7 @@ class Component extends DCLogic {
           gridCols: r.gridCols, mh: r.head1 ? '28.35pt' : '19.84pt', bg: r.head1 ? '#005FA1' : '#8AB4DC',
           ai: r.head1 ? 'flex-end' : 'center', pv: r.head1 ? '4pt' : '2pt', fs: r.head1 ? '8.5pt' : '8pt', lh: '10.5pt',
           ls: '0.02em', tt: 'uppercase',
-          cells: cells.map((c, k) => ({ t: c.t, jc: align(k)[0], ta: align(k)[1], pl: '4.252pt', fw: '700', col: '#fff', bt: '0', bb: '0' })),
+          cells: cells.map((c, k) => ({ t: c.t, jc: align(k)[0], ta: align(k)[1], pl: '4.252pt', fw: '700', fst: 'normal', col: '#fff', bt: '0', bb: '0' })),
         };
       }
       const blank = cells.every(c => !(c.t || '').trim());
@@ -1390,7 +1488,7 @@ class Component extends DCLogic {
         cells: cells.map((c, k) => {
           const fig = k > 0 && k !== noteCol;
           return {
-            t: c.t, jc: align(k)[0], ta: align(k)[1], pl: '4.252pt', fw: bold && k !== noteCol ? '700' : '400',
+            t: c.t, jc: align(k)[0], ta: align(k)[1], pl: '4.252pt', fw: bold && k !== noteCol ? '700' : '400', fst: c.i ? 'italic' : 'normal',
             col: bold && k !== noteCol ? '#005FA1' : '#6D6E71',
             bt: fig && total ? RULE : '0',
             bb: fig && closing ? '2.25pt double #005FA1' : fig && total ? RULE : '0',
