@@ -127,7 +127,7 @@ class Component extends DCLogic {
       noRun: !run,
       heading: run ? "Annual Report " + run.year + (n >= 16 ? " \u2014 full report" : " \u2014 " + n + " section" + (n > 1 ? "s" : "")) : "Production run",
       subline: run ? "From folder \u201c" + (run.folder || "") + "\u201d \u00b7 prepared " + new Date(run.created).toLocaleString("en-AU") : "",
-      stateLabel: !run ? "" : ready ? "Ready" : "Laying out pages\u2026",
+      stateLabel: !run ? "" : ready ? "Ready" + (window.RV_FIN_BUILD ? " \u00b7 " + window.RV_FIN_BUILD : "") : "Laying out pages\u2026",
       stateColor: ready ? "#005FA1" : "#A51890",
       notReady: !ready,
       printBg: ready ? "#005FA1" : "#b9bbbe",

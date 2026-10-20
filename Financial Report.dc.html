@@ -488,6 +488,8 @@ class Component extends DCLogic {
   state = { sigTop: 144.06, sigFrame: 7, dirLayout: { cards: [], headTop: 254.95, ceasedTop: 0 }, frames: [[], [], [], [], [], [], [], [], [], []], baseIdx: 0, leftover: [], copy: null, statements: null, notes: null, noteLeftover: 0 };
 
   componentDidMount() {
+    // Shown on the Production Run bar so a run can be checked against the latest files.
+    window.RV_FIN_BUILD = 'Finance build 20 Oct 2026 \u00b7 Test 10 fixes';
     (window.RVProduction ? window.RVProduction.load('directors-report', () => import('./copy/directors-report.js')) : import('./copy/directors-report.js'))
       .then(m => window.RVAuditor ? window.RVAuditor.pages(((m.copy || {}).kpmg) || {}) : null)
       .then(a => { if (a) this.setState({ auditor: a }); })
