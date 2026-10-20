@@ -18,8 +18,13 @@
   @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-BookItalic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: block; }
   body { margin: 0; background: #e9eaeb; }
   a { color: #005FA1; } a:hover { color: #EC008C; }
-  @page single { size: 595.276pt 841.89pt; margin: 0; }
-  @page spread { size: 1190.55pt 841.89pt; margin: 0; }
+  /* doc-page writes its own unnamed @page from whichever section syncs last
+     (Back Matter = A4 portrait), which shrank every spread onto A4. These
+     !important rules win regardless of order: spread is the default page,
+     named single pages for cover/back where Chrome honours them. */
+  @page { size: 1190.55pt 841.89pt !important; margin: 0 !important; }
+  @page single { size: 595.276pt 841.89pt !important; margin: 0 !important; }
+  @page spread { size: 1190.55pt 841.89pt !important; margin: 0 !important; }
   section.page[style*="595.276pt"] { page: single; }
   section.page[style*="1190.55pt"] { page: spread; }
   /* The sheets sit in each section's doc-page shadow root, where Chrome does
@@ -100,8 +105,8 @@ class Component extends DCLogic {
   // 'spreads' / 'singles' print only that kind, so the whole file has one size.
   _print(mode) {
     let css = '';
-    if (mode === 'spreads') css = '@page { size: 1190.55pt 841.89pt; margin: 0 } @media print { section.page[style*="595.276pt"] { display: none !important } }';
-    if (mode === 'singles') css = '@page { size: 595.276pt 841.89pt; margin: 0 } @media print { section.page[style*="1190.55pt"] { display: none !important } }';
+    if (mode === 'spreads') css = '@page { size: 1190.55pt 841.89pt !important; margin: 0 !important } @page single { size: 1190.55pt 841.89pt !important } @page spread { size: 1190.55pt 841.89pt !important } @media print { section.page[style*="595.276pt"] { display: none !important } }';
+    if (mode === 'singles') css = '@page { size: 595.276pt 841.89pt !important; margin: 0 !important } @page single { size: 595.276pt 841.89pt !important } @page spread { size: 595.276pt 841.89pt !important } @media print { section.page[style*="1190.55pt"] { display: none !important } }';
     const old = document.getElementById('rv-print-mode'); if (old) old.remove();
     if (css) {
       const s = document.createElement('style'); s.id = 'rv-print-mode'; s.textContent = css; document.head.appendChild(s);
