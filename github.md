@@ -2,15 +2,19 @@ repo: scunliffe38-sys/RV-Annual-Report-Production
 branch: main
 
 ## Last sync
-date: 2026-10-20T16:00:00Z
+date: 2026-10-21T00:00:00Z
 
 ### Updated in this project
-- Test 10 comments: Directors' Report headings never left at a column foot (spill spread takes overflow instead).
-- Cash flows: double rule under cash at end of year, not the footnote row.
-- VicRacing footnote: lead-in and closing paragraph set as footnote text, not bullets.
-- CLAUDE.md: Test 9/10 rules recorded.
+- Test 13: footnotes under a statement in Word now carry through (cash flow "(i) Funds transferred…"); finance-adapter.js and data/fy26-payload.json updated.
+- Statement of financial position: notes-range line no longer clipped.
+- Build stamp shown on the Production Run bar when ready.
+- CLAUDE.md: page-number status recorded as an open item.
 
 ## Sync history
+- 2026-10-20T16:00:00Z: Test 10 comments (headings at column feet, cash-flow double rule, VicRacing footnote).
+- 2026-10-20T15:00:00Z: Test 9 comments (spacing, rules, indents, page breaks).
+- 2026-10-20T13:00:00Z: Production Run print fix (spreads no longer shrunk onto A4).
+- 2026-10-20T12:00:00Z: Full project set pushed; Financial Report restyled to FY25 per Test 8.
 - 2026-10-20T15:00:00Z: Test 9 comments (spacing, rules, indents, page breaks).
 - 2026-10-20T13:00:00Z: Production Run print fix (spreads no longer shrunk onto A4).
 - 2026-10-20T12:00:00Z: Full project set pushed; Financial Report restyled to FY25 per Test 8.

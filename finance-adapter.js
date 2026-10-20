@@ -587,6 +587,19 @@
       var last4 = fronts.slice(-4);
       ["surplus", "position", "cashflows", "equity"].forEach(function (name, ix) {
         st[name] = statement(tables[last4[ix]], ps[name], Y, issues, name);
+        // Footnotes set under a statement in Word ("(i) Funds transferred to or
+        // from managed investments...") travel with it (Test 13).
+        var at = blocks.findIndex(function (b) { return b.k === "table" && b.key === last4[ix]; }), fn = [];
+        for (var q = at + 1; at >= 0 && q < blocks.length && fn.length < 6; q++) {
+          var fb = blocks[q];
+          if (fb.k === "table" || fb.k === "noteTitle" || fb.k === "sectionHeading" || fb.k === "picture" || fb.k === "textbox") break;
+          var ft = fb.text ? ws(fb.text) : "";
+          if (!ft) continue;
+          if (fb.k !== "bullet" && fb.k !== "body") break;
+          if (/^notes to the financial statements/i.test(ft) || ft.length > 400) break;
+          fn.push({ mk: fb.k === "bullet" ? "(" + ["i", "ii", "iii", "iv", "v", "vi"][fn.length] + ")" : "", t: ft });
+        }
+        if (fn.length) st[name].footnotes = fn;
       });
     } else issues.push({ level: "error", text: "Fewer than four financial statements found." });
 

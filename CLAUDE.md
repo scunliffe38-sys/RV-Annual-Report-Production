@@ -91,6 +91,11 @@ Serve the folder over http (`python -m http.server`) and open `index.html`;
   Other sections are still fixed.
 
 ## Open items
+- Page numbers (deferred by user): Contents numbers come from fixed counts in
+  `report-structure.js`; Financial Report start (folioStart 28) is fixed;
+  page references inside supplied copy (e.g. Directors' Declaration "pages 47
+  to 82") are verbatim. Automatic: finance folios, statements' notes-range
+  line, note numbers.
 - Roll adaptive photo/column layout out to the other sections (rules to be
   defined as we test).
 - KPI tables, Wagering charts, footers and year labels on other sections are

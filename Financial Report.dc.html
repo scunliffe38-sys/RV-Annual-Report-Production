@@ -288,6 +288,9 @@
   <div style="position:absolute;left:651.97pt;top:206.64pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stSurplus.dateline }}</div>
   <div style="position:absolute;left:651.97pt;top:237.79pt;width:481.89pt;height:550.24pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stSurplus }}" hint-size="100%,550pt"></dc-import>
+    <sc-for list="{{ stSurplus.footnotes }}" as="fn" hint-placeholder-count="0">
+      <div style="display:grid;grid-template-columns:17.008pt 1fr;margin-top:8.504pt;font-weight:400;font-size:6.5pt;line-height:10.027pt;color:#6D6E71"><div>{{ fn.mk }}</div><div>{{ fn.t }}</div></div>
+    </sc-for>
     <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
   </div>
 
@@ -303,8 +306,11 @@
 
   <div style="position:absolute;left:55.69pt;top:58.38pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;text-wrap:balance">{{ stPosition.heading }}</div>
   <div style="position:absolute;left:56.69pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stPosition.dateline }}</div>
-  <div style="position:absolute;left:56.69pt;top:191.73pt;width:481.89pt;height:573.44pt;overflow:hidden">
+  <div style="position:absolute;left:56.69pt;top:191.73pt;width:481.89pt;height:600pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stPosition }}" hint-size="100%,573pt"></dc-import>
+    <sc-for list="{{ stPosition.footnotes }}" as="fn" hint-placeholder-count="0">
+      <div style="display:grid;grid-template-columns:17.008pt 1fr;margin-top:8.504pt;font-weight:400;font-size:6.5pt;line-height:10.027pt;color:#6D6E71"><div>{{ fn.mk }}</div><div>{{ fn.t }}</div></div>
+    </sc-for>
     <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
   </div>
 
@@ -312,6 +318,9 @@
   <div style="position:absolute;left:651.8pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stCashflows.dateline }}</div>
   <div style="position:absolute;left:651.8pt;top:191.73pt;width:481.89pt;height:620.39pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stCashflows }}" hint-size="100%,620pt"></dc-import>
+    <sc-for list="{{ stCashflows.footnotes }}" as="fn" hint-placeholder-count="0">
+      <div style="display:grid;grid-template-columns:17.008pt 1fr;margin-top:8.504pt;font-weight:400;font-size:6.5pt;line-height:10.027pt;color:#6D6E71"><div>{{ fn.mk }}</div><div>{{ fn.t }}</div></div>
+    </sc-for>
     <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
   </div>
 
@@ -343,6 +352,9 @@
   <div style="position:absolute;left:56.69pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stEquity.dateline }}</div>
   <div style="position:absolute;left:56.69pt;top:192.24pt;width:481.89pt;height:296.71pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stEquity }}" hint-size="100%,296pt"></dc-import>
+    <sc-for list="{{ stEquity.footnotes }}" as="fn" hint-placeholder-count="0">
+      <div style="display:grid;grid-template-columns:17.008pt 1fr;margin-top:8.504pt;font-weight:400;font-size:6.5pt;line-height:10.027pt;color:#6D6E71"><div>{{ fn.mk }}</div><div>{{ fn.t }}</div></div>
+    </sc-for>
     <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
   </div>
 
@@ -489,7 +501,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     // Shown on the Production Run bar so a run can be checked against the latest files.
-    window.RV_FIN_BUILD = 'Finance build 20 Oct 2026 \u00b7 Test 10 fixes';
+    window.RV_FIN_BUILD = 'Finance build 21 Oct 2026 \u00b7 Test 13 fixes';
     (window.RVProduction ? window.RVProduction.load('directors-report', () => import('./copy/directors-report.js')) : import('./copy/directors-report.js'))
       .then(m => window.RVAuditor ? window.RVAuditor.pages(((m.copy || {}).kpmg) || {}) : null)
       .then(a => { if (a) this.setState({ auditor: a }); })
