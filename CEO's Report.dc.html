@@ -238,7 +238,7 @@ class Component extends DCLogic {
     return {
       signatory: 'Aaron Morrison',
       signatoryRole: 'Chief Executive Officer',
-      footYear: 2025,
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : ((window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)) ? 2026 : 2025),
       folioLeft: this.props.folioLeft ?? 6,
       folioRight: this.props.folioRight ?? 7,
       col0: c[0] || [], col1: c[1] || [], col2: c[2] || [], col3: c[3] || [],

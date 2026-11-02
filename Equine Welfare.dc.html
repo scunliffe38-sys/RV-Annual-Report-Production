@@ -511,7 +511,7 @@ class Component extends DCLogic {
       p2Left: g.p2.left, p2Top: g.p2.top, p2Size: g.p2.size,
       c1Top: g.c1, c1Height: g.flows[0].height, c2Top: g.flows[1].y, c2Height: g.flows[1].height, c4Top: g.c4, c4Height: g.flows[3].height,
       wrapW: g.W, wrapR: g.flows[2].wrap.r, wrap4On: !!g.flows[3].wrap, wrap4Shape: g.flows[3].wrap ? g.flows[3].wrap.shape : 'none', wrap4R: g.flows[3].wrap ? g.flows[3].wrap.r : 0, wrap4Cy: g.flows[3].wrap ? g.flows[3].wrap.cy : 0, wrapCx: 183.3 + g.W, wrapCy: g.flows[2].wrap.cy, c3Top: g.flows[2].y, c3Height: g.flows[2].height,
-      footYear: 2025,
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : ((window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)) ? 2026 : 2025),
       folioLeft: this.props.folioLeft ?? 20,
       folioRight: this.props.folioRight ?? 21,
       showDecoration: this.props.showDecoration ?? !FY26,

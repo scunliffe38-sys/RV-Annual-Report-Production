@@ -38,12 +38,14 @@
     section.page { break-before: page; }
   }
 </style>
+<script>window.RV_PROOF = /[?&]proof\b/.test(location.search);</script>
 <script src="./report-structure.js?v=20261102"></script>
 <script src="./production-bridge.js?v=20261102"></script>
 <script src="./doc-page.js"></script>
 <script src="./image-slot.js"></script>
-<script src="./production-images.js?v=20261102"></script>
-<script src="./auditor-pages.js?v=20261102"></script>
+<script src="./production-images.js?v=20261102b"></script>
+<script src="./auditor-pages.js?v=20261102b"></script>
+<script src="./run-image-editor.js?v=20261102"></script>
 </helmet>
 
 <div data-noprint="" style="position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #d8d9db;font-family:Arial,sans-serif">
@@ -54,10 +56,15 @@
       <div style="font-size:13.5px;line-height:1.45;color:#6D6E71;margin-top:2px">{{ subline }}</div>
     </div>
     <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:{{ stateColor }}">{{ stateLabel }}</div>
+    <button type="button" onClick="{{ openProof }}" title="Same report with pictures at 150 ppi, for review and sharing" style="font-size:13px;font-weight:700;color:#6D6E71;background:#fff;border:2px solid #b9bbbe;border-radius:8px;padding:10px 14px;cursor:pointer">{{ proofLabel }}</button>
+    <button type="button" onClick="{{ toggleAdjust }}" style="font-size:13px;font-weight:700;color:{{ adjustFg }};background:{{ adjustBg }};border:2px solid #A51890;border-radius:8px;padding:10px 14px;cursor:pointer">{{ adjustLabel }}</button>
     <button type="button" onClick="{{ print }}" disabled="{{ notReady }}" style="font-size:15px;font-weight:700;color:#fff;background:{{ printBg }};border:0;border-radius:8px;padding:12px 20px;cursor:pointer">Save as PDF</button>
     <button type="button" onClick="{{ printSpreads }}" disabled="{{ notReady }}" style="font-size:13px;font-weight:700;color:{{ printBg }};background:#fff;border:2px solid {{ printBg }};border-radius:8px;padding:10px 14px;cursor:pointer">Spreads only (landscape)</button>
     <button type="button" onClick="{{ printSingles }}" disabled="{{ notReady }}" style="font-size:13px;font-weight:700;color:{{ printBg }};background:#fff;border:2px solid {{ printBg }};border-radius:8px;padding:10px 14px;cursor:pointer">Single pages only (portrait)</button>
   </div>
+  <sc-if value="{{ adjusting }}" hint-placeholder-val="">
+    <div style="max-width:1100px;margin:0 auto;padding:0 24px 10px;font-size:13.5px;line-height:1.5;color:#A51890;font-weight:700">Adjust images is on: click any photo, headshot, logo or signature on the pages to move, zoom or replace it. Changes are saved to the Console, so later runs keep them.</div>
+  </sc-if>
   <sc-if value="{{ hasPageInfo }}" hint-placeholder-val="">
     <div style="max-width:1100px;margin:0 auto;padding:0 24px 10px;font-size:13px;line-height:1.5;color:#25272a">
       <div style="color:#6D6E71">{{ pageSummary }}</div>
@@ -71,22 +78,22 @@
   <div data-noprint="" style="max-width:640px;margin:60px auto;font-family:Arial,sans-serif;font-size:16px;line-height:1.5;color:#25272a;padding:0 24px">No production run found. Start one from the <a href="Production Console.dc.html">Production console</a>.</div>
 </sc-if>
 
-<sc-if value="{{ on.cover }}" hint-placeholder-val=""><div data-sec="cover"><dc-import name="Cover" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.cover }}" hint-placeholder-val=""><div data-sec="cover"><dc-import name="Cover" year="{{ year }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
 <sc-if value="{{ on.contents }}" hint-placeholder-val=""><div data-sec="contents"><dc-import name="Contents" page-counts="{{ pageCounts }}" year="{{ year }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.chair }}" hint-placeholder-val=""><div data-sec="chair"><dc-import name="Chair's Report" folio-left="{{ fol.chair.l }}" folio-right="{{ fol.chair.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.ceo }}" hint-placeholder-val=""><div data-sec="ceo"><dc-import name="CEO's Report" folio-left="{{ fol.ceo.l }}" folio-right="{{ fol.ceo.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.kpi }}" hint-placeholder-val=""><div data-sec="kpi"><dc-import name="KPI &amp; Industry Snapshot" folio-left="{{ fol.kpi.l }}" folio-right="{{ fol.kpi.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.racing }}" hint-placeholder-val=""><div data-sec="racing"><dc-import name="Racing &amp; Programming" folio-left="{{ fol.racing.l }}" folio-right="{{ fol.racing.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.awards }}" hint-placeholder-val=""><div data-sec="awards"><dc-import name="Racing Awards &amp; Feature Winners" folio-left="{{ fol.awards.l }}" folio-right="{{ fol.awards.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.owners }}" hint-placeholder-val=""><div data-sec="owners"><dc-import name="Owners &amp; Breeders + Infrastructure" folio-left="{{ fol.owners.l }}" folio-right="{{ fol.owners.r }}" photo-layout="{{ layouts.owners }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.workforce }}" hint-placeholder-val=""><div data-sec="workforce"><dc-import name="Workforce Development" folio-left="{{ fol.workforce.l }}" folio-right="{{ fol.workforce.r }}" photo-layout="{{ layouts.workforce }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.integrity }}" hint-placeholder-val=""><div data-sec="integrity"><dc-import name="Integrity Services" folio-left="{{ fol.integrity.l }}" folio-right="{{ fol.integrity.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.welfare }}" hint-placeholder-val=""><div data-sec="welfare"><dc-import name="Equine Welfare" folio-left="{{ fol.welfare.l }}" folio-right="{{ fol.welfare.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.wagering }}" hint-placeholder-val=""><div data-sec="wagering"><dc-import name="Wagering" folio-left="{{ fol.wagering.l }}" folio-right="{{ fol.wagering.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.media }}" hint-placeholder-val=""><div data-sec="media"><dc-import name="Media" folio-left="{{ fol.media.l }}" folio-right="{{ fol.media.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.industry }}" hint-placeholder-val=""><div data-sec="industry"><dc-import name="Industry &amp; Community Support" folio-left="{{ fol.industry.l }}" folio-right="{{ fol.industry.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.finance }}" hint-placeholder-val=""><div data-sec="finance"><dc-import name="Financial Report" folio-start="{{ fol.finance.l }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
-<sc-if value="{{ on.back }}" hint-placeholder-val=""><div data-sec="back"><dc-import name="Back Matter" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.chair }}" hint-placeholder-val=""><div data-sec="chair"><dc-import name="Chair's Report" year="{{ year }}" folio-left="{{ fol.chair.l }}" folio-right="{{ fol.chair.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.ceo }}" hint-placeholder-val=""><div data-sec="ceo"><dc-import name="CEO's Report" year="{{ year }}" folio-left="{{ fol.ceo.l }}" folio-right="{{ fol.ceo.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.kpi }}" hint-placeholder-val=""><div data-sec="kpi"><dc-import name="KPI &amp; Industry Snapshot" year="{{ year }}" folio-left="{{ fol.kpi.l }}" folio-right="{{ fol.kpi.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.racing }}" hint-placeholder-val=""><div data-sec="racing"><dc-import name="Racing &amp; Programming" year="{{ year }}" folio-left="{{ fol.racing.l }}" folio-right="{{ fol.racing.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.awards }}" hint-placeholder-val=""><div data-sec="awards"><dc-import name="Racing Awards &amp; Feature Winners" year="{{ year }}" folio-left="{{ fol.awards.l }}" folio-right="{{ fol.awards.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.owners }}" hint-placeholder-val=""><div data-sec="owners"><dc-import name="Owners &amp; Breeders + Infrastructure" year="{{ year }}" folio-left="{{ fol.owners.l }}" folio-right="{{ fol.owners.r }}" photo-layout="{{ layouts.owners }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.workforce }}" hint-placeholder-val=""><div data-sec="workforce"><dc-import name="Workforce Development" year="{{ year }}" folio-left="{{ fol.workforce.l }}" folio-right="{{ fol.workforce.r }}" photo-layout="{{ layouts.workforce }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.integrity }}" hint-placeholder-val=""><div data-sec="integrity"><dc-import name="Integrity Services" year="{{ year }}" folio-left="{{ fol.integrity.l }}" folio-right="{{ fol.integrity.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.welfare }}" hint-placeholder-val=""><div data-sec="welfare"><dc-import name="Equine Welfare" year="{{ year }}" folio-left="{{ fol.welfare.l }}" folio-right="{{ fol.welfare.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.wagering }}" hint-placeholder-val=""><div data-sec="wagering"><dc-import name="Wagering" year="{{ year }}" folio-left="{{ fol.wagering.l }}" folio-right="{{ fol.wagering.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.media }}" hint-placeholder-val=""><div data-sec="media"><dc-import name="Media" year="{{ year }}" folio-left="{{ fol.media.l }}" folio-right="{{ fol.media.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.industry }}" hint-placeholder-val=""><div data-sec="industry"><dc-import name="Industry &amp; Community Support" year="{{ year }}" folio-left="{{ fol.industry.l }}" folio-right="{{ fol.industry.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.finance }}" hint-placeholder-val=""><div data-sec="finance"><dc-import name="Financial Report" year="{{ year }}" folio-start="{{ fol.finance.l }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.back }}" hint-placeholder-val=""><div data-sec="back"><dc-import name="Back Matter" year="{{ year }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
@@ -128,6 +135,8 @@ class Component extends DCLogic {
   // mode '' prints everything with each page at its own size (named @page rules);
   // 'spreads' / 'singles' print only that kind, so the whole file has one size.
   _print(mode) {
+    if (window.RVImageEditor) window.RVImageEditor.setActive(false);
+    if (this.state.adjust) this.setState({ adjust: false });
     let css = '';
     if (mode === 'spreads') css = '@page { size: 1190.55pt 841.89pt !important; margin: 0 !important } @page single { size: 1190.55pt 841.89pt !important } @page spread { size: 1190.55pt 841.89pt !important } @media print { section.page[style*="595.276pt"] { display: none !important } }';
     if (mode === 'singles') css = '@page { size: 595.276pt 841.89pt !important; margin: 0 !important } @page single { size: 595.276pt 841.89pt !important } @page spread { size: 595.276pt 841.89pt !important } @media print { section.page[style*="1190.55pt"] { display: none !important } }';
@@ -235,7 +244,13 @@ class Component extends DCLogic {
     const fol = this.state.fol || {};
     const blank = { l: undefined, r: undefined };
     ['chair','ceo','kpi','racing','awards','owners','workforce','integrity','welfare','wagering','media','industry','finance'].forEach(k => { if (!fol[k]) fol[k] = blank; });
+    const adj = !!this.state.adjust;
     return {
+      adjusting: adj,
+      adjustLabel: adj ? "Done adjusting" : "Adjust images",
+      adjustBg: adj ? "#A51890" : "#fff",
+      adjustFg: adj ? "#fff" : "#A51890",
+      toggleAdjust: () => { const v = !this.state.adjust; if (window.RVImageEditor) window.RVImageEditor.setActive(v); this.setState({ adjust: v }); },
       on, fol,
       pageCounts: this.state.counts || {},
       year: run ? run.year : '',
@@ -244,7 +259,9 @@ class Component extends DCLogic {
       pageChecks: this.state.pageChecks || [],
       layouts: Object.assign({ workforce: "auto", owners: "auto" }, run && run.layouts),
       noRun: !run,
-      heading: run ? "Annual Report " + run.year + (n >= 16 ? " \u2014 full report" : " \u2014 " + n + " section" + (n > 1 ? "s" : "")) : "Production run",
+      proofLabel: window.RV_PROOF ? "Print-quality version" : "Proof version (small PDF)",
+      openProof: () => { const s = location.search.replace(/[?&]proof\b/, "").replace(/^&/, "?"); window.open(location.pathname + (window.RV_PROOF ? (s || "") : (s ? s + "&proof" : "?proof")), "_blank"); },
+      heading: (window.RV_PROOF ? "PROOF \u00b7 " : "") + (run ? "Annual Report " + run.year + (n >= 16 ? " \u2014 full report" : " \u2014 " + n + " section" + (n > 1 ? "s" : "")) : "Production run"),
       subline: run ? "From folder \u201c" + (run.folder || "") + "\u201d \u00b7 prepared " + new Date(run.created).toLocaleString("en-AU") : "",
       stateLabel: !run ? "" : ready ? "Ready" + (window.RV_FIN_BUILD ? " \u00b7 " + window.RV_FIN_BUILD : " \u00b7 OLD finance page") + (run && run.payload && run.payload.statements ? (run.payload.statements._build ? " \u00b7 data " + run.payload.statements._build : " \u00b7 OLD finance data, reload the Console and Produce again") : "") + audLabel : "Laying out pages\u2026" + audLabel,
       stateColor: ready ? "#005FA1" : "#A51890",

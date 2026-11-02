@@ -356,7 +356,7 @@ class Component extends DCLogic {
       rp1Src: this.props.rp1Src || '', rp2Src: this.props.rp2Src || '', rp3Src: this.props.rp3Src || '',
       col0Top: this.state.col0Top + 'pt',
       col0H: (TEXT_BOTTOM - this.state.col0Top) + 'pt',
-      footYear: 2025,
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : ((window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)) ? 2026 : 2025),
       folioLeft: this.props.folioLeft ?? 10,
       folioRight: this.props.folioRight ?? 11,
       track: TRACKING[this.state.baseIdx],

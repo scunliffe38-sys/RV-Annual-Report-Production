@@ -581,7 +581,7 @@ class Component extends DCLogic {
       w3W: w3 ? w3.width : 0, w3R: w3 ? w3.r : 0, w3Cx: w3 ? w3.cx : 0, w3Cy: w3 ? w3.cy : 0,
       w4W: w4 ? w4.width : 0, w4R: w4 ? w4.r : 0, w4Cx: w4 ? w4.cx : 0, w4Cy: w4 ? w4.cy : 0,
       strapperSrc: this.props.strapperSrc || '',
-      footYear: 2025,
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : ((window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)) ? 2026 : 2025),
       folioLeft: this.props.folioLeft ?? 16,
       showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       track: TRACKING[this.state.idx],

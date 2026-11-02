@@ -5,6 +5,8 @@ branch: main
 date: 2026-11-02
 
 ### Updated in this project
+- Adjust images in the Production Run (move/zoom/replace on the pages; saved to the Console) and a Proof version (small PDF).
+- Cover and section footers take the year from the run.
 - Automatic pagination in the Production Run (folios, Contents, Financial Report start; page-reference checks).
 - FY26 Chair's Report, Integrity Services and Industry & Community Support copy and layout changes.
 - Awards and Feature Race Winners read from a Word document; Wagering from one docx; logos accept AI/EPS/PDF/PSD.

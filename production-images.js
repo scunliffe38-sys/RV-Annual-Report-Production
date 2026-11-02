@@ -323,7 +323,7 @@
 
   // Cut the framed window out at print resolution, edge-extending the
   // background where the window runs past the photo.
-  function render(blob, crop, A, outW) {
+  function render(blob, crop, A, outW, q) {
     return root.createImageBitmap(blob).then(function (bm) {
       var iw = bm.width, ih = bm.height, O = Math.round(outW), Oh = Math.round(outW / A);
       var k = O / (crop.w * iw), W = iw * k, H = ih * k, dx = -crop.l * iw * k, dy = -crop.t * ih * k;
@@ -340,7 +340,7 @@
       if (b && r) x.drawImage(bm, iw - 1, ih - 1, 1, 1, dx + W, dy + H, r, b);
       x.drawImage(bm, dx, dy, W, H);
       if (bm.close) bm.close();
-      return new Promise(function (res) { c.toBlob(res, "image/jpeg", 0.95); });
+      return new Promise(function (res) { c.toBlob(res, "image/jpeg", q || 0.95); });
     }).catch(function () { return null; });
   }
   function getRec(id) {
@@ -350,6 +350,33 @@
         r.onsuccess = function () { res(r.result); };
         r.onerror = function () { rej(r.error); };
       });
+    });
+  }
+
+  // Slot id -> object URL for everything placed on the page this session.
+  var placed = {}, watching = false;
+  function place() {
+    root.document.querySelectorAll("image-slot").forEach(function (el) {
+      var u = placed[el.id];
+      if (u && el.getAttribute("src") !== u) { el.setAttribute("prefer-src", ""); el.setAttribute("src", u); }
+    });
+  }
+  // A group's file cut to its framing at print resolution, per slot.
+  function slotUrls(g, r) {
+    var urls = {}, u = URL.createObjectURL(r.blob);
+    g.uses.forEach(function (x) { urls[x.slot] = u; });
+    var A = aspect(g);
+    if (!A || r.vector || !r.width) return Promise.resolve(urls);
+    var crop = r.crop || centred(r.width, r.height, A);
+    // Proof runs (?proof) cut at 150 ppi, JPEG 80%, for a PDF small enough to share.
+    var PPI = root.RV_PROOF ? 150 : 300;
+    var need = Math.min(4000, Math.max.apply(null, g.uses.filter(isCover).map(function (x) { return x.w / 72 * PPI * 1.15; })));
+    var outW = Math.max(Math.min(crop.w * r.width, need), Math.min(need, 400));
+    return render(r.blob, crop, A, outW, root.RV_PROOF ? 0.8 : 0.95).then(function (m) {
+      if (!m) { console.warn("Framing failed, placed as supplied: " + g.label); return urls; }
+      var mu = URL.createObjectURL(m);
+      g.uses.forEach(function (x) { if (isCover(x)) urls[x.slot] = mu; });
+      return urls;
     });
   }
 
@@ -449,39 +476,37 @@
     // that mount later as sections load.
     apply: function () {
       return api.all().then(function (recs) {
-        var urls = {}, jobs = [];
-        groups.forEach(function (g) {
-          var r = recs[g.id];
-          if (!r) return;
-          var u = URL.createObjectURL(r.blob);
-          g.uses.forEach(function (x) { urls[x.slot] = u; });
-          var A = aspect(g);
-          if (!A || r.vector || !r.width) return;
-          var crop = r.crop || centred(r.width, r.height, A);
-          var need = Math.min(4000, Math.max.apply(null, g.uses.filter(isCover).map(function (x) { return x.w / 72 * 300 * 1.15; })));
-          var outW = Math.max(Math.min(crop.w * r.width, need), Math.min(need, 600));
-          jobs.push(render(r.blob, crop, A, outW).then(function (m) {
-            if (!m) { console.warn("Framing failed, placed as supplied: " + g.label); return; }
-            var mu = URL.createObjectURL(m);
-            g.uses.forEach(function (x) { if (isCover(x)) urls[x.slot] = mu; });
-          }));
-        });
-        return Promise.all(jobs).then(function () { return urls; });
-      }).then(function (urls) {
-        var queued = false;
-        function place() {
-          queued = false;
-          root.document.querySelectorAll("image-slot").forEach(function (el) {
-            var u = urls[el.id];
-            if (u && el.getAttribute("src") !== u) { el.setAttribute("prefer-src", ""); el.setAttribute("src", u); }
-          });
-        }
+        return Promise.all(groups.map(function (g) { return recs[g.id] ? slotUrls(g, recs[g.id]) : null; }));
+      }).then(function (list) {
+        list.forEach(function (m) { if (m) Object.assign(placed, m); });
         place();
-        new MutationObserver(function () {
-          if (!queued) { queued = true; root.requestAnimationFrame(place); }
-        }).observe(root.document.body, { childList: true, subtree: true });
-        return Object.keys(urls).length;
+        if (!watching) {
+          watching = true;
+          var queued = false;
+          new MutationObserver(function () {
+            if (!queued) { queued = true; root.requestAnimationFrame(function () { queued = false; place(); }); }
+          }).observe(root.document.body, { childList: true, subtree: true });
+        }
+        return Object.keys(placed).length;
       }).catch(function () { return 0; });
+    },
+
+    // Re-cut one group after its framing or file changed and swap it into
+    // every slot on the page (the run's Adjust images editor).
+    refresh: function (id) {
+      var g = find(id);
+      if (!g) return Promise.resolve();
+      return getRec(id).then(function (r) {
+        if (!r) { g.uses.forEach(function (x) { delete placed[x.slot]; }); return; }
+        return slotUrls(g, r).then(function (m) { Object.assign(placed, m); place(); });
+      });
+    },
+    find: find,
+    get: function (id) { return getRec(id); },
+    // The group that fills a slot on the page.
+    groupForSlot: function (slot) {
+      for (var i = 0; i < groups.length; i++) if (groups[i].uses.some(function (u) { return u.slot === slot; })) return groups[i];
+      return null;
     },
   };
 

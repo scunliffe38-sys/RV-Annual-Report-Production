@@ -16,7 +16,8 @@
 (function (root) {
   "use strict";
   var PDFJS = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/";
-  var BODY = 9.48, DPI = 300, SPREAD_H = 841.89;
+  // Proof runs (?proof) draw at 150 dpi to keep the PDF small enough to share.
+  var BODY = 9.48, DPI = root.RV_PROOF ? 150 : 300, SPREAD_H = 841.89;
   // Measured off RV ANNUAL REPORT 2025_FINAL_DPS.pdf (spread pt, from top-left).
   // x/base: left edge and first baseline of the text block. foot: lowest the frame may reach.
   var SLOTS = [

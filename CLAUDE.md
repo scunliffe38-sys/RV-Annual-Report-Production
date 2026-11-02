@@ -135,6 +135,11 @@ Serve the folder with `python serve.py` (caching off; plain `python -m http.serv
   needs internet); a solid background is flagged.
 
 ## Open items
+- Production Run tools: "Adjust images" (`run-image-editor.js`) opens a framing
+  editor on any Console-managed slot (move/zoom/Auto/Replace); Save writes
+  `rec.crop` via `RVImages.setCrop` and `RVImages.refresh(id)` re-cuts it on the
+  page. "Proof version" (`?proof`, `window.RV_PROOF`) cuts photos at 150 ppi
+  JPEG 80% and KPMG pages at 150 dpi for a shareable PDF.
 - Pagination (built Nov 2026): the Production Run counts the pages each section
   lays out (`data-sec` wrappers; finance from `window.RV_FIN_LAYOUT`), feeds the
   counts to `report-structure.js` `withRun`, and passes folio-left/right to each

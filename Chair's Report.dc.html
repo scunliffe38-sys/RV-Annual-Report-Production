@@ -260,7 +260,7 @@ class Component extends DCLogic {
     return {
       signatory: meta.signatory || '',
       signatoryRole: meta.signatoryRole || '',
-      footYear: meta.footYear || '',
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : (meta.footYear || ''),
       folioLeft: this.props.folioLeft ?? meta.folioLeft ?? 4,
       folioRight: this.props.folioRight ?? meta.folioRight ?? 5,
       colU: this.state.under || [],
