@@ -37,7 +37,6 @@
       else rest = P.slice(1);
       var m = /^(.+?)\s*(?:\(([^)]+)\))?\s*$/.exec(ws(lines[0]));
       var name = m ? m[1].trim() : ws(lines[0]), role = m && m[2] ? m[2].trim() : "";
-      if (/chief executive/i.test(role)) role = "CEO";
       if (seen[name]) continue;
       seen[name] = 1;
       var d = { id: slug(name), name: name, appointed: appointed, paras: joinRuns(rest.map(function (p) { return ws(p.text); }).filter(Boolean)) };
@@ -251,7 +250,8 @@
       if (mk && cells[0]) cells[0] = Object.assign({}, cells[0], { t: mk + " " + String(cells[0].t || "").trim(), s: sl[0].s === "Table:Table Body Bold" ? "Table:Table Body Bold" : cells[0].s });
       var head = cells.some(function (c) { return /^Table:Table Header/.test(c.s); });
       var title = !head && cells[0] && /^\d{1,2}\.\s/.test(cells[0].t || "") && cells.slice(1).every(function (c) { return !String(c.t || "").trim(); });
-      if (title) cells = cells.map(function (c) { return Object.assign({}, c, { s: "A4 V:Subhead Large", tw: 0, bw: 0 }); });
+      // Note titles set "Surplus / (Deficit)" spaced, as the first part of note 2 is.
+      if (title) cells = cells.map(function (c) { return Object.assign({}, c, { s: "A4 V:Subhead Large", tw: 0, bw: 0, t: String(c.t || "").replace(/Surplus\s*\/\s*\(Deficit\)/g, "Surplus / (Deficit)") }); });
       var min = head ? (cells[0].s === "Table:Table Header 2" ? 14.504 : 17.008) : title ? 21.738 : 15.704;
       return { h: 0, min: min, c: cells };
     });
@@ -353,7 +353,11 @@
         // FY25 sets the title in Medium and the copy under it at the bullet
         // text indent.
         var nb = blocks[i + 1];
-        if (indent && heading(text) && !/\d/.test(text) && nb && nb.k === "body" && !nb.bold && !nb.italic) { out.push({ k: "p", s: "B7 Bullet Medium", t: text }); pointBody = true; }
+        // Contingent Liabilities: Word sets the paragraphs as List Paragraph with no
+        // numbering; FY25 prints them as plain body paragraphs.
+        var nt = null; for (var q = out.length - 1; q >= 0; q--) if (out[q].s === "A4 V:Subhead Large") { nt = out[q].t; break; }
+        if (nt && /Contingent Liabilit/i.test(nt) && !b.tick) out.push({ k: "p", s: "A4 V:Body", t: text });
+        else if (indent && heading(text) && !/\d/.test(text) && nb && nb.k === "body" && !nb.bold && !nb.italic) { out.push({ k: "p", s: "B7 Bullet Medium", t: text }); pointBody = true; }
         else out.push({ k: "p", s: "B7 Bullet double Indent", t: text });
       }
       else if (b.k === "body") {
@@ -455,7 +459,8 @@
         c = Object.assign({}, c, { al: at > 0 ? "center" : "left" });
         if (ri === hi) return Object.assign({}, c, { s: "Table:Table Header", bg: "#005FA1", sz: 8.5 });
         if (dates) return Object.assign({}, c, { s: "Table:Table Header 2", bg: "#99BFD9", sz: 8.5, t: String(c.t || "").toUpperCase() });
-        return ri > hi ? Object.assign({}, c, { sz: 8 }) : c;
+        // Body: Gotham Book 8pt in RV Blue, as FY25 p.42 sets it.
+        return ri > hi ? Object.assign({}, c, { sz: 8, tc: "#005FA1" }) : c;
       });
       if (ri === hi) r.min = 50;
       else if (dates) r.min = 17.5;
@@ -552,6 +557,18 @@
         else nar.push({ kind: "body", text: text });
       }
     }
+    // FY25 sets a section such as Industry Expenditure as an intro and then one
+    // bullet per paragraph. Word numbers only the lead paragraph of each topic, so
+    // a plain paragraph following a sentence bullet (capitalised, not a short
+    // "…;" or lower-case list item) joins the bullets until the next heading.
+    nar = nar.filter(function (x) { return !(x.kind === "body" && !String(x.text || "").trim()); });
+    for (var q = 1, run = false; q < nar.length; q++) {
+      var x = nar[q], pq = nar[q - 1];
+      if (x.kind === "subhead" || x.kind === "minihead") { run = false; continue; }
+      if (x.kind === "bullet") { run = !x.tick && /^[A-Z]/.test(x.text) && String(x.text).length > 60 && !/;\s*$/.test(x.text); continue; }
+      if (run && x.kind === "body" && (pq.kind === "bullet" || pq.kind === "body")) nar[q] = { kind: "bullet", text: x.text, tick: false, level: 0, marker: "" };
+      else run = false;
+    }
     // Directors who ceased sit before OFFICERS in the document; they print on
     // the directors' spread, under the last card.
     var firstHead = nar.findIndex(function (x) { return x.kind === "subhead"; });
@@ -606,6 +623,41 @@
     } else issues.push({ level: "error", text: "Fewer than four financial statements found." });
 
     var notes = { flow: true, year: Y, stories: { flow: buildNotes(parsed, issues) } };
+    // Figures that appear in the four statements. A note row whose figures tie back
+    // to them closes on a double rule (Tim McCann, Test 11); wide tables tie on the Total column.
+    var NUM = function (t) { t = String(t || "").trim(); return /^\(?[\d,]+\)?$/.test(t) && +t.replace(/[(),]/g, "") >= 100 ? t.replace(/[(),]/g, "") : null; };
+    var stFigs = {};
+    Object.keys(st).forEach(function (k) { ((st[k] && st[k].rows) || []).forEach(function (r) { (r.cells || []).slice(1).forEach(function (c) { var n = NUM(c && c.t); if (n) stFigs[n] = 1; }); }); });
+    // House style: the rounding instrument is "Financial/Directors’ Reports", unspaced,
+    // in the notes as on the Directors' Report (p.37).
+    (function fix(o) {
+      if (Array.isArray(o)) { o.forEach(fix); return; }
+      if (!o || typeof o !== "object") return;
+      // Note 20(a): FY25 sets the "Cash at bank" line in RV Blue (label and figures)
+      // with a blank line between it and the copy above.
+      if (o.k === "t" && Array.isArray(o.rows)) {
+        o.rows.forEach(function (r) {
+          var f = (r.c || []).slice(1).map(function (c) { return NUM(c && c.t); }), got = f.filter(Boolean);
+          if (!got.length) return;
+          r.tie = (r.c || []).length > 4 ? !!(f[f.length - 1] && stFigs[f[f.length - 1]]) : got.every(function (n) { return stFigs[n]; });
+        });
+        var cb = o.rows.findIndex(function (r) { return r.c && r.c[0] && /^Cash at bank$/.test(String(r.c[0].t || "").trim()); });
+        if (cb > 0 && !o.rows[cb].cashFix) {
+          var row = o.rows[cb];
+          row.cashFix = true;
+          row.c = row.c.map(function (c) { return c ? Object.assign({}, c, { tc: "#005FA1" }) : c; });
+          var pv = o.rows[cb - 1];
+          if ((pv.c || []).some(function (c) { return c && String(c.t || "").trim(); }))
+            o.rows.splice(cb, 0, { min: row.min, c: row.c.map(function (c) { return c ? { t: "", s: c.s } : c; }) });
+        }
+      }
+      // Related-party Revenue/Expenditure table: keep Word's totals row (Tim McCann, Test 11),
+      // drop the blank row above it (FY25 has no gap before the total).
+      if (o.k === "t" && Array.isArray(o.rows) && o.rows.some(function (r) { return (r.c || []).some(function (c) { return c && /^(REVENUE|Revenue)$/.test(c.t || "") && /Header/.test(c.s || ""); }); }))
+        o.rows = o.rows.filter(function (r) { var c = r.c || []; return !c.every(function (x) { return !x || !String(x.t || "").trim(); }); });
+      ["t", "text"].forEach(function (k) { if (typeof o[k] === "string") o[k] = o[k].replace(/Financial\s+\/\s+Directors/g, "Financial/Directors").replace(/^Basis of Preparation$/, "Basis of preparation").replace(/^Computer software & databases$/, "Computer Software & Databases").replace(/^Racing\.com Domain name$/, "Racing.com Domain Name").replace(/^REVENUE$/, "Revenue").replace(/^EXPENDITURE$/, "Expenditure"); });
+      Object.keys(o).forEach(function (k) { if (o[k] && typeof o[k] === "object") fix(o[k]); });
+    })(notes.stories.flow);
     return { year: Y, copy: copy, statements: st, notes: notes, issues: issues };
   }
 

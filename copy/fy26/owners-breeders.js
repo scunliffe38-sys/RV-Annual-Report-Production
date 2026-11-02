@@ -1,0 +1,28 @@
+// FY26 Annual Report - Owners and Breeders.docx, verbatim. Preview with ?fy26.
+export const copy = {
+  slug: 'owners-breeders',
+  paragraphs: [
+    { text: "Annual Report – Owners and Breeders", kind: 'subhead' },
+    { text: "In FY26, a total of 61,762 people experienced the thrill of owning a racehorse in Victoria, which represents a slight decrease on the FY25 figure of 64,706. Notwithstanding the fractional decline, Victoria still boasts more registered owners, part-owners and owners aged 25 or younger than any other racing jurisdiction in Australia, while registered syndicate members are almost double that of the next placed state." },
+    { text: "Owners Digital Ticketing Platform", kind: 'subhead' },
+    { text: "Racing Victoria (RV), with the valued support of the Victorian Government, launched a new dedicated owners digital ticketing platform in FY26 to modernise and enhance the raceday experience for racehorse owners." },
+    { text: "The project was delivered in partnership with the Thoroughbred Racehorse Owners Association (TROA) and with the support of Country Racing Victoria (CRV) and Victoria’s race clubs, realised through a significant investment from the Victorian Government’s Victorian Racing Industry Fund (VRIF) with a focus on supporting owners and encouraging participation in the sport." },
+    { text: "Phase 1", underline: true },
+    { text: "From September 2025, Phase 1 of the project allowed owners to access the platform to obtain a digital copy of their Victorian Owner Gold Card for immediate use." },
+    { text: "This ensured that owners permanently had their pass with them on their phone, providing seamless and efficient racecourse entry prior to collecting any additional raceday ticketing ahead of Phase 2." },
+    { text: "Phase 2", underline: true },
+    { text: "A successful trial of Phase 2 saw the integration of raceday ticketing at select race meetings throughout July 2026, allowing owners to log in to access and share their digital admission, members’ reserve and mounting yard tickets, plus hospitality entitlements." },
+    { text: "The full integration of raceday ticketing was launched at the start of the 2026-27 season and made available for all Victorian race meetings." },
+    { text: "Victorian Owners and Breeders Incentive Scheme (VOBIS)", kind: 'subhead' },
+    { text: "In FY26, $15.5 million in VOBIS prizemoney, bonuses and vouchers was distributed to participants, making VOBIS the richest incentive program in Australian racing." },
+    { text: "Open exclusively to VOBIS Gold and VOBIS Platinum horses, the Premier Race Series offered $5.6 million in prizemoney, bonuses and vouchers across 17 premium races." },
+    { text: "Offering in excess of $7.5 million in vouchers each season, the VOBIS Platinum program continues to support owners, breeders, trainers and syndicators by incentivising reinvestment in the Victorian industry. Since its inception, more than $9 million in VOBIS Platinum vouchers has been won." },
+    { text: "In FY26, 70 stallions were nominated to the VOBIS Sires program, ensuring their progeny are eligible for the lucrative VOBIS Platinum bonuses and vouchers." },
+    { text: "The results of a comprehensive review of the VOBIS program, comprising customer research, stakeholder submissions and analysis of racing and VOBIS data, were analysed in FY26 with enhancements implemented for the start of the 2026-27 season to provide greater consistency and clarity across the program." },
+    { text: "2026 Victorian Breeding Awards", kind: 'subhead' },
+    { text: "Racing Victoria VOBIS Nominator of the Year - Godolphin", bold: "Godolphin" },
+    { text: "Racing Victoria VOBIS Sire of the Year - Blue Point", bold: "Blue Point" },
+    { text: "Racing Victoria VOBIS Trainer of the Year - Ben, Will & JD Hayes", bold: "Ben, Will & JD Hayes" },
+    { text: "Racing Victoria VOBIS Horse of the Year - Flying Done", bold: "Flying Done" },
+  ],
+};

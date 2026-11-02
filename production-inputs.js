@@ -100,6 +100,36 @@
     return out;
   }
 
+  // Wagering docx tables: annual turnover/FBT, turnover by quarter, top five.
+  function wageringTables(docXml) {
+    var cell = function (c) { return textOf(c).trim(); };
+    var num = function (s) { var v = parseFloat(String(s).replace(/[^0-9.\-]/g, "")); return isNaN(v) ? null : v; };
+    var out = {}, issues = [];
+    (docXml.match(/<w:tbl>[\s\S]*?<\/w:tbl>/g) || []).forEach(function (t) {
+      var rows = (t.match(/<w:tr[ >][\s\S]*?<\/w:tr>/g) || []).map(function (r) { return (r.match(/<w:tc>[\s\S]*?<\/w:tc>/g) || []).map(cell); });
+      var flat = rows.map(function (r) { return r.join(" "); }).join(" ");
+      if (/free bet/i.test(flat)) {
+        out.annual = rows.filter(function (r) { return /^FY\d{2}$/.test(r[0]); }).map(function (r) {
+          return { fy: r[0], turnover: r[1], turnoverYoY: num(r[2]), fbt: r[3], fbtYoY: num(r[4]) };
+        });
+      } else if (rows.some(function (r) { return /^Q[1-4]$/.test(r[0]); })) {
+        var hd = rows.filter(function (r) { return r.filter(function (c) { return /^FY\d{2}$/.test(c); }).length === 2; })[0] || [];
+        var fys = hd.filter(function (c) { return /^FY\d{2}$/.test(c); });
+        out.quarterly = { prior: fys[0], current: fys[1], rows: rows.filter(function (r) { return /^Q[1-4]$/.test(r[0]); }).map(function (r) {
+          return { q: r[0], prior: r[1], current: r[2], yoy: num(r[3]) };
+        }) };
+      } else if (/^top\s*(5|five)/i.test(rows[0] && rows[0][0] || "")) {
+        out.topFiveTitle = rows[0][0];
+        out.topFive = rows.slice(1).map(function (r) { return r.filter(Boolean).pop() || ""; }).filter(Boolean);
+      }
+    });
+    if (!out.annual) issues.push(issue("warning", "No turnover / free bet turnover table found; the charts keep last year\u2019s figures."));
+    else issues.push(issue("info", "Turnover and free bet turnover read for " + out.annual[0].fy + "\u2013" + out.annual[out.annual.length - 1].fy + "; the charts show the last six years."));
+    if (!out.quarterly) issues.push(issue("warning", "No quarterly turnover table found."));
+    if (!out.topFive) issues.push(issue("warning", "No Top 5 turnover races table found."));
+    return { data: out, issues: issues };
+  }
+
   function narrative(blocks, cfg, budget, label) {
     var issues = [];
     if (!blocks.length) issues.push(issue("error", "No text found in the document."));
@@ -207,12 +237,65 @@
     return out;
   }
 
-  function dataInputs(sheets, year) {
+  // KPI workbooks (Finance). Racing: label in column B, each group's current and
+  // prior year in F/G, J/K, N/O, R/S. Participation: label in B, years in I/J.
+  // Variances are not read; the page works them out from the two years.
+  function kpiWorkbook(sheets, id, year) {
     var issues = [], payload = {};
-    var yy = +year.slice(2), label = "20" + (yy - 1) + "-" + yy, footYear = 2000 + yy;
-    ["Industry Snapshot", "Wagering Charts", "Wagering Top Five", "VR Awards", "Premierships", "Feature Race Winners"].forEach(function (s) {
+    var name = Object.keys(sheets)[0], rows = sheets[name] || [];
+    var yy = +year.slice(2), cur = "FY" + yy, pri = "FY" + (yy - 1);
+    var lab = function (r) { return str(r && r[1]).replace(/\s+/g, " ").trim(); };
+    var fmt = function (l) { return /^Average Starters/i.test(l) ? "dec1" : /^Average Individual/i.test(l) ? "dec2" : /^%/.test(l) ? "pct1" : /\(\$M\)/.test(l) ? "money1" : "int"; };
+    var val = function (v) { return typeof v === "number" && isFinite(v) ? v : null; };
+    var head = rows.filter(function (r) { return r && r.some(function (v) { return str(v) === cur; }); })[0];
+    if (!head) issues.push(issue("error", "No " + cur + " column found in sheet \u201c" + name + "\u201d \u2014 check the workbook is this year\u2019s."));
+    if (id === "kpiRacing") {
+      var groups = [["picnic", 5], ["country", 9], ["metro", 13], ["total", 17]];
+      var titles = ["Racing Statistics", "Prizemoney Statistics", "Wagering Statistics"], tables = [];
+      titles.forEach(function (t) {
+        var at = rows.findIndex(function (r) { return lab(r) === t; });
+        if (at < 0) { issues.push(issue("error", "\u201c" + t + "\u201d block not found.")); return; }
+        var out = [];
+        for (var i = at + 1; i < rows.length; i++) {
+          var r = rows[i] || [], l = lab(r);
+          if (titles.indexOf(l) > -1) break;
+          if (!l) { if (out.length) break; continue; }
+          var vals = {}, any = false;
+          groups.forEach(function (g) { var a = val(r[g[1]]), b = val(r[g[1] + 1]); if (a != null || b != null) any = true; vals[g[0]] = [a, b]; });
+          if (!any) break;
+          out.push({ label: l, fmt: fmt(l), emph: false, source: "row " + (i + 1), values: vals });
+        }
+        tables.push({ title: t, rows: out });
+      });
+      var per = rows.map(lab).filter(function (l) { return new RegExp("^" + cur + " \\(").test(l); })[0];
+      payload = { meta: { current: cur, prior: pri, periodLabel: per || cur, sources: [name] }, tables: tables, footnotes: [] };
+      var n = tables.reduce(function (s, t) { return s + t.rows.length; }, 0);
+      issues.push(issue("info", n + " racing, prizemoney and wagering rows read (" + cur + " and " + pri + ")."));
+      issues.push(issue("warning", "The workbook has no footnotes. The FY25 prizemoney footnotes are left off until this year\u2019s are supplied."));
+    } else {
+      var at2 = rows.findIndex(function (r) { return lab(r) === "Participation Statistics"; }), prow = [];
+      if (at2 < 0) issues.push(issue("error", "\u201cParticipation Statistics\u201d block not found."));
+      else for (var j = at2 + 1; j < rows.length; j++) {
+        var r2 = rows[j] || [], l2 = lab(r2);
+        if (!l2) { if (prow.length) break; continue; }
+        prow.push({ label: l2, fmt: fmt(l2), emph: false, source: "row " + (j + 1), values: [val(r2[8]), val(r2[9])] });
+      }
+      payload = { participation: { title: "Participation Statistics", rows: prow } };
+      issues.push(issue("info", prow.length + " participation rows read (" + cur + " and " + pri + ")."));
+    }
+    return { issues: issues, payload: payload };
+  }
+
+  function needSheets(sheets, names, issues) {
+    names.forEach(function (s) {
       if (!sheets[s]) issues.push(issue("error", "Sheet \u201c" + s + "\u201d is missing or has been renamed."));
     });
+  }
+
+  function snapshotInputs(sheets, year) {
+    var issues = [], payload = {};
+    var footYear = 2000 + +year.slice(2);
+    needSheets(sheets, ["Industry Snapshot"], issues);
 
     var snap = sheets["Industry Snapshot"] && tableAfter(sheets["Industry Snapshot"], "ID (do not change)");
     if (snap) {
@@ -228,6 +311,14 @@
       if (missing.length) issues.push(issue("warning", "Industry Snapshot: " + missing.length + " figure" + (missing.length > 1 ? "s" : "") + " not entered (" + missing.join(", ") + "). They will print as a dash."));
       payload["snapshot-data"] = { meta: { period: year, heading: year + " Industry Snapshot", footYear: footYear }, stats: stats };
     }
+
+    return { issues: issues, payload: payload };
+  }
+
+  function awardsInputs(sheets, year) {
+    var issues = [], payload = {};
+    var yy = +year.slice(2), label = "20" + (yy - 1) + "-" + yy;
+    needSheets(sheets, ["VR Awards", "Premierships", "Feature Race Winners"], issues);
 
     var aw = sheets["VR Awards"] && tableAfter(sheets["VR Awards"], "Award (as printed)");
     var pr = sheets["Premierships"] && tableAfter(sheets["Premierships"], "Premiership");
@@ -250,21 +341,6 @@
       payload.awards = { awardLines: lines, captions: caps };
     }
 
-    var top = sheets["Wagering Top Five"] && tableAfter(sheets["Wagering Top Five"], "Rank");
-    if (top) {
-      var races = top.map(function (r) { return str(r[2]); });
-      var got = races.filter(Boolean).length;
-      if (got < races.length) issues.push(issue("warning", "Wagering Top Five: " + (races.length - got) + " race" + (races.length - got > 1 ? "s" : "") + " not entered."));
-      if (got) payload.wagering = { topFive: races.map(function (r) { return r || "\u2014"; }) };
-    }
-
-    var wc = sheets["Wagering Charts"];
-    if (wc) {
-      var fy = wc.filter(function (r) { return r && norm(r[0]) === norm(year); });
-      var blank = fy.filter(function (r) { return str(r[1]) === ""; }).length;
-      if (blank) issues.push(issue("warning", "Wagering Charts: " + year + " value missing in " + blank + " chart" + (blank > 1 ? "s" : "") + "."));
-      issues.push(issue("info", "Wagering chart figures were read, but the charts still draw FY25 values until they are connected."));
-    }
     return { issues: issues, payload: payload };
   }
 
@@ -380,16 +456,25 @@
             var out = narrative(docxBlocks(doc), cfg, budgets && budgets[cfg.payload], inp.id);
             rec.issues = rec.issues.concat(out.issues);
             if (cfg.strings) out.payload.meta = { footYear: 2000 + +year.slice(2) };
+            if (inp.id === "wagering") {
+              var wt = wageringTables(doc);
+              rec.issues = rec.issues.concat(wt.issues);
+              Object.assign(out.payload, wt.data, { year: 2000 + +year.slice(2) });
+              if (out.payload.paragraphs[0] && /^wagering$/i.test(out.payload.paragraphs[0].text)) out.payload.paragraphs.shift();
+            }
             result.payload[cfg.payload] = Object.assign(result.payload[cfg.payload] || {}, out.payload);
           }
         } else {
           var sheets = await xlsxSheets(zip);
-          if (inp.id === "dataInputs") {
-            var d = dataInputs(sheets, year);
+          if (inp.id === "snapshotData" || inp.id === "awardsData") {
+            var d = (inp.id === "snapshotData" ? snapshotInputs : awardsInputs)(sheets, year);
             rec.issues = rec.issues.concat(d.issues);
             Object.keys(d.payload).forEach(function (k) { result.payload[k] = Object.assign(result.payload[k] || {}, d.payload[k]); });
+          } else if (inp.id === "kpiRacing" || inp.id === "kpiParticipation") {
+            var kw = kpiWorkbook(sheets, inp.id, year);
+            rec.issues = rec.issues.concat(kw.issues);
+            result.payload["kpi-data"] = Object.assign(result.payload["kpi-data"] || {}, kw.payload);
           } else {
-            var n = Object.keys(sheets).length;
             rec.issues.push(issue("info", "Workbook opened (" + n + " sheet" + (n > 1 ? "s" : "") + "). KPI tables still show FY25 figures until the workbook reader is connected."));
           }
         }
@@ -418,5 +503,5 @@
     return result;
   }
 
-  root.RVInputs = { process: process, docxBlocks: docxBlocks, xlsxSheets: xlsxSheets, readZip: readZip };
+  root.RVInputs = { process: process, docxBlocks: docxBlocks, xlsxSheets: xlsxSheets, readZip: readZip, kpiWorkbook: kpiWorkbook };
 })(window);

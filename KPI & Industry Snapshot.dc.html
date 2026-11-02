@@ -72,7 +72,7 @@
     </table>
   </div>
 
-  <div style="position:absolute;left:23.6pt;top:616pt;width:544.3pt">
+  <div style="position:absolute;left:23.6pt;top:600pt;width:544.3pt">
     <table style="width:544.3pt;border-collapse:collapse;table-layout:fixed">
       <tbody>
         <tr style="height:14.6pt">
@@ -188,7 +188,7 @@ class Component extends DCLogic {
     nudge();
     requestAnimationFrame(nudge);
 
-    import('./kpi-data.js')
+    (window.RVProduction ? window.RVProduction.load('kpi-data', () => import('./kpi-data.js')) : import('./kpi-data.js'))
       .then(m => this.setState({ kpi: m.kpi }))
       .catch(e => console.error('kpi-data.js failed to load', e));
     (window.RVProduction ? window.RVProduction.load('snapshot-data', () => import('./snapshot-data.js')) : import('./snapshot-data.js'))
@@ -218,13 +218,13 @@ class Component extends DCLogic {
 
   varText(v) {
     if (v === null) return 'N/A';
-    return (v * 100).toFixed(this.props.varianceDecimals ?? 1) + '%';
+    const t = (v * 100).toFixed(this.props.varianceDecimals ?? 1);
+    return (/^-0(\.0+)?$/.test(t) ? t.slice(1) : t) + '%';
   }
 
+  // FY25 prints negative variances in red; everything else in the table ink.
   varColor(v) {
-    if (!(this.props.colourVariance ?? false)) return '#231F20';
-    if (v === null || Math.abs(v) < 0.0005) return '#6D6E71';
-    return v < 0 ? '#EC008C' : '#005FA1';
+    return v !== null && v < 0 && Math.abs(v) >= 0.0005 ? '#ED1C24' : '#231F20';
   }
 
   kpiVals() {

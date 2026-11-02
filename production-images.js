@@ -46,9 +46,9 @@
     photo("Photo - VR Awards 5", "awards", "vra-logan-bates", "winner 5", 141.3, "Logan Bates"),
     photo("Photo - VR Awards 6", "awards", "vra-ciaron-maher", "winner 6", 169.2, "Ciaron Maher"),
     photo("Photo - VR Awards 7", "awards", "vra-team-hayes", "winner 7", 152.4, "Team Hayes"),
-    photo("Photo - Racing 1", "racing", "rp-image-left", "left circle", 357.2, "All-Star Mile \u2014 Ben Melham"),
-    photo("Photo - Racing 2", "racing", "rp-image-top", "top-right circle", 318.5, "Pride Of Jenni"),
-    photo("Photo - Racing 3", "racing", "rp-image-right", "bottom circle", 357.2, "Nadal Meteorite"),
+    photo("R&P - 1", "racing", "rp-image-left", "left circle", 357.2, "All-Star Mile \u2014 Ben Melham"),
+    photo("R&P - 2", "racing", "rp-image-top", "top-right circle", 318.5, "Pride Of Jenni"),
+    photo("R&P - 3", "racing", "rp-image-right", "bottom circle", 357.2, "Nadal Meteorite"),
     photo("Photo - Owners & Breeders", "owners", "obi-image-left", "left circle", 348.9, "VOBIS Owners Bonus \u2014 McGaw"),
     photo("Photo - Infrastructure", "owners", "obi-image-right", "right circle", 513.3, "Pakenham lights"),
     photo("Photo - Workforce 1", "workforce", "wf-image-trackwork", "left circle", 382.9, "Warrnambool trackwork"),
@@ -100,7 +100,7 @@
     { id: "signature", title: "Signatures", note: "PNG with a transparent background, or a high-resolution scan on white." },
     { id: "headshot", title: "Headshots", note: "Placed in circles. A square crop with the face centred works best." },
     { id: "photo", title: "Photographs", note: "Placed in circles unless noted, filling the frame. Aim for 300 ppi at the printed size." },
-    { id: "logo", title: "Logos", note: "SVG, or PNG with a transparent background. Back-cover and awards logos print on colour, so supply the white version." },
+    { id: "logo", title: "Logos", note: "SVG, AI, EPS, PDF, PSD, or PNG with a transparent background. Back-cover and awards logos print on colour, so supply the white version." },
   ];
 
   function rebuild() {
@@ -161,8 +161,195 @@
       return d;
     });
   }
+
+  // Logos supplied as Illustrator, PDF or Photoshop files are drawn to a
+  // transparent PNG at 600 ppi of the largest placement, trimmed to the artwork.
+  var LOGO_SRC = /\.(ai|pdf|psd|eps)$/i, LOGO_PPI = 600;
+  var GS = "https://cdn.jsdelivr.net/npm/@jspawn/ghostscript-wasm@0.0.2/", gsLib;
+  var PDFJS = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/";
+  var pdfLib, psdLib;
+  function logoPx(g) {
+    var pt = 0;
+    g.uses.forEach(function (u) { pt = Math.max(pt, u.w, u.h); });
+    return Math.max(2000, Math.round(pt / 72 * LOGO_PPI));
+  }
+  function trim(c) {
+    var x = c.getContext("2d"), d = x.getImageData(0, 0, c.width, c.height).data;
+    var l = c.width, t = c.height, r = -1, b = -1;
+    for (var y = 0; y < c.height; y++) for (var i = 0; i < c.width; i++) {
+      if (d[(y * c.width + i) * 4 + 3] > 8) { if (i < l) l = i; if (i > r) r = i; if (y < t) t = y; if (y > b) b = y; }
+    }
+    if (r < 0) throw new Error("the file has no visible artwork.");
+    var pad = Math.round(Math.max(r - l, b - t) * 0.01);
+    l = Math.max(0, l - pad); t = Math.max(0, t - pad); r = Math.min(c.width - 1, r + pad); b = Math.min(c.height - 1, b + pad);
+    var o = document.createElement("canvas");
+    o.width = r - l + 1; o.height = b - t + 1;
+    o.getContext("2d").drawImage(c, l, t, o.width, o.height, 0, 0, o.width, o.height);
+    return o;
+  }
+  function opaque(c) {
+    var d = c.getContext("2d").getImageData(0, 0, c.width, c.height).data;
+    for (var i = 3; i < d.length; i += 4 * 97) if (d[i] < 250) return false;
+    return true;
+  }
+  // EPS: Ghostscript (WASM, ~15 MB, loaded on first use) rewrites it as a
+  // vector PDF cropped to the bounding box, which pdf.js then draws.
+  async function epsToPdf(file) {
+    if (!gsLib) gsLib = import(GS + "gs.mjs");
+    var init = (await gsLib.catch(function () { gsLib = null; throw new Error("the EPS reader could not load (needs internet)."); })).default;
+    var gs = await init({ locateFile: function (f) { return GS + f; }, print: function () {}, printErr: function () {} });
+    gs.FS.writeFile("in.eps", new Uint8Array(await file.arrayBuffer()));
+    var code = gs.callMain(["-dSAFE", "-dBATCH", "-dNOPAUSE", "-dQUIET", "-dEPSCrop", "-sDEVICE=pdfwrite", "-sOutputFile=out.pdf", "in.eps"]);
+    var out;
+    try { out = gs.FS.readFile("out.pdf"); } catch (e) { out = null; }
+    if (code || !out || out.length < 200) throw new Error("this EPS file could not be converted. Ask for an SVG, PDF or PNG.");
+    return new File([out], file.name.replace(/\.eps$/i, ".pdf"), { type: "application/pdf" });
+  }
+  async function fromPdf(file, px) {
+    if (/\.eps$/i.test(file.name)) file = await epsToPdf(file);
+    var bytes = new Uint8Array(await file.arrayBuffer());
+    var head = new TextDecoder("latin1").decode(bytes.subarray(0, 1024));
+    if (head.indexOf("%PDF-") < 0) {
+      throw new Error("this Illustrator file was saved without PDF compatibility. Re-save it from Illustrator with \u201cCreate PDF Compatible File\u201d ticked, or export an SVG.");
+    }
+    if (!pdfLib) pdfLib = import(PDFJS + "pdf.min.mjs").then(function (m) { m.GlobalWorkerOptions.workerSrc = PDFJS + "pdf.worker.min.mjs"; return m; });
+    var m = await pdfLib.catch(function () { pdfLib = null; throw new Error("the PDF reader could not load (needs internet)."); });
+    var doc = await m.getDocument({ data: bytes, isEvalSupported: false }).promise;
+    var page = await doc.getPage(1), v1 = page.getViewport({ scale: 1 });
+    var vp = page.getViewport({ scale: Math.min(px / Math.max(v1.width, v1.height), 8000 / Math.max(v1.width, v1.height)) });
+    var c = document.createElement("canvas");
+    c.width = Math.ceil(vp.width); c.height = Math.ceil(vp.height);
+    await page.render({ canvasContext: c.getContext("2d"), viewport: vp, background: "rgba(0,0,0,0)" }).promise;
+    doc.destroy();
+    return c;
+  }
+  async function fromPsd(file) {
+    if (!psdLib) psdLib = import("https://esm.sh/ag-psd@20.2.1");
+    var m = await psdLib.catch(function () { psdLib = null; throw new Error("the Photoshop reader could not load (needs internet)."); });
+    var psd = m.readPsd(await file.arrayBuffer(), { skipLayerImageData: true, skipThumbnail: true });
+    if (!psd.canvas) throw new Error("this Photoshop file has no flattened image. Re-save it with \u201cMaximize Compatibility\u201d on, or export a PNG.");
+    return psd.canvas;
+  }
+  async function convertLogo(g, file) {
+    var c = /\.psd$/i.test(file.name) ? await fromPsd(file) : await fromPdf(file, logoPx(g));
+    var flat = opaque(c);
+    c = trim(c);
+    var blob = await new Promise(function (res) { c.toBlob(res, "image/png"); });
+    var out = new File([blob], file.name.replace(/\.[a-z0-9]+$/i, ".png"), { type: "image/png" });
+    return { file: out, from: file.name, flat: flat };
+  }
   function norm(s) {
     return String(s).replace(/\.[a-z0-9]+$/i, "").replace(/^FY\d{2}\s+/i, "").replace(/[\u2018\u2019]/g, "'").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  // Headshot framing (FY25 p.15): face centred, eye line 41% down, eye-to-chin
+  // 24% of the circle (ec values tuned so crown-to-chin reads ~58% on all). Landmarks per photo as fractions of the source
+  // (a = width/height, cx = face centre x / width, ey = eye line / height,
+  // ec = eye-to-chin / height). The supplied file is normalised to a square
+  // master at print resolution, background edge-extended where it runs out.
+  var EYE_CHIN = 0.24, EYE_Y = 0.41;
+  var FACES = {
+    "tim-eddy": { a: 1.4971, cx: 0.5117, ey: 0.3567, ec: 0.1249 },
+    "tim-rourke": { a: 1.4971, cx: 0.5117, ey: 0.3392, ec: 0.1134 },
+    "aaron-morrison": { a: 1.4971, cx: 0.5742, ey: 0.3392, ec: 0.1240 },
+    "kate-joel": { a: 1.4971, cx: 0.4531, ey: 0.3041, ec: 0.1465 },
+    "ross-lanyon": { a: 1.4971, cx: 0.4688, ey: 0.386, ec: 0.2194 },
+    "paul-guerra": { a: 1.4971, cx: 0.5313, ey: 0.3275, ec: 0.1300 },
+    "mark-player": { a: 1.4971, cx: 0.5078, ey: 0.345, ec: 0.1125 },
+    "peita-duncan": { a: 0.832, cx: 0.5023, ey: 0.2852, ec: 0.1568 },
+    "jonathan-hardwick": { a: 1, cx: 0.5469, ey: 0.4414, ec: 0.2503 },
+  };
+  var CHIN_Y = EYE_Y + EYE_CHIN, MOUTH_K = 1.27; // calibrated on the FY26 headshots against FACES
+  function find(id) { for (var i = 0; i < groups.length; i++) if (groups[i].id === id) return groups[i]; return null; }
+  function isCover(u) { return u.fit === "cover"; }
+  function aspect(g) { var c = g.uses.filter(isCover); return c.length ? c[0].w / c[0].h : 0; }
+  // A crop is the visible window in source fractions: l = left / width,
+  // t = top / height, w = window width / width (window height follows from
+  // the frame's aspect). It may run past the image; the render edge-extends.
+  function centred(iw, ih, A) {
+    if (iw / ih > A) { var w = ih * A / iw; return { l: (1 - w) / 2, t: 0, w: w }; }
+    return { l: 0, t: (1 - iw / A / ih) / 2, w: 1 };
+  }
+  function fromFace(iw, ih, f) {
+    var D = f.ec * ih / EYE_CHIN, w = D / iw;
+    return { l: f.cx - w / 2, t: (f.ey * ih - EYE_Y * D) / ih, w: w };
+  }
+
+  // Face finder (MediaPipe, loaded from jsDelivr on first use; needs internet).
+  var MP = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14", detp = null;
+  function detector() {
+    if (!detp) detp = import(MP + "/vision_bundle.mjs").then(function (v) {
+      return v.FilesetResolver.forVisionTasks(MP + "/wasm").then(function (fs) {
+        return v.FaceDetector.createFromOptions(fs, {
+          baseOptions: { modelAssetPath: "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite" },
+          runningMode: "IMAGE", minDetectionConfidence: 0.4 });
+      });
+    }).catch(function (e) { detp = null; throw e; });
+    return detp;
+  }
+  // Eye line and face centre from the eye keypoints; eye-to-chin estimated
+  // from eye-to-mouth (MOUTH_K). All as fractions of the source.
+  function detect(blob) {
+    return Promise.all([detector(), root.createImageBitmap(blob)]).then(function (r) {
+      var det = r[0], bm = r[1], sc = Math.min(1, 1024 / Math.max(bm.width, bm.height));
+      var c = root.document.createElement("canvas");
+      c.width = Math.round(bm.width * sc); c.height = Math.round(bm.height * sc);
+      c.getContext("2d").drawImage(bm, 0, 0, c.width, c.height);
+      if (bm.close) bm.close();
+      var ds = (det.detect(c).detections || []).filter(function (d) { return d.keypoints && d.keypoints.length >= 4; });
+      if (!ds.length) return null;
+      ds.sort(function (p, q) { return q.boundingBox.width * q.boundingBox.height - p.boundingBox.width * p.boundingBox.height; });
+      var k = ds[0].keypoints, ey = (k[0].y + k[1].y) / 2;
+      return { cx: (k[0].x + k[1].x) / 2, ey: ey, mouth: k[3].y - ey, ec: (k[3].y - ey) * MOUTH_K };
+    });
+  }
+  function tag(c, src) { c.src = src; return c; }
+  // Default framing. Photos: centred. Headshots: the face finder, then the
+  // FY25 rule; the hand-measured FACES landmarks win when the finder agrees
+  // it is the same photo (same shape, eyes within 2.5%).
+  function defaultCrop(g, rec) {
+    var A = aspect(g), iw = rec.width, ih = rec.height;
+    if (!A || !iw || rec.vector) return Promise.resolve(null);
+    if (g.kind !== "headshot") return Promise.resolve(tag(centred(iw, ih, A), "centre"));
+    var f = FACES[g.id.replace(/^head-/, "")];
+    if (f && Math.abs(iw / ih - f.a) / f.a > 0.03) f = null;
+    return detect(rec.blob).then(function (d) {
+      if (!d || !(d.ec > 0)) return f ? tag(fromFace(iw, ih, f), "fy25") : tag(centred(iw, ih, A), "noface");
+      if (f && Math.abs(d.cx - f.cx) < 0.025 && Math.abs(d.ey - f.ey) < 0.025) return tag(fromFace(iw, ih, f), "fy25");
+      return tag(fromFace(iw, ih, d), "face");
+    }).catch(function () { return f ? tag(fromFace(iw, ih, f), "fy25") : tag(centred(iw, ih, A), "nodetect"); });
+  }
+
+  // Cut the framed window out at print resolution, edge-extending the
+  // background where the window runs past the photo.
+  function render(blob, crop, A, outW) {
+    return root.createImageBitmap(blob).then(function (bm) {
+      var iw = bm.width, ih = bm.height, O = Math.round(outW), Oh = Math.round(outW / A);
+      var k = O / (crop.w * iw), W = iw * k, H = ih * k, dx = -crop.l * iw * k, dy = -crop.t * ih * k;
+      var c = root.document.createElement("canvas"); c.width = O; c.height = Oh;
+      var x = c.getContext("2d"); x.imageSmoothingQuality = "high";
+      var t = Math.max(0, dy), b = Math.max(0, Oh - dy - H), l = Math.max(0, dx), r = Math.max(0, O - dx - W);
+      if (t) x.drawImage(bm, 0, 0, iw, 1, dx, 0, W, t);
+      if (b) x.drawImage(bm, 0, ih - 1, iw, 1, dx, dy + H, W, b);
+      if (l) x.drawImage(bm, 0, 0, 1, ih, 0, dy, l, H);
+      if (r) x.drawImage(bm, iw - 1, 0, 1, ih, dx + W, dy, r, H);
+      if (t && l) x.drawImage(bm, 0, 0, 1, 1, 0, 0, l, t);
+      if (t && r) x.drawImage(bm, iw - 1, 0, 1, 1, dx + W, 0, r, t);
+      if (b && l) x.drawImage(bm, 0, ih - 1, 1, 1, 0, dy + H, l, b);
+      if (b && r) x.drawImage(bm, iw - 1, ih - 1, 1, 1, dx + W, dy + H, r, b);
+      x.drawImage(bm, dx, dy, W, H);
+      if (bm.close) bm.close();
+      return new Promise(function (res) { c.toBlob(res, "image/jpeg", 0.95); });
+    }).catch(function () { return null; });
+  }
+  function getRec(id) {
+    return db().then(function (d) {
+      return new Promise(function (res, rej) {
+        var r = d.transaction(STORE).objectStore(STORE).get(id);
+        r.onsuccess = function () { res(r.result); };
+        r.onerror = function () { rej(r.error); };
+      });
+    });
   }
 
   var api = {
@@ -175,7 +362,7 @@
       rebuild();
     },
     kinds: kinds,
-    accept: ".jpg,.jpeg,.png,.svg,.webp",
+    accept: ".jpg,.jpeg,.png,.svg,.webp,.ai,.eps,.pdf,.psd",
 
     all: function () {
       return db().then(function (d) {
@@ -189,14 +376,45 @@
     },
 
     put: function (id, file) {
-      if (/\.(tiff?|heic|psd|eps|ai|pdf)$/i.test(file.name)) {
+      var g0 = find(id), isLogo = g0 && g0.kind === "logo";
+      if (LOGO_SRC.test(file.name) && !isLogo) {
+        return Promise.reject(new Error("this file type can\u2019t be placed here. Save it as JPG or PNG."));
+      }
+      if (/\.(tiff?|heic)$/i.test(file.name)) {
         return Promise.reject(new Error("this file type can\u2019t be placed. Save it as JPG or PNG (logos: SVG or PNG)."));
       }
-      if (!ACCEPT.test(file.name)) return Promise.reject(new Error("not an image file. Use JPG, PNG, SVG or WebP."));
-      return measure(file).catch(function () { throw new Error("the file could not be opened as an image."); }).then(function (d) {
-        var rec = { blob: file, name: file.name, size: file.size, type: file.type, width: d.width || 0, height: d.height || 0, vector: !!d.vector, added: new Date().toISOString() };
-        return write(function (s) { s.put(rec, id); });
+      if (!ACCEPT.test(file.name) && !LOGO_SRC.test(file.name)) return Promise.reject(new Error("not an image file. Use JPG, PNG, SVG or WebP (logos also AI, EPS, PDF or PSD)."));
+      var original = file, conv = LOGO_SRC.test(file.name)
+        ? convertLogo(g0, file).catch(function (e) { throw e instanceof Error && !/^[A-Z]/.test(e.message) ? e : new Error("the file could not be read (" + (e && e.message || e) + ")."); })
+        : Promise.resolve(null);
+      return conv.then(function (cv) {
+        if (cv) file = cv.file;
+        return measure(file).catch(function () { throw new Error("the file could not be opened as an image."); }).then(function (d) { return [d, cv]; });
+      }).then(function (dc) {
+        var d = dc[0], cv = dc[1];
+        var rec = { blob: file, name: original.name, size: original.size, type: file.type, width: d.width || 0, height: d.height || 0, vector: !!d.vector, added: new Date().toISOString() };
+        if (cv) { rec.convertedFrom = original.name.split(".").pop().toUpperCase(); if (cv.flat) rec.flat = true; }
+        var g = find(id);
+        return (g ? defaultCrop(g, rec) : Promise.resolve(null)).then(function (c) {
+          if (c) rec.crop = c;
+          return write(function (s) { s.put(rec, id); });
+        });
       });
+    },
+    // Framing: replacing a file resets it (put() computes a fresh default).
+    aspect: aspect,
+    centred: centred,
+    guides: { eye: EYE_Y, chin: CHIN_Y },
+    autoCrop: function (id) { return getRec(id).then(function (rec) { var g = find(id); return g && rec ? defaultCrop(g, rec) : null; }); },
+    setCrop: function (id, crop) {
+      return getRec(id).then(function (rec) { if (!rec) return; rec.crop = crop; return write(function (s) { s.put(rec, id); }); });
+    },
+    // Records stored before framing existed get their default now.
+    ensureCrops: function (recs) {
+      var todo = groups.filter(function (g) { var r = recs[g.id]; return r && !r.crop && !r.vector && aspect(g); });
+      return todo.reduce(function (p, g) {
+        return p.then(function () { return defaultCrop(g, recs[g.id]).then(function (c) { if (c) return api.setCrop(g.id, c); }); });
+      }, Promise.resolve()).then(function () { return todo.length; });
     },
     remove: function (id) { return write(function (s) { s.delete(id); }); },
     clear: function () { return write(function (s) { s.clear(); }); },
@@ -220,7 +438,7 @@
       var worst = { ppi: Infinity, use: null };
       group.uses.forEach(function (u) {
         var sx = rec.width / (u.w / 72), sy = rec.height / (u.h / 72);
-        var p = u.fit === "contain" ? Math.max(sx, sy) : Math.min(sx, sy);
+        var p = u.fit === "contain" ? Math.max(sx, sy) : rec.crop ? rec.crop.w * rec.width / (u.w / 72) : Math.min(sx, sy);
         if (p < worst.ppi) worst = { ppi: p, use: u };
       });
       return worst;
@@ -230,19 +448,31 @@
     // that mount later as sections load.
     apply: function () {
       return api.all().then(function (recs) {
-        var urls = {};
+        var urls = {}, jobs = [];
         groups.forEach(function (g) {
           var r = recs[g.id];
           if (!r) return;
           var u = URL.createObjectURL(r.blob);
           g.uses.forEach(function (x) { urls[x.slot] = u; });
+          var A = aspect(g);
+          if (!A || r.vector || !r.width) return;
+          var crop = r.crop || centred(r.width, r.height, A);
+          var need = Math.min(4000, Math.max.apply(null, g.uses.filter(isCover).map(function (x) { return x.w / 72 * 300 * 1.15; })));
+          var outW = Math.max(Math.min(crop.w * r.width, need), Math.min(need, 600));
+          jobs.push(render(r.blob, crop, A, outW).then(function (m) {
+            if (!m) { console.warn("Framing failed, placed as supplied: " + g.label); return; }
+            var mu = URL.createObjectURL(m);
+            g.uses.forEach(function (x) { if (isCover(x)) urls[x.slot] = mu; });
+          }));
         });
+        return Promise.all(jobs).then(function () { return urls; });
+      }).then(function (urls) {
         var queued = false;
         function place() {
           queued = false;
           root.document.querySelectorAll("image-slot").forEach(function (el) {
             var u = urls[el.id];
-            if (u && el.getAttribute("src") !== u) el.setAttribute("src", u);
+            if (u && el.getAttribute("src") !== u) { el.setAttribute("prefer-src", ""); el.setAttribute("src", u); }
           });
         }
         place();

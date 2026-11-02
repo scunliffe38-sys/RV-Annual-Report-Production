@@ -35,14 +35,14 @@
     <div style="position:absolute;left:998.8pt;top:-462.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   </sc-if>
 
-  <image-slot id="ew-image-rehomer" shape="circle" placeholder="Jen Duffy — Rehomer launch" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot>
-  <image-slot id="ew-image-ott" shape="circle" placeholder="Off The Track" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
+  <sc-if value="{{ showP1 }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ p1Id }}" shape="circle" placeholder="{{ p1Label }}" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot></sc-if>
+  <image-slot id="{{ p2Id }}" shape="circle" placeholder="{{ p2Label }}" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
 
-  <svg style="position:absolute;left:53.7pt;top:80pt;width:286.5pt;height:50pt" viewBox="0 0 286.5 50" role="img" aria-label="Equine Welfare"><text x="0" y="29.6" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37">Equine Welfare</text></svg>
+  <svg style="position:absolute;left:53.7pt;top:80pt;width:286.5pt;height:50pt" viewBox="0 0 286.5 50" role="img" aria-label="Equine Welfare"><text x="0" y="29.6" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">E</tspan><tspan fill="#12589F">q</tspan><tspan fill="#24509E">u</tspan><tspan fill="#36499C">i</tspan><tspan fill="#49429B">n</tspan><tspan fill="#5B3A99">e</tspan><tspan fill="#6D3397"> </tspan><tspan fill="#7F2C96">W</tspan><tspan fill="#912594">e</tspan><tspan fill="#A31D92">l</tspan><tspan fill="#B61691">f</tspan><tspan fill="#C80F8F">a</tspan><tspan fill="#DA078E">r</tspan><tspan fill="#EC008C">e</tspan></text></svg>
 
   <div style="position:absolute;left:303.3pt;top:170.7pt;width:235.28pt;font-size:9pt;line-height:12pt;letter-spacing:-0.01em">
     <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;background:#005FA1;color:#fff;font-weight:700;height:26pt;align-items:center">
-      <div>Category</div><div>FY25 Spend (%)</div><div>FY24 Spend (%)</div>
+      <div>{{ tableHead.a }}</div><div>{{ tableHead.b }}</div><div>{{ tableHead.c }}</div>
     </div>
     <sc-for list="{{ tableRows }}" as="r" hint-placeholder-count="4">
       <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;height:27.2pt;align-items:center;color:#005FA1;background:{{ r.bg }}">
@@ -54,33 +54,34 @@
   <div data-column="ew0" style="position:absolute;left:56.7pt;top:{{ c1Top }}pt;width:235.3pt;height:{{ c1Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ ew0 }}" as="b" hint-placeholder-count="5">
       <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
     </sc-for>
   </div>
 
-  <div data-column="ew1" style="position:absolute;left:303.3pt;top:345pt;width:235.3pt;height:436.3pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+  <div data-column="ew1" style="position:absolute;left:303.3pt;top:{{ c2Top }}pt;width:235.3pt;height:{{ c2Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ ew1 }}" as="b" hint-placeholder-count="5">
       <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
     </sc-for>
   </div>
 
-  <div data-column="ew2" style="position:absolute;left:652pt;top:176.7pt;width:235.3pt;height:606.3pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
-    <div style="float:right;width:{{ wrapW }}pt;height:606.3pt;shape-outside:circle({{ wrapR }}pt at {{ wrapCx }}pt 42.4pt);shape-margin:0"></div>
+  <div data-column="ew2" style="position:absolute;left:652pt;top:{{ c3Top }}pt;width:235.3pt;height:{{ c3Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <div style="float:right;width:{{ wrapW }}pt;height:{{ c3Height }}pt;shape-outside:circle({{ wrapR }}pt at {{ wrapCx }}pt {{ wrapCy }}pt);shape-margin:0"></div>
     <sc-for list="{{ ew2 }}" as="b" hint-placeholder-count="8">
       <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
     </sc-for>
   </div>
 
   <div data-column="ew3" style="position:absolute;left:898.6pt;top:{{ c4Top }}pt;width:235.3pt;height:{{ c4Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-if value="{{ wrap4On }}" hint-placeholder-val=""><div style="float:right;width:235.3pt;height:{{ c4Height }}pt;shape-outside:{{ wrap4Shape }}"></div></sc-if>
     <sc-for list="{{ ew3 }}" as="b" hint-placeholder-count="4">
       <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
     </sc-for>
   </div>
 
@@ -155,24 +156,58 @@ function trimItems(items) {
   }
   return items;
 }
-const T_MIN = 0.7, T_MAX = 1.3;
-function geo(t) {
-  const D1 = 309.6 * t, r = 230.9 * Math.min(t, 1.15);
-  const W = Math.max(Math.ceil(r - 183.3), 1), c4 = 219.1 + r + 65, c1 = 133 + D1 + 28.35;
+// T_MIN 0.46 holds the left photo at 50 mm (141.7pt), the project's photo minimum.
+const T_MIN = 0.46, T_MAX = 1.3;
+// Column-4 exclusion: the circle's left contour, but rows narrower than
+// MIN_LINE are blocked whole so the copy never sets in a one- or two-word sliver.
+const MIN_LINE = 120;
+function wrapPoly(cx, cy, r, w) {
+  const pts = [], top = Math.max(0, cy - r), bot = cy + r, N = 96;
+  let prev = null;
+  for (let k = 0; k <= N; k++) {
+    const y = top + (bot - top) * k / N;
+    const xl = cx - Math.sqrt(Math.max(0, r * r - (y - cy) * (y - cy)));
+    const x = xl < MIN_LINE ? 0 : Math.min(xl, w);
+    // Square step where a blocked row meets an open one (no diagonal sliver).
+    if (prev !== null && (prev === 0) !== (x === 0)) pts.push(prev.toFixed(2) + 'pt ' + y.toFixed(2) + 'pt');
+    pts.push(x.toFixed(2) + 'pt ' + y.toFixed(2) + 'pt');
+    prev = x;
+  }
+  pts.push(w + 'pt ' + bot.toFixed(2) + 'pt', w + 'pt ' + top.toFixed(2) + 'pt');
+  return 'polygon(' + pts.join(',') + ')';
+}
+function geo(t, drop1) {
+  const F26 = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search));
+  const C3Y = F26 ? 163 : 176.7, BOT = F26 ? 781.3 : 783;
+  const D1 = drop1 ? 0 : 309.6 * t, r = 230.9 * Math.min(t, 1.15);
+  // FY26: copy wraps the right photo 8.5pt (3mm) off its edge, and column 4
+  // starts with the others at 163pt, running round the circle.
+  const rw = F26 ? r + 8.5 : r;
+  const W = Math.max(Math.ceil(rw - 183.3), 1), c4 = F26 ? 163 : 219.1 + r + 65, c1 = drop1 ? 163 : 133 + D1 + 28.35;
   return {
     p1: { left: 291.6 - D1, top: 133, size: D1 },
     p2: { left: 1070.6 - r, top: 219.1 - r, size: 2 * r },
     flows: [
       { x: 56.70, y: c1, width: 235.3, height: 781.3 - c1 },
-      FLOWS[1],
-      { x: 652.00, y: 176.7, width: 235.3, height: 606.3, wrap: { side: 'right', width: W, height: 606.3, r, cx: 183.3 + W, cy: 42.4 } },
-      { x: 898.60, y: c4, width: 235.3, height: 783 - c4 },
+      FY26 ? COL2_FY26 : FLOWS[1],
+      // FY26: column 3 starts level with the left page's copy (163pt); the
+      // photo stays put on the page, so the wrap centre moves down in the column.
+      { x: 652.00, y: C3Y, width: 235.3, height: BOT - C3Y, wrap: { side: 'right', width: W, height: BOT - C3Y, r: rw, cx: 183.3 + W, cy: 219.1 - C3Y } },
+      F26 ? { x: 898.60, y: c4, width: 235.3, height: BOT - c4, wrap: { side: 'right', width: 235.3, height: BOT - c4, r: rw, cx: 1070.6 - 898.6, cy: 219.1 - c4,
+              shape: wrapPoly(1070.6 - 898.6, 219.1 - c4, rw, 235.3) } }
+          : { x: 898.60, y: c4, width: 235.3, height: BOT - c4 },
     ],
     W, r, c4, c1,
   };
 }
 
+const FY26 = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search));
+// FY26: column 2 closes half the gap under the table (bottom 305.5pt; FY25 cap
+// line ~352.7pt, gap 47.2pt -> 23.6pt), so it starts 23.6pt higher.
+const COL2_FY26 = { x: 303.30, y: 321.4, width: 235.3, height: 459.9 };
+
 const BODY_AFTER = 8.504;
+const SUB_ABOVE_FY26 = 5.669;
 const SUBHEAD_AFTER = 4;
 const FOOT_CLEARANCE = 0;
 const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
@@ -193,17 +228,18 @@ class Component extends DCLogic {
     nudge();
     TICK(nudge);
 
+    const imp = () => FY26 ? import('./copy/fy26/equine-welfare.js') : import('./copy/equine-welfare.js');
     Promise.all([
-      (window.RVProduction ? window.RVProduction.load('equine-welfare', () => import('./copy/equine-welfare.js')) : import('./copy/equine-welfare.js')),
+      (window.RVProduction ? window.RVProduction.load('equine-welfare', imp) : imp()),
       document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
         .then(() => document.fonts.ready).catch(() => null),
     ])
       .then(([m]) => this._whenMeasurable().then(() => {
         const items = m.copy.paragraphs
-          .filter(p => !/^2025 Annual Report\s*[\u2013-]/.test(p.text))
+          .filter(p => !/^(?:FY)?\d{4} Annual Report\s*[\u2013-]/.test(p.text))
           .map(p => ({ text: p.text, kind: p.kind || 'body' }));
         const a = this.fit(trimItems(items), 'Equine Welfare');
-        this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, t: a.t });
+        this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, t: a.t, drop1: !!a.drop1, table: m.copy.table || null });
       }))
       .catch(e => console.error('copy module failed to load', e));
   }
@@ -224,13 +260,22 @@ class Component extends DCLogic {
     return new Promise(res => TICK(res)).then(() => this._whenMeasurable(n + 1));
   }
 
+  // Both photos, shrinking to the 50 mm minimum; then drop the left photo
+  // (column 1 rises so its first cap line sits level with the table's top, 170.7pt:
+  // 163 + 5.669 margin + ~2pt to the cap) and size the right one to the copy.
   fit(items, label, opts) {
-    const fits = t => !this.flow(items, geo(t).flows, 0, opts).leftover.length;
-    if (!fits(T_MIN)) return Object.assign(this.settle(items, geo(T_MIN).flows, label, opts), { t: T_MIN });
+    const fits = (t, d) => !this.flow(items, geo(t, d).flows, 0, opts).leftover.length;
+    // FY26 has one photo (right circle); the left one is never placed.
+    let drop1 = FY26;
+    if (!drop1 && !fits(T_MIN, false)) {
+      drop1 = true;
+      if (!fits(T_MIN, true)) return Object.assign(this.settle(items, geo(T_MIN, true).flows, label, opts), { t: T_MIN, drop1 });
+      console.warn(label + ': copy does not fit with two photos \u2014 left photo dropped.');
+    }
     let t = T_MAX;
-    if (!fits(T_MAX)) { let lo = T_MIN, hi = T_MAX; for (let i = 0; i < 7; i++) { const m = (lo + hi) / 2; if (fits(m)) lo = m; else hi = m; } t = lo; }
+    if (!fits(T_MAX, drop1)) { let lo = T_MIN, hi = T_MAX; for (let i = 0; i < 7; i++) { const m = (lo + hi) / 2; if (fits(m, drop1)) lo = m; else hi = m; } t = lo; }
     console.warn(label + ': photos at ' + Math.round(t * 100) + '% of FY25 size.');
-    return Object.assign(this.flow(items, geo(t).flows, 0, opts), { baseIdx: 0, t });
+    return Object.assign(this.flow(items, geo(t, drop1).flows, 0, opts), { baseIdx: 0, t, drop1 });
   }
 
   settle(items, cols, label, opts) {
@@ -287,6 +332,7 @@ class Component extends DCLogic {
   }
 
   flow(items, cols, baseIdx, opts) {
+    if (FY26) return this.flow26(items, cols, baseIdx);
     const keepWhole = !!(opts && opts.keepWhole);
     const columns = cols.map(() => []);
     const track = TRACKING[baseIdx];
@@ -308,7 +354,8 @@ class Component extends DCLogic {
             'pt ' + (wrap.cy - usedPx * 0.75) + 'pt)';
         }
         const hPx = (shim ? this._textHeight(host, node)
-                          : host.getBoundingClientRect().height) + this._after(item) / 0.75;
+                          : host.getBoundingClientRect().height) + this._after(item) / 0.75 +
+          (FY26 && item.kind === 'subhead' && usedPx > 0 ? SUB_ABOVE_FY26 / 0.75 : 0);
 
         if (usedPx + hPx <= capPx) {
           columns[c].push(Object.assign({}, item));
@@ -352,19 +399,129 @@ class Component extends DCLogic {
     return { columns, leftover: queue };
   }
 
+  // FY26 flow. Sets each column as real blocks (margins collapse exactly as on
+  // the page), so measured and printed depths match. Rules:
+  //  - a split paragraph leaves >= 2 lines at the foot and carries >= 2 lines
+  //    over (no single-line widows/orphans); otherwise it moves over whole;
+  //  - a subhead never ends a column (it goes over with its paragraph);
+  //  - left-over depth is shared out between the column's paragraph gaps
+  //    (max 9pt each) so every column's last line lands on the common foot.
+  flow26(items, cols, baseIdx) {
+    const columns = cols.map(() => []);
+    const track = TRACKING[baseIdx];
+    const queue = items.map(i => Object.assign({}, i));
+    const PX = 1 / 0.75, MAX_EXTRA = 9;
+    const marg = (item, first, extra) => item.kind === 'subhead'
+      ? (first ? '-3.9pt 0 4pt' : (SUB_ABOVE_FY26 + extra).toFixed(3) + 'pt 0 4pt')
+      : ((first ? 5.669 : 5.669 + extra)).toFixed(3) + 'pt 0 2.835pt';
+    const block = (host, item, first) => {
+      const el = document.createElement('div');
+      const sub = item.kind === 'subhead';
+      el.style.cssText = 'font-weight:400;font-size:' + (sub ? '13pt' : '9pt') + ';line-height:' + (sub ? '18pt' : '12pt') + ';margin:' + marg(item, first, 0);
+      el.appendChild(document.createTextNode(item.text));
+      host.appendChild(el);
+      return el;
+    };
+    const lineBottoms = (el, top) => {
+      const range = document.createRange();
+      range.selectNodeContents(el.firstChild);
+      const out = [];
+      for (const rc of range.getClientRects()) {
+        const b = rc.bottom - top;
+        if (!out.length || b - out[out.length - 1] > 2) out.push(b); else out[out.length - 1] = Math.max(out[out.length - 1], b);
+      }
+      return out;
+    };
+    for (let c = 0; c < cols.length; c++) {
+      const probe = this._probe(cols[c].width, track, null);
+      const host = probe.host;
+      host.style.display = 'flow-root';
+      const wrap = cols[c].wrap;
+      if (wrap) {
+        const shim = document.createElement('div');
+        shim.style.cssText = 'float:right;width:' + wrap.width + 'pt;height:' + wrap.height + 'pt;shape-outside:' + (wrap.shape || 'circle(' + wrap.r + 'pt at ' + wrap.cx + 'pt ' + wrap.cy + 'pt)');
+        host.insertBefore(shim, host.firstChild);
+      }
+      const top = host.getBoundingClientRect().top;
+      const capPx = cols[c].height * PX + 0.5;
+      const placed = [], els = [];
+      while (queue.length) {
+        const item = queue[0];
+        const el = block(host, item, !placed.length);
+        const lb = lineBottoms(el, top);
+        if (lb[lb.length - 1] <= capPx) { placed.push(item); els.push(el); queue.shift(); continue; }
+        let keep = 0;
+        if (item.kind !== 'subhead') {
+          const fit = lb.filter(b => b <= capPx).length, total = lb.length;
+          keep = fit;
+          if (total - keep < 2) keep = total - 2;
+          if (keep < 2) keep = 0;
+        }
+        if (keep) {
+          // Last character offset that still sits on line `keep`.
+          const node = el.firstChild, range = document.createRange();
+          let lo = 0, hi = node.data.length, best = 0;
+          while (lo <= hi) {
+            const mid = (lo + hi) >> 1;
+            range.setStart(node, 0); range.setEnd(node, mid);
+            const rs = range.getClientRects();
+            const b = rs.length ? rs[rs.length - 1].bottom - top : 0;
+            if (b <= lb[keep - 1] + 1) { best = mid; lo = mid + 1; } else hi = mid - 1;
+          }
+          const sp = item.text.lastIndexOf(' ', best);
+          const off = sp > 0 ? sp : best;
+          placed.push(Object.assign({}, item, { text: item.text.slice(0, off).trimEnd() }));
+          queue[0] = Object.assign({}, item, { text: item.text.slice(off).trimStart(), cont: true });
+        } else {
+          el.remove();
+          // Keep a subhead with its paragraph.
+          if (placed.length > 1 && placed[placed.length - 1].kind === 'subhead') {
+            queue.unshift(placed.pop()); els.pop().remove();
+          }
+        }
+        break;
+      }
+      // Vertical justification: only for columns the copy runs on from.
+      let extra = 0;
+      if (placed.length > 1 && (queue.length || c === cols.length - 1)) {
+        let used = 0;
+        const last = host.lastElementChild;
+        if (last && last.firstChild && last.firstChild.nodeType === 3) {
+          const lb = lineBottoms(last, top); used = lb[lb.length - 1] || 0;
+        }
+        // Re-measure the trimmed split paragraph, if any.
+        if (placed.length > els.length) {
+          const el = host.lastElementChild; el.firstChild.data = placed[placed.length - 1].text;
+          const lb = lineBottoms(el, top); used = lb[lb.length - 1] || used;
+        }
+        extra = Math.min(MAX_EXTRA, Math.max(0, (capPx - 0.5 - used) / PX / (placed.length - 1)));
+      }
+      columns[c] = placed.map((it, n) => Object.assign({}, it, { m: marg(it, n === 0, extra) }));
+      host.remove();
+    }
+    return { columns, leftover: queue };
+  }
+
   renderVals() {
     const n = this.state.leftover.length;
-    const g = geo(this.state.t);
+    const g = geo(this.state.t, this.state.drop1);
     return {
+      showP1: !this.state.drop1,
       p1Left: g.p1.left, p1Top: g.p1.top, p1Size: g.p1.size,
       p2Left: g.p2.left, p2Top: g.p2.top, p2Size: g.p2.size,
-      c1Top: g.c1, c1Height: g.flows[0].height, c4Top: g.c4, c4Height: g.flows[3].height,
-      wrapW: g.W, wrapR: g.r, wrapCx: 183.3 + g.W,
+      c1Top: g.c1, c1Height: g.flows[0].height, c2Top: g.flows[1].y, c2Height: g.flows[1].height, c4Top: g.c4, c4Height: g.flows[3].height,
+      wrapW: g.W, wrapR: g.flows[2].wrap.r, wrap4On: !!g.flows[3].wrap, wrap4Shape: g.flows[3].wrap ? g.flows[3].wrap.shape : 'none', wrap4R: g.flows[3].wrap ? g.flows[3].wrap.r : 0, wrap4Cy: g.flows[3].wrap ? g.flows[3].wrap.cy : 0, wrapCx: 183.3 + g.W, wrapCy: g.flows[2].wrap.cy, c3Top: g.flows[2].y, c3Height: g.flows[2].height,
       footYear: 2025,
       folioLeft: this.props.folioLeft ?? 20,
       folioRight: this.props.folioRight ?? 21,
-      showDecoration: this.props.showDecoration ?? true,
-      tableRows: TABLE,
+      showDecoration: this.props.showDecoration ?? !FY26,
+      tableHead: this._head(),
+      tableRows: this._rows(),
+      // FY26 gets its own slot ids so FY25 photos don't carry over.
+      p1Id: FY26 ? 'ew26-image-1' : 'ew-image-rehomer',
+      p2Id: FY26 ? 'ew26-image-2' : 'ew-image-ott',
+      p1Label: FY26 ? 'Equine Welfare photo 1 (left circle)' : 'Jen Duffy \u2014 Rehomer launch',
+      p2Label: FY26 ? 'Equine Welfare photo 2 (right circle)' : 'Off The Track',
       track: TRACKING[this.state.idx],
       ew0: this._flags(this.state.cols[0]), ew1: this._flags(this.state.cols[1]),
       ew2: this._flags(this.state.cols[2]), ew3: this._flags(this.state.cols[3]),
@@ -374,10 +531,24 @@ class Component extends DCLogic {
     };
   }
 
+  _head() {
+    const h = this.state.table && this.state.table.head;
+    return h ? { a: h[0], b: h[1], c: h[2] } : { a: 'Category', b: 'FY25 Spend (%)', c: 'FY24 Spend (%)' };
+  }
+
+  _rows() {
+    const t = this.state.table;
+    if (!t || !t.rows) return TABLE;
+    return t.rows.map((r, i) => ({ label: r[0], fy25: r[1], fy24: r[2], bg: i % 2 ? '#E6EFF6' : 'transparent' }));
+  }
+
   _flags(list) {
     return (list || []).map((i, n) => ({
       text: i.text,
       isSubhead: i.kind === 'subhead' && n > 0,
+      // FY26: a subhead gets the same space above as below (5.669pt, the body's
+      // top margin it collapses into); FY25 keeps the artwork's 0.
+      m: i.m || (i.kind === 'subhead' ? (FY26 ? SUB_ABOVE_FY26 : 0) + 'pt 0 4pt' : '5.669pt 0 2.835pt'),
       isSubheadTop: i.kind === 'subhead' && n === 0,
       isBody: i.kind !== 'subhead',
     }));

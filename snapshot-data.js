@@ -113,14 +113,15 @@ export const snapshot = {
 
 // Resolve the stats against the KPI workbook data: anything carrying a
 // `derive` descriptor is read from kpi-data.js, everything else passes through.
+const same = (a, b) => String(a).replace(/\s+/g, ' ').trim().toLowerCase() === String(b).replace(/\s+/g, ' ').trim().toLowerCase();
 function lookup(kpi, d) {
   if (!kpi) return null;
   if (d.participation) {
-    const row = kpi.participation.rows.find(r => r.label === d.row);
+    const row = kpi.participation.rows.find(r => same(r.label, d.row));
     return row ? row.values[0] : null;
   }
   const table = kpi.tables.find(t => t.title === d.table);
-  const row = table && table.rows.find(r => r.label === d.row);
+  const row = table && table.rows.find(r => same(r.label, d.row));
   const pair = row && row.values[d.group];
   return pair ? pair[0] : null;
 }

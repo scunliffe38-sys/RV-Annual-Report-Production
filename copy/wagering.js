@@ -3,6 +3,7 @@
 // kind: 'h2' = H2 Sub Heading Financials (9pt bold caps, RV Blue).
 export const copy = {
   slug: 'wagering',
+  year: 2025,
   paragraphs: [
     { text: 'Due to a combination of macroeconomic and regulatory factors, wagering turnover on VTR fell by 4.0% year-on-year in FY25.' },
     { text: 'In addition, wagering service providers (WSPs) were required to absorb the cost of a 50% increase in the Point of Consumption Tax (PoCT), which rose from 10% to 15% on 1 July 2024. WSPs responded to this PoCT increase by offering less competitive betting markets and by decreasing their spend on customer generosities (free bet turnover was down by 6% year-on-year), both of which had a negative impact on turnover.' },
@@ -25,4 +26,23 @@ export const copy = {
   ],
   // Panel on p.23 (story ue381) — a 2-column table, header row RV Blue.
   topFive: ['Lexus Melbourne Cup', 'Ladbrokes Cox Plate', 'Sportsbet Caulfield Cup', 'Penfolds Victoria Derby', 'Coolmore Stud Stakes'],
+  // Charts as printed in FY25 (pp. 22-23).
+  annual: [
+    { fy: 'FY20', turnover: '$7.10', turnoverYoY: null, fbt: '$243.7', fbtYoY: null },
+    { fy: 'FY21', turnover: '$8.70', turnoverYoY: 22.5, fbt: '$365.8', fbtYoY: 50.1 },
+    { fy: 'FY22', turnover: '$9.16', turnoverYoY: 5.3, fbt: '$444.2', fbtYoY: 21.4 },
+    { fy: 'FY23', turnover: '$8.82', turnoverYoY: -3.7, fbt: '$493.8', fbtYoY: 11.2 },
+    { fy: 'FY24', turnover: '$7.93', turnoverYoY: -10.2, fbt: '$393.0', fbtYoY: -20.4 },
+    { fy: 'FY25', turnover: '$7.61', turnoverYoY: -4.0, fbt: '$369.1', fbtYoY: -6.1 },
+  ],
+  quarterly: {
+    prior: 'FY24', current: 'FY25',
+    rows: [
+      { q: 'Q1', prior: '$1.8', current: '$1.6', yoy: -10.5 },
+      { q: 'Q2', prior: '$2.7', current: '$2.6', yoy: -3.9 },
+      { q: 'Q3', prior: '$1.8', current: '$1.8', yoy: -0.8 },
+      { q: 'Q4', prior: '$1.6', current: '$1.6', yoy: 0.6 },
+    ],
+  },
+  topFiveTitle: 'Top five turnover races IN FY25',
 };

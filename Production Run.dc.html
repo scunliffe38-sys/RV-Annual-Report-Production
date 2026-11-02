@@ -42,7 +42,7 @@
 <script src="./production-bridge.js?v=20261021"></script>
 <script src="./doc-page.js"></script>
 <script src="./image-slot.js"></script>
-<script src="./production-images.js?v=20261021"></script>
+<script src="./production-images.js?v=20261030b"></script>
 <script src="./auditor-pages.js?v=20261021b"></script>
 </helmet>
 
@@ -72,8 +72,8 @@
 <sc-if value="{{ on.kpi }}" hint-placeholder-val=""><dc-import name="KPI &amp; Industry Snapshot" hint-size="100%,841.89pt"></dc-import></sc-if>
 <sc-if value="{{ on.racing }}" hint-placeholder-val=""><dc-import name="Racing &amp; Programming" hint-size="100%,841.89pt"></dc-import></sc-if>
 <sc-if value="{{ on.awards }}" hint-placeholder-val=""><dc-import name="Racing Awards &amp; Feature Winners" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.owners }}" hint-placeholder-val=""><dc-import name="Owners &amp; Breeders + Infrastructure" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.workforce }}" hint-placeholder-val=""><dc-import name="Workforce Development" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.owners }}" hint-placeholder-val=""><dc-import name="Owners &amp; Breeders + Infrastructure" photo-layout="{{ layouts.owners }}" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.workforce }}" hint-placeholder-val=""><dc-import name="Workforce Development" photo-layout="{{ layouts.workforce }}" hint-size="100%,841.89pt"></dc-import></sc-if>
 <sc-if value="{{ on.integrity }}" hint-placeholder-val=""><dc-import name="Integrity Services" hint-size="100%,841.89pt"></dc-import></sc-if>
 <sc-if value="{{ on.welfare }}" hint-placeholder-val=""><dc-import name="Equine Welfare" hint-size="100%,841.89pt"></dc-import></sc-if>
 <sc-if value="{{ on.wagering }}" hint-placeholder-val=""><dc-import name="Wagering" hint-size="100%,841.89pt"></dc-import></sc-if>
@@ -130,6 +130,7 @@ class Component extends DCLogic {
     const n = run ? run.sections.length : 0;
     return {
       on,
+      layouts: Object.assign({ workforce: "auto", owners: "auto" }, run && run.layouts),
       noRun: !run,
       heading: run ? "Annual Report " + run.year + (n >= 16 ? " \u2014 full report" : " \u2014 " + n + " section" + (n > 1 ? "s" : "")) : "Production run",
       subline: run ? "From folder \u201c" + (run.folder || "") + "\u201d \u00b7 prepared " + new Date(run.created).toLocaleString("en-AU") : "",

@@ -2,10 +2,9 @@
 
 ## Annual report builds
 
-- **Section headings are solid RV Blue (`#005FA1`).** Never the RV Blue → RV
-  Magenta gradient, even where the InDesign artwork applies `Gradient/RV Grad`.
-  Applies to narrative spreads, the financial report and anything else built in
-  this project.
+- **Section headings use the RV Grad (RV Blue `#005FA1` → RV Magenta `#EC008C`)**
+  as FY25 does, built as per-character fills (a `url(#gradient)` paint server
+  prints invisible). Applies to every section heading (37pt).
 - Body copy: Gotham Book 9/12, RV Cool Gray `#6D6E71`. Subheads: Gotham Book
   13/18, RV Blue.
 - Ground is `#F6F6F6` (Black 4%). Foot band is the magenta → blue gradient bar.
@@ -24,7 +23,9 @@
   bold in RV Blue; 0.709pt rule over a total's figures; single rule under a
   subtotal, double under the total closing a group, a run of subtotals or the
   table; three-column tables indent everything under the title 14.17pt except
-  bold-italic/lettered group heads and the opening sentence; wide tables
+  bold-italic/lettered group heads and the opening sentence; in every note
+  table "Total…" and "Balance at (the) end…" rows are RV Blue, label and
+  figures; wide tables
   (PP&E, intangibles) are not indented and get a 181.4pt label column. Bold
   run-in heads (H3) are RV Blue, centred one 12pt line above and below.
   Footnotes stay on their table's page, in two columns if needed.
@@ -48,9 +49,36 @@
   footnote (lead-in, bullets, follow-on) is set as footnote; untitled tables
   opening on a label are flush left with a bold blue head; blank line before a
   group label that follows a total.
+- **Test 11 (Tim McCann):** a note total closes on a double rule when its figures
+  tie back to the four statements (adapter marks `row.tie`; wide tables tie on the
+  Total column), otherwise a single rule. Exceptions: a subtotal directly above a total
+  stays single, and a total closing a run of subtotals keeps its double. "… at the end
+  of the period" totals are blue, label and figures. Note tables never have two blank
+  rows in a row. Note 19 keeps its totals row. Bullets under a B2 paragraph are spaced
+  the same as the gap above the first bullet.
 - **Fonts are TrueType (`fonts/Gotham-*.ttf`) with fsType 0.** OTF (CFF) or
   TTFs with restricted/no-subsetting flags make Chrome save Gotham as Type 3
   (soft in Acrobat). Check File › Properties › Fonts shows "TrueType (CID)".
+
+- **Director headshots follow FY25** (p.15 of the FY25 PDF): face centred
+  horizontally, eye line 41% down the circle, crown-to-chin
+  head height ~58% of the diameter, checked side by side so every head reads
+  the same size (face width varies with hair and ears, so it is not used).
+  **Framing in the Console (FY26 on):** every supplied headshot/photo gets a
+  saved crop (`rec.crop` {l,t,w,src} in IndexedDB), set when the file is
+  added and reset when it is replaced. Photos default to centred; headshots
+  to the FY25 rule from the MediaPipe face finder (jsDelivr, needs internet;
+  eye-to-chin = 1.27 × eye-to-mouth), or the FACES landmarks when the finder
+  confirms it is the same photo. The producer adjusts in the Frame editor
+  (eye/chin guides, all-headshots strip, live ppi). The run cuts each crop out
+  at print resolution; under `prefer-src` image-slot ignores sidecar crops, so
+  FY25 crops never carry over. Each photo is normalised to a square master to that rule (background
+  edge-extended where the source runs out), then placed at zoom 1 with no offset.
+  Originals kept in the sidecar as `dir-n-src`. In a production run the
+  producer's full-size file is framed the same way (`FACES` landmarks in
+  `production-images.js`, 1200 px master) and wins over the sidecar preview
+  (`prefer-src` on image-slot). A photo whose shape differs from the framed
+  one is placed unframed and logged; new photos need landmarks adding.
 
 ## How the project works (handoff)
 
@@ -80,15 +108,31 @@ Serve the folder with `python serve.py` (caching off; plain `python -m http.serv
   positions, KPMG's footer/page numbers cropped (our 5pt grey footer on p.38),
   white made transparent, drawn at 300 dpi with an invisible text layer. The
   Console keeps the PDF in IndexedDB for the run; the FY26 preview reads
-  `data/fy26-auditor.pdf`. pdf.js from jsDelivr, needs internet. p.1
+  `data/fy26-auditor.pdf` (payload `kpmg.pdf`; re-add it after rebuilding
+  the payload from the docx). pdf.js from jsDelivr, needs internet. p.1
   independence declaration, pp.2-3 audit report; p.4 (Directors' Declaration)
   is not placed.
 - Preview without the console: `Financial Report FY26.dc.html` reads
   `data/fy26-payload.json` (rebuild it from `data/fy26-finance.docx` with the
   adapter after any change).
-- Adaptive layout: Integrity Services, Equine Welfare, Media and Workforce
-  Development size photos to the copy (`?trim=0.8` previews 80% of the copy).
+- Adaptive layout: Integrity Services, Equine Welfare, Media, Workforce Development
+  and Owners & Breeders / Infrastructure size photos to the copy (`?trim=0.8` previews 80% of the copy).
+  Owners & Breeders / Infrastructure runs each story on its own (gaps 97/94%, photo
+  down to 50 mm, then dropped). Console menu: auto/both/obOnly/ipOnly/none.
+  FY26 preview `Owners & Breeders FY26.dc.html` (copy in `copy/fy26/`).
   Other sections are still fixed.
+- Photo-layout rule (Workforce first, to roll out): Auto takes the layout with the
+  most photos that fits (three → two, one per page → one top right → one bottom
+  right → none). Within a layout: ease gaps to 97/94%, then shrink photos to a
+  50 mm minimum, then drop to the next layout. The Console's per-section "Photos"
+  menu overrides Auto (`run.layouts` → `photo-layout` prop). Photos come from the
+  images folder by filename.
+
+- Logos accept SVG/PNG/JPG/WebP plus AI (PDF-compatible), EPS, PDF and PSD
+  (flattened composite). EPS goes through Ghostscript WASM (@jspawn/ghostscript-wasm,
+  ~15 MB on first use) to a vector PDF. These are converted in `production-images.js` to a trimmed
+  transparent PNG at 600 ppi of the largest placement (pdf.js / ag-psd from CDN,
+  needs internet); a solid background is flagged.
 
 ## Open items
 - Page numbers (deferred by user): Contents numbers come from fixed counts in
@@ -98,7 +142,21 @@ Serve the folder with `python serve.py` (caching off; plain `python -m http.serv
   line, note numbers.
 - Roll adaptive photo/column layout out to the other sections (rules to be
   defined as we test).
-- KPI tables, Wagering charts, footers and year labels on other sections are
+- Wagering is one file: `FY26 Annual Report - Wagering.docx` supplies copy,
+  charts and Top 5 (last six years in the two bar charts).
+- The old Data Inputs workbook is split in two: `Annual Report - Industry
+  Snapshot.xlsx` (snapshot tiles) and `Annual Report - Awards and Feature Race
+  Winners.xlsx` (VR Awards, Premierships, Feature Race Winners sheets).
+  Templates in `exports/FY26 Input Templates/`. FY26 preview `Wagering FY26.dc.html`.
+  The Manikato circle keeps its centre x and bottom edge and shrinks so its
+  top clears the top-right column's copy by 14.17pt (FY26: 132 mm vs 144 mm).
+  The centre column wraps around it with a 22.68pt (8 mm) gap.
+- KPI tables, footers and year labels on other sections are
   still hardcoded to FY25. Directors' Report page-range text is verbatim.
 - Financial Report lays out slowly (5-30 s) with FY26 notes.
+- Workforce FY26 (1,049 words) parked: fits two pages only with no photos
+  (`photoLayout` none/single/corner/three; preview `Workforce Development FY26.dc.html`).
+  Undecided: photo size vs. cutting copy vs. third page. Subhead spacing now FY25
+  (35pt above, 20.5pt below, baseline to baseline) and list items tight. Neither
+  change is applied to the other sections yet.
 - Not yet checked visually: FY26 notes pages, extra Directors' Report spread.

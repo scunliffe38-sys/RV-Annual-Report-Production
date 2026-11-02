@@ -1096,7 +1096,11 @@
       let stored = this.id ? getSlot(this.id) : this._local;
       if (stored && stored.u && !/^data:image\//i.test(stored.u)) stored = null;
       const srcAttr = this.getAttribute('src') || '';
-      this._userUrl = (stored && stored.u) || null;
+      // prefer-src (production run): the supplied file wins over a dropped
+      // preview image, and arrives already framed, so the stored crop is
+      // ignored too.
+      if (srcAttr && this.hasAttribute('prefer-src')) stored = null;
+      this._userUrl = (stored && stored.u) ? stored.u : null;
       const url = this._userUrl || srcAttr;
       // Don't clobber an in-flight reframe with a store-triggered re-render.
       if (!this.hasAttribute('data-reframe')) {

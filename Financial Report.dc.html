@@ -38,11 +38,11 @@
   <div style="position:absolute;left:998.8pt;top:-462.46pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   <div style="position:absolute;left:862.23pt;top:63.56pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
 
-  <svg style="position:absolute;left:52.69pt;top:99.94pt;width:315.81pt;height:50pt" viewBox="0 0 315.81 50" role="img" aria-label="Directors&#8217; Report"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37" fill="#005FA1">Directors&#8217; Report</text></svg>
+  <svg style="position:absolute;left:52.69pt;top:99.94pt;width:315.81pt;height:50pt" viewBox="0 0 315.81 50" role="img" aria-label="Directors&#8217; Report"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">D</tspan><tspan fill="#0F59A0">i</tspan><tspan fill="#1E539E">r</tspan><tspan fill="#2C4D9D">e</tspan><tspan fill="#3B479C">c</tspan><tspan fill="#4A419A">t</tspan><tspan fill="#593B99">o</tspan><tspan fill="#673598">r</tspan><tspan fill="#763097">s</tspan><tspan fill="#852A95">&#8217;</tspan><tspan fill="#942494"> </tspan><tspan fill="#A21E93">R</tspan><tspan fill="#B11891">e</tspan><tspan fill="#C01290">p</tspan><tspan fill="#CF0C8F">o</tspan><tspan fill="#DD068D">r</tspan><tspan fill="#EC008C">t</tspan></text></svg>
 
   <div style="position:absolute;left:56.69pt;top:160.99pt;width:481.89pt;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71">
     <sc-for list="{{ intro }}" as="p" hint-placeholder-count="2">
-      <div style="margin:0 0 11.339pt">{{ p }}</div>
+      <div style="margin:0 0 11.339pt"><sc-for list="{{ p.segs }}" as="s" hint-placeholder-count="1"><span style="font-style:{{ s.fs }}">{{ s.t }}</span></sc-for></div>
     </sc-for>
   </div>
 
@@ -65,7 +65,7 @@
     <image-slot id="dir-{{ c.n }}" shape="circle" placeholder="Director {{ c.n }}" style="position:absolute;left:{{ c.x }}pt;top:{{ c.y }}pt;width:{{ c.p }}pt;height:{{ c.p }}pt"></image-slot>
     <div style="position:absolute;left:{{ c.tx }}pt;top:{{ c.y }}pt;width:{{ c.tw }}pt;height:{{ c.h }}pt;overflow:hidden">
       <div style="font-weight:700;font-size:8.5pt;line-height:11pt;letter-spacing:0.02em;color:#005FA1"><span style="text-transform:uppercase">{{ c.name }}</span>{{ c.roleLabel }}</div>
-      <div style="font-weight:500;font-size:6pt;line-height:9pt;letter-spacing:0.05em;text-transform:uppercase;color:#005FA1;margin:1pt 0 3pt">{{ c.appointed }}</div>
+      <div style="font-weight:500;font-size:6pt;line-height:9pt;letter-spacing:0.05em;text-transform:uppercase;color:#6D6E71;margin:1pt 0 3pt">{{ c.appointed }}</div>
       <sc-for list="{{ c.paras }}" as="p" hint-placeholder-count="2">
         <div style="font-weight:400;font-size:{{ c.fs }}pt;line-height:{{ c.lh }}pt;letter-spacing:0;color:#6D6E71;margin:0 0 3pt">{{ p }}</div>
       </sc-for>
@@ -248,7 +248,7 @@
 
   <sc-if value="{{ hasKp2 }}" hint-placeholder-val=""><div style="position:absolute;left:{{ kp2.l }};top:{{ kp2.t }};width:{{ kp2.w }};height:{{ kp2.h }};overflow:hidden"><img src="{{ kp2.src }}" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%"><sc-for list="{{ kp2.text }}" as="w" hint-placeholder-count="0"><span style="position:absolute;left:{{ w.l }};top:{{ w.t }};font-family:Gotham;font-weight:400;font-size:{{ w.fs }};line-height:1;white-space:pre;color:rgba(246,246,246,0.01);transform:scaleX({{ w.sx }});transform-origin:0 0">{{ w.s }}</span></sc-for></div></sc-if><sc-if value="{{ kpmgImg2 }}" hint-placeholder-val=""><img src="{{ kpmgImg2 }}" alt="" style="position:absolute;left:39.66pt;top:43.74pt;width:491.92pt;height:741.45pt;object-fit:contain"></sc-if><sc-if value="{{ noKpmgImg2 }}" hint-placeholder-val="{{ true }}"><image-slot id="kpmg-audit-report-2" shape="rect" fit="contain" placeholder="KPMG Signed Audit Report &#8212; page 2" style="position:absolute;left:39.66pt;top:43.74pt;width:491.92pt;height:741.45pt"></image-slot></sc-if>
 
-  <svg style="position:absolute;left:647.97pt;top:71.15pt;width:495.23pt;height:50pt" viewBox="0 0 495.23 50" role="img" aria-label="Directors&#8217; Declaration"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37" fill="#005FA1">Directors&#8217; Declaration</text></svg>
+  <svg style="position:absolute;left:647.97pt;top:71.15pt;width:495.23pt;height:50pt" viewBox="0 0 495.23 50" role="img" aria-label="Directors&#8217; Declaration"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">D</tspan><tspan fill="#0B5AA0">i</tspan><tspan fill="#16569F">r</tspan><tspan fill="#22519E">e</tspan><tspan fill="#2D4D9D">c</tspan><tspan fill="#38489C">t</tspan><tspan fill="#43449B">o</tspan><tspan fill="#4F3F9A">r</tspan><tspan fill="#5A3B99">s</tspan><tspan fill="#653698">&#8217;</tspan><tspan fill="#703297"> </tspan><tspan fill="#7C2D96">D</tspan><tspan fill="#872995">e</tspan><tspan fill="#922494">c</tspan><tspan fill="#9D2093">l</tspan><tspan fill="#A91B92">a</tspan><tspan fill="#B41791">r</tspan><tspan fill="#BF1290">a</tspan><tspan fill="#CA0E8F">t</tspan><tspan fill="#D6098E">i</tspan><tspan fill="#E1058D">o</tspan><tspan fill="#EC008C">n</tspan></text></svg>
 
   <div style="position:absolute;left:651.97pt;top:133.33pt;width:481.89pt;height:199.01pt;overflow:hidden;color:#6D6E71">
     <div style="font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;padding:0 0 2.835pt">{{ decLead }}</div>
@@ -314,7 +314,7 @@
     <div style="margin-top:20pt;font-weight:400;font-size:6.5pt;line-height:8pt;color:#6D6E71">{{ notesRef }}</div>
   </div>
 
-  <div style="position:absolute;left:650.3pt;top:58.38pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;text-wrap:balance">{{ stCashflows.heading }}</div>
+  <div style="position:absolute;left:650.3pt;top:58.38pt;width:482.89pt;height:94.7pt;font-weight:400;font-size:37pt;line-height:40pt;letter-spacing:-0.01em;color:#005FA1;text-wrap:wrap">{{ stCashflowsHeading }}</div>
   <div style="position:absolute;left:651.8pt;top:159.43pt;width:481.89pt;font-weight:900;font-size:10pt;line-height:12.03pt;letter-spacing:0.15em;text-transform:uppercase;color:#005FA1">{{ stCashflows.dateline }}</div>
   <div style="position:absolute;left:651.8pt;top:191.73pt;width:481.89pt;height:620.39pt;overflow:hidden">
     <dc-import name="StatementTable" table="{{ stCashflows }}" hint-size="100%,620pt"></dc-import>
@@ -928,7 +928,7 @@ class Component extends DCLogic {
     host.style.fontSize = (b.sz || st.size || 9) + 'pt';
     host.style.lineHeight = (st.lead || 12) + 'pt';
     host.style.fontWeight = String(b.b ? 700 : (st.weight || 400));
-    host.style.fontStyle = (b.i || st.italic) ? 'italic' : 'normal';
+    host.style.fontStyle = !b.up && (b.i || st.italic) ? 'italic' : 'normal';
     host.style.textTransform = st.caps ? 'uppercase' : 'none';
     const bullet = /^B7 /.test(b.s || '');
     host.style.letterSpacing = bullet ? '-0.01em' : '0';
@@ -1022,6 +1022,7 @@ class Component extends DCLogic {
   // heading (H3) between the copy around it: one 12pt line above and below.
   _gapBefore(prev, b, styles) {
     if (!prev) return 0;
+    if (b.solid) return b.sb ? Math.max(0, b.sb - ((styles[prev.s] || {}).after || 0)) : 0;
     const st = styles[b.s] || {};
     if (/^H3 Sub Heading LC Financials/.test(b.s || '') && prev.k === 'p') return Math.max(0, 12 - ((styles[prev.s] || {}).after || 0));
     return Math.max(st.before || 0, prev.k === 't' || prev.k === 'fcols' ? TABLE_TEXT_GAP : 0);
@@ -1029,6 +1030,7 @@ class Component extends DCLogic {
   _gapAfter(b, next, styles) {
     const st = styles[b.s] || {};
     if (/^H3 Sub Heading LC Financials/.test(b.s || '') && next && next.k === 'p') return Math.max(0, 12 - ((styles[next.s] || {}).before || 0));
+    if (b.ga != null && next && next.k === 'p' && next.s === b.s) return b.ga;
     // An italic subhead stands as far above its copy whether the copy is
     // indented (B2, no space before) or not: 8.504pt, as under "Historical
     // Cost Convention" (Test 9).
@@ -1129,6 +1131,23 @@ class Component extends DCLogic {
           let e = 0; while (e < queue.length && queue[e].k === 'p' && queue[e].s === 'Footnotes') e++;
           const run = queue.slice(0, e);
           const one = this._composedHeight(run, frames[i].w, styles) + TABLE_TEXT_GAP;
+          // Last resort before footnotes leave their table's page: set the table
+          // piece above them at a 14pt row pitch (single-line body rows only).
+          // Departs from FY25's ~15.5pt; used only when it keeps the footnotes up (p.53).
+          const tighten = () => {
+            let save = 0;
+            prevB.rows.forEach(r => { if (!r.c.some(c => c && NOTE_HEADER_PS[c.s]) && r.h > 14.4 && r.h < 17) save += r.h - 14; });
+            return save;
+          };
+          if (usedPx + one / 0.75 > capPx && !prevB.tight) {
+            const two0 = this._footColsHeight(run, frames[i].w, styles);
+            const save = tighten();
+            if (usedPx + (two0 + TABLE_TEXT_GAP) / 0.75 > capPx && save > 0 && usedPx - save / 0.75 + one / 0.75 <= capPx) {
+              prevB.rows.forEach(r => { if (!r.c.some(c => c && NOTE_HEADER_PS[c.s]) && r.h > 14.4 && r.h < 17) r.h = 14; });
+              prevB.tight = true;
+              usedPx -= save / 0.75;
+            }
+          }
           if (usedPx + one / 0.75 > capPx) {
             const two = this._footColsHeight(run, frames[i].w, styles);
             if (usedPx + (two + TABLE_TEXT_GAP) / 0.75 <= capPx) {
@@ -1321,6 +1340,21 @@ class Component extends DCLogic {
         return { head, title, blank, total, label, group, intro, cur, plain, figs, named: !!txt[0], dash: /^[-\u2013]\s/.test(txt[0]) };
       });
       const near = (i, d) => { for (let j = i + d; j >= 0 && j < info.length; j += d) if (!info[j].blank) return info[j]; return null; };
+      // Cash-flow reconciliation (FY25 p.36): lines flush left, only the items under
+      // "(Increase)/decrease in:" and "Increase/(decrease) in:" one step in; the
+      // closing "Net cash…" line RV Blue with a rule over and a double rule under its figures.
+      const INC = /^\(?increase\)?\s*\/\s*\(?decrease\)?\s+in:$/i;
+      const cfr = b.rows.some(r => INC.test(String((r.c[0] || {}).t || '').trim()));
+      if (cfr) {
+        let sub = false;
+        info.forEach((I, ri) => {
+          const t0 = String((b.rows[ri].c[0] || {}).t || '').trim();
+          I.cfIn = sub && I.figs && !/^net cash\b/i.test(t0);
+          if (INC.test(t0)) sub = true;
+          else if (I.label || I.title || /^net cash\b/i.test(t0)) sub = false;
+          I.cfTotal = I.figs && /^net cash\b/i.test(t0);
+        });
+      }
       // FY25 note-table heads: "Current:" / "Non-Current:" and the label under
       // one are bold RV Blue; a plain group label over figures ("Customer",
       // "Management", "Assets") is RV Blue underlined; "- " lines sit a step in.
@@ -1328,8 +1362,13 @@ class Component extends DCLogic {
         const pv = near(ri, -1), nx = near(ri, 1);
         I.strong = I.cur || (I.label && pv && pv.cur && !I.group);
         I.under = wide && I.plain && !I.strong && !!nx && nx.figs && !nx.total;
-        // A labelled total ("Total assets") is RV Blue, regular, label and figures (FY25 parent entity).
-        I.totalLabel = wide && I.figs && /^total\b/i.test(String((b.rows[ri].c[0] || {}).t || '').trim());
+        // A labelled total ("Total assets") or closing balance ("Balance at end of year")
+        // is RV Blue, label and figures, in every note table; regular weight in wide tables
+        // (FY25 parent entity), otherwise the row keeps its own weight.
+        // Closing lines "… at the end of the period" are blue too (Tim McCann, Test 11).
+        const t0 = String((b.rows[ri].c[0] || {}).t || '').trim();
+        I.totalLabel = I.figs && (/^(total\b|balance at (the )?end\b)/i.test(t0) || (I.total && /\bat (the )?end of\b/i.test(t0)));
+        I.tie = b.rows[ri].tie;
       });
       // 2.25pt = 3px, the least at which Chrome draws a double border as two
       // lines (at 2pt it prints one solid 2pt rule). FY25: two 0.67pt lines.
@@ -1343,24 +1382,33 @@ class Component extends DCLogic {
           const rc = r.c.filter(Boolean);
           let cells = rc.map(c => this._noteCell(c, styles, head, r.h));
           if (b.auto && !head) {
-            const indent = wide && !flush && !I.title && !I.blank && !I.group && !I.intro;
+            const indent = cfr ? !!I.cfIn : wide && !flush && !I.title && !I.blank && !I.group && !I.intro;
             const fhead = flush && r === firstBody;
             let band = false, bt = '0', bb = '0';
             if (I.title) k = 1;
             else if (I.blank || I.label) k = 0;
             else { band = k % 2 === 0; k++; }
-            if (I.total) {
+            if (cfr && I.cfTotal) { bt = RULE; bb = DOUBLE; }
+            else if (I.total) {
               const nx = near(ri, 1), pv = near(ri, -1);
               const closes = !I.named && (!nx || nx.group || nx.title || (pv && pv.total));
-              bt = RULE; bb = closes ? DOUBLE : RULE;
+              // A double rule says the figure ties back to the statements (Tim McCann,
+              // Test 11); a subtotal sitting right on a total keeps a single rule, and
+              // the total closing a run of subtotals keeps its double.
+              const dbl = I.tie === undefined ? closes : I.tie ? !(info[ri + 1] && info[ri + 1].total) : closes && !!pv && pv.total;
+              bt = RULE; bb = dbl ? DOUBLE : RULE;
             }
+            else if (I.tie && r.cashFix) { bt = RULE; bb = DOUBLE; }
             cells = cells.map((c, ci) => Object.assign({}, c, {
               bg: band ? BAND_BG : c.bg,
               pl: ci === 0 && indent ? (parseFloat(c.pl) + 14.173 + (I.dash ? 18.29 : 0)) + 'pt' : c.pl,
               bt: ci > 0 ? bt : '0',
               bb: ci > 0 ? bb : '0',
             }, ci > 0 && !(rc[ci] && rc[ci].al) && /^([\(\-\u2013]?[\d,.]+\)?%?|[-\u2013])$/.test(String(c.t || '').trim()) ? { jc: 'flex-end', ta: 'right' } : null,
-               I.totalLabel ? { fw: '400', fst: 'normal', col: '#005FA1' } : null,
+               cfr && I.cfTotal ? { col: '#005FA1', fw: '400', fst: 'normal' } : null,
+               I.totalLabel ? Object.assign({ col: '#005FA1' }, wide ? { fw: '400', fst: 'normal' } : null) : null,
+               // FY25: every ruled total's figures are RV Blue (Book weight), labelled or not.
+               I.total && ci > 0 ? { col: '#005FA1' } : null,
                ci === 0 && I.strong ? { fw: '700', fst: 'normal', col: '#005FA1' } : null,
                ci === 0 && I.under && !fhead ? { col: '#005FA1', td: 'underline' } : null,
                ci === 0 && fhead ? { fw: '700', fst: 'normal', col: '#005FA1', td: 'none' } : null));
@@ -1380,9 +1428,9 @@ class Component extends DCLogic {
       fs: (b.sz || st.size || 9) + 'pt',
       lh: (st.lead || 12) + 'pt',
       fw: String(b.b ? 700 : (st.weight || 400)),
-      fst: (b.i || st.italic) ? 'italic' : 'normal',
+      fst: !b.up && (b.i || st.italic) ? 'italic' : 'normal',
       tt: st.caps ? 'uppercase' : 'none',
-      td: st.underline ? 'underline' : 'none',
+      td: st.underline && !b.nou ? 'underline' : 'none',
       ls: (st.size || 9) >= 30 ? '-0.01em' : (b.s === 'H2 Sub Heading' ? '0.15em' : (bullet ? '-0.01em' : '0')),
       ta: st.right ? 'right' : 'left',
       col: b.tc || st.color || '#6D6E71',
@@ -1401,7 +1449,13 @@ class Component extends DCLogic {
       // Word's own list marker hangs in the indent: "(i)" then the text.
       o.isMarked = 1; o.marker = b.cont ? '' : b.mk;
       o.ml = Math.max(0, (st.left || 0) + Math.min(0, st.first || 0)) + 'pt';
-      o.mcol = (Math.min(0, st.first || 0) ? -st.first : 22.677) + 'pt';
+      o.mcol = Math.max(Math.min(0, st.first || 0) ? -st.first : 22.677, b.mcolMin || 0) + 'pt';
+      // A marker wider than its hanging indent ("(ii)" in a 12.88pt step) runs on
+      // into the text with a word space, as InDesign sets it (FY25 GST, p.38).
+      if (b.mk && !b.cont && Math.min(0, st.first || 0) && b.mk.replace(/[()]/g, '').length > 1 && -st.first < 16) {
+        o.isMarked = 0; o.t = b.mk + ' ' + b.t; o.marker = '';
+        o.ml = (st.left || 0) + 'pt'; o.ti = st.first + 'pt'; o.isPara = 1; delete o.runs;
+      }
     }
     else if (bullet) { o.isBullet = 1; o.marker = b.cont ? '' : '\u2022'; o.ml = '22.677pt'; }
     else if ((st.size || 9) >= 30) { o.isHead = 1; }
@@ -1417,6 +1471,38 @@ class Component extends DCLogic {
   _fy25Fixups(blocks, styles) {
     if (blocks._fy25) return;
     blocks._fy25 = 1;
+    // A run of marked paragraphs (footnotes (xv)-(xx)…) keeps one text edge: the
+    // marker column widens to the run's widest marker plus a word space.
+    {
+      const cv = document.createElement('canvas').getContext('2d');
+      const mw = (t, st) => { cv.font = (st.size || 9) + 'pt Gotham'; return cv.measureText(t).width * 0.75 + (st.size || 9) * 0.28; };
+      for (let i = 0; i < blocks.length;) {
+        const b = blocks[i];
+        if (!(b.k === 'p' && b.mk && !/Bullet/i.test(b.s || ''))) { i++; continue; }
+        let j = i; while (j < blocks.length && blocks[j].k === 'p' && blocks[j].s === b.s && (blocks[j].mk || blocks[j].cont)) j++;
+        const st = styles[b.s] || {};
+        const w = Math.max(...blocks.slice(i, j).map(x => x.mk ? mw(x.mk, st) : 0));
+        const hang = Math.min(0, st.first || 0) ? -st.first : 22.677;
+        if (w > hang && hang >= 16) blocks.slice(i, j).forEach(x => { x.mcolMin = Math.ceil(w * 2) / 2; });
+        i = Math.max(j, i + 1);
+      }
+    }
+    // Note "Additional Consolidated Entity Information" (FY25 p.42): address and
+    // telephone set solid on 12pt, then the web address in Medium.
+    {
+      const ti = blocks.findIndex(b => b.k === 'p' && /^Telephone:/i.test(String(b.t || '').trim()) && blocks.slice(Math.max(0, blocks.indexOf(b) - 3), blocks.indexOf(b)).some(x => /Tight$/.test(x.s || '')));
+      if (ti > 0) {
+        const tel = blocks[ti];
+        if (!/Tight$/.test(tel.s)) tel.s = tel.s + ' Tight';
+        const nx = blocks[ti + 1];
+        if (!(nx && /racingvictoria\.com\.au/i.test(String(nx.t || ''))))
+          blocks.splice(ti + 1, 0, { k: 'p', s: 'A4 V:Body', t: 'www.racingvictoria.com.au', rs: [['www.racingvictoria.com.au', 'Medium']] });
+        // Street, suburb, telephone and web address set solid: no space between them.
+        for (let k = ti - 2; k <= ti + 1; k++) if (blocks[k] && blocks[k].k === 'p' && (k > ti - 2 || /Tight$/.test(blocks[k].s || ''))) blocks[k].solid = true;
+        // One clear line between the office heading and the street address.
+        if (blocks[ti - 2] && blocks[ti - 2].solid) blocks[ti - 2].sb = 12;
+      }
+    }
     const H3 = styles['H3 Sub Heading LC Financials'] || {}, BODY = styles['A4 V:Body'] || {}, FN = styles.Footnotes || {};
     // Inside a lettered policy: run-in heads in Medium grey at the copy's indent, the copy indented (FY25 p.70).
     styles['H3 Sub Heading LC Financials Indent'] = Object.assign({}, H3, { color: '#6D6E71', weight: 500, left: 22.677, first: 0 });
@@ -1426,17 +1512,38 @@ class Component extends DCLogic {
     styles['Footnotes Bullet'] = Object.assign({}, FN, { left: (FN.left || 17.008) + 8.504, first: -8.504 });
     // Lead-in and follow-on lines of a footnote: no marker, at the footnote's text indent.
     styles['Footnotes Cont'] = Object.assign({}, FN, { left: FN.left || 17.008, first: 0 });
+    // Bullets under an indented paragraph (subsidiaries, Note 19) sit as far apart
+    // as the first sits below the paragraph (Tim McCann, Test 11).
+    for (let i = 1; i < blocks.length; i++) {
+      const b = blocks[i], pv = blocks[i - 1];
+      if (!(b.k === 'p' && b.s === 'B7 Bullet double Indent' && pv.k === 'p' && pv.s === 'B2 Body Indent')) continue;
+      const B = styles['B2 Body Indent'] || {};
+      for (let j = i; j < blocks.length && blocks[j].k === 'p' && blocks[j].s === b.s; j++) blocks[j].ga = B.after || 0;
+    }
     const NT = /^\d{1,2}\.\s/;
     const isTitleRow = r => r.c.length > 0 && r.c.every(c => c && c.s === 'A4 V:Subhead Large');
     const isHeadRow = r => r.c.some(c => c && NOTE_HEADER_PS[c.s]);
     const figs = r => r.c.slice(1).some(c => c && /\d|^[-\u2013]$/.test(String(c.t || '').trim()));
     const lab = r => String((r.c[0] && r.c[0].t) || '').trim();
-    let alpha = false;
+    let alpha = false, noteTitle = '';
     for (let i = 0; i < blocks.length; i++) {
       const b = blocks[i];
+      if (b.k === 'p' && b.s === 'A4 V:Subhead Large' && /^\d{1,2}\.\s/.test(b.t || '')) noteTitle = b.t;
+      // FY25 sets the Related Party Disclosures heads (a)-(e) upright.
+      if (b.k === 'p' && b.s === 'H4 Sub Heading Italic' && /Related Part/i.test(noteTitle)) b.up = true;
+      // …and its grey sub-heads under (d) bold, not italic.
+      if (b.k === 'p' && /^H5 Sub heading Gray Underline Italics/.test(b.s || '') && /Related Part/i.test(noteTitle)) { b.up = true; b.b = true; b.nou = true; }
       if (b.k === 'pagehead' || (b.k === 'p' && b.s === 'A4 V:Subhead Large' && NT.test(b.t || '')) ||
           (b.k === 't' && b.rows.some(r => isTitleRow(r) && NT.test(lab(r))))) alpha = false;
-      if (b.k === 'p' && /^H4 /.test(b.s || '') && /^\([a-z]\)$/.test(b.mk || '')) alpha = true;
+      // Lettered policies (a), (b)… indent their run-in heads and copy. A roman
+      // numeral sequence (i), (ii)… is not lettered: (i)/(v)/(x) only continue a
+      // lettered run already open, and (ii), (iv)… close one (note 1, FY25 p.49).
+      if (b.k === 'p' && /^H4 /.test(b.s || '')) {
+        const mk = b.mk || '';
+        if (/^\([ivx]{2,}\)$/.test(mk)) alpha = false;
+        else if (/^\([ivx]\)$/.test(mk)) { if (!alpha) alpha = false; }
+        else if (/^\([a-z]\)$/.test(mk)) alpha = true;
+      }
       if (b.k === 'p' && alpha) {
         if (b.s === 'H3 Sub Heading LC Financials') b.s = 'H3 Sub Heading LC Financials Indent';
         else if (b.s === 'A4 V:Body') b.s = 'A4 V:Body Indent';
@@ -1457,6 +1564,9 @@ class Component extends DCLogic {
           if (!w || !leads.some(l => l.split(/[^a-z]+/).indexOf(w) > -1)) break;
           blocks[j].s = 'Footnotes Plain';
         }
+        // One blank row between the parts of a note table, never two (Note 11, Test 11).
+        const blankRow = r => !isHeadRow(r) && r.c.every(c => !c || !String(c.t || '').trim());
+        b.rows = b.rows.filter((r, k) => !(k && blankRow(r) && blankRow(b.rows[k - 1])));
         // A line's space before a group label that follows a total (FY25 parent entity, KMP).
         if (b.cols.length <= 4) {
           const rows = [];
@@ -1633,7 +1743,18 @@ class Component extends DCLogic {
   // a lighter NOTE / $'000 bar, alternate rows tinted, bold rows in RV Blue,
   // rules over and under the totals' figures and a double rule to close.
   _styleStatement(tb, roles, groups) {
-    const rows = tb.rows || [];
+    let rows = tb.rows || [];
+    // Cash flows (FY25 p.45): a blank row ahead of each "Cash flows from …"
+    // activities head after the first, unless the source already has one.
+    if (groups) rows = rows.reduce((acc, r) => {
+      const lab = ((r.cells || [])[0] || {}).t || '';
+      const pv = acc[acc.length - 1];
+      const pvBlank = pv && (pv.cells || []).every(c => !(c.t || '').trim());
+      if (r.body && /^cash flows from /i.test(lab.trim()) && acc.some(x => /^cash flows from /i.test((((x.cells || [])[0] || {}).t || '').trim())) && !pvBlank)
+        acc.push(Object.assign({}, r, { cells: (r.cells || []).map(c => Object.assign({}, c, { t: '' })), lineAbove: false, lineBelow: false }));
+      acc.push(r);
+      return acc;
+    }, []);
     const h2 = rows.find(r => r.head2);
     const noteCol = h2 ? h2.cells.findIndex(c => /^note$/i.test((c.t || '').trim())) : -1;
     // The closing double rule goes under the last row with figures, not a
@@ -1692,12 +1813,23 @@ class Component extends DCLogic {
         };
       }
       return {
-        gridCols: r.gridCols, mh: (blank ? Math.min(r.h || 9, 9) : (r.h || 19.84)) + 'pt', bg: band ? BAND_BG : 'transparent',
+        // Cash flows: a gap ahead of a banded line (Net increase…) is set deeper so it
+        // reads as wide as the gaps ahead of the activity heads, whose text sits low.
+        gridCols: r.gridCols, mh: (blank ? (groups && rows[ri + 1] && !/^cash flows from /i.test((((rows[ri + 1].cells || [])[0] || {}).t || '').trim()) && (rows[ri + 1].cells || []).some(c => /\d/.test(c.t || '')) ? 12.6 : Math.min(r.h || 9, 9)) : (r.h || 19.84)) + 'pt', bg: band ? BAND_BG : 'transparent',
         ai: 'center', pv: '2pt', fs: '9pt', lh: '11.5pt', ls: '-0.005em', tt: 'none',
         cells: cells.map((c, k) => {
           const fig = k > 0 && k !== noteCol;
+          // Changes in equity (FY25 p.46): "Balance at…" labels bold blue; their
+          // figures Book weight, grey on an opening balance, blue on a closing one.
+          const bal = /^balance at\b/i.test(((cells[0] || {}).t || '').trim());
+          if (bal) return {
+            t: c.t, jc: align(k)[0], ta: align(k)[1], pl: '4.252pt', fw: k === 0 ? '700' : '400', fst: 'normal',
+            col: k === 0 || (fig && total) ? '#005FA1' : '#6D6E71',
+            bt: fig && total ? RULE : '0',
+            bb: fig && closing ? '2.25pt double #005FA1' : fig && total ? RULE : '0',
+          };
           return {
-            t: c.t, jc: align(k)[0], ta: align(k)[1], pl: k === 0 && step ? '18.425pt' : '4.252pt', fw: bold && k !== noteCol ? '700' : '400', fst: c.i ? 'italic' : 'normal',
+            t: c.t, jc: align(k)[0], ta: align(k)[1], pl: k === 0 && step ? '18.425pt' : '4.252pt', fw: bold && k !== noteCol ? '700' : '400', fst: 'normal',
             col: bold && k !== noteCol ? '#005FA1' : '#6D6E71',
             bt: fig && total ? RULE : '0',
             bb: fig && closing ? '2.25pt double #005FA1' : fig && total ? RULE : '0',
@@ -1727,7 +1859,9 @@ class Component extends DCLogic {
       ceasedTop: this.state.dirLayout.ceasedTop + 'pt',
       ceased: ((copy && copy.ceased) || []).map((c, k) => ({ text: c.text, name: c.name || '', rest: c.name ? c.rest : c.text, isOff: !!c.name, isTxt: !c.name, pt: k ? '5.669pt' : '0' })),
       footYear: (copy && copy.year) || this.props.footYear || 2025,
-      intro: (copy && copy.intro) || [],
+      // Act titles set in italics (FY25: Corporations Act 2001 (Cth)).
+      intro: ((copy && copy.intro) || []).map(t => ({ segs: String(t).split(/(Corporations Act 2001(?: \(Cth\))?)/).filter(Boolean)
+        .map(s => ({ t: s, fs: /^Corporations Act 2001/.test(s) ? 'italic' : 'normal' })) })),
       sig0: sig[0] || {}, sig1: sig[1] || {},
       overflowLabel: parts.length ? parts.join(' and ') +
         ' will not fit \u2014 trim the copy or extend the layout' : '',
@@ -1741,6 +1875,9 @@ class Component extends DCLogic {
     out.stSurplus = this._styleStatement(st.surplus || empty);
     out.stPosition = this._styleStatement(st.position || empty, true);
     out.stCashflows = this._styleStatement(st.cashflows || empty, false, true);
+    // "Consolidated statement / of cash flows": the tail is held together so the
+    // break falls after "statement" (FY25 p.45).
+    out.stCashflowsHeading = String(out.stCashflows.heading || '').replace(/ of cash flows$/i, m => ' ' + m.trim().replace(/ /g, '\u00a0'));
     out.stEquity = this._styleStatement(st.equity || empty);
     const dec = (copy && copy.declaration) || {};
     const kp = (copy && copy.kpmg) || {};
