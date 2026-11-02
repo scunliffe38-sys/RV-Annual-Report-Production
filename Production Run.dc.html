@@ -58,6 +58,12 @@
     <button type="button" onClick="{{ printSpreads }}" disabled="{{ notReady }}" style="font-size:13px;font-weight:700;color:{{ printBg }};background:#fff;border:2px solid {{ printBg }};border-radius:8px;padding:10px 14px;cursor:pointer">Spreads only (landscape)</button>
     <button type="button" onClick="{{ printSingles }}" disabled="{{ notReady }}" style="font-size:13px;font-weight:700;color:{{ printBg }};background:#fff;border:2px solid {{ printBg }};border-radius:8px;padding:10px 14px;cursor:pointer">Single pages only (portrait)</button>
   </div>
+  <sc-if value="{{ hasPageInfo }}" hint-placeholder-val="">
+    <div style="max-width:1100px;margin:0 auto;padding:0 24px 10px;font-size:13px;line-height:1.5;color:#25272a">
+      <div style="color:#6D6E71">{{ pageSummary }}</div>
+      <sc-for list="{{ pageChecks }}" as="c" hint-placeholder-count="0"><div style="color:{{ c.color }}">{{ c.text }}</div></sc-for>
+    </div>
+  </sc-if>
   <div style="max-width:1100px;margin:0 auto;padding:0 24px 12px;font-size:13px;color:#6D6E71">Like the FY25 report, the cover is a single portrait page and everything else is a landscape spread. If the PDF comes out with every page the same size, save the two parts separately with the buttons above and join them. In the print dialog: Destination <strong style="color:#25272a">Save as PDF</strong> &#183; Margins <strong style="color:#25272a">None</strong> &#183; <strong style="color:#25272a">Background graphics</strong> on.</div>
 </div>
 
@@ -65,22 +71,22 @@
   <div data-noprint="" style="max-width:640px;margin:60px auto;font-family:Arial,sans-serif;font-size:16px;line-height:1.5;color:#25272a;padding:0 24px">No production run found. Start one from the <a href="Production Console.dc.html">Production console</a>.</div>
 </sc-if>
 
-<sc-if value="{{ on.cover }}" hint-placeholder-val=""><dc-import name="Cover" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.contents }}" hint-placeholder-val=""><dc-import name="Contents" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.chair }}" hint-placeholder-val=""><dc-import name="Chair's Report" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.ceo }}" hint-placeholder-val=""><dc-import name="CEO's Report" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.kpi }}" hint-placeholder-val=""><dc-import name="KPI &amp; Industry Snapshot" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.racing }}" hint-placeholder-val=""><dc-import name="Racing &amp; Programming" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.awards }}" hint-placeholder-val=""><dc-import name="Racing Awards &amp; Feature Winners" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.owners }}" hint-placeholder-val=""><dc-import name="Owners &amp; Breeders + Infrastructure" photo-layout="{{ layouts.owners }}" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.workforce }}" hint-placeholder-val=""><dc-import name="Workforce Development" photo-layout="{{ layouts.workforce }}" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.integrity }}" hint-placeholder-val=""><dc-import name="Integrity Services" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.welfare }}" hint-placeholder-val=""><dc-import name="Equine Welfare" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.wagering }}" hint-placeholder-val=""><dc-import name="Wagering" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.media }}" hint-placeholder-val=""><dc-import name="Media" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.industry }}" hint-placeholder-val=""><dc-import name="Industry &amp; Community Support" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.finance }}" hint-placeholder-val=""><dc-import name="Financial Report" hint-size="100%,841.89pt"></dc-import></sc-if>
-<sc-if value="{{ on.back }}" hint-placeholder-val=""><dc-import name="Back Matter" hint-size="100%,841.89pt"></dc-import></sc-if>
+<sc-if value="{{ on.cover }}" hint-placeholder-val=""><div data-sec="cover"><dc-import name="Cover" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.contents }}" hint-placeholder-val=""><div data-sec="contents"><dc-import name="Contents" page-counts="{{ pageCounts }}" year="{{ year }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.chair }}" hint-placeholder-val=""><div data-sec="chair"><dc-import name="Chair's Report" folio-left="{{ fol.chair.l }}" folio-right="{{ fol.chair.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.ceo }}" hint-placeholder-val=""><div data-sec="ceo"><dc-import name="CEO's Report" folio-left="{{ fol.ceo.l }}" folio-right="{{ fol.ceo.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.kpi }}" hint-placeholder-val=""><div data-sec="kpi"><dc-import name="KPI &amp; Industry Snapshot" folio-left="{{ fol.kpi.l }}" folio-right="{{ fol.kpi.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.racing }}" hint-placeholder-val=""><div data-sec="racing"><dc-import name="Racing &amp; Programming" folio-left="{{ fol.racing.l }}" folio-right="{{ fol.racing.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.awards }}" hint-placeholder-val=""><div data-sec="awards"><dc-import name="Racing Awards &amp; Feature Winners" folio-left="{{ fol.awards.l }}" folio-right="{{ fol.awards.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.owners }}" hint-placeholder-val=""><div data-sec="owners"><dc-import name="Owners &amp; Breeders + Infrastructure" folio-left="{{ fol.owners.l }}" folio-right="{{ fol.owners.r }}" photo-layout="{{ layouts.owners }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.workforce }}" hint-placeholder-val=""><div data-sec="workforce"><dc-import name="Workforce Development" folio-left="{{ fol.workforce.l }}" folio-right="{{ fol.workforce.r }}" photo-layout="{{ layouts.workforce }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.integrity }}" hint-placeholder-val=""><div data-sec="integrity"><dc-import name="Integrity Services" folio-left="{{ fol.integrity.l }}" folio-right="{{ fol.integrity.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.welfare }}" hint-placeholder-val=""><div data-sec="welfare"><dc-import name="Equine Welfare" folio-left="{{ fol.welfare.l }}" folio-right="{{ fol.welfare.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.wagering }}" hint-placeholder-val=""><div data-sec="wagering"><dc-import name="Wagering" folio-left="{{ fol.wagering.l }}" folio-right="{{ fol.wagering.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.media }}" hint-placeholder-val=""><div data-sec="media"><dc-import name="Media" folio-left="{{ fol.media.l }}" folio-right="{{ fol.media.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.industry }}" hint-placeholder-val=""><div data-sec="industry"><dc-import name="Industry &amp; Community Support" folio-left="{{ fol.industry.l }}" folio-right="{{ fol.industry.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.finance }}" hint-placeholder-val=""><div data-sec="finance"><dc-import name="Financial Report" folio-start="{{ fol.finance.l }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ on.back }}" hint-placeholder-val=""><div data-sec="back"><dc-import name="Back Matter" hint-size="100%,841.89pt"></dc-import></div></sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
@@ -89,6 +95,15 @@ class Component extends DCLogic {
   componentDidMount() {
     let run = null;
     try { run = JSON.parse(localStorage.getItem("rv-production-run") || "null"); } catch (e) {}
+    // ?fy26: preview the whole FY26 report from the project's FY26 copy and
+    // data/fy26-payload.json, without a Console run.
+    if (/[?&]fy26\b/.test(location.search)) {
+      try {
+        const x = new XMLHttpRequest(); x.open("GET", "./data/fy26-payload.json", false); x.send();
+        run = Object.assign(JSON.parse(x.responseText), { folder: "FY26 preview (project files)", created: new Date().toISOString(),
+          sections: ["cover","contents","chair","ceo","kpi","racing","awards","owners","workforce","integrity","welfare","wagering","media","industry","finance","back"] });
+      } catch (e) {}
+    }
     this.setState({ run });
     if (!run) return;
     if (window.RVImages) window.RVImages.apply();
@@ -98,7 +113,13 @@ class Component extends DCLogic {
     // A Finance document with notes takes much longer to lay out.
     const settle = 2500 + run.sections.length * 400 + (run.sections.indexOf("finance") > -1 && run.payload && run.payload.notes ? 35000 : 0);
     (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
-      this._t = setTimeout(() => this.setState({ ready: true }), settle);
+      // Once the sections have laid out, count the pages each produced and
+      // renumber: folios, Contents and the Financial Report start follow.
+      // Measured twice, so a renumbering that changes a layout is caught.
+      this._t = setTimeout(() => {
+        this._paginate();
+        this._t = setTimeout(() => { this._paginate(); this.setState({ ready: true }); }, 2000);
+      }, settle);
     });
     // Status of the KPMG pages; Ready waits while they are still drawing.
     this._a = setInterval(() => { if (window.RV_AUDITOR !== this.state.aud) this.setState({ aud: window.RV_AUDITOR }); }, 500);
@@ -118,6 +139,89 @@ class Component extends DCLogic {
     window.print();
   }
 
+  // Pages each run section laid out (a spread counts two).
+  _count(id) {
+    const w = document.querySelector('[data-sec="' + id + '"]');
+    if (!w) return 0;
+    let pages = Array.from(w.querySelectorAll('section.page'));
+    if (!pages.length) w.querySelectorAll('doc-page').forEach(dp => { if (dp.shadowRoot) pages = pages.concat(Array.from(dp.shadowRoot.querySelectorAll('section.page'))); });
+    return pages.filter(p => p.offsetParent !== null || getComputedStyle(p).display !== 'none')
+      .reduce((n, p) => n + (/1190\.55pt/.test(p.getAttribute('style') || '') ? 2 : 1), 0);
+  }
+
+  _paginate() {
+    const run = this.state.run, S = window.RV_REPORT_STRUCTURE;
+    if (!run || !S || !S.withRun) return;
+    const M = window.RV_PRODUCTION_MANIFEST || {};
+    const spineOf = {
+      cover: ['cover'], contents: ['contents'], chair: ['chair'], ceo: ['ceo'], kpi: ['kpi', 'snapshot'], racing: ['racing'],
+      awards: ['awards', 'feature-winners'], owners: ['owners', 'infrastructure'], workforce: ['workforce'], integrity: ['integrity'],
+      welfare: ['welfare'], wagering: ['wagering'], media: ['media'], industry: ['industry'], back: ['back'],
+    };
+    const base = {}; S.SECTIONS.forEach(s => { base[s.id] = s.pages; });
+    const counts = {};
+    run.sections.forEach(id => {
+      if (id === 'finance') {
+        const F = window.RV_FIN_LAYOUT;
+        if (!F) return;
+        counts['directors-report'] = 10 + F.extra;
+        counts.notes = F.notesLast - F.notesFirst + 1;
+        counts.ced = Math.max(1, F.last - F.notesLast);
+        return;
+      }
+      const sp = spineOf[id], got = this._count(id);
+      if (!sp || !got) return;
+      const fy25 = sp.reduce((n, k) => n + base[k], 0);
+      if (got === fy25) return;
+      sp.forEach((k, i) => { counts[k] = i === 0 ? got - sp.slice(1).reduce((n, j) => n + base[j], 0) : base[k]; });
+    });
+    const pag = S.paginate(S.withRun(counts, run.year));
+    const at = {}; pag.forEach(s => { at[s.id] = s; });
+    const fol = {};
+    Object.keys(spineOf).forEach(id => { const f = at[spineOf[id][0]]; fol[id] = { l: f.first, r: f.first + 1 }; });
+    fol.finance = { l: at['directors-report'].first, r: at['directors-report'].first + 1 };
+    // Finance sub-sections (auditor's report, declaration) sit across turns in FY25 too.
+    const finIds = { 'auditor-indep': 1, 'auditor-report': 1, 'directors-decl': 1 };
+    const checks = S.paginate(S.withRun(counts, run.year)).filter(s => s.pages === 2 && s.first % 2 && !finIds[s.id])
+      .map(s => ({ text: s.title + ' starts on p.' + s.first + ' (odd), so its spread splits across a turn.', color: '#A51890' }));
+    checks.push.apply(checks, this._refs(at));
+    const total = pag[pag.length - 1].last;
+    const changed = Object.keys(counts).filter(k => counts[k] !== base[k]).map(k => (at[k] ? at[k].title : k) + ' ' + counts[k] + ' pp. (FY25 ' + base[k] + ')').join(', ');
+    this.setState({ counts, fol, pageChecks: checks,
+      pageSummary: total + ' pages. ' + (changed ? 'Changed from FY25: ' + changed + '. ' : 'Every section has its FY25 page count. ') +
+        'Folios, the Contents and the Financial Report start (p.' + fol.finance.l + ') follow.' });
+  }
+
+  // Page references inside supplied copy are printed as written; flag any that
+  // no longer match where things fall in this run.
+  _refs(at) {
+    const out = [];
+    const w = document.querySelector('[data-sec="finance"]');
+    if (!w || !at['stmt-surplus']) return out;
+    const text = (w.innerText || w.textContent || '').replace(/\s+/g, ' ');
+    const fsFirst = at['stmt-surplus'].first, fsLast = at.ced.last;
+    const re = /set out on pages (\d+) to (\d+)/gi; let m;
+    while ((m = re.exec(text))) {
+      const ok = +m[1] === fsFirst && +m[2] === fsLast;
+      out.push({ color: ok ? '#005FA1' : '#A51890', text: (ok ? 'Directors\u2019 Declaration: \u201c' + m[0] + '\u201d matches this run.' :
+        'Directors\u2019 Declaration says \u201c' + m[0] + '\u201d, but the statements and notes run from p.' + fsFirst + ' to p.' + fsLast + '. Ask Finance to update the Word document.') });
+    }
+    const re2 = /independence declaration is included on page (\d+) of the financial report/gi;
+    const want = at['auditor-indep'].first - at['directors-report'].first;
+    while ((m = re2.exec(text))) {
+      const ok = +m[1] === want;
+      out.push({ color: ok ? '#005FA1' : '#A51890', text: ok ? 'Directors\u2019 Report: auditor\u2019s independence declaration \u201cpage ' + m[1] + '\u201d matches this run.' :
+        'Directors\u2019 Report says the independence declaration is on page ' + m[1] + ' of the financial report; in this run it is page ' + want + ' (p.' + at['auditor-indep'].first + ' of the report). Ask Finance to update the Word document.' });
+    }
+    document.querySelectorAll('[data-sec]').forEach(sec => {
+      if (sec.getAttribute('data-sec') === 'finance' || sec.getAttribute('data-sec') === 'contents') return;
+      const t = (sec.innerText || '').replace(/\s+/g, ' ');
+      const r3 = /\b(?:see )?pages? \d+(?:\s*(?:to|and|-|\u2013)\s*\d+)?/gi; let k;
+      while ((k = r3.exec(t))) out.push({ color: '#A51890', text: 'Page reference in ' + sec.getAttribute('data-sec') + ': \u201c' + k[0] + '\u201d. Check it against this run.' });
+    });
+    return out;
+  }
+
   componentWillUnmount() { clearTimeout(this._t); clearInterval(this._a); }
 
   renderVals() {
@@ -128,8 +232,16 @@ class Component extends DCLogic {
     const on = {};
     (run ? run.sections : []).forEach((id) => { on[id] = true; });
     const n = run ? run.sections.length : 0;
+    const fol = this.state.fol || {};
+    const blank = { l: undefined, r: undefined };
+    ['chair','ceo','kpi','racing','awards','owners','workforce','integrity','welfare','wagering','media','industry','finance'].forEach(k => { if (!fol[k]) fol[k] = blank; });
     return {
-      on,
+      on, fol,
+      pageCounts: this.state.counts || {},
+      year: run ? run.year : '',
+      hasPageInfo: !!this.state.pageSummary,
+      pageSummary: this.state.pageSummary || '',
+      pageChecks: this.state.pageChecks || [],
       layouts: Object.assign({ workforce: "auto", owners: "auto" }, run && run.layouts),
       noRun: !run,
       heading: run ? "Annual Report " + run.year + (n >= 16 ? " \u2014 full report" : " \u2014 " + n + " section" + (n > 1 ? "s" : "")) : "Production run",

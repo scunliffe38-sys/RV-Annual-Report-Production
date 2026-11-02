@@ -43,8 +43,8 @@
 
   <div data-column="is0" style="position:absolute;left:56.7pt;top:170.1pt;width:235.3pt;height:{{ c1Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ is0 }}" as="b" hint-placeholder-count="6">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isStrong }}" hint-placeholder-val=""><div style="font-weight:700;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
     </sc-for>
@@ -52,8 +52,8 @@
 
   <div data-column="is1" style="position:absolute;left:303.3pt;top:170.1pt;width:235.3pt;height:621.9pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ is1 }}" as="b" hint-placeholder-count="8">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isStrong }}" hint-placeholder-val=""><div style="font-weight:700;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
     </sc-for>
@@ -62,8 +62,8 @@
   <div data-column="is2" style="position:absolute;left:652pt;top:171pt;width:234.9pt;height:621pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <div style="float:right;width:{{ wrapW }}pt;height:621pt;shape-outside:circle({{ wrapR }}pt at {{ wrapCx }}pt -64.9pt);shape-margin:0"></div>
     <sc-for list="{{ is2 }}" as="b" hint-placeholder-count="8">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isStrong }}" hint-placeholder-val=""><div style="font-weight:700;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
     </sc-for>
@@ -71,8 +71,8 @@
 
   <div data-column="is3" style="position:absolute;left:899pt;top:{{ c4Top }}pt;width:234.9pt;height:{{ c4Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ is3 }}" as="b" hint-placeholder-count="6">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isStrong }}" hint-placeholder-val=""><div style="font-weight:700;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:5.669pt 0 2.835pt">{{ b.text }}</div></sc-if>
     </sc-for>
@@ -125,21 +125,26 @@ const FLOWS = [
 const T_MIN = 0.7, T_MAX = 1.4;
 function geo(t) {
   const D1 = 333 * t, D2 = 464.2 * Math.min(t, 1.15), r = D2 / 2, rw = r + 11.34;
-  const W = Math.ceil(Math.sqrt(Math.max(rw * rw - 64.9 * 64.9, 0)) - 128.2) + 2;
-  const c4 = 106.1 + r + 91.2;
+  // FY26 sets the top-right photo 40pt further right (more of it bleeds off).
+  const dx = FY26 ? 40 : 0, off = 128.2 + dx;
+  const W = Math.max(0, Math.ceil(Math.sqrt(Math.max(rw * rw - 64.9 * 64.9, 0)) - off) + 2);
+  // FY25 holds column 4 91.2pt below the photo (jump object); FY26 sets it
+  // 14.17pt (5 mm) under the photo's foot.
+  const c4 = 106.1 + r + (FY26 ? 14.17 : 91.2);
   return {
     p1: { left: 288 - D1, top: 900 - D1, size: D1 },
-    p2: { left: 1015.1 - r, top: 106.1 - r, size: D2 },
+    p2: { left: 1015.1 + dx - r, top: 106.1 - r, size: D2 },
     flows: [
       { x: 56.70, y: 170.1, width: 235.3, height: 900 - D1 - 8.5 - 170.1 },
       FLOWS[1],
-      { x: 652.00, y: 171.0, width: 234.9, height: 621.0, wrap: { side: 'right', width: W, height: 621, r: rw, cx: 128.2 + W, cy: -64.9 } },
+      { x: 652.00, y: 171.0, width: 234.9, height: 621.0, wrap: W > 0 ? { side: 'right', width: W, height: 621, r: rw, cx: off + W, cy: -64.9 } : null },
       { x: 899.00, y: c4, width: 234.9, height: 792 - c4 },
     ],
-    W, rw, c4,
+    W, rw, c4, off,
   };
 }
 
+const FY26 = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search));
 const BODY_AFTER = 8.504;
 const SUBHEAD_AFTER = 4;
 const FOOT_CLEARANCE = 0;
@@ -162,7 +167,8 @@ class Component extends DCLogic {
     TICK(nudge);
 
     Promise.all([
-      (window.RVProduction ? window.RVProduction.load('integrity-services', () => import('./copy/integrity-services.js')) : import('./copy/integrity-services.js')),
+      (() => { const imp = () => FY26 ? import('./copy/fy26/integrity-services.js') : import('./copy/integrity-services.js');
+        return window.RVProduction ? window.RVProduction.load('integrity-services', imp) : imp(); })(),
       document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
         .then(() => document.fonts.ready).catch(() => null),
     ])
@@ -273,7 +279,7 @@ class Component extends DCLogic {
   }
 
   _after(item) {
-    return item.kind === 'subhead' ? SUBHEAD_AFTER : BODY_AFTER;
+    return item.kind === 'subhead' ? (FY26 ? 9 : SUBHEAD_AFTER) : BODY_AFTER;
   }
 
   flow(items, cols, baseIdx, opts) {
@@ -281,6 +287,7 @@ class Component extends DCLogic {
     const columns = cols.map(() => []);
     const track = TRACKING[baseIdx];
     let queue = items.map(i => Object.assign({}, i));
+    const used = cols.map(() => 0);
 
     for (let c = 0; c < cols.length; c++) {
       const wrap = cols[c].wrap;
@@ -299,12 +306,16 @@ class Component extends DCLogic {
         }
         // A paragraph's extra space-before only applies when it is not the
         // first thing in a column.
-        const before = (columns[c].length && !item.cont) ? (item.before || 0) : 0;
+        let before = (columns[c].length && !item.cont) ? (item.before || 0) : 0;
+        // FY26 subhead: 9pt above in print; the previous body already counted 8.504.
+        if (FY26 && item.kind === 'subhead' && columns[c].length) before = Math.max(before, 9) - BODY_AFTER;
         const hPx = (shim ? this._textHeight(host, node)
                           : host.getBoundingClientRect().height) +
                     (this._after(item) + before) / 0.75;
 
-        if (usedPx + hPx <= capPx) {
+        // A subhead keeps at least two lines of the next paragraph with it.
+        const keep = item.kind === 'subhead' && queue[1] ? (2 * 12 + 5.669) / 0.75 : 0;
+        if (usedPx + hPx + keep <= capPx) {
           columns[c].push(Object.assign({}, item, { gap: before }));
           queue.shift();
           usedPx += hPx;
@@ -340,10 +351,11 @@ class Component extends DCLogic {
         }
         break;
       }
+      used[c] = usedPx * 0.75;
       host.remove();
     }
 
-    return { columns, leftover: queue };
+    return { columns, used, leftover: queue };
   }
 
   renderVals() {
@@ -353,11 +365,11 @@ class Component extends DCLogic {
       p1Left: g.p1.left, p1Top: g.p1.top, p1Size: g.p1.size,
       p2Left: g.p2.left, p2Top: g.p2.top, p2Size: g.p2.size,
       c1Height: g.flows[0].height, c4Top: g.c4, c4Height: g.flows[3].height,
-      wrapW: g.W, wrapR: g.rw, wrapCx: 128.2 + g.W,
-      footYear: 2025,
+      wrapW: g.W, wrapR: g.rw, wrapCx: g.off + g.W,
+      footYear: FY26 ? 2026 : 2025,
       folioLeft: this.props.folioLeft ?? 18,
       folioRight: this.props.folioRight ?? 19,
-      showDecoration: this.props.showDecoration ?? true,
+      showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       track: TRACKING[this.state.idx],
       is0: this._flags(this.state.cols[0]), is1: this._flags(this.state.cols[1]),
       is2: this._flags(this.state.cols[2]), is3: this._flags(this.state.cols[3]),
@@ -370,7 +382,10 @@ class Component extends DCLogic {
   _flags(list) {
     return (list || []).map((i, n) => ({
       text: i.text,
-      gapTop: (i.gap || 0) + 'pt',
+      // FY26: 9pt above and below every subhead (collapsing with the body's
+      // own 2.835 / 5.669 margins), as on Content, Media & Marketing.
+      gapTop: (FY26 && i.kind === 'subhead' ? Math.max(9, i.gap || 0) : (i.gap || 0)) + 'pt',
+      subB: FY26 ? '9pt' : '4pt',
       isSubhead: i.kind === 'subhead' && n > 0,
       isSubheadTop: i.kind === 'subhead' && n === 0,
       isStrong: i.kind === 'strong',

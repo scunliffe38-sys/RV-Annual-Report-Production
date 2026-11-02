@@ -5,11 +5,13 @@ branch: main
 date: 2026-11-02
 
 ### Updated in this project
-- Frame editor for headshots/photos (production-images.js, image-slot.js, Face Calibration.dc.html).
-- Wagering reads only from the Wagering docx; Data Inputs split into Industry Snapshot and Awards and Feature Race Winners workbooks (templates in exports/FY26 Input Templates/).
-- Logos accept AI, EPS, PDF and PSD as well as SVG/PNG/JPG/WebP.
+- Automatic pagination in the Production Run (folios, Contents, Financial Report start; page-reference checks).
+- FY26 Chair's Report, Integrity Services and Industry & Community Support copy and layout changes.
+- Awards and Feature Race Winners read from a Word document; Wagering from one docx; logos accept AI/EPS/PDF/PSD.
+- RV glow on section photo circles; images kept permanently in the browser.
 
 ## Sync history
+- 2026-11-02 (earlier): Frame editor; Data Inputs split; logo formats.
 - 2026-10-21: serve.py no-cache server; Test 13 footnotes; notes-range line fix; build stamp on Run bar.
 - 2026-10-20T16:00:00Z: Test 10 comments (headings at column feet, cash-flow double rule, VicRacing footnote).
 - 2026-10-20T15:00:00Z: Test 9 comments (spacing, rules, indents, page breaks).

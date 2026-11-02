@@ -460,9 +460,12 @@ class Component extends DCLogic {
     // on the same line as a body column's first baseline.
     const k = g || 1, pt = v => (v * k).toFixed(3) + 'pt';
     const mBody = pt(5.669) + ' 0 ' + pt(2.835), mBullet = pt(2.835) + ' 0 ' + pt(11.339);
+    // The opening block of every column takes the same unscaled top margin, so
+    // all four columns start on one line whatever the gap scale or block kind.
+    const first = m => n => n === 0 ? m.replace(/^\S+/, '5.669pt') : m;
     return (list || []).map((i, n) => ({
-      m: i.kind === 'bullet' ? mBullet
-        : (list[n + 1] && list[n + 1].kind === 'bullet' && !list[n + 1].cont) ? pt(5.669) + ' 0 ' + pt(11.339) : mBody,
+      m: first(i.kind === 'bullet' ? mBullet
+        : (list[n + 1] && list[n + 1].kind === 'bullet' && !list[n + 1].cont) ? pt(5.669) + ' 0 ' + pt(11.339) : mBody)(n),
       td: i.u ? 'underline' : 'none',
       ...this._runs(i),
       text: i.text,

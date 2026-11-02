@@ -41,6 +41,22 @@ const SECTIONS = [
   { id: "back",             title: "Back cover",                                   pages: 1,  contents: false },
 ];
 
+// A production run measures what each section actually laid out and passes the
+// counts here ({ spineId: pages }); anything not measured keeps its FY25 count.
+// `year` ("FY26") updates the year-bearing Contents titles.
+function withRun(counts, year) {
+  const yy = year ? +String(year).replace(/\D/g, "").slice(-2) : 0;
+  return SECTIONS.map((s) => {
+    const o = Object.assign({}, s);
+    if (counts && counts[s.id] > 0) o.pages = counts[s.id];
+    if (yy) {
+      if (s.id === "snapshot") o.title = "FY" + yy + " Industry Snapshot";
+      if (s.id === "feature-winners") o.title = "20" + (yy - 1) + "-" + yy + " Feature Race Winners";
+    }
+    return o;
+  });
+}
+
 // Walks the spine and stamps each section with its first and last page.
 function paginate(sections = SECTIONS) {
   let page = 1;
@@ -67,6 +83,6 @@ function impositionWarnings(sections = SECTIONS) {
     .map((s) => `${s.title} starts on p.${s.first} (odd) \u2014 spread will split across a turn`);
 }
 
-root.RV_REPORT_STRUCTURE = { SECTIONS, paginate, contentsEntries, impositionWarnings };
+root.RV_REPORT_STRUCTURE = { SECTIONS, paginate, contentsEntries, impositionWarnings, withRun };
 
 })(window);

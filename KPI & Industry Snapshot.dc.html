@@ -93,8 +93,10 @@
     </table>
   </div>
 
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="">
   <div style="position:absolute;left:998.78pt;top:-462.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   <div style="position:absolute;left:893.18pt;top:29.2pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  </sc-if>
 
   <svg style="position:absolute;left:648.68pt;top:64pt;width:476.4pt;height:50pt" viewBox="0 0 476.4 50" role="img" aria-label="FY25 Industry Snapshot"><text x="0" y="33.2" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">F</tspan><tspan fill="#0A5BA0">Y</tspan><tspan fill="#14579F">2</tspan><tspan fill="#1E539E">5</tspan><tspan fill="#284F9D"> </tspan><tspan fill="#324B9D">I</tspan><tspan fill="#3C479C">n</tspan><tspan fill="#46439B">d</tspan><tspan fill="#503F9A">u</tspan><tspan fill="#5A3B99">s</tspan><tspan fill="#643798">t</tspan><tspan fill="#6E3397">r</tspan><tspan fill="#782F96">y</tspan><tspan fill="#822B95"> </tspan><tspan fill="#8C2794">S</tspan><tspan fill="#962394">n</tspan><tspan fill="#A01F93">a</tspan><tspan fill="#AA1B92">p</tspan><tspan fill="#B41791">s</tspan><tspan fill="#BE1390">h</tspan><tspan fill="#C80F8F">o</tspan><tspan fill="#D20B8E">t</tspan></text></svg>
 
@@ -348,6 +350,7 @@ class Component extends DCLogic {
     const snapMeta = (this.state.snapshot && this.state.snapshot.meta) || {};
 
     return Object.assign({}, kpi, snap, {
+      showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       folioLeft: this.props.folioLeft ?? 8,
       folioRight: this.props.folioRight ?? snapMeta.folio ?? 9,
       footYear: kpi.footYear || snapMeta.footYear || '',

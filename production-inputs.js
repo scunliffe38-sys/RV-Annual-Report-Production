@@ -181,12 +181,25 @@
       else if (r < 0.7) issues.push(issue("warning", "About " + total + " words against " + budget + " last year \u2014 the spread may look sparse."));
     }
     var kinds = cfg.kinds || {};
+    var sign = null;
+    if (cfg.strings) {
+      // Lines after "Yours sincerely," are the sign-off (name, then role): they go
+      // to meta for the signature block, not into the columns.
+      var ys = -1;
+      blocks.forEach(function (b, i) { if (/^yours (sincerely|faithfully)/i.test(b.text)) ys = i; });
+      if (ys >= 0 && ys < blocks.length - 1) {
+        var tail = blocks.slice(ys + 1).map(function (b) { return b.text; });
+        sign = { signatory: tail[0], signatoryRole: tail.slice(1).join(", ") };
+        blocks = blocks.slice(0, ys + 1);
+      }
+    }
     var payload = cfg.strings
       ? { paragraphs: blocks.filter(function (b, i) { return !(i === 0 && /annual report\s*[\u2013\u2014-]/i.test(b.text)); }).map(function (b) { return b.text; }) }
       : { paragraphs: blocks.map(function (b) {
           var k = kinds[b.kind] || (b.kind === "h1" && label !== "media" ? "subhead" : b.kind);
           return k === "body" ? { text: b.text } : { text: b.text, kind: k };
         }) };
+    if (sign) { payload.meta = sign; issues.push(issue("info", "Signed off by " + sign.signatory + (sign.signatoryRole ? ", " + sign.signatoryRole : "") + ".")); }
     return { issues: issues, payload: payload };
   }
 
@@ -469,7 +482,7 @@
             var cfg = manifest.narrative[inp.id];
             var out = narrative(docxBlocks(doc), cfg, budgets && budgets[cfg.payload], inp.id);
             rec.issues = rec.issues.concat(out.issues);
-            if (cfg.strings) out.payload.meta = { footYear: 2000 + +year.slice(2) };
+            if (cfg.strings) out.payload.meta = Object.assign({}, out.payload.meta, { footYear: 2000 + +year.slice(2) });
             if (inp.id === "wagering") {
               var wt = wageringTables(doc);
               rec.issues = rec.issues.concat(wt.issues);

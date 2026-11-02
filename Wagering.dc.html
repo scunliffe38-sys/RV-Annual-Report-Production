@@ -431,7 +431,7 @@ class Component extends DCLogic {
       quarterly: this._quarters(this.state.charts.quarterly),
       folioLeft: this.props.folioLeft ?? 22,
       folioRight: this.props.folioRight ?? 23,
-      showDecoration: this.props.showDecoration ?? true,
+      showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       track: TRACKING[this.state.idx],
       topFive: this.state.topFive,
       wg0: this._flags(this.state.cols[0]), wg1: this._flags(this.state.cols[1]),

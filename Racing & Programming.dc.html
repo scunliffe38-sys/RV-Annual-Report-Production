@@ -36,7 +36,7 @@
 
   <svg style="position:absolute;left:53.7pt;top:72pt;width:423.9pt;height:50pt" viewBox="0 0 423.9 50" role="img" aria-label="Racing &amp; Programming"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">R</tspan><tspan fill="#0C5AA0">a</tspan><tspan fill="#19559F">c</tspan><tspan fill="#25509E">i</tspan><tspan fill="#324B9D">n</tspan><tspan fill="#3E469B">g</tspan><tspan fill="#4B419A"> </tspan><tspan fill="#573C99">&amp;</tspan><tspan fill="#633798"> </tspan><tspan fill="#703297">P</tspan><tspan fill="#7C2D96">r</tspan><tspan fill="#892895">o</tspan><tspan fill="#952394">g</tspan><tspan fill="#A11E93">r</tspan><tspan fill="#AE1992">a</tspan><tspan fill="#BA1490">m</tspan><tspan fill="#C70F8F">m</tspan><tspan fill="#D30A8E">i</tspan><tspan fill="#E0058D">n</tspan><tspan fill="#EC008C">g</tspan></text></svg>
 
-  <div data-column="0" style="position:absolute;left:56.7pt;top:518pt;width:235.28pt;height:255.6pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+  <div data-column="0" style="position:absolute;left:56.7pt;top:{{ col0Top }};width:235.28pt;height:{{ col0H }};overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ col0 }}" as="b" hint-placeholder-count="6">
       <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.text }}</div></sc-if>
@@ -54,8 +54,8 @@
     </sc-for>
   </div>
 
-  <div data-column="2" style="position:absolute;left:652pt;top:173.6pt;width:234pt;height:370.3pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
-    <div style="float:right;width:40pt;height:370.3pt;shape-outside:circle(159.25pt at 168.25pt 4.25pt);shape-margin:5pt"></div>
+  <div data-column="2" style="position:absolute;left:652pt;top:170.6pt;width:234pt;height:373.3pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <div style="float:right;width:40pt;height:373.3pt;shape-outside:circle(159.25pt at 168.25pt 7.25pt);shape-margin:5pt"></div>
     <sc-for list="{{ col2 }}" as="b" hint-placeholder-count="6">
       <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:2.835pt 0 11.339pt;padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.text }}</div></sc-if>
@@ -114,8 +114,9 @@ const COLS = [
   // The Pride Of Jenni circle (855 / 18.6, r 159.25 about 1014.25 / 177.85)
   // overhangs this column's right edge by 31pt down its top 170pt. Contour the
   // copy around it rather than letting the photograph sit over the text.
-  { x: 652.00, y: 173.6, width: 234.00, height: 460.3 - RP3_LIFT,
-    side: 'right', wrap: { width: 40, height: 460.3 - RP3_LIFT, r: 159.25, cx: 168.25, cy: 4.25 } },
+  // Top at 170.6 so it lines up with column 2 (B); the foot stays put.
+  { x: 652.00, y: 170.6, width: 234.00, height: 463.3 - RP3_LIFT,
+    side: 'right', wrap: { width: 40, height: 463.3 - RP3_LIFT, r: 159.25, cx: 168.25, cy: 7.25 } },
   // The Nadal Meteorite circle and its grey ring (centre 773.4 / 824.6,
   // r 183.5) reach into the foot of this column by 32pt.
   { x: 900.00, y: 368.9, width: 234.00, height: 353.8,
@@ -133,7 +134,42 @@ const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0
 // page, the lower one cropping off the foot of the sheet.
 
 class Component extends DCLogic {
-  state = { columns: [[], [], [], []], baseIdx: 0, leftover: [], used: [0, 0, 0, 0] };
+  state = { columns: [[], [], [], []], baseIdx: 0, leftover: [], used: [0, 0, 0, 0], col0Top: 518 };
+
+  // Column A's last line sits on the same baseline as column B's: measure both
+  // rendered last lines and slide column A (never above the photo, 500pt).
+  _scheduleAlign() {
+    setTimeout(() => requestAnimationFrame(() => this._alignFeet()), 60);
+  }
+
+  // Bottom of the last rendered text line (text nodes only, not block boxes).
+  _lastLineBottom(col) {
+    const el = document.querySelector('[data-column="' + col + '"]');
+    if (!el) return null;
+    let best = null, n;
+    const range = document.createRange();
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while ((n = walker.nextNode())) {
+      if (!n.data.trim()) continue;
+      range.selectNodeContents(n);
+      for (const r of range.getClientRects()) if (r.height > 0 && (best === null || r.bottom > best)) best = r.bottom;
+    }
+    return best;
+  }
+
+  _alignFeet() {
+    const page = document.querySelector('section.page');
+    const b0 = this._lastLineBottom(0), b1 = this._lastLineBottom(1);
+    if (!page || b0 === null || b1 === null) {
+      if ((this._alignTries = (this._alignTries || 0) + 1) < 20) this._scheduleAlign();
+      return;
+    }
+    const scale = page.getBoundingClientRect().width / (1190.55 / 0.75);
+    const deltaPt = (b1 - b0) / scale * 0.75;
+    if (Math.abs(deltaPt) < 0.2) return;
+    const top = Math.max(500, this.state.col0Top + deltaPt);
+    if (Math.abs(top - this.state.col0Top) >= 0.2) this.setState({ col0Top: top });
+  }
 
   componentDidMount() {
     const nudge = () => {
@@ -182,6 +218,7 @@ class Component extends DCLogic {
             ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
         }
         this.setState({ columns: fitted.columns, used: fitted.used, baseIdx, leftover: fitted.leftover });
+        this._alignTries = 0; this._scheduleAlign();
       })
       .catch(e => console.error('copy/racing-programming.js failed to load', e));
   }
@@ -317,6 +354,8 @@ class Component extends DCLogic {
     return {
       showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       rp1Src: this.props.rp1Src || '', rp2Src: this.props.rp2Src || '', rp3Src: this.props.rp3Src || '',
+      col0Top: this.state.col0Top + 'pt',
+      col0H: (TEXT_BOTTOM - this.state.col0Top) + 'pt',
       footYear: 2025,
       folioLeft: this.props.folioLeft ?? 10,
       folioRight: this.props.folioRight ?? 11,

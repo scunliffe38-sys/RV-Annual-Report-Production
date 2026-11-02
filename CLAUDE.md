@@ -135,11 +135,15 @@ Serve the folder with `python serve.py` (caching off; plain `python -m http.serv
   needs internet); a solid background is flagged.
 
 ## Open items
-- Page numbers (deferred by user): Contents numbers come from fixed counts in
-  `report-structure.js`; Financial Report start (folioStart 28) is fixed;
-  page references inside supplied copy (e.g. Directors' Declaration "pages 47
-  to 82") are verbatim. Automatic: finance folios, statements' notes-range
-  line, note numbers.
+- Pagination (built Nov 2026): the Production Run counts the pages each section
+  lays out (`data-sec` wrappers; finance from `window.RV_FIN_LAYOUT`), feeds the
+  counts to `report-structure.js` `withRun`, and passes folio-left/right to each
+  section, folio-start to Financial Report, page-counts/year to Contents.
+  Supplied page references stay verbatim; the run bar flags the Directors'
+  Declaration "set out on pages X to Y" (expected: statements first to CED last)
+  and "page N of the financial report" (FY25 convention: indep. page minus FR
+  start), plus any "page(s) N" in other sections. `Production Run.dc.html?fy26`
+  previews the whole FY26 report without a Console run.
 - Roll adaptive photo/column layout out to the other sections (rules to be
   defined as we test).
 - Wagering is one file: `FY26 Annual Report - Wagering.docx` supplies copy,

@@ -128,6 +128,7 @@
   // IndexedDB
   var dbp = null;
   function db() {
+    if (!dbp && root.navigator && navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {});
     if (!dbp) dbp = new Promise(function (res, rej) {
       var r = root.indexedDB.open(DB, 1);
       r.onupgradeneeded = function () { r.result.createObjectStore(STORE); };

@@ -39,26 +39,32 @@
 
   <div style="position:absolute;left:56.2pt;top:372.5pt;width:179.7pt;text-align:center;font-size:10pt;line-height:12pt;color:#6D6E71"><span style="font-weight:700">{{ signatory }}</span><br /><span style="font-weight:400">{{ signatoryRole }}</span></div>
 
+  <div data-column="u" style="position:absolute;left:55.7pt;top:414pt;width:235.78pt;height:371pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ trackU }};color:#6D6E71">
+    <sc-for list="{{ colU }}" as="p" hint-placeholder-count="0">
+      <div style="margin:0 0 {{ gapPt }}">{{ p }}</div>
+    </sc-for>
+  </div>
+
   <div data-column="0" style="position:absolute;left:303.3pt;top:179.7pt;width:235.3pt;height:584.8pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track0 }};color:#6D6E71">
     <sc-for list="{{ col0 }}" as="p" hint-placeholder-count="9">
-      <div style="margin:0 0 8.504pt">{{ p }}</div>
+      <div style="margin:0 0 {{ gapPt }}">{{ p }}</div>
     </sc-for>
   </div>
 
   <div data-column="1" style="position:absolute;left:651.98pt;top:179.7pt;width:234.94pt;height:584.8pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track1 }};color:#6D6E71">
     <sc-for list="{{ col1 }}" as="p" hint-placeholder-count="9">
-      <div style="margin:0 0 8.504pt">{{ p }}</div>
+      <div style="margin:0 0 {{ gapPt }}">{{ p }}</div>
     </sc-for>
   </div>
 
   <div data-column="2" style="position:absolute;left:898.26pt;top:179.7pt;width:234.94pt;height:511pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track2 }};color:#6D6E71">
     <sc-for list="{{ col2 }}" as="p" hint-placeholder-count="8">
-      <div style="margin:0 0 8.504pt">{{ p }}</div>
+      <div style="margin:0 0 {{ gapPt }}">{{ p }}</div>
     </sc-for>
   </div>
 
-  <image-slot id="chair-signature" shape="rect" fit="contain" placeholder="Signature" style="position:absolute;left:898.58pt;top:692.9pt;width:55.5pt;height:49.1pt"></image-slot>
-  <div style="position:absolute;left:899.28pt;top:748pt;width:125.5pt;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ signatory }}</span><br /><span style="font-weight:400">{{ signatoryRole }}</span></div>
+  <image-slot id="chair-signature" shape="rect" fit="contain" placeholder="Signature" style="position:absolute;left:898.58pt;top:{{ sigTop }};width:55.5pt;height:49.1pt"></image-slot>
+  <div style="position:absolute;left:899.28pt;top:{{ sigCaptionTop }};width:125.5pt;font-size:9pt;line-height:12pt;letter-spacing:-0.01em;color:#6D6E71"><span style="font-weight:700">{{ signatory }}</span><br /><span style="font-weight:400">{{ signatoryRole }}</span></div>
 
   <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
     <div style="position:absolute;left:303.3pt;top:700pt;width:829.9pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
@@ -101,10 +107,20 @@ const TRACKING = ['-0.02em', '-0.022em', '-0.024em', '-0.026em', '-0.028em', '-0
 const COL_OFFSET = [0, 4, 0];
 // InDesign's 5.669 space-before + 2.835 space-after is carried entirely as
 // space-after, so the first line of every column sits on its frame top.
-const SPACE_AFTER = 8.504;
+// When the copy won't fit at FY25 spacing, the paragraph gap closes up (FY26:
+// more, shorter paragraphs) before the tracking tightens further.
+const GAPS = [8.504, 6, 4];
+// Long copy (FY26) first opens a column under the portrait and its caption,
+// as the CEO's Report does (FY25 CEO frame: 235.78 x 371 at 55.7, 414), and
+// only then closes the paragraph gaps.
+const UNDER = { width: 235.78, height: 371.0 };
+// The signature sits under the last line of copy ("Yours sincerely,"), never
+// lower than its FY25 place (692.9pt), with the name and role 6pt below it.
+const COL_TOP = 179.7, SIG_GAP = 8, SIG_H = 49.1, SIG_MAX = 692.9;
+const PLANS = [[false, 8.504], [true, 8.504], [true, 6], [true, 4]];
 
 class Component extends DCLogic {
-  state = { data: null, columns: [[], [], []], baseIdx: 0, leftover: [] };
+  state = { data: null, columns: [[], [], []], under: [], baseIdx: 0, gap: GAPS[0], leftover: [], sigTop: SIG_MAX };
 
   // Tracking for one column: the fitted base, plus that column's own offset.
   trackFor(col, baseIdx) {
@@ -122,15 +138,22 @@ class Component extends DCLogic {
     // document.fonts.ready resolves before Gotham is even requested, so ask for
     // the face explicitly — otherwise measurement uses fallback metrics.
     Promise.all([
-      (window.RVProduction ? window.RVProduction.load('chair-report-data', () => import('./chair-report-data.js')) : import('./chair-report-data.js')),
+      (() => {
+        const FY26 = window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search);
+        const imp = () => FY26 ? import('./copy/fy26/chair-report.js') : import('./chair-report-data.js');
+        return window.RVProduction ? window.RVProduction.load('chair-report-data', imp) : imp();
+      })(),
       document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.ready).catch(() => null),
     ])
       .then(([m]) => {
         const data = m.chairReport;
-        let fitted = null, baseIdx = 0;
-        for (baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
-          fitted = this.flow(data.paragraphs, baseIdx);
-          if (!fitted.leftover.length) break;
+        let fitted = null, baseIdx = 0, gap = GAPS[0], under = false;
+        outer: for (const [u, g] of PLANS) {
+          gap = g; under = u;
+          for (baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+            fitted = this.flow(data.paragraphs, baseIdx, g, u);
+            if (!fitted.leftover.length) break outer;
+          }
         }
         baseIdx = Math.min(baseIdx, TRACKING.length - 1);
         if (fitted.leftover.length) {
@@ -138,11 +161,15 @@ class Component extends DCLogic {
             ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
         } else {
           console.warn('Chair\u2019s Report: fitted at base tracking ' + TRACKING[baseIdx] +
-            ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + '); columns set at ' +
+            ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + '), paragraph gap ' + gap + 'pt; columns set at ' +
             [0, 1, 2].map(c => this.trackFor(c, baseIdx)).join(' / ') +
             (baseIdx === TRACKING.length - 1 ? ' \u2014 NO HEADROOM LEFT: longer copy will overflow.' : '.'));
         }
-        this.setState({ data, columns: fitted.columns, baseIdx, leftover: fitted.leftover });
+        let sigTop = SIG_MAX;
+        for (let c = fitted.used.length - 1; c >= 0; c--) {
+          if (fitted.used[c] > 0) { sigTop = Math.min(SIG_MAX, COL_TOP + fitted.used[c] - gap + SIG_GAP); break; }
+        }
+        this.setState({ data, columns: fitted.columns, under: fitted.under, baseIdx, gap, leftover: fitted.leftover, sigTop });
       })
       .catch(e => console.error('chair-report-data.js failed to load', e));
   }
@@ -159,22 +186,26 @@ class Component extends DCLogic {
   // Pour the paragraphs through the three columns, breaking mid-paragraph where
   // a column runs out — the same continuous flow InDesign does. Per-paragraph
   // packing wastes up to a paragraph per column, and this copy has no slack.
-  flow(paragraphs, baseIdx) {
-    const columns = COLS.map(() => []);
+  flow(paragraphs, baseIdx, gap, withUnder) {
+    const frames = (withUnder ? [UNDER] : []).concat(COLS);
+    const out = frames.map(() => []);
     let queue = paragraphs.slice();
+    const used = frames.map(() => 0);
 
-    for (let c = 0; c < COLS.length; c++) {
-      const host = this._probe(COLS[c].width, this.trackFor(c, baseIdx));
-      const capPx = COLS[c].height / 0.75;
+    for (let f = 0; f < frames.length; f++) {
+      const c = withUnder ? f - 1 : f;
+      const columns = out, colIdx = f;
+      const host = this._probe(frames[f].width, this.trackFor(Math.max(c, 0), baseIdx));
+      const capPx = frames[f].height / 0.75;
       let usedPx = 0;
 
       while (queue.length) {
         const text = queue[0];
         host.textContent = text;
-        const hPx = host.getBoundingClientRect().height + SPACE_AFTER / 0.75;
+        const hPx = host.getBoundingClientRect().height + gap / 0.75;
 
         if (usedPx + hPx <= capPx) {
-          columns[c].push(text);
+          columns[colIdx].push(text);
           queue.shift();
           usedPx += hPx;
           continue;
@@ -203,7 +234,8 @@ class Component extends DCLogic {
           offset = space > 0 ? space : 0;
         }
         if (offset > 0) {
-          columns[c].push(text.slice(0, offset).trimEnd());
+          columns[colIdx].push(text.slice(0, offset).trimEnd());
+          usedPx = capPx;
           const rest = text.slice(offset).trimStart();
           // A paragraph whose text fits but whose trailing space does not leaves
           // no remainder — drop it rather than carrying an empty block into the
@@ -213,10 +245,11 @@ class Component extends DCLogic {
         }
         break;
       }
+      used[f] = usedPx * 0.75;
       host.remove();
     }
 
-    return { columns, leftover: queue };
+    return withUnder ? { under: out[0], columns: out.slice(1), used: used.slice(1), leftover: queue } : { under: [], columns: out, used, leftover: queue };
   }
 
   renderVals() {
@@ -230,9 +263,14 @@ class Component extends DCLogic {
       footYear: meta.footYear || '',
       folioLeft: this.props.folioLeft ?? meta.folioLeft ?? 4,
       folioRight: this.props.folioRight ?? meta.folioRight ?? 5,
+      colU: this.state.under || [],
+      trackU: this.trackFor(0, this.state.baseIdx),
       col0: col0 || [],
       col1: col1 || [],
       col2: col2 || [],
+      gapPt: this.state.gap + 'pt',
+      sigTop: this.state.sigTop.toFixed(1) + 'pt',
+      sigCaptionTop: (this.state.sigTop + SIG_H + 6).toFixed(1) + 'pt',
       track0: this.trackFor(0, this.state.baseIdx),
       track1: this.trackFor(1, this.state.baseIdx),
       track2: this.trackFor(2, this.state.baseIdx),

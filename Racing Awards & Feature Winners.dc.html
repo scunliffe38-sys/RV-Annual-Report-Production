@@ -108,7 +108,7 @@
     </sc-for>
   </div>
 
-  <div style="position:absolute;left:1118pt;top:798.9pt;font-size:7pt;line-height:10.9pt;font-weight:400;color:#6D6E71">13</div>
+  <div style="position:absolute;left:1118pt;top:798.9pt;font-size:7pt;line-height:10.9pt;font-weight:400;color:#6D6E71">{{ folioRight }}</div>
   <div style="position:absolute;left:880pt;top:798.9pt;width:230pt;text-align:right;font-size:7pt;line-height:10.9pt;font-weight:400;color:#6D6E71;letter-spacing:0.02em;white-space:nowrap">RACING VICTORIA ANNUAL REPORT {{ footYear }}</div>
 
   <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:24.6pt;background:linear-gradient(90deg,#EC008C,#005FA1)"></div>
@@ -244,7 +244,8 @@ class Component extends DCLogic {
       keyList,
       season,
       seasonText,
-      footNumGold: this._chars('12', '400 7pt Gotham', 0, 16.44, GOLD),
+      footNumGold: this._chars(String(this.props.folioLeft ?? 12), '400 7pt Gotham', 0, 16.44, GOLD),
+      folioRight: this.props.folioRight ?? 13,
       footGold: this._chars(footText, '400 6pt Gotham', 0, 154.77, GOLD, i => i >= 15 ? 700 : 400),
       footYear: y,
       rp, ap,
