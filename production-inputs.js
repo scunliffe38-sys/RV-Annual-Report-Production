@@ -130,6 +130,45 @@
     return { data: out, issues: issues };
   }
 
+// Awards and Feature Race Winners docx: three headed lists, text verbatim.
+  // "… Award Winners" / "… Premiership Winners" lines are "Award – Winner";
+  // under "… Feature Race Winners" each "Race (Horse)" is followed by "Caption: …".
+  function awardsDocx(docXml, year) {
+    var issues = [], body = (docXml.match(/<w:body>([\s\S]*)<\/w:body>/) || [, docXml])[1];
+    var paras = (body.match(/<w:p[ >][\s\S]*?<\/w:p>/g) || []).map(textOf).filter(Boolean);
+    var yy = +year.slice(2), label = "20" + (yy - 1) + "-" + yy;
+    var sec = null, lines = [], races = [], seen = {};
+    paras.forEach(function (t) {
+      if (/award winners$/i.test(t)) { sec = "a"; seen.a = 1; lines.push(["h", t, lines.length ? "14pt" : "0"]); return; }
+      if (/premiership winners$/i.test(t)) { sec = "p"; seen.p = 1; lines.push(["h", t, lines.length ? "14pt" : "0"]); return; }
+      if (/feature race winners$/i.test(t)) { sec = "f"; seen.f = 1; return; }
+      if (sec === "a" || sec === "p") { lines.push(["i", t]); return; }
+      if (sec === "f") {
+        var c = t.match(/^caption\s*:\s*(.*)$/i);
+        if (c) {
+          if (!races.length || races[races.length - 1].caption !== undefined) issues.push(issue("warning", "A caption has no race above it: \u201c" + c[1].slice(0, 50) + "\u201d."));
+          else races[races.length - 1].caption = c[1];
+          return;
+        }
+        var m = t.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+        races.push({ race: m ? m[1] : t, horse: m ? m[2] : "", caption: undefined });
+      }
+    });
+    if (!seen.a) issues.push(issue("error", "No \u201c" + label + " Victorian Racing Award Winners\u201d heading found."));
+    if (!seen.p) issues.push(issue("error", "No \u201c" + label + " Premiership Winners\u201d heading found."));
+    if (!seen.f) issues.push(issue("error", "No \u201c" + label + " Feature Race Winners\u201d heading found."));
+    lines.filter(function (l) { return l[0] === "h" && l[1].indexOf(label) !== 0; }).forEach(function (l) {
+      issues.push(issue("warning", "Heading \u201c" + l[1] + "\u201d does not start with " + label + "."));
+    });
+    var noCap = races.filter(function (r) { return r.caption === undefined; });
+    if (noCap.length) issues.push(issue("warning", noCap.length + " race" + (noCap.length > 1 ? "s have" : " has") + " no caption (" + noCap.map(function (r) { return r.race; }).join(", ") + "). They will print as a dash."));
+    races.forEach(function (r) { if (r.caption === undefined) r.caption = "\u2014"; });
+    if (races.length && races.length !== 12) issues.push(issue("warning", races.length + " feature races found; the page has 12 photo and caption positions."));
+    var items = lines.filter(function (l) { return l[0] === "i"; }).length;
+    issues.push(issue("info", items + " award and premiership lines and " + races.length + " feature races read."));
+    return { issues: issues, payload: { awards: { year: 2000 + yy, season: label, awardLines: lines, races: races } } };
+  }
+
   function narrative(blocks, cfg, budget, label) {
     var issues = [];
     if (!blocks.length) issues.push(issue("error", "No text found in the document."));
@@ -315,35 +354,6 @@
     return { issues: issues, payload: payload };
   }
 
-  function awardsInputs(sheets, year) {
-    var issues = [], payload = {};
-    var yy = +year.slice(2), label = "20" + (yy - 1) + "-" + yy;
-    needSheets(sheets, ["VR Awards", "Premierships", "Feature Race Winners"], issues);
-
-    var aw = sheets["VR Awards"] && tableAfter(sheets["VR Awards"], "Award (as printed)");
-    var pr = sheets["Premierships"] && tableAfter(sheets["Premierships"], "Premiership");
-    var fr = sheets["Feature Race Winners"] && tableAfter(sheets["Feature Race Winners"], "#");
-    if (aw || pr || fr) {
-      var gaps = 0, dash = "\u2014";
-      var lines = [["h", label + " Victorian Racing Award Winners", "0"]];
-      (aw || []).forEach(function (r) { if (!str(r[0])) return; if (!str(r[2])) gaps++; lines.push(["i", str(r[0]) + " \u2013 " + (str(r[2]) || dash)]); });
-      lines.push(["h", label + " Premiership Winners", "14pt"]);
-      (pr || []).forEach(function (r) {
-        if (!str(r[0])) return;
-        if (!str(r[3])) gaps++;
-        lines.push(["i", str(r[0]) + " \u2013 " + (str(r[3]) || dash) + (str(r[4]) ? " (" + str(r[4]) + " wins)" : "")]);
-      });
-      var caps = (fr || []).filter(function (r) { return str(r[0]); }).map(function (r) {
-        if (!str(r[4])) gaps++;
-        return str(r[0]) + ". " + (str(r[4]) || dash);
-      });
-      if (gaps) issues.push(issue("warning", "Awards page: " + gaps + " winner or caption cell" + (gaps > 1 ? "s" : "") + " empty. They will print as a dash."));
-      payload.awards = { awardLines: lines, captions: caps };
-    }
-
-    return { issues: issues, payload: payload };
-  }
-
   /* ------------------------------------------------------------- pdf -- */
   // The signed auditor pages arrive as a PDF. We can confirm it is a PDF and
   // count its pages; signatures and content are for the producer to eyeball.
@@ -416,7 +426,11 @@
         if (inp.kind === "docx") {
           var doc = await zip.read("word/document.xml");
           if (!doc) throw new Error("no document body");
-          if (inp.id === "finance") {
+          if (inp.id === "awardsData") {
+            var ad = awardsDocx(doc, year);
+            rec.issues = rec.issues.concat(ad.issues);
+            result.payload.awards = Object.assign(result.payload.awards || {}, ad.payload.awards);
+          } else if (inp.id === "finance") {
             var C = root.RVFinanceConverter;
             var parsed = C.parse(doc, root.RV_FINANCE_NOTES, await zip.read("word/numbering.xml"));
             var v = C.validate(C.build(parsed, { source: f.name }), null, parsed.unknownStyles, parsed.missingNotes);
@@ -466,8 +480,8 @@
           }
         } else {
           var sheets = await xlsxSheets(zip);
-          if (inp.id === "snapshotData" || inp.id === "awardsData") {
-            var d = (inp.id === "snapshotData" ? snapshotInputs : awardsInputs)(sheets, year);
+          if (inp.id === "snapshotData") {
+            var d = snapshotInputs(sheets, year);
             rec.issues = rec.issues.concat(d.issues);
             Object.keys(d.payload).forEach(function (k) { result.payload[k] = Object.assign(result.payload[k] || {}, d.payload[k]); });
           } else if (inp.id === "kpiRacing" || inp.id === "kpiParticipation") {

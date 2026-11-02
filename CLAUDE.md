@@ -146,7 +146,8 @@ Serve the folder with `python serve.py` (caching off; plain `python -m http.serv
   charts and Top 5 (last six years in the two bar charts).
 - The old Data Inputs workbook is split in two: `Annual Report - Industry
   Snapshot.xlsx` (snapshot tiles) and `Annual Report - Awards and Feature Race
-  Winners.xlsx` (VR Awards, Premierships, Feature Race Winners sheets).
+  Winners.docx` (three headed lists: award winners, premiership winners,
+  feature races as "Race (Horse)" + "Caption: …"; read by `awardsDocx`).
   Templates in `exports/FY26 Input Templates/`. FY26 preview `Wagering FY26.dc.html`.
   The Manikato circle keeps its centre x and bottom edge and shrinks so its
   top clears the top-right column's copy by 14.17pt (FY26: 132 mm vs 144 mm).
