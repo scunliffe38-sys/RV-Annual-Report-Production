@@ -143,8 +143,13 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     if (document.fonts) document.fonts.ready.then(() => this.forceUpdate());
-    const fy26 = window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search);
-    if (fy26) import('./copy/fy26/awards.js').then(m => this.setState({ fy26: m.copy }));
+    // The year's own page set-up (photo key names, which feature slot is wide,
+    // preview photos) lives in copy/fyNN/awards.js. A production run loads it
+    // for the run's year and lays the Word document's winners and captions over it.
+    const run = window.RVProduction ? window.RVProduction.get('awards') : null;
+    const preview = window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search);
+    const yy = run && run.year ? String(run.year).slice(-2) : preview ? '26' : '';
+    if (yy) import('./copy/fy' + yy + '/awards.js').then(m => this.setState({ fy26: m.copy })).catch(() => {});
   }
   renderVals() {
     const awardLines = [
@@ -192,13 +197,15 @@ class Component extends DCLogic {
     const fy25Races = ['Knight\u2019s Choice', 'Tom Kitten', 'Duke De Sessa', 'McGaw', 'Mr Brightside', 'Switzerland', 'Duke Of Bedford', 'Nadal', 'Farag', 'Onesmooth\u200Boperator', 'Joliestar', 'Via Sistina'];
     const fy25People = [['blake-shinn', 'Blake Shinn'], ['jen-duffy', 'Jennifer Duffy'], ['matt-laurie', 'Matt Laurie'], ['gavin-bedggood', 'Gavin Bedggood'], ['logan-bates', 'Logan Bates'], ['ciaron-maher', 'Ciaron Maher'], ['team-hayes', 'Team Hayes']];
     const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-    const ov = (window.RVProduction ? window.RVProduction.get('awards') : null) || this.state.fy26;
+    const runAw = window.RVProduction ? window.RVProduction.get('awards') : null;
+    const ov = runAw || this.state.fy26 ? Object.assign({}, this.state.fy26 || {}, runAw || {}) : null;
     const y = ov && ov.year ? ov.year : 2025;
     const lines = ov && ov.awardLines ? ov.awardLines : awardLines;
     const caps = (ov && ov.races ? ov.races.map((r, i) => (i + 1) + '. ' + r.caption)
                : ov && ov.captions ? ov.captions : captions)
       .map(c => String(c).trim().replace(/\.+$/, ''));
-    const horses = ov && ov.races ? ov.races.map(r => r.horse) : fy25Races;
+    // Always twelve positions, so a shorter list leaves empty slots rather than breaking the page.
+    const horses = Array.from({ length: 12 }, (_, i) => (ov && ov.races ? (ov.races[i] || {}).horse : fy25Races[i]) || '');
     const imgs = (ov && ov.images) || {};
     const rp = {}, ap = {};
     horses.forEach((hn, i) => {
@@ -218,7 +225,8 @@ class Component extends DCLogic {
       return { ringL: p(cx - d / 2 - 1.5), ringT: p(cy - d / 2 - 1.5), ringS: p(d + 3), slotL: p(cx - d / 2 + 1.5), slotT: p(cy - d / 2 + 1.5), slotS: p(d - 3),
         badgeL: p(badge[0]), badgeT: p(badge[1]) };
     };
-    const six = !!(ov && ov.people && !ov.people[6]);
+    // FY26 on: six award photos (the FY26 layout). FY25 keeps its seven.
+    const six = ov && ov.people ? !ov.people[6] : y >= 2026;
     const g5 = six ? circ(330, 690, 190, [325.75, 779.2]) : circ(396.45, 713.85, 141.3, [391.7, 780.7]);
     const g6 = six ? circ(155, 665, 169.2, [150.75, 745.3]) : circ(266.3, 653.5, 169.2, [262.2, 733.7]);
     for (let i = 0; i < 7; i++) {

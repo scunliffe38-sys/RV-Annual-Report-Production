@@ -32,6 +32,16 @@
     return { id: "photo-" + slot, kind: "photo", label: file.replace(/^Photo - /, ""), file: file, hint: hint,
       uses: [use(section, slot, where, w, h, "cover", shape)] };
   }
+  // Slots whose size changes with the copy (feature races 1 and 2 swap widths):
+  // the frame shape is read off the page when the slot is on it.
+  function live(g) { g.live = true; return g; }
+  // Awards and feature race slots carry the year and horse in their ids
+  // (vra2026-3, frw2026-4-big-wigs); the Console keys them by position.
+  function key(id) {
+    var m = /^vra\d{4}-(\d+)$/.exec(id); if (m) return "vra-pos-" + m[1];
+    m = /^frw\d{4}-(\d+)-/.exec(id); if (m) return "frw-pos-" + m[1];
+    return id;
+  }
   // FY26 layouts use their own slot ids; they take the same photo as FY25's.
   function also(g, slot, where) {
     var u = g.uses[0]; g.uses.push(use(u.section, slot, where, u.w, u.h, "cover", u.shape)); return g;
@@ -43,13 +53,24 @@
   var fixed = [
     photo("Photo - Cover", "cover", "cover-hero", "front cover", 612.5, "JMac / Via Sistina, Cox Plate", 626.25, "rect"),
     photo("Photo - Contents", "contents", "contents-hero", "large circle", 1034.2, "Robbie Dolan, Melbourne Cup"),
-    photo("Photo - VR Awards 1", "awards", "vra-blake-shinn", "winner 1", 154.7, "Blake Shinn"),
-    photo("Photo - VR Awards 2", "awards", "vra-jen-duffy", "winner 2", 162.4, "Jennifer Duffy"),
-    photo("Photo - VR Awards 3", "awards", "vra-matt-laurie", "winner 3", 151.1, "Matt Laurie"),
-    photo("Photo - VR Awards 4", "awards", "vra-gavin-bedggood", "winner 4", 159.4, "Gavin Bedggood"),
-    photo("Photo - VR Awards 5", "awards", "vra-logan-bates", "winner 5", 141.3, "Logan Bates"),
-    photo("Photo - VR Awards 6", "awards", "vra-ciaron-maher", "winner 6", 169.2, "Ciaron Maher"),
-    photo("Photo - VR Awards 7", "awards", "vra-team-hayes", "winner 7", 152.4, "Team Hayes"),
+    also(photo("Photo - VR Awards 1", "awards", "vra-blake-shinn", "winner 1", 154.7, "Blake Shinn"), "vra-pos-1", "award circle 1 (FY26 on)"),
+    also(photo("Photo - VR Awards 2", "awards", "vra-jen-duffy", "winner 2", 162.4, "Jennifer Duffy"), "vra-pos-2", "award circle 2 (FY26 on)"),
+    also(photo("Photo - VR Awards 3", "awards", "vra-matt-laurie", "winner 3", 151.1, "Matt Laurie"), "vra-pos-3", "award circle 3 (FY26 on)"),
+    also(photo("Photo - VR Awards 4", "awards", "vra-gavin-bedggood", "winner 4", 159.4, "Gavin Bedggood"), "vra-pos-4", "award circle 4 (FY26 on)"),
+    also(photo("Photo - VR Awards 5", "awards", "vra-logan-bates", "winner 5", 141.3, "Logan Bates"), "vra-pos-5", "award circle 5 (FY26 on)"),
+    also(photo("Photo - VR Awards 6", "awards", "vra-ciaron-maher", "winner 6", 169.2, "Ciaron Maher"), "vra-pos-6", "award circle 6 (FY26 on)"),
+    live(photo("Photo - Feature Race 1", "awards", "frw-pos-1", "feature race 1", 104.3, "feature race winner 1, in caption order", 158.8, "rect")),
+    live(photo("Photo - Feature Race 2", "awards", "frw-pos-2", "feature race 2", 155.6, "feature race winner 2, in caption order", 158.8, "rect")),
+    live(photo("Photo - Feature Race 3", "awards", "frw-pos-3", "feature race 3", 104.3, "feature race winner 3, in caption order", 77.3, "rect")),
+    live(photo("Photo - Feature Race 4", "awards", "frw-pos-4", "feature race 4", 104.3, "feature race winner 4, in caption order", 76.9, "rect")),
+    live(photo("Photo - Feature Race 5", "awards", "frw-pos-5", "feature race 5", 104.3, "feature race winner 5, in caption order", 158.8, "rect")),
+    live(photo("Photo - Feature Race 6", "awards", "frw-pos-6", "feature race 6", 156, "feature race winner 6, in caption order", 143.2, "rect")),
+    live(photo("Photo - Feature Race 7", "awards", "frw-pos-7", "feature race 7", 184.1, "feature race winner 7, in caption order", 143.2, "rect")),
+    live(photo("Photo - Feature Race 8", "awards", "frw-pos-8", "feature race 8", 132.7, "feature race winner 8, in caption order", 143.2, "rect")),
+    live(photo("Photo - Feature Race 9", "awards", "frw-pos-9", "feature race 9", 104, "feature race winner 9, in caption order", 68.4, "rect")),
+    live(photo("Photo - Feature Race 10", "awards", "frw-pos-10", "feature race 10", 104, "feature race winner 10, in caption order", 69.7, "rect")),
+    live(photo("Photo - Feature Race 11", "awards", "frw-pos-11", "feature race 11", 197.8, "feature race winner 11, in caption order", 143.2, "rect")),
+    live(photo("Photo - Feature Race 12", "awards", "frw-pos-12", "feature race 12", 171.4, "feature race winner 12, in caption order", 143.2, "rect")),
     photo("R&P - 1", "racing", "rp-image-left", "left circle", 357.2, "All-Star Mile \u2014 Ben Melham"),
     photo("R&P - 2", "racing", "rp-image-top", "top-right circle", 318.5, "Pride Of Jenni"),
     photo("R&P - 3", "racing", "rp-image-right", "bottom circle", 357.2, "Nadal Meteorite"),
@@ -267,7 +288,15 @@
   var CHIN_Y = EYE_Y + EYE_CHIN, MOUTH_K = 1.27; // calibrated on the FY26 headshots against FACES
   function find(id) { for (var i = 0; i < groups.length; i++) if (groups[i].id === id) return groups[i]; return null; }
   function isCover(u) { return u.fit === "cover"; }
-  function aspect(g) { var c = g.uses.filter(isCover); return c.length ? c[0].w / c[0].h : 0; }
+  function aspect(g) {
+    var c = g.uses.filter(isCover);
+    if (!c.length) return 0;
+    if (g.live && root.document) {
+      var els = root.document.querySelectorAll("image-slot");
+      for (var i = 0; i < els.length; i++) if (key(els[i].id) === c[0].slot && els[i].clientWidth && els[i].clientHeight) return els[i].clientWidth / els[i].clientHeight;
+    }
+    return c[0].w / c[0].h;
+  }
   // A crop is the visible window in source fractions: l = left / width,
   // t = top / height, w = window width / width (window height follows from
   // the frame's aspect). It may run past the image; the render edge-extends.
@@ -377,7 +406,7 @@
   var placed = {}, watching = false;
   function place() {
     root.document.querySelectorAll("image-slot").forEach(function (el) {
-      var u = placed[el.id];
+      var u = placed[el.id] || placed[key(el.id)];
       if (u && el.getAttribute("src") !== u) { el.setAttribute("prefer-src", ""); el.setAttribute("src", u); }
     });
   }
@@ -526,7 +555,8 @@
     get: function (id) { return getRec(id); },
     // The group that fills a slot on the page.
     groupForSlot: function (slot) {
-      for (var i = 0; i < groups.length; i++) if (groups[i].uses.some(function (u) { return u.slot === slot; })) return groups[i];
+      var k = key(slot);
+      for (var i = 0; i < groups.length; i++) if (groups[i].uses.some(function (u) { return u.slot === slot || u.slot === k; })) return groups[i];
       return null;
     },
   };
