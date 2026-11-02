@@ -36,15 +36,15 @@
   </sc-if>
 
   <sc-if value="{{ showP1 }}" hint-placeholder-val="{{ true }}">
-    <image-slot id="wf-image-trackwork" shape="circle" placeholder="Warrnambool trackwork" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot>
+    <image-slot id="wf-image-trackwork" tint="blue" tint-at="bottom" shape="circle" placeholder="Warrnambool trackwork" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot>
   </sc-if>
 
   <sc-if value="{{ showP2 }}" hint-placeholder-val="{{ true }}">
-    <image-slot id="wf-image-strapper" src="{{ strapperSrc }}" shape="circle" placeholder="Mr Brightside strapper" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
+    <image-slot id="wf-image-strapper" tint="magenta" src="{{ strapperSrc }}" shape="circle" placeholder="Mr Brightside strapper" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
   </sc-if>
 
   <sc-if value="{{ showP3 }}" hint-placeholder-val="{{ true }}">
-    <image-slot id="wf-image-apprentices" shape="circle" placeholder="Apprentice Jockey Squad intake" style="position:absolute;left:{{ p3Left }}pt;top:{{ p3Top }}pt;width:{{ p3Size }}pt;height:{{ p3Size }}pt"></image-slot>
+    <image-slot id="wf-image-apprentices" tint="blue" shape="circle" placeholder="Apprentice Jockey Squad intake" style="position:absolute;left:{{ p3Left }}pt;top:{{ p3Top }}pt;width:{{ p3Size }}pt;height:{{ p3Size }}pt"></image-slot>
   </sc-if>
 
   <svg style="position:absolute;left:53.7pt;top:80pt;width:468.3pt;height:50pt" viewBox="0 0 468.3 50" role="img" aria-label="Workforce Development"><text x="0" y="29.6" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">W</tspan><tspan fill="#0C5AA0">o</tspan><tspan fill="#18569F">r</tspan><tspan fill="#23519E">k</tspan><tspan fill="#2F4C9D">f</tspan><tspan fill="#3B479C">o</tspan><tspan fill="#47439B">r</tspan><tspan fill="#533E9A">c</tspan><tspan fill="#5E3999">e</tspan><tspan fill="#6A3498"> </tspan><tspan fill="#763097">D</tspan><tspan fill="#822B95">e</tspan><tspan fill="#8E2694">v</tspan><tspan fill="#992193">e</tspan><tspan fill="#A51D92">l</tspan><tspan fill="#B11891">o</tspan><tspan fill="#BD1390">p</tspan><tspan fill="#C90E8F">m</tspan><tspan fill="#D40A8E">e</tspan><tspan fill="#E0058D">n</tspan><tspan fill="#EC008C">t</tspan></text></svg>
@@ -524,7 +524,7 @@ class Component extends DCLogic {
       strapperSrc: this.props.strapperSrc || '',
       footYear: 2025,
       folioLeft: this.props.folioLeft ?? 16,
-      showDecoration: this.props.showDecoration ?? true,
+      showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       track: TRACKING[this.state.idx],
       wf0: this._flags(this.state.cols[0], f[0].k), wf1: this._flags(this.state.cols[1], f[1].k),
       wf2: this._flags(this.state.cols[2], f[2].k), wf3: this._flags(this.state.cols[3], f[3].k),

@@ -35,10 +35,10 @@
   </sc-if>
 
   <sc-if value="{{ obPhoto.on }}" hint-placeholder-val="{{ true }}">
-    <image-slot id="obi-image-left" src="{{ obSrc }}" shape="circle" placeholder="VOBIS Owners Bonus — McGaw" style="position:absolute;left:{{ obPhoto.left }}pt;top:{{ obPhoto.top }}pt;width:{{ obPhoto.s }}pt;height:{{ obPhoto.s }}pt"></image-slot>
+    <image-slot id="obi-image-left" tint="magenta" src="{{ obSrc }}" shape="circle" placeholder="VOBIS Owners Bonus — McGaw" style="position:absolute;left:{{ obPhoto.left }}pt;top:{{ obPhoto.top }}pt;width:{{ obPhoto.s }}pt;height:{{ obPhoto.s }}pt"></image-slot>
   </sc-if>
   <sc-if value="{{ ipPhoto.on }}" hint-placeholder-val="{{ true }}">
-    <image-slot id="obi-image-right" src="{{ ipSrc }}" shape="circle" placeholder="Pakenham lights" style="position:absolute;left:{{ ipPhoto.left }}pt;top:{{ ipPhoto.top }}pt;width:{{ ipPhoto.s }}pt;height:{{ ipPhoto.s }}pt"></image-slot>
+    <image-slot id="obi-image-right" tint="blue" src="{{ ipSrc }}" shape="circle" placeholder="Pakenham lights" style="position:absolute;left:{{ ipPhoto.left }}pt;top:{{ ipPhoto.top }}pt;width:{{ ipPhoto.s }}pt;height:{{ ipPhoto.s }}pt"></image-slot>
   </sc-if>
 
   <svg style="position:absolute;left:53.7pt;top:72pt;width:360.2pt;height:50pt" viewBox="0 0 360.2 50" role="img" aria-label="Owners &amp; Breeders"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">O</tspan><tspan fill="#0E5AA0">w</tspan><tspan fill="#1B549F">n</tspan><tspan fill="#294F9D">e</tspan><tspan fill="#36499C">r</tspan><tspan fill="#44449B">s</tspan><tspan fill="#513E9A"> </tspan><tspan fill="#5F3999">&amp;</tspan><tspan fill="#6D3397"> </tspan><tspan fill="#7A2E96">B</tspan><tspan fill="#882895">r</tspan><tspan fill="#952394">e</tspan><tspan fill="#A31D93">e</tspan><tspan fill="#B01891">d</tspan><tspan fill="#BE1390">e</tspan><tspan fill="#CC0D8F">r</tspan><tspan fill="#D9088E">s</tspan></text></svg>
@@ -429,7 +429,7 @@ class Component extends DCLogic {
       footYear: 2025,
       folioLeft: this.props.folioLeft ?? 14,
       folioRight: this.props.folioRight ?? 15,
-      showDecoration: this.props.showDecoration ?? true,
+      showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       trackOB: TRACKING[this.state.obIdx],
       trackIP: TRACKING[this.state.ipIdx],
       ob0: this._flags(this.state.ob[0], obG), ob1: this._flags(this.state.ob[1], obG),

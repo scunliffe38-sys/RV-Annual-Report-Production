@@ -42,6 +42,9 @@
  *                photo via search_stock_photos when that tool is available
  *                (set credit/credit-href from the result). A user drop
  *                overrides it; clearing the drop reveals src again.
+ *   tint         "magenta" | "blue": RV glow from the lower-left edge over
+ *                the filled image (FY25 section photos). tint-at="bottom"
+ *                starts it from the bottom centre (circles bleeding off the left).
  *   credit       Attribution text shown as a small overlay at the
  *                bottom-left of the filled slot. REQUIRED whenever src
  *                points at any Unsplash host (images.unsplash.com,
@@ -293,6 +296,13 @@
     '  width:100%;height:100%;aspect-ratio:3/2}' +
     '.empty .cap,.empty .sub{opacity:.75}' +
     '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(127,127,127,.08)}' +
+    // RV tint (FY25 DPS p.12 glow): RV Magenta/Blue radial ramp from just off
+    // the lower-left edge, 100% at 4.6% to 0% at 93%, over the photo only.
+    '.tint{position:absolute;inset:0;pointer-events:none;display:none}' +
+    ':host([data-filled][tint=magenta]) .tint{display:block;background:radial-gradient(57.65% 57.65% at 5.95% 112.95%,rgba(236,0,140,1) 4.6%,rgba(236,0,140,0) 93%)}' +
+    ':host([data-filled][tint=blue]) .tint{display:block;background:radial-gradient(57.65% 57.65% at 5.95% 112.95%,rgba(0,95,161,1) 4.6%,rgba(0,95,161,0) 93%)}' +
+    ':host([data-filled][tint=magenta][tint-at=bottom]) .tint{background:radial-gradient(57.65% 57.65% at 50% 112.95%,rgba(236,0,140,1) 4.6%,rgba(236,0,140,0) 93%)}' +
+    ':host([data-filled][tint=blue][tint-at=bottom]) .tint{background:radial-gradient(57.65% 57.65% at 50% 112.95%,rgba(0,95,161,1) 4.6%,rgba(0,95,161,0) 93%)}' +
     // .frame img (clipped) and .spill (unclipped ghost + handles) share the
     // same left/top/width/height in frame-%, computed by _applyView(), so the
     // inside-mask crop and the outside-mask spill stay pixel-aligned.
@@ -438,7 +448,7 @@
 
   class ImageSlot extends HTMLElement {
     static get observedAttributes() {
-      return ['shape', 'radius', 'mask', 'fit', 'placeholder', 'src', 'id', 'credit', 'credit-href'];
+      return ['shape', 'radius', 'mask', 'fit', 'placeholder', 'src', 'id', 'credit', 'credit-href', 'tint'];
     }
 
     /** Duplicate-slide hook (called by deck-stage, see its
@@ -502,6 +512,7 @@
         '<style>' + stylesheet + '</style>' +
         '<div class="frame" part="frame">' +
         '  <img part="image" alt="" draggable="false" style="display:none">' +
+        '  <div class="tint" part="tint"></div>' +
         '  <div class="empty" part="empty">' + icon +
         '    <div class="cap"></div>' +
         '    <div class="sub">or <u>browse files</u></div></div>' +
