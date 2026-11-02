@@ -22,8 +22,8 @@
 <script src="./docx-finance.js?v=20261102"></script>
 <script src="./finance-adapter.js?v=20261102"></script>
 <script src="./auditor-pages.js?v=20261102b"></script>
-<script src="./production-inputs.js?v=20261102"></script>
-<script src="./production-images.js?v=20261102f"></script>
+<script src="./production-inputs.js?v=20261103a"></script>
+<script src="./production-images.js?v=20261103a"></script>
 </helmet>
 
 <div style="font-family:'Source Sans 3',Arial,sans-serif;color:#25272a;padding:0 28px 90px;max-width:1040px;margin:0 auto">
@@ -436,6 +436,11 @@ class Component extends DCLogic {
       });
       const errors = issues.filter((i) => i.level === "error").length;
       const warns = issues.length - errors;
+      // None of the section's files are in the folder: it prints as placeholder
+      // pages (same page count) rather than last year's content.
+      const recs = s.inputs.map((id) => result.inputs[id]).filter(Boolean);
+      const missing = recs.filter((r) => !r.found).map((r) => r.file);
+      if (recs.length && missing.length === recs.length) return { id: s.id, issues: [{ level: "warning", text: "Not in the folder: " + missing.join(", ") + ". Placeholder pages will be printed." }], status: "placeholder", missing };
       return { id: s.id, issues, status: errors ? "blocked" : warns ? "check" : "ready" };
     });
   }
@@ -454,7 +459,9 @@ class Component extends DCLogic {
     const states = Object.fromEntries(this.sectionStates(this.state.result).map((s) => [s.id, s]));
     const ids = M.sections.map((s) => s.id).filter((id) => (this.state.selected[id] !== false) && (this.state.policy === "anyway" || states[id].status !== "blocked"));
     if (!ids.length) return;
-    const run = { created: new Date().toISOString(), year: this.state.year, folder: this.state.folder, policy: this.state.policy, sections: ids, layouts: this.state.layouts || {}, payload: this.state.result.payload };
+    const placeholders = {};
+    ids.forEach((id) => { if (states[id].status === "placeholder") placeholders[id] = states[id].missing; });
+    const run = { created: new Date().toISOString(), year: this.state.year, folder: this.state.folder, policy: this.state.policy, sections: ids, placeholders, layouts: this.state.layouts || {}, payload: this.state.result.payload };
     try { localStorage.setItem("rv-production-run", JSON.stringify(run)); } catch (e) { alert("Could not hand the run to the print view: " + e.message); return; }
     window.open("Production Run.dc.html?production=1", "_blank");
     this.setState({ launched: true });
@@ -487,7 +494,7 @@ class Component extends DCLogic {
     const isSel = (id) => selected[id] !== undefined ? !!selected[id] : true;
     const states = result ? Object.fromEntries(this.sectionStates(result).map((s) => [s.id, s])) : {};
     const CONTENT = { live: ["FY26 inputs", "#005FA1"], partial: ["Partly FY26 inputs", "#A51890"], fixed: ["No inputs", "#8b8c8f"] };
-    let pages = 0, fy25 = [], blockedPicked = 0, count = 0;
+    let pages = 0, fy25 = [], phList = [], blockedPicked = 0, count = 0;
     const included = {};
     const sectionRows = result ? M.sections.map((s) => {
       const st = states[s.id];
@@ -495,14 +502,14 @@ class Component extends DCLogic {
       const content = CONTENT[s.content];
       const include = isSel(s.id) && (policy === "anyway" || st.status !== "blocked");
       if (isSel(s.id) && st.status === "blocked" && policy === "skip") blockedPicked++;
-      if (include) { included[s.id] = true; count++; pages += pg.count; if (s.content !== "live" && s.note) fy25.push(s.title); }
+      if (include) { included[s.id] = true; count++; pages += pg.count; if (st.status === "placeholder") phList.push(s.title); else if (s.content !== "live" && s.note) fy25.push(s.title); }
       return {
         id: s.id, title: s.title, pages: pg.label, note: s.note || "",
         checked: isSel(s.id),
         toggle: () => this.setState((p) => ({ selected: Object.assign({}, p.selected, { [s.id]: !p.selected[s.id] }) })),
         content: content[0].replace("FY26", year), contentColor: content[1],
-        status: st.status === "blocked" ? "Blocked" : st.status === "check" ? "Check" : "Ready",
-        statusColor: st.status === "blocked" ? C.error : st.status === "check" ? C.warning : "#005FA1",
+        status: st.status === "blocked" ? "Blocked" : st.status === "check" ? "Check" : st.status === "placeholder" ? "Placeholder" : "Ready",
+        statusColor: st.status === "blocked" ? C.error : st.status === "check" ? C.warning : st.status === "placeholder" ? "#8b8c8f" : "#005FA1",
         problems: st.issues.slice(0, 4).map((i) => ({ text: i.text, color: C[i.level] })),
       };
     }) : [];
@@ -510,6 +517,7 @@ class Component extends DCLogic {
     const runSummary0 = count ? count + " section" + (count > 1 ? "s" : "") + ", " + pages + " pages, as one PDF." : "Nothing selected to produce.";
     const runNotes = [];
     if (blockedPicked) runNotes.push({ text: blockedPicked + " selected section" + (blockedPicked > 1 ? "s are" : " is") + " blocked and will be left out.", color: C.error });
+    if (phList.length) runNotes.push({ text: "No files yet, printed as placeholder pages: " + phList.join(", ") + ".", color: "#6D6E71" });
     if (fy25.length) runNotes.push({ text: "Still partly or wholly FY25 content: " + fy25.join(", ") + ".", color: C.warning });
     if (policy === "anyway" && result && M.sections.some((s) => isSel(s.id) && states[s.id].status === "blocked")) runNotes.push({ text: "Sections with problems will print as they are \u2014 missing inputs fall back to last year\u2019s content.", color: C.warning });
 
@@ -649,7 +657,7 @@ class Component extends DCLogic {
       });
       const ids = s.id === "cover" ? ["cover", "contents", "back"] : [s.id];
       const sts = result ? ids.map((i) => states[i].status) : [];
-      const worst = sts.indexOf("blocked") > -1 ? "blocked" : sts.indexOf("check") > -1 ? "check" : sts.length ? "ready" : "";
+      const worst = sts.indexOf("blocked") > -1 ? "blocked" : sts.indexOf("placeholder") > -1 ? "placeholder" : sts.indexOf("check") > -1 ? "check" : sts.length ? "ready" : "";
       const sec = sectionRows.find((r) => r.id === s.id);
       return {
         title, files, none: !files.length, pages: ids.length > 1 ? "" : this.pagesFor(s).label,
@@ -661,8 +669,8 @@ class Component extends DCLogic {
         pickLayout: (e) => { const v = e.target.value; this.setState((p) => ({ layouts: Object.assign({}, p.layouts, { [s.id]: v }) })); },
         stop: (e) => { e.stopPropagation(); },
         problems: result ? ids.reduce((a, i) => a.concat(states[i].issues.slice(0, 4).map((x) => ({ text: x.text, color: C[x.level] }))), []) : [],
-        status: worst === "blocked" ? "Blocked" : worst === "check" ? "Check" : worst === "ready" ? "Ready" : "",
-        statusColor: worst === "blocked" ? C.error : worst === "check" ? C.warning : "#005FA1",
+        status: worst === "blocked" ? "Blocked" : worst === "placeholder" ? "Placeholder" : worst === "check" ? "Check" : worst === "ready" ? "Ready" : "",
+        statusColor: worst === "blocked" ? C.error : worst === "placeholder" ? "#8b8c8f" : worst === "check" ? C.warning : "#005FA1",
       };
     });
     const sourcingOpen = this.state.sourcingOpen ?? true;

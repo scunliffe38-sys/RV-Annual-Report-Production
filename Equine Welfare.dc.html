@@ -42,11 +42,11 @@
 
   <div style="position:absolute;left:303.3pt;top:170.7pt;width:235.28pt;font-size:9pt;line-height:12pt;letter-spacing:-0.01em">
     <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;background:#005FA1;color:#fff;font-weight:700;height:26pt;align-items:center">
-      <div>{{ tableHead.a }}</div><div>{{ tableHead.b }}</div><div>{{ tableHead.c }}</div>
+      <div style="padding-left:7.09pt">{{ tableHead.a }}</div><div style="padding-left:3.7pt">{{ tableHead.b }}</div><div style="padding-left:3.7pt">{{ tableHead.c }}</div>
     </div>
     <sc-for list="{{ tableRows }}" as="r" hint-placeholder-count="4">
       <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;height:27.2pt;align-items:center;color:#005FA1;background:{{ r.bg }}">
-        <div style="padding-left:3.7pt">{{ r.label }}</div><div style="padding-left:3.7pt">{{ r.fy25 }}</div><div style="padding-left:3.7pt">{{ r.fy24 }}</div>
+        <div style="padding-left:7.09pt">{{ r.label }}</div><div style="padding-left:3.7pt">{{ r.fy25 }}</div><div style="padding-left:3.7pt">{{ r.fy24 }}</div>
       </div>
     </sc-for>
   </div>

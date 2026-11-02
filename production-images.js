@@ -73,7 +73,9 @@
     live(photo("Photo - Feature Race 12", "awards", "frw-pos-12", "feature race 12", 171.4, "feature race winner 12, in caption order", 143.2, "rect")),
     photo("R&P - 1", "racing", "rp-image-left", "left circle", 357.2, "All-Star Mile \u2014 Ben Melham"),
     photo("R&P - 2", "racing", "rp-image-top", "top-right circle", 318.5, "Pride Of Jenni"),
-    photo("R&P - 3", "racing", "rp-image-right", "bottom circle", 357.2, "Nadal Meteorite"),
+    // The bottom circle runs ~71pt off the foot of the page (80% on the page),
+    // so its default framing fits the photo into the visible part (Test 4).
+    onPage(photo("R&P - 3", "racing", "rp-image-right", "bottom circle", 357.2, "Nadal Meteorite"), 0.8),
     photo("Photo - Owners & Breeders", "owners", "obi-image-left", "left circle", 348.9, "VOBIS Owners Bonus \u2014 McGaw"),
     photo("Photo - Infrastructure", "owners", "obi-image-right", "right circle", 513.3, "Pakenham lights"),
     photo("Photo - Workforce 1", "workforce", "wf-image-trackwork", "left circle", 382.9, "Warrnambool trackwork"),
@@ -338,13 +340,24 @@
     });
   }
   function tag(c, src) { c.src = src; return c; }
+  function onPage(g, v) { g.onPage = v; return g; }
+  // Centred, but for a frame whose lower part runs off the page (g.onPage =
+  // fraction of its height on the page) the photo's height fills only the
+  // visible part; the window runs past the image's foot, off the page.
+  function centredFor(g, iw, ih, A) {
+    var v = g && g.onPage;
+    if (!(v > 0 && v < 1)) return centred(iw, ih, A);
+    var winH = ih / v, w = winH * A / iw;
+    if (w > 1) return centred(iw, ih, A);
+    return { l: (1 - w) / 2, t: 0, w: w };
+  }
   // Default framing. Photos: centred. Headshots: the face finder, then the
   // FY25 rule; the hand-measured FACES landmarks win when the finder agrees
   // it is the same photo (same shape, eyes within 2.5%).
   function defaultCrop(g, rec) {
     var A = aspect(g), iw = rec.width, ih = rec.height;
     if (!A || !iw || rec.vector) return Promise.resolve(null);
-    if (g.kind !== "headshot") return Promise.resolve(tag(centred(iw, ih, A), "centre"));
+    if (g.kind !== "headshot") return Promise.resolve(tag(centredFor(g, iw, ih, A), g.onPage ? "onpage" : "centre"));
     var f = FACES[g.id.replace(/^head-/, "")];
     if (f && Math.abs(iw / ih - f.a) / f.a > 0.03) f = null;
     return detect(rec.blob).then(function (d) {
@@ -416,7 +429,9 @@
     g.uses.forEach(function (x) { urls[x.slot] = u; });
     var A = aspect(g);
     if (!A || r.vector || !r.width) return Promise.resolve(urls);
-    var crop = r.crop || centred(r.width, r.height, A);
+    // An untouched centred default on a part-off-page frame is re-framed to
+    // the visible part; crops set in the Frame editor are kept as they are.
+    var crop = (!r.crop || (g.onPage && r.crop.src === "centre")) ? centredFor(g, r.width, r.height, A) : r.crop;
     // Proof runs (?proof) cut at 150 ppi, JPEG 80%, for a PDF small enough to share.
     var PPI = root.RV_PROOF ? 150 : 300;
     var need = Math.min(4000, Math.max.apply(null, g.uses.filter(isCover).map(function (x) { return x.w / 72 * PPI * 1.15; })));

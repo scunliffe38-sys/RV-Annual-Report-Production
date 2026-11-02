@@ -98,10 +98,14 @@
 
   <div style="position:absolute;left:-8.5pt;top:821.7pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
 
+  <sc-if value="{{ footL }}" hint-placeholder-val="{{ true }}">
   <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
   <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  </sc-if>
+  <sc-if value="{{ footR }}" hint-placeholder-val="{{ true }}">
   <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
   <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+  </sc-if>
 
 </section>
 
@@ -145,6 +149,16 @@ function photoBox(key, s) {
   if (!s) return { on: false, s: 0, left: 0, top: 0 };
   const P = PHOTOS[key];
   return { on: true, s: +s.toFixed(2), left: +P.left(s).toFixed(2), top: +P.top(s).toFixed(2) };
+}
+// Test 4: where a photo covers the folio row, that page drops its folio row
+// (page number and running footer). Circle vs the row's box (798.85-809.75pt).
+function footCovered(boxes, x0, x1) {
+  return boxes.some(b => {
+    if (!b || !b.on) return false;
+    const r = b.s / 2, cx = b.left + r, cy = b.top + r;
+    const nx = Math.max(x0, Math.min(cx, x1)), ny = Math.max(798.85, Math.min(cy, 809.75));
+    return (nx - cx) * (nx - cx) + (ny - cy) * (ny - cy) < r * r;
+  });
 }
 function flowsFor(key, s) {
   const b = photoBox(key, s);
@@ -435,6 +449,8 @@ class Component extends DCLogic {
       ob0: this._flags(this.state.ob[0], obG), ob1: this._flags(this.state.ob[1], obG),
       ip0: this._flags(this.state.ip[0], ipG), ip1: this._flags(this.state.ip[1], ipG),
       obPhoto: photoBox('ob', obS), ipPhoto: photoBox('ip', ipS),
+      footL: !footCovered([photoBox('ob', obS), photoBox('ip', ipS)], 55.68, 294.14),
+      footR: !footCovered([photoBox('ob', obS), photoBox('ip', ipS)], 963.22, 1134.39),
       obSrc: this.props.obSrc || '', ipSrc: this.props.ipSrc || '',
       ipWrap0: circ(ipC[0].wrap), ipWrap1: circ(ipC[1].wrap),
       obWrap0: circ(obC[0].wrap), obWrap1: circ(obC[1].wrap),

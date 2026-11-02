@@ -27,7 +27,7 @@
 </helmet>
 <doc-page width="1190.55pt" height="841.89pt">
 
-<section class="page" data-screen-label="04-05 Chair's Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+<section class="page" data-chair-page="" data-screen-label="04-05 Chair's Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
 
   <sc-if value="{{ showDecoration }}" hint-placeholder-val="">
   <div style="position:absolute;left:130.1pt;top:-149.3pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
@@ -43,25 +43,25 @@
 
   <div data-column="u" style="position:absolute;left:55.7pt;top:414pt;width:235.78pt;height:371pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ trackU }};color:#6D6E71">
     <sc-for list="{{ colU }}" as="p" hint-placeholder-count="0">
-      <div style="margin:0 0 {{ gapPt }}">{{ p }}</div>
+      <div style="margin:0 0 {{ gapU }}">{{ p }}</div>
     </sc-for>
   </div>
 
-  <div data-column="0" style="position:absolute;left:303.3pt;top:179.7pt;width:235.3pt;height:584.8pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track0 }};color:#6D6E71">
+  <div data-column="0" style="position:absolute;left:303.3pt;top:179.7pt;width:235.3pt;height:605.3pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track0 }};color:#6D6E71">
     <sc-for list="{{ col0 }}" as="p" hint-placeholder-count="9">
-      <div style="margin:0 0 {{ gapPt }}">{{ p }}</div>
+      <div style="margin:0 0 {{ gap0 }}">{{ p }}</div>
     </sc-for>
   </div>
 
-  <div data-column="1" style="position:absolute;left:651.98pt;top:179.7pt;width:234.94pt;height:584.8pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track1 }};color:#6D6E71">
+  <div data-column="1" style="position:absolute;left:651.98pt;top:179.7pt;width:234.94pt;height:605.3pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track1 }};color:#6D6E71">
     <sc-for list="{{ col1 }}" as="p" hint-placeholder-count="9">
-      <div style="margin:0 0 {{ gapPt }}">{{ p }}</div>
+      <div style="margin:0 0 {{ gap1 }}">{{ p }}</div>
     </sc-for>
   </div>
 
   <div data-column="2" style="position:absolute;left:898.26pt;top:179.7pt;width:234.94pt;height:511pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track2 }};color:#6D6E71">
     <sc-for list="{{ col2 }}" as="p" hint-placeholder-count="8">
-      <div style="margin:0 0 {{ gapPt }}">{{ p }}</div>
+      <div style="margin:0 0 {{ gap2 }}">{{ p }}</div>
     </sc-for>
   </div>
 
@@ -90,9 +90,11 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:5,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;}}">
 // Column geometry from the FY25 InDesign frames (pt). The third column stops
 // short of the others to clear the signature block below it.
+// Test 4: columns 1-2 run to the same foot as the column under the portrait
+// (785pt), so the feet line up; leftover depth goes into the paragraph gaps.
 const COLS = [
-  { width: 235.30, height: 584.8 },
-  { width: 234.94, height: 584.8 },
+  { width: 235.30, height: 605.3 },
+  { width: 234.94, height: 605.3 },
   { width: 234.94, height: 511.0 },
 ];
 // InDesign's paragraph composer fits roughly 4% more copy per column than the
@@ -122,7 +124,41 @@ const COL_TOP = 179.7, SIG_GAP = 8, SIG_H = 49.1, SIG_MAX = 692.9;
 const PLANS = [[false, 8.504], [true, 8.504], [true, 6], [true, 4]];
 
 class Component extends DCLogic {
-  state = { data: null, columns: [[], [], []], under: [], baseIdx: 0, gap: GAPS[0], leftover: [], sigTop: SIG_MAX };
+  state = { data: null, columns: [[], [], []], under: [], baseIdx: 0, gap: GAPS[0], leftover: [], sigTop: SIG_MAX, extra: {} };
+
+  // Vertical justification: every column the copy runs on from closes on the
+  // same last line as the fullest one; the difference is shared between that
+  // column's paragraph gaps (max 6pt each).
+  _justify(pass) {
+    pass = pass || 0;
+    const page = document.querySelector('section[data-chair-page]');
+    if (!page) return;
+    const k = page.getBoundingClientRect().width / 1190.55;
+    const keys = ['u', '0', '1', '2'];
+    const lists = { u: this.state.under, 0: this.state.columns[0], 1: this.state.columns[1], 2: this.state.columns[2] };
+    const used = keys.filter(c => (lists[c] || []).length);
+    const runOn = used.slice(0, -1);
+    const bottoms = {};
+    runOn.forEach(c => {
+      const el = page.querySelector('[data-column="' + c + '"]');
+      if (!el) return;
+      const r = document.createRange(); r.selectNodeContents(el);
+      let b = 0; for (const q of r.getClientRects()) if (q.height > 0) b = Math.max(b, q.bottom);
+      bottoms[c] = b;
+    });
+    const target = Math.max.apply(null, Object.values(bottoms).concat([0]));
+    const extra = Object.assign({}, this.state.extra);
+    let changed = false;
+    runOn.forEach(c => {
+      const n = (lists[c] || []).length - 1;
+      if (n < 1 || !bottoms[c]) return;
+      const d = (target - bottoms[c]) / k;
+      if (Math.abs(d) < 0.2) return;
+      extra[c] = Math.min(6, Math.max(0, (extra[c] || 0) + d / n));
+      changed = true;
+    });
+    if (changed && pass < 6) this.setState({ extra }, () => setTimeout(() => this._justify(pass + 1), 60));
+  }
 
   // Tracking for one column: the fitted base, plus that column's own offset.
   trackFor(col, baseIdx) {
@@ -171,7 +207,8 @@ class Component extends DCLogic {
         for (let c = fitted.used.length - 1; c >= 0; c--) {
           if (fitted.used[c] > 0) { sigTop = Math.min(SIG_MAX, COL_TOP + fitted.used[c] - gap + SIG_GAP); break; }
         }
-        this.setState({ data, columns: fitted.columns, under: fitted.under, baseIdx, gap, leftover: fitted.leftover, sigTop });
+        this.setState({ data, columns: fitted.columns, under: fitted.under, baseIdx, gap, leftover: fitted.leftover, sigTop, extra: {} },
+          () => setTimeout(() => this._justify(0), 150));
       })
       .catch(e => console.error('chair-report-data.js failed to load', e));
   }
@@ -272,6 +309,10 @@ class Component extends DCLogic {
       col1: col1 || [],
       col2: col2 || [],
       gapPt: this.state.gap + 'pt',
+      gapU: (this.state.gap + (this.state.extra.u || 0)).toFixed(3) + 'pt',
+      gap0: (this.state.gap + (this.state.extra['0'] || 0)).toFixed(3) + 'pt',
+      gap1: (this.state.gap + (this.state.extra['1'] || 0)).toFixed(3) + 'pt',
+      gap2: (this.state.gap + (this.state.extra['2'] || 0)).toFixed(3) + 'pt',
       sigTop: this.state.sigTop.toFixed(1) + 'pt',
       sigCaptionTop: (this.state.sigTop + SIG_H + 6).toFixed(1) + 'pt',
       track0: this.trackFor(0, this.state.baseIdx),

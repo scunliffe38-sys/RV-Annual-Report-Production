@@ -41,10 +41,10 @@
 <script>window.RV_PROOF = /[?&]proof\b/.test(location.search);</script>
 <script src="./report-structure.js?v=20261102"></script>
 <script src="./production-manifest.js?v=20261102"></script>
-<script src="./production-bridge.js?v=20261102b"></script>
+<script src="./production-bridge.js?v=20261103a"></script>
 <script src="./doc-page.js"></script>
 <script src="./image-slot.js"></script>
-<script src="./production-images.js?v=20261102f"></script>
+<script src="./production-images.js?v=20261103a"></script>
 <script src="./auditor-pages.js?v=20261102b"></script>
 <script src="./run-image-editor.js?v=20261102d"></script>
 </helmet>
@@ -344,7 +344,7 @@ class Component extends DCLogic {
       }, settle);
     });
     // Status of the KPMG pages; Ready waits while they are still drawing.
-    this._a = setInterval(() => { if (window.RV_AUDITOR !== this.state.aud) this.setState({ aud: window.RV_AUDITOR }); }, 500);
+    this._a = setInterval(() => { if (window.RV_AUDITOR !== this.state.aud || window.RV_BACK !== this.state.back) this.setState({ aud: window.RV_AUDITOR, back: window.RV_BACK }); }, 500);
   }
 
   // mode '' prints everything with each page at its own size (named @page rules);
@@ -479,7 +479,7 @@ class Component extends DCLogic {
   renderVals() {
     const { run, aud } = this.state;
     const fin = !!run && run.sections.indexOf("finance") > -1;
-    const ready = this.state.ready && !(fin && aud === "drawing");
+    const ready = this.state.ready && !(fin && aud === "drawing") && this.state.back !== "drawing";
     const audLabel = !fin ? "" : !aud ? " \u00b7 KPMG pages: not started" : aud === "drawing" ? " \u00b7 KPMG pages drawing" : aud.indexOf("placed") === 0 ? " \u00b7 KPMG pages " + aud : " \u00b7 KPMG pages " + aud;
     const on = {}, phs = (run && run.placeholders) || {};
     (run ? run.sections : []).forEach((id) => { if (!phs[id]) on[id] = true; });

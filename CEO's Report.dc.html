@@ -27,7 +27,7 @@
 </helmet>
 <doc-page width="1190.55pt" height="841.89pt">
 
-<section class="page" data-screen-label="06-07 CEO's Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+<section class="page" data-ceo-page="" data-screen-label="06-07 CEO's Report" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
 
   <sc-if value="{{ showDecoration }}" hint-placeholder-val="">
   <div style="position:absolute;left:130.1pt;top:-149.3pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
@@ -43,25 +43,25 @@
 
   <div data-column="0" style="position:absolute;left:55.7pt;top:414pt;width:235.78pt;height:371pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track0 }};color:#6D6E71">
     <sc-for list="{{ col0 }}" as="p" hint-placeholder-count="6">
-      <div style="margin:0 0 8.504pt">{{ p }}</div>
+      <div style="margin:0 0 {{ gap0 }}">{{ p }}</div>
     </sc-for>
   </div>
 
   <div data-column="1" style="position:absolute;left:302.84pt;top:184.9pt;width:235.78pt;height:600pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track1 }};color:#6D6E71">
     <sc-for list="{{ col1 }}" as="p" hint-placeholder-count="9">
-      <div style="margin:0 0 8.504pt">{{ p }}</div>
+      <div style="margin:0 0 {{ gap1 }}">{{ p }}</div>
     </sc-for>
   </div>
 
   <div data-column="2" style="position:absolute;left:652pt;top:59.3pt;width:235.28pt;height:725.5pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track2 }};color:#6D6E71">
     <sc-for list="{{ col2 }}" as="p" hint-placeholder-count="11">
-      <div style="margin:0 0 8.504pt">{{ p }}</div>
+      <div style="margin:0 0 {{ gap2 }}">{{ p }}</div>
     </sc-for>
   </div>
 
   <div data-column="3" style="position:absolute;left:898.64pt;top:59.3pt;width:235.28pt;height:620pt;overflow:hidden;font-weight:400;font-size:9pt;line-height:12pt;letter-spacing:{{ track3 }};color:#6D6E71">
     <sc-for list="{{ col3 }}" as="p" hint-placeholder-count="9">
-      <div style="margin:0 0 8.504pt">{{ p }}</div>
+      <div style="margin:0 0 {{ gap3 }}">{{ p }}</div>
     </sc-for>
   </div>
 
@@ -105,7 +105,40 @@ const SIG_GAP = 16;      // gap between the end of the copy and the signature
 const SIG_HEIGHT = 54.8; // signature image height, from the IDML frame
 
 class Component extends DCLogic {
-  state = { copy: null, columns: [[], [], [], []], baseIdx: 0, leftover: [], sigTop: 701.6 };
+  state = { copy: null, columns: [[], [], [], []], baseIdx: 0, leftover: [], sigTop: 701.6, extra: [0, 0, 0, 0] };
+
+  // Vertical justification (Test 4): every column the copy runs on from closes
+  // on the same last line as the fullest one; the difference is shared between
+  // that column's paragraph gaps (max 6pt each).
+  _justify(pass) {
+    pass = pass || 0;
+    const page = document.querySelector('section[data-ceo-page]');
+    if (!page) return;
+    const k = page.getBoundingClientRect().width / 1190.55;
+    const cols = this.state.columns;
+    const used = [0, 1, 2, 3].filter(c => (cols[c] || []).length);
+    const runOn = used.slice(0, -1);
+    const bottoms = {};
+    runOn.forEach(c => {
+      const el = page.querySelector('[data-column="' + c + '"]');
+      if (!el) return;
+      const r = document.createRange(); r.selectNodeContents(el);
+      let b = 0; for (const q of r.getClientRects()) if (q.height > 0) b = Math.max(b, q.bottom);
+      bottoms[c] = b;
+    });
+    const target = Math.max.apply(null, Object.values(bottoms).concat([0]));
+    const extra = this.state.extra.slice();
+    let changed = false;
+    runOn.forEach(c => {
+      const n = cols[c].length - 1;
+      if (n < 1 || !bottoms[c]) return;
+      const d = (target - bottoms[c]) / k;
+      if (Math.abs(d) < 0.2) return;
+      extra[c] = Math.min(6, Math.max(0, extra[c] + d / n));
+      changed = true;
+    });
+    if (changed && pass < 6) this.setState({ extra }, () => setTimeout(() => this._justify(pass + 1), 60));
+  }
 
   componentDidMount() {
     const nudge = () => {
@@ -153,7 +186,8 @@ class Component extends DCLogic {
         const maxTop = 798.85 - SIG_HEIGHT - 34;
         sigTop = Math.min(sigTop, maxTop);
 
-        this.setState({ copy: m.copy, columns: fitted.columns, baseIdx, leftover: fitted.leftover, sigTop });
+        this.setState({ copy: m.copy, columns: fitted.columns, baseIdx, leftover: fitted.leftover, sigTop, extra: [0, 0, 0, 0] },
+          () => setTimeout(() => this._justify(0), 150));
       })
       .catch(e => console.error('copy/ceo-report.js failed to load', e));
   }
@@ -237,7 +271,9 @@ class Component extends DCLogic {
     const c = this.state.columns;
     const n = this.state.leftover.length;
 
+    const gx = c2 => (8.504 + (this.state.extra[c2] || 0)).toFixed(3) + 'pt';
     return {
+      gap0: gx(0), gap1: gx(1), gap2: gx(2), gap3: gx(3),
       showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       signatory: 'Aaron Morrison',
       signatoryRole: 'Chief Executive Officer',

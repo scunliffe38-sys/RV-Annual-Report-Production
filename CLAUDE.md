@@ -135,6 +135,19 @@ Serve the folder with `python serve.py` (caching off; plain `python -m http.serv
   needs internet); a solid background is flagged.
 
 ## Open items
+- **Test 4 (Nov 2026):** cover title in the RV Grad (per character, year
+  included). Chair and CEO columns close on one line (leftover depth into the
+  paragraph gaps, max 6pt; Chair cols 1-2 run to 785pt). A page whose folio row
+  a photo covers drops that row (O&B). Workforce Auto skips layouts whose
+  photos weren't supplied; one-photo layouts use the strapper slot; subhead
+  gaps halve before a photo is dropped. Industry photo shrinks to 50 mm before
+  copy overflows. Docx reader: a list paragraph without numbering is an
+  unbulleted indent (`para`); bold run-ins keep their spaces; an all-caps
+  first line is the title, a short line after it the first subhead, a short
+  line over a list a bold label. Part-off-page frames (`onPage`, R&P bottom
+  circle 0.8) default to framing the photo in the visible part. Back cover is
+  the FY25 page (p.43 of `data/fy25-final.pdf`, pdf.js at 300 dpi); Ready waits
+  for it.
 - **Test 2 (LL feedback, Nov 2026):** a Console run for FY26 or later now lays
   every section out to the FY26 design (`production-bridge.js` sets
   `RV_PREVIEW` for runs; `preview()` ignores it under `?production`, so content

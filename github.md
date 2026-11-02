@@ -2,15 +2,16 @@ repo: scunliffe38-sys/RV-Annual-Report-Production
 branch: main
 
 ## Last sync
-date: 2026-11-02T23:30:00Z
+date: 2026-11-03T00:30:00Z
 
 ### Updated in this project
-- Test 2 (LL feedback): Console runs for FY26+ use the FY26 layout on every section (no dotted rings, 2026 footers).
-- FY26 subhead spacing (9pt above and below) on Workforce, Equine Welfare and Wagering (title case); RV tint on all photo circles.
-- Placeholders for a missing CEO's Report and Industry Snapshot; no grey box behind filled images.
-- Welfare spend table and Media bold run-ins read from the Word documents; premiership list reordered.
+- Test 4: cover title in the RV Grad; Chair and CEO column feet aligned; back cover is the FY25 page.
+- Workforce Auto keeps the supplied photo (subhead gaps tighten first); Industry photo shrinks so all copy fits.
+- Word reader: bold run-ins keep spaces, unbulleted list paragraphs, untagged headings and ESG labels.
+- Folio row dropped under photos (O&B); Awards footer style; part-off-page photo framing (R&P).
 
 ## Sync history
+- 2026-11-02T23:30:00Z: Test 2 (LL feedback) — FY26 layout in runs, subhead spacing, tints, placeholders, welfare table.
 - 2026-11-02 (earlier): Adjust images, Proof version, pagination, FY26 Chair/Integrity/Industry copy, awards docx, logo formats, photo glow.
 - 2026-11-02 (earlier): Frame editor; Data Inputs split; logo formats.
 - 2026-10-21: serve.py no-cache server; Test 13 footnotes; notes-range line fix; build stamp on Run bar.

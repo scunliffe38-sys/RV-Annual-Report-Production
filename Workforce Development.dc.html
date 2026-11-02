@@ -52,8 +52,8 @@
   <div data-column="wf0" style="position:absolute;left:56.7pt;top:{{ c1Top }}pt;width:235.28pt;height:{{ c1Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <div style="float:left;width:{{ w1W }}pt;height:{{ c1Height }}pt;shape-outside:circle({{ w1R }}pt at {{ w1Cx }}pt {{ w1Cy }}pt);shape-margin:0"></div>
     <sc-for list="{{ wf0 }}" as="b" hint-placeholder-count="4">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 3.331pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }}pt 0 3.331pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }}pt 0 {{ b.subB }}pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;padding:0.709pt 0 2.835pt 22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;padding:0.709pt 0 2.835pt 22.68pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;padding:{{ b.padT }}pt 0 {{ b.padB }}pt">{{ b.text }}</div></sc-if>
@@ -62,8 +62,8 @@
 
   <div data-column="wf1" style="position:absolute;left:303.3pt;top:171.5pt;padding-top:{{ jTop1 }}pt;width:235.28pt;height:620.5pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ wf1 }}" as="b" hint-placeholder-count="8">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 3.331pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }}pt 0 3.331pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }}pt 0 {{ b.subB }}pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;padding:0.709pt 0 2.835pt 22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;padding:0.709pt 0 2.835pt 22.68pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;padding:{{ b.padT }}pt 0 {{ b.padB }}pt">{{ b.text }}</div></sc-if>
@@ -73,8 +73,8 @@
   <div data-column="wf2" style="position:absolute;left:652pt;top:171.5pt;padding-top:{{ jTop2 }}pt;width:235.28pt;height:{{ c3Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <div style="float:right;width:{{ w3W }}pt;height:{{ c3Height }}pt;shape-outside:circle({{ w3R }}pt at {{ w3Cx }}pt {{ w3Cy }}pt);shape-margin:0"></div>
     <sc-for list="{{ wf2 }}" as="b" hint-placeholder-count="8">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 3.331pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }}pt 0 3.331pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }}pt 0 {{ b.subB }}pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;padding:0.709pt 0 2.835pt 22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;padding:0.709pt 0 2.835pt 22.68pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;padding:{{ b.padT }}pt 0 {{ b.padB }}pt">{{ b.text }}</div></sc-if>
@@ -84,8 +84,8 @@
   <div data-column="wf3" style="position:absolute;left:898.6pt;top:{{ c4Top }}pt;width:235.28pt;height:{{ c4Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <div style="float:right;width:{{ w4W }}pt;height:{{ c4Height }}pt;shape-outside:circle({{ w4R }}pt at {{ w4Cx }}pt {{ w4Cy }}pt);shape-margin:0"></div>
     <sc-for list="{{ wf3 }}" as="b" hint-placeholder-count="6">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 3.331pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }}pt 0 3.331pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }}pt 0 {{ b.subB }}pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;padding:0.709pt 0 2.835pt 22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;padding:0.709pt 0 2.835pt 22.68pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;padding:{{ b.padT }}pt 0 {{ b.padB }}pt">{{ b.text }}</div></sc-if>
@@ -248,6 +248,10 @@ function geoNone() {
 // min is where the smallest photo reaches MIN_D (50 mm).
 const EASE = [1, 0.97, 0.94], MIN_D = 141.73;
 const AUTO_ORDER = ['three', 'corner', 'topright', 'single', 'none'];
+// Photos each layout prints. Auto skips a layout whose photos weren't supplied
+// (Test 4: the one supplied photo dropped out when Auto moved to a layout
+// that uses the other slots). When no photo is known, every layout is tried.
+const NEEDS = { three: ['trackwork', 'strapper', 'apprentices'], corner: ['trackwork', 'apprentices'], topright: ['strapper'], single: ['strapper'], none: [] };
 const withK = (g, k) => Object.assign(g, { flows: g.flows.map(f => Object.assign({}, f, { k: f.k ?? k })) });
 const LAYOUTS = {
   three:    { g: (s, k) => withK(geo(s), k), min: MIN_D / 352.3, max: T_MAX, opts: { keepWhole: true }, say: s => 'three photos at ' + Math.round(s * 100) + '% of FY25 size' },
@@ -347,16 +351,25 @@ class Component extends DCLogic {
       document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
         .then(() => document.fonts.ready).catch(() => null),
     ])
-      .then(([m]) => this._whenMeasurable().then(() => {
+      .then(([m]) => this._supplied().then(have => { this._have = have; }).then(() => this._whenMeasurable()).then(() => {
         const items = m.copy.paragraphs
           .filter(p => !/^(?:FY)?\d{4} Annual Report\s*[\u2013-]/.test(p.text))
           .map(p => ({ text: p.text, kind: p.kind || 'body' }));
         const a = this.fit(trimItems(items), 'Workforce Development');
-        this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, s: a.s || 1, k: a.k || 1, mode: a.mode,
+        this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, s: a.s || 1, k: a.k || 1, mode: a.mode, sk: a.sk || 1,
           just: [{ top: 0, gx: 0 }, { top: 0, gx: 0 }, { top: 0, gx: 0 }] });
         this._scheduleJustify(0);
       }))
       .catch(e => console.error('copy module failed to load', e));
+  }
+
+  // Which photos are supplied: props (previews) or the Console's image store.
+  _supplied() {
+    const have = { trackwork: false, strapper: !!this.props.strapperSrc, apprentices: false };
+    const I = window.RVImages;
+    if (!I || !I.get) return Promise.resolve(have);
+    return Promise.all(Object.keys(have).map(k => Promise.resolve(I.get('photo-wf-image-' + k)).then(r => { if (r && r.blob) have[k] = true; }).catch(() => {})))
+      .then(() => have);
   }
 
   _whenMeasurable(attempt) {
@@ -380,7 +393,9 @@ class Component extends DCLogic {
   // then fall back to the next layout. photoLayout forces one layout.
   fit(items, label) {
     const want = LAYOUTS[this.props.photoLayout] ? this.props.photoLayout : 'auto';
-    const order = want === 'auto' ? AUTO_ORDER : [want];
+    const have = this._have || {};
+    const known = Object.keys(have).some(k => have[k]);
+    const order = want !== 'auto' ? [want] : AUTO_ORDER.filter(id => !known || NEEDS[id].every(p => have[p]));
     for (const id of order) {
       const r = this.fitLayout(items, id);
       if (r) { console.warn(label + ': ' + LAYOUTS[id].say(r.s) + (r.k < 1 ? ', gaps at ' + Math.round(r.k * 100) + '%' : '') + '.'); return r; }
@@ -393,7 +408,18 @@ class Component extends DCLogic {
     return Object.assign(r, { baseIdx: 0, mode: id, s: L.min, k });
   }
 
+  // Test 4: before a layout loses its photo, the subhead gaps tighten (half).
   fitLayout(items, id) {
+    for (const sk of [1, 0.5]) {
+      this._sk = sk;
+      const r = this._fitLayout(items, id);
+      if (r) return Object.assign(r, { sk });
+    }
+    this._sk = 1;
+    return null;
+  }
+
+  _fitLayout(items, id) {
     const L = LAYOUTS[id];
     const ok = (s, k) => { const r = this.flow(items, L.g(s, k).flows, 0, L.opts); return !r.leftover.length && (!L.ok || L.ok(r)) ? r : null; };
     const done = (r, s, k) => Object.assign(r, { baseIdx: 0, mode: id, s, k });
@@ -473,7 +499,7 @@ class Component extends DCLogic {
   }
 
   _after(item, next) {
-    if (item.kind === 'subhead') return SUBHEAD_AFTER;
+    if (item.kind === 'subhead') return SUBHEAD_AFTER * (this._sk || 1);
     return item.kind === 'bullet' ? BULLET_AFTER : BODY_AFTER * (this._k || 1);
   }
 
@@ -501,10 +527,10 @@ class Component extends DCLogic {
         // The rendered text sits below its space before, so the wrap is offset by it too.
         if (shim) {
           shim.style.shapeOutside = 'circle(' + wrap.r + 'pt at ' + wrap.cx +
-            'pt ' + (wrap.cy - usedPx * 0.75 - this._before(item) - (item.kind === 'subhead' && columns[c].length ? SUBHEAD_BEFORE * this._k : 0)) + 'pt)';
+            'pt ' + (wrap.cy - usedPx * 0.75 - this._before(item) - (item.kind === 'subhead' && columns[c].length ? SUBHEAD_BEFORE * this._k * (this._sk || 1) : 0)) + 'pt)';
         }
         const textPx = shim ? this._lines(item, this._textHeight(host, node)) : host.getBoundingClientRect().height;
-        const hPx = textPx + (this._after(item, queue[1]) + (item.kind === 'subhead' && columns[c].length ? SUBHEAD_BEFORE * this._k : 0)) / 0.75;
+        const hPx = textPx + (this._after(item, queue[1]) + (item.kind === 'subhead' && columns[c].length ? SUBHEAD_BEFORE * this._k * (this._sk || 1) : 0)) / 0.75;
 
         if (usedPx + hPx <= capPx) {
           if (item.kind === 'subhead' && queue.length > 1 && queue[1].kind !== 'subhead') {
@@ -571,7 +597,11 @@ class Component extends DCLogic {
 
   renderVals() {
     const n = this.state.leftover.length;
-    const g = (LAYOUTS[this.state.mode] || LAYOUTS.three).g(this.state.s, this.state.k || 1);
+    const g = Object.assign({}, (LAYOUTS[this.state.mode] || LAYOUTS.three).g(this.state.s, this.state.k || 1));
+    // One-photo layouts always show the same photo (the strapper slot, which
+    // the top-right layout uses), so a supplied photo never drops out when the
+    // copy moves the layout from top-right to bottom-right (Test 4).
+    if (g.mode === 'single' && g.p3) { g.p2 = g.p3; g.p3 = null; }
     const p1 = g.p1 || { left: 0, top: 0, size: 0 }, p3 = g.p3 || { left: 0, top: 0, size: 0 };
     const f = g.flows, w1 = f[0].wrap, w3 = f[2].wrap, w4 = f[3].wrap;
     const p2 = g.p2 || { left: 0, top: 0, size: 0 };
@@ -601,7 +631,7 @@ class Component extends DCLogic {
     k = k || 1;
     const x = n => n > 0 ? (gx || 0) : 0;
     return (list || []).map((i, n) => ({
-      padT: +Math.max(0, 5.669 * k + x(n)).toFixed(3), padB: +(2.835 * k).toFixed(3), subT: +Math.max(0, SUBHEAD_BEFORE * k + x(n)).toFixed(3),
+      padT: +Math.max(0, 5.669 * k + x(n)).toFixed(3), padB: +(2.835 * k).toFixed(3), subT: +Math.max(0, SUBHEAD_BEFORE * k * (this.state.sk || 1) + x(n)).toFixed(3), subB: +(SUBHEAD_AFTER * (this.state.sk || 1)).toFixed(3),
       text: (i.kind === 'bullet' && !i.cont ? '\u2022\u2003\u2003' : '') + i.text,
       isSubhead: i.kind === 'subhead' && n > 0,
       isSubheadTop: i.kind === 'subhead' && n === 0,

@@ -78,9 +78,11 @@
     for (; i < runs.length; i++) {
       var m = runs[i].match(/<w:b(?:\s+w:val="([^"]*)")?\s*\/>/);
       if (!m || m[1] === "0" || m[1] === "false") break;
-      lead += textOf(runs[i]);
+      // Raw run text: textOf trims each run, which would drop the spaces between runs.
+      var re = /<w:t(?:\s[^>]*)?>([\s\S]*?)<\/w:t>|<w:tab\s*\/>/g, mm;
+      while ((mm = re.exec(runs[i]))) lead += mm[1] !== undefined ? dec(mm[1]) : " ";
     }
-    lead = lead.trim();
+    lead = lead.replace(/\s+/g, " ").trim();
     if (!lead || i >= runs.length || !/:$/.test(lead) || words(lead) > 10) return "";
     return lead;
   }
@@ -100,20 +102,34 @@
       var style = (x.match(/<w:pStyle\s+w:val="([^"]+)"/) || [, ""])[1];
       var text = textOf(x);
       if (!text || /^(RVGuidance|Title)$/i.test(style)) continue;
-      var kind = "body";
+      var kind = "body", para = false;
       if (/^Heading1$/i.test(style)) kind = "h1";
       else if (/^Heading2$/i.test(style)) kind = "subhead";
       else if (/^Heading[3-9]$/i.test(style)) kind = "strong";
-      else if (/List/i.test(style) || /<w:numPr>/.test(x)) kind = "bullet";
+      else if (/<w:numPr>/.test(x) && !/<w:numId w:val="0"\s*\/>/.test(x)) kind = "bullet";
+      // A list paragraph with no numbering is an indented paragraph under the
+      // bullet above (no bullet mark), as the Word document shows it.
+      else if (/List/i.test(style)) { kind = "bullet"; var para = true; }
       else if (allBold(x) && words(text) <= 14 && !/[.:;]$/.test(text)) kind = "subhead";
       else if (allUnderlined(x) && words(text) <= 14 && !/[.:;]$/.test(text)) kind = "underline";
       if (kind !== "body" && kind !== "bullet" && /^images$/i.test(text)) break;
       var blk = { text: text, kind: kind };
+      if (para) { blk.para = true; para = false; }
       if (kind === "body" || kind === "bullet") { var ld = leadBold(x); if (ld) blk.lead = ld; }
       out.push(blk);
     }
     var boldSubheads = out.slice(1).some(function (b) { return b.kind === "subhead"; });
     out.forEach(function (b) { if (b.kind === "underline") b.kind = boldSubheads ? "strong" : "subhead"; });
+    // Unformatted headings (Test 4): an all-caps first line is the section
+    // title; a short unpunctuated line straight after it is the first subhead;
+    // a short unpunctuated line over a bullet list is that list's label
+    // ("Environment", "Social", "Governance").
+    var shortLine = function (b) { return b && b.kind === "body" && words(b.text) <= 8 && !/[.:;,!?]$/.test(b.text); };
+    if (out[0] && out[0].kind === "body" && words(out[0].text) <= 8 && /[A-Z]/.test(out[0].text) && out[0].text === out[0].text.toUpperCase()) {
+      out[0].kind = "title";
+      if (shortLine(out[1]) && out[2] && out[2].kind === "body") out[1].kind = "subhead";
+    }
+    out.forEach(function (b, i) { if (shortLine(b) && words(b.text) <= 4 && out[i + 1] && out[i + 1].kind === "bullet" && !out[i + 1].para) b.kind = "label"; });
     return out;
   }
 
@@ -230,6 +246,7 @@
           var o = k === "body" ? { text: b.text } : { text: b.text, kind: k };
           // Content, Media & Marketing sets a bold run-in ahead of the text.
           if (b.lead && label === "media" && b.text.indexOf(b.lead) === 0) { o.bold = b.lead; o.text = b.text.slice(b.lead.length).trim(); }
+          if (b.para) o.para = true;
           return o;
         }) };
     if (sign) { payload.meta = sign; issues.push(issue("info", "Signed off by " + sign.signatory + (sign.signatoryRole ? ", " + sign.signatoryRole : "") + ".")); }

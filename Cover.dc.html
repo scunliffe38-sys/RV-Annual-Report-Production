@@ -31,8 +31,8 @@
 
   <image-slot id="cover-hero" shape="rect" placeholder="Cover photograph &#8212; JMac / Via Sistina, Cox Plate" style="position:absolute;left:-8.504pt;top:224.146pt;width:612.504pt;height:626.248pt;clip-path:path('M 816.672 28.987 C 753.492 10.160 686.576 0 617.279 0 C 349.308 0 116.693 151.219 0 372.952 L 0 834.997 L 816.672 834.997 Z')"></image-slot>
 
-  <svg style="position:absolute;left:33.9pt;top:54.7pt;width:297.3pt;height:80.5pt" viewBox="0 0 297.3 80.5" role="img" aria-label="Annual Report"><text x="0" y="33" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="41.14" font-weight="400" letter-spacing="-0.41">Annual Report</text></svg>
-  <div style="position:absolute;left:33.9pt;top:98.9pt;font-family:Gotham, Arial, sans-serif;font-size:41.14pt;line-height:44pt;font-weight:400;letter-spacing:-0.41pt;color:#005FA1;white-space:nowrap">{{ year }}</div>
+  <svg style="position:absolute;left:33.9pt;top:54.7pt;width:297.3pt;height:80.5pt" viewBox="0 0 297.3 80.5" role="img" aria-label="Annual Report {{ year }}"><text x="0" y="33" font-family="Gotham, Arial, sans-serif" font-size="41.14" font-weight="400" letter-spacing="-0.41"><tspan fill="#005FA1">A</tspan><tspan fill="#0F59A0">n</tspan><tspan fill="#1E539E">n</tspan><tspan fill="#2C4D9D">u</tspan><tspan fill="#3B479C">a</tspan><tspan fill="#4A419A">l</tspan><tspan fill="#593B99"> </tspan><tspan fill="#673598">R</tspan><tspan fill="#763097">e</tspan><tspan fill="#852A95">p</tspan><tspan fill="#942494">o</tspan><tspan fill="#A21E93">r</tspan><tspan fill="#B11891">t</tspan></text></svg>
+  <div style="position:absolute;left:33.9pt;top:98.9pt;font-family:Gotham, Arial, sans-serif;font-size:41.14pt;line-height:44pt;font-weight:400;letter-spacing:-0.41pt;white-space:nowrap"><span style="color:#C01290">{{ y0 }}</span><span style="color:#CF0C8F">{{ y1 }}</span><span style="color:#DD068D">{{ y2 }}</span><span style="color:#EC008C">{{ y3 }}</span></div>
 
   <image-slot id="cover-rv-logo" shape="rect" fit="contain" placeholder="RV logo (CMYK)" style="position:absolute;left:379.4pt;top:57.3pt;width:187.4pt;height:67.2pt"></image-slot>
 
@@ -47,7 +47,8 @@
     // "FY26" from the run (or ?fy26 preview) -> 2026; 2025 when opened on its own.
     const fy = this.props.year || ((window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)) ? 'FY26' : '');
     const yy = fy ? +String(fy).replace(/\D/g, '').slice(-2) : 25;
-    return { year: 2000 + yy };
+    const y = String(2000 + yy);
+    return { year: y, y0: y[0], y1: y[1], y2: y[2], y3: y[3] };
   }
 }</script>
 </body>
