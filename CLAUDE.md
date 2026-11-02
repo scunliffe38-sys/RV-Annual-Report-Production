@@ -135,6 +135,18 @@ Serve the folder with `python serve.py` (caching off; plain `python -m http.serv
   needs internet); a solid background is flagged.
 
 ## Open items
+- **Test 2 (LL feedback, Nov 2026):** a Console run for FY26 or later now lays
+  every section out to the FY26 design (`production-bridge.js` sets
+  `RV_PREVIEW` for runs; `preview()` ignores it under `?production`, so content
+  still comes from the run payload). FY26 subheads everywhere: 9pt above and
+  below (Workforce now too; Equine Welfare spreads justification equally above
+  and below). Wagering headings are FY26 subheads in title case. Photo slots
+  carry the RV tint on every section. Image-slot frames are transparent once
+  filled (no grey box behind signatures). No Industry Snapshot workbook → a
+  placeholder on the snapshot page; `?fy26` preview prints the CEO's Report as
+  a placeholder until FY26 copy exists. Welfare spend table is read from the
+  Equine Welfare docx; bold run-ins ("Sky - domestic and international:") are
+  read from the Media docx.
 - Production Run tools: "Adjust images" (`run-image-editor.js`) opens a framing
   editor on any Console-managed slot (move/zoom/Auto/Replace); Save writes
   `rec.crop` via `RVImages.setCrop` and `RVImages.refresh(id)` re-cuts it on the

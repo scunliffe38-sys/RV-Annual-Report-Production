@@ -35,8 +35,8 @@
     <div style="position:absolute;left:998.8pt;top:-462.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   </sc-if>
 
-  <sc-if value="{{ showP1 }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ p1Id }}" shape="circle" placeholder="{{ p1Label }}" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot></sc-if>
-  <image-slot id="{{ p2Id }}" shape="circle" placeholder="{{ p2Label }}" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
+  <sc-if value="{{ showP1 }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ p1Id }}" tint="blue" shape="circle" placeholder="{{ p1Label }}" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot></sc-if>
+  <image-slot id="{{ p2Id }}" tint="magenta" shape="circle" placeholder="{{ p2Label }}" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
 
   <svg style="position:absolute;left:53.7pt;top:80pt;width:286.5pt;height:50pt" viewBox="0 0 286.5 50" role="img" aria-label="Equine Welfare"><text x="0" y="29.6" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">E</tspan><tspan fill="#12589F">q</tspan><tspan fill="#24509E">u</tspan><tspan fill="#36499C">i</tspan><tspan fill="#49429B">n</tspan><tspan fill="#5B3A99">e</tspan><tspan fill="#6D3397"> </tspan><tspan fill="#7F2C96">W</tspan><tspan fill="#912594">e</tspan><tspan fill="#A31D92">l</tspan><tspan fill="#B61691">f</tspan><tspan fill="#C80F8F">a</tspan><tspan fill="#DA078E">r</tspan><tspan fill="#EC008C">e</tspan></text></svg>
 
@@ -53,7 +53,7 @@
 
   <div data-column="ew0" style="position:absolute;left:56.7pt;top:{{ c1Top }}pt;width:235.3pt;height:{{ c1Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ ew0 }}" as="b" hint-placeholder-count="5">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
     </sc-for>
@@ -61,7 +61,7 @@
 
   <div data-column="ew1" style="position:absolute;left:303.3pt;top:{{ c2Top }}pt;width:235.3pt;height:{{ c2Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ ew1 }}" as="b" hint-placeholder-count="5">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
     </sc-for>
@@ -70,7 +70,7 @@
   <div data-column="ew2" style="position:absolute;left:652pt;top:{{ c3Top }}pt;width:235.3pt;height:{{ c3Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <div style="float:right;width:{{ wrapW }}pt;height:{{ c3Height }}pt;shape-outside:circle({{ wrapR }}pt at {{ wrapCx }}pt {{ wrapCy }}pt);shape-margin:0"></div>
     <sc-for list="{{ ew2 }}" as="b" hint-placeholder-count="8">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
     </sc-for>
@@ -79,7 +79,7 @@
   <div data-column="ew3" style="position:absolute;left:898.6pt;top:{{ c4Top }}pt;width:235.3pt;height:{{ c4Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-if value="{{ wrap4On }}" hint-placeholder-val=""><div style="float:right;width:235.3pt;height:{{ c4Height }}pt;shape-outside:{{ wrap4Shape }}"></div></sc-if>
     <sc-for list="{{ ew3 }}" as="b" hint-placeholder-count="4">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
     </sc-for>
@@ -160,7 +160,7 @@ function trimItems(items) {
 const T_MIN = 0.46, T_MAX = 1.3;
 // Column-4 exclusion: the circle's left contour, but rows narrower than
 // MIN_LINE are blocked whole so the copy never sets in a one- or two-word sliver.
-const MIN_LINE = 120;
+const MIN_LINE = 60;
 function wrapPoly(cx, cy, r, w) {
   const pts = [], top = Math.max(0, cy - r), bot = cy + r, N = 96;
   let prev = null;
@@ -204,10 +204,13 @@ function geo(t, drop1) {
 const FY26 = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search));
 // FY26: column 2 closes half the gap under the table (bottom 305.5pt; FY25 cap
 // line ~352.7pt, gap 47.2pt -> 23.6pt), so it starts 23.6pt higher.
-const COL2_FY26 = { x: 303.30, y: 321.4, width: 235.3, height: 459.9 };
+// Test 2: closer still — the first line box sits 8.504pt (3mm, the project's
+// minimum after a table) under the table's foot (305.5pt).
+const COL2_FY26 = { x: 303.30, y: 307.8, width: 235.3, height: 473.5 };
 
 const BODY_AFTER = 8.504;
 const SUB_ABOVE_FY26 = 5.669;
+const SUB_GAP_FY26 = 9;
 const SUBHEAD_AFTER = 4;
 const FOOT_CLEARANCE = 0;
 const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
@@ -411,8 +414,11 @@ class Component extends DCLogic {
     const track = TRACKING[baseIdx];
     const queue = items.map(i => Object.assign({}, i));
     const PX = 1 / 0.75, MAX_EXTRA = 9;
+    // Subheads: the same space above and below (9pt, as on the other FY26
+    // pages), and any justification extra goes on both sides equally (the
+    // bottom margin collapses with the next paragraph's top).
     const marg = (item, first, extra) => item.kind === 'subhead'
-      ? (first ? '-3.9pt 0 4pt' : (SUB_ABOVE_FY26 + extra).toFixed(3) + 'pt 0 4pt')
+      ? (first ? '-3.9pt 0 ' + (SUB_GAP_FY26 + extra).toFixed(3) + 'pt' : (SUB_GAP_FY26 + extra).toFixed(3) + 'pt 0 ' + (SUB_GAP_FY26 + extra).toFixed(3) + 'pt')
       : ((first ? 5.669 : 5.669 + extra)).toFixed(3) + 'pt 0 2.835pt';
     const block = (host, item, first) => {
       const el = document.createElement('div');
@@ -548,7 +554,7 @@ class Component extends DCLogic {
       isSubhead: i.kind === 'subhead' && n > 0,
       // FY26: a subhead gets the same space above as below (5.669pt, the body's
       // top margin it collapses into); FY25 keeps the artwork's 0.
-      m: i.m || (i.kind === 'subhead' ? (FY26 ? SUB_ABOVE_FY26 : 0) + 'pt 0 4pt' : '5.669pt 0 2.835pt'),
+      m: i.m || (i.kind === 'subhead' ? (n === 0 ? '-3.9' : FY26 ? SUB_ABOVE_FY26 : 0) + 'pt 0 4pt' : '5.669pt 0 2.835pt'),
       isSubheadTop: i.kind === 'subhead' && n === 0,
       isBody: i.kind !== 'subhead',
     }));

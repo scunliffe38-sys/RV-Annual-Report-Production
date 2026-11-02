@@ -12,8 +12,9 @@
   "use strict";
   var KEY = "rv-production-run";
 
-  function preview() { return root.RV_PREVIEW === true || /[?&]fy26\b/.test(root.location.search); }
-  function active() { return preview() || /[?&]production\b/.test(root.location.search); }
+  function isRun() { return /[?&]production\b/.test(root.location.search); }
+  function preview() { return !isRun() && (root.RV_PREVIEW === true || /[?&]fy26\b/.test(root.location.search)); }
+  function active() { return preview() || isRun(); }
   function run() {
     if (!active()) return null;
     if (preview()) {
@@ -28,6 +29,15 @@
     }
     try { return JSON.parse(root.localStorage.getItem(KEY) || "null"); } catch (e) { return null; }
   }
+  // A Console run for FY26 or later lays every section out to the FY26
+  // design (sections read RV_PREVIEW as "FY26 layout"); the content still
+  // comes from the run's payload, not the preview file.
+  if (isRun()) {
+    var r0 = null;
+    try { r0 = JSON.parse(root.localStorage.getItem(KEY) || "null"); } catch (e) {}
+    var yy = r0 && r0.year ? +String(r0.year).replace(/\D/g, "").slice(-2) : 0;
+    if (yy >= 26) root.RV_PREVIEW = true;
+  }
   function isObj(v) { return !!v && typeof v === "object" && !Array.isArray(v); }
   function merge(a, b) {
     if (b === undefined) return a;
@@ -38,6 +48,7 @@
   }
 
   root.RVProduction = {
+    isRun: isRun,
     KEY: KEY,
     active: active,
     run: run,

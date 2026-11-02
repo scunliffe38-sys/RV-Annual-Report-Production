@@ -8,14 +8,14 @@ export const copy = {
   wideFirst: true,
   // Award circles 1-7 in the FY25 positions. Photos are square crops of the
   // supplied files (images/fy26/awards/), centred on the faces.
-  people: ['Tony & Calvin McEvoy', 'Logan Bates', 'Yona & Nina Lloyd', 'Dean Parker', 'Luke Cartwright', 'Jamie Mott', ''],
+  people: ['Tony & Calvin McEvoy', 'Yona & Nina Lloyd', 'Dean Parker', 'Luke Cartwright', 'Jamie Mott', 'Logan Bates', ''],
   images: {
     'vra2026-1': './images/fy26/awards/tony-calvin-mcevoy.png',
-    'vra2026-2': './images/fy26/awards/craig-williams.png',
-    'vra2026-3': './images/fy26/awards/yona-nina-lloyd.png',
-    'vra2026-4': './images/fy26/awards/dean-parker.png',
-    'vra2026-5': './images/fy26/awards/luke-cartwright.png',
-    'vra2026-6': './images/fy26/awards/jamie-mott.png',
+    'vra2026-2': './images/fy26/awards/yona-nina-lloyd.png',
+    'vra2026-3': './images/fy26/awards/dean-parker.png',
+    'vra2026-4': './images/fy26/awards/luke-cartwright.png',
+    'vra2026-5': './images/fy26/awards/jamie-mott.png',
+    'vra2026-6': './images/fy26/awards/craig-williams.png',
     // Feature race photos 1-12, cropped to the FY25 slot shapes (images/fy26/races/).
     'frw2026-1-half-yours': './images/fy26/races/1-half-yours.png',
     'frw2026-2-via-sistina': './images/fy26/races/2-via-sistina.png',

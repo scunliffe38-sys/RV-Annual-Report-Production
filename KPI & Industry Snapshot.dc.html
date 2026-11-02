@@ -98,8 +98,15 @@
   <div style="position:absolute;left:893.18pt;top:29.2pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   </sc-if>
 
-  <svg style="position:absolute;left:648.68pt;top:64pt;width:476.4pt;height:50pt" viewBox="0 0 476.4 50" role="img" aria-label="FY25 Industry Snapshot"><text x="0" y="33.2" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">F</tspan><tspan fill="#0A5BA0">Y</tspan><tspan fill="#14579F">2</tspan><tspan fill="#1E539E">5</tspan><tspan fill="#284F9D"> </tspan><tspan fill="#324B9D">I</tspan><tspan fill="#3C479C">n</tspan><tspan fill="#46439B">d</tspan><tspan fill="#503F9A">u</tspan><tspan fill="#5A3B99">s</tspan><tspan fill="#643798">t</tspan><tspan fill="#6E3397">r</tspan><tspan fill="#782F96">y</tspan><tspan fill="#822B95"> </tspan><tspan fill="#8C2794">S</tspan><tspan fill="#962394">n</tspan><tspan fill="#A01F93">a</tspan><tspan fill="#AA1B92">p</tspan><tspan fill="#B41791">s</tspan><tspan fill="#BE1390">h</tspan><tspan fill="#C80F8F">o</tspan><tspan fill="#D20B8E">t</tspan></text></svg>
+  <svg style="position:absolute;left:648.68pt;top:64pt;width:476.4pt;height:50pt" viewBox="0 0 476.4 50" role="img" aria-label="{{ snapTitle }}"><text x="0" y="33.2" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">F</tspan><tspan fill="#0A5BA0">Y</tspan><tspan fill="#14579F">{{ yA }}</tspan><tspan fill="#1E539E">{{ yB }}</tspan><tspan fill="#284F9D"> </tspan><tspan fill="#324B9D">I</tspan><tspan fill="#3C479C">n</tspan><tspan fill="#46439B">d</tspan><tspan fill="#503F9A">u</tspan><tspan fill="#5A3B99">s</tspan><tspan fill="#643798">t</tspan><tspan fill="#6E3397">r</tspan><tspan fill="#782F96">y</tspan><tspan fill="#822B95"> </tspan><tspan fill="#8C2794">S</tspan><tspan fill="#962394">n</tspan><tspan fill="#A01F93">a</tspan><tspan fill="#AA1B92">p</tspan><tspan fill="#B41791">s</tspan><tspan fill="#BE1390">h</tspan><tspan fill="#C80F8F">o</tspan><tspan fill="#D20B8E">t</tspan></text></svg>
 
+  <sc-if value="{{ snapMissing }}" hint-placeholder-val="">
+    <div style="position:absolute;left:648.68pt;top:170pt;width:485.2pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8pt;text-align:center;padding:0 30pt">
+      <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+      <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:380pt">{{ snapWaiting }}</div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ snapOn }}" hint-placeholder-val="{{ true }}">
   <img src="./icons/snapshot-turnover.svg" alt="" style="position:absolute;left:836pt;top:111.6pt;width:182.01pt;height:100.79pt" />
   <div style="position:absolute;left:825.78pt;top:216pt;width:175pt;text-align:center">
     <div style="font-weight:900;font-size:62pt;line-height:62pt;color:#005FA1">{{ totalTurnover }}</div>
@@ -158,6 +165,7 @@
     <div style="font-weight:900;font-size:32pt;line-height:34pt;color:#005FA1">{{ opexReduction }}</div>
     <div style="font-weight:900;font-size:14pt;line-height:15.5pt;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;margin-top:6pt">Reduction in gross<br />operational expenditure</div>
   </div>
+  </sc-if>
 
   <div style="position:absolute;left:-3pt;top:822pt;width:1197.8pt;height:19.9pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
 
@@ -348,12 +356,21 @@ class Component extends DCLogic {
     const kpi = this.kpiVals();
     const snap = this.snapshotVals();
     const snapMeta = (this.state.snapshot && this.state.snapshot.meta) || {};
+    // In a run or the FY26 preview, no Industry Snapshot workbook means a
+    // placeholder, never last year's figures.
+    const P = window.RVProduction;
+    const snapMissing = !!(P && P.active() && !P.get('snapshot-data'));
+    const fyNum = kpi.footYear || snapMeta.footYear || '';
+    const yr = String(this.props.year || (fyNum ? 'FY' + String(fyNum).slice(-2) : 'FY25'));
 
     return Object.assign({}, kpi, snap, {
       showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       folioLeft: this.props.folioLeft ?? 8,
       folioRight: this.props.folioRight ?? snapMeta.folio ?? 9,
       footYear: kpi.footYear || snapMeta.footYear || '',
+      snapMissing, snapOn: !snapMissing,
+      snapWaiting: 'Waiting for ' + yr + ' Annual Report - Industry Snapshot.xlsx in the input folder. Add it and produce again.',
+      yA: yr.slice(2, 3), yB: yr.slice(3, 4), snapTitle: yr + ' Industry Snapshot',
     });
   }
 }

@@ -296,6 +296,7 @@
     '  width:100%;height:100%;aspect-ratio:3/2}' +
     '.empty .cap,.empty .sub{opacity:.75}' +
     '.frame{position:absolute;inset:0;overflow:hidden;background:rgba(127,127,127,.08)}' +
+    ':host([data-filled]) .frame{background:transparent}' +
     // RV tint (FY25 DPS p.12 glow): RV Magenta/Blue radial ramp from just off
     // the lower-left edge, 100% at 4.6% to 0% at 93%, over the photo only.
     '.tint{position:absolute;inset:0;pointer-events:none;display:none}' +

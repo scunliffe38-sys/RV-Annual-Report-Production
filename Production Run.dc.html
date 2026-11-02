@@ -40,7 +40,8 @@
 </style>
 <script>window.RV_PROOF = /[?&]proof\b/.test(location.search);</script>
 <script src="./report-structure.js?v=20261102"></script>
-<script src="./production-bridge.js?v=20261102"></script>
+<script src="./production-manifest.js?v=20261102"></script>
+<script src="./production-bridge.js?v=20261102b"></script>
 <script src="./doc-page.js"></script>
 <script src="./image-slot.js"></script>
 <script src="./production-images.js?v=20261102f"></script>
@@ -81,18 +82,226 @@
 <sc-if value="{{ on.cover }}" hint-placeholder-val=""><div data-sec="cover"><dc-import name="Cover" year="{{ year }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
 <sc-if value="{{ on.contents }}" hint-placeholder-val=""><div data-sec="contents"><dc-import name="Contents" page-counts="{{ pageCounts }}" year="{{ year }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
 <sc-if value="{{ on.chair }}" hint-placeholder-val=""><div data-sec="chair"><dc-import name="Chair's Report" year="{{ year }}" folio-left="{{ fol.chair.l }}" folio-right="{{ fol.chair.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.chair.on }}" hint-placeholder-val=""><div data-sec="chair" data-placeholder="">
+  <sc-for list="{{ ph.chair.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.chair.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.chair.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.ceo }}" hint-placeholder-val=""><div data-sec="ceo"><dc-import name="CEO's Report" year="{{ year }}" folio-left="{{ fol.ceo.l }}" folio-right="{{ fol.ceo.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.ceo.on }}" hint-placeholder-val=""><div data-sec="ceo" data-placeholder="">
+  <sc-for list="{{ ph.ceo.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.ceo.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.ceo.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.kpi }}" hint-placeholder-val=""><div data-sec="kpi"><dc-import name="KPI &amp; Industry Snapshot" year="{{ year }}" folio-left="{{ fol.kpi.l }}" folio-right="{{ fol.kpi.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.kpi.on }}" hint-placeholder-val=""><div data-sec="kpi" data-placeholder="">
+  <sc-for list="{{ ph.kpi.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.kpi.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.kpi.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.racing }}" hint-placeholder-val=""><div data-sec="racing"><dc-import name="Racing &amp; Programming" year="{{ year }}" folio-left="{{ fol.racing.l }}" folio-right="{{ fol.racing.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.racing.on }}" hint-placeholder-val=""><div data-sec="racing" data-placeholder="">
+  <sc-for list="{{ ph.racing.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.racing.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.racing.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.awards }}" hint-placeholder-val=""><div data-sec="awards"><dc-import name="Racing Awards &amp; Feature Winners" year="{{ year }}" folio-left="{{ fol.awards.l }}" folio-right="{{ fol.awards.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.awards.on }}" hint-placeholder-val=""><div data-sec="awards" data-placeholder="">
+  <sc-for list="{{ ph.awards.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.awards.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.awards.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.owners }}" hint-placeholder-val=""><div data-sec="owners"><dc-import name="Owners &amp; Breeders + Infrastructure" year="{{ year }}" folio-left="{{ fol.owners.l }}" folio-right="{{ fol.owners.r }}" photo-layout="{{ layouts.owners }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.owners.on }}" hint-placeholder-val=""><div data-sec="owners" data-placeholder="">
+  <sc-for list="{{ ph.owners.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.owners.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.owners.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.workforce }}" hint-placeholder-val=""><div data-sec="workforce"><dc-import name="Workforce Development" year="{{ year }}" folio-left="{{ fol.workforce.l }}" folio-right="{{ fol.workforce.r }}" photo-layout="{{ layouts.workforce }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.workforce.on }}" hint-placeholder-val=""><div data-sec="workforce" data-placeholder="">
+  <sc-for list="{{ ph.workforce.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.workforce.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.workforce.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.integrity }}" hint-placeholder-val=""><div data-sec="integrity"><dc-import name="Integrity Services" year="{{ year }}" folio-left="{{ fol.integrity.l }}" folio-right="{{ fol.integrity.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.integrity.on }}" hint-placeholder-val=""><div data-sec="integrity" data-placeholder="">
+  <sc-for list="{{ ph.integrity.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.integrity.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.integrity.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.welfare }}" hint-placeholder-val=""><div data-sec="welfare"><dc-import name="Equine Welfare" year="{{ year }}" folio-left="{{ fol.welfare.l }}" folio-right="{{ fol.welfare.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.welfare.on }}" hint-placeholder-val=""><div data-sec="welfare" data-placeholder="">
+  <sc-for list="{{ ph.welfare.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.welfare.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.welfare.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.wagering }}" hint-placeholder-val=""><div data-sec="wagering"><dc-import name="Wagering" year="{{ year }}" folio-left="{{ fol.wagering.l }}" folio-right="{{ fol.wagering.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.wagering.on }}" hint-placeholder-val=""><div data-sec="wagering" data-placeholder="">
+  <sc-for list="{{ ph.wagering.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.wagering.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.wagering.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.media }}" hint-placeholder-val=""><div data-sec="media"><dc-import name="Media" year="{{ year }}" folio-left="{{ fol.media.l }}" folio-right="{{ fol.media.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.media.on }}" hint-placeholder-val=""><div data-sec="media" data-placeholder="">
+  <sc-for list="{{ ph.media.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.media.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.media.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.industry }}" hint-placeholder-val=""><div data-sec="industry"><dc-import name="Industry &amp; Community Support" year="{{ year }}" folio-left="{{ fol.industry.l }}" folio-right="{{ fol.industry.r }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.industry.on }}" hint-placeholder-val=""><div data-sec="industry" data-placeholder="">
+  <sc-for list="{{ ph.industry.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.industry.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.industry.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.finance }}" hint-placeholder-val=""><div data-sec="finance"><dc-import name="Financial Report" year="{{ year }}" folio-start="{{ fol.finance.l }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
+<sc-if value="{{ ph.finance.on }}" hint-placeholder-val=""><div data-sec="finance" data-placeholder="">
+  <sc-for list="{{ ph.finance.spreads }}" as="sp" hint-placeholder-count="1">
+    <section class="page" data-screen-label="{{ sp.label }}" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;margin:0 auto 24px;background:#F6F6F6;overflow:hidden;font-family:Gotham, Arial, sans-serif">
+      <div style="position:absolute;left:54.7pt;top:70pt;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.01em;white-space:nowrap"><sc-for list="{{ ph.finance.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+      <div style="position:absolute;left:56.7pt;top:170pt;width:1077pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10pt;text-align:center">
+        <div style="font-size:13pt;line-height:18pt;color:#005FA1">Content to come</div>
+        <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:420pt">{{ ph.finance.waiting }}</div>
+      </div>
+      <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+      <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.l }}</div>
+      <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+      <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ sp.r }}</div>
+    </section>
+  </sc-for>
+</div></sc-if>
 <sc-if value="{{ on.back }}" hint-placeholder-val=""><div data-sec="back"><dc-import name="Back Matter" year="{{ year }}" hint-size="100%,841.89pt"></dc-import></div></sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
@@ -109,6 +318,12 @@ class Component extends DCLogic {
         const x = new XMLHttpRequest(); x.open("GET", "./data/fy26-payload.json", false); x.send();
         run = Object.assign(JSON.parse(x.responseText), { folder: "FY26 preview (project files)", created: new Date().toISOString(),
           sections: ["cover","contents","chair","ceo","kpi","racing","awards","owners","workforce","integrity","welfare","wagering","media","industry","finance","back"] });
+        // ?fy26&ph=media,welfare previews those sections as placeholders.
+        const ph = (location.search.match(/[?&]ph=([^&]+)/) || [])[1];
+        run.placeholders = {};
+        // No FY26 CEO's Report copy yet: placeholder pages, not last year's.
+        if (!(run.payload && run.payload['ceo-report'])) run.placeholders.ceo = ["FY26 Annual Report - CEO's Report.docx"];
+        if (ph) { decodeURIComponent(ph).split(',').forEach((id) => { run.placeholders[id] = ['FY26 Annual Report - (' + id + ').docx']; }); }
       } catch (e) {}
     }
     this.setState({ run });
@@ -146,6 +361,34 @@ class Component extends DCLogic {
       window.addEventListener('afterprint', () => s.remove(), { once: true });
     }
     window.print();
+  }
+
+  // Sections with no files print as placeholder spreads at their FY25 page
+  // count, so pagination and the Contents still come out right.
+  _placeholders(run, phs) {
+    const M = window.RV_PRODUCTION_MANIFEST, S = window.RV_REPORT_STRUCTURE;
+    const out = {};
+    const ids = ['chair','ceo','kpi','racing','awards','owners','workforce','integrity','welfare','wagering','media','industry','finance'];
+    const grad = (t) => { const a = [0x00, 0x5F, 0xA1], b = [0xEC, 0x00, 0x8C], n = Math.max(1, t.length - 1);
+      return Array.from(t).map((ch, i) => ({ t: ch, c: '#' + a.map((v, k) => Math.round(v + (b[k] - v) * i / n).toString(16).padStart(2, '0')).join('') })); };
+    const fol = (this.state && this.state.fol) || {};
+    ids.forEach((id) => {
+      if (!phs[id]) { out[id] = { on: false, spreads: [], chars: [], waiting: '' }; return; }
+      const sec = M && M.sections ? M.sections.find((s) => s.id === id) : null;
+      const spine = sec ? sec.spine : [id];
+      const base = {}; (S ? S.SECTIONS : []).forEach((s) => { base[s.id] = s.pages; });
+      const pages = spine.reduce((n, k) => n + (base[k] || 2), 0);
+      const first = fol[id] && fol[id].l;
+      const spreads = [];
+      for (let i = 0; i < Math.max(1, Math.ceil(pages / 2)); i++) {
+        const l = first ? first + i * 2 : '', r = first ? first + i * 2 + 1 : '';
+        spreads.push({ l, r, label: (l ? l + '-' + r + ' ' : '') + (sec ? sec.title : id) + ' (placeholder)' });
+      }
+      const files = phs[id] || [];
+      out[id] = { on: true, spreads, chars: grad(sec ? sec.title : id),
+        waiting: 'Waiting for ' + (files.length > 1 ? 'these files' : 'this file') + ' in the input folder: ' + files.join(', ') + '. Add ' + (files.length > 1 ? 'them' : 'it') + ' and produce again.' };
+    });
+    return out;
   }
 
   // Pages each run section laid out (a spread counts two).
@@ -238,8 +481,9 @@ class Component extends DCLogic {
     const fin = !!run && run.sections.indexOf("finance") > -1;
     const ready = this.state.ready && !(fin && aud === "drawing");
     const audLabel = !fin ? "" : !aud ? " \u00b7 KPMG pages: not started" : aud === "drawing" ? " \u00b7 KPMG pages drawing" : aud.indexOf("placed") === 0 ? " \u00b7 KPMG pages " + aud : " \u00b7 KPMG pages " + aud;
-    const on = {};
-    (run ? run.sections : []).forEach((id) => { on[id] = true; });
+    const on = {}, phs = (run && run.placeholders) || {};
+    (run ? run.sections : []).forEach((id) => { if (!phs[id]) on[id] = true; });
+    const ph = this._placeholders(run, phs);
     const n = run ? run.sections.length : 0;
     const fol = this.state.fol || {};
     const blank = { l: undefined, r: undefined };
@@ -251,7 +495,8 @@ class Component extends DCLogic {
       adjustBg: adj ? "#A51890" : "#fff",
       adjustFg: adj ? "#fff" : "#A51890",
       toggleAdjust: () => { const v = !this.state.adjust; if (window.RVImageEditor) window.RVImageEditor.setActive(v); this.setState({ adjust: v }); },
-      on, fol,
+      on, fol, ph,
+      footYear: run ? 2000 + +String(run.year).replace(/\D/g, '').slice(-2) : '',
       pageCounts: this.state.counts || {},
       year: run ? run.year : '',
       hasPageInfo: !!this.state.pageSummary,

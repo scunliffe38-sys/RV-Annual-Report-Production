@@ -34,7 +34,7 @@
     <div style="position:absolute;left:862.24pt;top:109.5pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   </sc-if>
 
-  <sc-if value="{{ photoOn }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ p1Id }}" shape="circle" placeholder="{{ p1Label }}" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot></sc-if>
+  <sc-if value="{{ photoOn }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ p1Id }}" tint="magenta" shape="circle" placeholder="{{ p1Label }}" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot></sc-if>
 
   <sc-if value="{{ fy26 }}" hint-placeholder-val=""><div style="position:absolute;left:52.7pt;top:79.66pt;width:530pt;font-size:34pt;line-height:40pt;font-weight:400;letter-spacing:-0.01em;color:#005FA1;white-space:nowrap"><span style="color:#005FA1">I</span><span style="color:#095BA0">n</span><span style="color:#11589F">d</span><span style="color:#1A549F">u</span><span style="color:#23519E">s</span><span style="color:#2C4D9D">t</span><span style="color:#344A9C">r</span><span style="color:#3D469C">y</span><span style="color:#46439B"> </span><span style="color:#4F3F9A">&amp;</span><span style="color:#573C99"> </span><span style="color:#603898">C</span><span style="color:#693598">o</span><span style="color:#723197">m</span><span style="color:#7A2E96">m</span><span style="color:#832A95">u</span><span style="color:#8C2795">n</span><span style="color:#952394">i</span><span style="color:#9D2093">t</span><span style="color:#A61C92">y</span><span style="color:#AF1991"> </span><span style="color:#B81591">S</span><span style="color:#C01290">u</span><span style="color:#C90E8F">p</span><span style="color:#D20B8E">p</span><span style="color:#DB078E">o</span><span style="color:#E3048D">r</span><span style="color:#EC008C">t</span></div></sc-if>
   <sc-if value="{{ fy25 }}" hint-placeholder-val=""><div style="position:absolute;left:52.7pt;top:79.66pt;width:415.31pt;font-size:37pt;line-height:40pt;font-weight:400;letter-spacing:-0.01em;color:#005FA1">
@@ -460,7 +460,7 @@ class Component extends DCLogic {
       p1Left: g.p1.left, p1Top: g.p1.top, p1Size: g.p1.size,
       p1Id: FY26 ? 'ics26-image-1' : 'ics-image-wellbeing',
       p1Label: FY26 ? 'Industry & Community Support photo (left circle)' : 'Participants / community',
-      footYear: FY26 ? 2026 : 2025,
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : (FY26 ? 2026 : 2025),
       folioLeft: this.props.folioLeft ?? 26,
       folioRight: this.props.folioRight ?? 27,
       showDecoration: this.props.showDecoration ?? !FY26,

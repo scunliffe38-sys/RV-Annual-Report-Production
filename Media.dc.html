@@ -35,8 +35,8 @@
     <div style="position:absolute;left:1077.11pt;top:-317.9pt;width:581.79pt;height:581.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   </sc-if>
 
-  <image-slot id="{{ p1Id }}" shape="circle" placeholder="{{ p1Label }}" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot>
-  <image-slot id="{{ p2Id }}" shape="circle" placeholder="{{ p2Label }}" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
+  <image-slot id="{{ p1Id }}" tint="blue" shape="circle" placeholder="{{ p1Label }}" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot>
+  <image-slot id="{{ p2Id }}" tint="magenta" shape="circle" placeholder="{{ p2Label }}" style="position:absolute;left:{{ p2Left }}pt;top:{{ p2Top }}pt;width:{{ p2Size }}pt;height:{{ p2Size }}pt"></image-slot>
   <sc-if value="{{ fy25 }}" hint-placeholder-val=""><svg style="position:absolute;left:54.7pt;top:79.66pt;width:333.65pt;height:50.77pt" viewBox="0 0 333.65 50.77" role="img" aria-label="Media"><text x="0" y="29.6" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">M</tspan><tspan fill="#3B479C">e</tspan><tspan fill="#763097">d</tspan><tspan fill="#B11891">i</tspan><tspan fill="#EC008C">a</tspan></text></svg></sc-if>
   <sc-if value="{{ fy26 }}" hint-placeholder-val=""><svg style="position:absolute;left:54.7pt;top:79.66pt;width:520pt;height:50.77pt" viewBox="0 0 520 50.77" role="img" aria-label="Content, Media &amp; Marketing"><text x="0" y="29.6" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">C</tspan><tspan fill="#095BA0">o</tspan><tspan fill="#13579F">n</tspan><tspan fill="#1C549E">t</tspan><tspan fill="#26509E">e</tspan><tspan fill="#2F4C9D">n</tspan><tspan fill="#39489C">t</tspan><tspan fill="#42449B">,</tspan><tspan fill="#4C419A"> </tspan><tspan fill="#553D99">M</tspan><tspan fill="#5E3999">e</tspan><tspan fill="#683598">d</tspan><tspan fill="#713197">i</tspan><tspan fill="#7B2E96">a</tspan><tspan fill="#842A95"> </tspan><tspan fill="#8E2694">&amp;</tspan><tspan fill="#972294"> </tspan><tspan fill="#A01E93">M</tspan><tspan fill="#AA1B92">a</tspan><tspan fill="#B31791">r</tspan><tspan fill="#BD1390">k</tspan><tspan fill="#C60F8F">e</tspan><tspan fill="#D00B8F">t</tspan><tspan fill="#D9088E">i</tspan><tspan fill="#E3048D">n</tspan><tspan fill="#EC008C">g</tspan></text></svg></sc-if>
 
@@ -428,7 +428,7 @@ class Component extends DCLogic {
       p1Left: g.p1.left, p1Top: g.p1.top, p1Size: g.p1.size,
       p2Left: g.p2.left, p2Top: g.p2.top, p2Size: g.p2.size,
       c1Top: g.c1, c1Height: g.flows[0].height, c2Height: g.flows[1].height, c3Height: g.flows[2].height, c4Top: g.c4, c4Height: g.flows[3].height,
-      footYear: FY26 ? 2026 : 2025,
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : (FY26 ? 2026 : 2025),
       fy26: FY26, fy25: !FY26,
       p1Id: FY26 ? 'md26-image-1' : 'md-image-studio',
       p2Id: FY26 ? 'md26-image-2' : 'md-image-broadcast',

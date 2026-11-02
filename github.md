@@ -2,17 +2,16 @@ repo: scunliffe38-sys/RV-Annual-Report-Production
 branch: main
 
 ## Last sync
-date: 2026-11-02
+date: 2026-11-02T23:30:00Z
 
 ### Updated in this project
-- Adjust images in the Production Run (move/zoom/replace on the pages; saved to the Console) and a Proof version (small PDF).
-- Cover and section footers take the year from the run.
-- Automatic pagination in the Production Run (folios, Contents, Financial Report start; page-reference checks).
-- FY26 Chair's Report, Integrity Services and Industry & Community Support copy and layout changes.
-- Awards and Feature Race Winners read from a Word document; Wagering from one docx; logos accept AI/EPS/PDF/PSD.
-- RV glow on section photo circles; images kept permanently in the browser.
+- Test 2 (LL feedback): Console runs for FY26+ use the FY26 layout on every section (no dotted rings, 2026 footers).
+- FY26 subhead spacing (9pt above and below) on Workforce, Equine Welfare and Wagering (title case); RV tint on all photo circles.
+- Placeholders for a missing CEO's Report and Industry Snapshot; no grey box behind filled images.
+- Welfare spend table and Media bold run-ins read from the Word documents; premiership list reordered.
 
 ## Sync history
+- 2026-11-02 (earlier): Adjust images, Proof version, pagination, FY26 Chair/Integrity/Industry copy, awards docx, logo formats, photo glow.
 - 2026-11-02 (earlier): Frame editor; Data Inputs split; logo formats.
 - 2026-10-21: serve.py no-cache server; Test 13 footnotes; notes-range line fix; build stamp on Run bar.
 - 2026-10-20T16:00:00Z: Test 10 comments (headings at column feet, cash-flow double rule, VicRacing footnote).

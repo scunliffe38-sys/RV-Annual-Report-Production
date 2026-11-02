@@ -70,6 +70,21 @@
     return runs.every(function (r) { return /<w:u\s+w:val="(?!none)[^"]+"/.test(r); });
   }
 
+  // A bold run-in at the start of a paragraph ("Sky - domestic and international:")
+  // followed by plain text. Returned only when it ends in a colon and is short.
+  function leadBold(xml) {
+    var runs = (xml.match(/<w:r[ >][\s\S]*?<\/w:r>/g) || []).filter(function (r) { return /<w:t[ >]/.test(r); });
+    var lead = "", i = 0;
+    for (; i < runs.length; i++) {
+      var m = runs[i].match(/<w:b(?:\s+w:val="([^"]*)")?\s*\/>/);
+      if (!m || m[1] === "0" || m[1] === "false") break;
+      lead += textOf(runs[i]);
+    }
+    lead = lead.trim();
+    if (!lead || i >= runs.length || !/:$/.test(lead) || words(lead) > 10) return "";
+    return lead;
+  }
+
   // Word paragraphs -> [{ text, kind }]. Headings are recognised by style
   // (Heading 1/2/3) or, for departmental documents without styles, by a short
   // fully-bold line (subhead) or fully-underlined line. Underlined lines are a
@@ -93,7 +108,9 @@
       else if (allBold(x) && words(text) <= 14 && !/[.:;]$/.test(text)) kind = "subhead";
       else if (allUnderlined(x) && words(text) <= 14 && !/[.:;]$/.test(text)) kind = "underline";
       if (kind !== "body" && kind !== "bullet" && /^images$/i.test(text)) break;
-      out.push({ text: text, kind: kind });
+      var blk = { text: text, kind: kind };
+      if (kind === "body" || kind === "bullet") { var ld = leadBold(x); if (ld) blk.lead = ld; }
+      out.push(blk);
     }
     var boldSubheads = out.slice(1).some(function (b) { return b.kind === "subhead"; });
     out.forEach(function (b) { if (b.kind === "underline") b.kind = boldSubheads ? "strong" : "subhead"; });
@@ -128,6 +145,19 @@
     if (!out.quarterly) issues.push(issue("warning", "No quarterly turnover table found."));
     if (!out.topFive) issues.push(issue("warning", "No Top 5 turnover races table found."));
     return { data: out, issues: issues };
+  }
+
+  // Equine Welfare docx: the welfare-spend table (Category | FYxx Spend (%) | FYxx-1 Spend (%)).
+  function welfareTable(docXml) {
+    var cell = function (c) { return textOf(c).trim(); };
+    var found = null;
+    (docXml.match(/<w:tbl>[\s\S]*?<\/w:tbl>/g) || []).forEach(function (t) {
+      if (found) return;
+      var rows = (t.match(/<w:tr[ >][\s\S]*?<\/w:tr>/g) || []).map(function (r) { return (r.match(/<w:tc>[\s\S]*?<\/w:tc>/g) || []).map(cell); });
+      if (rows.length > 1 && rows[0].length >= 3 && /category/i.test(rows[0][0]) && /spend/i.test(rows[0].join(" ")))
+        found = { head: rows[0].slice(0, 3), rows: rows.slice(1).filter(function (r) { return r.some(Boolean); }).map(function (r) { return r.slice(0, 3); }) };
+    });
+    return found;
   }
 
 // Awards and Feature Race Winners docx: three headed lists, text verbatim.
@@ -197,7 +227,10 @@
       ? { paragraphs: blocks.filter(function (b, i) { return !(i === 0 && /annual report\s*[\u2013\u2014-]/i.test(b.text)); }).map(function (b) { return b.text; }) }
       : { paragraphs: blocks.map(function (b) {
           var k = kinds[b.kind] || (b.kind === "h1" && label !== "media" ? "subhead" : b.kind);
-          return k === "body" ? { text: b.text } : { text: b.text, kind: k };
+          var o = k === "body" ? { text: b.text } : { text: b.text, kind: k };
+          // Content, Media & Marketing sets a bold run-in ahead of the text.
+          if (b.lead && label === "media" && b.text.indexOf(b.lead) === 0) { o.bold = b.lead; o.text = b.text.slice(b.lead.length).trim(); }
+          return o;
         }) };
     if (sign) { payload.meta = sign; issues.push(issue("info", "Signed off by " + sign.signatory + (sign.signatoryRole ? ", " + sign.signatoryRole : "") + ".")); }
     return { issues: issues, payload: payload };
@@ -483,6 +516,11 @@
             var out = narrative(docxBlocks(doc), cfg, budgets && budgets[cfg.payload], inp.id);
             rec.issues = rec.issues.concat(out.issues);
             if (cfg.strings) out.payload.meta = Object.assign({}, out.payload.meta, { footYear: 2000 + +year.slice(2) });
+            if (inp.id === "welfare") {
+              var et = welfareTable(doc);
+              if (et) { out.payload.table = et; rec.issues.push(issue("info", "Welfare spend table read (" + et.rows.length + " rows, " + et.head[1] + " / " + et.head[2] + ").")); }
+              else rec.issues.push(issue("warning", "No welfare spend table (Category / Spend %) found in the document."));
+            }
             if (inp.id === "wagering") {
               var wt = wageringTables(doc);
               rec.issues = rec.issues.concat(wt.issues);
