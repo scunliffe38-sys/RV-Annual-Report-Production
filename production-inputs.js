@@ -394,27 +394,20 @@
     });
   }
 
-  function snapshotInputs(sheets, year) {
-    var issues = [], payload = {};
-    var footYear = 2000 + +year.slice(2);
-    needSheets(sheets, ["Industry Snapshot"], issues);
-
-    var snap = sheets["Industry Snapshot"] && tableAfter(sheets["Industry Snapshot"], "ID (do not change)");
-    if (snap) {
-      var stats = {}, missing = [];
-      snap.forEach(function (r) {
-        var id = str(r[0]);
-        if (!id) return;
-        if (str(r[3]) === "") { stats[id] = { value: null }; missing.push(str(r[1]) || id); return; }
-        var n = num(r[3]);
-        if (n === null) issues.push(issue("error", "Industry Snapshot: \u201c" + (str(r[1]) || id) + "\u201d is not a plain number."));
-        stats[id] = { value: n };
-      });
-      if (missing.length) issues.push(issue("warning", "Industry Snapshot: " + missing.length + " figure" + (missing.length > 1 ? "s" : "") + " not entered (" + missing.join(", ") + "). They will print as a dash."));
-      payload["snapshot-data"] = { meta: { period: year, heading: year + " Industry Snapshot", footYear: footYear }, stats: stats };
-    }
-
-    return { issues: issues, payload: payload };
+  // Industry Snapshot docx: a title line, then one "value – label" line per
+  // tile ("$4.1b - Value Added to the Victorian Economy"). Set verbatim.
+  function snapshotDocx(docXml, year) {
+    var issues = [], tiles = [], body = (docXml.match(/<w:body>([\s\S]*)<\/w:body>/) || [, docXml])[1];
+    var paras = (body.match(/<w:p[ >][\s\S]*?<\/w:p>/g) || []).map(textOf).map(function (t) { return t.replace(/\s+/g, " ").trim(); }).filter(Boolean);
+    paras.forEach(function (t) {
+      var m = /^(\S*\d\S*)\s+[-\u2013\u2014]\s+(.+)$/.exec(t);
+      if (m) tiles.push({ value: m[1], label: m[2] });
+      else if (!/industry snapshot/i.test(t)) issues.push(issue("warning", "Industry Snapshot: \u201c" + t + "\u201d is not a \u201cvalue \u2013 label\u201d line and is left off."));
+    });
+    if (!tiles.length) issues.push(issue("error", "Industry Snapshot: no \u201cvalue \u2013 label\u201d lines found."));
+    else if (tiles.length !== 10) issues.push(issue("warning", "Industry Snapshot: " + tiles.length + " figures (the page is laid out for 10). Check the page in the run."));
+    else issues.push(issue("info", "10 figures read."));
+    return { issues: issues, payload: { "snapshot-data": { meta: { period: year, heading: year + " Industry Snapshot", footYear: 2000 + +year.slice(2) }, tiles: tiles } } };
   }
 
   /* ------------------------------------------------------------- pdf -- */
@@ -468,7 +461,11 @@
       var f = byName[inp.file.toLowerCase()];
       var rec = { file: inp.file, found: !!f, name: f ? f.name : null, issues: [] };
       result.inputs[inp.id] = rec;
-      if (!f) { rec.issues.push(issue("error", "Not in the folder.")); continue; }
+      if (!f) {
+        var oldXlsx = inp.id === "snapshotData" && byName[inp.file.toLowerCase().replace(/\.docx$/, ".xlsx")];
+        rec.issues.push(issue("error", oldXlsx ? "Found an Excel workbook (" + oldXlsx.name + "). The Industry Snapshot is now a Word document: one \u201cvalue \u2013 label\u201d line per figure. Use the template in FY26 Input Templates." : "Not in the folder."));
+        continue;
+      }
       used[f.name.toLowerCase()] = true;
       if (f.name !== inp.file) rec.issues.push(issue("info", "Name differs only in capitals \u2014 accepted."));
       if (inp.kind === "pdf") {
@@ -489,7 +486,11 @@
         if (inp.kind === "docx") {
           var doc = await zip.read("word/document.xml");
           if (!doc) throw new Error("no document body");
-          if (inp.id === "awardsData") {
+          if (inp.id === "snapshotData") {
+            var sd = snapshotDocx(doc, year);
+            rec.issues = rec.issues.concat(sd.issues);
+            Object.keys(sd.payload).forEach(function (k) { result.payload[k] = sd.payload[k]; });
+          } else if (inp.id === "awardsData") {
             var ad = awardsDocx(doc, year);
             rec.issues = rec.issues.concat(ad.issues);
             result.payload.awards = Object.assign(result.payload.awards || {}, ad.payload.awards);
@@ -548,11 +549,7 @@
           }
         } else {
           var sheets = await xlsxSheets(zip);
-          if (inp.id === "snapshotData") {
-            var d = snapshotInputs(sheets, year);
-            rec.issues = rec.issues.concat(d.issues);
-            Object.keys(d.payload).forEach(function (k) { result.payload[k] = Object.assign(result.payload[k] || {}, d.payload[k]); });
-          } else if (inp.id === "kpiRacing" || inp.id === "kpiParticipation") {
+          if (inp.id === "kpiRacing" || inp.id === "kpiParticipation") {
             var kw = kpiWorkbook(sheets, inp.id, year);
             rec.issues = rec.issues.concat(kw.issues);
             result.payload["kpi-data"] = Object.assign(result.payload["kpi-data"] || {}, kw.payload);

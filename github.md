@@ -2,15 +2,16 @@ repo: scunliffe38-sys/RV-Annual-Report-Production
 branch: main
 
 ## Last sync
-date: 2026-11-03T00:30:00Z
+date: 2026-11-06T02:47:54Z
 
 ### Updated in this project
-- Test 4: cover title in the RV Grad; Chair and CEO column feet aligned; back cover is the FY25 page.
-- Workforce Auto keeps the supplied photo (subhead gaps tighten first); Industry photo shrinks so all copy fits.
-- Word reader: bold run-ins keep spaces, unbulleted list paragraphs, untagged headings and ESG labels.
-- Folio row dropped under photos (O&B); Awards footer style; part-off-page photo framing (R&P).
+- FY26 Industry Snapshot: Word input only, updated figures, racing photo blended into the sky, staggered tiles, trophy pair for prizemoney.
+- Draft V1 (LL) comments: dotted circles removed throughout; Races < 8 Starters variance colour inverted; award photo rings reinforced.
+- O&B: Phase 1/2 and Breeding Award winners bold, FY26 subhead spacing, larger photo; Workforce list spacing even, subheads tighten to fit.
+- Notes ending on a left page print it as a single page (no blank page before the back cover).
 
 ## Sync history
+- 2026-11-03T00:30:00Z: Test 4: cover title RV Grad, Chair/CEO column feet, Workforce/Industry photo fit, Word reader fixes, O&B folio row.
 - 2026-11-02T23:30:00Z: Test 2 (LL feedback) — FY26 layout in runs, subhead spacing, tints, placeholders, welfare table.
 - 2026-11-02 (earlier): Adjust images, Proof version, pagination, FY26 Chair/Integrity/Industry copy, awards docx, logo formats, photo glow.
 - 2026-11-02 (earlier): Frame editor; Data Inputs split; logo formats.
@@ -34,4 +35,5 @@ date: 2026-11-03T00:30:00Z
 |---|---|
 | Production Console | Production Console.dc.html, production-*.js, auditor-pages.js |
 | Production Run | Production Run.dc.html |
+| KPI & Industry Snapshot | KPI & Industry Snapshot.dc.html, KPI & Industry Snapshot FY26.dc.html, copy/fy26/snapshot.js, images/snapshot-footer-fy26.jpg, icons/snapshot-*.svg |
 | Financial Report | Financial Report.dc.html, Financial Report FY26.dc.html, NoteBlock.dc.html, StatementTable.dc.html, docx-finance.js, finance-adapter.js, finance-notes.js, data/fy26-payload.json, auditor-pages.js, data/fy26-auditor.pdf |

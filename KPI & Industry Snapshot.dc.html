@@ -94,11 +94,9 @@
   </div>
 
   <sc-if value="{{ showDecoration }}" hint-placeholder-val="">
-  <div style="position:absolute;left:998.78pt;top:-462.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
-  <div style="position:absolute;left:893.18pt;top:29.2pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   </sc-if>
 
-  <svg style="position:absolute;left:648.68pt;top:64pt;width:476.4pt;height:50pt" viewBox="0 0 476.4 50" role="img" aria-label="{{ snapTitle }}"><text x="0" y="33.2" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">F</tspan><tspan fill="#0A5BA0">Y</tspan><tspan fill="#14579F">{{ yA }}</tspan><tspan fill="#1E539E">{{ yB }}</tspan><tspan fill="#284F9D"> </tspan><tspan fill="#324B9D">I</tspan><tspan fill="#3C479C">n</tspan><tspan fill="#46439B">d</tspan><tspan fill="#503F9A">u</tspan><tspan fill="#5A3B99">s</tspan><tspan fill="#643798">t</tspan><tspan fill="#6E3397">r</tspan><tspan fill="#782F96">y</tspan><tspan fill="#822B95"> </tspan><tspan fill="#8C2794">S</tspan><tspan fill="#962394">n</tspan><tspan fill="#A01F93">a</tspan><tspan fill="#AA1B92">p</tspan><tspan fill="#B41791">s</tspan><tspan fill="#BE1390">h</tspan><tspan fill="#C80F8F">o</tspan><tspan fill="#D20B8E">t</tspan></text></svg>
+  <div aria-label="{{ snapTitle }}" style="position:absolute;left:648.68pt;top:64pt;height:50pt;font-family:Gotham, Arial, sans-serif;font-size:37pt;line-height:44pt;font-weight:400;letter-spacing:-0.37pt;white-space:pre"><span style="color:#005FA1">F</span><span style="color:#0A5BA0">Y</span><span style="color:#14579F">{{ yA }}</span><span style="color:#1E539E">{{ yB }}</span><span style="color:#284F9D"> </span><span style="color:#324B9D">I</span><span style="color:#3C479C">n</span><span style="color:#46439B">d</span><span style="color:#503F9A">u</span><span style="color:#5A3B99">s</span><span style="color:#643798">t</span><span style="color:#6E3397">r</span><span style="color:#782F96">y</span><span style="color:#822B95"> </span><span style="color:#8C2794">S</span><span style="color:#962394">n</span><span style="color:#A01F93">a</span><span style="color:#AA1B92">p</span><span style="color:#B41791">s</span><span style="color:#BE1390">h</span><span style="color:#C80F8F">o</span><span style="color:#D20B8E">t</span></div>
 
   <sc-if value="{{ snapMissing }}" hint-placeholder-val="">
     <div style="position:absolute;left:648.68pt;top:170pt;width:485.2pt;height:600pt;border:1.5pt dashed #b9bbbe;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8pt;text-align:center;padding:0 30pt">
@@ -106,7 +104,54 @@
       <div style="font-size:9pt;line-height:12pt;color:#6D6E71;max-width:380pt">{{ snapWaiting }}</div>
     </div>
   </sc-if>
-  <sc-if value="{{ snapOn }}" hint-placeholder-val="{{ true }}">
+  <sc-if value="{{ snap26On }}" hint-placeholder-val="">
+  <img src="./images/snapshot-footer-fy26.jpg" alt="" style="position:absolute;left:595.28pt;top:496.8pt;width:595.28pt;height:325.2pt" />
+  <img src="./icons/snapshot-srcBenefit.svg" alt="" style="position:absolute;left:624pt;top:150pt;width:170.6pt;height:98pt" />
+  <div data-snap-tile="sA" style="position:absolute;left:616pt;top:248pt;width:184pt;text-align:center">
+    <div data-fit="44" style="font-weight:900;font-size:44pt;line-height:45pt;color:#005FA1;white-space:nowrap">{{ sA.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:11pt;line-height:12.5pt;margin-top:3pt">{{ sA.l }}</div>
+  </div>
+  <img src="./icons/snapshot-viewers-blank.svg" alt="" style="position:absolute;left:652.2pt;top:330pt;width:124.6pt;height:103pt" />
+  <div data-fit="30" style="position:absolute;left:662.8pt;top:359.1pt;width:103pt;height:52.6pt;text-align:center;font-weight:900;font-size:30pt;line-height:52.6pt;color:#7A2C93;white-space:nowrap">{{ sE.v }}</div>
+  <div style="position:absolute;left:624pt;top:437pt;width:180pt;text-align:center;font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:11pt;line-height:12.5pt">{{ sE.l }}</div>
+  <img src="./icons/snapshot-turnover.svg" alt="" style="position:absolute;left:812pt;top:130pt;width:171pt;height:94.7pt" />
+  <div data-snap-tile="sB" style="position:absolute;left:804pt;top:222pt;width:184pt;text-align:center">
+    <div data-fit="52" style="font-weight:900;font-size:52pt;line-height:53pt;color:#005FA1;white-space:nowrap">{{ sB.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:11.5pt;line-height:13.1pt;margin-top:3pt">{{ sB.l }}</div>
+  </div>
+  <img src="./icons/snapshot-owners.svg" alt="" style="position:absolute;left:826pt;top:330pt;width:141.5pt;height:92pt" />
+  <div data-snap-tile="sD" style="position:absolute;left:806pt;top:422pt;width:180pt;text-align:center">
+    <div data-fit="42" style="font-weight:900;font-size:42pt;line-height:43pt;color:#005FA1;white-space:nowrap">{{ sD.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:11pt;line-height:12.5pt;margin-top:3pt">{{ sD.l }}</div>
+  </div>
+  <img src="./icons/snapshot-attendance.svg" alt="" style="position:absolute;left:1052pt;top:122pt;width:79.7pt;height:131.9pt" />
+  <div data-snap-tile="sC" style="position:absolute;left:1000pt;top:254pt;width:184pt;text-align:center">
+    <div data-fit="48" style="font-weight:900;font-size:48pt;line-height:49pt;color:#005FA1;white-space:nowrap">{{ sC.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:11pt;line-height:12.5pt;margin-top:3pt">{{ sC.l }}</div>
+  </div>
+  <img src="./icons/snapshot-welfare.svg" alt="" style="position:absolute;left:1040pt;top:330pt;width:82.3pt;height:68pt" />
+  <div data-snap-tile="sW" style="position:absolute;left:996pt;top:400pt;width:170pt;text-align:center">
+    <div data-fit="34" style="font-weight:900;font-size:34pt;line-height:35pt;color:#005FA1;white-space:nowrap">{{ sW.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:10.5pt;line-height:12.0pt;margin-top:3pt">{{ sW.l }}</div>
+  </div>
+  <div data-snap-tile="sF" style="position:absolute;left:606pt;top:488pt;width:118pt;text-align:center">
+    <div data-fit="30" style="font-weight:900;font-size:30pt;line-height:31pt;color:#005FA1;white-space:nowrap">{{ sF.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:9.5pt;line-height:10.8pt;margin-top:3pt">{{ sF.l }}</div>
+  </div>
+  <div data-snap-tile="sG2" style="position:absolute;left:740pt;top:514pt;width:132pt;text-align:center">
+    <div data-fit="30" style="font-weight:900;font-size:30pt;line-height:31pt;color:#005FA1;white-space:nowrap">{{ sG2.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:9.5pt;line-height:10.8pt;margin-top:3pt">{{ sG2.l }}</div>
+  </div>
+  <div data-snap-tile="sH" style="position:absolute;left:885pt;top:514pt;width:124pt;text-align:center">
+    <div data-fit="30" style="font-weight:900;font-size:30pt;line-height:31pt;color:#005FA1;white-space:nowrap">{{ sH.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:9.5pt;line-height:10.8pt;margin-top:3pt">{{ sH.l }}</div>
+  </div>
+  <div data-snap-tile="sP" style="position:absolute;left:1020pt;top:488pt;width:136pt;text-align:center">
+    <div data-fit="30" style="font-weight:900;font-size:30pt;line-height:31pt;color:#005FA1;white-space:nowrap">{{ sP.v }}</div>
+    <div style="font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:#005FA1;text-wrap:balance;font-size:9.5pt;line-height:10.8pt;margin-top:3pt">{{ sP.l }}</div>
+  </div>
+  </sc-if>
+  <sc-if value="{{ snap25On }}" hint-placeholder-val="{{ true }}">
   <img src="./icons/snapshot-turnover.svg" alt="" style="position:absolute;left:836pt;top:111.6pt;width:182.01pt;height:100.79pt" />
   <div style="position:absolute;left:825.78pt;top:216pt;width:175pt;text-align:center">
     <div style="font-weight:900;font-size:62pt;line-height:62pt;color:#005FA1">{{ totalTurnover }}</div>
@@ -172,8 +217,10 @@
   <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
   <div style="position:absolute;left:74.18pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
 
+  <sc-if value="{{ rightFolio }}" hint-placeholder-val="{{ true }}">
   <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
   <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+  </sc-if>
 
 </section>
 
@@ -204,6 +251,45 @@ class Component extends DCLogic {
     (window.RVProduction ? window.RVProduction.load('snapshot-data', () => import('./snapshot-data.js')) : import('./snapshot-data.js'))
       .then(m => this.setState({ snapshot: m.snapshot, resolveSnapshot: m.resolveSnapshot }))
       .catch(e => console.error('snapshot-data.js failed to load', e));
+    // FY26 preview without a run: the supplied FY26 snapshot document's lines.
+    const runSnap = window.RVProduction && window.RVProduction.get('snapshot-data');
+    if (!runSnap && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)))
+      import('./copy/fy26/snapshot.js').then(m => this.setState({ snap26: m.snapshot })).catch(() => {});
+    this.fitFigures();
+  }
+
+  componentDidUpdate() { this.fitFigures(); }
+
+  // Figures are set verbatim, so a longer one (e.g. "$1,247m") shrinks to its
+  // tile's width rather than running into the next tile.
+  fitFigures() {
+    requestAnimationFrame(() => {
+      document.querySelectorAll('[data-fit]').forEach(el => {
+        let pt = +el.getAttribute('data-fit');
+        el.style.fontSize = pt + 'pt';
+        const w = el.clientWidth;
+        if (!w) return;
+        while (el.scrollWidth > w + 0.5 && pt > 12) { pt -= 1; el.style.fontSize = pt + 'pt'; }
+      });
+    });
+  }
+
+  // FY26 on: the snapshot document's "value – label" lines, each placed in the
+  // tile whose picture fits it; anything unmatched fills the text-only tiles.
+  tiles26() {
+    const d = (this.state.snapshot && this.state.snapshot.tiles) ? this.state.snapshot : this.state.snap26;
+    if (!d || !d.tiles) return null;
+    const slots = [
+      ['sW', /welfare/i], ['sD', /prize/i], ['sC', /attend/i], ['sE', /engaged|viewer|audience|watch/i],
+      ['sA', /econom|value added/i], ['sB', /wager|turnover|bet/i],
+    ];
+    const out = {}, left = [];
+    d.tiles.forEach(t => {
+      const s = slots.find(([k, re]) => !out[k] && re.test(t.label));
+      if (s) out[s[0]] = { v: t.value, l: t.label }; else left.push({ v: t.value, l: t.label });
+    });
+    ['sF', 'sG2', 'sH', 'sA', 'sB', 'sD', 'sC', 'sE', 'sP', 'sW'].forEach(k => { if (!out[k]) out[k] = left.shift() || { v: '', l: '' }; });
+    return out;
   }
 
   // ---- page 8: KPI tables -------------------------------------------------
@@ -232,9 +318,12 @@ class Component extends DCLogic {
     return (/^-0(\.0+)?$/.test(t) ? t.slice(1) : t) + '%';
   }
 
-  // FY25 prints negative variances in red; everything else in the table ink.
-  varColor(v) {
-    return v !== null && v < 0 && Math.abs(v) >= 0.0005 ? '#ED1C24' : '#231F20';
+  // Red marks an unfavourable movement: a fall, except on rows where fewer is
+  // better (races with fewer than 8 starters), where a rise is red.
+  varColor(v, label) {
+    if (v === null || Math.abs(v) < 0.0005) return '#231F20';
+    const lowerIsBetter = /<\s*8\s*starters/i.test(label || '');
+    return (lowerIsBetter ? v > 0 : v < 0) ? '#ED1C24' : '#231F20';
   }
 
   kpiVals() {
@@ -265,7 +354,7 @@ class Component extends DCLogic {
           cells.push({ text: this.fmt(pair[0], r.fmt), color: '#231F20' });
           if (g.showPrior) cells.push({ text: this.fmt(pair[1], r.fmt), color: '#231F20' });
           const v = this.variance(pair[0], pair[1]);
-          cells.push({ text: this.varText(v), color: this.varColor(v) });
+          cells.push({ text: this.varText(v), color: this.varColor(v, r.label) });
         });
         cells.forEach((c, i) => { c.bl = i === 0 ? 'none' : RULE; });
         return { label: r.label, source: showSrc ? r.source : '', bg: ri % 2 === 1 ? BAND : GROUND, cells };
@@ -294,7 +383,7 @@ class Component extends DCLogic {
         cells: [
           { text: this.fmt(cur, r.fmt), color: '#231F20', bl: 'none' },
           { text: this.fmt(prior, r.fmt), color: '#231F20', bl: RULE },
-          { text: this.varText(v), color: this.varColor(v), bl: RULE },
+          { text: this.varText(v), color: this.varColor(v, r.label), bl: RULE },
         ],
       };
     });
@@ -361,15 +450,18 @@ class Component extends DCLogic {
     const P = window.RVProduction;
     const snapMissing = !!(P && P.active() && !P.get('snapshot-data'));
     const fyNum = kpi.footYear || snapMeta.footYear || '';
-    const yr = String(this.props.year || (fyNum ? 'FY' + String(fyNum).slice(-2) : 'FY25'));
+    const s26 = (this.state.snapshot && this.state.snapshot.tiles) ? this.state.snapshot : this.state.snap26;
+    const yr = String(this.props.year || (s26 && s26.meta && s26.meta.period) || (fyNum ? 'FY' + String(fyNum).slice(-2) : 'FY25'));
 
-    return Object.assign({}, kpi, snap, {
+    const t26 = snapMissing ? null : this.tiles26();
+    return Object.assign({}, kpi, snap, t26 || {}, {
+      snap26On: !!t26, snap25On: !snapMissing && !t26, rightFolio: !t26,
       showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       folioLeft: this.props.folioLeft ?? 8,
       folioRight: this.props.folioRight ?? snapMeta.folio ?? 9,
       footYear: kpi.footYear || snapMeta.footYear || '',
       snapMissing, snapOn: !snapMissing,
-      snapWaiting: 'Waiting for ' + yr + ' Annual Report - Industry Snapshot.xlsx in the input folder. Add it and produce again.',
+      snapWaiting: 'Waiting for ' + yr + ' Annual Report - Industry Snapshot.docx in the input folder. Add it and produce again.',
       yA: yr.slice(2, 3), yB: yr.slice(3, 4), snapTitle: yr + ' Industry Snapshot',
     });
   }

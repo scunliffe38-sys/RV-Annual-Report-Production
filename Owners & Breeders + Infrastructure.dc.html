@@ -30,8 +30,6 @@
 <section class="page" data-screen-label="14-15 Owners &amp; Breeders / Infrastructure" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
 
   <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
-    <div style="position:absolute;left:605.1pt;top:181.8pt;width:819.2pt;height:819.2pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
-    <div style="position:absolute;left:933.1pt;top:392.8pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   </sc-if>
 
   <sc-if value="{{ obPhoto.on }}" hint-placeholder-val="{{ true }}">
@@ -48,10 +46,10 @@
   <div data-column="ob0" style="position:absolute;left:56.7pt;top:{{ colH.ob0Y }}pt;width:235.3pt;height:{{ colH.ob0 }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackOB }};color:#6D6E71">
     <sc-if value="{{ wrapOn.ob0 }}" hint-placeholder-val=""><div style="float:left;width:235.3pt;height:611.9pt;shape-outside:{{ obWrap0 }}"></div></sc-if>
     <sc-for list="{{ ob0 }}" as="b" hint-placeholder-count="6">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }};text-decoration:{{ b.td }}">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
     </sc-for>
   </div>
@@ -59,10 +57,10 @@
   <div data-column="ob1" style="position:absolute;left:303.3pt;top:{{ colH.ob1Y }}pt;width:248.9pt;height:{{ colH.ob1 }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackOB }};color:#6D6E71">
     <sc-if value="{{ wrapOn.ob1 }}" hint-placeholder-val=""><div style="float:left;width:248.9pt;height:611.9pt;shape-outside:{{ obWrap1 }}"></div></sc-if>
     <sc-for list="{{ ob1 }}" as="b" hint-placeholder-count="6">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }};text-decoration:{{ b.td }}">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
     </sc-for>
   </div>
@@ -70,10 +68,10 @@
   <div data-column="ip0" style="position:absolute;left:651.8pt;top:161.7pt;width:212.2pt;height:{{ colH.ip0 }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackIP }};color:#6D6E71">
     <sc-if value="{{ wrapOn.ip0 }}" hint-placeholder-val=""><div style="float:right;width:212.2pt;height:611.9pt;shape-outside:{{ ipWrap0 }}"></div></sc-if>
     <sc-for list="{{ ip0 }}" as="b" hint-placeholder-count="5">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }};text-decoration:{{ b.td }}">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
     </sc-for>
   </div>
@@ -81,10 +79,10 @@
   <div data-column="ip1" style="position:absolute;left:898.6pt;top:161.7pt;width:235.3pt;height:{{ colH.ip1 }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackIP }};color:#6D6E71">
     <sc-if value="{{ wrapOn.ip1 }}" hint-placeholder-val=""><div style="float:right;width:235.3pt;height:611.9pt;shape-outside:{{ ipWrap1 }}"></div></sc-if>
     <sc-for list="{{ ip1 }}" as="b" hint-placeholder-count="5">
-      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:0 0 4pt">{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.text }}</div></sc-if>
-      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }};text-decoration:{{ b.td }}">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
     </sc-for>
   </div>
@@ -138,7 +136,7 @@ const PHOTOS = {
   // sheet's right and foot edges by the same share at every size.
   ip: { max: 513.3, left: s => 1190.55 - 0.97146 * s, top: s => 841.89 - 0.75375 * s },
 };
-const OB_GAP = 14, IP_WRAP_GAP = 8, OB_SCALE = 1.15;
+const OB_GAP = 14, IP_WRAP_GAP = 8, OB_SCALE = 1.3;
 const circ = w => w ? 'circle(' + w.r.toFixed(2) + 'pt at ' + w.cx.toFixed(2) + 'pt ' + w.cy.toFixed(2) + 'pt)' : 'none';
 // Highest point of a circle over a column's x span (Infinity if it misses).
 function arcTop(x0, x1, cx, cy, r) {
@@ -199,6 +197,9 @@ function ladder(key, withPhoto, mayDrop) {
 const BODY_AFTER = 8.504;
 const BULLET_AFTER = 14.173;
 const SUBHEAD_AFTER = 4;
+// FY26: 9pt above and below every subhead, as on Integrity and Media (LL, Draft V1).
+const FY26 = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search));
+const SUB_GAP = 9;
 const FOOT_CLEARANCE = 7;
 // A4 V:Body carries Tracking -10, so the ladder starts there.
 const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
@@ -229,9 +230,19 @@ class Component extends DCLogic {
         .then(() => document.fonts.ready).catch(() => null),
     ])
       .then(([ob, ip]) => this._whenMeasurable().then(() => {
-        const prep = m => m.copy.paragraphs
+        // Underlined run-in heads ("Phase 1") set bold as well; under an awards
+        // subhead, the winner after " - " is bold (LL, Draft V1).
+        const prep = m => { let head = ''; return m.copy.paragraphs
           .filter(p => !/^(?:(?:FY)?\d{4} )?Annual Report\s*[\u2013-]/.test(p.text))
-          .map(p => ({ text: p.text, kind: p.kind || 'body', u: !!p.underline, bold: p.bold || '' }));
+          .map(p => {
+            const kind = p.kind || 'body';
+            if (kind === 'subhead') head = p.text;
+            let bold = p.bold || '';
+            if (!bold && p.underline) bold = p.text;
+            const w = kind !== 'subhead' && /award/i.test(head) && /^(.+?)\s[-\u2013]\s(.+)$/.exec(p.text);
+            if (!bold && w) bold = w[2];
+            return { text: p.text, kind, u: !!p.underline, bold };
+          }); };
 
         this._items = { ob: prep(ob), ip: prep(ip) };
         this._layout();
@@ -339,7 +350,7 @@ class Component extends DCLogic {
 
   _style(host, item) {
     const sub = item.kind === 'subhead';
-    host.style.fontWeight = '400';
+    host.style.fontWeight = item.bold && item.bold === item.text ? '700' : '400';
     host.style.fontSize = sub ? '13pt' : '9pt';
     host.style.lineHeight = sub ? '18pt' : '12pt';
     host.style.paddingLeft = item.kind === 'bullet' ? '10pt' : '0';
@@ -347,7 +358,7 @@ class Component extends DCLogic {
   }
 
   _after(item, g) {
-    if (item.kind === 'subhead') return SUBHEAD_AFTER;
+    if (item.kind === 'subhead') return FY26 ? SUB_GAP : SUBHEAD_AFTER;
     return (item.kind === 'bullet' ? BULLET_AFTER : BODY_AFTER) * (g || 1);
   }
 
@@ -383,7 +394,9 @@ class Component extends DCLogic {
         const hPx = (shim ? this._textHeight(host, node)
                           : host.getBoundingClientRect().height) + this._after(item, g) / 0.75 +
           // Body leading into a list opens to the bullet gap (11.339 vs 2.835).
-          (item.kind !== 'bullet' && item.kind !== 'subhead' && queue[1] && queue[1].kind === 'bullet' ? 8.504 * g / 0.75 : 0);
+          (item.kind !== 'bullet' && item.kind !== 'subhead' && queue[1] && queue[1].kind === 'bullet' ? 8.504 * g / 0.75 : 0) +
+          // FY26 subhead: 9pt above; the copy before it already counted 8.504 (bullets 14.173).
+          (FY26 && item.kind === 'subhead' && columns[c].length ? Math.max(0, SUB_GAP - 8.504) / 0.75 : 0);
 
         if (usedPx + hPx <= capPx) {
           columns[c].push(Object.assign({}, item));
@@ -483,6 +496,8 @@ class Component extends DCLogic {
       m: first(i.kind === 'bullet' ? mBullet
         : (list[n + 1] && list[n + 1].kind === 'bullet' && !list[n + 1].cont) ? pt(5.669) + ' 0 ' + pt(11.339) : mBody)(n),
       td: i.u ? 'underline' : 'none',
+      subT: FY26 ? SUB_GAP + 'pt' : '0',
+      subB: FY26 ? SUB_GAP + 'pt' : '4pt',
       ...this._runs(i),
       text: i.text,
       isSubhead: i.kind === 'subhead' && n > 0,

@@ -30,9 +30,6 @@
 <section class="page" data-screen-label="16-17 Workforce Development" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
 
   <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
-    <div style="position:absolute;left:-364pt;top:261.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
-    <div style="position:absolute;left:862.2pt;top:63.6pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
-    <div style="position:absolute;left:998.8pt;top:-462.5pt;width:581.8pt;height:581.8pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
   </sc-if>
 
   <sc-if value="{{ showP1 }}" hint-placeholder-val="{{ true }}">
@@ -354,7 +351,9 @@ class Component extends DCLogic {
       .then(([m]) => this._supplied().then(have => { this._have = have; }).then(() => this._whenMeasurable()).then(() => {
         const items = m.copy.paragraphs
           .filter(p => !/^(?:FY)?\d{4} Annual Report\s*[\u2013-]/.test(p.text))
-          .map(p => ({ text: p.text, kind: p.kind || 'body' }));
+          .map(p => ({ text: p.text, kind: p.kind || 'body' }))
+          // Copy after a list opens with the same gap as the list itself (LL, Draft V1).
+          .map((p, n, all) => (p.kind === 'body' && n > 0 && all[n - 1].kind === 'bullet') ? Object.assign(p, { afterList: true }) : p);
         const a = this.fit(trimItems(items), 'Workforce Development');
         this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, s: a.s || 1, k: a.k || 1, mode: a.mode, sk: a.sk || 1,
           just: [{ top: 0, gx: 0 }, { top: 0, gx: 0 }, { top: 0, gx: 0 }] });
@@ -410,7 +409,7 @@ class Component extends DCLogic {
 
   // Test 4: before a layout loses its photo, the subhead gaps tighten (half).
   fitLayout(items, id) {
-    for (const sk of [1, 0.5]) {
+    for (const sk of [1, 0.75, 0.5]) {
       this._sk = sk;
       const r = this._fitLayout(items, id);
       if (r) return Object.assign(r, { sk });
@@ -495,6 +494,7 @@ class Component extends DCLogic {
 
   _before(item) {
     if (item.kind === 'subhead') return 0;
+    if (item.afterList && !item.cont) return 0.709;
     return item.kind === 'bullet' ? 0.709 : 5.669 * (this._k || 1);
   }
 
@@ -631,7 +631,7 @@ class Component extends DCLogic {
     k = k || 1;
     const x = n => n > 0 ? (gx || 0) : 0;
     return (list || []).map((i, n) => ({
-      padT: +Math.max(0, 5.669 * k + x(n)).toFixed(3), padB: +(2.835 * k).toFixed(3), subT: +Math.max(0, SUBHEAD_BEFORE * k * (this.state.sk || 1) + x(n)).toFixed(3), subB: +(SUBHEAD_AFTER * (this.state.sk || 1)).toFixed(3),
+      padT: +Math.max(0, (i.afterList && !i.cont ? 0.709 : 5.669 * k) + x(n)).toFixed(3), padB: +(2.835 * k).toFixed(3), subT: +Math.max(0, SUBHEAD_BEFORE * k * (this.state.sk || 1) + x(n)).toFixed(3), subB: +(SUBHEAD_AFTER * (this.state.sk || 1)).toFixed(3),
       text: (i.kind === 'bullet' && !i.cont ? '\u2022\u2003\u2003' : '') + i.text,
       isSubhead: i.kind === 'subhead' && n > 0,
       isSubheadTop: i.kind === 'subhead' && n === 0,
