@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-MediumItalic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-BookItalic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="14-15 Owners &amp; Breeders / Infrastructure" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
+  </sc-if>
+
+  <sc-if value="{{ obPhoto.on }}" hint-placeholder-val="{{ true }}">
+    <image-slot id="obi-image-left" tint="magenta" src="{{ obSrc }}" shape="circle" placeholder="VOBIS Owners Bonus — McGaw" style="position:absolute;left:{{ obPhoto.left }}pt;top:{{ obPhoto.top }}pt;width:{{ obPhoto.s }}pt;height:{{ obPhoto.s }}pt"></image-slot>
+  </sc-if>
+  <sc-if value="{{ ipPhoto.on }}" hint-placeholder-val="{{ true }}">
+    <image-slot id="obi-image-right" tint="blue" src="{{ ipSrc }}" shape="circle" placeholder="Pakenham lights" style="position:absolute;left:{{ ipPhoto.left }}pt;top:{{ ipPhoto.top }}pt;width:{{ ipPhoto.s }}pt;height:{{ ipPhoto.s }}pt"></image-slot>
+  </sc-if>
+
+  <svg style="position:absolute;left:53.7pt;top:72pt;width:360.2pt;height:50pt" viewBox="0 0 360.2 50" role="img" aria-label="Owners &amp; Breeders"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">O</tspan><tspan fill="#0E5AA0">w</tspan><tspan fill="#1B549F">n</tspan><tspan fill="#294F9D">e</tspan><tspan fill="#36499C">r</tspan><tspan fill="#44449B">s</tspan><tspan fill="#513E9A"> </tspan><tspan fill="#5F3999">&amp;</tspan><tspan fill="#6D3397"> </tspan><tspan fill="#7A2E96">B</tspan><tspan fill="#882895">r</tspan><tspan fill="#952394">e</tspan><tspan fill="#A31D93">e</tspan><tspan fill="#B01891">d</tspan><tspan fill="#BE1390">e</tspan><tspan fill="#CC0D8F">r</tspan><tspan fill="#D9088E">s</tspan></text></svg>
+
+  <svg style="position:absolute;left:651.5pt;top:72pt;width:500.5pt;height:50pt" viewBox="0 0 500.5 50" role="img" aria-label="Infrastructure &amp; Projects"><text x="0" y="32.8" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">I</tspan><tspan fill="#095BA0">n</tspan><tspan fill="#12589F">f</tspan><tspan fill="#1B549F">r</tspan><tspan fill="#24509E">a</tspan><tspan fill="#2D4D9D">s</tspan><tspan fill="#36499C">t</tspan><tspan fill="#3F469B">r</tspan><tspan fill="#48429B">u</tspan><tspan fill="#513E9A">c</tspan><tspan fill="#5A3B99">t</tspan><tspan fill="#643798">u</tspan><tspan fill="#6D3397">r</tspan><tspan fill="#763097">e</tspan><tspan fill="#7F2C96"> </tspan><tspan fill="#882895">&amp;</tspan><tspan fill="#912594"> </tspan><tspan fill="#9A2193">P</tspan><tspan fill="#A31D93">r</tspan><tspan fill="#AC1A92">o</tspan><tspan fill="#B51691">j</tspan><tspan fill="#BE1390">e</tspan><tspan fill="#C70F8F">c</tspan><tspan fill="#D00B8E">t</tspan><tspan fill="#D9088E">s</tspan></text></svg>
+
+  <div data-column="ob0" style="position:absolute;left:56.7pt;top:{{ colH.ob0Y }}pt;width:235.3pt;height:{{ colH.ob0 }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackOB }};color:#6D6E71">
+    <sc-if value="{{ wrapOn.ob0 }}" hint-placeholder-val=""><div style="float:left;width:235.3pt;height:611.9pt;shape-outside:{{ obWrap0 }}"></div></sc-if>
+    <sc-for list="{{ ob0 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }};text-decoration:{{ b.td }}">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ob1" style="position:absolute;left:303.3pt;top:{{ colH.ob1Y }}pt;width:248.9pt;height:{{ colH.ob1 }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackOB }};color:#6D6E71">
+    <sc-if value="{{ wrapOn.ob1 }}" hint-placeholder-val=""><div style="float:left;width:248.9pt;height:611.9pt;shape-outside:{{ obWrap1 }}"></div></sc-if>
+    <sc-for list="{{ ob1 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }};text-decoration:{{ b.td }}">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ip0" style="position:absolute;left:651.8pt;top:161.7pt;width:212.2pt;height:{{ colH.ip0 }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackIP }};color:#6D6E71">
+    <sc-if value="{{ wrapOn.ip0 }}" hint-placeholder-val=""><div style="float:right;width:212.2pt;height:611.9pt;shape-outside:{{ ipWrap0 }}"></div></sc-if>
+    <sc-for list="{{ ip0 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }};text-decoration:{{ b.td }}">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ip1" style="position:absolute;left:898.6pt;top:161.7pt;width:235.3pt;height:{{ colH.ip1 }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ trackIP }};color:#6D6E71">
+    <sc-if value="{{ wrapOn.ip1 }}" hint-placeholder-val=""><div style="float:right;width:235.3pt;height:611.9pt;shape-outside:{{ ipWrap1 }}"></div></sc-if>
+    <sc-for list="{{ ip1 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:-3.9pt 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.subT }} 0 {{ b.subB }}">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:{{ b.m }};padding-left:10pt">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }};text-decoration:{{ b.td }}">{{ b.pre }}<span style="font-weight:700">{{ b.strong }}</span>{{ b.post }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:56.7pt;top:700pt;width:1077.3pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:821.7pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <sc-if value="{{ footL }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  </sc-if>
+  <sc-if value="{{ footR }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+  </sc-if>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;photoLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;both&quot;,&quot;obOnly&quot;,&quot;ipOnly&quot;,&quot;none&quot;],&quot;default&quot;:&quot;auto&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;obSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;ipSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:14,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:15,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;showDecoration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Frame geometry read from Spreads/Spread_u11823.xml (pp. 14-15), converted to
+// page coordinates with x + 595.28, y + 420.6.
+//
+// Two independent stories: Owners & Breeders (u11875) flows through the two
+// left-page frames, Infrastructure & Projects (u118b7) through the two on the
+// right. Both fill sequentially, as InDesign does — the frames' unequal depths
+// are the design: OB col A stops at 521.7 to clear the McGaw circle below it.
+// Adaptive photos (the Workforce rule): each story takes the FY25 photo size if
+// the copy fits; else eases its gaps to 97/94%, then shrinks the photo step by
+// step to 50 mm, then drops it. A photo keeps the same share of itself bleeding
+// off the sheet as it shrinks, so it settles into its corner.
+const TOP = 161.7, FOOT = 773.6, FULL = FOOT - TOP;   // 611.9
+const MIN_PHOTO = 141.73;                             // 50 mm
+const OB_DX = 30, OB_DY = 30, OB_WRAP_GAP = 8, OB_SHIM = 80;
+const PHOTOS = {
+  // McGaw: FY25 left -35, top 541.7, 348.9². Col A stops 20pt above it.
+  // Moved OB_DX right and OB_DY up from the FY25 corner so its arc reaches
+  // into col B and the foot of that column curves round it.
+  // McGaw mirrors Pakenham: bottom-left corner, same bleed off the side and foot.
+  // OB_SCALE larger than Pakenham, with more of it bled off the left edge so
+  // it gains more height than width on the page.
+  // Test 7 (LL): "could be a bit bigger" — more of it bleeds off the left and
+  // foot so the circle grows without taking more of the copy's room.
+  ob: { max: 513.3, left: s => -0.2 * s, top: s => 841.89 - 0.70 * s },
+  // Pakenham: FY25 corner — left 691.9, top 455, 513.3², bleeding off the
+  // sheet's right and foot edges by the same share at every size.
+  ip: { max: 513.3, left: s => 1190.55 - 0.97146 * s, top: s => 841.89 - 0.75375 * s },
+};
+const OB_GAP = 14, IP_WRAP_GAP = 8, OB_SCALE = 1.3;
+const circ = w => w ? 'circle(' + w.r.toFixed(2) + 'pt at ' + w.cx.toFixed(2) + 'pt ' + w.cy.toFixed(2) + 'pt)' : 'none';
+// Highest point of a circle over a column's x span (Infinity if it misses).
+function arcTop(x0, x1, cx, cy, r) {
+  const dx = cx < x0 ? x0 - cx : cx > x1 ? cx - x1 : 0;
+  return dx >= r ? Infinity : cy - Math.sqrt(r * r - dx * dx);
+}
+function photoBox(key, s) {
+  if (!s) return { on: false, s: 0, left: 0, top: 0 };
+  const P = PHOTOS[key];
+  return { on: true, s: +s.toFixed(2), left: +P.left(s).toFixed(2), top: +P.top(s).toFixed(2) };
+}
+// Test 4: where a photo covers the folio row, that page drops its folio row
+// (page number and running footer). Circle vs the row's box (798.85-809.75pt).
+function footCovered(boxes, x0, x1) {
+  return boxes.some(b => {
+    if (!b || !b.on) return false;
+    const r = b.s / 2, cx = b.left + r, cy = b.top + r;
+    const nx = Math.max(x0, Math.min(cx, x1)), ny = Math.max(798.85, Math.min(cy, 809.75));
+    return (nx - cx) * (nx - cx) + (ny - cy) * (ny - cy) < r * r;
+  });
+}
+function flowsFor(key, s) {
+  const b = photoBox(key, s);
+  const r = s / 2, cx = b.left + r, cy = b.top + r;
+  const depth = (x0, x1, gap) => Math.min(FULL, arcTop(x0, x1, cx, cy, r) - gap - TOP);
+  if (key === 'ob') {
+    const colL = (x, w) => s && arcTop(x, x + w, cx, cy, r + IP_WRAP_GAP) < Infinity
+      ? { x, y: TOP, width: w, height: FULL,
+          wrap: { side: 'left', width: w, height: FULL, r: r + IP_WRAP_GAP, cx: cx - x, cy: cy - TOP } }
+      : { x, y: TOP, width: w, height: FULL };
+    // Col A lies almost wholly over the circle, so it stops above the arc
+    // rather than leaving slivers of text beside it; col B contours.
+    return [{ x: 56.7, y: TOP, width: 235.3, height: s ? depth(56.7, 292, 15.6) : FULL }, colL(303.3, 248.9)];
+  }
+  // Both columns run full depth and contour round the arc, so the photo can
+  // grow into the space above and to its left.
+  const col = (x, w) => s
+    ? { x, y: TOP, width: w, height: FULL,
+        wrap: { side: 'right', width: w, height: FULL, r: r + IP_WRAP_GAP, cx: cx - x, cy: cy - TOP } }
+    : { x, y: TOP, width: w, height: FULL };
+  return [col(651.8, 212.2), col(898.6, 235.3)];
+}
+// Candidate layouts, most photo first.
+function ladder(key, withPhoto, mayDrop) {
+  const out = [];
+  if (withPhoto) {
+    const max = PHOTOS[key].max;
+    [1, 0.97, 0.94].forEach(g => out.push({ s: max, g }));
+    const steps = key === 'ob' ? 30 : 12;
+    for (let i = 1; i <= steps; i++) out.push({ s: max - (max - MIN_PHOTO) * i / steps, g: 0.94 });
+  }
+  if (!withPhoto || mayDrop) [1, 0.97, 0.94].forEach(g => out.push({ s: 0, g }));
+  return out;
+}
+
+// A4 V:Body — 5.669 before + 2.835 after. A4 V:Bullets Body — 2.835 + 11.339.
+// A4 V:Subhead Large — RV Blue, Gotham Book 13/18.
+const BODY_AFTER = 8.504;
+const BULLET_AFTER = 14.173;
+const SUBHEAD_AFTER = 4;
+// FY26: 9pt above and below every subhead, as on Integrity and Media (LL, Draft V1).
+const FY26 = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search));
+const SUB_GAP = 9;
+const FOOT_CLEARANCE = 7;
+// A4 V:Body carries Tracking -10, so the ladder starts there.
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+
+// Hidden/background loads (print export, off-screen iframes) never fire
+// requestAnimationFrame, which would park the flow chain forever, so fall back
+// to a timer when the document is hidden.
+const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
+
+class Component extends DCLogic {
+  state = { ob: [[], []], ip: [[], []], obIdx: 0, ipIdx: 0, leftover: [] };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    TICK(nudge);
+
+    const fy26 = window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search);
+    const obImp = () => fy26 ? import('./copy/fy26/owners-breeders.js') : import('./copy/owners-breeders.js');
+    const ipImp = () => fy26 ? import('./copy/fy26/infrastructure-projects.js') : import('./copy/infrastructure-projects.js');
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('owners-breeders', obImp) : obImp()),
+      (window.RVProduction ? window.RVProduction.load('infrastructure-projects', ipImp) : ipImp()),
+      document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
+        .then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([ob, ip]) => this._whenMeasurable().then(() => {
+        // Underlined run-in heads ("Phase 1") set bold as well; under an awards
+        // subhead, the winner after " - " is bold (LL, Draft V1).
+        const prep = m => { let head = ''; return m.copy.paragraphs
+          .filter(p => !/^(?:(?:FY)?\d{4} )?Annual Report\s*[\u2013-]/.test(p.text))
+          .map(p => {
+            const kind = p.kind || 'body';
+            if (kind === 'subhead') head = p.text;
+            let bold = p.bold || '';
+            if (!bold && p.underline) bold = p.text;
+            const w = kind !== 'subhead' && /award/i.test(head) && /^(.+?)\s[-\u2013]\s(.+)$/.exec(p.text);
+            if (!bold && w) bold = w[2];
+            return { text: p.text, kind, u: !!p.underline, bold };
+          }); };
+
+        this._items = { ob: prep(ob), ip: prep(ip) };
+        this._layout();
+      }))
+      .catch(e => console.error('copy modules failed to load', e));
+  }
+
+  componentDidUpdate(prev) {
+    if (this._items && prev.photoLayout !== this.props.photoLayout) this._layout();
+  }
+
+  // photoLayout: auto | both | obOnly | ipOnly | none. Auto may drop either
+  // photo; a forced photo still shrinks to 50 mm before the copy overflows.
+  _layout() {
+    const mode = this.props.photoLayout || 'auto';
+    const want = {
+      ob: mode === 'auto' || mode === 'both' || mode === 'obOnly',
+      ip: mode === 'auto' || mode === 'both' || mode === 'ipOnly',
+    };
+    const pick = (key, label, opts) => {
+      const steps = ladder(key, want[key], mode === 'auto');
+      let res = null, prev = null;
+      for (const st of steps) {
+        res = this.settle(this._items[key], flowsFor(key, st.s), Object.assign({ g: st.g }, opts));
+        res.step = st;
+        if (!res.leftover.length) break;
+        prev = st;
+      }
+      // Test 6 (LL): fill the corner. Between the size that fits and the next
+      // larger one that didn't, take the largest that still fits (to ~1pt).
+      if (!res.leftover.length && res.step.s && prev && prev.s > res.step.s) {
+        let lo = res.step.s, hi = prev.s;
+        for (let i = 0; i < 7 && hi - lo > 1; i++) {
+          const mid = (lo + hi) / 2;
+          const r = this.settle(this._items[key], flowsFor(key, mid), Object.assign({ g: res.step.g }, opts));
+          if (!r.leftover.length) { lo = mid; r.step = { s: mid, g: res.step.g }; res = r; } else hi = mid;
+        }
+      }
+      const st = res.step;
+      console.warn(label + ': ' + (st.s ? 'photo ' + Math.round(st.s / 2.8346) + ' mm' : 'no photo') +
+        ', gaps ' + Math.round(st.g * 100) + '%, tracking ' + TRACKING[res.baseIdx] +
+        (res.leftover.length ? ' \u2014 ' + res.leftover.length + ' paragraph(s) still over' : '') + '.');
+      return res;
+    };
+    // The pair mirror each other, so McGaw is capped at Pakenham's fitted size.
+    const b = pick('ip', 'Infrastructure & Projects', { keepWhole: true });
+    // Test 6 (LL): McGaw fills its corner. Its largest size no longer follows
+    // Pakenham's fitted size; the ladder takes the biggest that fits the copy.
+    PHOTOS.ob.max = 640;
+    const a = pick('ob', 'Owners & Breeders');
+    this.setState({
+      ob: a.columns, obIdx: a.baseIdx, obS: a.step.s, obG: a.step.g,
+      ip: b.columns, ipIdx: b.baseIdx, ipS: b.step.s, ipG: b.step.g,
+      leftover: a.leftover.concat(b.leftover),
+    });
+  }
+
+  // A probe attached before the sheet has been laid out measures 0, which makes
+  // every paragraph look weightless and pours a whole story into its first
+  // frame. Wait for a known sample to report a real height before flowing.
+  _whenMeasurable(attempt) {
+    const n = attempt || 0;
+    const p = this._probe(200, '0');
+    p.host.style.fontSize = '9pt';
+    p.host.style.lineHeight = '12pt';
+    p.node.data = 'Measure';
+    const h = p.host.getBoundingClientRect().height;
+    p.host.remove();
+    if (h > 0) return Promise.resolve();
+    if (n >= 120) {
+      console.warn('layout never became measurable \u2014 columns may not break correctly.');
+      return Promise.resolve();
+    }
+    return new Promise(res => TICK(res)).then(() => this._whenMeasurable(n + 1));
+  }
+
+  // Loosen tracking a step at a time until the story fits its frames. Browsers
+  // set slightly wider than InDesign's paragraph composer, so the printed break
+  // points need a nudge of negative tracking to land.
+  settle(items, cols, opts) {
+    let attempt = null;
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      attempt = this.flow(items, cols, baseIdx, opts);
+      if (!attempt.leftover.length) return Object.assign(attempt, { baseIdx });
+    }
+    return Object.assign(attempt, { baseIdx: TRACKING.length - 1 });
+  }
+
+  _probe(widthPt, track, wrap) {
+    const host = document.createElement('div');
+    // border-box matters: a bullet's 10pt padding must eat INTO the column
+    // width, as it does in the render, or bullets measure short and overflow.
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;box-sizing:border-box;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;letter-spacing:' + track;
+    document.body.appendChild(host);
+    let shim = null;
+    if (wrap) {
+      shim = document.createElement('div');
+      shim.style.cssText = 'float:' + (wrap.side || 'left') + ';width:' + wrap.width + 'pt;height:' + wrap.height + 'pt';
+      host.appendChild(shim);
+    }
+    const node = document.createTextNode('');
+    host.appendChild(node);
+    return { host, shim, node };
+  }
+
+  // Text height measured off the text node, not the host box: an absolutely
+  // positioned host is a BFC, so a wrap shim's float would inflate its height.
+  _textHeight(host, node) {
+    if (!node.data) return 0;
+    const range = document.createRange();
+    range.setStart(node, 0);
+    range.setEnd(node, node.data.length);
+    const rects = range.getClientRects();
+    if (!rects.length) return 0;
+    return rects[rects.length - 1].bottom - host.getBoundingClientRect().top;
+  }
+
+  _style(host, item) {
+    const sub = item.kind === 'subhead';
+    host.style.fontWeight = item.bold && item.bold === item.text ? '700' : '400';
+    host.style.fontSize = sub ? '13pt' : '9pt';
+    host.style.lineHeight = sub ? '18pt' : '12pt';
+    host.style.paddingLeft = item.kind === 'bullet' ? '10pt' : '0';
+    host.style.textIndent = (item.kind === 'bullet' && !item.cont) ? '-10pt' : '0';
+  }
+
+  _after(item, g) {
+    if (item.kind === 'subhead') return FY26 ? SUB_GAP : SUBHEAD_AFTER;
+    return (item.kind === 'bullet' ? BULLET_AFTER : BODY_AFTER) * (g || 1);
+  }
+
+  // Pour the items through the columns, breaking mid-paragraph where a column
+  // runs out. A bullet broken across columns keeps its indent but drops the
+  // marker on the continuation.
+  flow(items, cols, baseIdx, opts) {
+    const keepWhole = !!(opts && opts.keepWhole);
+    const g = (opts && opts.g) || 1;
+    const columns = cols.map(() => []);
+    const track = TRACKING[baseIdx];
+    let queue = items.map(i => Object.assign({}, i));
+
+    for (let c = 0; c < cols.length; c++) {
+      const wrap = cols[c].wrap;
+      const probe = this._probe(cols[c].width, track, wrap);
+      const host = probe.host, shim = probe.shim, node = probe.node;
+      // Hold the copy a little clear of the frame foot rather than setting
+      // flush to it.
+      const capPx = (cols[c].height - FOOT_CLEARANCE) / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const item = queue[0];
+        this._style(host, item);
+        node.data = (item.kind === 'bullet' && !item.cont ? '\u2022\u2003' : '') + item.text;
+        // Slide the exclusion up by the copy already set, so each item measures
+        // against the intrusion at its own depth in the column.
+        if (shim) {
+          shim.style.shapeOutside = 'circle(' + wrap.r + 'pt at ' + wrap.cx +
+            'pt ' + (wrap.cy - usedPx * 0.75) + 'pt)';
+        }
+        const hPx = (shim ? this._textHeight(host, node)
+                          : host.getBoundingClientRect().height) + this._after(item, g) / 0.75 +
+          // Body leading into a list opens to the bullet gap (11.339 vs 2.835).
+          (item.kind !== 'bullet' && item.kind !== 'subhead' && queue[1] && queue[1].kind === 'bullet' ? 8.504 * g / 0.75 : 0) +
+          // FY26 subhead: 9pt above; the copy before it already counted 8.504 (bullets 14.173).
+          (FY26 && item.kind === 'subhead' && columns[c].length ? Math.max(0, SUB_GAP - 8.504) / 0.75 : 0);
+
+        // Test 6 (LL): a subhead or run-in head ("Phase 2") never ends a
+        // column; it needs two lines of what follows under it, or goes over.
+        const isHead = item.kind === 'subhead' || item.u;
+        if (isHead && queue[1] && c < cols.length - 1 && columns[c].length &&
+            usedPx + hPx + (2 * 12 + 5.669) / 0.75 > capPx) break;
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(Object.assign({}, item));
+          queue.shift();
+          usedPx += hPx;
+          continue;
+        }
+
+        // keepWhole: a paragraph that doesn't fit moves to the next column
+        // entire rather than splitting across the gutter.
+        // ...except in the final column, where there is no next column to move
+        // to: setting as much as fits beats leaving the frame short.
+        if (keepWhole && c < cols.length - 1) break;
+
+        // Binary-search the last character that still fits this column.
+        const availPx = capPx - usedPx;
+        const prefix = (item.kind === 'bullet' && !item.cont) ? 2 : 0;
+        const len = node.data.length;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = prefix, hi = len, best = prefix;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        let offset = best - prefix;
+        if (offset > 0 && offset < item.text.length) {
+          const space = item.text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        // A subhead never breaks — it moves to the next column whole.
+        if (offset > 0 && item.kind !== 'subhead') {
+          columns[c].push(Object.assign({}, item, { text: item.text.slice(0, offset).trimEnd() }));
+          const rest = item.text.slice(offset).trimStart();
+          if (rest) queue[0] = Object.assign({}, item, { text: rest, cont: true });
+          else queue.shift();
+        }
+        break;
+      }
+      host.remove();
+    }
+
+    return { columns, leftover: queue };
+  }
+
+  renderVals() {
+    const n = this.state.leftover.length;
+    const obS = this.state.obS ?? PHOTOS.ob.max, ipS = this.state.ipS ?? PHOTOS.ip.max;
+    const obG = this.state.obG || 1, ipG = this.state.ipG || 1;
+    const obC = flowsFor('ob', obS), ipC = flowsFor('ip', ipS);
+    return {
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : ((window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)) ? 2026 : 2025),
+      folioLeft: this.props.folioLeft ?? 14,
+      folioRight: this.props.folioRight ?? 15,
+      showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
+      trackOB: TRACKING[this.state.obIdx],
+      trackIP: TRACKING[this.state.ipIdx],
+      ob0: this._flags(this.state.ob[0], obG), ob1: this._flags(this.state.ob[1], obG),
+      ip0: this._flags(this.state.ip[0], ipG), ip1: this._flags(this.state.ip[1], ipG),
+      obPhoto: photoBox('ob', obS), ipPhoto: photoBox('ip', ipS),
+      footL: !footCovered([photoBox('ob', obS), photoBox('ip', ipS)], 55.68, 294.14),
+      footR: !footCovered([photoBox('ob', obS), photoBox('ip', ipS)], 963.22, 1134.39),
+      obSrc: this.props.obSrc || '', ipSrc: this.props.ipSrc || '',
+      ipWrap0: circ(ipC[0].wrap), ipWrap1: circ(ipC[1].wrap),
+      obWrap0: circ(obC[0].wrap), obWrap1: circ(obC[1].wrap),
+      wrapOn: { ob0: !!obC[0].wrap, ob1: !!obC[1].wrap, ip0: !!ipC[0].wrap, ip1: !!ipC[1].wrap },
+      colH: { ob0: +obC[0].height.toFixed(2), ob0Y: +obC[0].y.toFixed(2), ob1: +obC[1].height.toFixed(2), ob1Y: +obC[1].y.toFixed(2), ip0: +ipC[0].height.toFixed(2), ip1: +ipC[1].height.toFixed(2) },
+      overflowLabel: n ? n + ' paragraph' + (n === 1 ? '' : 's') +
+        ' will not fit this spread \u2014 trim the copy or extend the layout' : '',
+      overflowText: this.state.leftover.map(i => i.text).join('  \u00b6  '),
+    };
+  }
+
+  // The template picks a block style per kind, so no style values travel
+  // through holes.
+  // Splits a body paragraph around its bold phrase (copy's `bold` field).
+  _runs(i) {
+    const k = i.bold ? i.text.indexOf(i.bold) : -1;
+    if (k < 0) return { pre: i.text, strong: '', post: '' };
+    return { pre: i.text.slice(0, k), strong: i.bold, post: i.text.slice(k + i.bold.length) };
+  }
+
+  _flags(list, g) {
+    // A subhead opening a column sits 3.9pt higher, so its first baseline lands
+    // on the same line as a body column's first baseline.
+    const k = g || 1, pt = v => (v * k).toFixed(3) + 'pt';
+    const mBody = pt(5.669) + ' 0 ' + pt(2.835), mBullet = pt(2.835) + ' 0 ' + pt(11.339);
+    // The opening block of every column takes the same unscaled top margin, so
+    // all four columns start on one line whatever the gap scale or block kind.
+    const first = m => n => n === 0 ? m.replace(/^\S+/, '5.669pt') : m;
+    return (list || []).map((i, n) => ({
+      m: first(i.kind === 'bullet' ? mBullet
+        : (list[n + 1] && list[n + 1].kind === 'bullet' && !list[n + 1].cont) ? pt(5.669) + ' 0 ' + pt(11.339) : mBody)(n),
+      td: i.u ? 'underline' : 'none',
+      subT: FY26 ? SUB_GAP + 'pt' : '0',
+      subB: FY26 ? SUB_GAP + 'pt' : '4pt',
+      ...this._runs(i),
+      text: i.text,
+      isSubhead: i.kind === 'subhead' && n > 0,
+      isSubheadTop: i.kind === 'subhead' && n === 0,
+      isBullet: i.kind === 'bullet' && !i.cont,
+      isBulletCont: i.kind === 'bullet' && !!i.cont,
+      isBody: i.kind !== 'subhead' && i.kind !== 'bullet',
+    }));
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-MediumItalic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-BookItalic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="12-13 Victorian Racing Awards / Feature Race Winners" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <div style="position:absolute;left:-8.5pt;top:-8.5pt;width:603.8pt;height:858.9pt;background:#000000"></div>
+
+  <img src="./images/vra-logo-fy25.png" alt="Victorian Racing Awards" style="position:absolute;left:55.7pt;top:47.4pt;width:182.8pt;height:113.9pt" />
+
+  <div data-column="awards" style="position:absolute;left:56.7pt;top:179pt;width:340pt;height:386.3pt;overflow:hidden;color:#ffffff">
+    <sc-for list="{{ awards }}" as="a" hint-placeholder-count="24">
+      <sc-if value="{{ a.isHead }}" hint-placeholder-val=""><div style="font-size:12pt;line-height:14.86pt;font-weight:700;color:#C69C5B;letter-spacing:0.01em;white-space:nowrap;margin:{{ a.gapTop }} 0 2.84pt"><sc-for list="{{ a.chars }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div></sc-if>
+      <sc-if value="{{ a.isItem }}" hint-placeholder-val="{{ true }}"><div style="font-size:9pt;line-height:14.86pt;font-weight:400;color:#ffffff;letter-spacing:-0.01em;margin:0">{{ a.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;z-index:2;left:371pt;top:79.4pt;width:157.7pt;height:157.7pt;border-radius:50%;background:#A77132"></div>
+  <div style="position:absolute;left:408.1pt;top:221pt;width:165.4pt;height:165.4pt;border-radius:50%;background:linear-gradient(90deg,#8b6134 0%,#946b3c 6.7%,#9a7241 10%,#a57e4c 16%,#bc9962 27.4%,#ddc181 41.1%,#f2db95 48.5%,#fde69e 51.3%,#edd28c 57.3%,#d2ad6a 71.2%,#bd8f4c 84.5%,#af7c3b 94%,#a77132 100%)"></div>
+  <div style="position:absolute;left:304.9pt;top:378pt;width:154.1pt;height:154.1pt;border-radius:50%;background:linear-gradient(90deg,#8b6134 0%,#946b3c 6.7%,#9a7241 10%,#a57e4c 16%,#bc9962 27.4%,#ddc181 41.1%,#f2db95 48.5%,#fde69e 51.3%,#edd28c 57.3%,#d2ad6a 71.2%,#bd8f4c 84.5%,#af7c3b 94%,#a77132 100%)"></div>
+  <div style="position:absolute;z-index:2;left:391.1pt;top:486.7pt;width:162.4pt;height:162.4pt;border-radius:50%;background:linear-gradient(90deg,#8b6134 0%,#946b3c 6.7%,#9a7241 10%,#a57e4c 16%,#bc9962 27.4%,#ddc181 41.1%,#f2db95 48.5%,#fde69e 51.3%,#edd28c 57.3%,#d2ad6a 71.2%,#bd8f4c 84.5%,#af7c3b 94%,#a77132 100%)"></div>
+  <div style="position:absolute;z-index:2;left:{{ g5.ringL }};top:{{ g5.ringT }};width:{{ g5.ringS }};height:{{ g5.ringS }};border-radius:50%;background:linear-gradient(90deg,#8b6134 0%,#946b3c 6.7%,#9a7241 10%,#a57e4c 16%,#bc9962 27.4%,#ddc181 41.1%,#f2db95 48.5%,#fde69e 51.3%,#edd28c 57.3%,#d2ad6a 71.2%,#bd8f4c 84.5%,#af7c3b 94%,#a77132 100%)"></div>
+  <div style="position:absolute;z-index:1;left:{{ g6.ringL }};top:{{ g6.ringT }};width:{{ g6.ringS }};height:{{ g6.ringS }};border-radius:50%;background:linear-gradient(90deg,#8b6134 0%,#946b3c 6.7%,#9a7241 10%,#a57e4c 16%,#bc9962 27.4%,#ddc181 41.1%,#f2db95 48.5%,#fde69e 51.3%,#edd28c 57.3%,#d2ad6a 71.2%,#bd8f4c 84.5%,#af7c3b 94%,#a77132 100%)"></div>
+  <div style="position:absolute;left:41.4pt;top:613.6pt;width:155.4pt;height:155.4pt;display:{{ show7 }};border-radius:50%;background:linear-gradient(90deg,#8b6134 0%,#946b3c 6.7%,#9a7241 10%,#a57e4c 16%,#bc9962 27.4%,#ddc181 41.1%,#f2db95 48.5%,#fde69e 51.3%,#edd28c 57.3%,#d2ad6a 71.2%,#bd8f4c 84.5%,#af7c3b 94%,#a77132 100%)"></div>
+
+  <image-slot id="{{ ap.p1.id }}" src="{{ ap.p1.src }}" shape="circle" placeholder="{{ ap.p1.label }}" style="position:absolute;z-index:2;left:374pt;top:82.4pt;width:151.7pt;height:151.7pt;color:#ffffff;background:#000;border-radius:50%;overflow:hidden"></image-slot>
+  <image-slot id="{{ ap.p2.id }}" src="{{ ap.p2.src }}" shape="circle" placeholder="{{ ap.p2.label }}" style="position:absolute;left:411.1pt;top:224pt;width:159.4pt;height:159.4pt;color:#ffffff;background:#000;border-radius:50%;overflow:hidden"></image-slot>
+  <image-slot id="{{ ap.p3.id }}" src="{{ ap.p3.src }}" shape="circle" placeholder="{{ ap.p3.label }}" style="position:absolute;left:307.9pt;top:381pt;width:148.1pt;height:148.1pt;color:#ffffff;background:#000;border-radius:50%;overflow:hidden"></image-slot>
+  <image-slot id="{{ ap.p4.id }}" src="{{ ap.p4.src }}" shape="circle" placeholder="{{ ap.p4.label }}" style="position:absolute;z-index:2;left:394.1pt;top:489.7pt;width:156.4pt;height:156.4pt;color:#ffffff;background:#000;border-radius:50%;overflow:hidden"></image-slot>
+  <image-slot id="{{ ap.p5.id }}" src="{{ ap.p5.src }}" shape="circle" placeholder="{{ ap.p5.label }}" style="position:absolute;z-index:2;left:{{ g5.slotL }};top:{{ g5.slotT }};width:{{ g5.slotS }};height:{{ g5.slotS }};color:#ffffff;background:#000;border-radius:50%;overflow:hidden"></image-slot>
+  <image-slot id="{{ ap.p6.id }}" src="{{ ap.p6.src }}" shape="circle" placeholder="{{ ap.p6.label }}" style="position:absolute;z-index:1;left:{{ g6.slotL }};top:{{ g6.slotT }};width:{{ g6.slotS }};height:{{ g6.slotS }};color:#ffffff;background:#000;border-radius:50%;overflow:hidden"></image-slot>
+  <image-slot id="{{ ap.p7.id }}" src="{{ ap.p7.src }}" shape="circle" placeholder="{{ ap.p7.label }}" style="position:absolute;left:44.4pt;top:616.6pt;width:149.4pt;height:149.4pt;display:{{ show7 }};color:#ffffff;background:#000;border-radius:50%;overflow:hidden"></image-slot>
+  <sc-for list="{{ goldRings }}" as="gr" hint-placeholder-count="0">
+    <svg aria-hidden="true" viewBox="{{ gr.vb }}" style="position:absolute;left:{{ gr.l }};top:{{ gr.t }};width:{{ gr.s }};height:{{ gr.s }};z-index:{{ gr.z }};display:{{ gr.disp }};overflow:visible;pointer-events:none">
+      <sc-for list="{{ gr.segs }}" as="sg" hint-placeholder-count="0">
+        <path d="{{ sg.d }}" fill="none" stroke="{{ sg.c }}" stroke-width="{{ gr.sw }}"></path>
+      </sc-for>
+    </svg>
+  </sc-for>
+
+  <div style="position:absolute;z-index:3;left:522.7pt;top:153.5pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#A77132;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">1</div>
+  <div style="position:absolute;z-index:3;left:567.7pt;top:300.5pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#A77132;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">2</div>
+  <div style="position:absolute;z-index:3;left:453pt;top:452.1pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#A77132;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">3</div>
+  <div style="position:absolute;z-index:3;left:388.3pt;top:563.5pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#A77132;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">4</div>
+  <div style="position:absolute;z-index:3;left:{{ g5.badgeL }};top:{{ g5.badgeT }};width:8.5pt;height:8.5pt;border-radius:50%;background:#FEE79E;color:#000000;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">5</div>
+  <div style="position:absolute;z-index:3;left:{{ g6.badgeL }};top:{{ g6.badgeT }};width:8.5pt;height:8.5pt;border-radius:50%;background:#FEE79E;color:#000000;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">6</div>
+  <div style="position:absolute;z-index:3;left:115.1pt;top:763.4pt;display:{{ show7 }};width:8.5pt;height:8.5pt;border-radius:50%;background:#FEE79E;color:#000000;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">7</div>
+
+  <div data-column="award-key" style="position:absolute;left:478.2pt;top:696.6pt;width:112pt;color:#ffffff;font-size:9pt;line-height:12pt;font-weight:400;letter-spacing:-0.01em">
+    <sc-for list="{{ keyList }}" as="k" hint-placeholder-count="7">
+      <div style="white-space:nowrap">{{ k }}</div>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:55.7pt;top:798.9pt;font-size:7pt;line-height:10.9pt;font-weight:400;color:#A77132;white-space:nowrap;display:flex"><sc-for list="{{ footNumGold }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }}">{{ ch.t }}</span></sc-for></div>
+  <div style="position:absolute;left:74.1pt;top:799.4pt;font-size:6pt;line-height:10.9pt;color:#C69C5B;white-space:pre"><sc-for list="{{ footGold }}" as="ch" hint-placeholder-count="0"><span style="color:{{ ch.c }};font-weight:{{ ch.w }}">{{ ch.t }}</span></sc-for></div>
+
+  <svg style="position:absolute;left:652pt;top:40pt;width:300pt;height:70pt" viewBox="0 0 300 70" role="img" aria-label="{{ season }}">{{ seasonText }}</svg>
+  <svg style="position:absolute;left:652pt;top:100pt;width:482pt;height:56pt" viewBox="0 0 482 56" role="img" aria-label="Feature Race Winners"><text x="0" y="42.8" font-family="Gotham, Arial, sans-serif" font-size="39.58" font-weight="400" letter-spacing="-0.4"><tspan fill="#005FA1">F</tspan><tspan fill="#0C5AA0">e</tspan><tspan fill="#19559F">a</tspan><tspan fill="#25509E">t</tspan><tspan fill="#324B9D">u</tspan><tspan fill="#3E469B">r</tspan><tspan fill="#4B419A">e</tspan><tspan fill="#573C99"> </tspan><tspan fill="#633798">R</tspan><tspan fill="#703297">a</tspan><tspan fill="#7C2D96">c</tspan><tspan fill="#892895">e</tspan><tspan fill="#952394"> </tspan><tspan fill="#A11E93">W</tspan><tspan fill="#AE1992">i</tspan><tspan fill="#BA1490">n</tspan><tspan fill="#C70F8F">n</tspan><tspan fill="#D30A8E">e</tspan><tspan fill="#E0058D">r</tspan><tspan fill="#EC008C">s</tspan></text></svg>
+
+  <image-slot id="{{ rp.r1.id }}" src="{{ rp.r1.src }}" shape="rect" placeholder="{{ rp.r1.label }}" style="position:absolute;left:{{ rp.r1.left }};top:172.8pt;width:{{ rp.r1.width }};height:158.8pt"></image-slot>
+  <image-slot id="{{ rp.r2.id }}" src="{{ rp.r2.src }}" shape="rect" placeholder="{{ rp.r2.label }}" style="position:absolute;left:{{ rp.r2.left }};top:172.8pt;width:{{ rp.r2.width }};height:158.8pt"></image-slot>
+  <image-slot id="{{ rp.r3.id }}" src="{{ rp.r3.src }}" shape="rect" placeholder="{{ rp.r3.label }}" style="position:absolute;left:921pt;top:172.8pt;width:104.3pt;height:77.3pt"></image-slot>
+  <image-slot id="{{ rp.r4.id }}" src="{{ rp.r4.src }}" shape="rect" placeholder="{{ rp.r4.label }}" style="position:absolute;left:921pt;top:254.7pt;width:104.3pt;height:76.9pt"></image-slot>
+  <image-slot id="{{ rp.r5.id }}" src="{{ rp.r5.src }}" shape="rect" placeholder="{{ rp.r5.label }}" style="position:absolute;left:1029.7pt;top:172.8pt;width:104.3pt;height:158.8pt"></image-slot>
+  <image-slot id="{{ rp.r6.id }}" src="{{ rp.r6.src }}" shape="rect" placeholder="{{ rp.r6.label }}" style="position:absolute;left:652pt;top:335.2pt;width:156pt;height:143.2pt"></image-slot>
+  <image-slot id="{{ rp.r7.id }}" src="{{ rp.r7.src }}" shape="rect" placeholder="{{ rp.r7.label }}" style="position:absolute;left:812.4pt;top:335.2pt;width:184.1pt;height:143.2pt"></image-slot>
+  <image-slot id="{{ rp.r8.id }}" src="{{ rp.r8.src }}" shape="rect" placeholder="{{ rp.r8.label }}" style="position:absolute;left:1001.3pt;top:335.2pt;width:132.7pt;height:143.2pt"></image-slot>
+  <image-slot id="{{ rp.r9.id }}" src="{{ rp.r9.src }}" shape="rect" placeholder="{{ rp.r9.label }}" style="position:absolute;left:652pt;top:482pt;width:104pt;height:68.4pt"></image-slot>
+  <image-slot id="{{ rp.r10.id }}" src="{{ rp.r10.src }}" shape="rect" placeholder="{{ rp.r10.label }}" style="position:absolute;left:652pt;top:555.5pt;width:104pt;height:69.7pt"></image-slot>
+  <image-slot id="{{ rp.r11.id }}" src="{{ rp.r11.src }}" shape="rect" placeholder="{{ rp.r11.label }}" style="position:absolute;left:761.1pt;top:482pt;width:197.8pt;height:143.2pt"></image-slot>
+  <image-slot id="{{ rp.r12.id }}" src="{{ rp.r12.src }}" shape="rect" placeholder="{{ rp.r12.label }}" style="position:absolute;left:962.5pt;top:482pt;width:171.4pt;height:143.2pt"></image-slot>
+
+  <div style="position:absolute;left:{{ rp.r1.badge }};top:320.1pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">1</div>
+  <div style="position:absolute;left:904.3pt;top:320.1pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">2</div>
+  <div style="position:absolute;left:923.5pt;top:238.2pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">3</div>
+  <div style="position:absolute;left:923.5pt;top:320.1pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">4</div>
+  <div style="position:absolute;left:1122pt;top:320.1pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">5</div>
+  <div style="position:absolute;left:796.1pt;top:467.2pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">6</div>
+  <div style="position:absolute;left:984.5pt;top:467.2pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">7</div>
+  <div style="position:absolute;left:1122.2pt;top:467.2pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">8</div>
+  <div style="position:absolute;left:744.2pt;top:539.5pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">9</div>
+  <div style="position:absolute;left:744.2pt;top:613.6pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">10</div>
+  <div style="position:absolute;left:947.1pt;top:613.7pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">11</div>
+  <div style="position:absolute;left:1122pt;top:613.7pt;width:8.5pt;height:8.5pt;border-radius:50%;background:#000000;color:#ffffff;font-size:5pt;line-height:8.5pt;font-weight:700;text-align:center">12</div>
+
+  <div data-column="race-captions" style="position:absolute;left:651.8pt;top:636pt;width:482.2pt;height:160pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ captions }}" as="c" hint-placeholder-count="12">
+      <div style="font-size:9pt;line-height:12pt;font-weight:400;letter-spacing:-0.01em;margin:0;padding-left:13pt;text-indent:-13pt">{{ c }}</div>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+  <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:24.6pt;background:linear-gradient(90deg,#EC008C,#005FA1)"></div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1190.55pt&quot;,&quot;height&quot;:&quot;841.89pt&quot;}}">
+class Component extends DCLogic {
+  state = { fy26: null };
+  // Per-character fills for FY25's gradient text (a url(#gradient) paint server prints
+  // invisible). Each glyph takes the colour at its centre along the gradient span.
+  _chars(text, font, startPt, spanPt, stops, weightOf) {
+    const c = this._cv || (this._cv = document.createElement('canvas').getContext('2d'));
+    c.font = font;
+    const hex = t => {
+      t = Math.max(0, Math.min(1, t));
+      let i = 1; while (i < stops.length - 1 && stops[i][0] < t) i++;
+      const [a, ca] = stops[i - 1], [b, cb] = stops[i], f = b === a ? 0 : (t - a) / (b - a);
+      const p = s => [1, 3, 5].map(k => parseInt(s.slice(k, k + 2), 16));
+      const A = p(ca), B = p(cb);
+      return '#' + A.map((v, k) => Math.round(v + (B[k] - v) * f).toString(16).padStart(2, '0')).join('');
+    };
+    const px = parseFloat(font.match(/([\d.]+)pt/)[1]);
+    let x = 0;
+    return [...text].map((t, i) => {
+      const w = c.measureText(t).width * 0.75;
+      const mid = startPt + x + w / 2; x += w;
+      return { t, c: hex(mid / spanPt), w: weightOf ? weightOf(i) : 400 };
+    });
+  }
+  componentDidMount() {
+    if (document.fonts) document.fonts.ready.then(() => this.forceUpdate());
+    // The year's own page set-up (photo key names, which feature slot is wide,
+    // preview photos) lives in copy/fyNN/awards.js. A production run loads it
+    // for the run's year and lays the Word document's winners and captions over it.
+    const run = window.RVProduction ? window.RVProduction.get('awards') : null;
+    const preview = window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search);
+    const yy = run && run.year ? String(run.year).slice(-2) : preview ? '26' : '';
+    if (yy) import('./copy/fy' + yy + '/awards.js').then(m => this.setState({ fy26: m.copy })).catch(() => {});
+  }
+  renderVals() {
+    const awardLines = [
+      ["h", "2024-25 Victorian Racing Award Winners", "0"],
+      ["i", "Scobie Breasley Medal \u2013 Blake Shinn"],
+      ["i", "Victorian Racehorse of the Year \u2013 Via Sistina"],
+      ["i", "Most Outstanding Training Performance \u2013 Matt Laurie"],
+      ["i", "Tommy Corrigan Medal \u2013 Steven Pateman"],
+      ["i", "Colin Alderson Rising Star Award \u2013 Gavin Bedggood"],
+      ["i", "VJA Damien Oliver Most Valuable Jockey \u2013 Damian Lane"],
+      ["i", "VJA Rising Star \u2013 Logan Bates"],
+      ["i", "RV Acknowledged Retrainer of the Year \u2013 Jennifer Duffy"],
+      ["i", "RV Acknowledged Retrainer of the Year Runner-Up \u2013 Louise Abey"],
+      ["h", "2024-25 Premiership Winners", "14pt"],
+      ["i", "Metropolitan Trainer \u2013 Ciaron Maher (113 wins)"],
+      ["i", "Metropolitan Jockey \u2013 Blake Shinn (74 wins)"],
+      ["i", "Metropolitan Apprentice \u2013 Tom Prebble (24 wins)"],
+      ["i", "Victorian Trainer \u2013 Ben, Will and JD Hayes (240 wins)"],
+      ["i", "Victorian Jockey \u2013 Blake Shinn (146 wins)"],
+      ["i", "Victorian Apprentice \u2013 Logan Bates (79 wins)"],
+      ["i", "Country Trainer \u2013 Ben, Will and JD Hayes (171 wins)"],
+      ["i", "Country Jockey - Linda Meech (90 wins)"],
+      ["i", "Country Apprentice \u2013 Logan Bates (59 wins)"],
+      ["i", "Picnic Trainer \u2013 Troy Kilgower (19 wins)"],
+      ["i", "Picnic Jockey \u2013 Shaun Cooper (34 wins)"],
+      ["i", "Jumps Trainer \u2013 Symon Wilde (12 wins)"],
+      ["i", "Jumps Jockey \u2013 Steven Pateman (18 wins)"],
+    ];
+    const captions = [
+      "1. Queensland\u2019s Knight\u2019s Choice sealed a fairytale win in the Melbourne Cup",
+      "2. Tom Kitten was the cat that got the cream in the All-Star Mile at Flemington",
+      "3. Harry Coffey and Duke De Sessa were popular Caulfield Cup winners",
+      "4. $14,000 bargain buy McGaw took out the $1m Showdown at Caulfield",
+      "5. Craig Williams performs a flying dismount from Mr Brightside after victory in the Champions Mile",
+      "6. Switzerland was the star of the show in the stallion-making Coolmore Stud Stakes",
+      "7. A grand display of jumping sealed Duke Of Bedford the Brierly-Grand Annual double at Warrnambool",
+      "8. Game, set and match to Nadal in the inaugural The Meteorite at Cranbourne",
+      "9. It was Farag first, daylight second in the Jericho Cup at Warrnambool",
+      "10. More for Craig Williams to celebrate after Onesmoothoperator took out the Geelong Cup",
+      "11. Joliestar was in a different stratosphere to her rivals in the Newmarket Handicap at Flemington",
+      "12. James McDonald retained the Cox Plate with the world\u2019s highest-rated mare, Via Sistina",
+    ];
+    // FY25 slot ids are kept so photos already dropped there stay put; FY26 slots get new ids.
+    const fy25Ids = ['knights-choice', 'tom-kitten', 'duke-de-sessa', 'mcgaw', 'mr-brightside', 'switzerland', 'duke-of-bedford', 'nadal', 'farag', 'onesmoothoperator', 'joliestar', 'via-sistina'];
+    const fy25Races = ['Knight\u2019s Choice', 'Tom Kitten', 'Duke De Sessa', 'McGaw', 'Mr Brightside', 'Switzerland', 'Duke Of Bedford', 'Nadal', 'Farag', 'Onesmooth\u200Boperator', 'Joliestar', 'Via Sistina'];
+    const fy25People = [['blake-shinn', 'Blake Shinn'], ['jen-duffy', 'Jennifer Duffy'], ['matt-laurie', 'Matt Laurie'], ['gavin-bedggood', 'Gavin Bedggood'], ['logan-bates', 'Logan Bates'], ['ciaron-maher', 'Ciaron Maher'], ['team-hayes', 'Team Hayes']];
+    const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const runAw = window.RVProduction ? window.RVProduction.get('awards') : null;
+    const ov = runAw || this.state.fy26 ? Object.assign({}, this.state.fy26 || {}, runAw || {}) : null;
+    const y = ov && ov.year ? ov.year : 2025;
+    const lines = ov && ov.awardLines ? ov.awardLines : awardLines;
+    const caps = (ov && ov.races ? ov.races.map((r, i) => (i + 1) + '. ' + r.caption)
+               : ov && ov.captions ? ov.captions : captions)
+      .map(c => String(c).trim().replace(/\.+$/, ''));
+    // Always twelve positions, so a shorter list leaves empty slots rather than breaking the page.
+    const horses = Array.from({ length: 12 }, (_, i) => (ov && ov.races ? (ov.races[i] || {}).horse : fy25Races[i]) || '');
+    const imgs = (ov && ov.images) || {};
+    const rp = {}, ap = {};
+    horses.forEach((hn, i) => {
+      const id = y === 2025 ? 'frw-' + fy25Ids[i] : 'frw' + y + '-' + (i + 1) + '-' + slug(hn);
+      rp['r' + (i + 1)] = { id, label: (i + 1) + ' ' + hn, src: imgs[id] || '' };
+    });
+    // Slots 1 and 2 share the 652-916.6pt run. FY25: 104.3 + 155.6; a year's copy can
+    // set wideFirst to swap the widths (FY26: the Melbourne Cup photo needs the width).
+    const wide = !!(ov && ov.wideFirst);
+    const w1 = wide ? 155.6 : 104.3, w2 = wide ? 104.3 : 155.6;
+    Object.assign(rp.r1, { left: '652pt', width: w1 + 'pt', badge: (652 + w1 - 11.2).toFixed(1) + 'pt' });
+    Object.assign(rp.r2, { left: (916.6 - w2).toFixed(1) + 'pt', width: w2 + 'pt' });
+    // Award circles 5 and 6. FY25 places seven; with no seventh photo (an empty
+    // people[6]) circle 7 is dropped, 6 moves into its space and 5 grows to 190pt.
+    // Test 6 (LL): the gold rings must hold at every zoom. Each is drawn over
+    // its photo's edge as vector arcs in solid colours sampled from the gold
+    // gradient (a url(#gradient) paint server prints invisible), 0.5pt into
+    // the photo so no hairline of black shows between ring and photo.
+    const GSTOPS = [[0,'#8b6134'],[.067,'#946b3c'],[.1,'#9a7241'],[.16,'#a57e4c'],[.274,'#bc9962'],[.411,'#ddc181'],[.485,'#f2db95'],[.513,'#fde69e'],[.573,'#edd28c'],[.712,'#d2ad6a'],[.845,'#bd8f4c'],[.94,'#af7c3b'],[1,'#a77132']];
+    const gAt = t => { let k = 1; while (k < GSTOPS.length - 1 && GSTOPS[k][0] < t) k++;
+      const [a, ca] = GSTOPS[k - 1], [b, cb] = GSTOPS[k], u = b > a ? Math.min(1, Math.max(0, (t - a) / (b - a))) : 0;
+      const h = (c, i) => parseInt(c.slice(1 + 2 * i, 3 + 2 * i), 16);
+      return '#' + [0, 1, 2].map(i => Math.round(h(ca, i) + (h(cb, i) - h(ca, i)) * u).toString(16).padStart(2, '0')).join(''); };
+    const ring = (l, t, s, z, disp, solid) => {
+      const R = s / 2, sw = 3.5, rr = R - sw / 2, N = 120, segs = [];
+      for (let i = 0; i < N; i++) {
+        const a0 = (i / N) * 2 * Math.PI - 0.004, a1 = ((i + 1) / N) * 2 * Math.PI + 0.004;
+        const x0 = R + rr * Math.cos(a0), y0 = R + rr * Math.sin(a0), x1 = R + rr * Math.cos(a1), y1 = R + rr * Math.sin(a1);
+        const xm = R + R * Math.cos((a0 + a1) / 2);
+        segs.push({ d: 'M' + x0.toFixed(2) + ' ' + y0.toFixed(2) + 'A' + rr.toFixed(2) + ' ' + rr.toFixed(2) + ' 0 0 1 ' + x1.toFixed(2) + ' ' + y1.toFixed(2), c: solid || gAt(xm / s) });
+      }
+      return { l: l + 'pt', t: t + 'pt', s: s + 'pt', vb: '0 0 ' + s + ' ' + s, z, disp: disp || 'block', sw, segs };
+    };
+    const circ = (cx, cy, d, badge) => {
+      const p = v => v.toFixed(1) + 'pt';
+      return { ringL: p(cx - d / 2 - 1.5), ringT: p(cy - d / 2 - 1.5), ringS: p(d + 3), slotL: p(cx - d / 2 + 1.5), slotT: p(cy - d / 2 + 1.5), slotS: p(d - 3),
+        badgeL: p(badge[0]), badgeT: p(badge[1]) };
+    };
+    // FY26 on: six award photos (the FY26 layout). FY25 keeps its seven.
+    const six = ov && ov.people ? !ov.people[6] : y >= 2026;
+    const g5 = six ? circ(330, 690, 190, [325.75, 779.2]) : circ(396.45, 713.85, 141.3, [391.7, 780.7]);
+    const g6 = six ? circ(155, 665, 169.2, [150.75, 745.3]) : circ(266.3, 653.5, 169.2, [262.2, 733.7]);
+    for (let i = 0; i < 7; i++) {
+      const id = y === 2025 ? 'vra-' + fy25People[i][0] : 'vra' + y + '-' + (i + 1);
+      const who = ov && ov.people ? ov.people[i] : (y === 2025 ? fy25People[i][1] : 'Award photo');
+      ap['p' + (i + 1)] = { id, label: (i + 1) + ' ' + (who || 'Award photo'), src: imgs[id] || '' };
+    }
+    // FY25 DPS p.12: heads 12pt Gotham Bold and the footer in the gold gradient
+    // (dark gold -> light gold -> dark gold); heads span 304.25pt, footer 154.77pt.
+    const GOLD = [[0, '#8b6134'], [0.0667, '#946b3c'], [0.1, '#9a7241'], [0.1595, '#a57e4c'], [0.2738, '#bc9962'], [0.4107, '#ddc181'], [0.4845, '#f2db95'], [0.5131, '#fde69e'], [0.5726, '#edd28c'], [0.7119, '#d2ad6a'], [0.8452, '#bd8f4c'], [0.9405, '#af7c3b'], [1, '#a77132']];
+    const RVG = [[0, '#005FA1'], [1, '#EC008C']];
+    const season = ov && ov.season ? ov.season : '2024-25';
+    const footText = 'RACING VICTORIA ANNUAL REPORT ' + y;
+    const seasonChars = this._chars(season, '400 51.92pt Gotham', 0, 213.25, RVG);
+    let sx = 0; const cv = this._cv; cv.font = '400 51.92pt Gotham';
+    const seasonText = React.createElement('text', { y: 58.2, fontFamily: 'Gotham, Arial, sans-serif', fontSize: 51.92, fontWeight: 400, letterSpacing: -0.5 },
+      seasonChars.map((ch, i) => React.createElement('tspan', { key: i, fill: ch.c }, ch.t)));
+    // Photo key under circle 2 (FY25: 9/12 white at x 478.2, first baseline 705.8).
+    const keyNames = ov && ov.people ? ov.people : (y === 2025 ? fy25People.map(p => p[1]) : []);
+    const keyList = keyNames.map((n, i) => n ? (i + 1) + '. ' + n : '').filter(Boolean);
+    return {
+      g5, g6, show7: six ? 'none' : 'block',
+      keyList,
+      season,
+      seasonText,
+      footNumGold: this._chars(String(this.props.folioLeft ?? 12), '400 7pt Gotham', 0, 16.44, GOLD),
+      folioRight: this.props.folioRight ?? 13,
+      footGold: this._chars(footText, '400 6pt Gotham', 0, 154.77, GOLD, i => i >= 15 ? 700 : 400),
+      footYear: y,
+      rp, ap,
+      goldRings: (() => { const P = parseFloat, sh7 = six ? 'none' : 'block';
+        const out = [ring(371, 79.4, 157.7, 2, 'block', '#A77132'), ring(408.1, 221, 165.4, 0), ring(304.9, 378, 154.1, 0), ring(391.1, 486.7, 162.4, 2)];
+        if (g5) out.push(ring(P(g5.ringL), P(g5.ringT), P(g5.ringS), 2));
+        if (g6) out.push(ring(P(g6.ringL), P(g6.ringT), P(g6.ringS), 1));
+        out.push(ring(41.4, 613.6, 155.4, 0, sh7 || 'block'));
+        return out; })(),
+      // FY25 spacing: 9pt items on 14.86pt, head to first item 17.7pt, last item to next head 29.2pt.
+      awards: lines.map(([k, text, gapTop]) => ({ isHead: k === "h", isItem: k === "i", text, gapTop: gapTop && gapTop !== "0" ? "14.34pt" : "0",
+        chars: k === "h" ? this._chars(text, '700 12pt Gotham', 0, 304.25, GOLD) : [] })),
+      captions: caps,
+      captionsA: caps.slice(0, 6),
+      captionsB: caps.slice(6),
+    };
+  }
+}
+</script>
+</body>
+</html>
