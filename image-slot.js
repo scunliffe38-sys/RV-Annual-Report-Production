@@ -303,6 +303,10 @@
     ':host([data-filled][tint=magenta]) .tint{display:block;background:radial-gradient(57.65% 57.65% at 5.95% 112.95%,rgba(236,0,140,1) 4.6%,rgba(236,0,140,0) 93%)}' +
     ':host([data-filled][tint=blue]) .tint{display:block;background:radial-gradient(57.65% 57.65% at 5.95% 112.95%,rgba(0,95,161,1) 4.6%,rgba(0,95,161,0) 93%)}' +
     ':host([data-filled][tint=magenta][tint-at=bottom]) .tint{background:radial-gradient(57.65% 57.65% at 50% 112.95%,rgba(236,0,140,1) 4.6%,rgba(236,0,140,0) 93%)}' +
+    ':host([data-filled][tint=magenta][tint-at=bottom-right]) .tint{background:radial-gradient(57.65% 57.65% at 94.05% 112.95%,rgba(236,0,140,1) 4.6%,rgba(236,0,140,0) 93%)}' +
+    ':host([data-filled][tint=blue][tint-at=bottom-right]) .tint{background:radial-gradient(57.65% 57.65% at 94.05% 112.95%,rgba(0,95,161,1) 4.6%,rgba(0,95,161,0) 93%)}' +
+    ':host([data-filled][tint=magenta][tint-at=top-right]) .tint{background:radial-gradient(57.65% 57.65% at 94.05% -12.95%,rgba(236,0,140,1) 4.6%,rgba(236,0,140,0) 93%)}' +
+    ':host([data-filled][tint=blue][tint-at=top-right]) .tint{background:radial-gradient(57.65% 57.65% at 94.05% -12.95%,rgba(0,95,161,1) 4.6%,rgba(0,95,161,0) 93%)}' +
     ':host([data-filled][tint=blue][tint-at=bottom]) .tint{background:radial-gradient(57.65% 57.65% at 50% 112.95%,rgba(0,95,161,1) 4.6%,rgba(0,95,161,0) 93%)}' +
     // .frame img (clipped) and .spill (unclipped ghost + handles) share the
     // same left/top/width/height in frame-%, computed by _applyView(), so the
@@ -762,8 +766,9 @@
       const fy = v => Math.min(1, Math.max(0, (v - r.top) / r.height));
       const x0 = fx(p.left), x1 = fx(p.right), y0 = fy(p.top), y1 = fy(p.bottom);
       if (x0 < 0.002 && x1 > 0.998 && y0 < 0.002 && y1 > 0.998) { t.style.background = ''; return; }
-      const w = x1 - x0, h = y1 - y0, bottom = this.getAttribute('tint-at') === 'bottom';
-      const ox = (x0 + (bottom ? 0.5 : 0.0595) * w) * 100, oy = (y0 + 1.1295 * h) * 100;
+      const at = this.getAttribute('tint-at'), w = x1 - x0, h = y1 - y0;
+      const ox = (x0 + (at === 'bottom' ? 0.5 : at === 'top-right' || at === 'bottom-right' ? 0.9405 : 0.0595) * w) * 100;
+      const oy = (y0 + (at === 'top-right' ? -0.1295 : 1.1295) * h) * 100;
       const rad = 57.65 * Math.max(w, h);
       t.style.background = 'radial-gradient(' + rad.toFixed(2) + '% ' + rad.toFixed(2) + '% at ' + ox.toFixed(2) + '% ' + oy.toFixed(2) + '%,rgba(' + col + ',1) 4.6%,rgba(' + col + ',0) 93%)';
     }

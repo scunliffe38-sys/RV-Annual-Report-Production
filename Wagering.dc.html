@@ -99,7 +99,7 @@
     {{ quarterly.labels }}
   </svg>
 
-  <div data-column="wg2" style="position:absolute;left:308.3pt;top:448pt;width:235.3pt;height:315.5pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+  <div data-column="wg2" style="position:absolute;left:308.3pt;top:448pt;width:235.3pt;height:327.5pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ wg2 }}" as="b" hint-placeholder-count="5">
       <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ true }}"><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if><sc-if value="{{ b.isH226 }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 9pt">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
@@ -174,7 +174,9 @@ const FLOWS_BASE = [
   // that line is never clipped (Test 5 check). The chart title sits below it.
   { x: 56.70, y: 171.5, width: 235.3, height: 245.9, widowRoom: 12 },
   { x: 308.30, y: 171.5, width: 235.3, height: 71.5 },
-  { x: 308.30, y: 448.0, width: 235.3, height: 315.5 },
+  // Test 7 (LL): widowRoom here too, so a paragraph's last line stays at the
+  // foot of this column instead of opening p.23's centre column alone.
+  { x: 308.30, y: 448.0, width: 235.3, height: 315.5, widowRoom: 12 },
   { x: 652.00, y: 288.0, width: 235.3, height: 486.0,
     wrap: { side: 'right', width: 34, height: 486, r: 218.9, cx: 220.2, cy: 265.4 } },
   { x: 898.60, y: 171.5, width: 235.4, height: 310.9 },
