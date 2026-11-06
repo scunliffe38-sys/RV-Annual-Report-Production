@@ -130,6 +130,7 @@ class Component extends DCLogic {
     pass = pass || 0;
     const page = document.querySelector('section[data-chair-page]');
     if (!page) return;
+    if (!pass) this._sentenceBreaks(page);
     const k = page.getBoundingClientRect().width / 1190.55;
     const keys = ['u', '0', '1', '2'];
     const lists = { u: this.state.under, 0: this.state.columns[0], 1: this.state.columns[1], 2: this.state.columns[2] };
@@ -155,6 +156,39 @@ class Component extends DCLogic {
       changed = true;
     });
     if (changed && pass < 6) this.setState({ extra }, () => setTimeout(() => this._justify(pass + 1), 60));
+  }
+
+  // SK, Full Draft V1: a line that wraps straight after a full stop reads as a
+  // paragraph end. Such a paragraph's tracking is nudged (smallest change first,
+  // up to 0.04em) until the break no longer falls on a full stop, provided it
+  // gains no line; otherwise left as set.
+  _sentenceBreaks(page) {
+    const lineStarts = (el) => {
+      const tn = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, { acceptNode: n => n.data.trim() ? 1 : 3 }).nextNode(); if (!tn) return null;
+      const s = tn.data, r = document.createRange(), out = [];
+      let top = null; const re = /\S+/g; let m;
+      while ((m = re.exec(s))) {
+        r.setStart(tn, m.index); r.setEnd(tn, m.index + 1);
+        const q = r.getClientRects()[0]; if (!q) continue;
+        if (top === null || q.top > top + 2) { out.push(m.index); top = q.top; }
+      }
+      return { s, out };
+    };
+    const bad = (el) => { const L = lineStarts(el); if (!L) return false;
+      return L.out.slice(1).some(i => /[.!?]["\u201D\u2019)]?$/.test(L.s.slice(0, i).trimEnd())); };
+    page.querySelectorAll('[data-column] > div').forEach(el => {
+      el.style.letterSpacing = '';
+      if (!bad(el)) return;
+      const base = parseFloat(getComputedStyle(el).letterSpacing) / parseFloat(getComputedStyle(el).fontSize) || 0;
+      const lines0 = (lineStarts(el) || { out: [] }).out.length;
+      // Smallest change first, tightening before loosening, up to 0.04em.
+      for (let i = 1; i <= 40; i++) {
+        const d = (i % 2 ? -1 : 1) * Math.ceil(i / 2) * 0.002;
+        el.style.letterSpacing = (base + d).toFixed(4) + 'em';
+        if (!bad(el) && (lineStarts(el) || { out: [] }).out.length <= lines0) return;
+      }
+      el.style.letterSpacing = '';
+    });
   }
 
   // Tracking for one column: the fitted base, plus that column's own offset.
