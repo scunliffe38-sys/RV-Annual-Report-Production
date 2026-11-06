@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u13ab7" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>1. Summary of Material Accounting Policies</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>The material accounting policies adopted in the preparation of these consolidated financial statements are set out below. These policies have been consistently applied to all the years presented, unless otherwise stated. The financial statements are for the consolidated entity consisting of Racing Victoria and its subsidiaries.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H3 Sub Heading LC Financials ">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>Basis of preparation</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic" SpaceBefore="0">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>Compliance with Australian Accounting Standards – Simplified Disclosures</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>These consolidated financial statements are general purpose financial statements for distribution to the members and for the purpose of fulfilling the requirements of the Corporations Act 2001. They have been prepared in accordance with Australian Accounting Standards – Simplified Disclosures made by the Australian Accounting Standards Board and the Corporations Act 2001. </Content>
+				<Br />
+				<Content>For the purposes of preparing the consolidated financial statements, the consolidated entity is a not-for-profit entity. The financial statements were authorised for issue by the directors on 29 September 2025.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>Historical cost convention</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>These financial statements have been prepared under the historical cost convention, as modified by the revaluation of financial assets and liabilities (including derivative instruments) at fair value through profit or loss.</Content>
+				<Br />
+				<Content>The company is a company of the kind referred to in Corporations (Rounding in Financial/Directors’ Reports) Instrument 2016/191, dated 24 March 2016, and in accordance with that Corporations Instrument amounts in the directors’ report and the financial statements are rounded off to the nearest Australian thousand dollars, unless otherwise indicated.</Content>
+				<Br />
+				<Content>The financial report has also been prepared in accordance with the terms of various agreements with the members (as defined at below) and the racing industry in Victoria as follows:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>(i)	Establishment of Operations</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>The consolidated entity was incorporated on 17 December 2001 for the purpose of administering the Victorian thoroughbred racing industry (VTRI) which was previously the responsibility of the Victoria Racing Club (VRC).</Content>
+				<Br />
+				<Content>On 19 December 2001 the four thoroughbred racing bodies – Victoria Racing Club, Melbourne Racing Club, Moonee Valley Racing Club and Country Racing Victoria (collectively the members) entered into a Members Agreement with the consolidated entity. Under this agreement the members agreed to establish the consolidated entity as the new principal club and governing body for thoroughbred racing in Victoria. The VRC agreed to relinquish its status as the principal club and its role as governing body to facilitate the granting to the consolidated entity of that sole status and role. The consolidated entity has indemnified the Victoria Racing Club against any claims against the Victoria Racing Club arising from its previous operation of the thoroughbred racing industry in Victoria.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>(ii)	Current Membership</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>The current membership of Racing Victoria now comprises of:</Content>
+				<Br />
+				<Content>Club members: Country Racing Victoria, Melbourne Racing Club, Moonee Valley Racing Club, Victoria Racing Club &amp; Cranbourne Pakenham Racing Club. Industry body members: Australian Jumping Racing Association, Australian Services Union (Victorian Branch), Australian Trainers Association (Victorian Division), Australian Workers Union (Victorian Division), Media and Entertainment Arts Alliance, Thoroughbred Breeders Victoria, Thoroughbred Racehorse Owners Association, United Workers Union, Victorian Bookmakers Association &amp; Victorian Jockeys Association.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>(iii)	Victorian Thoroughbred Racing Industry Revenue and Grants</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>On 16 August 2012, the Victorian Racing Industry (VRI) entered into joint venture arrangements with the Tabcorp group of companies covering the VRI entitlement to receive a distribution of joint venture profits and other program and product supply fees over a 12-year term. On 18 December 2023, a new Victorian wagering licence was awarded for the period beyond 16 August 2024. In connection with that new licence, the State Government and the VRI confirmed the discontinuation of the historical joint venture industry funding arrangements tied to the Victorian wagering licensee. To provide the VRI with greater certainty of its financial outcomes and to assist the transition to a new industry funding model, the joint venture parties agreed to amend and restate the joint venture arrangements covering the final period of the current licence from 1 June 2023 to 15 August 2024 including transition out. An Umbrella Deed was executed on 1 March 2024 which captured the terms of payments to be made to the VRI by Tabcorp in connection with the winding up of the joint venture. </Content>
+				<Br />
+				<Content>New industry funding arrangements commencing from 1 July 2024 were agreed between the 
+Victorian State Government and the VRI. These arrangements sought to maintain VRI funding at 
+no less favourable levels to those under the previous joint venture arrangements and included:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Book">
+				<Content>From 1 July 2024, the State Government increased the Point of Consumption Tax (PoCT) levied on wagering by Victorian residents, with the rate of PoCT collected increasing from 10% to 15% of Net Wagering Revenue (NWR). The VRI distribution payment agreed to be paid to the VRI by the State Government increased from 3.5% to 7.5% of NWR effective from the same date.</Content>
+				<Br />
+				<Content>On 30 August 2024, the VRI together with the State Government executed the Victorian Racing Industry Funding Deed. This ten-year agreement, which was backdated to commence on 16 August 2024, provides a new fixed industry distribution stream to the VRI. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>The thoroughbred, harness and greyhound racing codes have agreed on an appropriate code sharing arrangement of the above VRI funding.</Content>
+				<Br />
+				<Content>Material wagering income is also received by the Victorian thoroughbred racing industry in the form of race fields fees. Other significant income is generated via the exploitation of media rights in both domestic and international markets held by a fully owned subsidiary RVL Media Pty Ltd, advertising revenues received through owned media assets, returns from investments and from the receipt of various Government grants.</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" ParagraphBreakType="NextColumn">
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>The consolidated entity will endeavour to make grants to member clubs having regard to the following principles:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>The consolidated entity will from time to time make grants to members and participants in the Victorian thoroughbred racing industry for the purpose of encouraging thoroughbred horseracing.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent" SpaceAfter="8.503937007874017" GridAlignment="None">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>In making grants, the consolidated entity will seek to: </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent" LeftIndent="59.527559055118104" FirstLineIndent="-22.67716535433071" SpaceAfter="8.503937007874017" GridAlignment="None" BulletsAndNumberingListType="NoList">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>(i)	adequately support the objectives of the Victorian thoroughbred racing industry; </Content>
+				<Br />
+				<Content>(ii)	provide incentives for club performance and achievements of industry objectives; and</Content>
+				<Br />
+				<Content>(iii)	encourage and optimise participation in the ownership of thoroughbred racehorses throughout Victoria by maximising returns to owners through statewide prizemoney strategies and other incentives. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B7 Bullet double Indent" SpaceAfter="8.503937007874017">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>The clubs further acknowledge that, consistent with the constitution of the consolidated entity, no portion or amount of the income or assets of the consolidated entity may be distributed, paid or transferred directly or indirectly by way of dividend, bonus, or otherwise by way of profit to or amongst the clubs in their capacity as members.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>(iv)	Retained Profits</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>Under the terms of the Members Agreement net profit and the ongoing retained profits of the consolidated entity cannot be distributed as dividends to the members.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H3 Sub Heading LC Financials ">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>Material Accounting Policies</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B1 Body Text" SpaceAfter="8.503937007874017">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>The following material accounting policies have been adopted in the preparation and presentation of the financial report:</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>(a)	AASB 15 Revenue from Contracts with Customers</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Book">
+				<Content>VOBIS nomination fees received are deferred into unearned revenue, to be recognised as revenue in future years based upon the performance obligation of VOBIS bonuses on offer to eligible horses dependant on age.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>(b)	Critical Accounting Judgements and Key Sources of Estimation Uncertainty</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B2 Body Indent">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>In the application of the consolidated entity’s accounting policies, which are described above, management is required to make judge</Content>
+				<Content>ments, estimates and assumptions about carrying values of assets and liabilities that are not readily apparent from other sources. The estimates and associated assumptions are based on historical experience and various other factors that are believed to be reasonable under the circumstances, the results of which form the basis of making the judgements. Actual results may differ from these estimates.</Content>
+				<Br />
+				<Content>The estimates and underlying assumptions are reviewed on an ongoing basis. Revisions to accounting estimates are recognised in the period in which the estimate is revised if the revision affects only that period, or in the period of the revision and future periods, if the revision affects both current and future periods.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Book Italic" Underline="true">
+				<Content>Critical judgements in applying the consolidated entity’s accounting policies</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Book">
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading">
+				<Content>Judgements made by management in the application of the consolidated entity’s accounting policies that have significant effects on the financial statements and estimates with a significant risk of material adjustments in the next period are disclosed, where applicable, in the relevant notes to the financial statements.</Content>
+				<Br />
+				<Content>Accounting policies are selected and applied in a manner that ensures that the resulting financial information satisfies the concepts of relevance and reliability, thereby ensuring that the substance of the underlying transactions or other events is reported.</Content>
+				<Br />
+				<Content>The following are the key assumptions concerning the future, and other key sources of estimation uncertainty at balance date, that have a significant risk of causing a material adjustment to the carrying amounts of assets and liabilities within the next financial period.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Medium">
+				<Content>•	<?ACE 7?>Impairment of Indefinite Life Intangible Assets</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Book">
+				<Content>
+As described in note 24(g), the consolidated entity assesses the recoverable amount of indefinite life intangible assets, by estimating the future cash flows, growth and discount rate at the end of each annual reporting period.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Medium">
+				<Content>•	<?ACE 7?>Provisions</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Book">
+				<Content>
+As described in note 24(c) and 24(l), the consolidated entity estimates the present value of current obligations based on management estimate for general provisions (including infrastructure expenditure), WorkCover, employee provisions, defined benefit and contribution plans at the end of each annual reporting period.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Medium">
+				<Content>•	<?ACE 7?>Useful lives of Property, Plant &amp; Equipment and Computer Software &amp; Databases</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Book">
+				<Content>
+As described in note 24(k), the consolidated entity reviews the estimated useful lives of property, plant and equipment at the end of each annual reporting period.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Medium">
+				<Content>•	<?ACE 7?>Contingent Liabilities</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FontStyle="Book">
+				<Content>
+The consolidated entity makes judgement on any potential liability that may occur depending on the outcome of an uncertain future event. These liabilities are listed under note 22.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H3 Sub Heading LC Financials ">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold" FillColor="Color/RV Cool Gray">
+				<Content>All other material accounting policies adopted in the preparation and presentation of the financial report are included under note 24.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-MediumItalic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-BookItalic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="22-23 Wagering" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="{{ true }}">
+  </sc-if>
+
+  <image-slot id="wg-image-manikato" src="{{ photoSrc }}" shape="circle" placeholder="Manikato Stakes" style="position:absolute;left:{{ photo.left }};top:{{ photo.top }};width:{{ photo.size }};height:{{ photo.size }}"></image-slot>
+  <div aria-hidden="true" style="position:absolute;left:{{ photo.left }};top:{{ photo.top }};width:{{ photo.size }};height:{{ photo.size }};border-radius:50%;pointer-events:none;background:{{ glow }}"></div>
+
+  <svg style="position:absolute;left:54.7pt;top:79.7pt;width:189.1pt;height:50pt" viewBox="0 0 189.1 50" role="img" aria-label="Wagering"><text x="0" y="29.6" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">W</tspan><tspan fill="#22519E">a</tspan><tspan fill="#43449B">g</tspan><tspan fill="#653698">e</tspan><tspan fill="#872995">r</tspan><tspan fill="#A91B92">i</tspan><tspan fill="#CA0E8F">n</tspan><tspan fill="#EC008C">g</tspan></text></svg>
+
+  <div data-column="wg0" style="position:absolute;left:56.7pt;top:171.5pt;width:235.3pt;height:257.9pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ wg0 }}" as="b" hint-placeholder-count="3">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val=""><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if><sc-if value="{{ b.isH226 }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 9pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="wg1" style="position:absolute;left:308.3pt;top:171.5pt;width:235.3pt;height:71.5pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ wg1 }}" as="b" hint-placeholder-count="2">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ true }}"><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if><sc-if value="{{ b.isH226 }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 9pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <svg style="position:absolute;left:50pt;top:425pt;width:245pt;height:160pt" viewBox="50 425 245 160" role="img" aria-label="{{ turnover.aria }}">
+    <text x="58.6" y="444" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="9" font-weight="700">TURNOVER ($BILLIONS)</text>
+    <sc-for list="{{ turnover.rows }}" as="r" hint-placeholder-count="0">
+      <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="15.4" fill="#4C8FBD"></rect>
+      <line x1="{{ r.x }}" y1="{{ r.cy }}" x2="{{ r.tickX }}" y2="{{ r.cy }}" stroke="#005FA1" stroke-width="0.9"></line>
+    </sc-for>
+    <sc-for list="{{ turnover.pairs }}" as="p" hint-placeholder-count="0">
+      <polyline points="{{ p.a }}" fill="none" stroke="#005FA1" stroke-width="0.5"></polyline>
+      <polyline points="{{ p.b }}" fill="none" stroke="#005FA1" stroke-width="0.5"></polyline>
+      <polygon points="{{ p.head }}" fill="#005FA1"></polygon>
+    </sc-for>
+    <line x1="{{ turnover.axisX }}" y1="{{ turnover.axisY1 }}" x2="{{ turnover.axisX }}" y2="{{ turnover.axisY2 }}" stroke="#005FA1" stroke-width="0.9"></line>
+    {{ turnover.labels }}
+  </svg>
+
+  <svg style="position:absolute;left:50pt;top:605pt;width:245pt;height:160pt" viewBox="50 605 245 160" role="img" aria-label="{{ fbt.aria }}">
+    <text x="58.6" y="624" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="9" font-weight="700">FREE BET TURNOVER ($MILLIONS)</text>
+    <sc-for list="{{ fbt.rows }}" as="r" hint-placeholder-count="0">
+      <rect x="{{ r.x }}" y="{{ r.y }}" width="{{ r.w }}" height="15.4" fill="#4C8FBD"></rect>
+      <line x1="{{ r.x }}" y1="{{ r.cy }}" x2="{{ r.tickX }}" y2="{{ r.cy }}" stroke="#005FA1" stroke-width="0.9"></line>
+    </sc-for>
+    <sc-for list="{{ fbt.pairs }}" as="p" hint-placeholder-count="0">
+      <polyline points="{{ p.a }}" fill="none" stroke="#005FA1" stroke-width="0.5"></polyline>
+      <polyline points="{{ p.b }}" fill="none" stroke="#005FA1" stroke-width="0.5"></polyline>
+      <polygon points="{{ p.head }}" fill="#005FA1"></polygon>
+    </sc-for>
+    <line x1="{{ fbt.axisX }}" y1="{{ fbt.axisY1 }}" x2="{{ fbt.axisX }}" y2="{{ fbt.axisY2 }}" stroke="#005FA1" stroke-width="0.9"></line>
+    {{ fbt.labels }}
+  </svg>
+
+  <svg style="position:absolute;left:300pt;top:240pt;width:245pt;height:185pt" viewBox="300 240 245 185" role="img" aria-label="{{ quarterly.aria }}">
+    <text x="309.3" y="264" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="9" font-weight="700">TURNOVER ($BILLIONS)</text>
+    <text x="309.3" y="277" fill="#005FA1" font-family="Gotham, Arial, sans-serif" font-size="9" font-weight="400">By Quarter (YoY%)</text>
+    <sc-for list="{{ quarterly.rows }}" as="g" hint-placeholder-count="0">
+      <rect x="{{ g.px }}" y="{{ g.pTop }}" width="15.3" height="{{ g.pH }}" fill="#80C2E5"></rect>
+      <rect x="{{ g.cx }}" y="{{ g.cTop }}" width="15.3" height="{{ g.cH }}" fill="#4C8FBD"></rect>
+      <line x1="{{ g.mid }}" y1="382.8" x2="{{ g.mid }}" y2="389.4" stroke="#005FA1" stroke-width="0.9"></line>
+    </sc-for>
+    <line x1="307.3" y1="382.9" x2="534.2" y2="382.9" stroke="#005FA1" stroke-width="0.9"></line>
+    <rect x="307.9" y="411" width="8.9" height="8.9" fill="#80C2E5"></rect>
+    <rect x="349.1" y="411" width="8.9" height="8.9" fill="#4C8FBD"></rect>
+    {{ quarterly.labels }}
+  </svg>
+
+  <div data-column="wg2" style="position:absolute;left:308.3pt;top:448pt;width:235.3pt;height:315.5pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ wg2 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ true }}"><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if><sc-if value="{{ b.isH226 }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 9pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div style="position:absolute;left:656pt;top:175pt;width:222.7pt;font-size:8pt;line-height:12pt;letter-spacing:-0.01em">
+    <div style="display:flex;align-items:center;height:23.9pt;background:#005FA1;color:#fff;font-size:9pt;font-weight:700;text-transform:uppercase;padding-left:7pt">{{ topFiveTitle }}</div>
+    <sc-for list="{{ topFive }}" as="r" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:22.6pt 1fr;align-items:center;height:15.78pt;color:#005FA1;background:{{ r.bg }}">
+        <div>{{ r.n }}</div><div>{{ r.name }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div data-column="wg3" style="position:absolute;left:652pt;top:288pt;width:235.3pt;height:486pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <div style="float:right;width:{{ wrap3.width }};height:486pt;shape-outside:{{ wrap3.shape }};shape-margin:0"></div>
+    <sc-for list="{{ wg3 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val="{{ true }}"><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if><sc-if value="{{ b.isH226 }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 9pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="wg4" style="position:absolute;left:898.6pt;top:171.5pt;width:235.4pt;height:310.9pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
+    <sc-for list="{{ wg4 }}" as="b" hint-placeholder-count="3">
+      <sc-if value="{{ b.isH2 }}" hint-placeholder-val=""><div style="font-weight:700;color:#005FA1;text-transform:uppercase;margin:{{ b.gapTop }} 0 8.5pt">{{ b.text }}</div></sc-if><sc-if value="{{ b.isH226 }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.gapTop }} 0 9pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt;text-indent:-22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="font-weight:400;margin:0 0 5.7pt;padding-left:22.68pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:0 0 8.504pt">{{ b.text }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:898.6pt;top:500pt;width:235.4pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:822pt;width:1207.6pt;height:28.3pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:22,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:23,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;showDecoration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Frame geometry read from Spreads/Spread_udef1.xml (pp. 22-23), converted to
+// page coordinates with x + 595.28, y + 420.94, and checked against PDF page 12
+// of the DPS (printed first baselines 178.7 / 180 / 456 / 300 / 178.7).
+//
+// Story uec2f runs through five frames: p.22 column A, the short block above
+// the quarterly chart, the block below it, then p.23's centre column (which
+// starts under the Top Five panel) and the top-right column. The charts and the
+// Top Five table are separate objects, drawn in the template at their printed
+// coordinates.
+//
+// Column 4 is cut on its right by the Manikato Stakes photo: contour wrap with
+// a 14.17 offset, r 218.9 about (1073.2, 553.4) -> (421.2, 265.4) in column
+// coordinates.
+const FLOWS_BASE = [
+  // widowRoom lets a paragraph's last line run 12pt past the frame rather than
+  // carry over alone, so the rendered column box is 257.9pt (245.9 + 12) and
+  // that line is never clipped (Test 5 check). The chart title sits below it.
+  { x: 56.70, y: 171.5, width: 235.3, height: 245.9, widowRoom: 12 },
+  { x: 308.30, y: 171.5, width: 235.3, height: 71.5 },
+  { x: 308.30, y: 448.0, width: 235.3, height: 315.5 },
+  { x: 652.00, y: 288.0, width: 235.3, height: 486.0,
+    wrap: { side: 'right', width: 34, height: 486, r: 218.9, cx: 220.2, cy: 265.4 } },
+  { x: 898.60, y: 171.5, width: 235.4, height: 310.9 },
+];
+const flowsFor = g => FLOWS_BASE.map((f, i) => i === 3 ? Object.assign({}, f, { wrap: g.wrap || undefined }) : f);
+
+// A4 V:Body 8.504 after. A4 V:Bullets Body sets 5.7 between bullets here, with
+// the B3 22.68 indent. H2 Sub Heading Financials: 9pt bold caps, RV Blue, with
+// 9.5 before when it is not opening a column.
+// Manikato photo: FY25 circle (868.5, 348.7, d 409.4). Its centre x and bottom
+// edge stay put; when the copy in the top-right column runs lower than FY25's,
+// the circle shrinks so its top clears the last line by the 14.17 wrap offset.
+// The dotted ring behind it scales with it.
+// sideOffset: wrap gap for the centre column on p.23 (FY25 InDesign 14.17, opened to 22.68 / 8 mm).
+const PHOTO = { cx: 1073.2, bottom: 758.1, maxSize: 409.4, minSize: 170, offset: 14.17, sideOffset: 22.68 };
+function photoGeom(size) {
+  const r = size / 2, top = PHOTO.bottom - size, cy = top + r, s = size / PHOTO.maxSize;
+  const wr = r + PHOTO.sideOffset, col = FLOWS_BASE[3];
+  const fw = Math.max(0, col.x + col.width - (PHOTO.cx - wr));
+  return { size, top, r, cy, s,
+    wrap: fw > 0 ? { side: 'right', width: fw, height: col.height, r: wr, cx: PHOTO.cx - (col.x + col.width - fw), cy: cy - col.y } : null };
+}
+const BODY_AFTER = 8.504;
+const BULLET_AFTER = 5.7;
+const H2_AFTER = 8.5;
+const H2_BEFORE = 9.5;
+// FY26: headings are the report's subhead (Gotham Book 13/18, RV Blue), with
+// 9pt above and below, as on the other FY26 pages.
+const FY26W = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search));
+const H26_GAP = 9;
+const FOOT_CLEARANCE = 0;
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+
+// Hidden/background loads (print export, off-screen iframes) never fire
+// requestAnimationFrame, which would park the flow chain forever, so fall back
+// to a timer when the document is hidden.
+const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
+
+class Component extends DCLogic {
+  state = { cols: [[], [], [], [], []], idx: 0, leftover: [], topFive: [], charts: { annual: [], quarterly: null }, year: 2025, topFiveTitle: '' };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    TICK(nudge);
+    const fy26 = window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search);
+    const importer = () => fy26 ? import('./copy/fy26/wagering.js') : import('./copy/wagering.js');
+    Promise.all([
+      (window.RVProduction ? window.RVProduction.load('wagering', importer) : importer()),
+      document.fonts.load('400 9pt "Gotham"').then(() => document.fonts.load('700 9pt "Gotham"'))
+        .then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([m]) => this._whenMeasurable().then(() => {
+        // FY26: an all-caps heading ("INCOME TRENDS") is set in title case like
+        // the subheads on the other pages.
+        const tc = t => t.toLowerCase().replace(/(^|[\s(\/-])([a-z])/g, (s, a, b) => a + b.toUpperCase());
+        const items = m.copy.paragraphs.map(p => ({ text: (FY26W && p.kind === 'h2' && /[A-Z]/.test(p.text) && p.text === p.text.toUpperCase()) ? tc(p.text) : p.text, kind: p.kind || 'body' }))
+          .filter((p, i) => !(i === 0 && /^wagering$/i.test(p.text)));
+        let g = photoGeom(PHOTO.maxSize), a;
+        for (let pass = 0; pass < 4; pass++) {
+          a = this.settle(items, flowsFor(g), 'Wagering');
+          const last = (a.columns[4] || []).slice(-1)[0];
+          const textBottom = FLOWS_BASE[4].y + (a.used[4] || 0) - (last ? this._after(last) : 0);
+          // the circle's top must clear the column text along its whole width
+          const c4 = FLOWS_BASE[4], dx = Math.max(0, Math.min(Math.abs(c4.x - PHOTO.cx), Math.abs(c4.x + c4.width - PHOTO.cx)));
+          const clear = PHOTO.offset;
+          // largest size whose circle (radius r, bottom fixed) stays below textBottom + clear within the column span
+          let lo = PHOTO.minSize, hi = PHOTO.maxSize;
+          const ok = sz => { const r = sz / 2, cy = PHOTO.bottom - r; const xIn = (c4.x <= PHOTO.cx && PHOTO.cx <= c4.x + c4.width) ? 0 : dx;
+            return xIn >= r || cy - Math.sqrt(r * r - xIn * xIn) >= textBottom + clear; };
+          if (ok(hi)) { if (g.size === hi) break; g = photoGeom(hi); continue; }
+          for (let k = 0; k < 20; k++) { const m = (lo + hi) / 2; if (ok(m)) lo = m; else hi = m; }
+          const sz = Math.round(lo * 10) / 10;
+          if (Math.abs(sz - g.size) < 0.5) break;
+          g = photoGeom(sz);
+        }
+        console.warn('Wagering: photo ' + (g.size / 2.8346).toFixed(0) + ' mm (FY25 ' + (PHOTO.maxSize / 2.8346).toFixed(0) + ' mm).');
+        this.setState({
+          cols: a.columns, idx: a.baseIdx, leftover: a.leftover, photo: g, photoSrc: m.copy.photo || '',
+          charts: { annual: m.copy.annual || [], quarterly: m.copy.quarterly || null },
+          year: m.copy.year || 2025,
+          topFiveTitle: m.copy.topFiveTitle || ('Top five turnover races in FY' + String(m.copy.year || 2025).slice(2)),
+          topFive: m.copy.topFive.map((name, i) => ({
+            n: String(i + 1), name, bg: i % 2 ? '#D9E7F1' : 'transparent',
+          })),
+        });
+      }))
+      .catch(e => console.error('copy module failed to load', e));
+  }
+
+  _whenMeasurable(attempt) {
+    const n = attempt || 0;
+    const p = this._probe(200, '0');
+    p.host.style.fontSize = '9pt';
+    p.host.style.lineHeight = '12pt';
+    p.node.data = 'Measure';
+    const h = p.host.getBoundingClientRect().height;
+    p.host.remove();
+    if (h > 0) return Promise.resolve();
+    if (n >= 120) {
+      console.warn('layout never became measurable \u2014 columns may not break correctly.');
+      return Promise.resolve();
+    }
+    return new Promise(res => TICK(res)).then(() => this._whenMeasurable(n + 1));
+  }
+
+  settle(items, cols, label, opts) {
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const attempt = this.flow(items, cols, baseIdx, opts);
+      if (!attempt.leftover.length) {
+        console.warn(label + ': fitted at tracking ' + TRACKING[baseIdx] +
+          ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
+        return Object.assign(attempt, { baseIdx });
+      }
+    }
+    const last = this.flow(items, cols, TRACKING.length - 1, opts);
+    console.warn(label + ': ' + last.leftover.length +
+      ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+    return Object.assign(last, { baseIdx: TRACKING.length - 1 });
+  }
+
+  _probe(widthPt, track, wrap) {
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;box-sizing:border-box;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;letter-spacing:' + track;
+    document.body.appendChild(host);
+    let shim = null;
+    if (wrap) {
+      shim = document.createElement('div');
+      shim.style.cssText = 'float:' + (wrap.side || 'left') + ';width:' + wrap.width +
+        'pt;height:' + wrap.height + 'pt';
+      host.appendChild(shim);
+    }
+    const node = document.createTextNode('');
+    host.appendChild(node);
+    return { host, shim, node };
+  }
+
+  _textHeight(host, node) {
+    if (!node.data) return 0;
+    const range = document.createRange();
+    range.setStart(node, 0);
+    range.setEnd(node, node.data.length);
+    const rects = range.getClientRects();
+    if (!rects.length) return 0;
+    return rects[rects.length - 1].bottom - host.getBoundingClientRect().top;
+  }
+
+  _style(host, item) {
+    const h26 = FY26W && item.kind === 'h2';
+    host.style.fontWeight = item.kind === 'h2' && !h26 ? '700' : '400';
+    host.style.fontSize = h26 ? '13pt' : '9pt';
+    host.style.lineHeight = h26 ? '18pt' : '12pt';
+    host.style.textTransform = item.kind === 'h2' && !h26 ? 'uppercase' : 'none';
+    host.style.paddingLeft = item.kind === 'bullet' ? '22.68pt' : '0';
+    host.style.textIndent = (item.kind === 'bullet' && !item.cont) ? '-22.68pt' : '0';
+  }
+
+  _after(item) {
+    if (item.kind === 'h2') return FY26W ? H26_GAP : H2_AFTER;
+    return item.kind === 'bullet' ? BULLET_AFTER : BODY_AFTER;
+  }
+
+  flow(items, cols, baseIdx, opts) {
+    const keepWhole = !!(opts && opts.keepWhole);
+    const columns = cols.map(() => []);
+    const used = cols.map(() => 0);
+    const track = TRACKING[baseIdx];
+    let queue = items.map(i => Object.assign({}, i));
+
+    for (let c = 0; c < cols.length; c++) {
+      const wrap = cols[c].wrap;
+      const probe = this._probe(cols[c].width, track, wrap);
+      const host = probe.host, shim = probe.shim, node = probe.node;
+      const capPx = (cols[c].height - FOOT_CLEARANCE) / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const item = queue[0];
+        this._style(host, item);
+        node.data = (item.kind === 'bullet' && !item.cont ? '\u2022\u2003\u2003' : '') + item.text;
+        if (shim) {
+          shim.style.shapeOutside = 'circle(' + wrap.r + 'pt at ' + wrap.cx +
+            'pt ' + (wrap.cy - usedPx * 0.75) + 'pt)';
+        }
+        const prevI = columns[c][columns[c].length - 1];
+        const before = (columns[c].length && item.kind === 'h2' && !item.cont)
+          ? (FY26W ? Math.max(0, H26_GAP - this._after(prevI)) : H2_BEFORE) : 0;
+        const hPx = (shim ? this._textHeight(host, node)
+                          : host.getBoundingClientRect().height) +
+                    (this._after(item) + before) / 0.75;
+
+        // Keep with next: a subhead needs room for ~4 lines of copy under it,
+        // otherwise it opens the next column.
+        if (item.kind === 'h2' && columns[c].length && c < cols.length - 1 &&
+            usedPx + hPx + 48 / 0.75 > capPx) break;
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(Object.assign({}, item, { gap: before }));
+          queue.shift();
+          usedPx += hPx;
+          continue;
+        }
+
+        if (keepWhole && c < cols.length - 1) break;
+
+        const availPx = capPx - usedPx;
+        const prefix = (item.kind === 'bullet' && !item.cont) ? 3 : 0;
+        const len = node.data.length;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = prefix, hi = len, best = prefix;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        // Widow: a paragraph's last line stays with it when the column has
+        // room for one more line (widowRoom, pt) before what sits below.
+        if (cols[c].widowRoom) {
+          range.setStart(node, 0); range.setEnd(node, len);
+          const rs = range.getClientRects();
+          const full = rs.length ? rs[rs.length - 1].bottom - top : 0;
+          if (full <= availPx + cols[c].widowRoom / 0.75) {
+            columns[c].push(Object.assign({}, item, { gap: before }));
+            queue.shift();
+            break;
+          }
+        }
+        let offset = best - prefix;
+        if (offset > 0 && offset < item.text.length) {
+          const space = item.text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        if (offset > 0 && item.kind !== 'h2') {
+          columns[c].push(Object.assign({}, item, { text: item.text.slice(0, offset).trimEnd(), gap: before }));
+          const rest = item.text.slice(offset).trimStart();
+          if (rest) queue[0] = Object.assign({}, item, { text: rest, cont: true });
+          else queue.shift();
+        }
+        break;
+      }
+      used[c] = usedPx * 0.75;
+      host.remove();
+    }
+
+    return { columns, used, leftover: queue };
+  }
+
+  renderVals() {
+    const n = this.state.leftover.length;
+    return {
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : this.state.year,
+      photoSrc: this.props.photoSrc || this.state.photoSrc || '',
+      ...this._photoVals(this.state.photo || photoGeom(PHOTO.maxSize)),
+      topFiveTitle: this.state.topFiveTitle,
+      turnover: this._bars(this.state.charts.annual.slice(-6), 'turnover', 'turnoverYoY', 425, 82, 188.7, 'Turnover in billions'),
+      fbt: this._bars(this.state.charts.annual.slice(-6), 'fbt', 'fbtYoY', 605, 83.3, 180.9, 'Free bet turnover in millions'),
+      quarterly: this._quarters(this.state.charts.quarterly),
+      folioLeft: this.props.folioLeft ?? 22,
+      folioRight: this.props.folioRight ?? 23,
+      showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
+      track: TRACKING[this.state.idx],
+      topFive: this.state.topFive,
+      wg0: this._flags(this.state.cols[0]), wg1: this._flags(this.state.cols[1]),
+      wg2: this._flags(this.state.cols[2]), wg3: this._flags(this.state.cols[3]),
+      wg4: this._flags(this.state.cols[4]),
+      overflowLabel: n ? n + ' paragraph' + (n === 1 ? '' : 's') +
+        ' will not fit this spread \u2014 trim the copy or extend the layout' : '',
+      overflowText: this.state.leftover.map(i => i.text).join('  \u00b6  '),
+    };
+  }
+
+  // Horizontal bars as FY25 drew them: 15.4 bars on a 21.26 pitch, longest bar
+  // at the FY25 maximum width, YoY brackets between neighbouring bars.
+  _bars(rows, key, yoyKey, top, x0, maxW, title) {
+    const num = s => parseFloat(String(s).replace(/[^0-9.\-]/g, '')) || 0;
+    const max = Math.max(1e-9, ...rows.map(r => num(r[key])));
+    const y0 = top + 32.3, step = 21.26, bh = 15.4, r1 = v => Math.round(v * 10) / 10;
+    const out = rows.map((r, i) => {
+      const y = y0 + i * step, w = num(r[key]) / max * maxW;
+      return { fy: r.fy, label: r[key], x: x0, y: r1(y), w: r1(w), end: x0 + w, cy: r1(y + bh / 2),
+        fyY: r1(y + 11.6), valX: r1(x0 + w - 4), valY: r1(y + 10.6), tickX: x0 + 5.2 };
+    });
+    const pct = v => (v > 0 ? '+' : '') + Math.round(v) + '%';
+    // FY25 connectors (IDML Spread_Wagering): a plain line leaves the upper bar
+    // just below its centre, runs out past the longer bar and drops 3pt to the
+    // label; below the label a second line drops and turns back to the lower
+    // bar, ending in a barbed arrowhead 3.3pt above that bar's centre, so it
+    // stays clear of the next connector leaving the same bar.
+    const pairs = [];
+    for (let i = 1; i < out.length; i++) {
+      const v = rows[i][yoyKey];
+      if (v === null || v === undefined) continue;
+      const a = out[i - 1], b = out[i], bx = r1(Math.max(a.end, b.end) + 7);
+      const y1 = r1(a.cy + 1.5), y2 = r1(y1 + 3), y3 = r1(y2 + 8.8), y4 = r1(b.cy - 3.3);
+      const tip = r1(b.end + 0.6), notch = r1(tip + 2.6);
+      pairs.push({ label: pct(v), x: bx, y: r1((y2 + y3) / 2 + 2.5),
+        a: r1(a.end + 0.6) + ',' + y1 + ' ' + bx + ',' + y1 + ' ' + bx + ',' + y2,
+        b: bx + ',' + y3 + ' ' + bx + ',' + y4 + ' ' + notch + ',' + y4,
+        head: tip + ',' + y4 + ' ' + r1(tip + 4.2) + ',' + r1(y4 - 1.8) + ' ' + notch + ',' + y4 + ' ' + r1(tip + 4.2) + ',' + r1(y4 + 1.8) });
+    }
+    const T = this._t;
+    const labels = React.createElement('g', null,
+      ...out.map((r, i) => T('f' + i, 57.6, r.fyY, r.fy, { fill: '#005FA1', fontSize: 8, fontWeight: 700 })),
+      ...out.map((r, i) => T('v' + i, r.valX, r.valY, r.label, { fill: '#FFFFFF', fontSize: 8, fontWeight: 900, textAnchor: 'end' })),
+      ...pairs.map((p, i) => T('p' + i, p.x, p.y, p.label, { fill: '#005FA1', fontSize: 7.04, fontWeight: 500, textAnchor: 'middle' })));
+    return { rows: out, pairs, labels, axisX: x0, axisY1: r1(y0 - 3.1), axisY2: r1(y0 + (out.length - 1) * step + bh + 3.8),
+      aria: title + (rows.length ? ', ' + rows[0].fy + ' to ' + rows[rows.length - 1].fy : '') };
+  }
+
+  _quarters(q) {
+    if (!q) return { rows: [], labels: null, aria: 'Turnover by quarter' };
+    const num = s => parseFloat(String(s).replace(/[^0-9.\-]/g, '')) || 0;
+    const k = 28.33, base = 382.9, r1 = v => Math.round(v * 10) / 10;
+    const pct = v => (v > 0 ? '+' : '') + v.toFixed(1) + '%';
+    const rows = q.rows.map((g, i) => {
+        const px = 320.7 + i * 55.1, cx = px + 19.3, pH = num(g.prior) * k, cH = num(g.current) * k;
+        return { q: g.q, prior: g.prior, current: g.current, yoy: g.yoy === null || g.yoy === undefined ? '' : pct(g.yoy),
+          px: r1(px), cx: r1(cx), pH: r1(pH), cH: r1(cH), pTop: r1(base - pH), cTop: r1(base - cH),
+          pLx: r1(px + 10.8), pLy: r1(base - pH + 5), cLx: r1(cx + 10.8), cLy: r1(base - cH + 5),
+          mid: r1(px + 17.3), yoyY: r1(base - Math.max(pH, cH) - 13.5) };
+      });
+    const T = this._t, B = { fill: '#FFFFFF', fontSize: 8, fontWeight: 900, textAnchor: 'end' };
+    const labels = React.createElement('g', null,
+      ...rows.map((g, i) => T('p' + i, g.pLx, g.pLy, g.prior, Object.assign({ transform: 'rotate(-90 ' + g.pLx + ' ' + g.pLy + ')' }, B))),
+      ...rows.map((g, i) => T('c' + i, g.cLx, g.cLy, g.current, Object.assign({ transform: 'rotate(-90 ' + g.cLx + ' ' + g.cLy + ')' }, B))),
+      ...rows.map((g, i) => T('y' + i, g.mid, g.yoyY, g.yoy, { fill: '#005FA1', fontSize: 7.04, fontWeight: 500, textAnchor: 'middle' })),
+      ...rows.map((g, i) => T('q' + i, g.mid, 397.7, g.q, { fill: '#005FA1', fontSize: 8, fontWeight: 700, textAnchor: 'middle' })),
+      T('lp', 320.2, 418.4, q.prior, { fill: '#004370', fontSize: 7, fontWeight: 700 }),
+      T('lc', 361.4, 418.4, q.current, { fill: '#004370', fontSize: 7, fontWeight: 700 }));
+    return { prior: q.prior, current: q.current, rows, labels, aria: 'Turnover by quarter, ' + q.prior + ' against ' + q.current };
+  }
+
+  // SVG <text> built here: template holes inside <text> render as HTML spans, which SVG drops.
+  _t(key, x, y, s, a) {
+    return React.createElement('text', Object.assign({ key, x, y, fontFamily: 'Gotham, Arial, sans-serif' }, a), s);
+  }
+
+  _photoVals(g) {
+    const pt = v => (Math.round(v * 10) / 10) + 'pt';
+    const ringR = 234.7 * g.s, ringCx = PHOTO.cx + 103.6 * g.s, ringCy = g.cy + 78.8 * g.s;
+    // FY25 magenta glow (DPS PDF p.12): RV Magenta under a radial soft mask,
+    // 100% at 4.6% of the ramp to 0% at 93%, clipped to the photo circle.
+    // Centre sits off the photo's lower-left edge at (-0.881r, +1.259r) from the
+    // photo centre, ramp 1.153r, so it scales with the photo.
+    const gx = g.r * (1 - 0.881), gy = g.r * (1 + 1.259), gr = 1.153 * g.r;
+    const glow = 'radial-gradient(circle ' + pt(gr) + ' at ' + pt(gx) + ' ' + pt(gy) + ', rgba(236,0,140,1) 4.6%, rgba(236,0,140,0) 93%)';
+    return {
+      glow,
+      photo: { left: pt(PHOTO.cx - g.r), top: pt(g.top), size: pt(g.size) },
+      ring: { left: pt(ringCx - ringR), top: pt(ringCy - ringR), size: pt(ringR * 2) },
+      wrap3: g.wrap ? { width: pt(g.wrap.width), shape: 'circle(' + pt(g.wrap.r) + ' at ' + pt(g.wrap.cx) + ' ' + pt(g.wrap.cy) + ')' }
+                    : { width: '0pt', shape: 'none' },
+    };
+  }
+
+  _flags(list) {
+    return (list || []).map(i => ({
+      text: (i.kind === 'bullet' && !i.cont ? '\u2022\u2003\u2003' : '') + i.text,
+      gapTop: (i.gap || 0) + 'pt',
+      isH2: i.kind === 'h2' && !FY26W,
+      isH226: i.kind === 'h2' && FY26W,
+      isBullet: i.kind === 'bullet' && !i.cont,
+      isBulletCont: i.kind === 'bullet' && !!i.cont,
+      isBody: i.kind !== 'h2' && i.kind !== 'bullet',
+    }));
+  }
+}
+</script>
+</body>
+</html>

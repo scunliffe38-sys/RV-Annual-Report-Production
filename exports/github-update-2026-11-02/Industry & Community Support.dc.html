@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Black.ttf") format("truetype"); font-weight: 900; font-style: normal; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-MediumItalic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: block; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-BookItalic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: block; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; }
+  doc-page { font-family: "Gotham", Arial, sans-serif; }
+  a { color: #005FA1; text-decoration: none; }
+  a:hover { color: #EC008C; }
+</style>
+<script src="./doc-page.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+<doc-page width="1190.55pt" height="841.89pt">
+
+<section class="page" data-screen-label="26-27 Industry &amp; Community Support" style="position:relative;width:1190.55pt;height:841.89pt;box-sizing:border-box;padding:0;margin:0;background:#F6F6F6;overflow:hidden">
+
+  <sc-if value="{{ showDecoration }}" hint-placeholder-val="">
+    <div style="position:absolute;left:-331.5pt;top:289.7pt;width:482.79pt;height:482.79pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+    <div style="position:absolute;left:862.24pt;top:109.5pt;width:824.3pt;height:824.3pt;border:3pt dotted #fff;border-radius:50%;box-sizing:border-box"></div>
+  </sc-if>
+
+  <sc-if value="{{ photoOn }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ p1Id }}" tint="magenta" shape="circle" placeholder="{{ p1Label }}" style="position:absolute;left:{{ p1Left }}pt;top:{{ p1Top }}pt;width:{{ p1Size }}pt;height:{{ p1Size }}pt"></image-slot></sc-if>
+
+  <sc-if value="{{ fy26 }}" hint-placeholder-val=""><div style="position:absolute;left:52.7pt;top:79.66pt;width:530pt;font-size:34pt;line-height:40pt;font-weight:400;letter-spacing:-0.01em;color:#005FA1;white-space:nowrap"><span style="color:#005FA1">I</span><span style="color:#095BA0">n</span><span style="color:#11589F">d</span><span style="color:#1A549F">u</span><span style="color:#23519E">s</span><span style="color:#2C4D9D">t</span><span style="color:#344A9C">r</span><span style="color:#3D469C">y</span><span style="color:#46439B"> </span><span style="color:#4F3F9A">&amp;</span><span style="color:#573C99"> </span><span style="color:#603898">C</span><span style="color:#693598">o</span><span style="color:#723197">m</span><span style="color:#7A2E96">m</span><span style="color:#832A95">u</span><span style="color:#8C2795">n</span><span style="color:#952394">i</span><span style="color:#9D2093">t</span><span style="color:#A61C92">y</span><span style="color:#AF1991"> </span><span style="color:#B81591">S</span><span style="color:#C01290">u</span><span style="color:#C90E8F">p</span><span style="color:#D20B8E">p</span><span style="color:#DB078E">o</span><span style="color:#E3048D">r</span><span style="color:#EC008C">t</span></div></sc-if>
+  <sc-if value="{{ fy25 }}" hint-placeholder-val=""><div style="position:absolute;left:52.7pt;top:79.66pt;width:415.31pt;font-size:37pt;line-height:40pt;font-weight:400;letter-spacing:-0.01em;color:#005FA1">
+    <div><span style="color:#005FA1">I</span><span style="color:#0F59A0">n</span><span style="color:#1E539E">d</span><span style="color:#2C4D9D">u</span><span style="color:#3B479C">s</span><span style="color:#4A419A">t</span><span style="color:#593B99">r</span><span style="color:#673598">y</span><span style="color:#763097"> </span><span style="color:#852A95">&amp;</span></div>
+    <div><span style="color:#005FA1">C</span><span style="color:#0F59A0">o</span><span style="color:#1E539E">m</span><span style="color:#2C4D9D">m</span><span style="color:#3B479C">u</span><span style="color:#4A419A">n</span><span style="color:#593B99">i</span><span style="color:#673598">t</span><span style="color:#763097">y</span><span style="color:#852A95"> </span><span style="color:#942494">S</span><span style="color:#A21E93">u</span><span style="color:#B11891">p</span><span style="color:#C01290">p</span><span style="color:#CF0C8F">o</span><span style="color:#DD068D">r</span><span style="color:#EC008C">t</span></div>
+  </div></sc-if>
+
+  <div data-column="ics0" style="position:absolute;left:{{ f0.x }}pt;top:{{ f0.y }}pt;width:{{ f0.width }}pt;height:{{ f0.height }}pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ ics0 }}" as="b" hint-placeholder-count="3">
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:13pt;line-height:18pt;font-weight:400;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:22.677pt;text-indent:-22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0">{{ b.pre }}<span style="font-style:italic">{{ b.em }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isLabel }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:500;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isB26 }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.rest }}</div></sc-if>
+      <sc-if value="{{ b.isB26Cont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:10pt">{{ b.rest }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ics1" style="position:absolute;left:{{ f1.x }}pt;top:{{ f1.y }}pt;width:{{ f1.width }}pt;height:{{ f1.height }}pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ ics1 }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:13pt;line-height:18pt;font-weight:400;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:22.677pt;text-indent:-22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0">{{ b.pre }}<span style="font-style:italic">{{ b.em }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isLabel }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:500;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isB26 }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.rest }}</div></sc-if>
+      <sc-if value="{{ b.isB26Cont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:10pt">{{ b.rest }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ics2" style="position:absolute;left:{{ f2.x }}pt;top:{{ f2.y }}pt;width:{{ f2.width }}pt;height:{{ f2.height }}pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ ics2 }}" as="b" hint-placeholder-count="8">
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:13pt;line-height:18pt;font-weight:400;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:22.677pt;text-indent:-22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0">{{ b.pre }}<span style="font-style:italic">{{ b.em }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isLabel }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:500;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isB26 }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.rest }}</div></sc-if>
+      <sc-if value="{{ b.isB26Cont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:10pt">{{ b.rest }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <div data-column="ics3" style="position:absolute;left:{{ f3.x }}pt;top:{{ f3.y }}pt;width:{{ f3.width }}pt;height:{{ f3.height }}pt;overflow:hidden;color:#6D6E71">
+    <sc-for list="{{ ics3 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isSubhead }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:13pt;line-height:18pt;font-weight:400;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBullet }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:22.677pt;text-indent:-22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBulletCont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:22.677pt">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0">{{ b.pre }}<span style="font-style:italic">{{ b.em }}</span>{{ b.post }}</div></sc-if>
+      <sc-if value="{{ b.isLabel }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:500;color:#005FA1;margin:{{ b.gapTop }} 0 0">{{ b.text }}</div></sc-if>
+      <sc-if value="{{ b.isB26 }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:{{ b.gapTop }} 0 0;padding-left:10pt;text-indent:-10pt"><span style="display:inline-block;width:10pt;text-indent:0">•</span>{{ b.rest }}</div></sc-if>
+      <sc-if value="{{ b.isB26Cont }}" hint-placeholder-val=""><div style="letter-spacing:{{ track }};font-size:9pt;line-height:12pt;font-weight:400;margin:0;padding-left:10pt">{{ b.rest }}</div></sc-if>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ overflowLabel }}" hint-placeholder-val="">
+    <div style="position:absolute;left:898.59pt;top:786pt;width:235.28pt;background:#EC008C;color:#fff;padding:8pt 10pt;box-sizing:border-box">
+      <div style="font-weight:700;font-size:9pt;line-height:12pt;letter-spacing:0.04em;text-transform:uppercase">{{ overflowLabel }}</div>
+      <div style="font-weight:400;font-size:8pt;line-height:10.5pt;margin-top:5pt">{{ overflowText }}</div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:-8.5pt;top:822.04pt;width:1207.56pt;height:28.35pt;background:linear-gradient(90deg,#EC008C 0%,#005FA1 100%)"></div>
+
+  <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
+  <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+
+</section>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1588,&quot;height&quot;:1123},&quot;folioLeft&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:26,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;folioRight&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:27,&quot;min&quot;:1,&quot;max&quot;:200,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Page&quot;},&quot;showDecoration&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+// Frame geometry read from idml/Spread_Industry.xml (pp. 26-27), converted to
+// page coordinates with x + 595.28, y + 420.94 and composed through parent
+// group transforms.
+//
+// Story udc76 runs through four separate single-column frames, so the column
+// tops are explicit in the artwork rather than inferred from text wrap:
+//   udc88  56.70, 540.81, 235.28 x 215.91  (p.26 col 1, under the photo)
+//   udc90 303.31, 182.63, 235.28 x 585.23  (p.26 col 2)
+//   udc96 651.97, 182.13, 221.03 x 549.00  (p.27 col 1, narrower)
+//   udc9b 898.59, 323.00, 235.28 x 455.81  (p.27 col 2)
+//
+// The only photo is the p.26 circle udca2 (-55.27, 171.49, 345.83 sq). The
+// second image circle u10c6e and the group u10cda sit on the pasteboard, off
+// the printed spread, so they are not drawn.
+const FLOWS = [
+  { x: 56.70, y: 540.81, width: 235.28, height: 215.91 },
+  { x: 303.31, y: 182.63, width: 235.28, height: 585.23 },
+  { x: 651.97, y: 182.13, width: 221.03, height: 549.00 },
+  { x: 898.59, y: 323.00, width: 235.28, height: 455.81 },
+];
+
+// Paragraph styles from Styles.xml.
+//   A4 V:Body           9/12, RV Cool Gray, track -10, before 5.669 after 2.835
+//   A4 V:Subhead Large  13/18, RV Blue, Book, before 14.173 after 2.835
+//   A4 V:Bullets Body   9/12, 22.677 hanging indent, before 2.835 after 11.339,
+//                       5.669 between consecutive bullets (SameParaStyleSpacing)
+const SPEC = {
+  body:    { size: 9,  lead: 12, weight: '400', caps: false, before: 5.669, after: 2.835 },
+  subhead: { size: 13, lead: 18, weight: '400', caps: false, before: 14.173, after: 2.835 },
+  bullet:  { size: 9,  lead: 12, weight: '400', caps: false, before: 2.835, after: 11.339, same: 5.669 },
+};
+const FY26 = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search));
+// FY26: every line sits on one 12pt grid from the column top (171.49) to the
+// foot (783.49, 51 lines), as on Content, Media & Marketing. The photo keeps
+// its FY25 left edge and top and scales with the copy; column 1 starts on the
+// first grid line 23.5pt below it (FY25 offset).
+const TOP26 = 171.49, BOT26 = 783.49, LINE_PX = 12 / 0.75;
+const G = v => TOP26 + 12 * Math.ceil((v - TOP26) / 12 - 1e-6);
+function geo26(t) {
+  // photo raised 10pt (161.49) so column 1 starts one grid line higher.
+  const PT = 161.49;
+  const D = 345.83 * t, c1 = t > 0 ? G(PT + D + 23.5) : TOP26;
+  return {
+    p1: { left: -55.27, top: PT, size: D },
+    flows: [
+      { x: 56.70, y: c1, width: 235.28, height: BOT26 - c1 },
+      { x: 303.31, y: TOP26, width: 235.28, height: BOT26 - TOP26 },
+      { x: 651.72, y: TOP26, width: 235.28, height: BOT26 - TOP26 },
+      { x: 898.33, y: TOP26, width: 235.28, height: BOT26 - TOP26 },
+    ],
+  };
+}
+const T26_MIN = 0.5, T26_MAX = 1.3;
+// FY26 grid spacing as Content, Media & Marketing: a full line between
+// paragraphs, 9pt above and below a subhead (9 + 18 + 9 = three lines).
+const PARA_GAP = 12, SUB_GAP = 9;
+// The photo stays at least FY25 size; copy that doesn't fit is shown in the
+// overflow bar with a word count so it can be trimmed.
+const T26_KEEP = 1;
+const TRACKING = ['-0.01em', '-0.014em', '-0.018em', '-0.022em', '-0.026em', '-0.03em'];
+
+const TICK = cb => (typeof document !== 'undefined' && document.hidden) ? setTimeout(cb, 16) : requestAnimationFrame(cb);
+
+class Component extends DCLogic {
+  state = { cols: [[], [], [], []], idx: 0, leftover: [], t: 1 };
+
+  componentDidMount() {
+    const nudge = () => {
+      const dp = document.querySelector('doc-page');
+      if (dp && dp._measure) dp._measure();
+    };
+    nudge();
+    TICK(nudge);
+
+    Promise.all([
+      (() => { const imp = () => FY26 ? import('./copy/fy26/industry-community.js') : import('./copy/industry-community.js');
+        return window.RVProduction ? window.RVProduction.load('industry-community', imp) : imp(); })(),
+      document.fonts.load('400 9pt "Gotham"')
+        .then(() => document.fonts.load('400 13pt "Gotham"'))
+        .then(() => document.fonts.load('400 37pt "Gotham"'))
+        .then(() => document.fonts.load('500 9pt "Gotham"'))
+        .then(() => document.fonts.load('italic 400 9pt "Gotham"'))
+        .then(() => document.fonts.ready).catch(() => null),
+    ])
+      .then(([m]) => this._whenMeasurable().then(() => {
+        const items = m.copy.paragraphs
+          .filter(p => p.kind !== 'title' && !/^(?:(?:FY)?\d{4} )?Annual Report\s*[\u2013-]/.test(p.text))
+          .map(p => ({ text: p.text, kind: p.kind || 'body', em: p.em || '' }));
+        const a = FY26 ? this.fit26(items, 'Industry & Community Support') : this.settle(items, FLOWS, 'Industry & Community Support');
+        this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, t: a.t == null ? 1 : a.t });
+      }))
+      .catch(e => console.error('copy module failed to load', e));
+  }
+
+  _whenMeasurable(attempt) {
+    const n = attempt || 0;
+    const p = this._probe(200, '0');
+    p.host.style.fontSize = '9pt';
+    p.host.style.lineHeight = '12pt';
+    p.node.data = 'Measure';
+    const h = p.host.getBoundingClientRect().height;
+    p.host.remove();
+    if (h > 0) return Promise.resolve();
+    if (n >= 120) {
+      console.warn('layout never became measurable \u2014 columns may not break correctly.');
+      return Promise.resolve();
+    }
+    return new Promise(res => TICK(res)).then(() => this._whenMeasurable(n + 1));
+  }
+
+  settle(items, cols, label) {
+    for (let baseIdx = 0; baseIdx < TRACKING.length; baseIdx++) {
+      const attempt = this.flow(items, cols, baseIdx);
+      if (!attempt.leftover.length) {
+        console.warn(label + ': fitted at tracking ' + TRACKING[baseIdx] +
+          ' (step ' + (baseIdx + 1) + ' of ' + TRACKING.length + ').');
+        return Object.assign(attempt, { baseIdx });
+      }
+    }
+    const last = this.flow(items, cols, TRACKING.length - 1);
+    console.warn(label + ': ' + last.leftover.length +
+      ' paragraph(s) do not fit at maximum tracking \u2014 shown in the overflow bar.');
+    return Object.assign(last, { baseIdx: TRACKING.length - 1 });
+  }
+
+  // FY26: largest photo for which the copy fits and columns 1-3 run full to
+  // the foot; if none, the largest that fits; then tighter tracking; then no photo.
+  fit26(items, label) {
+    const run = (t, idx) => Object.assign(this.flow26(items, geo26(t).flows, idx || 0), { t, baseIdx: idx || 0 });
+    const full = (r, t) => !r.leftover.length && [0, 1, 2].every(c => r.used[c] >= geo26(t).flows[c].height - 0.5);
+    let firstFit = null;
+    for (let t = T26_MAX; t >= T26_KEEP - 1e-9; t -= 0.005) {
+      const r = run(t);
+      if (!r.leftover.length && !firstFit) firstFit = r;
+      if (full(r, t)) { console.warn(label + ': photo at ' + Math.round(t * 100) + '% of FY25 size, columns 1-3 full.'); return r; }
+    }
+    if (firstFit) { console.warn(label + ': photo at ' + Math.round(firstFit.t * 100) + '% (columns 1-3 not exactly full).'); return firstFit; }
+    const r = run(T26_KEEP, 0);
+    console.warn(label + ': ' + this._overWords(r.leftover) + ' words over with the photo at FY25 size.');
+    return r;
+  }
+
+  // FY26 grid spacing: one line between paragraphs; 9pt above and below a
+  // subhead (9 + 18 + 9 = three lines); lists tight under their label.
+  _gap26(prev, item) {
+    if (!prev || item.cont) return 0;
+    if (item.kind === 'subhead' || prev.kind === 'subhead') return SUB_GAP;
+    if (item.kind === 'bullet' && (prev.kind === 'bullet' || prev.kind === 'label')) return 0;
+    return PARA_GAP;
+  }
+
+  _probe26(widthPt, track) {
+    const p = this._probe(widthPt, track);
+    p.node.remove();
+    p.mark = document.createElement('span');
+    p.mark.style.cssText = 'display:none;width:10pt;text-indent:0';
+    p.mark.textContent = '\u2022';
+    p.pre = document.createTextNode(''); p.em = document.createElement('span'); p.em.style.fontStyle = 'italic';
+    p.node = document.createTextNode('');
+    p.host.append(p.mark, p.pre, p.em, p.node);
+    return p;
+  }
+
+  // Fills the probe; the text node holds the part a split can cut (after any italic run).
+  _fill26(p, item) {
+    const s = SPEC[item.kind] || SPEC.body;
+    p.host.style.fontWeight = item.kind === 'label' ? '500' : s.weight;
+    p.host.style.fontSize = s.size + 'pt';
+    p.host.style.lineHeight = s.lead + 'pt';
+    p.host.style.paddingLeft = item.kind === 'bullet' ? '10pt' : '0';
+    p.host.style.textIndent = item.kind === 'bullet' && !item.cont ? '-10pt' : '0';
+    p.mark.style.display = item.kind === 'bullet' && !item.cont ? 'inline-block' : 'none';
+    const i = item.em ? item.text.indexOf(item.em) : -1;
+    p.pre.data = i >= 0 ? item.text.slice(0, i) : '';
+    p.em.textContent = i >= 0 ? item.em : '';
+    p.node.data = i >= 0 ? item.text.slice(i + item.em.length) : item.text;
+    return i >= 0 ? i + item.em.length : 0;
+  }
+
+  flow26(items, cols, baseIdx) {
+    const columns = cols.map(() => []), used = cols.map(() => 0);
+    const track = TRACKING[baseIdx];
+    const queue = items.map(i => Object.assign({}, i));
+    let prev = null;
+    const p = this._probe26(cols[0].width, track), q = this._probe26(cols[0].width, track);
+    const lines = (it, txt) => { this._fill26(q, Object.assign({}, it, { text: txt })); return Math.round(q.host.getBoundingClientRect().height / LINE_PX); };
+    for (let c = 0; c < cols.length; c++) {
+      p.host.style.width = q.host.style.width = cols[c].width + 'pt';
+      const capPx = cols[c].height / 0.75;
+      let usedPx = 0;
+      while (queue.length) {
+        const item = queue[0];
+        const lead = this._fill26(p, item);
+        const before = columns[c].length ? this._gap26(prev, item) : (item.kind === 'subhead' ? -3 : 0);
+        const hPx = p.host.getBoundingClientRect().height + before / 0.75;
+        const keep = (item.kind === 'subhead' || item.kind === 'label') && queue[1] ? 2 * LINE_PX + this._gap26(item, queue[1]) / 0.75 : 0;
+        if (usedPx + hPx + keep <= capPx) {
+          columns[c].push(Object.assign({}, item, { gap: before }));
+          queue.shift(); prev = item; usedPx += hPx;
+          continue;
+        }
+        if (item.kind !== 'subhead' && item.kind !== 'label') {
+          const availPx = capPx - usedPx - before / 0.75;
+          const node = p.node, range = document.createRange(), top = p.host.getBoundingClientRect().top;
+          const cut = avail => {
+            let lo = 0, hi = node.data.length, best = 0;
+            while (lo <= hi) {
+              const mid = (lo + hi) >> 1;
+              range.setStart(node, 0); range.setEnd(node, mid);
+              const rects = range.getClientRects();
+              const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+              if (bottom <= avail) { best = mid; lo = mid + 1; } else hi = mid - 1;
+            }
+            if (best === 0) return 0;
+            let off = lead + best;
+            if (off < item.text.length) { const sp = item.text.lastIndexOf(' ', off); off = sp > lead ? sp : 0; }
+            return off;
+          };
+          let off = cut(availPx);
+          if (off > 0 && lines(item, item.text.slice(0, off).trimEnd()) < 2) off = 0;
+          else if (off > 0 && lines(Object.assign({}, item, { cont: true, em: '' }), item.text.slice(off).trimStart()) < 2) {
+            off = cut(availPx - LINE_PX);
+            if (off > 0 && lines(item, item.text.slice(0, off).trimEnd()) < 2) off = 0;
+          }
+          if (off > 0) {
+            const head = item.text.slice(0, off).trimEnd();
+            columns[c].push(Object.assign({}, item, { text: head, gap: before }));
+            queue[0] = Object.assign({}, item, { text: item.text.slice(off).trimStart(), cont: true, em: '' });
+            prev = item;
+            usedPx += lines(item, head) * LINE_PX + before / 0.75;
+          }
+        }
+        break;
+      }
+      used[c] = usedPx * 0.75;
+    }
+    p.host.remove(); q.host.remove();
+    return { columns, leftover: queue, used };
+  }
+
+  _overWords(list) {
+    return (list || []).reduce((n, i) => n + i.text.split(/\s+/).filter(Boolean).length, 0);
+  }
+
+  _probe(widthPt, track) {
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;left:-10000px;top:0;visibility:hidden;box-sizing:border-box;width:' +
+      widthPt + 'pt;font-family:"Gotham",Arial,sans-serif;letter-spacing:' + track;
+    document.body.appendChild(host);
+    const node = document.createTextNode('');
+    host.appendChild(node);
+    return { host, node };
+  }
+
+  _style(host, item) {
+    const s = SPEC[item.kind] || SPEC.body;
+    host.style.fontWeight = s.weight;
+    host.style.fontSize = s.size + 'pt';
+    host.style.lineHeight = s.lead + 'pt';
+    host.style.textTransform = s.caps ? 'uppercase' : 'none';
+    host.style.paddingLeft = item.kind === 'bullet' ? '22.677pt' : '0';
+    host.style.textIndent = (item.kind === 'bullet' && !item.cont) ? '-22.677pt' : '0';
+  }
+
+  // InDesign adds the previous paragraph's SpaceAfter to the next one's
+  // SpaceBefore, except between two paragraphs of the same style, where
+  // SameParaStyleSpacing replaces both.
+  _gap(prev, item) {
+    if (!prev) return 0;
+    const a = SPEC[prev.kind] || SPEC.body;
+    const b = SPEC[item.kind] || SPEC.body;
+    if (item.cont) return 0;
+    if (prev.kind === item.kind && b.same != null) return b.same;
+    return a.after + b.before;
+  }
+
+  flow(items, cols, baseIdx) {
+    const columns = cols.map(() => []);
+    const track = TRACKING[baseIdx];
+    let queue = items.map(i => Object.assign({}, i));
+    let prev = null;
+
+    for (let c = 0; c < cols.length; c++) {
+      const probe = this._probe(cols[c].width, track);
+      const host = probe.host, node = probe.node;
+      const capPx = cols[c].height / 0.75;
+      let usedPx = 0;
+
+      while (queue.length) {
+        const item = queue[0];
+        this._style(host, item);
+        node.data = (item.kind === 'bullet' && !item.cont ? '\u2022\u2003\u2003' : '') + item.text;
+        // the gap already carries the previous paragraph's SpaceAfter, and no
+        // space-before applies at the top of a column
+        const before = columns[c].length ? this._gap(prev, item) : 0;
+        const hPx = host.getBoundingClientRect().height + before / 0.75;
+
+        if (usedPx + hPx <= capPx) {
+          columns[c].push(Object.assign({}, item, { gap: before }));
+          queue.shift();
+          prev = item;
+          usedPx += hPx;
+          continue;
+        }
+
+        const availPx = capPx - usedPx - before / 0.75;
+        const prefix = (item.kind === 'bullet' && !item.cont) ? 3 : 0;
+        const len = node.data.length;
+        const range = document.createRange();
+        const top = host.getBoundingClientRect().top;
+        let lo = prefix, hi = len, best = prefix;
+        while (lo <= hi) {
+          const mid = (lo + hi) >> 1;
+          range.setStart(node, 0);
+          range.setEnd(node, mid);
+          const rects = range.getClientRects();
+          const bottom = rects.length ? rects[rects.length - 1].bottom - top : 0;
+          if (bottom <= availPx) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        let offset = best - prefix;
+        if (offset > 0 && offset < item.text.length) {
+          const space = item.text.lastIndexOf(' ', offset);
+          offset = space > 0 ? space : 0;
+        }
+        // subheads never split across a column
+        if (offset > 0 && item.kind !== 'subhead') {
+          columns[c].push(Object.assign({}, item, { text: item.text.slice(0, offset).trimEnd(), gap: before }));
+          const rest = item.text.slice(offset).trimStart();
+          if (rest) queue[0] = Object.assign({}, item, { text: rest, cont: true });
+          else queue.shift();
+          prev = item;
+        }
+        break;
+      }
+      host.remove();
+    }
+
+    return { columns, leftover: queue };
+  }
+
+  renderVals() {
+    const n = this.state.leftover.length;
+    const g = FY26 ? geo26(this.state.t) : { p1: { left: -55.27, top: 171.49, size: 345.83 }, flows: FLOWS };
+    return {
+      f0: g.flows[0], f1: g.flows[1], f2: g.flows[2], f3: g.flows[3],
+      photoOn: g.p1.size > 0,
+      fy26: FY26, fy25: !FY26,
+      p1Left: g.p1.left, p1Top: g.p1.top, p1Size: g.p1.size,
+      p1Id: FY26 ? 'ics26-image-1' : 'ics-image-wellbeing',
+      p1Label: FY26 ? 'Industry & Community Support photo (left circle)' : 'Participants / community',
+      footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : (FY26 ? 2026 : 2025),
+      folioLeft: this.props.folioLeft ?? 26,
+      folioRight: this.props.folioRight ?? 27,
+      showDecoration: this.props.showDecoration ?? !FY26,
+      track: TRACKING[this.state.idx],
+      ics0: this._flags(this.state.cols[0]), ics1: this._flags(this.state.cols[1]),
+      ics2: this._flags(this.state.cols[2]), ics3: this._flags(this.state.cols[3]),
+      overflowLabel: n ? (FY26 ? this._overWords(this.state.leftover) + ' words over \u2014 trim the copy to keep the photo' :
+        n + ' paragraph' + (n === 1 ? '' : 's') + ' will not fit this spread \u2014 trim the copy or extend the layout') : '',
+      overflowText: this.state.leftover.map(i => i.text).join('  \u00b6  '),
+    };
+  }
+
+  _flags(list) {
+    return (list || []).map(i => {
+      const e = i.em ? i.text.indexOf(i.em) : -1;
+      return {
+      text: (i.kind === 'bullet' && !i.cont ? '\u2022\u2003\u2003' : '') + i.text,
+      pre: e >= 0 ? i.text.slice(0, e) : i.text, em: e >= 0 ? i.em : '', post: e >= 0 ? i.text.slice(e + i.em.length) : '',
+      rest: i.text,
+      isLabel: i.kind === 'label',
+      isB26: FY26 && i.kind === 'bullet' && !i.cont,
+      isB26Cont: FY26 && i.kind === 'bullet' && !!i.cont,
+      gapTop: (i.gap || 0) + 'pt',
+      isSubhead: i.kind === 'subhead',
+      isBullet: !FY26 && i.kind === 'bullet' && !i.cont,
+      isBulletCont: !FY26 && i.kind === 'bullet' && !!i.cont,
+      isBody: i.kind !== 'subhead' && i.kind !== 'bullet' && i.kind !== 'label',
+      };
+    });
+  }
+}
+
+</script>
+</body>
+</html>

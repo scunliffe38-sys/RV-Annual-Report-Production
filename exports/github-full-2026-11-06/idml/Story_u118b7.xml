@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u118b7" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aHeading Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Gradient/RV Grad">
+				<Content>Infrastructure </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Gradient/RV Grad">
+				<Properties>
+					<Leading type="unit">36</Leading>
+				</Properties>
+				<Content>&amp; Projects</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Racing and training infrastructure continued to be developed across the state in FY25, enabled by strong support from the State Government’s VRIF and contributions from clubs, CRV and RV.  </Content>
+				<Br />
+				<Content>Infrastructure projects carried out during FY25 included:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBullets Body">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>•	Major irrigation upgrade projects were completed across the state, stretching as far east as Bairnsdale and reaching Ararat and Donald in the west.  </Content>
+				<Br />
+				<Content>•	Course proper drainage upgrades at Stawell and Terang were completed, as well as a widening of the training grass at Mornington. New inside grass tracks also opened for use at Geelong and Ballarat. </Content>
+				<Br />
+				<Content>•	Multiple training lights upgrades were carried out across the state, as well as to the Pakenham course proper. </Content>
+				<Br />
+				<Content>•	Following enhancements to Murtoa and Warrnambool last year, the judges tower upgrade program continued in FY25 with upgrades to Casterton and Hamilton. </Content>
+				<Br />
+				<Content>•	The continuation of other programs of upgrades included jockey rooms, barrier stalls and raceday facilities for both stewards and vets. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>A multitude of major infrastructure improvements are planned in FY26, spearheaded by the redevelopment of The Valley which will see the track reconfigured and the construction of new raceday facilities requiring the cessation of racing from November 2025 to August 2027.</Content>
+				<Br />
+				<Content>Significant course proper track upgrades have also been announced for Benalla and Bendigo, commencing after their 2025 Cup meetings.</Content>
+				<Br />
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

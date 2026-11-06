@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u13f0e" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Racing.com Media Pty Ltd (changed name from Victorian Thoroughbred Racing IMB Pty Ltd effective 23 February 2023), Racing.com Pty Ltd, Thoroughbred Racing Productions Pty Ltd and RVL Media Pty Ltd are all media related subsidiaries established for the primary purpose of the encouragement and promotion of Victorian thoroughbred horse racing, by holding, managing and exploiting media broadcasting and intellectual property rights, facilitating the payments for media rights to Racing Victoria, and undertaking any other activities the Board considers consistent with the encouragement and promotion of thoroughbred horse racing. </Content>
+				<Br />
+				<Content>VTRI Property Pty Ltd was established for the purpose of the encouragement and promotion of Victorian thoroughbred horse racing, as well as national and international thoroughbred horse racing, by the ownership and management of assets and provision of other services.</Content>
+				<Br />
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Bold">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Basis of Preparation</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The Consolidated Entity Disclosure Statement has been prepared in accordance with the Corporations Act 2001 and includes required information for each entity that was part of the consolidated entity as at the end of the financial year. The Consolidated Entity Disclosure Statement includes only those entities consolidated as at the end of the financial year in accordance with AASB 10 Consolidated Financial Statements (AASB 10). The consolidated entity is exempt from Income Tax under section 50-45 of the Income Tax Assessment Act.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Determination of Tax Residency</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>Section 295 (3A) of the Corporations Act 2001 defines tax residency as having the meaning in the Income Tax Assessment Act 1997. The determination of tax residency involves judgment as there are currently several different interpretations that could be adopted, and which could give rise to a different conclusion on residency. In determining tax residency, the consolidated entity has applied the following interpretations:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/H4 Sub Heading Italic">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Australian Tax Residency</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book">
+				<Content>The consolidated entity has applied current legislation and judicial precedent, including having regard to the Tax Commissioner’s public guidance (Tax Ruling TR 2018/5).</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

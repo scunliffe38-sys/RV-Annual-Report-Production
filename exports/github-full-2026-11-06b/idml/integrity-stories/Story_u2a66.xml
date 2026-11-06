@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u2a66" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>RV’s Integrity Services Department plays a crucial role in ensuring that the VTRI remains transparent, upstanding and prosperous. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Equine Sample Collection</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>A total of 11,134 equine samples were collected during the 2024-25 season, with prohibited substances detected in nine samples (0.08%) – continuing the downward trend from 13 (0.1%) 
+in the 2023-24 season and 18 (0.14%) in the 
+2022-23 season. </Content>
+				<Br />
+				<Content>A total of 1195 equine samples were collected as part of RV’s out-of-competition testing program.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Safety Record</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Victoria’s raceday fatality rate for flat racing remains among the lowest in the world of thoroughbred racing. Reducing that rate towards 0.00% is an ongoing focus of RV’s investment in veterinary and welfare initiatives.</Content>
+				<Br />
+				<Content>In the 2024-25 racing season, there were 20 fatalities in flat racing in Victoria from 41,510 starts. This is equivalent to a fatality rate of 0.048%, which is down on the 0.055% fatality rate in the 2023-24 season. </Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-30">
+				<Content>Equally, efforts to reduce the rate of incidents in jumps racing continue and a number of key changes were introduced following the 2024 Jumps Racing Review. </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Br />
+				<Content>In the 2025 jumps racing season, which ran from late March until the middle of August, there were three fatalities in jumps races in Victoria from 405 starters. That is equivalent to a fatality rate of 0.74%, down from 1.2% in the 2023-24 season.  </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Veterinary Protocols</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>RV’s world first veterinary protocols were again in place for the 2024 Spring Racing Carnival and delivered a fourth consecutive Melbourne Cup without a serious injury.</Content>
+				<Br />
+				<Content>Following a period of extensive consultation with both local and international participants, in FY25 RV announced enhanced processes for the 2025 Spring Racing Carnival veterinary protocols, with the aim of improving transparency and communication with participants. </Content>
+				<Br />
+				<Content>For international horses competing in Victoria and local horses in the Melbourne Cup, where a mandatory Computed Tomography (CT) scan has identified a potential issue, a follow-up Positron Emission Tomography (PET) scan will now be accessible, time permitting, to further assist in determining the horse’s suitability to race.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-30">
+				<Content>Additionally, international horses that do not hold an </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>entry for the Caulfield Cup, Cox Plate or Melbourne</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-30">
+				<Content> 
+Cup will only be required to undertake one mandatory </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-20">
+				<Content>pre-travel CT scan and won’t be required to have further CT scans before each race in Australia.</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>2024 Jumps Racing Review</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Following an extensive Jumps Racing Review, RV confirmed on 13 December 2024 that jumps racing will continue in Victoria, supported by significant safety and operational enhancements. The review, led by the Jumps Review Group (JRG) chaired by RV’s Executive General Manager of Integrity, Jamie Stier, and supported by former Supreme Court Judge, Justice Jack Forrest, examined the sport’s viability and safety. Over 350 public submissions were received, reflecting diverse views ranging from improvement proposals to calls for discontinuation. </Content>
+				<Br />
+				<Content>After considering the JRG’s findings and recommendations, the RV Board endorsed 
+the continuation of jumps racing and committed 
+to implementing 11 key recommendations 
+designed to strengthen safety, governance, 
+and operational standards.</Content>
+				<Br />
+				<Content>The endorsed measures included shortening the length of the jumps racing season, strengthening track compliance and preparation standards, enhancing trial and schooling opportunities, and introducing a dedicated Jumps Jockey Coach. The number of jumps races programmed was reduced from 65 to 57 in 2025, while changes were made to improve the financial sustainability of the code. To ensure accountability, a new Jumps Taskforce was created to oversee the implementation of these recommendations, monitor safety and performance outcomes, and report annually to the RV Board. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large" SpaceBefore="17.007874015748033">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Veterinary Resource Library</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>RV believes that education is the most effective 
+way to prevent injury and promote horse health. 
+To support trainers and equine professionals 
+in caring for their horses and expand their understanding of modern horse management practices, a dedicated Veterinary Resources Centre 
+is now available on the RV website. The centre provides key information on health practices, procedures, and injury prevention, along with 
+a range of other valuable educational materials.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large" SpaceBefore="17.007874015748033">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Removal of Serious Offences 
+from the Rules of Racing of RV</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" Tracking="-15">
+				<Content>In May 2025, the RV Board approved the removal of several Australian Rules from the definition of “Serious Offence” under the Rules of Racing of RV, effective 1 July 2025. This change was endorsed by the Victorian Racing Integrity Board and recognises that, in many cases, it is more beneficial for both participants and the RV Integrity Team to enable the Stewards to hear charges in the first instance while maintaining the right for participants to appeal any finding of the Stewards to the Victorian Racing Tribunal (VRT). This change should also deliver a decrease in time taken to conclude the hearing of charges under these Rules.</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>Other Notable Amendments 
+to the Rules of Racing of RV</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aBody">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Bold">
+				<Content>AR 55A Frequency of Race Starts</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Br />
+				<Content>Effective from 1 May 2025, AR 55A was amended to prohibit a horse from starting in more than one race per day, to allow consecutive day starts only with approval from the Stewards or RV, and to restrict a horse to no more than five race starts within any 30-day period. Stewards retain discretion to impose further limitations where necessary to protect horse welfare.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Bold">
+				<Content>AR283(6)(e) Minimum Mandatory Penalties for Electrical Apparatus Offences</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Br />
+				<Content>Effective from 1 May 2025, AR 283(6)(e) was amended to increase the mandatory minimum penalty for breaches of AR 231 which relates to 
+the care and welfare of horses. The amendment saw the minimum penalty for the use, or attempted use, of any electric or electronic apparatus increase from two years to five years.</Content>
+				<Br />
+				<Br />
+				<Br />
+				<Br />
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u4e72" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" HyphenationZone="33.56174249999998" RuleAboveLineWeight="0.9322706249999996" RuleBelowLineWeight="0.9322706249999996" Justification="CenterAlign" SplitColumnInsideGutter="5.593623749999997" ParagraphBorderTopLeftCornerRadius="11.187247499999994" ParagraphBorderTopRightCornerRadius="11.187247499999994" ParagraphBorderBottomLeftCornerRadius="11.187247499999994" ParagraphBorderBottomRightCornerRadius="11.187247499999994" ParagraphShadingTopLeftCornerRadius="11.187247499999994" ParagraphShadingTopRightCornerRadius="11.187247499999994" ParagraphShadingBottomLeftCornerRadius="11.187247499999994" ParagraphShadingBottomRightCornerRadius="11.187247499999994" ParagraphBorderTopLineWeight="0.9322706249999996" ParagraphBorderBottomLineWeight="0.9322706249999996" ParagraphBorderLeftLineWeight="0.9322706249999996" ParagraphBorderRightLineWeight="0.9322706249999996">
+			<Properties>
+				<SameParaStyleSpacing type="unit">-0.9322706249999996</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="31.69720124999998" StrokeWeight="0.9322706249999996" Tracking="-50" MiterLimit="3.7290824999999983" RubyFontSize="-0.9322706249999996" KentenFontSize="-0.9322706249999996">
+				<Properties>
+					<AppliedFont type="string">Gotham</AppliedFont>
+				</Properties>
+				<Content>33%</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

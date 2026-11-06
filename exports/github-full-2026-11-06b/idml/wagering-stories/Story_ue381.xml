@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="ue381" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Table Self="ue381ieb1e" HeaderRowCount="0" FooterRowCount="0" NumHeaderColumns="0" HeaderColumnsPosition="HeaderColumnsLeft" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" BodyRowCount="6" ColumnCount="2" AppliedTableStyle="TableStyle/$ID/[Basic Table]" TableDirection="LeftToRightDirection" StartRowFillColor="Color/RV Blue" StartRowFillCount="1" EndRowFillCount="1" ColumnFillsPriority="false" SkipFirstAlternatingFillRows="2" StartRowFillTint="6">
+					<Row Self="ue381ieb1eRow0" Name="0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="23.91894554028113" MinimumHeight="23.91894554028113" />
+					<Row Self="ue381ieb1eRow1" Name="1" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="15.781856359500088" MinimumHeight="15.781856359500088" />
+					<Row Self="ue381ieb1eRow2" Name="2" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="15.781856359500088" MinimumHeight="15.781856359500088" />
+					<Row Self="ue381ieb1eRow3" Name="3" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="15.781856359500088" MinimumHeight="15.781856359500088" />
+					<Row Self="ue381ieb1eRow4" Name="4" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="15.781856359500088" MinimumHeight="15.781856359500088" />
+					<Row Self="ue381ieb1eRow5" Name="5" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="15.781856359500088" MinimumHeight="15.781856359500088" />
+					<Column Self="ue381ieb1eColumn0" Name="0" ColumnType="BodyColumn" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" />
+					<Column Self="ue381ieb1eColumn1" Name="1" ColumnType="BodyColumn" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" SingleColumnWidth="200.06366738603978" />
+					<Cell Self="ue381ieb1ei7" Name="0:0" RowSpan="1" ColumnSpan="2" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" FillColor="Color/RV Blue" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" FontStyle="Bold" PointSize="9" Capitalization="AllCaps">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>Top five turnover races IN FY25</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei15" Name="0:1" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Hyphenation="false">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>1</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei17" Name="1:1" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Hyphenation="false">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>Lexus Melbourne Cup</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei1c" Name="0:2" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Color/RV Blue" FillTint="15" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>2</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei1e" Name="1:2" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Color/RV Blue" FillTint="15" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>Ladbrokes Cox Plate</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei23" Name="0:3" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>3</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei25" Name="1:3" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>Sportsbet Caulfield Cup</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei2a" Name="0:4" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Color/RV Blue" FillTint="15" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>4</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei2c" Name="1:4" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Color/RV Blue" FillTint="15" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>Penfolds Victoria Derby</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei31" Name="0:5" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="2" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>5</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="ue381ieb1ei33" Name="1:5" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="4" TextBottomInset="2.834645669291339" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="6" TopInset="2.834645669291339" BottomInset="2.834645669291339" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="2" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Blue" FontStyle="Book" PointSize="8">
+								<Properties>
+									<AppliedFont type="string">Gotham</AppliedFont>
+								</Properties>
+								<Content>Coolmore Stud Stakes</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+				</Table>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div>
+  <sc-for list="{{ table.rows }}" as="r" hint-placeholder-count="12">
+    <div style="display:grid;grid-template-columns:{{ r.gridCols }};min-height:{{ r.mh }};background:{{ r.bg }};box-sizing:border-box">
+      <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="4">
+        <div style="display:flex;align-items:{{ r.ai }};justify-content:{{ c.jc }};text-align:{{ c.ta }};padding:{{ r.pv }} 4.252pt {{ r.pv }} {{ c.pl }};font-size:{{ r.fs }};line-height:{{ r.lh }};font-weight:{{ c.fw }};font-style:{{ c.fst }};letter-spacing:{{ r.ls }};text-transform:{{ r.tt }};color:{{ c.col }};border-top:{{ c.bt }};border-bottom:{{ c.bb }};font-variant-numeric:tabular-nums;white-space:pre-line;box-sizing:border-box;min-width:0">{{ c.t }}</div>
+      </sc-for>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:660,&quot;height&quot;:520},&quot;table&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;}}"></script>
+</body>
+</html>

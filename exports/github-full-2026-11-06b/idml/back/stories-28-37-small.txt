@@ -1,0 +1,129 @@
+u1338a:
+   [A4 V%3aHeading Large] Directors’ Report
+u133a1:
+   [A4 V%3aSubhead Large] Current Directors
+u133b8:
+   [B1 Body Text] The directors of Racing Victoria Limited (Racing Victoria or the ‘Company’) submit herewith the annual financial report of the company for the financial year ended 30 June 2025. In compliance with the provisions of the Corporations Act 2001 (Cth) (Corporations Act), the directors’ report follows.The names of the directors of the Company during or since the end of the financial year are as follows.
+u133cf:
+   [A4 V%3aSubhead Large] Current Directors (continued)
+u13504:
+   [$ID/NormalParagraphStyle] directors’ report
+u13563:
+   [$ID/NormalParagraphStyle] Directors’ report
+u1357b:
+   [$ID/NormalParagraphStyle] Directors’ report
+u135c6:
+   [$ID/NormalParagraphStyle] Media & Wagering
+12% (13%)
+u135e0:
+   [$ID/NormalParagraphStyle] Customer & 
+Marketing
+1% (1%)
+u135f9:
+   [$ID/NormalParagraphStyle] Admin & Other
+5% (4%)
+u13613:
+   [$ID/NormalParagraphStyle] Expenditure
+101% of Revenue
+(102% FY24)
+u1362a:
+   [$ID/NormalParagraphStyle] Asset Costs
+2% (3%)
+u13641:
+   [$ID/NormalParagraphStyle] Industry
+75% (75%)
+u13660:
+   [$ID/NormalParagraphStyle] Prizemoney
+50% (50%)
+u13679:
+   [$ID/NormalParagraphStyle] Integrity & Vets
+3% (3%)
+u13691:
+   [$ID/NormalParagraphStyle] Racing
+3% (3%)
+u136a9:
+   [$ID/NormalParagraphStyle] Club & Infrastructure
+18% (19%)
+u136c1:
+   [$ID/NormalParagraphStyle] Support
+7% (6%)
+u136d9:
+   [$ID/NormalParagraphStyle] Operational
+12% (11%)
+u1378d:
+   [A4 V%3aSubhead Large] DIRECTORS’ MEETINGS
+   [A4 V%3aBody] The following table sets out the number of directors’ meetings (including monthly and special meetings of the board and meetings of the audit, risk & participant welfare committee) held during the financial period and the number of meetings attended by each director (while they were a director or committee member). During the financial year, 10 board meetings, 1 special board meetings, and 6 audit, risk & participant welfare (ARWSC) committee meetings were held.
+u137bb:
+   [$ID/NormalParagraphStyle] BOARD OF DIRECTORSARWSCDirectorsNo. of Monthly Meetings HeldNo. of Monthly Meetings AttendedNo. of Special Meetings HeldNo. of Special Meetings AttendedNo. of Meetings HeldNo. of Meetings AttendedTim Eddy10101166Paul Guerra101011Kate Joel10101-66Ross Lanyon OAM10911Sharon McCrohan10101-Tim Rourke10101166Mark Player101011Aaron Morrison (CEO)881166
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] BOARD OF DIRECTORS
+   [$ID/NormalParagraphStyle] ARWSC
+   [$ID/NormalParagraphStyle] Directors
+   [$ID/NormalParagraphStyle] No. of Monthly Meetings Held
+   [$ID/NormalParagraphStyle] No. of Monthly Meetings Attended
+   [$ID/NormalParagraphStyle] No. of Special Meetings Held
+   [$ID/NormalParagraphStyle] No. of Special Meetings Attended
+   [$ID/NormalParagraphStyle] No. of Meetings Held
+   [$ID/NormalParagraphStyle] No. of Meetings Attended
+   [$ID/NormalParagraphStyle] Tim Eddy
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 6
+   [$ID/NormalParagraphStyle] 6
+   [$ID/NormalParagraphStyle] Paul Guerra
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] Kate Joel
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] -
+   [$ID/NormalParagraphStyle] 6
+   [$ID/NormalParagraphStyle] 6
+   [$ID/NormalParagraphStyle] Ross Lanyon OAM
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 9
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] Sharon McCrohan
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] -
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] Tim Rourke
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 6
+   [$ID/NormalParagraphStyle] 6
+   [$ID/NormalParagraphStyle] Mark Player
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 10
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] 
+   [$ID/NormalParagraphStyle] Aaron Morrison (CEO)
+   [$ID/NormalParagraphStyle] 8
+   [$ID/NormalParagraphStyle] 8
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 1
+   [$ID/NormalParagraphStyle] 6
+   [$ID/NormalParagraphStyle] 6
+u137d6:
+   [A4 V%3aBody] Tim Eddy
+ChairMelbourne, 29 September 2025
+u137ee:
+   [A4 V%3aBody] Aaron Morrison
+Chief Executive Officer Melbourne, 29 September 2025

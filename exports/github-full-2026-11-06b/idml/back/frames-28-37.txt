@@ -1,0 +1,118 @@
+=== Spread_u13377.xml (spread index 14) ===
+PAGE 28 transform 1 0 0 1 -595.275590551 -420.944881889
+PAGE 29 transform 1 0 0 1 -5.684341886080802e-14 -420.944881889
+Oval self=u13386 story= tx=967.614173228437 ty=-2791.8553149534673 fill= vis=true
+TextFrame self=u13387 story=u1338a tx=-306.59842519675993 ty=-264.3166175734598 fill= vis=true
+TextFrame self=u1339e story=u133a1 tx=-298.6377952948218 ty=113.92466144332911 fill= vis=true
+TextFrame self=u133b5 story=u133b8 tx=-299.338582696406 ty=19.968503963004878 fill= vis=true
+TextFrame self=u133cc story=u133cf tx=297.6377952756001 ty=113.92466144332911 fill= vis=true
+TextFrame self=u133e3 story=u133e6 tx=-292.899914796371 ty=53.67986793826276 fill= vis=true
+TextFrame self=u133fa story=u133fd tx=301.42794155630986 ty=180.66617607537773 fill= vis=true
+TextFrame self=u13411 story=u13414 tx=301.42794155630986 ty=307.9818541553941 fill= vis=true
+TextFrame self=u13428 story=u1342b tx=301.4279415562518 ty=-76.76883161334626 fill= vis=true
+TextFrame self=u1343f story=u13443 tx=-298.81574803129377 ty=-67.79500654587719 fill= vis=true
+TextFrame self=u13457 story=u1345a tx=-299.6251968501897 ty=176.21258229634623 fill= vis=true
+TextFrame self=u1346e story=u13471 tx=295.9968503936109 ty=59.18776205282484 fill= vis=true
+TextFrame self=u13485 story=u13488 tx=-298.62519685028997 ty=315.375847541447 fill= vis=true
+Oval self=u1349d story= tx=536.862703858693 ty=-14339.012185283935 fill= vis=true
+Oval self=u134a8 story= tx=-939.6930343735055 ty=-2433.8171687561016 fill= vis=true
+Oval self=u134a9 story= tx=337.20828157505105 ty=-1525.3978311891292 fill=Color/RV Blue vis=true
+Oval self=u134ab story= tx=-58.18337035218701 ty=-14341.311165753352 fill= vis=true
+Oval self=u134b3 story= tx=-1534.2956086915847 ty=-2436.2325245321326 fill= vis=true
+Oval self=u134b4 story= tx=339.5989714848897 ty=-1530.5246822455783 fill=Color/RV Magenta vis=true
+Oval self=u134b6 story= tx=-57.46515249398777 ty=-14214.646924849561 fill= vis=true
+Oval self=u134be story= tx=-1534.4145808779633 ty=-2309.5682836283445 fill= vis=true
+Oval self=u134bf story= tx=344.9814748754658 ty=-1530.3553977206316 fill=Color/RV Magenta vis=true
+Oval self=u134c1 story= tx=-58.18337035218701 ty=-14086.689596168857 fill= vis=true
+Oval self=u134ce story= tx=-1534.4643906189867 ty=-2181.7176392076067 fill= vis=true
+Oval self=u134cf story= tx=344.4701702072015 ty=-1525.9125869508398 fill=Color/RV Magenta vis=true
+Oval self=u134d1 story= tx=537.4386768916136 ty=-14212.714416412378 fill= vis=true
+Oval self=u134d9 story= tx=-939.117061340586 ty=-2307.742459451132 fill= vis=true
+Oval self=u134da story= tx=337.2082815750439 ty=-1525.3978311891383 fill=Color/RV Blue vis=true
+Oval self=u134dd story= tx=536.862703858693 ty=-14082.689596168857 fill= vis=true
+Oval self=u134e6 story= tx=-940.2841902367904 ty=-2177.717639207605 fill= vis=true
+Oval self=u134e7 story= tx=335.07324399934646 ty=-1522.4923855175762 fill=Color/RV Blue vis=true
+Oval self=u134e9 story= tx=536.862703858693 ty=-13957.37391808884 fill= vis=true
+Oval self=u134f2 story= tx=-939.6418532709862 ty=-2052.4019611275894 fill= vis=true
+Oval self=u134f3 story= tx=335.0732439993369 ty=-1522.4923855175812 fill=Color/RV Blue vis=true
+Oval self=u134f5 story= tx=-58.183370332765094 ty=-13960.219865925597 fill= vis=true
+Oval self=u134ff story= tx=-1534.6688862035933 ty=-2055.1412247043877 fill= vis=true
+Oval self=u13500 story= tx=339.2569513415674 ty=-1531.464374866362 fill=Color/RV Magenta vis=true
+TextFrame self=u13501 story=u13504 tx=344.7700308243026 ty=-367.45669291262215 fill= vis=true
+=== Spread_u1351e.xml (spread index 15) ===
+PAGE 30 transform 1 0 0 1 -595.275590551 -420.944881889
+PAGE 31 transform 1 0 0 1 0 -420.944881889
+Oval self=u14430 story= tx=831.0511811024528 ty=-2023.3213317118816 fill= vis=true
+TextFrame self=u1352d story=u13530 tx=-1843.1889763777594 ty=120.0668598426887 fill= vis=true
+TextFrame self=u13545 story=u13548 tx=57.19291338582673 ty=-218.21838851266511 fill= vis=true
+TextFrame self=u1355c story=u13548 tx=-297.63779527559507 ty=-68.46832440941353 fill= vis=true
+Rectangle self=u14432 story= tx=-295.47065498497597 ty=-1960.6574803103754 fill=Gradient/ua3c3 vis=true
+TextFrame self=u13560 story=u13563 tx=-250.50555972669758 ty=-367.45669291262215 fill= vis=true
+TextFrame self=u13577 story=u1357b tx=344.7700308243026 ty=-367.45669291262215 fill= vis=true
+=== Spread_u13590.xml (spread index 16) ===
+PAGE 32 transform 1 0 0 1 -595.275590551 -420.944881889
+PAGE 33 transform 1 0 0 1 0 -420.944881889
+Oval self=u1442f story= tx=831.0511811024528 ty=-2023.3213317118816 fill= vis=true
+Oval self=u1442e story= tx=967.614173228437 ty=-2791.8553149534673 fill= vis=true
+TextFrame self=u1359f story=u135a2 tx=-1843.1889763777594 ty=120.0668598426887 fill= vis=true
+TextFrame self=u135b7 story=u13548 tx=-538.0826771652647 ty=-218.21838851266511 fill= vis=true
+TextFrame self=u135bb story=u13548 tx=297.63779527549985 ty=-249.57833951331122 fill= vis=true
+Polygon self=u135c1 story= tx=660.3581192168698 ty=-7644.602279913081 fill= vis=true
+Rectangle self=u135c2 story= tx=810.1999049364044 ty=-7581.705263454806 fill=Color/RV Blue vis=true
+TextFrame self=u135c3 story=u135c6 tx=317.32090558065636 ty=-132.52344661423336 fill= vis=true
+GraphicLine self=u135da story= tx=541.6496296656874 ty=-7512.063774749095 fill= vis=true
+Rectangle self=u135dc story= tx=946.4109513610292 ty=-7493.816502484814 fill=Color/RV Blue vis=true
+TextFrame self=u135dd story=u135e0 tx=453.53195200528097 ty=-37.3507812249943 fill= vis=true
+Rectangle self=u135f5 story= tx=881.6987498077909 ty=-7405.409593774015 fill=Color/RV Blue vis=true
+TextFrame self=u135f6 story=u135f9 tx=388.8197504520427 ty=49.981127485803896 fill= vis=true
+Rectangle self=u1360d story= tx=672.7042381810721 ty=-7480.688141498157 fill=Color/RV Cool Gray vis=true
+Rectangle self=u1360e story= tx=810.1999049364044 ty=-7482.838141498153 fill=Color/RV Secondary Blue vis=true
+Rectangle self=u1360f story= tx=810.1999049364044 ty=-7378.468796979972 fill=Color/ASU logo vis=true
+TextFrame self=u13610 story=u13613 tx=179.82523882532422 ty=-24.081904227523367 fill= vis=true
+TextFrame self=u13627 story=u1362a tx=317.32090558065636 ty=-23.00690422751906 fill= vis=true
+TextFrame self=u1363e story=u13641 tx=317.32090558065636 ty=71.68744029066164 fill= vis=true
+GraphicLine self=u13656 story= tx=682.9490853186162 ty=-7664.243207184005 fill= vis=true
+GraphicLine self=u13657 story= tx=682.9490853186162 ty=-7626.6267711417795 fill= vis=true
+Polygon self=u13658 story= tx=801.2924393217538 ty=-7772.552638083146 fill= vis=true
+GraphicLine self=u1365a story= tx=682.9490853186162 ty=-7423.254233206744 fill= vis=true
+Polygon self=u1365b story= tx=801.2924393217538 ty=-7558.430100148111 fill= vis=true
+Rectangle self=u1365c story= tx=946.4109513610292 ty=-7405.472271017178 fill=Color/ASU logo vis=true
+TextFrame self=u1365d story=u13660 tx=453.53195200528097 ty=49.96863209629815 fill= vis=true
+Rectangle self=u13675 story= tx=946.4109513610292 ty=-7534.379739543733 fill=Color/RV Blue vis=true
+TextFrame self=u13676 story=u13679 tx=453.53195200528097 ty=-80.10417058741328 fill= vis=true
+Rectangle self=u1368d story= tx=946.4109513610292 ty=-7569.965987426669 fill=Color/RV Blue vis=true
+TextFrame self=u1368e story=u13691 tx=453.53195200528097 ty=-114.52508431319292 fill= vis=true
+Rectangle self=u136a5 story= tx=946.4109513610292 ty=-7366.13765528336 fill=Color/ASU logo vis=true
+TextFrame self=u136a6 story=u136a9 tx=453.53195200528097 ty=88.13791367295813 fill= vis=true
+Rectangle self=u136bd story= tx=946.4109513610292 ty=-7326.998026563463 fill=Color/ASU logo vis=true
+TextFrame self=u136be story=u136c1 tx=453.53195200528097 ty=127.27754239285672 fill= vis=true
+Rectangle self=u136d5 story= tx=810.1999049364044 ty=-7495.7758685881245 fill=Color/RV Blue vis=true
+TextFrame self=u136d6 story=u136d9 tx=317.32090558065636 ty=-81.69626993948063 fill= vis=true
+Rectangle self=u14431 story= tx=-295.47065498497597 ty=-1960.6574803103754 fill=Gradient/ua3c3 vis=true
+TextFrame self=u136ed story=u136f0 tx=-250.50555972669758 ty=-367.45669291262215 fill= vis=true
+TextFrame self=u13704 story=u13707 tx=344.7700308243026 ty=-367.45669291262215 fill= vis=true
+=== Spread_u1371c.xml (spread index 17) ===
+PAGE 34 transform 1 0 0 1 -595.275590551 -420.944881889
+PAGE 35 transform 1 0 0 1 0 -420.944881889
+Oval self=u14435 story= tx=967.614173228437 ty=-2791.8553149534673 fill= vis=true
+Oval self=u14433 story= tx=831.0511811024528 ty=-2023.3213317118816 fill= vis=true
+TextFrame self=u1372b story=u1372e tx=-1843.1889763777594 ty=120.0668598426887 fill= vis=true
+TextFrame self=u13743 story=u13548 tx=-297.6377952755001 ty=34.685730940123904 fill= vis=true
+TextFrame self=u13747 story=u13548 tx=297.63779527549997 ty=36.685730940123904 fill= vis=true
+Rectangle self=u14436 story= tx=-295.47065498497597 ty=-1960.6574803103754 fill=Gradient/ua3c3 vis=true
+TextFrame self=u1374b story=u1374e tx=-250.50555972669758 ty=-367.45669291262215 fill= vis=true
+TextFrame self=u13762 story=u13766 tx=344.7700308243026 ty=-367.45669291262215 fill= vis=true
+=== Spread_u1377b.xml (spread index 18) ===
+PAGE 36 transform 1 0 0 1 -595.275590551 -420.944881889
+PAGE 37 transform 1 0 0 1 -5.684341886080802e-14 -420.944881889
+Rectangle self=u14437 story= tx=-295.47065498497597 ty=-1960.6574803103754 fill=Gradient/ua3c3 vis=true
+TextFrame self=u1378a story=u1378d tx=-547.7559055116176 ty=110.72596288687791 fill= vis=true
+TextFrame self=u137a1 story=u137a4 tx=-547.7559055116176 ty=428.83226210062287 fill= vis=true
+TextFrame self=u137b8 story=u137bb tx=-463.5826771651732 ty=-124.20472440334834 fill= vis=true
+TextFrame self=u137cf story=u137a4 tx=57.19291338582673 ty=-284.38188976301535 fill= vis=true
+TextFrame self=u137d3 story=u137d6 tx=131.69291338582673 ty=40.274401370650594 fill= vis=true
+TextFrame self=u137ea story=u137ee tx=317.33070866159846 ty=40.274401370650594 fill= vis=true
+Rectangle self=u13802 story= tx=294.5511811024527 ty=-64.01641985520362 fill= vis=true
+Rectangle self=u1380a story= tx=84.46456692913574 ty=-60.055059194231035 fill= vis=true
+TextFrame self=u13814 story=u13817 tx=344.7700308243026 ty=-367.45669291262215 fill= vis=true
+TextFrame self=u1382b story=u1382e tx=-250.50555972669758 ty=-367.45669291262215 fill= vis=true

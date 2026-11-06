@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Book.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; }
+  @font-face { font-family: "Gotham"; src: url("./fonts/Gotham-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+  body { margin: 0; background: #F6F6F6; }
+  a { color: #005FA1; } a:hover { color: #EC008C; }
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#005FA1"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#005FA1"/><rect x="30" y="34" width="40" height="6" fill="#fff"/><rect x="30" y="47" width="40" height="6" fill="#fff"/><rect x="30" y="60" width="26" height="6" fill="#EC008C"/></svg></template>
+</helmet>
+<div style="font-family:Gotham,Arial,sans-serif;color:#6D6E71;max-width:1000px;margin:0 auto;padding:48px 32px 64px;display:flex;flex-direction:column;gap:36px">
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <div style="font-size:30px;line-height:36px;font-weight:400;color:#005FA1">Finance section review: status</div>
+    <div style="font-size:14px;line-height:20px;text-wrap:pretty">From Matt's initial feedback (28 October 2026), 45 items, plus item 46 from comparing the FY26 Word input file with the first PDF draft. Status as marked up in the SC review.</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px;line-height:18px;margin-top:6px">
+      <div style="display:flex;gap:8px;align-items:center"><div style="width:12px;height:12px;background:#FFE14D"></div>{{ counts.todo }} to be updated</div>
+      <div style="display:flex;gap:8px;align-items:center"><div style="width:12px;height:12px;background:#80649F"></div>{{ counts.ok }} reviewed, OK as is</div>
+      <div style="display:flex;gap:8px;align-items:center"><div style="width:12px;height:12px;background:#005FA1"></div>{{ counts.done }} done</div>
+    </div>
+  </div>
+
+  <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;align-items:center;gap:10px;font-size:17px;line-height:22px;font-weight:500;color:#005FA1">
+        <div style="width:14px;height:14px;background:{{ g.swatch }};border:{{ g.border }};box-sizing:border-box"></div>
+        <div>{{ g.title }} ({{ g.n }})</div>
+      </div>
+      <div style="background:#fff;display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:36px 76px minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:14px;padding:9px 14px;background:#005FA1;color:#fff;font-size:12px;line-height:16px;font-weight:500">
+          <div>#</div><div>FY26 page</div><div>Area</div><div>FY25 (last year)</div><div>FY26 draft</div>
+        </div>
+        <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="5">
+          <sc-if value="{{ it.hasSub }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:14px 14px 8px;border-top:1px solid #E3E4E5;background:#E6EFF6;font-size:13px;line-height:18px;font-weight:500;color:#005FA1">{{ it.sub }}</div>
+          </sc-if>
+          <div style="display:grid;grid-template-columns:36px 76px minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:14px;padding:9px 14px;border-top:1px solid #E3E4E5;font-size:13px;line-height:18px;text-wrap:pretty">
+            <div style="color:#005FA1;font-weight:500">{{ it.n }}</div>
+            <div>{{ it.pg }}</div>
+            <div style="color:#3F4043">{{ it.area }}</div>
+            <div>{{ it.fy25 }}</div>
+            <div>{{ it.fy26 }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const I = [
+      [1,'d','Notes, all pages','Total and subtotal rows','Blue text, blue labels on “Balance at end” and “Total” rows','Grey text, same as ordinary rows'],
+      [2,'d','82 to 83','Disclosure Statement table text','Blue','Grey'],
+      [3,'d','52 to 55','Note 2 continued headings','“Surplus / (Deficit)” (with spaces)','“Surplus/(Deficit)” (no spaces); p51 still matches FY25'],
+      [4,'d','28','Directors’ Report title','Blue to pink gradient','Solid blue'],
+      [5,'d','28','Intro: Corporations Act 2001','Italic','Not italic'],
+      [6,'d','28 to 29','Director appointment lines','Light grey regular caps','Bold blue caps'],
+      [7,'o','28 to 29','Director bio layout','4 per column, evenly spaced','5 per column, tighter'],
+      [8,'t','28 to 29','Director photos','Photos','“Director 1” to “Director 9” placeholders'],
+      [9,'d','28','Morrison title','“(Chief Executive Officer)”','“(CEO)”'],
+      [10,'o','30','Company Secretary line','“Company Secretary – appointed”','“Company Secretary; appointed”'],
+      [11,'o','31','RVG table footnotes','Asterisk (*) markers, small italic','Numbered superscripts, plain text'],
+      [12,'o','32 to 33','Revenue/expenditure chart','Box diagram on right page','Infographic on left page; text flows across both pages'],
+      [13,'d','34','Industry Expenditure bullets','Full paragraphs within bullets','Short bullet lead-ins with indented paragraphs below'],
+      [14,'o','36','Directors’ meetings table','Vertical divider between Board and ARWSC','Four column groups with underlined headings, no divider'],
+      [15,'t','37, 41','Chair and CEO signatures','Real signatures','Placeholders; Chair box smaller than CEO box'],
+      [16,'d','37 vs 47','Rounding instrument wording','“Financial/Directors’” in both places','p37 “Financial/Directors’”, p47 “Financial / Directors’”'],
+      [17,'o','38','KPMG signature block','Side by side; “Partner” italic','Stacked; “Partner” not italic'],
+      [18,'o','39','Auditor’s opinion bullets','Left aligned','Justified, with large word gaps'],
+      [19,'o','40','KPMG partner sign-off','Single spaced','Wide line spacing'],
+      [20,'t','42','Divider photo','Racing photo','“Financial statements divider photograph” placeholder'],
+      [21,'d','43','Result rows (before tax, for the year)','Bold blue, not italic','Bold blue italic'],
+      [22,'d','43','“Other comprehensive income”','Regular','Italic grey'],
+      [23,'d','45','Cash flow title line break','“Consolidated statement / of cash flows”','“Consolidated / statement of cash flows”'],
+      [24,'d','45','Cash flow section spacing','Blank row between operating, investing, financing','No spacer rows'],
+      [25,'d','46','Changes in equity “Balance at” rows','Bold labels, regular figures','Bold labels and bold figures'],
+      [26,'d','47','Note 1 sub-headings','Sentence case (“Basis of preparation”)','Title case (“Basis of Preparation”)'],
+      [27,'d','49','“Material Accounting Policies” sub-heading','Bold blue, flush left','Grey, indented'],
+      [28,'d','54','Note 2 footnotes (xii) to (xiv)','Kept with their table','At top of p54, separated from their table on p53'],
+      [29,'o','55','Page footer','Present','Missing'],
+      [30,'d','58 to 59','Note 5 and 6 column headers','Title case (“Computer Software & Databases”, “Domain Name”)','Lower case; “&” on its own line'],
+      [31,'d','60','Note 7 row labels','Flush left','Indented'],
+      [32,'o','61','Note 8 entity name','Single line','Wraps over 3 lines'],
+      [33,'o','64 to 65','Notes 14 to 18 spacing','Space around each note','Compressed; Note 16 runs straight on from Note 15'],
+      [34,'d','66','Note 19 table headers','Title case (“Revenue”, “Expenditure”)','All caps'],
+      [35,'d','66','Note 19 table total','No gap before total','Blank shaded row before total; bold blue total'],
+      [36,'d','66 to 67','Note 19 sub-headings (a) to (e)','Regular blue','Italic blue'],
+      [37,'d','67','“Transactions with member related entities”, “Ownership of racehorses”','Bold grey','Italic underlined'],
+      [38,'d','68','Note 20 cash and reconciliation totals','Blue, single rule above and double rule below','No colour, no rules'],
+      [39,'d','69','Note 21 Contingent Liabilities','Plain paragraphs','Bulleted'],
+      [40,'d','72','GST list “(ii)”','Space before text','“(ii)for” has no space'],
+      [41,'d','81','Note 24 address block','Ends with bold www.racingvictoria.com.au','No website line'],
+      [42,'o','82 to 83','Disclosure Statement position','Right page (p83)','Left page (p82); p83 blank'],
+      [43,'t','37','Cross-ref: independence declaration','“page 38”','“page 11” (should be 38)'],
+      [44,'t','41','Cross-ref: Directors’ Declaration','“pages 43 to 83”','“pages 15 to 47” (should be 43 to 83)'],
+      [45,'t','43 to 46','Cross-ref: notes page range','“pages 47 to 82”','“pages 47 to 82” (same, but FY26 notes end on p81)'],
+      [46,'d','54, 72','Footnote labels (difference between the FY26 Word input file and the first PDF draft)','Word: footnote labels have a space before the text','No space: “(xvii)Publications”, “(xviii)Inclusive”, “(ii)for trade receivables”']
+    ].map(([n, s, pg, area, fy25, fy26]) => ({ n, s, pg, area, fy25, fy26, sub: n === 46 ? 'Word Input vs. FY26' : '', hasSub: n === 46 }));
+    const G = [
+      ['t', 'To be updated', '#FFE14D', '0'],
+      ['n', 'Not marked', 'transparent', '1px solid #6D6E71'],
+      ['o', 'Reviewed, OK to leave as is', '#80649F', '0'],
+      ['d', 'Done', '#005FA1', '0']
+    ];
+    const groups = G.map(([k, title, swatch, border]) => { const items = I.filter(i => i.s === k); return { title, swatch, border, items, n: items.length }; }).filter(g => g.n);
+    const c = k => I.filter(i => i.s === k).length;
+    return { groups, counts: { todo: c('t'), ok: c('o'), done: c('d'), none: c('n') } };
+  }
+}
+</script>
+</body>
+</html>

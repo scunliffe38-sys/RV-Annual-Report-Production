@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="uf288" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" HyphenationZone="28.142280786168815" RuleAboveLineWeight="0.7817300218380226" RuleBelowLineWeight="0.7817300218380226" Justification="CenterAlign" SplitColumnInsideGutter="4.690380131028136" ParagraphShadingTint="-1" ParagraphBorderTopLeftCornerRadius="0.7817300218380226" ParagraphBorderTopRightCornerRadius="0.7817300218380226" ParagraphBorderBottomLeftCornerRadius="0.7817300218380226" ParagraphBorderBottomRightCornerRadius="0.7817300218380226" ParagraphShadingTopLeftCornerRadius="0.7817300218380226" ParagraphShadingTopRightCornerRadius="0.7817300218380226" ParagraphShadingBottomLeftCornerRadius="0.7817300218380226" ParagraphShadingBottomRightCornerRadius="0.7817300218380226" ParagraphBorderTopLineWeight="0.7817300218380226" ParagraphBorderBottomLineWeight="0.7817300218380226" ParagraphBorderLeftLineWeight="0.7817300218380226" ParagraphBorderRightLineWeight="0.7817300218380226">
+			<Properties>
+				<ParagraphShadingColor type="object">Color/RV Secondary Blue</ParagraphShadingColor>
+				<ParagraphBorderGapColor type="object">Swatch/None</ParagraphBorderGapColor>
+				<SameParaStyleSpacing type="unit">-0.7817300218380226</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Paragraph Heading" FillColor="Color/RV Blue" FontStyle="Bold" PointSize="8" StrokeWeight="0.7817300218380226" Tracking="20" Capitalization="AllCaps" MiterLimit="3.1269200873520906" RubyFontSize="-0.7817300218380226" KentenFontSize="-0.7817300218380226">
+				<Properties>
+					<AppliedFont type="string">Gotham</AppliedFont>
+				</Properties>
+				<Content>Q1</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>

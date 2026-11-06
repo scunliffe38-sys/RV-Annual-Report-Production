@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="21.5">
+	<Story Self="u13b21" UserText="true" IsEndnoteStory="false" AppliedTOCStyle="n" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n" AiGeneratedStory="false" AiModelName="$ID/" AiDigitalSourceType="$ID/" AiFirstParty="false" AiTextContent="$ID/">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/B1 Body Text" SpaceAfter="12.075590551181103">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold" AppliedLanguage="$ID/English: UK">
+				<Table Self="u13b21i14147" HeaderRowCount="1" FooterRowCount="0" NumHeaderColumns="0" HeaderColumnsPosition="HeaderColumnsLeft" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" BodyRowCount="23" ColumnCount="3" AppliedTableStyle="TableStyle/T2 Table" TableDirection="LeftToRightDirection">
+					<Row Self="u13b21i14147Row0" Name="0" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="17.007874015748033" MinimumHeight="17.007874015748033" />
+					<Row Self="u13b21i14147Row1" Name="1" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="14.50384545513964" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row2" Name="2" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="21.738423985759106" />
+					<Row Self="u13b21i14147Row3" Name="3" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row4" Name="4" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row5" Name="5" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row6" Name="6" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row7" Name="7" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row8" Name="8" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row9" Name="9" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Rowa" Name="10" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Rowb" Name="11" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Rowc" Name="12" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Rowd" Name="13" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Rowe" Name="14" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Rowf" Name="15" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row10" Name="16" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row11" Name="17" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row12" Name="18" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row13" Name="19" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row14" Name="20" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row15" Name="21" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row16" Name="22" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Row Self="u13b21i14147Row17" Name="23" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleRowHeight="15.703827144592765" MinimumHeight="14.173228346456694" />
+					<Column Self="u13b21i14147Column0" Name="0" ColumnType="BodyColumn" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleColumnWidth="328.8199629921637" />
+					<Column Self="u13b21i14147Column1" Name="1" ColumnType="BodyColumn" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleColumnWidth="76.53543307086615" />
+					<Column Self="u13b21i14147Column2" Name="2" ColumnType="BodyColumn" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" SingleColumnWidth="76.53543307086615" />
+					<Cell Self="u13b21i14147i45" Name="0:0" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" ClipContentToCell="false">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Header">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i46" Name="1:0" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" ClipContentToCell="false">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Header">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>30 JUNE 2025</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i47" Name="2:0" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" ClipContentToCell="false">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Header">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 30 JUNE 2024 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i0" Name="0:1" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Table Header 2" AppliedCellStylePriority="11" ClipContentToCell="false" BottomEdgeStrokePriority="1">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Header 2">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i1" Name="1:1" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Table Header 2" AppliedCellStylePriority="11" ClipContentToCell="false" BottomEdgeStrokePriority="2">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Header 2">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>$’000</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i2" Name="2:1" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Table Header 2" AppliedCellStylePriority="11" ClipContentToCell="false" BottomEdgeStrokePriority="4">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Header 2">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>$’000</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i3" Name="0:2" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Table Header 3" AppliedCellStylePriority="17" LeftInset="4.251968503937008" TopInset="4.251968503937008" RightInset="4.251968503937008" BottomInset="4.251968503937008" FillTint="-1" VerticalJustification="CenterAlign" ClipContentToCell="false" LeftEdgeStrokePriority="1" RightEdgeStrokePriority="2" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>2. Surplus / (Deficit) from Operations (continued)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i4" Name="1:2" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="5.669291338582678" TextLeftInset="0" TextBottomInset="5.669291338582678" TextRightInset="5.669291338582678" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Table Header 3" AppliedCellStylePriority="17" FillTint="-1" VerticalJustification="CenterAlign" ClipContentToCell="false" LeftEdgeStrokePriority="2" RightEdgeStrokePriority="4" TopEdgeStrokePriority="2" BottomEdgeStrokePriority="6">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i5" Name="2:2" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="5.669291338582678" TextLeftInset="0" TextBottomInset="5.669291338582678" TextRightInset="5.669291338582678" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Table Header 3" AppliedCellStylePriority="17" FillTint="-1" ClipContentToCell="false" LeftEdgeStrokePriority="4" RightEdgeStrokePriority="4" TopEdgeStrokePriority="4" BottomEdgeStrokePriority="6">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/A4 V%3aSubhead Large">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i6" Name="0:3" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="5" FillColor="Swatch/None" FillTint="-1" RightEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" RightEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" RightEdgeStrokeOverprint="false" ClipContentToCell="false" RightEdgeStrokePriority="15" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="93" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Bold">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Bold Italic">
+								<Content>(d) Other Revenue</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i7" Name="1:3" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="0" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="4" LeftInset="0" TopInset="4" RightInset="4" BottomInset="4" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" LeftEdgeStrokeOverprint="false" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="15" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i8" Name="2:3" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="0" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="16" LeftInset="0" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="14" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i9" Name="0:4" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="4" LeftInset="4.251968503937008" TopInset="4.251968503937008" RightInset="4.251968503937008" BottomInset="4.251968503937008" FillColor="Swatch/None" FillTint="-1" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" RightEdgeStrokeOverprint="false" ClipContentToCell="false" RightEdgeStrokePriority="15" TopEdgeStrokePriority="93" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Racing revenue</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147ia" Name="1:4" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="4" LeftInset="4" TopInset="4" RightInset="4" BottomInset="4" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" LeftEdgeStrokeOverprint="false" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="15" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 3,393 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147ib" Name="2:4" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="41" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="29" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 2,847 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147ic" Name="0:5" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="7" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="51" RightEdgeStrokePriority="52" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>VOBIS nomination revenue (vii)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147id" Name="1:5" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="4" LeftInset="4" TopInset="4" RightInset="4" BottomInset="4" LeftEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="52" RightEdgeStrokePriority="15" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 3,835 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147ie" Name="2:5" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="41" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="46" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 3,859 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147if" Name="0:6" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="7" FillColor="Swatch/None" FillTint="-1" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="53" RightEdgeStrokePriority="54" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Customer revenue</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i10" Name="1:6" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="4" LeftInset="4" TopInset="4" RightInset="4" BottomInset="4" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="54" RightEdgeStrokePriority="15" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,295 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i11" Name="2:6" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="41" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="63" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,088 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i12" Name="0:7" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="7" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="55" RightEdgeStrokePriority="56" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Industry service recoveries</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i13" Name="1:7" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="4" LeftInset="4" TopInset="4" RightInset="4" BottomInset="4" LeftEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="56" RightEdgeStrokePriority="15" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="13" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,273 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i14" Name="2:7" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="41" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="84" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="6">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,193 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i15" Name="0:8" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="7" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="57" RightEdgeStrokePriority="94" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Racecourse infrastructure contributions (viii)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i16" Name="1:8" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="17" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/ThickThick" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="94" RightEdgeStrokePriority="15" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="13">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 124 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i17" Name="2:8" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="41" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="106" TopEdgeStrokePriority="6" BottomEdgeStrokePriority="14">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,357 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i18" Name="0:9" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Color/RV Gradient Blue" FillTint="6" LeftEdgeStrokeWeight="0" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="60" RightEdgeStrokePriority="61" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Rent income (ix)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i19" Name="1:9" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="23" LeftInset="4" TopInset="4" RightInset="4" BottomInset="4" FillColor="Color/RV Gradient Blue" FillTint="6" LeftEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="61" RightEdgeStrokePriority="15" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="13" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,006 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i1a" Name="2:9" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="42" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/ThickThick" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="4" TopEdgeStrokePriority="14" BottomEdgeStrokePriority="14">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,020 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i1b" Name="0:10" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" RightEdgeStrokeWeight="0" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="63" RightEdgeStrokePriority="64" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Other revenue</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i1c" Name="1:10" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="23" LeftInset="4" TopInset="4" RightInset="4" BottomInset="4" FillColor="Swatch/None" LeftEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="64" RightEdgeStrokePriority="15" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="48" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 2,023 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i1d" Name="2:10" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="57" FillColor="Swatch/None" FillTint="-1" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="167" TopEdgeStrokePriority="14" BottomEdgeStrokePriority="48">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 2,955 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i1e" Name="0:11" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/RV Cool Gray" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" RightEdgeStrokeOverprint="false" ClipContentToCell="false" LeftEdgeStrokePriority="65" RightEdgeStrokePriority="42" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Indent">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue" FontStyle="Bold" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i1f" Name="1:11" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="32" TopEdgeStrokeWeight="0.7086614173228347" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Color/RV Cool Gray" TopEdgeStrokeColor="Color/RV Gradient Blue" RightEdgeStrokeColor="Color/RV Cool Gray" BottomEdgeStrokeColor="Color/RV Gradient Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="TopAlign" LeftEdgeStrokeTint="100" LeftEdgeStrokeOverprint="false" ClipContentToCell="false" LeftEdgeStrokePriority="42" RightEdgeStrokePriority="43" TopEdgeStrokePriority="48" BottomEdgeStrokePriority="48" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Blue">
+								<Content> 12,949 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i20" Name="2:11" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="56" TopEdgeStrokeWeight="0.7086614173228347" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Color/RV Cool Gray" TopEdgeStrokeColor="Color/RV Gradient Blue" RightEdgeStrokeColor="Color/RV Cool Gray" BottomEdgeStrokeColor="Color/RV Gradient Blue" ClipContentToCell="false" LeftEdgeStrokePriority="43" RightEdgeStrokePriority="45" TopEdgeStrokePriority="48" BottomEdgeStrokePriority="48">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Blue">
+								<Content> 14,319 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i21" Name="0:12" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="66" RightEdgeStrokePriority="67" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Table Blue Underline" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i22" Name="1:12" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="0" TextLeftInset="0" TextBottomInset="0" TextRightInset="0" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="32" LeftInset="0" TopInset="0" RightInset="0" BottomInset="0" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Gradient Blue" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="TopAlign" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="67" RightEdgeStrokePriority="15" TopEdgeStrokePriority="48" BottomEdgeStrokePriority="49" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Blue" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i23" Name="2:12" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="0" TextLeftInset="0" TextBottomInset="0" TextRightInset="0" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="34" LeftInset="0" TopInset="0" RightInset="0" BottomInset="0" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Color/RV Gradient Blue" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="211" TopEdgeStrokePriority="48" BottomEdgeStrokePriority="49">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue" FontStyle="Bold" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i24" Name="0:13" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="69" RightEdgeStrokePriority="70" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Table Blue Underline">
+								<Content>Investment income (x)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i25" Name="1:13" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="0" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="32" LeftInset="0" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" VerticalJustification="TopAlign" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="70" RightEdgeStrokePriority="15" TopEdgeStrokePriority="49" BottomEdgeStrokePriority="12" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Blue" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i26" Name="2:13" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="0" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="34" LeftInset="0" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="234" TopEdgeStrokePriority="49" BottomEdgeStrokePriority="9">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i27" Name="0:14" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="71" RightEdgeStrokePriority="72" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Distribution income</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i28" Name="1:14" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="72" RightEdgeStrokePriority="15" TopEdgeStrokePriority="12" BottomEdgeStrokePriority="12" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,382 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i29" Name="2:14" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="36" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="258" TopEdgeStrokePriority="9" BottomEdgeStrokePriority="12">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 876 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i2a" Name="0:15" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="73" RightEdgeStrokePriority="74" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Interest income</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i2b" Name="1:15" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="74" RightEdgeStrokePriority="15" TopEdgeStrokePriority="12" BottomEdgeStrokePriority="12" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 3,025 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i2c" Name="2:15" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="36" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="282" TopEdgeStrokePriority="12" BottomEdgeStrokePriority="12">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 4,521 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i2d" Name="0:16" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="75" RightEdgeStrokePriority="76" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Dividend income</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i2e" Name="1:16" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" FillColor="Swatch/None" FillTint="-1" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="76" RightEdgeStrokePriority="15" TopEdgeStrokePriority="12" BottomEdgeStrokePriority="38" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 729 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i2f" Name="2:16" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="36" FillColor="Swatch/None" FillTint="-1" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="306" TopEdgeStrokePriority="12" BottomEdgeStrokePriority="38">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 934 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i30" Name="0:17" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="77" RightEdgeStrokePriority="78" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Indent">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue" FontStyle="Bold" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i31" Name="1:17" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" TopEdgeStrokeWeight="0.7086614173228347" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Gradient Blue" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="78" RightEdgeStrokePriority="15" TopEdgeStrokePriority="38" BottomEdgeStrokePriority="35" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Blue">
+								<Content> 5,136 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i32" Name="2:17" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="36" TopEdgeStrokeWeight="0.7086614173228347" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Color/RV Gradient Blue" BottomEdgeStrokeColor="Color/RV Gradient Blue" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="332" TopEdgeStrokePriority="38" BottomEdgeStrokePriority="35">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Blue">
+								<Content> 6,331 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i33" Name="0:18" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="79" RightEdgeStrokePriority="80" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Table Blue Underline" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i34" Name="1:18" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="0" TextLeftInset="0" TextBottomInset="0" TextRightInset="0" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" LeftInset="0" TopInset="0" RightInset="0" BottomInset="0" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Gradient Blue" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="80" RightEdgeStrokePriority="15" TopEdgeStrokePriority="35" BottomEdgeStrokePriority="50" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue" FontStyle="Bold">
+								<Content> </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i35" Name="2:18" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="0" TextLeftInset="0" TextBottomInset="0" TextRightInset="0" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="34" LeftInset="0" TopInset="0" RightInset="0" BottomInset="0" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Color/RV Gradient Blue" BottomEdgeStrokeColor="Swatch/None" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="358" TopEdgeStrokePriority="35" BottomEdgeStrokePriority="50">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue" FontStyle="Bold" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i36" Name="0:19" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="82" RightEdgeStrokePriority="83" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Table Blue Underline">
+								<Content>Other gains and losses (x)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i37" Name="1:19" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="0" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" LeftInset="0" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="83" RightEdgeStrokePriority="15" TopEdgeStrokePriority="50" BottomEdgeStrokePriority="12" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i38" Name="2:19" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="0" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="34" LeftInset="0" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="384" TopEdgeStrokePriority="50" BottomEdgeStrokePriority="12">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i39" Name="0:20" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="84" RightEdgeStrokePriority="85" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Gain on disposal of investments</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i3a" Name="1:20" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="85" RightEdgeStrokePriority="15" TopEdgeStrokePriority="12" BottomEdgeStrokePriority="30" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 215 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i3b" Name="2:20" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="32" FillColor="Swatch/None" FillTint="-1" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Swatch/None" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="410" TopEdgeStrokePriority="12" BottomEdgeStrokePriority="30">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 461 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i3c" Name="0:21" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Tint/RV Gradient Blue 22%25" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeOverprint="false" ClipContentToCell="false" LeftEdgeStrokePriority="86" RightEdgeStrokePriority="15" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body" LeftIndent="14.173228346456694">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content>Net gain arising on financial assets designated as FVTPL</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i3d" Name="1:21" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Tint/RV Gradient Blue 22%25" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeOverprint="false" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="29" TopEdgeStrokePriority="30" BottomEdgeStrokePriority="28" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 1,008 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i3e" Name="2:21" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="32" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" TopEdgeStrokeType="StrokeStyle/$ID/ThickThick" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="29" RightEdgeStrokePriority="29" TopEdgeStrokePriority="30" BottomEdgeStrokePriority="28">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+								<Content> 2,299 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i3f" Name="0:22" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Tint/RV Gradient Blue 22%25" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeOverprint="false" ClipContentToCell="false" LeftEdgeStrokePriority="87" RightEdgeStrokePriority="22" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue" FontStyle="Bold" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i40" Name="1:22" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0.7086614173228347" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Tint/RV Gradient Blue 22%25" TopEdgeStrokeColor="Color/RV Gradient Blue" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" LeftEdgeStrokeOverprint="false" ClipContentToCell="false" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="29" TopEdgeStrokePriority="28" BottomEdgeStrokePriority="28" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue">
+								<Content> 1,223 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i41" Name="2:22" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="32" FillColor="Swatch/None" FillTint="-1" TopEdgeStrokeWeight="0.7086614173228347" BottomEdgeStrokeWeight="0.7086614173228347" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Color/RV Gradient Blue" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="29" RightEdgeStrokePriority="29" TopEdgeStrokePriority="28" BottomEdgeStrokePriority="28">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue">
+								<Content> 2,760 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i42" Name="0:23" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Body" AppliedCellStylePriority="26" TopEdgeStrokeWeight="0" BottomEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Swatch/None" RightEdgeStrokeColor="Color/Paper" BottomEdgeStrokeColor="Swatch/None" RightEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="88" RightEdgeStrokePriority="89" TopEdgeStrokePriority="92" BottomEdgeStrokePriority="92" RightEdgeStrokeGapTint="100" RightEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/RV Gradient Blue" FontStyle="Bold" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i43" Name="1:23" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="37" TopEdgeStrokeWeight="0.7086614173228347" BottomEdgeStrokeWeight="2" LeftEdgeStrokeColor="Color/Paper" TopEdgeStrokeColor="Color/RV Gradient Blue" RightEdgeStrokeColor="Swatch/None" BottomEdgeStrokeColor="Color/RV Gradient Blue" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" LeftEdgeStrokeTint="100" ClipContentToCell="false" LeftEdgeStrokePriority="89" RightEdgeStrokePriority="15" TopEdgeStrokePriority="28" BottomEdgeStrokePriority="95" LeftEdgeStrokeGapTint="100" LeftEdgeStrokeGapColor="Color/Paper">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Blue">
+								<Content> 19,308 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u13b21i14147i44" Name="2:23" RowSpan="1" ColumnSpan="1" ColumnType="BodyColumn" CellType="TextTypeCell" TextTopInset="4.251968503937008" TextLeftInset="4.251968503937008" TextBottomInset="4.251968503937008" TextRightInset="4.251968503937008" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/Digits" AppliedCellStylePriority="32" TopEdgeStrokeWeight="0.7086614173228347" BottomEdgeStrokeWeight="2" LeftEdgeStrokeColor="Swatch/None" TopEdgeStrokeColor="Color/RV Gradient Blue" BottomEdgeStrokeColor="Color/RV Gradient Blue" TopEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/ThickThick" VerticalJustification="TopAlign" ClipContentToCell="false" LeftEdgeStrokePriority="15" RightEdgeStrokePriority="490" TopEdgeStrokePriority="28" BottomEdgeStrokePriority="95">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Table%3aTable Body Digits">
+							<Properties>
+								<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+								<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Blue">
+								<Content> 23,410 </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+				</Table>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Book" AppliedLanguage="$ID/English: UK">
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Footnotes">
+			<Properties>
+				<Mojikumi type="enumeration">LineEndAllOneHalfEmEnum</Mojikumi>
+				<KinsokuSet type="enumeration">HardKinsoku</KinsokuSet>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" AppliedLanguage="$ID/English: UK">
+				<Content>(vii)	Refer note 1(a) for VOBIS nomination revenue recognition methodology.</Content>
+				<Br />
+				<Content>(viii)	Club contributions towards infrastructure projects managed by Racing Victoria. Project management responsibility shifted from Racing Victoria to racing clubs in the reporting year.</Content>
+				<Br />
+				<Content>(ix)	Rental from leasehold tenancy arrangements at 400 Epsom Road, Flemington, Victoria.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Footnotes">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" AppliedLanguage="$ID/English: UK">
+				<Content>(x)	Evans and Partners are engaged to manage accumulated surplus funds that sit outside operating cash requirements.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
