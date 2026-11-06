@@ -195,6 +195,13 @@ class Component extends DCLogic {
         const items = m.copy.paragraphs
           .filter(p => p.kind !== 'title' && !/^(?:(?:FY)?\d{4} )?Annual Report\s*[\u2013-]/.test(p.text))
           .map(p => ({ text: p.text, kind: p.kind || 'body', em: p.em || '' }));
+        // Test 6 (LL): the opening line ("Participant Welfare and Wellbeing") is
+        // a section subhead like Fuel Relief, however the Word file formatted it.
+        // A short unpunctuated line over a paragraph, when the copy has subheads.
+        const i0 = items.findIndex(p => p.kind !== 'title');
+        const op = items[i0], nx = items[i0 + 1];
+        if (op && op.kind === 'body' && nx && nx.kind === 'body' && op.text.trim().split(/\s+/).length <= 8 &&
+            !/[.:;,!?]$/.test(op.text.trim()) && /^[A-Z]/.test(op.text.trim()) && items.some(p => p.kind === 'subhead')) op.kind = 'subhead';
         const a = FY26 ? this.fit26(items, 'Industry & Community Support') : this.settle(items, FLOWS, 'Industry & Community Support');
         this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, t: a.t == null ? 1 : a.t });
       }))

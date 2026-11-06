@@ -153,9 +153,14 @@ class Component extends DCLogic {
     ])
       .then(([m]) => {
         // The docx's own title line is not part of the printed copy.
-        const paras = m.copy.paragraphs
+        const all = m.copy.paragraphs
           .map(p => (typeof p === 'string' ? { text: p } : p))
-          .filter(p => !/^(?:FY)?\d{4} Annual Report\s*[\u2013-]/.test(p.text))
+          .filter(p => !/^(?:FY)?\d{4} Annual Report\s*[\u2013-]/.test(p.text));
+        // Test 6: the sign-off (name and role after "Yours sincerely,") prints in
+        // the signature block, so it never joins the columns or the overflow bar.
+        const ys = all.findIndex(p => /^yours (sincerely|faithfully)/i.test(p.text.trim()));
+        const paras = (ys >= 0 ? all.slice(0, ys + 1) : all)
+          .filter(p => !/^(aaron morrison|chief executive officer)$/i.test(p.text.trim()))
           .map(p => p.text);
 
         let fitted = null, baseIdx = 0;

@@ -185,7 +185,7 @@ function ladder(key, withPhoto, mayDrop) {
   if (withPhoto) {
     const max = PHOTOS[key].max;
     [1, 0.97, 0.94].forEach(g => out.push({ s: max, g }));
-    const steps = 12;
+    const steps = key === 'ob' ? 30 : 12;
     for (let i = 1; i <= steps; i++) out.push({ s: max - (max - MIN_PHOTO) * i / steps, g: 0.94 });
   }
   if (!withPhoto || mayDrop) [1, 0.97, 0.94].forEach(g => out.push({ s: 0, g }));
@@ -264,11 +264,22 @@ class Component extends DCLogic {
     };
     const pick = (key, label, opts) => {
       const steps = ladder(key, want[key], mode === 'auto');
-      let res = null;
+      let res = null, prev = null;
       for (const st of steps) {
         res = this.settle(this._items[key], flowsFor(key, st.s), Object.assign({ g: st.g }, opts));
         res.step = st;
         if (!res.leftover.length) break;
+        prev = st;
+      }
+      // Test 6 (LL): fill the corner. Between the size that fits and the next
+      // larger one that didn't, take the largest that still fits (to ~1pt).
+      if (!res.leftover.length && res.step.s && prev && prev.s > res.step.s) {
+        let lo = res.step.s, hi = prev.s;
+        for (let i = 0; i < 7 && hi - lo > 1; i++) {
+          const mid = (lo + hi) / 2;
+          const r = this.settle(this._items[key], flowsFor(key, mid), Object.assign({ g: res.step.g }, opts));
+          if (!r.leftover.length) { lo = mid; r.step = { s: mid, g: res.step.g }; res = r; } else hi = mid;
+        }
       }
       const st = res.step;
       console.warn(label + ': ' + (st.s ? 'photo ' + Math.round(st.s / 2.8346) + ' mm' : 'no photo') +
@@ -278,7 +289,9 @@ class Component extends DCLogic {
     };
     // The pair mirror each other, so McGaw is capped at Pakenham's fitted size.
     const b = pick('ip', 'Infrastructure & Projects', { keepWhole: true });
-    PHOTOS.ob.max = (b.step.s || 513.3) * OB_SCALE;
+    // Test 6 (LL): McGaw fills its corner. Its largest size no longer follows
+    // Pakenham's fitted size; the ladder takes the biggest that fits the copy.
+    PHOTOS.ob.max = 640;
     const a = pick('ob', 'Owners & Breeders');
     this.setState({
       ob: a.columns, obIdx: a.baseIdx, obS: a.step.s, obG: a.step.g,
@@ -398,6 +411,11 @@ class Component extends DCLogic {
           // FY26 subhead: 9pt above; the copy before it already counted 8.504 (bullets 14.173).
           (FY26 && item.kind === 'subhead' && columns[c].length ? Math.max(0, SUB_GAP - 8.504) / 0.75 : 0);
 
+        // Test 6 (LL): a subhead or run-in head ("Phase 2") never ends a
+        // column; it needs two lines of what follows under it, or goes over.
+        const isHead = item.kind === 'subhead' || item.u;
+        if (isHead && queue[1] && c < cols.length - 1 && columns[c].length &&
+            usedPx + hPx + (2 * 12 + 5.669) / 0.75 > capPx) break;
         if (usedPx + hPx <= capPx) {
           columns[c].push(Object.assign({}, item));
           queue.shift();

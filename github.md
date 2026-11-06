@@ -2,15 +2,16 @@ repo: scunliffe38-sys/RV-Annual-Report-Production
 branch: main
 
 ## Last sync
-date: 2026-11-06T03:36:41Z
+date: 2026-11-06T04:12:59Z
 
 ### Updated in this project
-- Test 5 (LL): column-foot justification measures its own page (Workforce and R&P copy no longer cut off); Wagering col 1 no longer clips its last line.
-- Workforce single photo goes top right and grows to 420pt; Integrity has no one-line orphans or widows at column breaks.
-- Equine Welfare subhead spacing evened so column feet align; Industry opening subhead read from the Word file.
-- Consolidated Entity Disclosure Statement and back cover print as one spread.
+- Test 6 (LL): CEO sign-off no longer counted as overflow; Industry opening subhead read regardless of title format.
+- Award photo gold rings drawn as vector arcs over each photo edge (hold at any zoom).
+- O&B: run-in heads (Phase 2) never end a column; McGaw photo sized to fill its corner.
+- Photo tints placed on the visible part of frames that run off the page (all sections).
 
 ## Sync history
+- 2026-11-06T03:36:41Z: Test 5 fixes (column feet, Workforce photo, Integrity orphans, Equine Welfare spacing, CEDS/back spread, Wagering clip).
 - 2026-11-06T02:47:54Z: FY26 Industry Snapshot (Word input, photo, staggered tiles); Draft V1 comments (dotted circles, KPI colours, award rings, O&B bold/spacing, Workforce lists, lone notes page).
 - 2026-11-03T00:30:00Z: Test 4: cover title RV Grad, Chair/CEO column feet, Workforce/Industry photo fit, Word reader fixes, O&B folio row.
 - 2026-11-02T23:30:00Z: Test 2 (LL feedback) — FY26 layout in runs, subhead spacing, tints, placeholders, welfare table.

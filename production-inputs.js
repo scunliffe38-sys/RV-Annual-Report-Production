@@ -125,14 +125,19 @@
     // a short unpunctuated line over a bullet list is that list's label
     // ("Environment", "Social", "Governance").
     var shortLine = function (b) { return b && b.kind === "body" && words(b.text) <= 8 && !/[.:;,!?]$/.test(b.text); };
-    if (out[0] && out[0].kind === "body" && words(out[0].text) <= 8 && /[A-Z]/.test(out[0].text) && out[0].text === out[0].text.toUpperCase()) {
+    // The title line may come through bold (so read as a subhead) or as a
+    // Heading 1; an all-caps opening line is the title whatever its format (Test 6).
+    if (out[0] && /^(body|subhead|h1|underline)$/.test(out[0].kind) && words(out[0].text) <= 8 && /[A-Z]/.test(out[0].text) && out[0].text === out[0].text.toUpperCase()) {
       out[0].kind = "title";
       if (shortLine(out[1]) && out[2] && out[2].kind === "body") out[1].kind = "subhead";
     }
-    // Test 5: when the title is a Word "Title" paragraph (skipped above), the
-    // opening short unpunctuated line is still the first subhead
+    // Test 5/6: whatever the title line looks like (a Word Title paragraph,
+    // "FY26 Annual Report – …", all caps, bold), the first short unpunctuated
+    // line of copy over a paragraph is the opening subhead
     // ("Participant Welfare and Wellbeing").
-    else if (shortLine(out[0]) && /^[A-Z]/.test(out[0].text) && out[1] && out[1].kind === "body" && out.some(function (b) { return b.kind === "subhead"; })) out[0].kind = "subhead";
+    var s0 = 0;
+    while (out[s0] && (out[s0].kind === "title" || /annual report\s*[\u2013\u2014-]/i.test(out[s0].text))) s0++;
+    if (shortLine(out[s0]) && /^[A-Z]/.test(out[s0].text) && out[s0 + 1] && out[s0 + 1].kind === "body" && out.some(function (b) { return b.kind === "subhead"; })) out[s0].kind = "subhead";
     out.forEach(function (b, i) { if (shortLine(b) && words(b.text) <= 4 && out[i + 1] && out[i + 1].kind === "bullet" && !out[i + 1].para) b.kind = "label"; });
     return out;
   }
@@ -232,7 +237,9 @@
     }
     var kinds = cfg.kinds || {};
     var sign = null;
-    if (cfg.strings) {
+    // Every narrative with a "Yours sincerely" (Chair, CEO): the lines after it
+    // are the sign-off, printed in the signature block, not in the columns (Test 6).
+    if (true) {
       // Lines after "Yours sincerely," are the sign-off (name, then role): they go
       // to meta for the signature block, not into the columns.
       var ys = -1;

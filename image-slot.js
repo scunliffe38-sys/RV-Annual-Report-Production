@@ -735,13 +735,41 @@
       // re-seeds _view from stored before clamp/apply, so a shrink→grow
       // cycle round-trips instead of ratcheting x/y toward the narrower
       // frame's clamp range.
-      this._ro = new ResizeObserver(() => this._render());
+      this._ro = new ResizeObserver(() => { this._render(); this._placeTint(); });
       this._ro.observe(this);
+      // Moves without a resize (layouts set left/top) re-place the tint too.
+      this._mo = new MutationObserver(() => this._placeTint());
+      this._mo.observe(this, { attributes: true, attributeFilter: ['style', 'tint', 'tint-at', 'data-filled'] });
       load();
       this._render();
+      requestAnimationFrame(() => this._placeTint());
+    }
+
+    // Test 6 (LL): a circle that runs off its page had its glow centred off
+    // the page too, so the tint barely showed. The glow is placed against the
+    // part of the frame that is on the page: FY25's origin (5.95% across,
+    // 12.95% below the foot; bottom centre for tint-at=bottom) and radius
+    // (57.65%), measured on the visible part instead of the whole circle.
+    _placeTint() {
+      const t = this.shadowRoot && this.shadowRoot.querySelector('.tint');
+      if (!t) return;
+      const col = { magenta: '236,0,140', blue: '0,95,161' }[this.getAttribute('tint')];
+      const page = this.closest('section.page');
+      if (!col || !page) { t.style.background = ''; return; }
+      const r = this.getBoundingClientRect(), p = page.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      const fx = v => Math.min(1, Math.max(0, (v - r.left) / r.width));
+      const fy = v => Math.min(1, Math.max(0, (v - r.top) / r.height));
+      const x0 = fx(p.left), x1 = fx(p.right), y0 = fy(p.top), y1 = fy(p.bottom);
+      if (x0 < 0.002 && x1 > 0.998 && y0 < 0.002 && y1 > 0.998) { t.style.background = ''; return; }
+      const w = x1 - x0, h = y1 - y0, bottom = this.getAttribute('tint-at') === 'bottom';
+      const ox = (x0 + (bottom ? 0.5 : 0.0595) * w) * 100, oy = (y0 + 1.1295 * h) * 100;
+      const rad = 57.65 * Math.max(w, h);
+      t.style.background = 'radial-gradient(' + rad.toFixed(2) + '% ' + rad.toFixed(2) + '% at ' + ox.toFixed(2) + '% ' + oy.toFixed(2) + '%,rgba(' + col + ',1) 4.6%,rgba(' + col + ',0) 93%)';
     }
 
     disconnectedCallback() {
+      if (this._mo) this._mo.disconnect();
       subs.delete(this._subFn);
       this.removeEventListener('pointerenter', this._subFn);
       this.removeEventListener('dragenter', this);
