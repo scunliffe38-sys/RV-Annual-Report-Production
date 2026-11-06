@@ -52,6 +52,7 @@ function withRun(counts, year) {
     if (yy) {
       if (s.id === "snapshot") o.title = "FY" + yy + " Industry Snapshot";
       if (s.id === "feature-winners") o.title = "20" + (yy - 1) + "-" + yy + " Feature Race Winners";
+      if (s.id === "media" && yy >= 26) o.title = "Content, Media & Marketing";
     }
     return o;
   });

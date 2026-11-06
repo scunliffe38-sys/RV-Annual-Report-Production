@@ -353,6 +353,12 @@
   // KPI workbooks (Finance). Racing: label in column B, each group's current and
   // prior year in F/G, J/K, N/O, R/S. Participation: label in B, years in I/J.
   // Variances are not read; the page works them out from the two years.
+  var FOOTNOTES = {
+    FY26: [
+      "*Includes $4.5 million in prizemoney paid throughout the VOBIS Premier Race Series.",
+      "**In addition to the Bonuses Claimed, $2.3 million in VOBIS Platinum vouchers were won in FY26 with $1.7 million redeemed.",
+    ],
+  };
   function kpiWorkbook(sheets, id, year) {
     var issues = [], payload = {};
     var name = Object.keys(sheets)[0], rows = sheets[name] || [];
@@ -381,10 +387,21 @@
         tables.push({ title: t, rows: out });
       });
       var per = rows.map(lab).filter(function (l) { return new RegExp("^" + cur + " \\(").test(l); })[0];
-      payload = { meta: { current: cur, prior: pri, periodLabel: per || cur, sources: [name] }, tables: tables, footnotes: [] };
+      // Prizemoney footnotes: any "*" lines in the workbook; FY26 supplied by RV
+      // (SK, Full Draft V1) as the workbook carries none. The rows they qualify
+      // take their markers as FY25 printed them.
+      var notes = [];
+      rows.forEach(function (r) { (r || []).forEach(function (v) { var s = str(v).trim(); if (/^\*{1,2}\s*\S/.test(s) && s.length > 20) notes.push(s); }); });
+      if (!notes.length && FOOTNOTES[cur]) notes = FOOTNOTES[cur].slice();
+      notes = notes.map(function (s) { return s.replace(/^(\*{1,2})\s*/, function (m, a) { return a.length === 1 ? "*  " : "** "; }); });
+      if (notes.length) tables.forEach(function (t) { if (t.title !== "Prizemoney Statistics") return; t.rows.forEach(function (r) {
+        if (/^Prizemoney Paid/i.test(r.label) && !/\*$/.test(r.label)) r.label += "*";
+        if (/^VOBIS Bonuses Claimed/i.test(r.label) && !/\*$/.test(r.label)) r.label += "**";
+      }); });
+      payload = { meta: { current: cur, prior: pri, periodLabel: per || cur, sources: [name] }, tables: tables, footnotes: notes };
       var n = tables.reduce(function (s, t) { return s + t.rows.length; }, 0);
       issues.push(issue("info", n + " racing, prizemoney and wagering rows read (" + cur + " and " + pri + ")."));
-      issues.push(issue("warning", "The workbook has no footnotes. The FY25 prizemoney footnotes are left off until this year\u2019s are supplied."));
+      if (!notes.length) issues.push(issue("warning", "The workbook has no footnotes. The FY25 prizemoney footnotes are left off until this year\u2019s are supplied."));
     } else {
       var at2 = rows.findIndex(function (r) { return lab(r) === "Participation Statistics"; }), prow = [];
       if (at2 < 0) issues.push(issue("error", "\u201cParticipation Statistics\u201d block not found."));

@@ -37,6 +37,7 @@
 
   <svg style="position:absolute;left:53.7pt;top:80pt;width:286.5pt;height:50pt" viewBox="0 0 286.5 50" role="img" aria-label="Equine Welfare"><text x="0" y="29.6" font-family="Gotham, Arial, sans-serif" font-size="37" font-weight="400" letter-spacing="-0.37"><tspan fill="#005FA1">E</tspan><tspan fill="#12589F">q</tspan><tspan fill="#24509E">u</tspan><tspan fill="#36499C">i</tspan><tspan fill="#49429B">n</tspan><tspan fill="#5B3A99">e</tspan><tspan fill="#6D3397"> </tspan><tspan fill="#7F2C96">W</tspan><tspan fill="#912594">e</tspan><tspan fill="#A31D92">l</tspan><tspan fill="#B61691">f</tspan><tspan fill="#C80F8F">a</tspan><tspan fill="#DA078E">r</tspan><tspan fill="#EC008C">e</tspan></text></svg>
 
+  <sc-if value="{{ tableFixed }}" hint-placeholder-val="">
   <div style="position:absolute;left:303.3pt;top:170.7pt;width:235.28pt;font-size:9pt;line-height:12pt;letter-spacing:-0.01em">
     <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;background:#005FA1;color:#fff;font-weight:700;height:26pt;align-items:center">
       <div style="padding-left:7.09pt">{{ tableHead.a }}</div><div style="padding-left:3.7pt">{{ tableHead.b }}</div><div style="padding-left:3.7pt">{{ tableHead.c }}</div>
@@ -47,9 +48,20 @@
       </div>
     </sc-for>
   </div>
+  </sc-if>
 
   <div data-column="ew0" style="position:absolute;left:56.7pt;top:{{ c1Top }}pt;width:235.3pt;height:{{ c1Height }}pt;overflow:hidden;font-size:9pt;line-height:12pt;letter-spacing:{{ track }};color:#6D6E71">
     <sc-for list="{{ ew0 }}" as="b" hint-placeholder-count="5">
+      <sc-if value="{{ b.isTable }}" hint-placeholder-val=""><div style="margin:{{ b.m }};letter-spacing:-0.01em">
+        <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;background:#005FA1;color:#fff;font-weight:700;height:26pt;align-items:center">
+          <div style="padding-left:7.09pt">{{ tableHead.a }}</div><div style="padding-left:3.7pt">{{ tableHead.b }}</div><div style="padding-left:3.7pt">{{ tableHead.c }}</div>
+        </div>
+        <sc-for list="{{ tableRows }}" as="r" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:121.89pt 56.69pt 56.69pt;height:27.2pt;align-items:center;color:#005FA1;background:{{ r.bg }}">
+            <div style="padding-left:7.09pt">{{ r.label }}</div><div style="padding-left:3.7pt">{{ r.fy25 }}</div><div style="padding-left:3.7pt">{{ r.fy24 }}</div>
+          </div>
+        </sc-for>
+      </div></sc-if>
       <sc-if value="{{ b.isSubheadTop }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isSubhead }}" hint-placeholder-val=""><div style="font-weight:400;font-size:13pt;line-height:18pt;color:#005FA1;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
       <sc-if value="{{ b.isBody }}" hint-placeholder-val="{{ true }}"><div style="font-weight:400;margin:{{ b.m }}">{{ b.text }}</div></sc-if>
@@ -203,7 +215,11 @@ const FY26 = typeof window !== 'undefined' && (window.RV_PREVIEW === true || /[?
 // line ~352.7pt, gap 47.2pt -> 23.6pt), so it starts 23.6pt higher.
 // Test 2: closer still — the first line box sits 8.504pt (3mm, the project's
 // minimum after a table) under the table's foot (305.5pt).
-const COL2_FY26 = { x: 303.30, y: 307.8, width: 235.3, height: 473.5 };
+// SK, Full Draft V1: the table moves into column 1 under the opening
+// paragraph, so column 2 starts level with the others (163pt).
+const COL2_FY26 = { x: 303.30, y: 163, width: 235.3, height: 781.3 - 163 };
+// Table block in column 1: 26pt head + 27.2pt rows, 9pt clear above and below.
+const TABLE_GAP = 9;
 
 const BODY_AFTER = 8.504;
 const SUB_ABOVE_FY26 = 5.669;
@@ -238,6 +254,11 @@ class Component extends DCLogic {
         const items = m.copy.paragraphs
           .filter(p => !/^(?:FY)?\d{4} Annual Report\s*[\u2013-]/.test(p.text))
           .map(p => ({ text: p.text, kind: p.kind || 'body' }));
+        if (FY26) {
+          const at = items.findIndex(i => i.kind !== 'subhead');
+          const nRows = (m.copy.table && m.copy.table.rows ? m.copy.table.rows.length : TABLE.length);
+          items.splice(at + 1, 0, { kind: 'table', text: '', h: 26 + 27.2 * nRows });
+        }
         const a = this.fit(trimItems(items), 'Equine Welfare');
         this.setState({ cols: a.columns, idx: a.baseIdx, leftover: a.leftover, t: a.t, drop1: !!a.drop1, table: m.copy.table || null });
       }))
@@ -421,18 +442,20 @@ class Component extends DCLogic {
     // Test 7 (LL): a subhead opening the column under the table takes its full
     // 9pt above (it sat tight on the table); paragraph gaps open by 6pt at most.
     let underTable = false;
-    const marg = (item, first, extra, afterSub) => item.kind === 'subhead'
+    const marg = (item, first, extra, afterSub) => item.kind === 'table' ? TABLE_GAP + 'pt 0 ' + TABLE_GAP + 'pt' : item.kind === 'subhead'
       ? (first && !underTable ? '-3.9pt 0 ' + (SUB_GAP_FY26 + extra / 2).toFixed(3) + 'pt' : (SUB_GAP_FY26 + extra / 2).toFixed(3) + 'pt 0 ' + (SUB_GAP_FY26 + extra / 2).toFixed(3) + 'pt')
       : ((first || afterSub ? 5.669 : 5.669 + extra)).toFixed(3) + 'pt 0 2.835pt';
     const block = (host, item, first) => {
       const el = document.createElement('div');
       const sub = item.kind === 'subhead';
-      el.style.cssText = 'font-weight:400;font-size:' + (sub ? '13pt' : '9pt') + ';line-height:' + (sub ? '18pt' : '12pt') + ';margin:' + marg(item, first, 0);
-      el.appendChild(document.createTextNode(item.text));
+      el.style.cssText = 'font-weight:400;font-size:' + (sub ? '13pt' : '9pt') + ';line-height:' + (sub ? '18pt' : '12pt') + ';margin:' + marg(item, first, 0) +
+        (item.kind === 'table' ? ';height:' + item.h + 'pt' : '');
+      if (item.kind !== 'table') el.appendChild(document.createTextNode(item.text));
       host.appendChild(el);
       return el;
     };
     const lineBottoms = (el, top) => {
+      if (!el.firstChild) return [el.getBoundingClientRect().bottom - top];
       const range = document.createRange();
       range.selectNodeContents(el.firstChild);
       const out = [];
@@ -462,7 +485,7 @@ class Component extends DCLogic {
         const lb = lineBottoms(el, top);
         if (lb[lb.length - 1] <= capPx) { placed.push(item); els.push(el); queue.shift(); continue; }
         let keep = 0;
-        if (item.kind !== 'subhead') {
+        if (item.kind !== 'subhead' && item.kind !== 'table') {
           const fit = lb.filter(b => b <= capPx).length, total = lb.length;
           keep = fit;
           if (total - keep < 2) keep = total - 2;
@@ -529,6 +552,7 @@ class Component extends DCLogic {
       folioRight: this.props.folioRight ?? 21,
       showDecoration: this.props.showDecoration ?? !FY26,
       tableHead: this._head(),
+      tableFixed: !FY26,
       tableRows: this._rows(),
       // FY26 gets its own slot ids so FY25 photos don't carry over.
       p1Id: FY26 ? 'ew26-image-1' : 'ew-image-rehomer',
@@ -563,7 +587,8 @@ class Component extends DCLogic {
       // top margin it collapses into); FY25 keeps the artwork's 0.
       m: i.m || (i.kind === 'subhead' ? (n === 0 ? '-3.9' : FY26 ? SUB_ABOVE_FY26 : 0) + 'pt 0 4pt' : '5.669pt 0 2.835pt'),
       isSubheadTop: i.kind === 'subhead' && n === 0,
-      isBody: i.kind !== 'subhead',
+      isTable: i.kind === 'table',
+      isBody: i.kind !== 'subhead' && i.kind !== 'table',
     }));
   }
 }
