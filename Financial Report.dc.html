@@ -519,7 +519,7 @@ class Component extends DCLogic {
         .then(() => document.fonts.ready).catch(() => null).then(() => m))
       .then(m => this._whenMeasurable().then(() => {
         const built = this._buildNotes(m);
-        this.setState({ notes: built.pages, noteLeftover: built.leftover, noteClash: built.clash, noteMax: built.maxPg, noteFlow: !!m.flow, noteYear: m.year }, () => {
+        this.setState({ notes: built.pages, noteLeftover: built.leftover, noteClash: built.clash, noteMax: built.maxPg, noteCed: built.cedPg, noteFlow: !!m.flow, noteYear: m.year }, () => {
           nudge();
           TICK(nudge);
         });
@@ -1659,7 +1659,8 @@ class Component extends DCLogic {
         });
       }
     }
-    return { pages, leftover, clash, maxPg: Math.max.apply(null, Object.keys(pages).map(Number)) };
+    const cedPg = frames.filter((f, i) => (slices[i] || []).some(x => x.k === 'pagehead')).map(f => f.p).sort((x, y) => x - y)[0];
+    return { pages, leftover, clash, cedPg, maxPg: Math.max.apply(null, Object.keys(pages).map(Number)) };
   }
 
   // Directors' meetings: one section per committee, each with its own heading
@@ -1921,7 +1922,8 @@ class Component extends DCLogic {
     const notePgs = Object.keys(notes).map(Number).filter(p => (notes[p] || []).some(fr => fr.blocks && fr.blocks.length));
     // SK, Full Draft V1: the CEDS display page is laid out with the notes but is
     // not a notes page, so the notes end on the page before it (Contents had 83 for 82).
-    const cedPg = notePgs.filter(p => (notes[p] || []).some(fr => (fr.blocks || []).some(b => b.k === 'pagehead'))).sort((a, b) => a - b)[0];
+    // The pages hold rendered blocks, so the build reports the CEDS page itself.
+    const cedPg = this.state.noteCed;
     const notesOnly = cedPg ? notePgs.filter(p => p < cedPg) : notePgs;
     const lastNote = notesOnly.length ? Math.max(...notesOnly) : 82;
     out.notesRef = 'Notes to the financial statements are included on pages ' + (47 + shift) + ' to ' + (lastNote + shift) + '.';
