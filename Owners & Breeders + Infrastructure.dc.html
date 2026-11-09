@@ -133,7 +133,9 @@ const PHOTOS = {
   // it gains more height than width on the page.
   // Test 7 (LL): "could be a bit bigger" — more of it bleeds off the left and
   // foot so the circle grows without taking more of the copy's room.
-  ob: { max: 513.3, left: s => -0.2 * s, top: s => 841.89 - 0.70 * s },
+  // Test 12 (LL): moved right to fill the space beside it, but its right edge
+  // stays 9pt short of col B so the copy there runs straight (no wrap).
+  ob: { max: 513.3, left: s => Math.min(-0.2 * s + 45, 294.3 - s), top: s => 841.89 - 0.70 * s },
   // Pakenham: FY25 corner — left 691.9, top 455, 513.3², bleeding off the
   // sheet's right and foot edges by the same share at every size.
   ip: { max: 513.3, left: s => 1190.55 - 0.97146 * s, top: s => 841.89 - 0.75375 * s },
@@ -264,13 +266,15 @@ class Component extends DCLogic {
       ob: mode === 'auto' || mode === 'both' || mode === 'obOnly',
       ip: mode === 'auto' || mode === 'both' || mode === 'ipOnly',
     };
+    // Test 12 (LL): O&B col A closes on a paragraph end (col B never opens mid-paragraph).
+    const fits = (key, r) => key !== 'ob' || !(r.columns[1] && r.columns[1][0] && r.columns[1][0].cont);
     const pick = (key, label, opts) => {
       const steps = ladder(key, want[key], mode === 'auto');
       let res = null, prev = null;
       for (const st of steps) {
         res = this.settle(this._items[key], flowsFor(key, st.s), Object.assign({ g: st.g }, opts));
         res.step = st;
-        if (!res.leftover.length) break;
+        if (!res.leftover.length && fits(key, res)) break;
         prev = st;
       }
       // Test 6 (LL): fill the corner. Between the size that fits and the next
@@ -280,7 +284,7 @@ class Component extends DCLogic {
         for (let i = 0; i < 7 && hi - lo > 1; i++) {
           const mid = (lo + hi) / 2;
           const r = this.settle(this._items[key], flowsFor(key, mid), Object.assign({ g: res.step.g }, opts));
-          if (!r.leftover.length) { lo = mid; r.step = { s: mid, g: res.step.g }; res = r; } else hi = mid;
+          if (!r.leftover.length && fits(key, r)) { lo = mid; r.step = { s: mid, g: res.step.g }; res = r; } else hi = mid;
         }
       }
       const st = res.step;

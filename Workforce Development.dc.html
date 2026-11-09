@@ -224,15 +224,17 @@ function geoSingle(s) {
 const TR_MAX = 420, TR_SHIFT = 28;
 function geoTopRight(D, k) {
   const h = FOOT - TOP, top = -0.131 * D, c4 = Math.max(TOP, top + D + 12);
+  const left = 1190.55 + 0.139 * D - D - TR_SHIFT;
+  // Test 12 (LL): a large photo reaches into col 3; col 3 contour-wraps it.
   return {
     mode: 'topright', p1: null, p3: null,
-    p2: { left: 1190.55 + 0.139 * D - D - TR_SHIFT, top, size: D },
-    flows: [
+    p2: { left, top, size: D },
+    flows: cols([
       { x: COLX[0], y: TOP, width: COLW, height: h, k },
       { x: COLX[1], y: TOP, width: COLW, height: h, k },
-      { x: COLX[2], y: TOP, width: COLW, height: h },
+      { x: COLX[2], y: TOP, width: COLW, height: h, wrap: wrapFor(COLX[2], TOP, h, left + D / 2, top + D / 2, D / 2 + WRAP_OFF) },
       { x: COLX[3], y: c4, width: COLW, height: FOOT - c4 },
-    ],
+    ]),
   };
 }
 
