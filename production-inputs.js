@@ -114,6 +114,9 @@
       else if (allUnderlined(x) && words(text) <= 14 && !/[.:;]$/.test(text)) kind = "underline";
       if (kind !== "body" && kind !== "bullet" && /^images$/i.test(text)) break;
       var blk = { text: text, kind: kind };
+      // Test 15: keep underlining so a bold + underlined run-in head ("Phase 1")
+      // can be told from a bold subhead by sections that set them differently.
+      if (kind === "subhead" && allUnderlined(x)) blk.u = true;
       if (para) { blk.para = true; para = false; }
       if (kind === "body" || kind === "bullet") { var ld = leadBold(x); if (ld) blk.lead = ld; }
       out.push(blk);
@@ -258,6 +261,7 @@
           // Content, Media & Marketing sets a bold run-in ahead of the text.
           if (b.lead && label === "media" && b.text.indexOf(b.lead) === 0) { o.bold = b.lead; o.text = b.text.slice(b.lead.length).trim(); }
           if (b.para) o.para = true;
+          if (b.u) o.underline = true;
           return o;
         }) };
     if (sign) { payload.meta = sign; issues.push(issue("info", "Signed off by " + sign.signatory + (sign.signatoryRole ? ", " + sign.signatoryRole : "") + ".")); }

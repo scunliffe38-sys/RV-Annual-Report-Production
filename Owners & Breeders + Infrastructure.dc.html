@@ -241,14 +241,17 @@ class Component extends DCLogic {
           .map(p => {
             // Test 14: the Word reader calls a short line over a list a 'label';
             // here it is a subhead ("2026 VOBIS Awards").
-            const kind = p.kind === 'label' ? 'subhead' : (p.kind || 'body');
+            // Test 15: a bold + underlined short line in the producer's Word file
+            // reads as a subhead; on this page it is the run-in head ("Phase 1").
+            const runIn = p.kind === 'strong' || ((p.underline || /^Phase\s+\d+$/i.test(p.text)) && p.kind === 'subhead');
+            const kind = runIn ? 'body' : p.kind === 'label' ? 'subhead' : (p.kind || 'body');
             if (kind !== 'body' && kind !== 'bullet') head = p.text;
             let bold = p.bold || '';
-            if (!bold && p.underline) bold = p.text;
+            if (!bold && (p.underline || runIn)) bold = p.text;
             const w = kind !== 'subhead' && /award/i.test(head) && /^(.+?)\s[-\u2013]\s(.+)$/.exec(p.text);
             if (!bold && w) bold = w[2];
             // Test 13: an awards list set as bullets keeps body spacing, as FY25's plain lines.
-            return { text: p.text, kind, u: !!p.underline, bold, tight: kind === 'bullet' && /award/i.test(head) };
+            return { text: p.text, kind, u: !!p.underline || runIn, bold, tight: kind === 'bullet' && /award/i.test(head) };
           }); };
 
         this._items = { ob: prep(ob), ip: prep(ip) };
