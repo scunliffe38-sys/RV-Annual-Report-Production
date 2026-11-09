@@ -81,7 +81,9 @@
     photo("Photo - Workforce 1", "workforce", "wf-image-trackwork", "left circle", 382.9, "Warrnambool trackwork"),
     photo("Photo - Workforce 2", "workforce", "wf-image-strapper", "top-right circle", 352.3, "Mr Brightside strapper"),
     photo("Photo - Workforce 3", "workforce", "wf-image-apprentices", "bottom-right circle", 459, "Apprentice Jockey Squad intake"),
-    photo("Photo - Integrity 1", "integrity", "int-image-services", "top-right circle", 464.2, "Integrity Services"),
+    // Test 13 (LL): the top ~27% of this circle runs off the head of p.19, so
+    // its default framing shows the photo from its top in the visible part.
+    onTop(photo("Photo - Integrity 1", "integrity", "int-image-services", "top-right circle", 464.2, "Integrity Services"), 0.73),
     photo("Photo - Integrity 2", "integrity", "int-image-additional", "bottom-left circle", 333, "additional photo"),
     also(photo("Photo - Equine Welfare 1", "welfare", "ew-image-rehomer", "first circle", 309.6, "Jen Duffy \u2014 Rehomer launch"), "ew26-image-1", "first circle (FY26)"),
     also(photo("Photo - Equine Welfare 2", "welfare", "ew-image-ott", "second circle", 461.8, "Off The Track"), "ew26-image-2", "second circle (FY26)"),
@@ -341,10 +343,18 @@
   }
   function tag(c, src) { c.src = src; return c; }
   function onPage(g, v) { g.onPage = v; return g; }
+  function onTop(g, v) { g.onTop = v; return g; }
   // Centred, but for a frame whose lower part runs off the page (g.onPage =
   // fraction of its height on the page) the photo's height fills only the
   // visible part; the window runs past the image's foot, off the page.
   function centredFor(g, iw, ih, A) {
+    var u = g && g.onTop;
+    if (u > 0 && u < 1) {
+      // Top of the frame off the page: the visible part starts at the photo's
+      // top and takes as much of its height as the width allows.
+      var w2 = Math.min(1, (ih / u) * A / iw), winH = w2 * iw / A;
+      return { l: (1 - w2) / 2, t: -(1 - u) * winH / ih, w: w2 };
+    }
     var v = g && g.onPage;
     if (!(v > 0 && v < 1)) return centred(iw, ih, A);
     var winH = ih / v, w = winH * A / iw;
@@ -357,7 +367,7 @@
   function defaultCrop(g, rec) {
     var A = aspect(g), iw = rec.width, ih = rec.height;
     if (!A || !iw || rec.vector) return Promise.resolve(null);
-    if (g.kind !== "headshot") return Promise.resolve(tag(centredFor(g, iw, ih, A), g.onPage ? "onpage" : "centre"));
+    if (g.kind !== "headshot") return Promise.resolve(tag(centredFor(g, iw, ih, A), (g.onPage || g.onTop) ? "onpage" : "centre"));
     var f = FACES[g.id.replace(/^head-/, "")];
     if (f && Math.abs(iw / ih - f.a) / f.a > 0.03) f = null;
     return detect(rec.blob).then(function (d) {
@@ -431,7 +441,7 @@
     if (!A || r.vector || !r.width) return Promise.resolve(urls);
     // An untouched centred default on a part-off-page frame is re-framed to
     // the visible part; crops set in the Frame editor are kept as they are.
-    var crop = (!r.crop || (g.onPage && r.crop.src === "centre")) ? centredFor(g, r.width, r.height, A) : r.crop;
+    var crop = (!r.crop || ((g.onPage || g.onTop) && r.crop.src === "centre")) ? centredFor(g, r.width, r.height, A) : r.crop;
     // Proof runs (?proof) cut at 150 ppi, JPEG 80%, for a PDF small enough to share.
     var PPI = root.RV_PROOF ? 150 : 300;
     var need = Math.min(4000, Math.max.apply(null, g.uses.filter(isCover).map(function (x) { return x.w / 72 * PPI * 1.15; })));

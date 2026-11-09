@@ -245,7 +245,8 @@ class Component extends DCLogic {
             if (!bold && p.underline) bold = p.text;
             const w = kind !== 'subhead' && /award/i.test(head) && /^(.+?)\s[-\u2013]\s(.+)$/.exec(p.text);
             if (!bold && w) bold = w[2];
-            return { text: p.text, kind, u: !!p.underline, bold };
+            // Test 13: an awards list set as bullets keeps body spacing, as FY25's plain lines.
+            return { text: p.text, kind, u: !!p.underline, bold, tight: kind === 'bullet' && /award/i.test(head) };
           }); };
 
         this._items = { ob: prep(ob), ip: prep(ip) };
@@ -266,15 +267,13 @@ class Component extends DCLogic {
       ob: mode === 'auto' || mode === 'both' || mode === 'obOnly',
       ip: mode === 'auto' || mode === 'both' || mode === 'ipOnly',
     };
-    // Test 12 (LL): O&B col A closes on a paragraph end (col B never opens mid-paragraph).
-    const fits = (key, r) => key !== 'ob' || !(r.columns[1] && r.columns[1][0] && r.columns[1][0].cont);
     const pick = (key, label, opts) => {
       const steps = ladder(key, want[key], mode === 'auto');
       let res = null, prev = null;
       for (const st of steps) {
         res = this.settle(this._items[key], flowsFor(key, st.s), Object.assign({ g: st.g }, opts));
         res.step = st;
-        if (!res.leftover.length && fits(key, res)) break;
+        if (!res.leftover.length) break;
         prev = st;
       }
       // Test 6 (LL): fill the corner. Between the size that fits and the next
@@ -284,7 +283,7 @@ class Component extends DCLogic {
         for (let i = 0; i < 7 && hi - lo > 1; i++) {
           const mid = (lo + hi) / 2;
           const r = this.settle(this._items[key], flowsFor(key, mid), Object.assign({ g: res.step.g }, opts));
-          if (!r.leftover.length && fits(key, r)) { lo = mid; r.step = { s: mid, g: res.step.g }; res = r; } else hi = mid;
+          if (!r.leftover.length) { lo = mid; r.step = { s: mid, g: res.step.g }; res = r; } else hi = mid;
         }
       }
       const st = res.step;
@@ -298,7 +297,9 @@ class Component extends DCLogic {
     // Test 6 (LL): McGaw fills its corner. Its largest size no longer follows
     // Pakenham's fitted size; the ladder takes the biggest that fits the copy.
     PHOTOS.ob.max = 640;
-    const a = pick('ob', 'Owners & Breeders');
+    // Test 13 (LL): col A closes on a paragraph end; a paragraph that won't
+    // fit goes to col B whole (shrinking the photo here made it tiny in a run).
+    const a = pick('ob', 'Owners & Breeders', { keepWhole: true });
     this.setState({
       ob: a.columns, obIdx: a.baseIdx, obS: a.step.s, obG: a.step.g,
       ip: b.columns, ipIdx: b.baseIdx, ipS: b.step.s, ipG: b.step.g,
@@ -378,7 +379,7 @@ class Component extends DCLogic {
 
   _after(item, g) {
     if (item.kind === 'subhead') return FY26 ? SUB_GAP : SUBHEAD_AFTER;
-    return (item.kind === 'bullet' ? BULLET_AFTER : BODY_AFTER) * (g || 1);
+    return (item.kind === 'bullet' && !item.tight ? BULLET_AFTER : BODY_AFTER) * (g || 1);
   }
 
   // Pour the items through the columns, breaking mid-paragraph where a column
@@ -413,7 +414,7 @@ class Component extends DCLogic {
         const hPx = (shim ? this._textHeight(host, node)
                           : host.getBoundingClientRect().height) + this._after(item, g) / 0.75 +
           // Body leading into a list opens to the bullet gap (11.339 vs 2.835).
-          (item.kind !== 'bullet' && item.kind !== 'subhead' && queue[1] && queue[1].kind === 'bullet' ? 8.504 * g / 0.75 : 0) +
+          (item.kind !== 'bullet' && item.kind !== 'subhead' && queue[1] && queue[1].kind === 'bullet' && !queue[1].tight ? 8.504 * g / 0.75 : 0) +
           // FY26 subhead: 9pt above; the copy before it already counted 8.504 (bullets 14.173).
           (FY26 && item.kind === 'subhead' && columns[c].length ? Math.max(0, SUB_GAP - 8.504) / 0.75 : 0);
 
@@ -433,7 +434,12 @@ class Component extends DCLogic {
         // entire rather than splitting across the gutter.
         // ...except in the final column, where there is no next column to move
         // to: setting as much as fits beats leaving the frame short.
-        if (keepWhole && c < cols.length - 1) break;
+        if (keepWhole && c < cols.length - 1) {
+          // A head left at the foot goes over with its paragraph.
+          const last = columns[c][columns[c].length - 1];
+          if (last && columns[c].length > 1 && (last.kind === 'subhead' || last.u)) queue.unshift(columns[c].pop());
+          break;
+        }
 
         // Binary-search the last character that still fits this column.
         const availPx = capPx - usedPx;
@@ -517,8 +523,8 @@ class Component extends DCLogic {
     // all four columns start on one line whatever the gap scale or block kind.
     const first = m => n => n === 0 ? m.replace(/^\S+/, '5.669pt') : m;
     return (list || []).map((i, n) => ({
-      m: first(i.kind === 'bullet' ? mBullet
-        : (list[n + 1] && list[n + 1].kind === 'bullet' && !list[n + 1].cont) ? pt(5.669) + ' 0 ' + pt(11.339) : mBody)(n),
+      m: first(i.kind === 'bullet' ? (i.tight ? mBody : mBullet)
+        : (list[n + 1] && list[n + 1].kind === 'bullet' && !list[n + 1].cont && !list[n + 1].tight) ? pt(5.669) + ' 0 ' + pt(11.339) : mBody)(n),
       td: i.u ? 'underline' : 'none',
       subT: FY26 ? SUB_GAP + 'pt' : '0',
       subB: FY26 ? SUB_GAP + 'pt' : '4pt',
