@@ -239,8 +239,10 @@ class Component extends DCLogic {
         const prep = m => { let head = ''; return m.copy.paragraphs
           .filter(p => !/^(?:(?:FY)?\d{4} )?Annual Report\s*[\u2013-]/.test(p.text))
           .map(p => {
-            const kind = p.kind || 'body';
-            if (kind === 'subhead') head = p.text;
+            // Test 14: the Word reader calls a short line over a list a 'label';
+            // here it is a subhead ("2026 VOBIS Awards").
+            const kind = p.kind === 'label' ? 'subhead' : (p.kind || 'body');
+            if (kind !== 'body' && kind !== 'bullet') head = p.text;
             let bold = p.bold || '';
             if (!bold && p.underline) bold = p.text;
             const w = kind !== 'subhead' && /award/i.test(head) && /^(.+?)\s[-\u2013]\s(.+)$/.exec(p.text);
