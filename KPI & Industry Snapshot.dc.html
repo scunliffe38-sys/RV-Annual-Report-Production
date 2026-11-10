@@ -34,7 +34,7 @@
 
   <div style="position:absolute;left:23.9pt;top:168pt;width:300pt;font-weight:500;font-size:12pt;line-height:12pt;text-transform:uppercase;color:#005FA1">{{ periodCurrent }}<span style="font-weight:300">{{ periodDetail }}</span></div>
 
-  <div style="position:absolute;left:22.7pt;top:194.2pt;width:544.3pt">
+  <div ref="{{ kpiBox }}" style="position:absolute;left:22.7pt;top:194.2pt;width:544.3pt">
     <table style="width:544.3pt;border-collapse:collapse;table-layout:fixed">
       <sc-for list="{{ blocks }}" as="block" hint-placeholder-count="3">
         <tbody>
@@ -72,7 +72,7 @@
     </table>
   </div>
 
-  <div style="position:absolute;left:23.6pt;top:600pt;width:544.3pt">
+  <div style="position:absolute;left:23.6pt;top:{{ partTop }}pt;width:544.3pt">
     <table style="width:544.3pt;border-collapse:collapse;table-layout:fixed">
       <tbody>
         <tr style="height:14.6pt">
@@ -258,7 +258,17 @@ class Component extends DCLogic {
     this.fitFigures();
   }
 
-  componentDidUpdate() { this.fitFigures(); }
+  componentDidUpdate() { this.fitFigures(); this.placeParticipation(); }
+
+  // Test 17: the KPI tables can gain rows (FY26 adds Average Turnover per Race),
+  // so Participation sits at its FY25 600pt or, if the tables run lower, 2pt
+  // under them (the FY25 gap).
+  placeParticipation() {
+    const el = this._kpiBox && this._kpiBox.current;
+    if (!el) return;
+    const top = Math.max(600, Math.ceil((194.2 + el.offsetHeight * 0.75 + 2) * 10) / 10);
+    if (top !== this.state.partTop) this.setState({ partTop: top });
+  }
 
   // Figures are set verbatim, so a longer one (e.g. "$1,247m") shrinks to its
   // tile's width rather than running into the next tile.
@@ -442,6 +452,7 @@ class Component extends DCLogic {
   }
 
   renderVals() {
+    this._kpiBox = this._kpiBox || React.createRef();
     const kpi = this.kpiVals();
     const snap = this.snapshotVals();
     const snapMeta = (this.state.snapshot && this.state.snapshot.meta) || {};
@@ -461,6 +472,7 @@ class Component extends DCLogic {
       folioRight: this.props.folioRight ?? snapMeta.folio ?? 9,
       footYear: kpi.footYear || snapMeta.footYear || '',
       snapMissing, snapOn: !snapMissing,
+      kpiBox: this._kpiBox, partTop: this.state.partTop || 600,
       snapWaiting: 'Waiting for ' + yr + ' Annual Report - Industry Snapshot.docx in the input folder. Add it and produce again.',
       yA: yr.slice(2, 3), yB: yr.slice(3, 4), snapTitle: yr + ' Industry Snapshot',
     });
