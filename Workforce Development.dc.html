@@ -100,6 +100,10 @@
 
   <div style="position:absolute;left:55.68pt;top:798.85pt;width:16.5pt;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioLeft }}</div>
   <div style="position:absolute;left:74.14pt;top:798.85pt;width:220pt;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+  <sc-if value="{{ showFolioRight }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:963.22pt;top:798.85pt;width:154.8pt;text-align:right;font-size:6pt;line-height:10.9pt;letter-spacing:0.07em;color:#005FA1;white-space:nowrap"><span style="font-weight:400">RACING VICTORIA</span><span style="font-weight:700"> ANNUAL REPORT {{ footYear }}</span></div>
+    <div style="position:absolute;left:1117.99pt;top:798.85pt;width:16.4pt;text-align:right;font-weight:400;font-size:7pt;line-height:10.9pt;letter-spacing:0.04em;color:#005FA1">{{ folioRight }}</div>
+  </sc-if>
 
 </section>
 
@@ -624,6 +628,14 @@ class Component extends DCLogic {
       strapperSrc: this.props.strapperSrc || '',
       footYear: this.props.year ? 2000 + +String(this.props.year).replace(/\D/g, '').slice(-2) : ((window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)) ? 2026 : 2025),
       folioLeft: this.props.folioLeft ?? 16,
+      folioRight: this.props.folioRight ?? 17,
+      // V2 (SK/LL): p.17 carries its folio row unless a photo covers it.
+      showFolioRight: ![g.p1, g.p2, g.p3].some(p => {
+        if (!p || !p.size) return false;
+        const r = p.size / 2, cx = p.left + r, cy = p.top + r;
+        const dx = cx - Math.max(963.22, Math.min(cx, 1134.39)), dy = cy - Math.max(798.85, Math.min(cy, 809.75));
+        return dx * dx + dy * dy < r * r;
+      }),
       showDecoration: this.props.showDecoration ?? !(window.RV_PREVIEW === true || /[?&]fy26\b/.test(location.search)),
       track: TRACKING[this.state.idx],
       jTop1: +this.state.just[1].top.toFixed(3), jTop2: +this.state.just[2].top.toFixed(3),

@@ -360,7 +360,7 @@
   var FOOTNOTES = {
     FY26: [
       "*Includes $4.5 million in prizemoney paid throughout the VOBIS Premier Race Series.",
-      "**In addition to the Bonuses Claimed, $2.3 million in VOBIS Platinum vouchers were won in FY26 with $1.7 million redeemed.",
+      "**In addition to the Bonuses Claimed, $3 million in VOBIS Platinum vouchers were won in FY26 with $1.7 million redeemed.",
     ],
   };
   function kpiWorkbook(sheets, id, year) {
